@@ -1,0 +1,53 @@
+@gmf
+@namespace(uri="mdn", prefix="")
+package mdn;
+
+@gmf.diagram
+class Sdn {
+  val NetworkNode[*] nodes;
+  val Policy[*] policies;
+}
+
+@gmf.node(figure="figures.ControllerFigure", label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/controller.gif", label.placement="external")
+class Controller extends NetworkNode {
+  attr String type;
+}
+
+enum PacketHeader {
+  ETH = 0;
+  ARP = 0;
+  IPv4 = 0;
+  ICMP = 0;
+  TCP = 0;
+  UDP = 0;
+  DHCP = 0;
+  DNS = 0;
+  LLDP = 0;
+  VLAN = 0;
+}
+
+@gmf.node(label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/host.gif", figure="figures.HostFigure", label.placement="external")
+class Host extends NetworkNode {
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
+  ref Switch hostSwitch;
+}
+
+@gmf.node(label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/switch.gif", figure="figures.SwitchFigure", label.placement="external")
+class Switch extends NetworkNode {
+  attr int ports;
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
+  ref Controller[*] switchController;
+  ref Switch switch;
+}
+
+abstract class NetworkNode {
+  attr String name;
+  attr String mac;
+  attr String ip;
+}
+
+class Policy {
+}
+

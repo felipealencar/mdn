@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/mdn/src" modelPluginID="mdn"
+    modelName="Mdn" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>sdn.ecore</foreignModel>
+  <genPackages prefix="Mdn" disposableProviderFactory="true" ecorePackage="sdn.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sdn.ecore#//PacketHeader">
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeader/ETH"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeader/ARP"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeader/IPv4"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeader/ICMP"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeader/TCP"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeader/UDP"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeader/DHCP"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeader/DNS"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeader/LLDP"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeader/VLAN"/>
+    </genEnums>
+    <genClasses ecoreClass="sdn.ecore#//Sdn">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sdn.ecore#//Sdn/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sdn.ecore#//Sdn/links"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//Controller">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Controller/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Controller/controllerSwitch"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//Host">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Host/hostSwitch"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//Switch">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Switch/ports"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Switch/switchController"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sdn.ecore#//NetworkNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//NetworkNode/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//NetworkNode/mac"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//NetworkNode/ip"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//NetworkLink"/>
+  </genPackages>
+</genmodel:GenModel>

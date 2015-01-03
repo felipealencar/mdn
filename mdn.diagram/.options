@@ -1,0 +1,7 @@
+# Tracing options for the mdn.diagram plug-in
+
+# Common issues
+mdn.diagram/debug=false
+
+# Visual IDs
+mdn.diagram/debug/visualID=false
