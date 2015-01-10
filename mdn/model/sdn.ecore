@@ -20,17 +20,19 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="PacketHeader">
-    <eLiterals name="ETH"/>
-    <eLiterals name="ARP"/>
-    <eLiterals name="IPv4"/>
-    <eLiterals name="ICMP"/>
-    <eLiterals name="TCP"/>
-    <eLiterals name="UDP"/>
-    <eLiterals name="DHCP"/>
-    <eLiterals name="DNS"/>
-    <eLiterals name="LLDP"/>
-    <eLiterals name="VLAN"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="PacketHeaders">
+    <eLiterals name="IN_PORT"/>
+    <eLiterals name="MAC_SRC"/>
+    <eLiterals name="MAC_DST"/>
+    <eLiterals name="VLAN_ID"/>
+    <eLiterals name="VLAN_PRIO"/>
+    <eLiterals name="ETH_TYPE"/>
+    <eLiterals name="IP_SRC"/>
+    <eLiterals name="IP_DST"/>
+    <eLiterals name="IP_TOS"/>
+    <eLiterals name="IP_PORT"/>
+    <eLiterals name="L4_SPORT"/>
+    <eLiterals name="L4_DPORT"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Host" eSuperTypes="#//NetworkNode">
     <eAnnotations source="gmf.node">
@@ -49,6 +51,7 @@
         <details key="color" value="0,0,0"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceHostPolicy" eType="#//Policy"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Switch" eSuperTypes="#//NetworkNode">
     <eAnnotations source="gmf.node">
@@ -69,12 +72,61 @@
         <details key="color" value="0,0,0"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="switch" eType="#//Switch"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="switch" upperBound="-1"
+        eType="#//Switch"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NetworkNode" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Policy"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Actions">
+    <eLiterals name="FORWARD"/>
+    <eLiterals name="DROP"/>
+    <eLiterals name="MODIFY"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Policy">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetHostPolicy" eType="#//Host"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="policyAction" eType="#//Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="policyCondition" eType="#//Condition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Actions"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionOperator" eType="#//RelationalOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Conditions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTraffic" eType="#//Traffic"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTime" eType="#//Time"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionHeader" eType="#//PacketHeader"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Conditions">
+    <eLiterals name="WHEN"/>
+    <eLiterals name="WHERE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RelationalOperators">
+    <eLiterals name="EQUAL_TO"/>
+    <eLiterals name="NOT_EQUAL_TO"/>
+    <eLiterals name="GREATER_THAN"/>
+    <eLiterals name="LESS_THAN"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationalOperator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//RelationalOperators"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Traffic">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="MB"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Time">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hour" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="00:00:00"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PacketHeader">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" upperBound="-1"
+        eType="#//PacketHeaders" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>
