@@ -15,7 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link mdn.Sdn#getNodes <em>Nodes</em>}</li>
- *   <li>{@link mdn.Sdn#getLinks <em>Links</em>}</li>
+ *   <li>{@link mdn.Sdn#getPolicies <em>Policies</em>}</li>
+ *   <li>{@link mdn.Sdn#getPolicyObjects <em>Policy Objects</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,19 +43,35 @@ public interface Sdn extends EObject
   EList<NetworkNode> getNodes();
 
   /**
-   * Returns the value of the '<em><b>Links</b></em>' containment reference list.
-   * The list contents are of type {@link mdn.NetworkLink}.
+   * Returns the value of the '<em><b>Policies</b></em>' containment reference list.
+   * The list contents are of type {@link mdn.Policy}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Links</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Policies</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Links</em>' containment reference list.
-   * @see mdn.MdnPackage#getSdn_Links()
+   * @return the value of the '<em>Policies</em>' containment reference list.
+   * @see mdn.MdnPackage#getSdn_Policies()
    * @model containment="true"
    * @generated
    */
-  EList<NetworkLink> getLinks();
+  EList<Policy> getPolicies();
+
+  /**
+   * Returns the value of the '<em><b>Policy Objects</b></em>' containment reference list.
+   * The list contents are of type {@link mdn.PolicyObject}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Policy Objects</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Policy Objects</em>' containment reference list.
+   * @see mdn.MdnPackage#getSdn_PolicyObjects()
+   * @model containment="true"
+   * @generated
+   */
+  EList<PolicyObject> getPolicyObjects();
 
 } // Sdn

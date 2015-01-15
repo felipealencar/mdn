@@ -12,6 +12,28 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Action"
+          description="Create new Action">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="/icons/full/obj16/action.gif"
+            bundle="mdn.edit"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Condition"
+          description="Create new Condition">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="/icons/full/obj16/condition.gif"
+            bundle="mdn.edit"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Controller"
           description="Create new Controller">
         <smallIcon
@@ -34,11 +56,55 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="PacketHeader"
+          description="Create new PacketHeader">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="/icons/full/obj16/packetheader.gif"
+            bundle="mdn.edit"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Policy"
+          description="Create new Policy">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="/icons/full/obj16/policy.gif"
+            bundle="mdn.edit"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Switch"
           description="Create new Switch">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/full/obj16/switch.gif"
+            bundle="mdn.edit"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Time"
+          description="Create new Time">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="/icons/full/obj16/time.gif"
+            bundle="mdn.edit"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Traffic"
+          description="Create new Traffic">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="/icons/full/obj16/traffic.gif"
             bundle="mdn.edit"/>
         <largeIcon
             xsi:type="gmftool:DefaultImage"/>
@@ -50,8 +116,17 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="ControllerSwitch"
-          description="Create new ControllerSwitch">
+          title="ActionForwardToNode"
+          description="Create new ActionForwardToNode">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ActionPacketHeader"
+          description="Create new ActionPacketHeader">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -68,8 +143,53 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="PolicyAction"
+          description="Create new PolicyAction">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="PolicyCondition"
+          description="Create new PolicyCondition">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="SourceHostPolicy"
+          description="Create new SourceHostPolicy">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Switch"
+          description="Create new Switch">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="SwitchController"
           description="Create new SwitchController">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="TargetHostPolicy"
+          description="Create new TargetHostPolicy">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

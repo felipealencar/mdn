@@ -5,8 +5,9 @@ package mdn.impl;
 import java.util.Collection;
 
 import mdn.MdnPackage;
-import mdn.NetworkLink;
 import mdn.NetworkNode;
+import mdn.Policy;
+import mdn.PolicyObject;
 import mdn.Sdn;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -29,7 +30,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link mdn.impl.SdnImpl#getNodes <em>Nodes</em>}</li>
- *   <li>{@link mdn.impl.SdnImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link mdn.impl.SdnImpl#getPolicies <em>Policies</em>}</li>
+ *   <li>{@link mdn.impl.SdnImpl#getPolicyObjects <em>Policy Objects</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,14 +50,24 @@ public class SdnImpl extends EObjectImpl implements Sdn
   protected EList<NetworkNode> nodes;
 
   /**
-   * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+   * The cached value of the '{@link #getPolicies() <em>Policies</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLinks()
+   * @see #getPolicies()
    * @generated
    * @ordered
    */
-  protected EList<NetworkLink> links;
+  protected EList<Policy> policies;
+
+  /**
+   * The cached value of the '{@link #getPolicyObjects() <em>Policy Objects</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPolicyObjects()
+   * @generated
+   * @ordered
+   */
+  protected EList<PolicyObject> policyObjects;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,13 +109,27 @@ public class SdnImpl extends EObjectImpl implements Sdn
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<NetworkLink> getLinks()
+  public EList<Policy> getPolicies()
   {
-    if (links == null)
+    if (policies == null)
     {
-      links = new EObjectContainmentEList<NetworkLink>(NetworkLink.class, this, MdnPackage.SDN__LINKS);
+      policies = new EObjectContainmentEList<Policy>(Policy.class, this, MdnPackage.SDN__POLICIES);
     }
-    return links;
+    return policies;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<PolicyObject> getPolicyObjects()
+  {
+    if (policyObjects == null)
+    {
+      policyObjects = new EObjectContainmentEList<PolicyObject>(PolicyObject.class, this, MdnPackage.SDN__POLICY_OBJECTS);
+    }
+    return policyObjects;
   }
 
   /**
@@ -118,8 +144,10 @@ public class SdnImpl extends EObjectImpl implements Sdn
     {
       case MdnPackage.SDN__NODES:
         return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
-      case MdnPackage.SDN__LINKS:
-        return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+      case MdnPackage.SDN__POLICIES:
+        return ((InternalEList<?>)getPolicies()).basicRemove(otherEnd, msgs);
+      case MdnPackage.SDN__POLICY_OBJECTS:
+        return ((InternalEList<?>)getPolicyObjects()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +164,10 @@ public class SdnImpl extends EObjectImpl implements Sdn
     {
       case MdnPackage.SDN__NODES:
         return getNodes();
-      case MdnPackage.SDN__LINKS:
-        return getLinks();
+      case MdnPackage.SDN__POLICIES:
+        return getPolicies();
+      case MdnPackage.SDN__POLICY_OBJECTS:
+        return getPolicyObjects();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -157,9 +187,13 @@ public class SdnImpl extends EObjectImpl implements Sdn
         getNodes().clear();
         getNodes().addAll((Collection<? extends NetworkNode>)newValue);
         return;
-      case MdnPackage.SDN__LINKS:
-        getLinks().clear();
-        getLinks().addAll((Collection<? extends NetworkLink>)newValue);
+      case MdnPackage.SDN__POLICIES:
+        getPolicies().clear();
+        getPolicies().addAll((Collection<? extends Policy>)newValue);
+        return;
+      case MdnPackage.SDN__POLICY_OBJECTS:
+        getPolicyObjects().clear();
+        getPolicyObjects().addAll((Collection<? extends PolicyObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -178,8 +212,11 @@ public class SdnImpl extends EObjectImpl implements Sdn
       case MdnPackage.SDN__NODES:
         getNodes().clear();
         return;
-      case MdnPackage.SDN__LINKS:
-        getLinks().clear();
+      case MdnPackage.SDN__POLICIES:
+        getPolicies().clear();
+        return;
+      case MdnPackage.SDN__POLICY_OBJECTS:
+        getPolicyObjects().clear();
         return;
     }
     super.eUnset(featureID);
@@ -197,8 +234,10 @@ public class SdnImpl extends EObjectImpl implements Sdn
     {
       case MdnPackage.SDN__NODES:
         return nodes != null && !nodes.isEmpty();
-      case MdnPackage.SDN__LINKS:
-        return links != null && !links.isEmpty();
+      case MdnPackage.SDN__POLICIES:
+        return policies != null && !policies.isEmpty();
+      case MdnPackage.SDN__POLICY_OBJECTS:
+        return policyObjects != null && !policyObjects.isEmpty();
     }
     return super.eIsSet(featureID);
   }

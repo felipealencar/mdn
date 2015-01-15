@@ -110,10 +110,56 @@ public class MdnSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MdnPackage.NETWORK_LINK:
+      case MdnPackage.POLICY:
       {
-        NetworkLink networkLink = (NetworkLink)theEObject;
-        T result = caseNetworkLink(networkLink);
+        Policy policy = (Policy)theEObject;
+        T result = casePolicy(policy);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MdnPackage.ACTION:
+      {
+        Action action = (Action)theEObject;
+        T result = caseAction(action);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MdnPackage.CONDITION:
+      {
+        Condition condition = (Condition)theEObject;
+        T result = caseCondition(condition);
+        if (result == null) result = casePolicyObject(condition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MdnPackage.TRAFFIC:
+      {
+        Traffic traffic = (Traffic)theEObject;
+        T result = caseTraffic(traffic);
+        if (result == null) result = casePolicyObject(traffic);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MdnPackage.TIME:
+      {
+        Time time = (Time)theEObject;
+        T result = caseTime(time);
+        if (result == null) result = casePolicyObject(time);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MdnPackage.PACKET_HEADER:
+      {
+        PacketHeader packetHeader = (PacketHeader)theEObject;
+        T result = casePacketHeader(packetHeader);
+        if (result == null) result = casePolicyObject(packetHeader);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MdnPackage.POLICY_OBJECT:
+      {
+        PolicyObject policyObject = (PolicyObject)theEObject;
+        T result = casePolicyObject(policyObject);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -202,17 +248,113 @@ public class MdnSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Network Link</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Policy</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Network Link</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Policy</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNetworkLink(NetworkLink object)
+  public T casePolicy(Policy object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAction(Action object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Condition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCondition(Condition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Traffic</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Traffic</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTraffic(Traffic object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Time</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Time</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTime(Time object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Packet Header</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Packet Header</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePacketHeader(PacketHeader object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Policy Object</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Policy Object</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePolicyObject(PolicyObject object)
   {
     return null;
   }

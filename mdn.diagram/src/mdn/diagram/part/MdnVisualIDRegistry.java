@@ -5,19 +5,44 @@ package mdn.diagram.part;
 
 import mdn.MdnPackage;
 import mdn.Sdn;
-import mdn.diagram.edit.parts.ControllerControllerSwitchEditPart;
+import mdn.diagram.edit.parts.ActionActionForwardToNodeEditPart;
+import mdn.diagram.edit.parts.ActionActionPacketHeaderEditPart;
+import mdn.diagram.edit.parts.ConditionConditionEditPart;
+import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
 import mdn.diagram.edit.parts.ControllerNameEditPart;
 import mdn.diagram.edit.parts.HostEditPart;
 import mdn.diagram.edit.parts.HostHostSwitchEditPart;
 import mdn.diagram.edit.parts.HostNameEditPart;
+import mdn.diagram.edit.parts.HostSourceHostPolicyEditPart;
+import mdn.diagram.edit.parts.PacketHeaderEditPart;
+import mdn.diagram.edit.parts.PacketHeaderHeaderValueEditPart;
+import mdn.diagram.edit.parts.PacketHeaderOperatorHeaderValueEditPart;
+import mdn.diagram.edit.parts.PolicyEditPart;
+import mdn.diagram.edit.parts.PolicyNameEditPart;
+import mdn.diagram.edit.parts.PolicyPolicyActionEditPart;
+import mdn.diagram.edit.parts.PolicyPolicyConditionEditPart;
+import mdn.diagram.edit.parts.PolicyTargetHostPolicyEditPart;
 import mdn.diagram.edit.parts.SdnEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
 import mdn.diagram.edit.parts.SwitchNameEditPart;
 import mdn.diagram.edit.parts.SwitchSwitchControllerEditPart;
+import mdn.diagram.edit.parts.SwitchSwitchEditPart;
+import mdn.diagram.edit.parts.TimeDateEditPart;
+import mdn.diagram.edit.parts.TimeEditPart;
+import mdn.diagram.edit.parts.TimeHourDateEditPart;
+import mdn.diagram.edit.parts.TimeOperatorBeginDateEndDatEditPart;
+import mdn.diagram.edit.parts.TrafficEditPart;
+import mdn.diagram.edit.parts.TrafficOperatorUnitValueEditPart;
+import mdn.diagram.edit.parts.TrafficUnitValueEditPart;
 import mdn.diagram.edit.parts.WrappingLabel2EditPart;
 import mdn.diagram.edit.parts.WrappingLabel3EditPart;
 import mdn.diagram.edit.parts.WrappingLabel4EditPart;
+import mdn.diagram.edit.parts.WrappingLabel5EditPart;
+import mdn.diagram.edit.parts.WrappingLabel6EditPart;
+import mdn.diagram.edit.parts.WrappingLabel7EditPart;
+import mdn.diagram.edit.parts.WrappingLabel8EditPart;
+import mdn.diagram.edit.parts.WrappingLabel9EditPart;
 import mdn.diagram.edit.parts.WrappingLabelEditPart;
 
 import org.eclipse.core.runtime.Platform;
@@ -146,6 +171,26 @@ public class MdnVisualIDRegistry {
 					domainElement.eClass())) {
 				return SwitchEditPart.VISUAL_ID;
 			}
+			if (MdnPackage.eINSTANCE.getCondition().isSuperTypeOf(
+					domainElement.eClass())) {
+				return ConditionEditPart.VISUAL_ID;
+			}
+			if (MdnPackage.eINSTANCE.getTraffic().isSuperTypeOf(
+					domainElement.eClass())) {
+				return TrafficEditPart.VISUAL_ID;
+			}
+			if (MdnPackage.eINSTANCE.getTime().isSuperTypeOf(
+					domainElement.eClass())) {
+				return TimeEditPart.VISUAL_ID;
+			}
+			if (MdnPackage.eINSTANCE.getPacketHeader().isSuperTypeOf(
+					domainElement.eClass())) {
+				return PacketHeaderEditPart.VISUAL_ID;
+			}
+			if (MdnPackage.eINSTANCE.getPolicy().isSuperTypeOf(
+					domainElement.eClass())) {
+				return PolicyEditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -183,6 +228,21 @@ public class MdnVisualIDRegistry {
 			if (SwitchEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ConditionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (TrafficEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (TimeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PacketHeaderEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PolicyEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ControllerEditPart.VISUAL_ID:
 			if (ControllerNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -199,18 +259,73 @@ public class MdnVisualIDRegistry {
 				return true;
 			}
 			break;
-		case ControllerControllerSwitchEditPart.VISUAL_ID:
-			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+		case ConditionEditPart.VISUAL_ID:
+			if (ConditionConditionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case TrafficEditPart.VISUAL_ID:
+			if (TrafficOperatorUnitValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case TimeEditPart.VISUAL_ID:
+			if (TimeOperatorBeginDateEndDatEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case PacketHeaderEditPart.VISUAL_ID:
+			if (PacketHeaderOperatorHeaderValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case PolicyEditPart.VISUAL_ID:
+			if (PolicyNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case HostHostSwitchEditPart.VISUAL_ID:
+			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case HostSourceHostPolicyEditPart.VISUAL_ID:
 			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case SwitchSwitchControllerEditPart.VISUAL_ID:
 			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case SwitchSwitchEditPart.VISUAL_ID:
+			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case PolicyTargetHostPolicyEditPart.VISUAL_ID:
+			if (WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case PolicyPolicyConditionEditPart.VISUAL_ID:
+			if (WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case PolicyPolicyActionEditPart.VISUAL_ID:
+			if (WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActionActionPacketHeaderEditPart.VISUAL_ID:
+			if (WrappingLabel8EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActionActionForwardToNodeEditPart.VISUAL_ID:
+			if (WrappingLabel9EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -268,6 +383,11 @@ public class MdnVisualIDRegistry {
 		case ControllerEditPart.VISUAL_ID:
 		case HostEditPart.VISUAL_ID:
 		case SwitchEditPart.VISUAL_ID:
+		case PolicyEditPart.VISUAL_ID:
+		case TrafficEditPart.VISUAL_ID:
+		case TimeEditPart.VISUAL_ID:
+		case PacketHeaderEditPart.VISUAL_ID:
+		case ConditionEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

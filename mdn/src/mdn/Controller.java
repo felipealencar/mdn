@@ -2,7 +2,6 @@
  */
 package mdn;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +12,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link mdn.Controller#getType <em>Type</em>}</li>
- *   <li>{@link mdn.Controller#getControllerSwitch <em>Controller Switch</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,21 +46,5 @@ public interface Controller extends NetworkNode
    * @generated
    */
   void setType(String value);
-
-  /**
-   * Returns the value of the '<em><b>Controller Switch</b></em>' reference list.
-   * The list contents are of type {@link mdn.Switch}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Controller Switch</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Controller Switch</em>' reference list.
-   * @see mdn.MdnPackage#getController_ControllerSwitch()
-   * @model annotation="gmf.link target.decoration='arrow' source.decoration='none' style='dash' color='0,0,0'"
-   * @generated
-   */
-  EList<Switch> getControllerSwitch();
 
 } // Controller

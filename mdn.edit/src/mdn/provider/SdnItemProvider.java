@@ -84,7 +84,7 @@ public class SdnItemProvider
     {
       super.getChildrenFeatures(object);
       childrenFeatures.add(MdnPackage.Literals.SDN__NODES);
-      childrenFeatures.add(MdnPackage.Literals.SDN__LINKS);
+      childrenFeatures.add(MdnPackage.Literals.SDN__POLICIES);
     }
     return childrenFeatures;
   }
@@ -142,7 +142,7 @@ public class SdnItemProvider
     switch (notification.getFeatureID(Sdn.class))
     {
       case MdnPackage.SDN__NODES:
-      case MdnPackage.SDN__LINKS:
+      case MdnPackage.SDN__POLICIES:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
         return;
     }
@@ -178,8 +178,8 @@ public class SdnItemProvider
 
     newChildDescriptors.add
       (createChildParameter
-        (MdnPackage.Literals.SDN__LINKS,
-         MdnFactory.eINSTANCE.createNetworkLink()));
+        (MdnPackage.Literals.SDN__POLICIES,
+         MdnFactory.eINSTANCE.createPolicy()));
   }
 
   /**

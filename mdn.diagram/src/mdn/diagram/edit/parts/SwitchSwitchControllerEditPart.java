@@ -6,9 +6,6 @@ package mdn.diagram.edit.parts;
 import mdn.diagram.edit.policies.SwitchSwitchControllerItemSemanticEditPolicy;
 
 import org.eclipse.draw2d.Connection;
-import org.eclipse.draw2d.Graphics;
-import org.eclipse.draw2d.PolylineDecoration;
-import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -72,18 +69,8 @@ public class SwitchSwitchControllerEditPart extends ConnectionNodeEditPart
 		 * @generated
 		 */
 		public SwitchSwitchControllerFigure() {
-			this.setLineStyle(Graphics.LINE_DASH);
 			this.setForegroundColor(THIS_FORE);
 
-			setTargetDecoration(createTargetDecoration());
-		}
-
-		/**
-		 * @generated
-		 */
-		private RotatableDecoration createTargetDecoration() {
-			PolylineDecoration df = new PolylineDecoration();
-			return df;
 		}
 
 	}

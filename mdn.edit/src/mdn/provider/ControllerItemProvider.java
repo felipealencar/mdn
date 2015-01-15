@@ -62,7 +62,6 @@ public class ControllerItemProvider
       super.getPropertyDescriptors(object);
 
       addTypePropertyDescriptor(object);
-      addControllerSwitchPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -86,29 +85,6 @@ public class ControllerItemProvider
          false,
          false,
          ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
-  }
-
-  /**
-   * This adds a property descriptor for the Controller Switch feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addControllerSwitchPropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Controller_controllerSwitch_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Controller_controllerSwitch_feature", "_UI_Controller_type"),
-         MdnPackage.Literals.CONTROLLER__CONTROLLER_SWITCH,
-         true,
-         false,
-         true,
-         null,
          null,
          null));
   }

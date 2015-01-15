@@ -174,28 +174,178 @@ public class MdnItemProviderAdapterFactory extends MdnAdapterFactory implements 
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link mdn.NetworkLink} instances.
+   * This keeps track of the one adapter used for all {@link mdn.Policy} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NetworkLinkItemProvider networkLinkItemProvider;
+  protected PolicyItemProvider policyItemProvider;
 
   /**
-   * This creates an adapter for a {@link mdn.NetworkLink}.
+   * This creates an adapter for a {@link mdn.Policy}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
   @Override
-  public Adapter createNetworkLinkAdapter()
+  public Adapter createPolicyAdapter()
   {
-    if (networkLinkItemProvider == null)
+    if (policyItemProvider == null)
     {
-      networkLinkItemProvider = new NetworkLinkItemProvider(this);
+      policyItemProvider = new PolicyItemProvider(this);
     }
 
-    return networkLinkItemProvider;
+    return policyItemProvider;
+  }
+
+  /**
+   * This keeps track of the one adapter used for all {@link mdn.Action} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected ActionItemProvider actionItemProvider;
+
+  /**
+   * This creates an adapter for a {@link mdn.Action}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createActionAdapter()
+  {
+    if (actionItemProvider == null)
+    {
+      actionItemProvider = new ActionItemProvider(this);
+    }
+
+    return actionItemProvider;
+  }
+
+  /**
+   * This keeps track of the one adapter used for all {@link mdn.Condition} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected ConditionItemProvider conditionItemProvider;
+
+  /**
+   * This creates an adapter for a {@link mdn.Condition}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createConditionAdapter()
+  {
+    if (conditionItemProvider == null)
+    {
+      conditionItemProvider = new ConditionItemProvider(this);
+    }
+
+    return conditionItemProvider;
+  }
+
+  /**
+   * This keeps track of the one adapter used for all {@link mdn.RelationalOperator} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected RelationalOperatorItemProvider relationalOperatorItemProvider;
+
+  /**
+   * This creates an adapter for a {@link mdn.RelationalOperator}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createRelationalOperatorAdapter()
+  {
+    if (relationalOperatorItemProvider == null)
+    {
+      relationalOperatorItemProvider = new RelationalOperatorItemProvider(this);
+    }
+
+    return relationalOperatorItemProvider;
+  }
+
+  /**
+   * This keeps track of the one adapter used for all {@link mdn.Traffic} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected TrafficItemProvider trafficItemProvider;
+
+  /**
+   * This creates an adapter for a {@link mdn.Traffic}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createTrafficAdapter()
+  {
+    if (trafficItemProvider == null)
+    {
+      trafficItemProvider = new TrafficItemProvider(this);
+    }
+
+    return trafficItemProvider;
+  }
+
+  /**
+   * This keeps track of the one adapter used for all {@link mdn.Time} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected TimeItemProvider timeItemProvider;
+
+  /**
+   * This creates an adapter for a {@link mdn.Time}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createTimeAdapter()
+  {
+    if (timeItemProvider == null)
+    {
+      timeItemProvider = new TimeItemProvider(this);
+    }
+
+    return timeItemProvider;
+  }
+
+  /**
+   * This keeps track of the one adapter used for all {@link mdn.PacketHeader} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected PacketHeaderItemProvider packetHeaderItemProvider;
+
+  /**
+   * This creates an adapter for a {@link mdn.PacketHeader}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createPacketHeaderAdapter()
+  {
+    if (packetHeaderItemProvider == null)
+    {
+      packetHeaderItemProvider = new PacketHeaderItemProvider(this);
+    }
+
+    return packetHeaderItemProvider;
   }
 
   /**
@@ -313,7 +463,13 @@ public class MdnItemProviderAdapterFactory extends MdnAdapterFactory implements 
     if (controllerItemProvider != null) controllerItemProvider.dispose();
     if (hostItemProvider != null) hostItemProvider.dispose();
     if (switchItemProvider != null) switchItemProvider.dispose();
-    if (networkLinkItemProvider != null) networkLinkItemProvider.dispose();
+    if (policyItemProvider != null) policyItemProvider.dispose();
+    if (actionItemProvider != null) actionItemProvider.dispose();
+    if (conditionItemProvider != null) conditionItemProvider.dispose();
+    if (relationalOperatorItemProvider != null) relationalOperatorItemProvider.dispose();
+    if (trafficItemProvider != null) trafficItemProvider.dispose();
+    if (timeItemProvider != null) timeItemProvider.dispose();
+    if (packetHeaderItemProvider != null) packetHeaderItemProvider.dispose();
   }
 
 }

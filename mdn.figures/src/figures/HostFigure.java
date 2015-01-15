@@ -10,7 +10,7 @@ import activator.PluginActivator;
 public class HostFigure extends ImageFigure {
 
  public HostFigure() { 
-  super(PluginActivator.imageDescriptorFromPlugin(PluginActivator.ID,"images/Controller.png").createImage(), 0);
+  super(PluginActivator.imageDescriptorFromPlugin(PluginActivator.ID,"images/Host.png").createImage(), 0);
  }
 
 }

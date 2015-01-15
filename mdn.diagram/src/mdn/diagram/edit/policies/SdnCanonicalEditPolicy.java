@@ -7,15 +7,22 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import mdn.MdnPackage;
+import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
 import mdn.diagram.edit.parts.HostEditPart;
+import mdn.diagram.edit.parts.PacketHeaderEditPart;
+import mdn.diagram.edit.parts.PolicyEditPart;
 import mdn.diagram.edit.parts.SdnEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
+import mdn.diagram.edit.parts.TimeEditPart;
+import mdn.diagram.edit.parts.TrafficEditPart;
 import mdn.diagram.part.MdnDiagramUpdater;
 import mdn.diagram.part.MdnLinkDescriptor;
 import mdn.diagram.part.MdnNodeDescriptor;
@@ -50,6 +57,11 @@ public class SdnCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
+	private Set<EStructuralFeature> myFeaturesToSynchronize;
+
+	/**
+	 * @generated
+	 */
 	protected void refreshOnActivate() {
 		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
 		List<?> c = getHost().getChildren();
@@ -62,8 +74,15 @@ public class SdnCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected EStructuralFeature getFeatureToSynchronize() {
-		return MdnPackage.eINSTANCE.getSdn_Nodes();
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
+			myFeaturesToSynchronize.add(MdnPackage.eINSTANCE.getSdn_Nodes());
+			myFeaturesToSynchronize.add(MdnPackage.eINSTANCE
+					.getSdn_PolicyObjects());
+			myFeaturesToSynchronize.add(MdnPackage.eINSTANCE.getSdn_Policies());
+		}
+		return myFeaturesToSynchronize;
 	}
 
 	/**
@@ -98,9 +117,18 @@ public class SdnCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	private boolean isMyDiagramElement(View view) {
 		int visualID = MdnVisualIDRegistry.getVisualID(view);
-		return visualID == ControllerEditPart.VISUAL_ID
-				|| visualID == HostEditPart.VISUAL_ID
-				|| visualID == SwitchEditPart.VISUAL_ID;
+		switch (visualID) {
+		case ControllerEditPart.VISUAL_ID:
+		case HostEditPart.VISUAL_ID:
+		case SwitchEditPart.VISUAL_ID:
+		case ConditionEditPart.VISUAL_ID:
+		case TrafficEditPart.VISUAL_ID:
+		case TimeEditPart.VISUAL_ID:
+		case PacketHeaderEditPart.VISUAL_ID:
+		case PolicyEditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -287,6 +315,46 @@ public class SdnCanonicalEditPolicy extends CanonicalEditPolicy {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(MdnDiagramUpdater
 						.getSwitch_2003ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case ConditionEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(MdnDiagramUpdater
+						.getCondition_2010ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case TrafficEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(MdnDiagramUpdater
+						.getTraffic_2007ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case TimeEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(MdnDiagramUpdater
+						.getTime_2008ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case PacketHeaderEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(MdnDiagramUpdater
+						.getPacketHeader_2009ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case PolicyEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(MdnDiagramUpdater
+						.getPolicy_2004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

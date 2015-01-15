@@ -242,8 +242,9 @@ public class SwitchEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(MdnElementTypes.SwitchSwitchController_4006);
+		types.add(MdnElementTypes.SwitchSwitch_4008);
 		return types;
 	}
 
@@ -256,6 +257,9 @@ public class SwitchEditPart extends AbstractBorderedShapeEditPart {
 		if (targetEditPart instanceof ControllerEditPart) {
 			types.add(MdnElementTypes.SwitchSwitchController_4006);
 		}
+		if (targetEditPart instanceof mdn.diagram.edit.parts.SwitchEditPart) {
+			types.add(MdnElementTypes.SwitchSwitch_4008);
+		}
 		return types;
 	}
 
@@ -266,6 +270,8 @@ public class SwitchEditPart extends AbstractBorderedShapeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == MdnElementTypes.SwitchSwitchController_4006) {
 			types.add(MdnElementTypes.Controller_2001);
+		} else if (relationshipType == MdnElementTypes.SwitchSwitch_4008) {
+			types.add(MdnElementTypes.Switch_2003);
 		}
 		return types;
 	}
@@ -275,8 +281,8 @@ public class SwitchEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(MdnElementTypes.ControllerControllerSwitch_4003);
 		types.add(MdnElementTypes.HostHostSwitch_4004);
+		types.add(MdnElementTypes.SwitchSwitch_4008);
 		return types;
 	}
 
@@ -285,10 +291,10 @@ public class SwitchEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.ControllerControllerSwitch_4003) {
-			types.add(MdnElementTypes.Controller_2001);
-		} else if (relationshipType == MdnElementTypes.HostHostSwitch_4004) {
+		if (relationshipType == MdnElementTypes.HostHostSwitch_4004) {
 			types.add(MdnElementTypes.Host_2002);
+		} else if (relationshipType == MdnElementTypes.SwitchSwitch_4008) {
+			types.add(MdnElementTypes.Switch_2003);
 		}
 		return types;
 	}

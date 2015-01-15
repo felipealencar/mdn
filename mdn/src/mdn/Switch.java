@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link mdn.Switch#getPorts <em>Ports</em>}</li>
  *   <li>{@link mdn.Switch#getSwitchController <em>Switch Controller</em>}</li>
+ *   <li>{@link mdn.Switch#getSwitch <em>Switch</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,9 +61,25 @@ public interface Switch extends NetworkNode
    * <!-- end-user-doc -->
    * @return the value of the '<em>Switch Controller</em>' reference list.
    * @see mdn.MdnPackage#getSwitch_SwitchController()
-   * @model annotation="gmf.link target.decoration='arrow' source.decoration='none' style='dash' color='0,0,0'"
+   * @model annotation="gmf.link target.decoration='none' source.decoration='none' style='solid' color='0,0,0'"
    * @generated
    */
   EList<Controller> getSwitchController();
+
+  /**
+   * Returns the value of the '<em><b>Switch</b></em>' reference list.
+   * The list contents are of type {@link mdn.Switch}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Switch</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Switch</em>' reference list.
+   * @see mdn.MdnPackage#getSwitch_Switch()
+   * @model annotation="gmf.link target.decoration='none' source.decoration='none' style='solid' color='0,0,0'"
+   * @generated
+   */
+  EList<Switch> getSwitch();
 
 } // Switch

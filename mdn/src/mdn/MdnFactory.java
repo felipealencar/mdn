@@ -59,13 +59,58 @@ public interface MdnFactory extends EFactory
   Switch createSwitch();
 
   /**
-   * Returns a new object of class '<em>Network Link</em>'.
+   * Returns a new object of class '<em>Policy</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Network Link</em>'.
+   * @return a new object of class '<em>Policy</em>'.
    * @generated
    */
-  NetworkLink createNetworkLink();
+  Policy createPolicy();
+
+  /**
+   * Returns a new object of class '<em>Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action</em>'.
+   * @generated
+   */
+  Action createAction();
+
+  /**
+   * Returns a new object of class '<em>Condition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Condition</em>'.
+   * @generated
+   */
+  Condition createCondition();
+
+  /**
+   * Returns a new object of class '<em>Traffic</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Traffic</em>'.
+   * @generated
+   */
+  Traffic createTraffic();
+
+  /**
+   * Returns a new object of class '<em>Time</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Time</em>'.
+   * @generated
+   */
+  Time createTime();
+
+  /**
+   * Returns a new object of class '<em>Packet Header</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Packet Header</em>'.
+   * @generated
+   */
+  PacketHeader createPacketHeader();
 
   /**
    * Returns the package supported by this factory.

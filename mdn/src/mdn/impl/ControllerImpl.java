@@ -2,21 +2,14 @@
  */
 package mdn.impl;
 
-import java.util.Collection;
-
 import mdn.Controller;
 import mdn.MdnPackage;
-import mdn.Switch;
 
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +19,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link mdn.impl.ControllerImpl#getType <em>Type</em>}</li>
- *   <li>{@link mdn.impl.ControllerImpl#getControllerSwitch <em>Controller Switch</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,16 +45,6 @@ public class ControllerImpl extends NetworkNodeImpl implements Controller
    * @ordered
    */
   protected String type = TYPE_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getControllerSwitch() <em>Controller Switch</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getControllerSwitch()
-   * @generated
-   * @ordered
-   */
-  protected EList<Switch> controllerSwitch;
 
   /**
    * <!-- begin-user-doc -->
@@ -113,20 +95,6 @@ public class ControllerImpl extends NetworkNodeImpl implements Controller
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Switch> getControllerSwitch()
-  {
-    if (controllerSwitch == null)
-    {
-      controllerSwitch = new EObjectResolvingEList<Switch>(Switch.class, this, MdnPackage.CONTROLLER__CONTROLLER_SWITCH);
-    }
-    return controllerSwitch;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -134,8 +102,6 @@ public class ControllerImpl extends NetworkNodeImpl implements Controller
     {
       case MdnPackage.CONTROLLER__TYPE:
         return getType();
-      case MdnPackage.CONTROLLER__CONTROLLER_SWITCH:
-        return getControllerSwitch();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -145,7 +111,6 @@ public class ControllerImpl extends NetworkNodeImpl implements Controller
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -153,10 +118,6 @@ public class ControllerImpl extends NetworkNodeImpl implements Controller
     {
       case MdnPackage.CONTROLLER__TYPE:
         setType((String)newValue);
-        return;
-      case MdnPackage.CONTROLLER__CONTROLLER_SWITCH:
-        getControllerSwitch().clear();
-        getControllerSwitch().addAll((Collection<? extends Switch>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -175,9 +136,6 @@ public class ControllerImpl extends NetworkNodeImpl implements Controller
       case MdnPackage.CONTROLLER__TYPE:
         setType(TYPE_EDEFAULT);
         return;
-      case MdnPackage.CONTROLLER__CONTROLLER_SWITCH:
-        getControllerSwitch().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -194,8 +152,6 @@ public class ControllerImpl extends NetworkNodeImpl implements Controller
     {
       case MdnPackage.CONTROLLER__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-      case MdnPackage.CONTROLLER__CONTROLLER_SWITCH:
-        return controllerSwitch != null && !controllerSwitch.isEmpty();
     }
     return super.eIsSet(featureID);
   }

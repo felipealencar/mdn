@@ -10,7 +10,7 @@ import activator.PluginActivator;
 public class SwitchFigure extends ImageFigure {
 
  public SwitchFigure() { 
-  super(PluginActivator.imageDescriptorFromPlugin(PluginActivator.ID,"images/Controller.png").createImage(), 0);
+  super(PluginActivator.imageDescriptorFromPlugin(PluginActivator.ID,"images/Switch.png").createImage(), 0);
  }
 
 }

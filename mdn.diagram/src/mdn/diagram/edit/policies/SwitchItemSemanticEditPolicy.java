@@ -5,16 +5,18 @@ package mdn.diagram.edit.policies;
 
 import java.util.Iterator;
 
-import mdn.diagram.edit.commands.ControllerControllerSwitchCreateCommand;
-import mdn.diagram.edit.commands.ControllerControllerSwitchReorientCommand;
+import mdn.diagram.edit.commands.ActionActionForwardToNodeCreateCommand;
+import mdn.diagram.edit.commands.ActionActionForwardToNodeReorientCommand;
 import mdn.diagram.edit.commands.HostHostSwitchCreateCommand;
 import mdn.diagram.edit.commands.HostHostSwitchReorientCommand;
 import mdn.diagram.edit.commands.SwitchSwitchControllerCreateCommand;
 import mdn.diagram.edit.commands.SwitchSwitchControllerReorientCommand;
-
-import mdn.diagram.edit.parts.ControllerControllerSwitchEditPart;
+import mdn.diagram.edit.commands.SwitchSwitchCreateCommand;
+import mdn.diagram.edit.commands.SwitchSwitchReorientCommand;
+import mdn.diagram.edit.parts.ActionActionForwardToNodeEditPart;
 import mdn.diagram.edit.parts.HostHostSwitchEditPart;
 import mdn.diagram.edit.parts.SwitchSwitchControllerEditPart;
+import mdn.diagram.edit.parts.SwitchSwitchEditPart;
 import mdn.diagram.part.MdnVisualIDRegistry;
 import mdn.diagram.providers.MdnElementTypes;
 
@@ -53,7 +55,7 @@ public class SwitchItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (MdnVisualIDRegistry.getVisualID(incomingLink) == ControllerControllerSwitchEditPart.VISUAL_ID) {
+			if (MdnVisualIDRegistry.getVisualID(incomingLink) == HostHostSwitchEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
@@ -61,7 +63,15 @@ public class SwitchItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (MdnVisualIDRegistry.getVisualID(incomingLink) == HostHostSwitchEditPart.VISUAL_ID) {
+			if (MdnVisualIDRegistry.getVisualID(incomingLink) == SwitchSwitchEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						incomingLink.getSource().getElement(), null,
+						incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (MdnVisualIDRegistry.getVisualID(incomingLink) == ActionActionForwardToNodeEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
@@ -73,6 +83,14 @@ public class SwitchItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
 			if (MdnVisualIDRegistry.getVisualID(outgoingLink) == SwitchSwitchControllerEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (MdnVisualIDRegistry.getVisualID(outgoingLink) == SwitchSwitchEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
@@ -108,16 +126,20 @@ public class SwitchItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (MdnElementTypes.ControllerControllerSwitch_4003 == req
-				.getElementType()) {
-			return null;
-		}
 		if (MdnElementTypes.HostHostSwitch_4004 == req.getElementType()) {
 			return null;
 		}
 		if (MdnElementTypes.SwitchSwitchController_4006 == req.getElementType()) {
 			return getGEFWrapper(new SwitchSwitchControllerCreateCommand(req,
 					req.getSource(), req.getTarget()));
+		}
+		if (MdnElementTypes.SwitchSwitch_4008 == req.getElementType()) {
+			return getGEFWrapper(new SwitchSwitchCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (MdnElementTypes.ActionActionForwardToNode_4013 == req
+				.getElementType()) {
+			return null;
 		}
 		return null;
 	}
@@ -127,17 +149,21 @@ public class SwitchItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (MdnElementTypes.ControllerControllerSwitch_4003 == req
-				.getElementType()) {
-			return getGEFWrapper(new ControllerControllerSwitchCreateCommand(
-					req, req.getSource(), req.getTarget()));
-		}
 		if (MdnElementTypes.HostHostSwitch_4004 == req.getElementType()) {
 			return getGEFWrapper(new HostHostSwitchCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
 		if (MdnElementTypes.SwitchSwitchController_4006 == req.getElementType()) {
 			return null;
+		}
+		if (MdnElementTypes.SwitchSwitch_4008 == req.getElementType()) {
+			return getGEFWrapper(new SwitchSwitchCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (MdnElementTypes.ActionActionForwardToNode_4013 == req
+				.getElementType()) {
+			return getGEFWrapper(new ActionActionForwardToNodeCreateCommand(
+					req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -151,13 +177,15 @@ public class SwitchItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 	protected Command getReorientReferenceRelationshipCommand(
 			ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case ControllerControllerSwitchEditPart.VISUAL_ID:
-			return getGEFWrapper(new ControllerControllerSwitchReorientCommand(
-					req));
 		case HostHostSwitchEditPart.VISUAL_ID:
 			return getGEFWrapper(new HostHostSwitchReorientCommand(req));
 		case SwitchSwitchControllerEditPart.VISUAL_ID:
 			return getGEFWrapper(new SwitchSwitchControllerReorientCommand(req));
+		case SwitchSwitchEditPart.VISUAL_ID:
+			return getGEFWrapper(new SwitchSwitchReorientCommand(req));
+		case ActionActionForwardToNodeEditPart.VISUAL_ID:
+			return getGEFWrapper(new ActionActionForwardToNodeReorientCommand(
+					req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

@@ -3,9 +3,14 @@
  */
 package mdn.diagram.edit.policies;
 
+import mdn.diagram.edit.commands.ConditionCreateCommand;
 import mdn.diagram.edit.commands.ControllerCreateCommand;
 import mdn.diagram.edit.commands.HostCreateCommand;
+import mdn.diagram.edit.commands.PacketHeaderCreateCommand;
+import mdn.diagram.edit.commands.PolicyCreateCommand;
 import mdn.diagram.edit.commands.SwitchCreateCommand;
+import mdn.diagram.edit.commands.TimeCreateCommand;
+import mdn.diagram.edit.commands.TrafficCreateCommand;
 import mdn.diagram.providers.MdnElementTypes;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -39,6 +44,21 @@ public class SdnItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy {
 		}
 		if (MdnElementTypes.Switch_2003 == req.getElementType()) {
 			return getGEFWrapper(new SwitchCreateCommand(req));
+		}
+		if (MdnElementTypes.Condition_2010 == req.getElementType()) {
+			return getGEFWrapper(new ConditionCreateCommand(req));
+		}
+		if (MdnElementTypes.Traffic_2007 == req.getElementType()) {
+			return getGEFWrapper(new TrafficCreateCommand(req));
+		}
+		if (MdnElementTypes.Time_2008 == req.getElementType()) {
+			return getGEFWrapper(new TimeCreateCommand(req));
+		}
+		if (MdnElementTypes.PacketHeader_2009 == req.getElementType()) {
+			return getGEFWrapper(new PacketHeaderCreateCommand(req));
+		}
+		if (MdnElementTypes.Policy_2004 == req.getElementType()) {
+			return getGEFWrapper(new PolicyCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

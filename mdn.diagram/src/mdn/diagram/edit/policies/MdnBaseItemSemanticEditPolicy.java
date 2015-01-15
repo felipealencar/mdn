@@ -5,8 +5,13 @@ package mdn.diagram.edit.policies;
 
 import java.util.Iterator;
 
+import mdn.Action;
+import mdn.Condition;
 import mdn.Controller;
 import mdn.Host;
+import mdn.NetworkNode;
+import mdn.PacketHeader;
+import mdn.Policy;
 import mdn.Switch;
 import mdn.diagram.part.MdnDiagramEditorPlugin;
 import mdn.diagram.part.MdnVisualIDRegistry;
@@ -328,20 +333,6 @@ public class MdnBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateControllerControllerSwitch_4003(
-				Controller source, Switch target) {
-			if (source != null) {
-				if (source.getControllerSwitch().contains(target)) {
-					return false;
-				}
-			}
-
-			return canExistControllerControllerSwitch_4003(source, target);
-		}
-
-		/**
-		 * @generated
-		 */
 		public boolean canCreateHostHostSwitch_4004(Host source, Switch target) {
 			if (source != null) {
 				if (source.getHostSwitch() != null) {
@@ -350,6 +341,20 @@ public class MdnBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			}
 
 			return canExistHostHostSwitch_4004(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateHostSourceHostPolicy_4007(Host source,
+				Policy target) {
+			if (source != null) {
+				if (source.getSourceHostPolicy() != null) {
+					return false;
+				}
+			}
+
+			return canExistHostSourceHostPolicy_4007(source, target);
 		}
 
 		/**
@@ -369,9 +374,84 @@ public class MdnBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistControllerControllerSwitch_4003(
-				Controller source, Switch target) {
-			return true;
+		public boolean canCreateSwitchSwitch_4008(Switch source, Switch target) {
+			if (source != null) {
+				if (source.getSwitch().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistSwitchSwitch_4008(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreatePolicyTargetHostPolicy_4009(Policy source,
+				Host target) {
+			if (source != null) {
+				if (source.getTargetHostPolicy() != null) {
+					return false;
+				}
+			}
+
+			return canExistPolicyTargetHostPolicy_4009(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreatePolicyPolicyCondition_4016(Policy source,
+				Condition target) {
+			if (source != null) {
+				if (source.getPolicyCondition() != null) {
+					return false;
+				}
+			}
+
+			return canExistPolicyPolicyCondition_4016(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreatePolicyPolicyAction_4015(Policy source,
+				Action target) {
+			if (source != null) {
+				if (source.getPolicyAction() != null) {
+					return false;
+				}
+			}
+
+			return canExistPolicyPolicyAction_4015(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateActionActionPacketHeader_4012(Action source,
+				PacketHeader target) {
+			if (source != null) {
+				if (source.getActionPacketHeader() != null) {
+					return false;
+				}
+			}
+
+			return canExistActionActionPacketHeader_4012(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateActionActionForwardToNode_4013(Action source,
+				NetworkNode target) {
+			if (source != null) {
+				if (source.getActionForwardToNode() != null) {
+					return false;
+				}
+			}
+
+			return canExistActionActionForwardToNode_4013(source, target);
 		}
 
 		/**
@@ -384,8 +464,63 @@ public class MdnBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public boolean canExistHostSourceHostPolicy_4007(Host source,
+				Policy target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistSwitchSwitchController_4006(Switch source,
 				Controller target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistSwitchSwitch_4008(Switch source, Switch target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistPolicyTargetHostPolicy_4009(Policy source,
+				Host target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistPolicyPolicyCondition_4016(Policy source,
+				Condition target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistPolicyPolicyAction_4015(Policy source,
+				Action target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistActionActionPacketHeader_4012(Action source,
+				PacketHeader target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistActionActionForwardToNode_4013(Action source,
+				NetworkNode target) {
 			return true;
 		}
 	}

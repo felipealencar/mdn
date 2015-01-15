@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link mdn.impl.SwitchImpl#getPorts <em>Ports</em>}</li>
  *   <li>{@link mdn.impl.SwitchImpl#getSwitchController <em>Switch Controller</em>}</li>
+ *   <li>{@link mdn.impl.SwitchImpl#getSwitch <em>Switch</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,6 +64,16 @@ public class SwitchImpl extends NetworkNodeImpl implements Switch
    * @ordered
    */
   protected EList<Controller> switchController;
+
+  /**
+   * The cached value of the '{@link #getSwitch() <em>Switch</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSwitch()
+   * @generated
+   * @ordered
+   */
+  protected EList<Switch> switch_;
 
   /**
    * <!-- begin-user-doc -->
@@ -127,6 +138,20 @@ public class SwitchImpl extends NetworkNodeImpl implements Switch
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Switch> getSwitch()
+  {
+    if (switch_ == null)
+    {
+      switch_ = new EObjectResolvingEList<Switch>(Switch.class, this, MdnPackage.SWITCH__SWITCH);
+    }
+    return switch_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -136,6 +161,8 @@ public class SwitchImpl extends NetworkNodeImpl implements Switch
         return getPorts();
       case MdnPackage.SWITCH__SWITCH_CONTROLLER:
         return getSwitchController();
+      case MdnPackage.SWITCH__SWITCH:
+        return getSwitch();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -158,6 +185,10 @@ public class SwitchImpl extends NetworkNodeImpl implements Switch
         getSwitchController().clear();
         getSwitchController().addAll((Collection<? extends Controller>)newValue);
         return;
+      case MdnPackage.SWITCH__SWITCH:
+        getSwitch().clear();
+        getSwitch().addAll((Collection<? extends Switch>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -178,6 +209,9 @@ public class SwitchImpl extends NetworkNodeImpl implements Switch
       case MdnPackage.SWITCH__SWITCH_CONTROLLER:
         getSwitchController().clear();
         return;
+      case MdnPackage.SWITCH__SWITCH:
+        getSwitch().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -196,6 +230,8 @@ public class SwitchImpl extends NetworkNodeImpl implements Switch
         return ports != PORTS_EDEFAULT;
       case MdnPackage.SWITCH__SWITCH_CONTROLLER:
         return switchController != null && !switchController.isEmpty();
+      case MdnPackage.SWITCH__SWITCH:
+        return switch_ != null && !switch_.isEmpty();
     }
     return super.eIsSet(featureID);
   }

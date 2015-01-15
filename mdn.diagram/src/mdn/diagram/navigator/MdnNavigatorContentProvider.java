@@ -10,13 +10,24 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import mdn.diagram.edit.parts.ControllerControllerSwitchEditPart;
+import mdn.diagram.edit.parts.ActionActionForwardToNodeEditPart;
+import mdn.diagram.edit.parts.ActionActionPacketHeaderEditPart;
+import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
 import mdn.diagram.edit.parts.HostEditPart;
 import mdn.diagram.edit.parts.HostHostSwitchEditPart;
+import mdn.diagram.edit.parts.HostSourceHostPolicyEditPart;
+import mdn.diagram.edit.parts.PacketHeaderEditPart;
+import mdn.diagram.edit.parts.PolicyEditPart;
+import mdn.diagram.edit.parts.PolicyPolicyActionEditPart;
+import mdn.diagram.edit.parts.PolicyPolicyConditionEditPart;
+import mdn.diagram.edit.parts.PolicyTargetHostPolicyEditPart;
 import mdn.diagram.edit.parts.SdnEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
 import mdn.diagram.edit.parts.SwitchSwitchControllerEditPart;
+import mdn.diagram.edit.parts.SwitchSwitchEditPart;
+import mdn.diagram.edit.parts.TimeEditPart;
+import mdn.diagram.edit.parts.TrafficEditPart;
 import mdn.diagram.part.MdnVisualIDRegistry;
 import mdn.diagram.part.Messages;
 
@@ -240,149 +251,17 @@ public class MdnNavigatorContentProvider implements ICommonContentProvider {
 	private Object[] getViewChildren(View view, Object parentElement) {
 		switch (MdnVisualIDRegistry.getVisualID(view)) {
 
-		case HostEditPart.VISUAL_ID: {
-			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			MdnNavigatorGroup outgoinglinks = new MdnNavigatorGroup(
-					Messages.NavigatorGroupName_Host_2002_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					MdnVisualIDRegistry
-							.getType(HostHostSwitchEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case SwitchEditPart.VISUAL_ID: {
-			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			MdnNavigatorGroup incominglinks = new MdnNavigatorGroup(
-					Messages.NavigatorGroupName_Switch_2003_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			MdnNavigatorGroup outgoinglinks = new MdnNavigatorGroup(
-					Messages.NavigatorGroupName_Switch_2003_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					MdnVisualIDRegistry
-							.getType(ControllerControllerSwitchEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					MdnVisualIDRegistry
-							.getType(HostHostSwitchEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					MdnVisualIDRegistry
-							.getType(SwitchSwitchControllerEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case SdnEditPart.VISUAL_ID: {
-			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
-			result.addAll(getForeignShortcuts((Diagram) view, parentElement));
-			Diagram sv = (Diagram) view;
-			MdnNavigatorGroup links = new MdnNavigatorGroup(
-					Messages.NavigatorGroupName_Sdn_1000_links,
-					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					MdnVisualIDRegistry.getType(ControllerEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					MdnVisualIDRegistry.getType(HostEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					MdnVisualIDRegistry.getType(SwitchEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					MdnVisualIDRegistry
-							.getType(ControllerControllerSwitchEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					MdnVisualIDRegistry
-							.getType(HostHostSwitchEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					MdnVisualIDRegistry
-							.getType(SwitchSwitchControllerEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			if (!links.isEmpty()) {
-				result.add(links);
-			}
-			return result.toArray();
-		}
-
-		case ControllerEditPart.VISUAL_ID: {
-			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			MdnNavigatorGroup outgoinglinks = new MdnNavigatorGroup(
-					Messages.NavigatorGroupName_Controller_2001_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			MdnNavigatorGroup incominglinks = new MdnNavigatorGroup(
-					Messages.NavigatorGroupName_Controller_2001_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					MdnVisualIDRegistry
-							.getType(ControllerControllerSwitchEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					MdnVisualIDRegistry
-							.getType(SwitchSwitchControllerEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			return result.toArray();
-		}
-
-		case ControllerControllerSwitchEditPart.VISUAL_ID: {
+		case PolicyPolicyActionEditPart.VISUAL_ID: {
 			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			MdnNavigatorGroup target = new MdnNavigatorGroup(
-					Messages.NavigatorGroupName_ControllerControllerSwitch_4003_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			MdnNavigatorGroup source = new MdnNavigatorGroup(
-					Messages.NavigatorGroupName_ControllerControllerSwitch_4003_source,
+					Messages.NavigatorGroupName_PolicyPolicyAction_4015_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					MdnVisualIDRegistry.getType(SwitchEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					MdnVisualIDRegistry.getType(ControllerEditPart.VISUAL_ID));
+					MdnVisualIDRegistry.getType(PolicyEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source,
 					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
 			if (!source.isEmpty()) {
 				result.add(source);
 			}
@@ -416,6 +295,144 @@ public class MdnNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
+		case ActionActionPacketHeaderEditPart.VISUAL_ID: {
+			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			MdnNavigatorGroup target = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_ActionActionPacketHeader_4012_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(PacketHeaderEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			return result.toArray();
+		}
+
+		case ControllerEditPart.VISUAL_ID: {
+			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			MdnNavigatorGroup incominglinks = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_Controller_2001_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(SwitchSwitchControllerEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(ActionActionForwardToNodeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case HostSourceHostPolicyEditPart.VISUAL_ID: {
+			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			MdnNavigatorGroup target = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_HostSourceHostPolicy_4007_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			MdnNavigatorGroup source = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_HostSourceHostPolicy_4007_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(PolicyEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(HostEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case SwitchSwitchEditPart.VISUAL_ID: {
+			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			MdnNavigatorGroup target = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_SwitchSwitch_4008_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			MdnNavigatorGroup source = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_SwitchSwitch_4008_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(SwitchEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(SwitchEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case SwitchEditPart.VISUAL_ID: {
+			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			MdnNavigatorGroup incominglinks = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_Switch_2003_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			MdnNavigatorGroup outgoinglinks = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_Switch_2003_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(HostHostSwitchEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(SwitchSwitchControllerEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(SwitchSwitchEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(SwitchSwitchEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(ActionActionForwardToNodeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
 		case HostHostSwitchEditPart.VISUAL_ID: {
 			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
@@ -439,6 +456,284 @@ public class MdnNavigatorContentProvider implements ICommonContentProvider {
 			}
 			if (!source.isEmpty()) {
 				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case SdnEditPart.VISUAL_ID: {
+			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
+			result.addAll(getForeignShortcuts((Diagram) view, parentElement));
+			Diagram sv = (Diagram) view;
+			MdnNavigatorGroup links = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_Sdn_1000_links,
+					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(ControllerEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(HostEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(SwitchEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(ConditionEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(TrafficEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(TimeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(PacketHeaderEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(PolicyEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(HostHostSwitchEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(HostSourceHostPolicyEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(SwitchSwitchControllerEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(SwitchSwitchEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(PolicyTargetHostPolicyEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(PolicyPolicyConditionEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(PolicyPolicyActionEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(ActionActionPacketHeaderEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(ActionActionForwardToNodeEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			if (!links.isEmpty()) {
+				result.add(links);
+			}
+			return result.toArray();
+		}
+
+		case PolicyPolicyConditionEditPart.VISUAL_ID: {
+			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			MdnNavigatorGroup target = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_PolicyPolicyCondition_4016_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			MdnNavigatorGroup source = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_PolicyPolicyCondition_4016_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(ConditionEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(PolicyEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case HostEditPart.VISUAL_ID: {
+			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			MdnNavigatorGroup outgoinglinks = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_Host_2002_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			MdnNavigatorGroup incominglinks = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_Host_2002_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(HostHostSwitchEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(HostSourceHostPolicyEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(PolicyTargetHostPolicyEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(ActionActionForwardToNodeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case PacketHeaderEditPart.VISUAL_ID: {
+			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			MdnNavigatorGroup incominglinks = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_PacketHeader_2009_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(ActionActionPacketHeaderEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case ConditionEditPart.VISUAL_ID: {
+			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			MdnNavigatorGroup incominglinks = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_Condition_2010_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(PolicyPolicyConditionEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case PolicyTargetHostPolicyEditPart.VISUAL_ID: {
+			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			MdnNavigatorGroup target = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_PolicyTargetHostPolicy_4009_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			MdnNavigatorGroup source = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_PolicyTargetHostPolicy_4009_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(HostEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(PolicyEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case PolicyEditPart.VISUAL_ID: {
+			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			MdnNavigatorGroup incominglinks = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_Policy_2004_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			MdnNavigatorGroup outgoinglinks = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_Policy_2004_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(HostSourceHostPolicyEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(PolicyTargetHostPolicyEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(PolicyPolicyConditionEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					MdnVisualIDRegistry
+							.getType(PolicyPolicyActionEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case ActionActionForwardToNodeEditPart.VISUAL_ID: {
+			LinkedList<MdnAbstractNavigatorItem> result = new LinkedList<MdnAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			MdnNavigatorGroup target = new MdnNavigatorGroup(
+					Messages.NavigatorGroupName_ActionActionForwardToNode_4013_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(ControllerEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(HostEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					MdnVisualIDRegistry.getType(SwitchEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
 			}
 			return result.toArray();
 		}

@@ -69,7 +69,12 @@ public class MdnFactoryImpl extends EFactoryImpl implements MdnFactory
       case MdnPackage.CONTROLLER: return createController();
       case MdnPackage.HOST: return createHost();
       case MdnPackage.SWITCH: return createSwitch();
-      case MdnPackage.NETWORK_LINK: return createNetworkLink();
+      case MdnPackage.POLICY: return createPolicy();
+      case MdnPackage.ACTION: return createAction();
+      case MdnPackage.CONDITION: return createCondition();
+      case MdnPackage.TRAFFIC: return createTraffic();
+      case MdnPackage.TIME: return createTime();
+      case MdnPackage.PACKET_HEADER: return createPacketHeader();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -85,8 +90,14 @@ public class MdnFactoryImpl extends EFactoryImpl implements MdnFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case MdnPackage.PACKET_HEADER:
-        return createPacketHeaderFromString(eDataType, initialValue);
+      case MdnPackage.PACKET_HEADERS:
+        return createPacketHeadersFromString(eDataType, initialValue);
+      case MdnPackage.ACTIONS:
+        return createActionsFromString(eDataType, initialValue);
+      case MdnPackage.CONDITIONS:
+        return createConditionsFromString(eDataType, initialValue);
+      case MdnPackage.RELATIONAL_OPERATORS:
+        return createRelationalOperatorsFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -102,8 +113,14 @@ public class MdnFactoryImpl extends EFactoryImpl implements MdnFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case MdnPackage.PACKET_HEADER:
-        return convertPacketHeaderToString(eDataType, instanceValue);
+      case MdnPackage.PACKET_HEADERS:
+        return convertPacketHeadersToString(eDataType, instanceValue);
+      case MdnPackage.ACTIONS:
+        return convertActionsToString(eDataType, instanceValue);
+      case MdnPackage.CONDITIONS:
+        return convertConditionsToString(eDataType, instanceValue);
+      case MdnPackage.RELATIONAL_OPERATORS:
+        return convertRelationalOperatorsToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -158,10 +175,10 @@ public class MdnFactoryImpl extends EFactoryImpl implements MdnFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NetworkLink createNetworkLink()
+  public Policy createPolicy()
   {
-    NetworkLinkImpl networkLink = new NetworkLinkImpl();
-    return networkLink;
+    PolicyImpl policy = new PolicyImpl();
+    return policy;
   }
 
   /**
@@ -169,9 +186,64 @@ public class MdnFactoryImpl extends EFactoryImpl implements MdnFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public PacketHeader createPacketHeaderFromString(EDataType eDataType, String initialValue)
+  public Action createAction()
   {
-    PacketHeader result = PacketHeader.get(initialValue);
+    ActionImpl action = new ActionImpl();
+    return action;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Condition createCondition()
+  {
+    ConditionImpl condition = new ConditionImpl();
+    return condition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Traffic createTraffic()
+  {
+    TrafficImpl traffic = new TrafficImpl();
+    return traffic;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Time createTime()
+  {
+    TimeImpl time = new TimeImpl();
+    return time;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PacketHeader createPacketHeader()
+  {
+    PacketHeaderImpl packetHeader = new PacketHeaderImpl();
+    return packetHeader;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PacketHeaders createPacketHeadersFromString(EDataType eDataType, String initialValue)
+  {
+    PacketHeaders result = PacketHeaders.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -181,7 +253,73 @@ public class MdnFactoryImpl extends EFactoryImpl implements MdnFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertPacketHeaderToString(EDataType eDataType, Object instanceValue)
+  public String convertPacketHeadersToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Actions createActionsFromString(EDataType eDataType, String initialValue)
+  {
+    Actions result = Actions.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertActionsToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Conditions createConditionsFromString(EDataType eDataType, String initialValue)
+  {
+    Conditions result = Conditions.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertConditionsToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RelationalOperators createRelationalOperatorsFromString(EDataType eDataType, String initialValue)
+  {
+    RelationalOperators result = RelationalOperators.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertRelationalOperatorsToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

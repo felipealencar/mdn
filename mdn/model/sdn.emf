@@ -6,6 +6,7 @@ package mdn;
 class Sdn {
   val NetworkNode[*] nodes;
   val Policy[*] policies;
+  val PolicyObject[*] policyObjects;
 }
 
 @gmf.node(figure="figures.ControllerFigure", label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/controller.gif", label.placement="external")
@@ -13,33 +14,40 @@ class Controller extends NetworkNode {
   attr String type;
 }
 
-enum PacketHeader {
-  ETH = 0;
-  ARP = 0;
-  IPv4 = 0;
-  ICMP = 0;
-  TCP = 0;
-  UDP = 0;
-  DHCP = 0;
-  DNS = 0;
-  LLDP = 0;
-  VLAN = 0;
+enum PacketHeaders {
+  IN_PORT = 0;
+  MAC_SRC = 1;
+  MAC_DST = 2;
+  VLAN_ID = 3;
+  VLAN_PRIO = 4;
+  ETH_TYPE = 5;
+  IP_SRC = 6;
+  IP_DST = 7;
+  IP_TOS = 8;
+  IP_PORT = 9;
+  L4_SPORT = 10;
+  L4_DPORT = 11;
 }
 
 @gmf.node(label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/host.gif", figure="figures.HostFigure", label.placement="external")
 class Host extends NetworkNode {
 
-  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
+  @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0")
   ref Switch hostSwitch;
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
+  ref Policy sourceHostPolicy;
 }
 
 @gmf.node(label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/switch.gif", figure="figures.SwitchFigure", label.placement="external")
 class Switch extends NetworkNode {
   attr int ports;
 
-  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
+  @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0")
   ref Controller[*] switchController;
-  ref Switch switch;
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0")
+  ref Switch[*] switch;
 }
 
 abstract class NetworkNode {
@@ -48,6 +56,78 @@ abstract class NetworkNode {
   attr String ip;
 }
 
+enum Actions {
+  FORWARD = 0;
+  DROP = 1;
+  MODIFY = 2;
+}
+
+@gmf.node(figure="figures.PolicyFigure", label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/policy.gif", label.placement="external")
 class Policy {
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
+  ref Host targetHostPolicy;
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
+  ref Action policyAction;
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dot", color="0,0,0")
+  ref Condition policyCondition;
+  attr String name;
+}
+
+@gmf.node(figure="figures.ActionFigure", label="type", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/action.gif", label.placement="external")
+class Action {
+  attr Actions type;
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
+  ref PacketHeader actionPacketHeader;
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
+  ref NetworkNode actionForwardToNode;
+}
+
+@gmf.node(figure="figures.ConditionFigure", label="type", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/condition.gif", label.placement="external")
+class Condition extends PolicyObject {
+  attr Conditions type;
+}
+
+enum Conditions {
+  WHEN = 0;
+  WHERE = 1;
+}
+
+enum RelationalOperators {
+  EQUAL_TO = 0;
+  NOT_EQUAL_TO = 1;
+  GREATER_THAN = 2;
+  LESS_THAN = 3;
+}
+
+@gmf.node(figure="figures.RelationalOperatorFigure", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/relationaloperator.gif", label.placement="external", label="operator")
+class RelationalOperator extends PolicyObject {
+  attr RelationalOperators operator = "";
+  attr String string;
+}
+
+@gmf.node(figure="figures.TrafficFigure", label="value,unit", label.pattern="{0}:{1}", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/traffic.gif", label.placement="external")
+class Traffic extends PolicyObject {
+  attr String unit = "MB";
+  attr int value;
+}
+
+@gmf.node(figure="figures.TimeFigure", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/time.gif", label.placement="external", label="hour,date")
+class Time extends PolicyObject {
+  attr String hour = "00:00:00";
+  attr EDate date;
+}
+
+@gmf.node(figure="figures.PacketHeaderFigure", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/packetheader.gif", label.placement="external", label="header,value")
+class PacketHeader extends PolicyObject {
+  attr PacketHeaders header = "";
+  attr String value;
+}
+
+abstract class PolicyObject {
 }
 
