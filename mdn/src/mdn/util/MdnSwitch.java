@@ -121,6 +121,7 @@ public class MdnSwitch<T> extends Switch<T>
       {
         Action action = (Action)theEObject;
         T result = caseAction(action);
+        if (result == null) result = casePolicyObject(action);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="gmf.node figure='figures.ActionFigure' label='type' label.icon='false' tool.small.bundle='mdn.edit' tool.small.path='/icons/full/obj16/action.gif' label.placement='external'"
  * @generated
  */
-public interface Action extends EObject
+public interface Action extends PolicyObject
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' attribute.

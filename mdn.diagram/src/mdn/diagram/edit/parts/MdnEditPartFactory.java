@@ -46,6 +46,12 @@ public class MdnEditPartFactory implements EditPartFactory {
 			case SwitchNameEditPart.VISUAL_ID:
 				return new SwitchNameEditPart(view);
 
+			case ActionEditPart.VISUAL_ID:
+				return new ActionEditPart(view);
+
+			case ActionTypeEditPart.VISUAL_ID:
+				return new ActionTypeEditPart(view);
+
 			case ConditionEditPart.VISUAL_ID:
 				return new ConditionEditPart(view);
 

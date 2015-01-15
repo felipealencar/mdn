@@ -15,16 +15,8 @@ import mdn.MdnFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActionTest extends TestCase
+public class ActionTest extends PolicyObjectTest
 {
-
-  /**
-   * The fixture for this Action test case.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected Action fixture = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -48,25 +40,15 @@ public class ActionTest extends TestCase
   }
 
   /**
-   * Sets the fixture for this Action test case.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void setFixture(Action fixture)
-  {
-    this.fixture = fixture;
-  }
-
-  /**
    * Returns the fixture for this Action test case.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   protected Action getFixture()
   {
-    return fixture;
+    return (Action)fixture;
   }
 
   /**

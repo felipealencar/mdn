@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 import mdn.diagram.edit.parts.ActionActionForwardToNodeEditPart;
 import mdn.diagram.edit.parts.ActionActionPacketHeaderEditPart;
+import mdn.diagram.edit.parts.ActionEditPart;
+import mdn.diagram.edit.parts.ActionTypeEditPart;
 import mdn.diagram.edit.parts.ConditionConditionEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
@@ -176,6 +178,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 				case ControllerEditPart.VISUAL_ID:
 				case HostEditPart.VISUAL_ID:
 				case SwitchEditPart.VISUAL_ID:
+				case ActionEditPart.VISUAL_ID:
 				case ConditionEditPart.VISUAL_ID:
 				case TrafficEditPart.VISUAL_ID:
 				case TimeEditPart.VISUAL_ID:
@@ -195,6 +198,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		return ControllerEditPart.VISUAL_ID == visualID
 				|| HostEditPart.VISUAL_ID == visualID
 				|| SwitchEditPart.VISUAL_ID == visualID
+				|| ActionEditPart.VISUAL_ID == visualID
 				|| ConditionEditPart.VISUAL_ID == visualID
 				|| TrafficEditPart.VISUAL_ID == visualID
 				|| TimeEditPart.VISUAL_ID == visualID
@@ -264,6 +268,9 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 					persisted, preferencesHint);
 		case SwitchEditPart.VISUAL_ID:
 			return createSwitch_2003(domainElement, containerView, index,
+					persisted, preferencesHint);
+		case ActionEditPart.VISUAL_ID:
+			return createAction_2011(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case ConditionEditPart.VISUAL_ID:
 			return createCondition_2010(domainElement, containerView, index,
@@ -471,6 +478,55 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		Location location5003 = (Location) label5003.getLayoutConstraint();
 		location5003.setX(0);
 		location5003.setY(5);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createAction_2011(EObject domainElement, View containerView,
+			int index, boolean persisted, PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(MdnVisualIDRegistry.getType(ActionEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5011 = createLabel(node,
+				MdnVisualIDRegistry.getType(ActionTypeEditPart.VISUAL_ID));
+		label5011.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5011 = (Location) label5011.getLayoutConstraint();
+		location5011.setX(0);
+		location5011.setY(5);
 		return node;
 	}
 

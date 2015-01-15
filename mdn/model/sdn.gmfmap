@@ -71,6 +71,26 @@
         href="sdn.ecore#//Sdn/policyObjects"/>
     <ownedChild>
       <domainMetaElement
+          href="sdn.ecore#//Action"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="sdn.gmfgraph#ActionLabel"/>
+        <features
+            href="sdn.ecore#//Action/type"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="sdn.gmftool#//@palette/@tools.0/@tools.0"/>
+      <diagramNode
+          href="sdn.gmfgraph#Action"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="sdn.ecore#//Sdn/policyObjects"/>
+    <ownedChild>
+      <domainMetaElement
           href="sdn.ecore#//Condition"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">

@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Set;
 
 import mdn.MdnPackage;
+import mdn.diagram.edit.parts.ActionEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
 import mdn.diagram.edit.parts.HostEditPart;
@@ -121,6 +122,7 @@ public class SdnCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ControllerEditPart.VISUAL_ID:
 		case HostEditPart.VISUAL_ID:
 		case SwitchEditPart.VISUAL_ID:
+		case ActionEditPart.VISUAL_ID:
 		case ConditionEditPart.VISUAL_ID:
 		case TrafficEditPart.VISUAL_ID:
 		case TimeEditPart.VISUAL_ID:
@@ -315,6 +317,14 @@ public class SdnCanonicalEditPolicy extends CanonicalEditPolicy {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(MdnDiagramUpdater
 						.getSwitch_2003ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case ActionEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(MdnDiagramUpdater
+						.getAction_2011ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

@@ -4,6 +4,7 @@
 package mdn.diagram.providers;
 
 import mdn.MdnPackage;
+import mdn.diagram.edit.parts.ActionTypeEditPart;
 import mdn.diagram.edit.parts.ConditionConditionEditPart;
 import mdn.diagram.edit.parts.ControllerNameEditPart;
 import mdn.diagram.edit.parts.HostNameEditPart;
@@ -87,6 +88,23 @@ public class MdnParserProvider extends AbstractProvider implements
 			switchName_5003Parser = parser;
 		}
 		return switchName_5003Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser actionType_5011Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActionType_5011Parser() {
+		if (actionType_5011Parser == null) {
+			EAttribute editableFeature = MdnPackage.eINSTANCE.getAction_Type();
+			EnumParser parser = new EnumParser(editableFeature);
+			actionType_5011Parser = parser;
+		}
+		return actionType_5011Parser;
 	}
 
 	/**
@@ -205,6 +223,9 @@ public class MdnParserProvider extends AbstractProvider implements
 			return getHostName_5002Parser();
 		case SwitchNameEditPart.VISUAL_ID:
 			return getSwitchName_5003Parser();
+
+		case ActionTypeEditPart.VISUAL_ID:
+			return getActionType_5011Parser();
 
 		case ConditionConditionEditPart.VISUAL_ID:
 			return getConditionCondition_5010Parser();

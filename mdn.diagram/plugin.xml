@@ -258,7 +258,7 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Mdn"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2010,2007,2008,2009,2004"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2011,2010,2007,2008,2009,2004"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4004,4007,4006,4008,4009,4016,4015,4012,4013"/>
       </viewProvider>
    </extension>
@@ -271,13 +271,13 @@
             <method name="getType()" value="Mdn"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002,2003,2010,2007,2008,2009,2004"/>
+            <method name="getType()" value="2001,2002,2003,2011,2010,2007,2008,2009,2004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4004,4007,4006,4008,4009,4016,4015,4012,4013"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5002,5003,5010,5007,5008,5009,5004"/>
+            <method name="getType()" value="5001,5002,5003,5011,5010,5007,5008,5009,5004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value=""/>
@@ -294,12 +294,13 @@
          <object class="mdn.diagram.edit.parts.ControllerEditPart" id="Controller_2001"/>
          <object class="mdn.diagram.edit.parts.HostEditPart" id="Host_2002"/>
          <object class="mdn.diagram.edit.parts.SwitchEditPart" id="Switch_2003"/>
+         <object class="mdn.diagram.edit.parts.ActionEditPart" id="Action_2011"/>
          <object class="mdn.diagram.edit.parts.ConditionEditPart" id="Condition_2010"/>
          <object class="mdn.diagram.edit.parts.TrafficEditPart" id="Traffic_2007"/>
          <object class="mdn.diagram.edit.parts.TimeEditPart" id="Time_2008"/>
          <object class="mdn.diagram.edit.parts.PacketHeaderEditPart" id="PacketHeader_2009"/>
          <object class="mdn.diagram.edit.parts.PolicyEditPart" id="Policy_2004"/>
-         <context elements="Sdn_1000,Controller_2001,Host_2002,Switch_2003,Condition_2010,Traffic_2007,Time_2008,PacketHeader_2009,Policy_2004,"/>
+         <context elements="Sdn_1000,Controller_2001,Host_2002,Switch_2003,Action_2011,Condition_2010,Traffic_2007,Time_2008,PacketHeader_2009,Policy_2004,"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -322,7 +323,7 @@
       <decoratorProvider class="mdn.diagram.providers.MdnShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
-            <method name="getType()" value="2001,2002,2003,2010,2007,2008,2009,2004"/>
+            <method name="getType()" value="2001,2002,2003,2011,2010,2007,2008,2009,2004"/>
          </object>
          <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
@@ -368,6 +369,16 @@
                eclass="Switch"
                edithelper="mdn.diagram.edit.helpers.SwitchEditHelper">
             <param name="semanticHint" value="2003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="mdn">
+         <metamodelType
+               id="mdn.diagram.Action_2011"
+               name="%metatype.name.Action_2011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Action"
+               edithelper="mdn.diagram.edit.helpers.ActionEditHelper">
+            <param name="semanticHint" value="2011"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="mdn">
@@ -517,6 +528,7 @@
          <elementType ref="mdn.diagram.Controller_2001"/>
          <elementType ref="mdn.diagram.Host_2002"/>
          <elementType ref="mdn.diagram.Switch_2003"/>
+         <elementType ref="mdn.diagram.Action_2011"/>
          <elementType ref="mdn.diagram.Condition_2010"/>
          <elementType ref="mdn.diagram.Traffic_2007"/>
          <elementType ref="mdn.diagram.Time_2008"/>

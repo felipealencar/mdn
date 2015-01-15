@@ -3,6 +3,7 @@
  */
 package mdn.diagram.edit.policies;
 
+import mdn.diagram.edit.commands.ActionCreateCommand;
 import mdn.diagram.edit.commands.ConditionCreateCommand;
 import mdn.diagram.edit.commands.ControllerCreateCommand;
 import mdn.diagram.edit.commands.HostCreateCommand;
@@ -44,6 +45,9 @@ public class SdnItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy {
 		}
 		if (MdnElementTypes.Switch_2003 == req.getElementType()) {
 			return getGEFWrapper(new SwitchCreateCommand(req));
+		}
+		if (MdnElementTypes.Action_2011 == req.getElementType()) {
+			return getGEFWrapper(new ActionCreateCommand(req));
 		}
 		if (MdnElementTypes.Condition_2010 == req.getElementType()) {
 			return getGEFWrapper(new ConditionCreateCommand(req));

@@ -5,6 +5,8 @@ package mdn.diagram.navigator;
 
 import mdn.diagram.edit.parts.ActionActionForwardToNodeEditPart;
 import mdn.diagram.edit.parts.ActionActionPacketHeaderEditPart;
+import mdn.diagram.edit.parts.ActionEditPart;
+import mdn.diagram.edit.parts.ActionTypeEditPart;
 import mdn.diagram.edit.parts.ConditionConditionEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
@@ -123,57 +125,60 @@ public class MdnNavigatorLabelProvider extends LabelProvider implements
 	 */
 	public Image getImage(View view) {
 		switch (MdnVisualIDRegistry.getVisualID(view)) {
-		case PolicyPolicyActionEditPart.VISUAL_ID:
+		case PolicyEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?mdn?Policy?policyAction", MdnElementTypes.PolicyPolicyAction_4015); //$NON-NLS-1$
-		case TimeEditPart.VISUAL_ID:
+					"Navigator?TopLevelNode?mdn?Policy", MdnElementTypes.Policy_2004); //$NON-NLS-1$
+		case HostHostSwitchEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?mdn?Time", MdnElementTypes.Time_2008); //$NON-NLS-1$
+					"Navigator?Link?mdn?Host?hostSwitch", MdnElementTypes.HostHostSwitch_4004); //$NON-NLS-1$
 		case SwitchSwitchControllerEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?mdn?Switch?switchController", MdnElementTypes.SwitchSwitchController_4006); //$NON-NLS-1$
+		case PacketHeaderEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?mdn?PacketHeader", MdnElementTypes.PacketHeader_2009); //$NON-NLS-1$
 		case ActionActionPacketHeaderEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?mdn?Action?actionPacketHeader", MdnElementTypes.ActionActionPacketHeader_4012); //$NON-NLS-1$
 		case ControllerEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?mdn?Controller", MdnElementTypes.Controller_2001); //$NON-NLS-1$
-		case HostSourceHostPolicyEditPart.VISUAL_ID:
+		case TrafficEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?mdn?Host?sourceHostPolicy", MdnElementTypes.HostSourceHostPolicy_4007); //$NON-NLS-1$
+					"Navigator?TopLevelNode?mdn?Traffic", MdnElementTypes.Traffic_2007); //$NON-NLS-1$
+		case SdnEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Diagram?mdn?Sdn", MdnElementTypes.Sdn_1000); //$NON-NLS-1$
+		case ActionEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?mdn?Action", MdnElementTypes.Action_2011); //$NON-NLS-1$
+		case HostEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?mdn?Host", MdnElementTypes.Host_2002); //$NON-NLS-1$
+		case ConditionEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?mdn?Condition", MdnElementTypes.Condition_2010); //$NON-NLS-1$
 		case SwitchSwitchEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?mdn?Switch?switch", MdnElementTypes.SwitchSwitch_4008); //$NON-NLS-1$
 		case SwitchEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?mdn?Switch", MdnElementTypes.Switch_2003); //$NON-NLS-1$
-		case TrafficEditPart.VISUAL_ID:
+		case PolicyPolicyActionEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?mdn?Traffic", MdnElementTypes.Traffic_2007); //$NON-NLS-1$
-		case HostHostSwitchEditPart.VISUAL_ID:
+					"Navigator?Link?mdn?Policy?policyAction", MdnElementTypes.PolicyPolicyAction_4015); //$NON-NLS-1$
+		case TimeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?mdn?Host?hostSwitch", MdnElementTypes.HostHostSwitch_4004); //$NON-NLS-1$
-		case SdnEditPart.VISUAL_ID:
+					"Navigator?TopLevelNode?mdn?Time", MdnElementTypes.Time_2008); //$NON-NLS-1$
+		case HostSourceHostPolicyEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?mdn?Sdn", MdnElementTypes.Sdn_1000); //$NON-NLS-1$
+					"Navigator?Link?mdn?Host?sourceHostPolicy", MdnElementTypes.HostSourceHostPolicy_4007); //$NON-NLS-1$
 		case PolicyPolicyConditionEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?mdn?Policy?policyCondition", MdnElementTypes.PolicyPolicyCondition_4016); //$NON-NLS-1$
-		case HostEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?mdn?Host", MdnElementTypes.Host_2002); //$NON-NLS-1$
-		case PacketHeaderEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?mdn?PacketHeader", MdnElementTypes.PacketHeader_2009); //$NON-NLS-1$
-		case ConditionEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?mdn?Condition", MdnElementTypes.Condition_2010); //$NON-NLS-1$
 		case PolicyTargetHostPolicyEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?mdn?Policy?targetHostPolicy", MdnElementTypes.PolicyTargetHostPolicy_4009); //$NON-NLS-1$
-		case PolicyEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?mdn?Policy", MdnElementTypes.Policy_2004); //$NON-NLS-1$
 		case ActionActionForwardToNodeEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?mdn?Action?actionForwardToNode", MdnElementTypes.ActionActionForwardToNode_4013); //$NON-NLS-1$
@@ -237,40 +242,42 @@ public class MdnNavigatorLabelProvider extends LabelProvider implements
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (MdnVisualIDRegistry.getVisualID(view)) {
-		case PolicyPolicyActionEditPart.VISUAL_ID:
-			return getPolicyPolicyAction_4015Text(view);
-		case TimeEditPart.VISUAL_ID:
-			return getTime_2008Text(view);
+		case PolicyEditPart.VISUAL_ID:
+			return getPolicy_2004Text(view);
+		case HostHostSwitchEditPart.VISUAL_ID:
+			return getHostHostSwitch_4004Text(view);
 		case SwitchSwitchControllerEditPart.VISUAL_ID:
 			return getSwitchSwitchController_4006Text(view);
+		case PacketHeaderEditPart.VISUAL_ID:
+			return getPacketHeader_2009Text(view);
 		case ActionActionPacketHeaderEditPart.VISUAL_ID:
 			return getActionActionPacketHeader_4012Text(view);
 		case ControllerEditPart.VISUAL_ID:
 			return getController_2001Text(view);
-		case HostSourceHostPolicyEditPart.VISUAL_ID:
-			return getHostSourceHostPolicy_4007Text(view);
+		case TrafficEditPart.VISUAL_ID:
+			return getTraffic_2007Text(view);
+		case SdnEditPart.VISUAL_ID:
+			return getSdn_1000Text(view);
+		case ActionEditPart.VISUAL_ID:
+			return getAction_2011Text(view);
+		case HostEditPart.VISUAL_ID:
+			return getHost_2002Text(view);
+		case ConditionEditPart.VISUAL_ID:
+			return getCondition_2010Text(view);
 		case SwitchSwitchEditPart.VISUAL_ID:
 			return getSwitchSwitch_4008Text(view);
 		case SwitchEditPart.VISUAL_ID:
 			return getSwitch_2003Text(view);
-		case TrafficEditPart.VISUAL_ID:
-			return getTraffic_2007Text(view);
-		case HostHostSwitchEditPart.VISUAL_ID:
-			return getHostHostSwitch_4004Text(view);
-		case SdnEditPart.VISUAL_ID:
-			return getSdn_1000Text(view);
+		case PolicyPolicyActionEditPart.VISUAL_ID:
+			return getPolicyPolicyAction_4015Text(view);
+		case TimeEditPart.VISUAL_ID:
+			return getTime_2008Text(view);
+		case HostSourceHostPolicyEditPart.VISUAL_ID:
+			return getHostSourceHostPolicy_4007Text(view);
 		case PolicyPolicyConditionEditPart.VISUAL_ID:
 			return getPolicyPolicyCondition_4016Text(view);
-		case HostEditPart.VISUAL_ID:
-			return getHost_2002Text(view);
-		case PacketHeaderEditPart.VISUAL_ID:
-			return getPacketHeader_2009Text(view);
-		case ConditionEditPart.VISUAL_ID:
-			return getCondition_2010Text(view);
 		case PolicyTargetHostPolicyEditPart.VISUAL_ID:
 			return getPolicyTargetHostPolicy_4009Text(view);
-		case PolicyEditPart.VISUAL_ID:
-			return getPolicy_2004Text(view);
 		case ActionActionForwardToNodeEditPart.VISUAL_ID:
 			return getActionActionForwardToNode_4013Text(view);
 		}
@@ -301,6 +308,25 @@ public class MdnNavigatorLabelProvider extends LabelProvider implements
 	 */
 	private String getSdn_1000Text(View view) {
 		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAction_2011Text(View view) {
+		IParser parser = MdnParserProvider.getParser(
+				MdnElementTypes.Action_2011,
+				view.getElement() != null ? view.getElement() : view,
+				MdnVisualIDRegistry.getType(ActionTypeEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			MdnDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5011); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**

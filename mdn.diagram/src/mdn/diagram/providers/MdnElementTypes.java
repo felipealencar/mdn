@@ -11,6 +11,7 @@ import java.util.Set;
 import mdn.MdnPackage;
 import mdn.diagram.edit.parts.ActionActionForwardToNodeEditPart;
 import mdn.diagram.edit.parts.ActionActionPacketHeaderEditPart;
+import mdn.diagram.edit.parts.ActionEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
 import mdn.diagram.edit.parts.HostEditPart;
@@ -82,6 +83,11 @@ public class MdnElementTypes {
 	 * @generated
 	 */
 	public static final IElementType Switch_2003 = getElementType("mdn.diagram.Switch_2003"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Action_2011 = getElementType("mdn.diagram.Action_2011"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -258,6 +264,8 @@ public class MdnElementTypes {
 
 			elements.put(Switch_2003, MdnPackage.eINSTANCE.getSwitch());
 
+			elements.put(Action_2011, MdnPackage.eINSTANCE.getAction());
+
 			elements.put(Condition_2010, MdnPackage.eINSTANCE.getCondition());
 
 			elements.put(Traffic_2007, MdnPackage.eINSTANCE.getTraffic());
@@ -316,6 +324,7 @@ public class MdnElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Controller_2001);
 			KNOWN_ELEMENT_TYPES.add(Host_2002);
 			KNOWN_ELEMENT_TYPES.add(Switch_2003);
+			KNOWN_ELEMENT_TYPES.add(Action_2011);
 			KNOWN_ELEMENT_TYPES.add(Condition_2010);
 			KNOWN_ELEMENT_TYPES.add(Traffic_2007);
 			KNOWN_ELEMENT_TYPES.add(Time_2008);
@@ -347,6 +356,8 @@ public class MdnElementTypes {
 			return Host_2002;
 		case SwitchEditPart.VISUAL_ID:
 			return Switch_2003;
+		case ActionEditPart.VISUAL_ID:
+			return Action_2011;
 		case ConditionEditPart.VISUAL_ID:
 			return Condition_2010;
 		case TrafficEditPart.VISUAL_ID:

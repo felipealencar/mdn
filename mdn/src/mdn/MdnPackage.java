@@ -407,42 +407,6 @@ public interface MdnPackage extends EPackage
   int ACTION = 6;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION__TYPE = 0;
-
-  /**
-   * The feature id for the '<em><b>Action Packet Header</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION__ACTION_PACKET_HEADER = 1;
-
-  /**
-   * The feature id for the '<em><b>Action Forward To Node</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION__ACTION_FORWARD_TO_NODE = 2;
-
-  /**
-   * The number of structural features of the '<em>Action</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_FEATURE_COUNT = 3;
-
-  /**
    * The meta object id for the '{@link mdn.impl.PolicyObjectImpl <em>Policy Object</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -470,6 +434,42 @@ public interface MdnPackage extends EPackage
    * @ordered
    */
   int POLICY_OBJECT_FEATURE_COUNT = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION__TYPE = POLICY_OBJECT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Action Packet Header</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION__ACTION_PACKET_HEADER = POLICY_OBJECT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Action Forward To Node</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION__ACTION_FORWARD_TO_NODE = POLICY_OBJECT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Action</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_FEATURE_COUNT = POLICY_OBJECT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' attribute.

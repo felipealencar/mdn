@@ -7,6 +7,8 @@ import mdn.MdnPackage;
 import mdn.Sdn;
 import mdn.diagram.edit.parts.ActionActionForwardToNodeEditPart;
 import mdn.diagram.edit.parts.ActionActionPacketHeaderEditPart;
+import mdn.diagram.edit.parts.ActionEditPart;
+import mdn.diagram.edit.parts.ActionTypeEditPart;
 import mdn.diagram.edit.parts.ConditionConditionEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
@@ -171,6 +173,10 @@ public class MdnVisualIDRegistry {
 					domainElement.eClass())) {
 				return SwitchEditPart.VISUAL_ID;
 			}
+			if (MdnPackage.eINSTANCE.getAction().isSuperTypeOf(
+					domainElement.eClass())) {
+				return ActionEditPart.VISUAL_ID;
+			}
 			if (MdnPackage.eINSTANCE.getCondition().isSuperTypeOf(
 					domainElement.eClass())) {
 				return ConditionEditPart.VISUAL_ID;
@@ -228,6 +234,9 @@ public class MdnVisualIDRegistry {
 			if (SwitchEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (ConditionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -256,6 +265,11 @@ public class MdnVisualIDRegistry {
 			break;
 		case SwitchEditPart.VISUAL_ID:
 			if (SwitchNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActionEditPart.VISUAL_ID:
+			if (ActionTypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -388,6 +402,7 @@ public class MdnVisualIDRegistry {
 		case TimeEditPart.VISUAL_ID:
 		case PacketHeaderEditPart.VISUAL_ID:
 		case ConditionEditPart.VISUAL_ID:
+		case ActionEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

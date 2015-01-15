@@ -280,8 +280,9 @@ public class HostEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(MdnElementTypes.PolicyTargetHostPolicy_4009);
+		types.add(MdnElementTypes.ActionActionForwardToNode_4013);
 		return types;
 	}
 
@@ -292,6 +293,8 @@ public class HostEditPart extends AbstractBorderedShapeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == MdnElementTypes.PolicyTargetHostPolicy_4009) {
 			types.add(MdnElementTypes.Policy_2004);
+		} else if (relationshipType == MdnElementTypes.ActionActionForwardToNode_4013) {
+			types.add(MdnElementTypes.Action_2011);
 		}
 		return types;
 	}

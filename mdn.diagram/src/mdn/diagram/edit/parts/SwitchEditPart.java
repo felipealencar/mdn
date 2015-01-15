@@ -280,9 +280,10 @@ public class SwitchEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(MdnElementTypes.HostHostSwitch_4004);
 		types.add(MdnElementTypes.SwitchSwitch_4008);
+		types.add(MdnElementTypes.ActionActionForwardToNode_4013);
 		return types;
 	}
 
@@ -295,6 +296,8 @@ public class SwitchEditPart extends AbstractBorderedShapeEditPart {
 			types.add(MdnElementTypes.Host_2002);
 		} else if (relationshipType == MdnElementTypes.SwitchSwitch_4008) {
 			types.add(MdnElementTypes.Switch_2003);
+		} else if (relationshipType == MdnElementTypes.ActionActionForwardToNode_4013) {
+			types.add(MdnElementTypes.Action_2011);
 		}
 		return types;
 	}

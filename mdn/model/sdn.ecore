@@ -137,7 +137,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Action">
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//PolicyObject">
     <eAnnotations source="gmf.node">
       <details key="figure" value="figures.ActionFigure"/>
       <details key="label" value="type"/>
@@ -228,7 +228,7 @@
       <details key="tool.small.path" value="/icons/full/obj16/packetheader.gif"/>
       <details key="label.placement" value="external"/>
       <details key="label" value="operator,header,value"/>
-      <details key="label.pattern" value="{0}: [{1}]{2}"/>
+      <details key="label.pattern" value="{0}: [{1}] {2}"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//RelationalOperators"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" eType="#//PacketHeaders"

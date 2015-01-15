@@ -447,6 +447,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Action_2011_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Action_2011_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Host_2002_outgoinglinks;
 
 	/**
@@ -458,6 +468,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ActionActionPacketHeader_4012_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ActionActionPacketHeader_4012_source;
 
 	/**
 	 * @generated
@@ -512,6 +527,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_ActionActionForwardToNode_4013_source;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_HostHostSwitch_4004_target;
 
 	/**
@@ -553,6 +573,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Switch_2003_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PolicyPolicyAction_4015_target;
 
 	/**
 	 * @generated

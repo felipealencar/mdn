@@ -10,9 +10,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
+import mdn.diagram.edit.parts.ActionEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
 import mdn.diagram.edit.parts.HostEditPart;
+import mdn.diagram.edit.parts.PacketHeaderEditPart;
 import mdn.diagram.edit.parts.PolicyEditPart;
 import mdn.diagram.edit.parts.SdnEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
@@ -45,10 +47,11 @@ public class MdnModelingAssistantProvider extends ModelingAssistantProvider {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host
 				.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof SdnEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(8);
+			ArrayList<IElementType> types = new ArrayList<IElementType>(9);
 			types.add(MdnElementTypes.Controller_2001);
 			types.add(MdnElementTypes.Host_2002);
 			types.add(MdnElementTypes.Switch_2003);
+			types.add(MdnElementTypes.Action_2011);
 			types.add(MdnElementTypes.Condition_2010);
 			types.add(MdnElementTypes.Traffic_2007);
 			types.add(MdnElementTypes.Time_2008);
@@ -70,6 +73,9 @@ public class MdnModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof SwitchEditPart) {
 			return ((SwitchEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof ActionEditPart) {
+			return ((ActionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof PolicyEditPart) {
 			return ((PolicyEditPart) sourceEditPart).getMARelTypesOnSource();
@@ -93,8 +99,15 @@ public class MdnModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof SwitchEditPart) {
 			return ((SwitchEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
+		if (targetEditPart instanceof ActionEditPart) {
+			return ((ActionEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		if (targetEditPart instanceof ConditionEditPart) {
 			return ((ConditionEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof PacketHeaderEditPart) {
+			return ((PacketHeaderEditPart) targetEditPart)
+					.getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof PolicyEditPart) {
 			return ((PolicyEditPart) targetEditPart).getMARelTypesOnTarget();
@@ -117,6 +130,10 @@ public class MdnModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof SwitchEditPart) {
 			return ((SwitchEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ActionEditPart) {
+			return ((ActionEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof PolicyEditPart) {
@@ -145,8 +162,16 @@ public class MdnModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((SwitchEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof ActionEditPart) {
+			return ((ActionEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof ConditionEditPart) {
 			return ((ConditionEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof PacketHeaderEditPart) {
+			return ((PacketHeaderEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof PolicyEditPart) {
@@ -169,6 +194,10 @@ public class MdnModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof SwitchEditPart) {
 			return ((SwitchEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ActionEditPart) {
+			return ((ActionEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof PolicyEditPart) {

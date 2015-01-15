@@ -242,9 +242,10 @@ public class PolicyEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(MdnElementTypes.PolicyTargetHostPolicy_4009);
 		types.add(MdnElementTypes.PolicyPolicyCondition_4016);
+		types.add(MdnElementTypes.PolicyPolicyAction_4015);
 		return types;
 	}
 
@@ -260,6 +261,9 @@ public class PolicyEditPart extends AbstractBorderedShapeEditPart {
 		if (targetEditPart instanceof ConditionEditPart) {
 			types.add(MdnElementTypes.PolicyPolicyCondition_4016);
 		}
+		if (targetEditPart instanceof ActionEditPart) {
+			types.add(MdnElementTypes.PolicyPolicyAction_4015);
+		}
 		return types;
 	}
 
@@ -272,6 +276,8 @@ public class PolicyEditPart extends AbstractBorderedShapeEditPart {
 			types.add(MdnElementTypes.Host_2002);
 		} else if (relationshipType == MdnElementTypes.PolicyPolicyCondition_4016) {
 			types.add(MdnElementTypes.Condition_2010);
+		} else if (relationshipType == MdnElementTypes.PolicyPolicyAction_4015) {
+			types.add(MdnElementTypes.Action_2011);
 		}
 		return types;
 	}

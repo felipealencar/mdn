@@ -817,6 +817,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
     controllerEClass.getESuperTypes().add(this.getNetworkNode());
     hostEClass.getESuperTypes().add(this.getNetworkNode());
     switchEClass.getESuperTypes().add(this.getNetworkNode());
+    actionEClass.getESuperTypes().add(this.getPolicyObject());
     conditionEClass.getESuperTypes().add(this.getPolicyObject());
     trafficEClass.getESuperTypes().add(this.getPolicyObject());
     timeEClass.getESuperTypes().add(this.getPolicyObject());

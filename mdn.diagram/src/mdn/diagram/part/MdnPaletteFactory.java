@@ -74,12 +74,14 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAction1CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.Action1CreationTool_title,
-				Messages.Action1CreationTool_desc, null, null) {
-		};
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.Action1CreationTool_title,
+				Messages.Action1CreationTool_desc,
+				Collections.singletonList(MdnElementTypes.Action_2011));
 		entry.setId("createAction1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(MdnDiagramEditorPlugin
 				.findImageDescriptor("/mdn.edit/icons/full/obj16/action.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
