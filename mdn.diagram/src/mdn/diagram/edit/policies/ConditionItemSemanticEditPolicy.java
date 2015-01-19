@@ -5,8 +5,17 @@ package mdn.diagram.edit.policies;
 
 import java.util.Iterator;
 
+import mdn.diagram.edit.commands.ConditionConditionPacketCreateCommand;
+import mdn.diagram.edit.commands.ConditionConditionPacketReorientCommand;
+import mdn.diagram.edit.commands.ConditionConditionTimeCreateCommand;
+import mdn.diagram.edit.commands.ConditionConditionTimeReorientCommand;
+import mdn.diagram.edit.commands.ConditionConditionTrafficCreateCommand;
+import mdn.diagram.edit.commands.ConditionConditionTrafficReorientCommand;
 import mdn.diagram.edit.commands.PolicyPolicyConditionCreateCommand;
 import mdn.diagram.edit.commands.PolicyPolicyConditionReorientCommand;
+import mdn.diagram.edit.parts.ConditionConditionPacketEditPart;
+import mdn.diagram.edit.parts.ConditionConditionTimeEditPart;
+import mdn.diagram.edit.parts.ConditionConditionTrafficEditPart;
 import mdn.diagram.edit.parts.PolicyPolicyConditionEditPart;
 import mdn.diagram.part.MdnVisualIDRegistry;
 import mdn.diagram.providers.MdnElementTypes;
@@ -56,6 +65,33 @@ public class ConditionItemSemanticEditPolicy extends
 				continue;
 			}
 		}
+		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
+			Edge outgoingLink = (Edge) it.next();
+			if (MdnVisualIDRegistry.getVisualID(outgoingLink) == ConditionConditionTimeEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (MdnVisualIDRegistry.getVisualID(outgoingLink) == ConditionConditionTrafficEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (MdnVisualIDRegistry.getVisualID(outgoingLink) == ConditionConditionPacketEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+		}
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
 			// there are indirectly referenced children, need extra commands: false
@@ -86,6 +122,20 @@ public class ConditionItemSemanticEditPolicy extends
 		if (MdnElementTypes.PolicyPolicyCondition_4016 == req.getElementType()) {
 			return null;
 		}
+		if (MdnElementTypes.ConditionConditionTime_4017 == req.getElementType()) {
+			return getGEFWrapper(new ConditionConditionTimeCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (MdnElementTypes.ConditionConditionTraffic_4018 == req
+				.getElementType()) {
+			return getGEFWrapper(new ConditionConditionTrafficCreateCommand(
+					req, req.getSource(), req.getTarget()));
+		}
+		if (MdnElementTypes.ConditionConditionPacket_4019 == req
+				.getElementType()) {
+			return getGEFWrapper(new ConditionConditionPacketCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -97,6 +147,17 @@ public class ConditionItemSemanticEditPolicy extends
 		if (MdnElementTypes.PolicyPolicyCondition_4016 == req.getElementType()) {
 			return getGEFWrapper(new PolicyPolicyConditionCreateCommand(req,
 					req.getSource(), req.getTarget()));
+		}
+		if (MdnElementTypes.ConditionConditionTime_4017 == req.getElementType()) {
+			return null;
+		}
+		if (MdnElementTypes.ConditionConditionTraffic_4018 == req
+				.getElementType()) {
+			return null;
+		}
+		if (MdnElementTypes.ConditionConditionPacket_4019 == req
+				.getElementType()) {
+			return null;
 		}
 		return null;
 	}
@@ -112,6 +173,14 @@ public class ConditionItemSemanticEditPolicy extends
 		switch (getVisualID(req)) {
 		case PolicyPolicyConditionEditPart.VISUAL_ID:
 			return getGEFWrapper(new PolicyPolicyConditionReorientCommand(req));
+		case ConditionConditionTimeEditPart.VISUAL_ID:
+			return getGEFWrapper(new ConditionConditionTimeReorientCommand(req));
+		case ConditionConditionTrafficEditPart.VISUAL_ID:
+			return getGEFWrapper(new ConditionConditionTrafficReorientCommand(
+					req));
+		case ConditionConditionPacketEditPart.VISUAL_ID:
+			return getGEFWrapper(new ConditionConditionPacketReorientCommand(
+					req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

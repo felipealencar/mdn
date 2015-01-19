@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link mdn.Switch#getPorts <em>Ports</em>}</li>
  *   <li>{@link mdn.Switch#getSwitchController <em>Switch Controller</em>}</li>
- *   <li>{@link mdn.Switch#getSwitch <em>Switch</em>}</li>
+ *   <li>{@link mdn.Switch#getSwitches <em>Switches</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,19 +67,19 @@ public interface Switch extends NetworkNode
   EList<Controller> getSwitchController();
 
   /**
-   * Returns the value of the '<em><b>Switch</b></em>' reference list.
+   * Returns the value of the '<em><b>Switches</b></em>' reference list.
    * The list contents are of type {@link mdn.Switch}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Switch</em>' reference list isn't clear,
+   * If the meaning of the '<em>Switches</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Switch</em>' reference list.
-   * @see mdn.MdnPackage#getSwitch_Switch()
-   * @model annotation="gmf.link target.decoration='none' source.decoration='none' style='solid' color='0,0,0'"
+   * @return the value of the '<em>Switches</em>' reference list.
+   * @see mdn.MdnPackage#getSwitch_Switches()
+   * @model annotation="gmf.link target.decoration='none' source.decoration='none' style='solid' color='0,0,0' switches.constraint='self <> oppositeEnd' source.constraint='self <> oppositeEnd'"
    * @generated
    */
-  EList<Switch> getSwitch();
+  EList<Switch> getSwitches();
 
 } // Switch

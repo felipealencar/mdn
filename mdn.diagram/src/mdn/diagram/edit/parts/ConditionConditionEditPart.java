@@ -43,6 +43,7 @@ import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.directedit.ComboDirectEditManager;
+import org.eclipse.gmf.tooling.runtime.directedit.TextDirectEditManager2;
 import org.eclipse.gmf.tooling.runtime.draw2d.labels.SimpleLabelDelegate;
 import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
@@ -354,11 +355,11 @@ public class ConditionConditionEditPart extends LabelEditPart implements
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new ComboDirectEditManager(this, null,
+			setManager(new TextDirectEditManager2(this, null,
 					MdnEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
@@ -379,11 +380,11 @@ public class ConditionConditionEditPart extends LabelEditPart implements
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void performDirectEdit(Point eventLocation) {
-		if (getManager().getClass() == ComboDirectEditManager.class) {
-			((ComboDirectEditManager) getManager()).show(eventLocation
+		if (getManager().getClass() == TextDirectEditManager2.class) {
+			((TextDirectEditManager2) getManager()).show(eventLocation
 					.getSWTPoint());
 		}
 	}

@@ -60,13 +60,16 @@ public class MdnPaletteFactory {
 		paletteContainer.setId("createConnections2Group"); //$NON-NLS-1$
 		paletteContainer.add(createActionForwardToNode1CreationTool());
 		paletteContainer.add(createActionPacketHeader2CreationTool());
-		paletteContainer.add(createHostSwitch3CreationTool());
-		paletteContainer.add(createPolicyAction4CreationTool());
-		paletteContainer.add(createPolicyCondition5CreationTool());
-		paletteContainer.add(createSourceHostPolicy6CreationTool());
-		paletteContainer.add(createSwitch7CreationTool());
-		paletteContainer.add(createSwitchController8CreationTool());
-		paletteContainer.add(createTargetHostPolicy9CreationTool());
+		paletteContainer.add(createConditionPacket3CreationTool());
+		paletteContainer.add(createConditionTime4CreationTool());
+		paletteContainer.add(createConditionTraffic5CreationTool());
+		paletteContainer.add(createHostSwitch6CreationTool());
+		paletteContainer.add(createPolicyAction7CreationTool());
+		paletteContainer.add(createPolicyCondition8CreationTool());
+		paletteContainer.add(createSwitchController9CreationTool());
+		paletteContainer.add(createSwitches10CreationTool());
+		paletteContainer.add(createSourceHost11CreationTool());
+		paletteContainer.add(createTargetHost12CreationTool());
 		return paletteContainer;
 	}
 
@@ -240,12 +243,60 @@ public class MdnPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createHostSwitch3CreationTool() {
+	private ToolEntry createConditionPacket3CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.HostSwitch3CreationTool_title,
-				Messages.HostSwitch3CreationTool_desc,
+				Messages.ConditionPacket3CreationTool_title,
+				Messages.ConditionPacket3CreationTool_desc,
+				Collections
+						.singletonList(MdnElementTypes.ConditionConditionPacket_4019));
+		entry.setId("createConditionPacket3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(MdnElementTypes
+				.getImageDescriptor(MdnElementTypes.ConditionConditionPacket_4019));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createConditionTime4CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.ConditionTime4CreationTool_title,
+				Messages.ConditionTime4CreationTool_desc,
+				Collections
+						.singletonList(MdnElementTypes.ConditionConditionTime_4017));
+		entry.setId("createConditionTime4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(MdnElementTypes
+				.getImageDescriptor(MdnElementTypes.ConditionConditionTime_4017));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createConditionTraffic5CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.ConditionTraffic5CreationTool_title,
+				Messages.ConditionTraffic5CreationTool_desc,
+				Collections
+						.singletonList(MdnElementTypes.ConditionConditionTraffic_4018));
+		entry.setId("createConditionTraffic5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(MdnElementTypes
+				.getImageDescriptor(MdnElementTypes.ConditionConditionTraffic_4018));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createHostSwitch6CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.HostSwitch6CreationTool_title,
+				Messages.HostSwitch6CreationTool_desc,
 				Collections.singletonList(MdnElementTypes.HostHostSwitch_4004));
-		entry.setId("createHostSwitch3CreationTool"); //$NON-NLS-1$
+		entry.setId("createHostSwitch6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(MdnElementTypes
 				.getImageDescriptor(MdnElementTypes.HostHostSwitch_4004));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -255,13 +306,13 @@ public class MdnPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createPolicyAction4CreationTool() {
+	private ToolEntry createPolicyAction7CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.PolicyAction4CreationTool_title,
-				Messages.PolicyAction4CreationTool_desc,
+				Messages.PolicyAction7CreationTool_title,
+				Messages.PolicyAction7CreationTool_desc,
 				Collections
 						.singletonList(MdnElementTypes.PolicyPolicyAction_4015));
-		entry.setId("createPolicyAction4CreationTool"); //$NON-NLS-1$
+		entry.setId("createPolicyAction7CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(MdnElementTypes
 				.getImageDescriptor(MdnElementTypes.PolicyPolicyAction_4015));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -271,13 +322,13 @@ public class MdnPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createPolicyCondition5CreationTool() {
+	private ToolEntry createPolicyCondition8CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.PolicyCondition5CreationTool_title,
-				Messages.PolicyCondition5CreationTool_desc,
+				Messages.PolicyCondition8CreationTool_title,
+				Messages.PolicyCondition8CreationTool_desc,
 				Collections
 						.singletonList(MdnElementTypes.PolicyPolicyCondition_4016));
-		entry.setId("createPolicyCondition5CreationTool"); //$NON-NLS-1$
+		entry.setId("createPolicyCondition8CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(MdnElementTypes
 				.getImageDescriptor(MdnElementTypes.PolicyPolicyCondition_4016));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -287,29 +338,13 @@ public class MdnPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSourceHostPolicy6CreationTool() {
+	private ToolEntry createSwitchController9CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.SourceHostPolicy6CreationTool_title,
-				Messages.SourceHostPolicy6CreationTool_desc,
-				Collections
-						.singletonList(MdnElementTypes.HostSourceHostPolicy_4007));
-		entry.setId("createSourceHostPolicy6CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(MdnElementTypes
-				.getImageDescriptor(MdnElementTypes.HostSourceHostPolicy_4007));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createSwitchController8CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
-				Messages.SwitchController8CreationTool_title,
-				Messages.SwitchController8CreationTool_desc,
+				Messages.SwitchController9CreationTool_title,
+				Messages.SwitchController9CreationTool_desc,
 				Collections
 						.singletonList(MdnElementTypes.SwitchSwitchController_4006));
-		entry.setId("createSwitchController8CreationTool"); //$NON-NLS-1$
+		entry.setId("createSwitchController9CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(MdnElementTypes
 				.getImageDescriptor(MdnElementTypes.SwitchSwitchController_4006));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -319,13 +354,44 @@ public class MdnPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createTargetHostPolicy9CreationTool() {
+	private ToolEntry createSwitches10CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.TargetHostPolicy9CreationTool_title,
-				Messages.TargetHostPolicy9CreationTool_desc,
+				Messages.Switches10CreationTool_title,
+				Messages.Switches10CreationTool_desc,
+				Collections.singletonList(MdnElementTypes.SwitchSwitches_4022));
+		entry.setId("createSwitches10CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(MdnElementTypes
+				.getImageDescriptor(MdnElementTypes.SwitchSwitches_4022));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createSourceHost11CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.SourceHost11CreationTool_title,
+				Messages.SourceHost11CreationTool_desc,
+				Collections
+						.singletonList(MdnElementTypes.PolicySourceHostPolicy_4023));
+		entry.setId("createSourceHost11CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(MdnElementTypes
+				.getImageDescriptor(MdnElementTypes.PolicySourceHostPolicy_4023));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createTargetHost12CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.TargetHost12CreationTool_title,
+				Messages.TargetHost12CreationTool_desc,
 				Collections
 						.singletonList(MdnElementTypes.PolicyTargetHostPolicy_4009));
-		entry.setId("createTargetHostPolicy9CreationTool"); //$NON-NLS-1$
+		entry.setId("createTargetHost12CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(MdnElementTypes
 				.getImageDescriptor(MdnElementTypes.PolicyTargetHostPolicy_4009));
 		entry.setLargeIcon(entry.getSmallIcon());

@@ -10,8 +10,8 @@ import java.util.List;
 
 import mdn.diagram.edit.policies.PacketHeaderItemSemanticEditPolicy;
 import mdn.diagram.part.MdnVisualIDRegistry;
-
 import mdn.diagram.providers.MdnElementTypes;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
@@ -241,8 +241,9 @@ public class PacketHeaderEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(MdnElementTypes.ActionActionPacketHeader_4012);
+		types.add(MdnElementTypes.ConditionConditionPacket_4019);
 		return types;
 	}
 
@@ -253,6 +254,8 @@ public class PacketHeaderEditPart extends AbstractBorderedShapeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == MdnElementTypes.ActionActionPacketHeader_4012) {
 			types.add(MdnElementTypes.Action_2011);
+		} else if (relationshipType == MdnElementTypes.ConditionConditionPacket_4019) {
+			types.add(MdnElementTypes.Condition_2010);
 		}
 		return types;
 	}

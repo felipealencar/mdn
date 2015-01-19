@@ -115,8 +115,8 @@ public class PolicyTargetHostPolicyReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().setTargetHostPolicy(null);
-		getNewSource().setTargetHostPolicy(getOldTarget());
+		getOldSource().getTargetHostPolicy().remove(getOldTarget());
+		getNewSource().getTargetHostPolicy().add(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -124,7 +124,8 @@ public class PolicyTargetHostPolicyReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().setTargetHostPolicy(getNewTarget());
+		getOldSource().getTargetHostPolicy().remove(getOldTarget());
+		getOldSource().getTargetHostPolicy().add(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 

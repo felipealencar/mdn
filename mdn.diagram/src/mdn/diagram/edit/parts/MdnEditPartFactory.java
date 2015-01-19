@@ -88,20 +88,20 @@ public class MdnEditPartFactory implements EditPartFactory {
 			case WrappingLabelEditPart.VISUAL_ID:
 				return new WrappingLabelEditPart(view);
 
-			case HostSourceHostPolicyEditPart.VISUAL_ID:
-				return new HostSourceHostPolicyEditPart(view);
+			case SwitchSwitchControllerEditPart.VISUAL_ID:
+				return new SwitchSwitchControllerEditPart(view);
 
 			case WrappingLabel2EditPart.VISUAL_ID:
 				return new WrappingLabel2EditPart(view);
 
-			case SwitchSwitchControllerEditPart.VISUAL_ID:
-				return new SwitchSwitchControllerEditPart(view);
+			case SwitchSwitchesEditPart.VISUAL_ID:
+				return new SwitchSwitchesEditPart(view);
 
 			case WrappingLabel3EditPart.VISUAL_ID:
 				return new WrappingLabel3EditPart(view);
 
-			case SwitchSwitchEditPart.VISUAL_ID:
-				return new SwitchSwitchEditPart(view);
+			case PolicySourceHostPolicyEditPart.VISUAL_ID:
+				return new PolicySourceHostPolicyEditPart(view);
 
 			case WrappingLabel4EditPart.VISUAL_ID:
 				return new WrappingLabel4EditPart(view);
@@ -135,6 +135,24 @@ public class MdnEditPartFactory implements EditPartFactory {
 
 			case WrappingLabel9EditPart.VISUAL_ID:
 				return new WrappingLabel9EditPart(view);
+
+			case ConditionConditionTimeEditPart.VISUAL_ID:
+				return new ConditionConditionTimeEditPart(view);
+
+			case WrappingLabel10EditPart.VISUAL_ID:
+				return new WrappingLabel10EditPart(view);
+
+			case ConditionConditionTrafficEditPart.VISUAL_ID:
+				return new ConditionConditionTrafficEditPart(view);
+
+			case WrappingLabel11EditPart.VISUAL_ID:
+				return new WrappingLabel11EditPart(view);
+
+			case ConditionConditionPacketEditPart.VISUAL_ID:
+				return new ConditionConditionPacketEditPart(view);
+
+			case WrappingLabel12EditPart.VISUAL_ID:
+				return new WrappingLabel12EditPart(view);
 
 			}
 		}

@@ -7,7 +7,10 @@ import java.util.Iterator;
 
 import mdn.diagram.edit.commands.ActionActionPacketHeaderCreateCommand;
 import mdn.diagram.edit.commands.ActionActionPacketHeaderReorientCommand;
+import mdn.diagram.edit.commands.ConditionConditionPacketCreateCommand;
+import mdn.diagram.edit.commands.ConditionConditionPacketReorientCommand;
 import mdn.diagram.edit.parts.ActionActionPacketHeaderEditPart;
+import mdn.diagram.edit.parts.ConditionConditionPacketEditPart;
 import mdn.diagram.part.MdnVisualIDRegistry;
 import mdn.diagram.providers.MdnElementTypes;
 
@@ -55,6 +58,14 @@ public class PacketHeaderItemSemanticEditPolicy extends
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
+			if (MdnVisualIDRegistry.getVisualID(incomingLink) == ConditionConditionPacketEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						incomingLink.getSource().getElement(), null,
+						incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
 		}
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
@@ -87,6 +98,10 @@ public class PacketHeaderItemSemanticEditPolicy extends
 				.getElementType()) {
 			return null;
 		}
+		if (MdnElementTypes.ConditionConditionPacket_4019 == req
+				.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -98,6 +113,11 @@ public class PacketHeaderItemSemanticEditPolicy extends
 		if (MdnElementTypes.ActionActionPacketHeader_4012 == req
 				.getElementType()) {
 			return getGEFWrapper(new ActionActionPacketHeaderCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (MdnElementTypes.ConditionConditionPacket_4019 == req
+				.getElementType()) {
+			return getGEFWrapper(new ConditionConditionPacketCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -114,6 +134,9 @@ public class PacketHeaderItemSemanticEditPolicy extends
 		switch (getVisualID(req)) {
 		case ActionActionPacketHeaderEditPart.VISUAL_ID:
 			return getGEFWrapper(new ActionActionPacketHeaderReorientCommand(
+					req));
+		case ConditionConditionPacketEditPart.VISUAL_ID:
+			return getGEFWrapper(new ConditionConditionPacketReorientCommand(
 					req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);

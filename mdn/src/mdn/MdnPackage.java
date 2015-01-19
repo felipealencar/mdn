@@ -251,22 +251,13 @@ public interface MdnPackage extends EPackage
   int HOST__HOST_SWITCH = NETWORK_NODE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Source Host Policy</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HOST__SOURCE_HOST_POLICY = NETWORK_NODE_FEATURE_COUNT + 1;
-
-  /**
    * The number of structural features of the '<em>Host</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HOST_FEATURE_COUNT = NETWORK_NODE_FEATURE_COUNT + 2;
+  int HOST_FEATURE_COUNT = NETWORK_NODE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link mdn.impl.SwitchImpl <em>Switch</em>}' class.
@@ -324,13 +315,13 @@ public interface MdnPackage extends EPackage
   int SWITCH__SWITCH_CONTROLLER = NETWORK_NODE_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Switch</b></em>' reference list.
+   * The feature id for the '<em><b>Switches</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SWITCH__SWITCH = NETWORK_NODE_FEATURE_COUNT + 2;
+  int SWITCH__SWITCHES = NETWORK_NODE_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Switch</em>' class.
@@ -352,13 +343,22 @@ public interface MdnPackage extends EPackage
   int POLICY = 5;
 
   /**
-   * The feature id for the '<em><b>Target Host Policy</b></em>' reference.
+   * The feature id for the '<em><b>Source Host Policy</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POLICY__TARGET_HOST_POLICY = 0;
+  int POLICY__SOURCE_HOST_POLICY = 0;
+
+  /**
+   * The feature id for the '<em><b>Target Host Policy</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POLICY__TARGET_HOST_POLICY = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -367,7 +367,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POLICY__NAME = 1;
+  int POLICY__NAME = 2;
 
   /**
    * The feature id for the '<em><b>Policy Condition</b></em>' reference.
@@ -376,7 +376,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POLICY__POLICY_CONDITION = 2;
+  int POLICY__POLICY_CONDITION = 3;
 
   /**
    * The feature id for the '<em><b>Policy Action</b></em>' reference.
@@ -385,7 +385,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POLICY__POLICY_ACTION = 3;
+  int POLICY__POLICY_ACTION = 4;
 
   /**
    * The number of structural features of the '<em>Policy</em>' class.
@@ -394,7 +394,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POLICY_FEATURE_COUNT = 4;
+  int POLICY_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link mdn.impl.ActionImpl <em>Action</em>}' class.
@@ -781,17 +781,6 @@ public interface MdnPackage extends EPackage
   EReference getHost_HostSwitch();
 
   /**
-   * Returns the meta object for the reference '{@link mdn.Host#getSourceHostPolicy <em>Source Host Policy</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Source Host Policy</em>'.
-   * @see mdn.Host#getSourceHostPolicy()
-   * @see #getHost()
-   * @generated
-   */
-  EReference getHost_SourceHostPolicy();
-
-  /**
    * Returns the meta object for class '{@link mdn.Switch <em>Switch</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -824,15 +813,15 @@ public interface MdnPackage extends EPackage
   EReference getSwitch_SwitchController();
 
   /**
-   * Returns the meta object for the reference list '{@link mdn.Switch#getSwitch <em>Switch</em>}'.
+   * Returns the meta object for the reference list '{@link mdn.Switch#getSwitches <em>Switches</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Switch</em>'.
-   * @see mdn.Switch#getSwitch()
+   * @return the meta object for the reference list '<em>Switches</em>'.
+   * @see mdn.Switch#getSwitches()
    * @see #getSwitch()
    * @generated
    */
-  EReference getSwitch_Switch();
+  EReference getSwitch_Switches();
 
   /**
    * Returns the meta object for class '{@link mdn.NetworkNode <em>Network Node</em>}'.
@@ -888,10 +877,21 @@ public interface MdnPackage extends EPackage
   EClass getPolicy();
 
   /**
-   * Returns the meta object for the reference '{@link mdn.Policy#getTargetHostPolicy <em>Target Host Policy</em>}'.
+   * Returns the meta object for the reference list '{@link mdn.Policy#getSourceHostPolicy <em>Source Host Policy</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Target Host Policy</em>'.
+   * @return the meta object for the reference list '<em>Source Host Policy</em>'.
+   * @see mdn.Policy#getSourceHostPolicy()
+   * @see #getPolicy()
+   * @generated
+   */
+  EReference getPolicy_SourceHostPolicy();
+
+  /**
+   * Returns the meta object for the reference list '{@link mdn.Policy#getTargetHostPolicy <em>Target Host Policy</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Target Host Policy</em>'.
    * @see mdn.Policy#getTargetHostPolicy()
    * @see #getPolicy()
    * @generated
@@ -1301,14 +1301,6 @@ public interface MdnPackage extends EPackage
     EReference HOST__HOST_SWITCH = eINSTANCE.getHost_HostSwitch();
 
     /**
-     * The meta object literal for the '<em><b>Source Host Policy</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference HOST__SOURCE_HOST_POLICY = eINSTANCE.getHost_SourceHostPolicy();
-
-    /**
      * The meta object literal for the '{@link mdn.impl.SwitchImpl <em>Switch</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1335,12 +1327,12 @@ public interface MdnPackage extends EPackage
     EReference SWITCH__SWITCH_CONTROLLER = eINSTANCE.getSwitch_SwitchController();
 
     /**
-     * The meta object literal for the '<em><b>Switch</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Switches</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SWITCH__SWITCH = eINSTANCE.getSwitch_Switch();
+    EReference SWITCH__SWITCHES = eINSTANCE.getSwitch_Switches();
 
     /**
      * The meta object literal for the '{@link mdn.impl.NetworkNodeImpl <em>Network Node</em>}' class.
@@ -1387,7 +1379,15 @@ public interface MdnPackage extends EPackage
     EClass POLICY = eINSTANCE.getPolicy();
 
     /**
-     * The meta object literal for the '<em><b>Target Host Policy</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Source Host Policy</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POLICY__SOURCE_HOST_POLICY = eINSTANCE.getPolicy_SourceHostPolicy();
+
+    /**
+     * The meta object literal for the '<em><b>Target Host Policy</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

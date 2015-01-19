@@ -134,6 +134,33 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="ConditionPacket"
+          description="Create new ConditionPacket">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ConditionTime"
+          description="Create new ConditionTime">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ConditionTraffic"
+          description="Create new ConditionTraffic">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="HostSwitch"
           description="Create new HostSwitch">
         <smallIcon
@@ -161,24 +188,6 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="SourceHostPolicy"
-          description="Create new SourceHostPolicy">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Switch"
-          description="Create new Switch">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="SwitchController"
           description="Create new SwitchController">
         <smallIcon
@@ -188,8 +197,26 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="TargetHostPolicy"
-          description="Create new TargetHostPolicy">
+          title="Switches"
+          description="Create new Switches">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="sourceHost"
+          description="Create new sourceHost">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="targetHost"
+          description="Create new targetHost">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

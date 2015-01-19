@@ -67,7 +67,7 @@ public interface Condition extends PolicyObject
    * @return the value of the '<em>Condition Time</em>' reference.
    * @see #setConditionTime(Time)
    * @see mdn.MdnPackage#getCondition_ConditionTime()
-   * @model
+   * @model annotation="gmf.link target.decoration='none' source.decoration='none' style='dash' color='0,0,0'"
    * @generated
    */
   Time getConditionTime();
@@ -93,7 +93,7 @@ public interface Condition extends PolicyObject
    * @return the value of the '<em>Condition Traffic</em>' reference.
    * @see #setConditionTraffic(Traffic)
    * @see mdn.MdnPackage#getCondition_ConditionTraffic()
-   * @model
+   * @model annotation="gmf.link target.decoration='none' source.decoration='none' style='dash' color='0,0,0'"
    * @generated
    */
   Traffic getConditionTraffic();
@@ -119,7 +119,7 @@ public interface Condition extends PolicyObject
    * @return the value of the '<em>Condition Packet</em>' reference.
    * @see #setConditionPacket(PacketHeader)
    * @see mdn.MdnPackage#getCondition_ConditionPacket()
-   * @model
+   * @model annotation="gmf.link target.decoration='none' source.decoration='none' style='dash' color='0,0,0'"
    * @generated
    */
   PacketHeader getConditionPacket();

@@ -46,12 +46,11 @@
     </genClasses>
     <genClasses ecoreClass="sdn.ecore#//Host">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Host/hostSwitch"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Host/sourceHostPolicy"/>
     </genClasses>
     <genClasses ecoreClass="sdn.ecore#//Switch">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Switch/ports"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Switch/switchController"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Switch/switch"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Switch/switches"/>
     </genClasses>
     <genClasses image="false" ecoreClass="sdn.ecore#//NetworkNode">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//NetworkNode/name"/>
@@ -59,6 +58,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//NetworkNode/ip"/>
     </genClasses>
     <genClasses ecoreClass="sdn.ecore#//Policy">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Policy/sourceHostPolicy"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Policy/targetHostPolicy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Policy/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Policy/policyCondition"/>

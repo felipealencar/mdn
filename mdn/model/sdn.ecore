@@ -53,14 +53,6 @@
         <details key="color" value="0,0,0"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceHostPolicy" eType="#//Policy">
-      <eAnnotations source="gmf.link">
-        <details key="target.decoration" value="none"/>
-        <details key="source.decoration" value="none"/>
-        <details key="style" value="dash"/>
-        <details key="color" value="0,0,0"/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Switch" eSuperTypes="#//NetworkNode">
     <eAnnotations source="gmf.node">
@@ -81,13 +73,15 @@
         <details key="color" value="0,0,0"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="switch" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="switches" upperBound="-1"
         eType="#//Switch">
       <eAnnotations source="gmf.link">
         <details key="target.decoration" value="none"/>
         <details key="source.decoration" value="none"/>
         <details key="style" value="solid"/>
         <details key="color" value="0,0,0"/>
+        <details key="switches.constraint" value="self &lt;> oppositeEnd"/>
+        <details key="source.constraint" value="self &lt;> oppositeEnd"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -110,12 +104,24 @@
       <details key="tool.small.path" value="/icons/full/obj16/policy.gif"/>
       <details key="label.placement" value="external"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetHostPolicy" eType="#//Host">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceHostPolicy" upperBound="-1"
+        eType="#//Host" transient="true">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="none"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+        <details key="tool.name" value="sourceHost"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetHostPolicy" upperBound="-1"
+        eType="#//Host" transient="true">
       <eAnnotations source="gmf.link">
         <details key="target.decoration" value="arrow"/>
         <details key="source.decoration" value="none"/>
         <details key="style" value="dash"/>
         <details key="color" value="0,0,0"/>
+        <details key="tool.name" value="targetHost"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -175,9 +181,30 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="#//Conditions"
         defaultValueLiteral="WHERE"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTime" eType="#//Time"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTraffic" eType="#//Traffic"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionPacket" eType="#//PacketHeader"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTime" eType="#//Time">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="none"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTraffic" eType="#//Traffic">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="none"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionPacket" eType="#//PacketHeader">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="none"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Conditions">
     <eLiterals name="WHEN"/>

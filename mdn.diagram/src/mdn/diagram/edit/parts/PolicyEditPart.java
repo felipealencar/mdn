@@ -242,7 +242,8 @@ public class PolicyEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(4);
+		types.add(MdnElementTypes.PolicySourceHostPolicy_4023);
 		types.add(MdnElementTypes.PolicyTargetHostPolicy_4009);
 		types.add(MdnElementTypes.PolicyPolicyCondition_4016);
 		types.add(MdnElementTypes.PolicyPolicyAction_4015);
@@ -255,6 +256,9 @@ public class PolicyEditPart extends AbstractBorderedShapeEditPart {
 	public List<IElementType> getMARelTypesOnSourceAndTarget(
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
+		if (targetEditPart instanceof HostEditPart) {
+			types.add(MdnElementTypes.PolicySourceHostPolicy_4023);
+		}
 		if (targetEditPart instanceof HostEditPart) {
 			types.add(MdnElementTypes.PolicyTargetHostPolicy_4009);
 		}
@@ -272,32 +276,14 @@ public class PolicyEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.PolicyTargetHostPolicy_4009) {
+		if (relationshipType == MdnElementTypes.PolicySourceHostPolicy_4023) {
+			types.add(MdnElementTypes.Host_2002);
+		} else if (relationshipType == MdnElementTypes.PolicyTargetHostPolicy_4009) {
 			types.add(MdnElementTypes.Host_2002);
 		} else if (relationshipType == MdnElementTypes.PolicyPolicyCondition_4016) {
 			types.add(MdnElementTypes.Condition_2010);
 		} else if (relationshipType == MdnElementTypes.PolicyPolicyAction_4015) {
 			types.add(MdnElementTypes.Action_2011);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(MdnElementTypes.HostSourceHostPolicy_4007);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.HostSourceHostPolicy_4007) {
-			types.add(MdnElementTypes.Host_2002);
 		}
 		return types;
 	}

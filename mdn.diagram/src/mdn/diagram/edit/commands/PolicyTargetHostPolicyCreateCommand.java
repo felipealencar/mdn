@@ -72,7 +72,7 @@ public class PolicyTargetHostPolicyCreateCommand extends EditElementCommand {
 		}
 
 		if (getSource() != null && getTarget() != null) {
-			getSource().setTargetHostPolicy(getTarget());
+			getSource().getTargetHostPolicy().add(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
 

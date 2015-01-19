@@ -13,6 +13,8 @@ import mdn.NetworkNode;
 import mdn.PacketHeader;
 import mdn.Policy;
 import mdn.Switch;
+import mdn.Time;
+import mdn.Traffic;
 import mdn.diagram.part.MdnDiagramEditorPlugin;
 import mdn.diagram.part.MdnVisualIDRegistry;
 import mdn.diagram.providers.MdnElementTypes;
@@ -346,20 +348,6 @@ public class MdnBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateHostSourceHostPolicy_4007(Host source,
-				Policy target) {
-			if (source != null) {
-				if (source.getSourceHostPolicy() != null) {
-					return false;
-				}
-			}
-
-			return canExistHostSourceHostPolicy_4007(source, target);
-		}
-
-		/**
-		 * @generated
-		 */
 		public boolean canCreateSwitchSwitchController_4006(Switch source,
 				Controller target) {
 			if (source != null) {
@@ -374,14 +362,28 @@ public class MdnBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateSwitchSwitch_4008(Switch source, Switch target) {
+		public boolean canCreateSwitchSwitches_4022(Switch source, Switch target) {
 			if (source != null) {
-				if (source.getSwitch().contains(target)) {
+				if (source.getSwitches().contains(target)) {
 					return false;
 				}
 			}
 
-			return canExistSwitchSwitch_4008(source, target);
+			return canExistSwitchSwitches_4022(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreatePolicySourceHostPolicy_4023(Policy source,
+				Host target) {
+			if (source != null) {
+				if (source.getSourceHostPolicy().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistPolicySourceHostPolicy_4023(source, target);
 		}
 
 		/**
@@ -390,7 +392,7 @@ public class MdnBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canCreatePolicyTargetHostPolicy_4009(Policy source,
 				Host target) {
 			if (source != null) {
-				if (source.getTargetHostPolicy() != null) {
+				if (source.getTargetHostPolicy().contains(target)) {
 					return false;
 				}
 			}
@@ -457,15 +459,49 @@ public class MdnBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistHostHostSwitch_4004(Host source, Switch target) {
-			return true;
+		public boolean canCreateConditionConditionTime_4017(Condition source,
+				Time target) {
+			if (source != null) {
+				if (source.getConditionTime() != null) {
+					return false;
+				}
+			}
+
+			return canExistConditionConditionTime_4017(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistHostSourceHostPolicy_4007(Host source,
-				Policy target) {
+		public boolean canCreateConditionConditionTraffic_4018(
+				Condition source, Traffic target) {
+			if (source != null) {
+				if (source.getConditionTraffic() != null) {
+					return false;
+				}
+			}
+
+			return canExistConditionConditionTraffic_4018(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateConditionConditionPacket_4019(Condition source,
+				PacketHeader target) {
+			if (source != null) {
+				if (source.getConditionPacket() != null) {
+					return false;
+				}
+			}
+
+			return canExistConditionConditionPacket_4019(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistHostHostSwitch_4004(Host source, Switch target) {
 			return true;
 		}
 
@@ -480,7 +516,15 @@ public class MdnBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistSwitchSwitch_4008(Switch source, Switch target) {
+		public boolean canExistSwitchSwitches_4022(Switch source, Switch target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistPolicySourceHostPolicy_4023(Policy source,
+				Host target) {
 			return true;
 		}
 
@@ -521,6 +565,30 @@ public class MdnBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistActionActionForwardToNode_4013(Action source,
 				NetworkNode target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistConditionConditionTime_4017(Condition source,
+				Time target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistConditionConditionTraffic_4018(Condition source,
+				Traffic target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistConditionConditionPacket_4019(Condition source,
+				PacketHeader target) {
 			return true;
 		}
 	}

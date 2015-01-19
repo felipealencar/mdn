@@ -10,33 +10,35 @@ import mdn.diagram.edit.parts.ActionActionPacketHeaderEditPart;
 import mdn.diagram.edit.parts.ActionEditPart;
 import mdn.diagram.edit.parts.ActionTypeEditPart;
 import mdn.diagram.edit.parts.ConditionConditionEditPart;
+import mdn.diagram.edit.parts.ConditionConditionPacketEditPart;
+import mdn.diagram.edit.parts.ConditionConditionTimeEditPart;
+import mdn.diagram.edit.parts.ConditionConditionTrafficEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
 import mdn.diagram.edit.parts.ControllerNameEditPart;
 import mdn.diagram.edit.parts.HostEditPart;
 import mdn.diagram.edit.parts.HostHostSwitchEditPart;
 import mdn.diagram.edit.parts.HostNameEditPart;
-import mdn.diagram.edit.parts.HostSourceHostPolicyEditPart;
 import mdn.diagram.edit.parts.PacketHeaderEditPart;
-import mdn.diagram.edit.parts.PacketHeaderHeaderValueEditPart;
 import mdn.diagram.edit.parts.PacketHeaderOperatorHeaderValueEditPart;
 import mdn.diagram.edit.parts.PolicyEditPart;
 import mdn.diagram.edit.parts.PolicyNameEditPart;
 import mdn.diagram.edit.parts.PolicyPolicyActionEditPart;
 import mdn.diagram.edit.parts.PolicyPolicyConditionEditPart;
+import mdn.diagram.edit.parts.PolicySourceHostPolicyEditPart;
 import mdn.diagram.edit.parts.PolicyTargetHostPolicyEditPart;
 import mdn.diagram.edit.parts.SdnEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
 import mdn.diagram.edit.parts.SwitchNameEditPart;
 import mdn.diagram.edit.parts.SwitchSwitchControllerEditPart;
-import mdn.diagram.edit.parts.SwitchSwitchEditPart;
-import mdn.diagram.edit.parts.TimeDateEditPart;
+import mdn.diagram.edit.parts.SwitchSwitchesEditPart;
 import mdn.diagram.edit.parts.TimeEditPart;
-import mdn.diagram.edit.parts.TimeHourDateEditPart;
 import mdn.diagram.edit.parts.TimeOperatorBeginDateEndDatEditPart;
 import mdn.diagram.edit.parts.TrafficEditPart;
 import mdn.diagram.edit.parts.TrafficOperatorUnitValueEditPart;
-import mdn.diagram.edit.parts.TrafficUnitValueEditPart;
+import mdn.diagram.edit.parts.WrappingLabel10EditPart;
+import mdn.diagram.edit.parts.WrappingLabel11EditPart;
+import mdn.diagram.edit.parts.WrappingLabel12EditPart;
 import mdn.diagram.edit.parts.WrappingLabel2EditPart;
 import mdn.diagram.edit.parts.WrappingLabel3EditPart;
 import mdn.diagram.edit.parts.WrappingLabel4EditPart;
@@ -303,17 +305,17 @@ public class MdnVisualIDRegistry {
 				return true;
 			}
 			break;
-		case HostSourceHostPolicyEditPart.VISUAL_ID:
+		case SwitchSwitchControllerEditPart.VISUAL_ID:
 			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case SwitchSwitchControllerEditPart.VISUAL_ID:
+		case SwitchSwitchesEditPart.VISUAL_ID:
 			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case SwitchSwitchEditPart.VISUAL_ID:
+		case PolicySourceHostPolicyEditPart.VISUAL_ID:
 			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -340,6 +342,21 @@ public class MdnVisualIDRegistry {
 			break;
 		case ActionActionForwardToNodeEditPart.VISUAL_ID:
 			if (WrappingLabel9EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ConditionConditionTimeEditPart.VISUAL_ID:
+			if (WrappingLabel10EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ConditionConditionTrafficEditPart.VISUAL_ID:
+			if (WrappingLabel11EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ConditionConditionPacketEditPart.VISUAL_ID:
+			if (WrappingLabel12EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

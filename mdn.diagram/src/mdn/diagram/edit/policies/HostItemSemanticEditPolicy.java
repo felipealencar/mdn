@@ -9,13 +9,13 @@ import mdn.diagram.edit.commands.ActionActionForwardToNodeCreateCommand;
 import mdn.diagram.edit.commands.ActionActionForwardToNodeReorientCommand;
 import mdn.diagram.edit.commands.HostHostSwitchCreateCommand;
 import mdn.diagram.edit.commands.HostHostSwitchReorientCommand;
-import mdn.diagram.edit.commands.HostSourceHostPolicyCreateCommand;
-import mdn.diagram.edit.commands.HostSourceHostPolicyReorientCommand;
+import mdn.diagram.edit.commands.PolicySourceHostPolicyCreateCommand;
+import mdn.diagram.edit.commands.PolicySourceHostPolicyReorientCommand;
 import mdn.diagram.edit.commands.PolicyTargetHostPolicyCreateCommand;
 import mdn.diagram.edit.commands.PolicyTargetHostPolicyReorientCommand;
 import mdn.diagram.edit.parts.ActionActionForwardToNodeEditPart;
 import mdn.diagram.edit.parts.HostHostSwitchEditPart;
-import mdn.diagram.edit.parts.HostSourceHostPolicyEditPart;
+import mdn.diagram.edit.parts.PolicySourceHostPolicyEditPart;
 import mdn.diagram.edit.parts.PolicyTargetHostPolicyEditPart;
 import mdn.diagram.part.MdnVisualIDRegistry;
 import mdn.diagram.providers.MdnElementTypes;
@@ -55,6 +55,14 @@ public class HostItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy {
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
+			if (MdnVisualIDRegistry.getVisualID(incomingLink) == PolicySourceHostPolicyEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						incomingLink.getSource().getElement(), null,
+						incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
 			if (MdnVisualIDRegistry.getVisualID(incomingLink) == PolicyTargetHostPolicyEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
@@ -75,14 +83,6 @@ public class HostItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy {
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
 			if (MdnVisualIDRegistry.getVisualID(outgoingLink) == HostHostSwitchEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
-						outgoingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
-				continue;
-			}
-			if (MdnVisualIDRegistry.getVisualID(outgoingLink) == HostSourceHostPolicyEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
@@ -122,9 +122,8 @@ public class HostItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy {
 			return getGEFWrapper(new HostHostSwitchCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
-		if (MdnElementTypes.HostSourceHostPolicy_4007 == req.getElementType()) {
-			return getGEFWrapper(new HostSourceHostPolicyCreateCommand(req,
-					req.getSource(), req.getTarget()));
+		if (MdnElementTypes.PolicySourceHostPolicy_4023 == req.getElementType()) {
+			return null;
 		}
 		if (MdnElementTypes.PolicyTargetHostPolicy_4009 == req.getElementType()) {
 			return null;
@@ -144,8 +143,9 @@ public class HostItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy {
 		if (MdnElementTypes.HostHostSwitch_4004 == req.getElementType()) {
 			return null;
 		}
-		if (MdnElementTypes.HostSourceHostPolicy_4007 == req.getElementType()) {
-			return null;
+		if (MdnElementTypes.PolicySourceHostPolicy_4023 == req.getElementType()) {
+			return getGEFWrapper(new PolicySourceHostPolicyCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (MdnElementTypes.PolicyTargetHostPolicy_4009 == req.getElementType()) {
 			return getGEFWrapper(new PolicyTargetHostPolicyCreateCommand(req,
@@ -170,8 +170,8 @@ public class HostItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy {
 		switch (getVisualID(req)) {
 		case HostHostSwitchEditPart.VISUAL_ID:
 			return getGEFWrapper(new HostHostSwitchReorientCommand(req));
-		case HostSourceHostPolicyEditPart.VISUAL_ID:
-			return getGEFWrapper(new HostSourceHostPolicyReorientCommand(req));
+		case PolicySourceHostPolicyEditPart.VISUAL_ID:
+			return getGEFWrapper(new PolicySourceHostPolicyReorientCommand(req));
 		case PolicyTargetHostPolicyEditPart.VISUAL_ID:
 			return getGEFWrapper(new PolicyTargetHostPolicyReorientCommand(req));
 		case ActionActionForwardToNodeEditPart.VISUAL_ID:

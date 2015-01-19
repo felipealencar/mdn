@@ -10,33 +10,35 @@ import mdn.diagram.edit.parts.ActionActionPacketHeaderEditPart;
 import mdn.diagram.edit.parts.ActionEditPart;
 import mdn.diagram.edit.parts.ActionTypeEditPart;
 import mdn.diagram.edit.parts.ConditionConditionEditPart;
+import mdn.diagram.edit.parts.ConditionConditionPacketEditPart;
+import mdn.diagram.edit.parts.ConditionConditionTimeEditPart;
+import mdn.diagram.edit.parts.ConditionConditionTrafficEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
 import mdn.diagram.edit.parts.ControllerNameEditPart;
 import mdn.diagram.edit.parts.HostEditPart;
 import mdn.diagram.edit.parts.HostHostSwitchEditPart;
 import mdn.diagram.edit.parts.HostNameEditPart;
-import mdn.diagram.edit.parts.HostSourceHostPolicyEditPart;
 import mdn.diagram.edit.parts.PacketHeaderEditPart;
-import mdn.diagram.edit.parts.PacketHeaderHeaderValueEditPart;
 import mdn.diagram.edit.parts.PacketHeaderOperatorHeaderValueEditPart;
 import mdn.diagram.edit.parts.PolicyEditPart;
 import mdn.diagram.edit.parts.PolicyNameEditPart;
 import mdn.diagram.edit.parts.PolicyPolicyActionEditPart;
 import mdn.diagram.edit.parts.PolicyPolicyConditionEditPart;
+import mdn.diagram.edit.parts.PolicySourceHostPolicyEditPart;
 import mdn.diagram.edit.parts.PolicyTargetHostPolicyEditPart;
 import mdn.diagram.edit.parts.SdnEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
 import mdn.diagram.edit.parts.SwitchNameEditPart;
 import mdn.diagram.edit.parts.SwitchSwitchControllerEditPart;
-import mdn.diagram.edit.parts.SwitchSwitchEditPart;
-import mdn.diagram.edit.parts.TimeDateEditPart;
+import mdn.diagram.edit.parts.SwitchSwitchesEditPart;
 import mdn.diagram.edit.parts.TimeEditPart;
-import mdn.diagram.edit.parts.TimeHourDateEditPart;
 import mdn.diagram.edit.parts.TimeOperatorBeginDateEndDatEditPart;
 import mdn.diagram.edit.parts.TrafficEditPart;
 import mdn.diagram.edit.parts.TrafficOperatorUnitValueEditPart;
-import mdn.diagram.edit.parts.TrafficUnitValueEditPart;
+import mdn.diagram.edit.parts.WrappingLabel10EditPart;
+import mdn.diagram.edit.parts.WrappingLabel11EditPart;
+import mdn.diagram.edit.parts.WrappingLabel12EditPart;
 import mdn.diagram.edit.parts.WrappingLabel2EditPart;
 import mdn.diagram.edit.parts.WrappingLabel3EditPart;
 import mdn.diagram.edit.parts.WrappingLabel4EditPart;
@@ -304,15 +306,15 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		case HostHostSwitchEditPart.VISUAL_ID:
 			return createHostHostSwitch_4004(containerView, index, persisted,
 					preferencesHint);
-		case HostSourceHostPolicyEditPart.VISUAL_ID:
-			return createHostSourceHostPolicy_4007(containerView, index,
-					persisted, preferencesHint);
 		case SwitchSwitchControllerEditPart.VISUAL_ID:
 			return createSwitchSwitchController_4006(containerView, index,
 					persisted, preferencesHint);
-		case SwitchSwitchEditPart.VISUAL_ID:
-			return createSwitchSwitch_4008(containerView, index, persisted,
+		case SwitchSwitchesEditPart.VISUAL_ID:
+			return createSwitchSwitches_4022(containerView, index, persisted,
 					preferencesHint);
+		case PolicySourceHostPolicyEditPart.VISUAL_ID:
+			return createPolicySourceHostPolicy_4023(containerView, index,
+					persisted, preferencesHint);
 		case PolicyTargetHostPolicyEditPart.VISUAL_ID:
 			return createPolicyTargetHostPolicy_4009(containerView, index,
 					persisted, preferencesHint);
@@ -327,6 +329,15 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 					persisted, preferencesHint);
 		case ActionActionForwardToNodeEditPart.VISUAL_ID:
 			return createActionActionForwardToNode_4013(containerView, index,
+					persisted, preferencesHint);
+		case ConditionConditionTimeEditPart.VISUAL_ID:
+			return createConditionConditionTime_4017(containerView, index,
+					persisted, preferencesHint);
+		case ConditionConditionTrafficEditPart.VISUAL_ID:
+			return createConditionConditionTraffic_4018(containerView, index,
+					persisted, preferencesHint);
+		case ConditionConditionPacketEditPart.VISUAL_ID:
+			return createConditionConditionPacket_4019(containerView, index,
 					persisted, preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
@@ -841,62 +852,6 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
-	public Edge createHostSourceHostPolicy_4007(View containerView, int index,
-			boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
-		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
-				.createRelativeBendpoints();
-		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
-				2);
-		points.add(new RelativeBendpoint());
-		points.add(new RelativeBendpoint());
-		bendpoints.setPoints(points);
-		edge.setBendpoints(bendpoints);
-		ViewUtil.insertChildView(containerView, edge, index, persisted);
-		edge.setType(MdnVisualIDRegistry
-				.getType(HostSourceHostPolicyEditPart.VISUAL_ID));
-		edge.setElement(null);
-		// initializePreferences
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
-		FontStyle edgeFontStyle = (FontStyle) edge
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
-		if (edgeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
-			edgeFontStyle.setFontName(fontData.getName());
-			edgeFontStyle.setFontHeight(fontData.getHeight());
-			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
-			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
-		}
-		Routing routing = Routing.get(prefStore
-				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
-		if (routing != null) {
-			ViewUtil.setStructuralFeatureValue(edge,
-					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
-					routing);
-		}
-		Node label6006 = createLabel(edge,
-				MdnVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
-		label6006.getStyles().add(
-				NotationFactory.eINSTANCE.createDescriptionStyle());
-		label6006.setLayoutConstraint(NotationFactory.eINSTANCE
-				.createLocation());
-		Location location6006 = (Location) label6006.getLayoutConstraint();
-		location6006.setX(0);
-		location6006.setY(40);
-		return edge;
-	}
-
-	/**
-	 * @generated
-	 */
 	public Edge createSwitchSwitchController_4006(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Edge edge = NotationFactory.eINSTANCE.createEdge();
@@ -939,7 +894,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 					routing);
 		}
 		Node label6005 = createLabel(edge,
-				MdnVisualIDRegistry.getType(WrappingLabel3EditPart.VISUAL_ID));
+				MdnVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
 		label6005.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6005.setLayoutConstraint(NotationFactory.eINSTANCE
@@ -953,7 +908,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
-	public Edge createSwitchSwitch_4008(View containerView, int index,
+	public Edge createSwitchSwitches_4022(View containerView, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
 		Edge edge = NotationFactory.eINSTANCE.createEdge();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
@@ -968,7 +923,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
 		edge.setType(MdnVisualIDRegistry
-				.getType(SwitchSwitchEditPart.VISUAL_ID));
+				.getType(SwitchSwitchesEditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
@@ -994,15 +949,71 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
 					routing);
 		}
-		Node label6007 = createLabel(edge,
-				MdnVisualIDRegistry.getType(WrappingLabel4EditPart.VISUAL_ID));
-		label6007.getStyles().add(
+		Node label6021 = createLabel(edge,
+				MdnVisualIDRegistry.getType(WrappingLabel3EditPart.VISUAL_ID));
+		label6021.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
-		label6007.setLayoutConstraint(NotationFactory.eINSTANCE
+		label6021.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location6007 = (Location) label6007.getLayoutConstraint();
-		location6007.setX(0);
-		location6007.setY(40);
+		Location location6021 = (Location) label6021.getLayoutConstraint();
+		location6021.setX(0);
+		location6021.setY(40);
+		return edge;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Edge createPolicySourceHostPolicy_4023(View containerView,
+			int index, boolean persisted, PreferencesHint preferencesHint) {
+		Edge edge = NotationFactory.eINSTANCE.createEdge();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
+				.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
+				2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(MdnVisualIDRegistry
+				.getType(PolicySourceHostPolicyEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+		FontStyle edgeFontStyle = (FontStyle) edge
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		Routing routing = Routing.get(prefStore
+				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge,
+					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
+					routing);
+		}
+		Node label6022 = createLabel(edge,
+				MdnVisualIDRegistry.getType(WrappingLabel4EditPart.VISUAL_ID));
+		label6022.getStyles().add(
+				NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6022.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location6022 = (Location) label6022.getLayoutConstraint();
+		location6022.setX(0);
+		location6022.setY(40);
 		return edge;
 	}
 
@@ -1283,6 +1294,174 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		Location location6012 = (Location) label6012.getLayoutConstraint();
 		location6012.setX(0);
 		location6012.setY(40);
+		return edge;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Edge createConditionConditionTime_4017(View containerView,
+			int index, boolean persisted, PreferencesHint preferencesHint) {
+		Edge edge = NotationFactory.eINSTANCE.createEdge();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
+				.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
+				2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(MdnVisualIDRegistry
+				.getType(ConditionConditionTimeEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+		FontStyle edgeFontStyle = (FontStyle) edge
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		Routing routing = Routing.get(prefStore
+				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge,
+					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
+					routing);
+		}
+		Node label6016 = createLabel(edge,
+				MdnVisualIDRegistry.getType(WrappingLabel10EditPart.VISUAL_ID));
+		label6016.getStyles().add(
+				NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6016.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location6016 = (Location) label6016.getLayoutConstraint();
+		location6016.setX(0);
+		location6016.setY(40);
+		return edge;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Edge createConditionConditionTraffic_4018(View containerView,
+			int index, boolean persisted, PreferencesHint preferencesHint) {
+		Edge edge = NotationFactory.eINSTANCE.createEdge();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
+				.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
+				2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(MdnVisualIDRegistry
+				.getType(ConditionConditionTrafficEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+		FontStyle edgeFontStyle = (FontStyle) edge
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		Routing routing = Routing.get(prefStore
+				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge,
+					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
+					routing);
+		}
+		Node label6017 = createLabel(edge,
+				MdnVisualIDRegistry.getType(WrappingLabel11EditPart.VISUAL_ID));
+		label6017.getStyles().add(
+				NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6017.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location6017 = (Location) label6017.getLayoutConstraint();
+		location6017.setX(0);
+		location6017.setY(40);
+		return edge;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Edge createConditionConditionPacket_4019(View containerView,
+			int index, boolean persisted, PreferencesHint preferencesHint) {
+		Edge edge = NotationFactory.eINSTANCE.createEdge();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
+				.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
+				2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(MdnVisualIDRegistry
+				.getType(ConditionConditionPacketEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+		FontStyle edgeFontStyle = (FontStyle) edge
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		Routing routing = Routing.get(prefStore
+				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge,
+					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
+					routing);
+		}
+		Node label6018 = createLabel(edge,
+				MdnVisualIDRegistry.getType(WrappingLabel12EditPart.VISUAL_ID));
+		label6018.getStyles().add(
+				NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6018.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location6018 = (Location) label6018.getLayoutConstraint();
+		location6018.setX(0);
+		location6018.setY(40);
 		return edge;
 	}
 

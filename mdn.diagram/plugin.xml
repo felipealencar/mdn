@@ -259,7 +259,7 @@
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Mdn"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2011,2010,2007,2008,2009,2004"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4004,4007,4006,4008,4009,4016,4015,4012,4013"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4004,4006,4022,4023,4009,4016,4015,4012,4013,4017,4018,4019"/>
       </viewProvider>
    </extension>
 
@@ -274,7 +274,7 @@
             <method name="getType()" value="2001,2002,2003,2011,2010,2007,2008,2009,2004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4004,4007,4006,4008,4009,4016,4015,4012,4013"/>
+            <method name="getType()" value="4004,4006,4022,4023,4009,4016,4015,4012,4013,4017,4018,4019"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5001,5002,5003,5011,5010,5007,5008,5009,5004"/>
@@ -442,15 +442,6 @@
       </metamodel>
       <metamodel nsURI="mdn">
          <specializationType
-               id="mdn.diagram.HostSourceHostPolicy_4007"
-               name="%metatype.name.HostSourceHostPolicy_4007"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4007"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="mdn">
-         <specializationType
                id="mdn.diagram.SwitchSwitchController_4006"
                name="%metatype.name.SwitchSwitchController_4006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
@@ -460,11 +451,20 @@
       </metamodel>
       <metamodel nsURI="mdn">
          <specializationType
-               id="mdn.diagram.SwitchSwitch_4008"
-               name="%metatype.name.SwitchSwitch_4008"
+               id="mdn.diagram.SwitchSwitches_4022"
+               name="%metatype.name.SwitchSwitches_4022"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4008"/>
+            <param name="semanticHint" value="4022"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="mdn">
+         <specializationType
+               id="mdn.diagram.PolicySourceHostPolicy_4023"
+               name="%metatype.name.PolicySourceHostPolicy_4023"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4023"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="mdn">
@@ -512,6 +512,33 @@
             <param name="semanticHint" value="4013"/>
          </specializationType>
       </metamodel>
+      <metamodel nsURI="mdn">
+         <specializationType
+               id="mdn.diagram.ConditionConditionTime_4017"
+               name="%metatype.name.ConditionConditionTime_4017"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4017"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="mdn">
+         <specializationType
+               id="mdn.diagram.ConditionConditionTraffic_4018"
+               name="%metatype.name.ConditionConditionTraffic_4018"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4018"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="mdn">
+         <specializationType
+               id="mdn.diagram.ConditionConditionPacket_4019"
+               name="%metatype.name.ConditionConditionPacket_4019"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4019"/>
+         </specializationType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -535,14 +562,17 @@
          <elementType ref="mdn.diagram.PacketHeader_2009"/>
          <elementType ref="mdn.diagram.Policy_2004"/>
          <elementType ref="mdn.diagram.HostHostSwitch_4004"/>
-         <elementType ref="mdn.diagram.HostSourceHostPolicy_4007"/>
          <elementType ref="mdn.diagram.SwitchSwitchController_4006"/>
-         <elementType ref="mdn.diagram.SwitchSwitch_4008"/>
+         <elementType ref="mdn.diagram.SwitchSwitches_4022"/>
+         <elementType ref="mdn.diagram.PolicySourceHostPolicy_4023"/>
          <elementType ref="mdn.diagram.PolicyTargetHostPolicy_4009"/>
          <elementType ref="mdn.diagram.PolicyPolicyCondition_4016"/>
          <elementType ref="mdn.diagram.PolicyPolicyAction_4015"/>
          <elementType ref="mdn.diagram.ActionActionPacketHeader_4012"/>
          <elementType ref="mdn.diagram.ActionActionForwardToNode_4013"/>
+         <elementType ref="mdn.diagram.ConditionConditionTime_4017"/>
+         <elementType ref="mdn.diagram.ConditionConditionTraffic_4018"/>
+         <elementType ref="mdn.diagram.ConditionConditionPacket_4019"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

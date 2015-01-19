@@ -46,8 +46,11 @@ class Switch extends NetworkNode {
   @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0")
   ref Controller[*] switchController;
 
-  @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0")
-  ref Switch[*] switch;
+  @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0", source.constraint="self <> oppositeEnd")
+  ref Switch[1] source;
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0", source.constraint="self <> oppositeEnd")
+  ref Switch[1] target;
 }
 
 abstract class NetworkNode {
@@ -67,17 +70,17 @@ class Policy {
 
   @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
   ref Host targetHostPolicy;
-
-  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
-  ref Action policyAction;
-
-  @gmf.link(target.decoration="arrow", source.decoration="none", style="dot", color="0,0,0")
-  ref Condition policyCondition;
   attr String name;
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
+  transient ref Condition policyCondition;
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
+  ref Action policyAction;
 }
 
 @gmf.node(figure="figures.ActionFigure", label="type", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/action.gif", label.placement="external")
-class Action {
+class Action extends PolicyObject {
   attr Actions type;
 
   @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
@@ -87,9 +90,18 @@ class Action {
   ref NetworkNode actionForwardToNode;
 }
 
-@gmf.node(figure="figures.ConditionFigure", label="type", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/condition.gif", label.placement="external")
+@gmf.node(label="condition", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/condition.gif", label.placement="external", figure="figures.ConditionFigure")
 class Condition extends PolicyObject {
-  attr Conditions type;
+  attr Conditions condition = "WHERE";
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
+  ref Time conditionTime;
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
+  ref Traffic conditionTraffic;
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
+  ref PacketHeader conditionPacket;
 }
 
 enum Conditions {
@@ -102,28 +114,27 @@ enum RelationalOperators {
   NOT_EQUAL_TO = 1;
   GREATER_THAN = 2;
   LESS_THAN = 3;
+  IN = 0;
+  OUT = 0;
 }
 
-@gmf.node(figure="figures.RelationalOperatorFigure", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/relationaloperator.gif", label.placement="external", label="operator")
-class RelationalOperator extends PolicyObject {
-  attr RelationalOperators operator = "";
-  attr String string;
-}
-
-@gmf.node(figure="figures.TrafficFigure", label="value,unit", label.pattern="{0}:{1}", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/traffic.gif", label.placement="external")
+@gmf.node(figure="figures.TrafficFigure", label="operator,value,unit", label.pattern="{0}: {2}{1}", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/traffic.gif", label.placement="external")
 class Traffic extends PolicyObject {
+  attr RelationalOperators operator;
   attr String unit = "MB";
   attr int value;
 }
 
-@gmf.node(figure="figures.TimeFigure", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/time.gif", label.placement="external", label="hour,date")
+@gmf.node(figure="figures.TimeFigure", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/time.gif", label.placement="external", label="operator,beginDate,endDate", label.pattern="{0}: {1} - {2}")
 class Time extends PolicyObject {
-  attr String hour = "00:00:00";
-  attr EDate date;
+  attr RelationalOperators operator;
+  attr EDate beginDate;
+  attr EDate endDate;
 }
 
-@gmf.node(figure="figures.PacketHeaderFigure", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/packetheader.gif", label.placement="external", label="header,value")
+@gmf.node(figure="figures.PacketHeaderFigure", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/packetheader.gif", label.placement="external", label="operator,header,value", label.pattern="{0}: [{1}] {2}")
 class PacketHeader extends PolicyObject {
+  attr RelationalOperators operator;
   attr PacketHeaders header = "";
   attr String value;
 }

@@ -323,7 +323,6 @@ public class Messages extends NLS {
 	 */
 	public static String Switch7CreationTool_desc;
 
-
 	/**
 	 * @generated
 	 */
@@ -367,62 +366,102 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String HostSwitch3CreationTool_title;
+	public static String ConditionPacket3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String HostSwitch3CreationTool_desc;
+	public static String ConditionPacket3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String PolicyAction4CreationTool_title;
+	public static String ConditionTime4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String PolicyAction4CreationTool_desc;
+	public static String ConditionTime4CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String PolicyCondition5CreationTool_title;
+	public static String ConditionTraffic5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String PolicyCondition5CreationTool_desc;
+	public static String ConditionTraffic5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String SourceHostPolicy6CreationTool_title;
+	public static String HostSwitch6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String SourceHostPolicy6CreationTool_desc;
+	public static String HostSwitch6CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String SwitchController8CreationTool_title;
+	public static String PolicyAction7CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String SwitchController8CreationTool_desc;
+	public static String PolicyAction7CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String TargetHostPolicy9CreationTool_title;
+	public static String PolicyCondition8CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String TargetHostPolicy9CreationTool_desc;
+	public static String PolicyCondition8CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String SwitchController9CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String SwitchController9CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Switches10CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Switches10CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String SourceHost11CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String SourceHost11CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String TargetHost12CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String TargetHost12CreationTool_desc;
 
 	/**
 	 * @generated
@@ -432,67 +471,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_PolicyPolicyCondition_4016_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_PolicyPolicyCondition_4016_source;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_Sdn_1000_links;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Action_2011_incominglinks;
+	public static String NavigatorGroupName_ConditionConditionTime_4017_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Action_2011_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Host_2002_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Host_2002_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ActionActionPacketHeader_4012_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ActionActionPacketHeader_4012_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Controller_2001_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_PacketHeader_2009_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_PolicyTargetHostPolicy_4009_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_PolicyTargetHostPolicy_4009_source;
+	public static String NavigatorGroupName_ConditionConditionTime_4017_source;
 
 	/**
 	 * @generated
@@ -502,22 +491,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Policy_2004_incominglinks;
+	public static String NavigatorGroupName_Condition_2010_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Policy_2004_outgoinglinks;
+	public static String NavigatorGroupName_ConditionConditionTraffic_4018_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_SwitchSwitchController_4006_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SwitchSwitchController_4006_source;
+	public static String NavigatorGroupName_ConditionConditionTraffic_4018_source;
 
 	/**
 	 * @generated
@@ -532,37 +516,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HostHostSwitch_4004_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HostHostSwitch_4004_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_PolicyPolicyAction_4015_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SwitchSwitch_4008_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SwitchSwitch_4008_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HostSourceHostPolicy_4007_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HostSourceHostPolicy_4007_source;
+	public static String NavigatorGroupName_Controller_2001_incominglinks;
 
 	/**
 	 * @generated
@@ -577,7 +531,132 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_HostHostSwitch_4004_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HostHostSwitch_4004_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PolicyTargetHostPolicy_4009_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PolicyTargetHostPolicy_4009_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ActionActionPacketHeader_4012_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ActionActionPacketHeader_4012_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SwitchSwitches_4022_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SwitchSwitches_4022_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Policy_2004_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_PolicyPolicyAction_4015_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PolicyPolicyAction_4015_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Host_2002_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Host_2002_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Time_2008_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConditionConditionPacket_4019_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConditionConditionPacket_4019_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SwitchSwitchController_4006_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SwitchSwitchController_4006_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PolicySourceHostPolicy_4023_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PolicySourceHostPolicy_4023_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Action_2011_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Action_2011_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PacketHeader_2009_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PolicyPolicyCondition_4016_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PolicyPolicyCondition_4016_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Traffic_2007_incominglinks;
 
 	/**
 	 * @generated

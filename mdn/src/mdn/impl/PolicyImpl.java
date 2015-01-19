@@ -2,6 +2,7 @@
  */
 package mdn.impl;
 
+import java.util.Collection;
 import mdn.Action;
 import mdn.Condition;
 import mdn.Host;
@@ -10,12 +11,14 @@ import mdn.Policy;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +27,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link mdn.impl.PolicyImpl#getSourceHostPolicy <em>Source Host Policy</em>}</li>
  *   <li>{@link mdn.impl.PolicyImpl#getTargetHostPolicy <em>Target Host Policy</em>}</li>
  *   <li>{@link mdn.impl.PolicyImpl#getName <em>Name</em>}</li>
  *   <li>{@link mdn.impl.PolicyImpl#getPolicyCondition <em>Policy Condition</em>}</li>
@@ -36,14 +40,24 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 public class PolicyImpl extends EObjectImpl implements Policy
 {
   /**
-   * The cached value of the '{@link #getTargetHostPolicy() <em>Target Host Policy</em>}' reference.
+   * The cached value of the '{@link #getSourceHostPolicy() <em>Source Host Policy</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSourceHostPolicy()
+   * @generated
+   * @ordered
+   */
+  protected EList<Host> sourceHostPolicy;
+
+  /**
+   * The cached value of the '{@link #getTargetHostPolicy() <em>Target Host Policy</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTargetHostPolicy()
    * @generated
    * @ordered
    */
-  protected Host targetHostPolicy;
+  protected EList<Host> targetHostPolicy;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -111,42 +125,27 @@ public class PolicyImpl extends EObjectImpl implements Policy
    * <!-- end-user-doc -->
    * @generated
    */
-  public Host getTargetHostPolicy()
+  public EList<Host> getSourceHostPolicy()
   {
-    if (targetHostPolicy != null && targetHostPolicy.eIsProxy())
+    if (sourceHostPolicy == null)
     {
-      InternalEObject oldTargetHostPolicy = (InternalEObject)targetHostPolicy;
-      targetHostPolicy = (Host)eResolveProxy(oldTargetHostPolicy);
-      if (targetHostPolicy != oldTargetHostPolicy)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MdnPackage.POLICY__TARGET_HOST_POLICY, oldTargetHostPolicy, targetHostPolicy));
-      }
+      sourceHostPolicy = new EObjectResolvingEList<Host>(Host.class, this, MdnPackage.POLICY__SOURCE_HOST_POLICY);
+    }
+    return sourceHostPolicy;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Host> getTargetHostPolicy()
+  {
+    if (targetHostPolicy == null)
+    {
+      targetHostPolicy = new EObjectResolvingEList<Host>(Host.class, this, MdnPackage.POLICY__TARGET_HOST_POLICY);
     }
     return targetHostPolicy;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Host basicGetTargetHostPolicy()
-  {
-    return targetHostPolicy;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTargetHostPolicy(Host newTargetHostPolicy)
-  {
-    Host oldTargetHostPolicy = targetHostPolicy;
-    targetHostPolicy = newTargetHostPolicy;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.POLICY__TARGET_HOST_POLICY, oldTargetHostPolicy, targetHostPolicy));
   }
 
   /**
@@ -268,9 +267,10 @@ public class PolicyImpl extends EObjectImpl implements Policy
   {
     switch (featureID)
     {
+      case MdnPackage.POLICY__SOURCE_HOST_POLICY:
+        return getSourceHostPolicy();
       case MdnPackage.POLICY__TARGET_HOST_POLICY:
-        if (resolve) return getTargetHostPolicy();
-        return basicGetTargetHostPolicy();
+        return getTargetHostPolicy();
       case MdnPackage.POLICY__NAME:
         return getName();
       case MdnPackage.POLICY__POLICY_CONDITION:
@@ -288,13 +288,19 @@ public class PolicyImpl extends EObjectImpl implements Policy
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
+      case MdnPackage.POLICY__SOURCE_HOST_POLICY:
+        getSourceHostPolicy().clear();
+        getSourceHostPolicy().addAll((Collection<? extends Host>)newValue);
+        return;
       case MdnPackage.POLICY__TARGET_HOST_POLICY:
-        setTargetHostPolicy((Host)newValue);
+        getTargetHostPolicy().clear();
+        getTargetHostPolicy().addAll((Collection<? extends Host>)newValue);
         return;
       case MdnPackage.POLICY__NAME:
         setName((String)newValue);
@@ -319,8 +325,11 @@ public class PolicyImpl extends EObjectImpl implements Policy
   {
     switch (featureID)
     {
+      case MdnPackage.POLICY__SOURCE_HOST_POLICY:
+        getSourceHostPolicy().clear();
+        return;
       case MdnPackage.POLICY__TARGET_HOST_POLICY:
-        setTargetHostPolicy((Host)null);
+        getTargetHostPolicy().clear();
         return;
       case MdnPackage.POLICY__NAME:
         setName(NAME_EDEFAULT);
@@ -345,8 +354,10 @@ public class PolicyImpl extends EObjectImpl implements Policy
   {
     switch (featureID)
     {
+      case MdnPackage.POLICY__SOURCE_HOST_POLICY:
+        return sourceHostPolicy != null && !sourceHostPolicy.isEmpty();
       case MdnPackage.POLICY__TARGET_HOST_POLICY:
-        return targetHostPolicy != null;
+        return targetHostPolicy != null && !targetHostPolicy.isEmpty();
       case MdnPackage.POLICY__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MdnPackage.POLICY__POLICY_CONDITION:

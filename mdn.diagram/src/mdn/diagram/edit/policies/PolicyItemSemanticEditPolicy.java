@@ -5,17 +5,17 @@ package mdn.diagram.edit.policies;
 
 import java.util.Iterator;
 
-import mdn.diagram.edit.commands.HostSourceHostPolicyCreateCommand;
-import mdn.diagram.edit.commands.HostSourceHostPolicyReorientCommand;
 import mdn.diagram.edit.commands.PolicyPolicyActionCreateCommand;
 import mdn.diagram.edit.commands.PolicyPolicyActionReorientCommand;
 import mdn.diagram.edit.commands.PolicyPolicyConditionCreateCommand;
 import mdn.diagram.edit.commands.PolicyPolicyConditionReorientCommand;
+import mdn.diagram.edit.commands.PolicySourceHostPolicyCreateCommand;
+import mdn.diagram.edit.commands.PolicySourceHostPolicyReorientCommand;
 import mdn.diagram.edit.commands.PolicyTargetHostPolicyCreateCommand;
 import mdn.diagram.edit.commands.PolicyTargetHostPolicyReorientCommand;
-import mdn.diagram.edit.parts.HostSourceHostPolicyEditPart;
 import mdn.diagram.edit.parts.PolicyPolicyActionEditPart;
 import mdn.diagram.edit.parts.PolicyPolicyConditionEditPart;
+import mdn.diagram.edit.parts.PolicySourceHostPolicyEditPart;
 import mdn.diagram.edit.parts.PolicyTargetHostPolicyEditPart;
 import mdn.diagram.part.MdnVisualIDRegistry;
 import mdn.diagram.providers.MdnElementTypes;
@@ -53,19 +53,16 @@ public class PolicyItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
 				getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
-		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
-			Edge incomingLink = (Edge) it.next();
-			if (MdnVisualIDRegistry.getVisualID(incomingLink) == HostSourceHostPolicyEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
-						incomingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
-		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
+			if (MdnVisualIDRegistry.getVisualID(outgoingLink) == PolicySourceHostPolicyEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
 			if (MdnVisualIDRegistry.getVisualID(outgoingLink) == PolicyTargetHostPolicyEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
@@ -118,8 +115,9 @@ public class PolicyItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (MdnElementTypes.HostSourceHostPolicy_4007 == req.getElementType()) {
-			return null;
+		if (MdnElementTypes.PolicySourceHostPolicy_4023 == req.getElementType()) {
+			return getGEFWrapper(new PolicySourceHostPolicyCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (MdnElementTypes.PolicyTargetHostPolicy_4009 == req.getElementType()) {
 			return getGEFWrapper(new PolicyTargetHostPolicyCreateCommand(req,
@@ -141,9 +139,8 @@ public class PolicyItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (MdnElementTypes.HostSourceHostPolicy_4007 == req.getElementType()) {
-			return getGEFWrapper(new HostSourceHostPolicyCreateCommand(req,
-					req.getSource(), req.getTarget()));
+		if (MdnElementTypes.PolicySourceHostPolicy_4023 == req.getElementType()) {
+			return null;
 		}
 		if (MdnElementTypes.PolicyTargetHostPolicy_4009 == req.getElementType()) {
 			return null;
@@ -166,8 +163,8 @@ public class PolicyItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 	protected Command getReorientReferenceRelationshipCommand(
 			ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case HostSourceHostPolicyEditPart.VISUAL_ID:
-			return getGEFWrapper(new HostSourceHostPolicyReorientCommand(req));
+		case PolicySourceHostPolicyEditPart.VISUAL_ID:
+			return getGEFWrapper(new PolicySourceHostPolicyReorientCommand(req));
 		case PolicyTargetHostPolicyEditPart.VISUAL_ID:
 			return getGEFWrapper(new PolicyTargetHostPolicyReorientCommand(req));
 		case PolicyPolicyConditionEditPart.VISUAL_ID:

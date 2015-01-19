@@ -30,6 +30,7 @@ import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
@@ -235,6 +236,50 @@ public class ConditionEditPart extends AbstractBorderedShapeEditPart {
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(MdnVisualIDRegistry
 				.getType(ConditionConditionEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMARelTypesOnSource() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+		types.add(MdnElementTypes.ConditionConditionTime_4017);
+		types.add(MdnElementTypes.ConditionConditionTraffic_4018);
+		types.add(MdnElementTypes.ConditionConditionPacket_4019);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMARelTypesOnSourceAndTarget(
+			IGraphicalEditPart targetEditPart) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
+		if (targetEditPart instanceof TimeEditPart) {
+			types.add(MdnElementTypes.ConditionConditionTime_4017);
+		}
+		if (targetEditPart instanceof TrafficEditPart) {
+			types.add(MdnElementTypes.ConditionConditionTraffic_4018);
+		}
+		if (targetEditPart instanceof PacketHeaderEditPart) {
+			types.add(MdnElementTypes.ConditionConditionPacket_4019);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
+		if (relationshipType == MdnElementTypes.ConditionConditionTime_4017) {
+			types.add(MdnElementTypes.Time_2008);
+		} else if (relationshipType == MdnElementTypes.ConditionConditionTraffic_4018) {
+			types.add(MdnElementTypes.Traffic_2007);
+		} else if (relationshipType == MdnElementTypes.ConditionConditionPacket_4019) {
+			types.add(MdnElementTypes.PacketHeader_2009);
+		}
+		return types;
 	}
 
 	/**

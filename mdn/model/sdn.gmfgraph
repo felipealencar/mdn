@@ -1,416 +1,200 @@
 <?xml version="1.0" encoding="ASCII"?>
-<gmfgraph:Canvas
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
-    name="mdn">
-  <figures
-      name="Default">
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="PolicyTargetHostPolicyFigureTargetDecoration"/>
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="ActionActionPacketHeaderFigureTargetDecoration"/>
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="ActionActionForwardToNodeFigureTargetDecoration"/>
-    <descriptors
-        name="ControllerFigure">
-      <actualFigure
-          xsi:type="gmfgraph:CustomFigure"
-          name="ControllerFigure"
-          qualifiedClassName="figures.ControllerFigure"/>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="mdn">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="PolicyTargetHostPolicyFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ActionActionPacketHeaderFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ActionActionForwardToNodeFigureTargetDecoration"/>
+    <descriptors name="ControllerFigure">
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="ControllerFigure" qualifiedClassName="figures.ControllerFigure"/>
     </descriptors>
-    <descriptors
-        name="ControllerLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="ControllerLabelFigure"
-          text="Controller"/>
+    <descriptors name="ControllerLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ControllerLabelFigure" text="Controller"/>
     </descriptors>
-    <descriptors
-        name="HostFigure">
-      <actualFigure
-          xsi:type="gmfgraph:CustomFigure"
-          name="HostFigure"
-          qualifiedClassName="figures.HostFigure"/>
+    <descriptors name="HostFigure">
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="HostFigure" qualifiedClassName="figures.HostFigure"/>
     </descriptors>
-    <descriptors
-        name="HostLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="HostLabelFigure"
-          text="Host"/>
+    <descriptors name="HostLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="HostLabelFigure" text="Host"/>
     </descriptors>
-    <descriptors
-        name="SwitchFigure">
-      <actualFigure
-          xsi:type="gmfgraph:CustomFigure"
-          name="SwitchFigure"
-          qualifiedClassName="figures.SwitchFigure"/>
+    <descriptors name="SwitchFigure">
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="SwitchFigure" qualifiedClassName="figures.SwitchFigure"/>
     </descriptors>
-    <descriptors
-        name="SwitchLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="SwitchLabelFigure"
-          text="Switch"/>
+    <descriptors name="SwitchLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="SwitchLabelFigure" text="Switch"/>
     </descriptors>
-    <descriptors
-        name="PolicyFigure">
-      <actualFigure
-          xsi:type="gmfgraph:CustomFigure"
-          name="PolicyFigure"
-          qualifiedClassName="figures.PolicyFigure"/>
+    <descriptors name="PolicyFigure">
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="PolicyFigure" qualifiedClassName="figures.PolicyFigure"/>
     </descriptors>
-    <descriptors
-        name="PolicyLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="PolicyLabelFigure"
-          text="Policy"/>
+    <descriptors name="PolicyLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="PolicyLabelFigure" text="Policy"/>
     </descriptors>
-    <descriptors
-        name="ActionFigure">
-      <actualFigure
-          xsi:type="gmfgraph:CustomFigure"
-          name="ActionFigure"
-          qualifiedClassName="figures.ActionFigure"/>
+    <descriptors name="ActionFigure">
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="ActionFigure" qualifiedClassName="figures.ActionFigure"/>
     </descriptors>
-    <descriptors
-        name="ActionLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="ActionLabelFigure"
-          text="Action"/>
+    <descriptors name="ActionLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ActionLabelFigure" text="Action"/>
     </descriptors>
-    <descriptors
-        name="ConditionFigure">
-      <actualFigure
-          xsi:type="gmfgraph:CustomFigure"
-          name="ConditionFigure"
-          qualifiedClassName="figures.ConditionFigure"/>
+    <descriptors name="ConditionFigure">
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="ConditionFigure" qualifiedClassName="figures.ConditionFigure"/>
     </descriptors>
-    <descriptors
-        name="ConditionLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="ConditionLabelFigure"
-          text="Condition"/>
+    <descriptors name="ConditionLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ConditionLabelFigure" text="Condition"/>
     </descriptors>
-    <descriptors
-        name="TrafficFigure">
-      <actualFigure
-          xsi:type="gmfgraph:CustomFigure"
-          name="TrafficFigure"
-          qualifiedClassName="figures.TrafficFigure"/>
+    <descriptors name="TrafficFigure">
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="TrafficFigure" qualifiedClassName="figures.TrafficFigure"/>
     </descriptors>
-    <descriptors
-        name="TrafficLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="TrafficLabelFigure"
-          text="Traffic"/>
+    <descriptors name="TrafficLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="TrafficLabelFigure" text="Traffic"/>
     </descriptors>
-    <descriptors
-        name="TimeFigure">
-      <actualFigure
-          xsi:type="gmfgraph:CustomFigure"
-          name="TimeFigure"
-          qualifiedClassName="figures.TimeFigure"/>
+    <descriptors name="TimeFigure">
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="TimeFigure" qualifiedClassName="figures.TimeFigure"/>
     </descriptors>
-    <descriptors
-        name="TimeLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="TimeLabelFigure"
-          text="Time"/>
+    <descriptors name="TimeLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="TimeLabelFigure" text="Time"/>
     </descriptors>
-    <descriptors
-        name="PacketHeaderFigure">
-      <actualFigure
-          xsi:type="gmfgraph:CustomFigure"
-          name="PacketHeaderFigure"
-          qualifiedClassName="figures.PacketHeaderFigure"/>
+    <descriptors name="PacketHeaderFigure">
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="PacketHeaderFigure" qualifiedClassName="figures.PacketHeaderFigure"/>
     </descriptors>
-    <descriptors
-        name="PacketHeaderLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="PacketHeaderLabelFigure"
-          text="PacketHeader"/>
+    <descriptors name="PacketHeaderLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="PacketHeaderLabelFigure" text="PacketHeader"/>
     </descriptors>
-    <descriptors
-        name="HostHostSwitchFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="HostHostSwitchFigure">
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"/>
+    <descriptors name="HostHostSwitchFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="HostHostSwitchFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors
-        name="HostHostSwitchExternalLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="HostHostSwitchExternalLabel"/>
+    <descriptors name="HostHostSwitchExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="HostHostSwitchExternalLabel"/>
     </descriptors>
-    <descriptors
-        name="HostSourceHostPolicyFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="HostSourceHostPolicyFigure"
-          lineKind="LINE_DASH">
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"/>
+    <descriptors name="SwitchSwitchControllerFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="SwitchSwitchControllerFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors
-        name="HostSourceHostPolicyExternalLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="HostSourceHostPolicyExternalLabel"/>
+    <descriptors name="SwitchSwitchControllerExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="SwitchSwitchControllerExternalLabel"/>
     </descriptors>
-    <descriptors
-        name="SwitchSwitchControllerFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="SwitchSwitchControllerFigure">
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"/>
+    <descriptors name="SwitchSwitchesFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="SwitchSwitchesFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors
-        name="SwitchSwitchControllerExternalLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="SwitchSwitchControllerExternalLabel"/>
+    <descriptors name="SwitchSwitchesExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="SwitchSwitchesExternalLabel"/>
     </descriptors>
-    <descriptors
-        name="SwitchSwitchFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="SwitchSwitchFigure">
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"/>
+    <descriptors name="PolicySourceHostPolicyFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="PolicySourceHostPolicyFigure" lineKind="LINE_DASH">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors
-        name="SwitchSwitchExternalLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="SwitchSwitchExternalLabel"/>
+    <descriptors name="PolicySourceHostPolicyExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="PolicySourceHostPolicyExternalLabel"/>
     </descriptors>
-    <descriptors
-        name="PolicyTargetHostPolicyFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="PolicyTargetHostPolicyFigure"
-          lineKind="LINE_DASH"
-          targetDecoration="//@figures.0/@figures.0">
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"/>
+    <descriptors name="PolicyTargetHostPolicyFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="PolicyTargetHostPolicyFigure" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors
-        name="PolicyTargetHostPolicyExternalLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="PolicyTargetHostPolicyExternalLabel"/>
+    <descriptors name="PolicyTargetHostPolicyExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="PolicyTargetHostPolicyExternalLabel"/>
     </descriptors>
-    <descriptors
-        name="PolicyPolicyConditionFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="PolicyPolicyConditionFigure"
-          lineKind="LINE_DASH">
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"/>
+    <descriptors name="PolicyPolicyConditionFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="PolicyPolicyConditionFigure" lineKind="LINE_DASH">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors
-        name="PolicyPolicyConditionExternalLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="PolicyPolicyConditionExternalLabel"/>
+    <descriptors name="PolicyPolicyConditionExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="PolicyPolicyConditionExternalLabel"/>
     </descriptors>
-    <descriptors
-        name="PolicyPolicyActionFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="PolicyPolicyActionFigure"
-          lineKind="LINE_DASH">
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"/>
+    <descriptors name="PolicyPolicyActionFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="PolicyPolicyActionFigure" lineKind="LINE_DASH">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors
-        name="PolicyPolicyActionExternalLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="PolicyPolicyActionExternalLabel"/>
+    <descriptors name="PolicyPolicyActionExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="PolicyPolicyActionExternalLabel"/>
     </descriptors>
-    <descriptors
-        name="ActionActionPacketHeaderFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="ActionActionPacketHeaderFigure"
-          lineKind="LINE_DASH"
-          targetDecoration="//@figures.0/@figures.1">
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"/>
+    <descriptors name="ActionActionPacketHeaderFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ActionActionPacketHeaderFigure" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.1">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors
-        name="ActionActionPacketHeaderExternalLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="ActionActionPacketHeaderExternalLabel"/>
+    <descriptors name="ActionActionPacketHeaderExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ActionActionPacketHeaderExternalLabel"/>
     </descriptors>
-    <descriptors
-        name="ActionActionForwardToNodeFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="ActionActionForwardToNodeFigure"
-          lineKind="LINE_DASH"
-          targetDecoration="//@figures.0/@figures.2">
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"/>
+    <descriptors name="ActionActionForwardToNodeFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ActionActionForwardToNodeFigure" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.2">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors
-        name="ActionActionForwardToNodeExternalLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="ActionActionForwardToNodeExternalLabel"/>
+    <descriptors name="ActionActionForwardToNodeExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ActionActionForwardToNodeExternalLabel"/>
+    </descriptors>
+    <descriptors name="ConditionConditionTimeFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ConditionConditionTimeFigure" lineKind="LINE_DASH">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ConditionConditionTimeExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ConditionConditionTimeExternalLabel"/>
+    </descriptors>
+    <descriptors name="ConditionConditionTrafficFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ConditionConditionTrafficFigure" lineKind="LINE_DASH">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ConditionConditionTrafficExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ConditionConditionTrafficExternalLabel"/>
+    </descriptors>
+    <descriptors name="ConditionConditionPacketFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ConditionConditionPacketFigure" lineKind="LINE_DASH">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ConditionConditionPacketExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ConditionConditionPacketExternalLabel"/>
     </descriptors>
   </figures>
-  <nodes
-      name="Controller"
-      figure="ControllerFigure"/>
-  <nodes
-      name="Host"
-      figure="HostFigure"/>
-  <nodes
-      name="Switch"
-      figure="SwitchFigure"/>
-  <nodes
-      name="Policy"
-      figure="PolicyFigure"/>
-  <nodes
-      name="Action"
-      figure="ActionFigure"/>
-  <nodes
-      name="Condition"
-      figure="ConditionFigure"/>
-  <nodes
-      name="Traffic"
-      figure="TrafficFigure"/>
-  <nodes
-      name="Time"
-      figure="TimeFigure"/>
-  <nodes
-      name="PacketHeader"
-      figure="PacketHeaderFigure"/>
-  <connections
-      name="HostHostSwitch"
-      figure="HostHostSwitchFigure"/>
-  <connections
-      name="HostSourceHostPolicy"
-      figure="HostSourceHostPolicyFigure"/>
-  <connections
-      name="SwitchSwitchController"
-      figure="SwitchSwitchControllerFigure"/>
-  <connections
-      name="SwitchSwitch"
-      figure="SwitchSwitchFigure"/>
-  <connections
-      name="PolicyTargetHostPolicy"
-      figure="PolicyTargetHostPolicyFigure"/>
-  <connections
-      name="PolicyPolicyCondition"
-      figure="PolicyPolicyConditionFigure"/>
-  <connections
-      name="PolicyPolicyAction"
-      figure="PolicyPolicyActionFigure"/>
-  <connections
-      name="ActionActionPacketHeader"
-      figure="ActionActionPacketHeaderFigure"/>
-  <connections
-      name="ActionActionForwardToNode"
-      figure="ActionActionForwardToNodeFigure"/>
-  <labels
-      name="ControllerLabel"
-      figure="ControllerLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="HostLabel"
-      figure="HostLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="SwitchLabel"
-      figure="SwitchLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="PolicyLabel"
-      figure="PolicyLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="ActionLabel"
-      figure="ActionLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="ConditionLabel"
-      figure="ConditionLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="TrafficLabel"
-      figure="TrafficLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="TimeLabel"
-      figure="TimeLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="PacketHeaderLabel"
-      figure="PacketHeaderLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="HostHostSwitchExternalLabel"
-      figure="HostHostSwitchExternalLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="HostSourceHostPolicyExternalLabel"
-      figure="HostSourceHostPolicyExternalLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="SwitchSwitchControllerExternalLabel"
-      figure="SwitchSwitchControllerExternalLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="SwitchSwitchExternalLabel"
-      figure="SwitchSwitchExternalLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="PolicyTargetHostPolicyExternalLabel"
-      figure="PolicyTargetHostPolicyExternalLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="PolicyPolicyConditionExternalLabel"
-      figure="PolicyPolicyConditionExternalLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="PolicyPolicyActionExternalLabel"
-      figure="PolicyPolicyActionExternalLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="ActionActionPacketHeaderExternalLabel"
-      figure="ActionActionPacketHeaderExternalLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="ActionActionForwardToNodeExternalLabel"
-      figure="ActionActionForwardToNodeExternalLabelFigure"
-      elementIcon="false"/>
+  <nodes name="Controller" figure="ControllerFigure"/>
+  <nodes name="Host" figure="HostFigure"/>
+  <nodes name="Switch" figure="SwitchFigure"/>
+  <nodes name="Policy" figure="PolicyFigure"/>
+  <nodes name="Action" figure="ActionFigure"/>
+  <nodes name="Condition" figure="ConditionFigure"/>
+  <nodes name="Traffic" figure="TrafficFigure"/>
+  <nodes name="Time" figure="TimeFigure"/>
+  <nodes name="PacketHeader" figure="PacketHeaderFigure"/>
+  <connections name="HostHostSwitch" figure="HostHostSwitchFigure"/>
+  <connections name="SwitchSwitchController" figure="SwitchSwitchControllerFigure"/>
+  <connections name="SwitchSwitches" figure="SwitchSwitchesFigure"/>
+  <connections name="PolicySourceHostPolicy" figure="PolicySourceHostPolicyFigure"/>
+  <connections name="PolicyTargetHostPolicy" figure="PolicyTargetHostPolicyFigure"/>
+  <connections name="PolicyPolicyCondition" figure="PolicyPolicyConditionFigure"/>
+  <connections name="PolicyPolicyAction" figure="PolicyPolicyActionFigure"/>
+  <connections name="ActionActionPacketHeader" figure="ActionActionPacketHeaderFigure"/>
+  <connections name="ActionActionForwardToNode" figure="ActionActionForwardToNodeFigure"/>
+  <connections name="ConditionConditionTime" figure="ConditionConditionTimeFigure"/>
+  <connections name="ConditionConditionTraffic" figure="ConditionConditionTrafficFigure"/>
+  <connections name="ConditionConditionPacket" figure="ConditionConditionPacketFigure"/>
+  <labels name="ControllerLabel" figure="ControllerLabelFigure" elementIcon="false"/>
+  <labels name="HostLabel" figure="HostLabelFigure" elementIcon="false"/>
+  <labels name="SwitchLabel" figure="SwitchLabelFigure" elementIcon="false"/>
+  <labels name="PolicyLabel" figure="PolicyLabelFigure" elementIcon="false"/>
+  <labels name="ActionLabel" figure="ActionLabelFigure" elementIcon="false"/>
+  <labels name="ConditionLabel" figure="ConditionLabelFigure" elementIcon="false"/>
+  <labels name="TrafficLabel" figure="TrafficLabelFigure" elementIcon="false"/>
+  <labels name="TimeLabel" figure="TimeLabelFigure" elementIcon="false"/>
+  <labels name="PacketHeaderLabel" figure="PacketHeaderLabelFigure" elementIcon="false"/>
+  <labels name="HostHostSwitchExternalLabel" figure="HostHostSwitchExternalLabelFigure" elementIcon="false"/>
+  <labels name="SwitchSwitchControllerExternalLabel" figure="SwitchSwitchControllerExternalLabelFigure" elementIcon="false"/>
+  <labels name="SwitchSwitchesExternalLabel" figure="SwitchSwitchesExternalLabelFigure" elementIcon="false"/>
+  <labels name="PolicySourceHostPolicyExternalLabel" figure="PolicySourceHostPolicyExternalLabelFigure" elementIcon="false"/>
+  <labels name="PolicyTargetHostPolicyExternalLabel" figure="PolicyTargetHostPolicyExternalLabelFigure" elementIcon="false"/>
+  <labels name="PolicyPolicyConditionExternalLabel" figure="PolicyPolicyConditionExternalLabelFigure" elementIcon="false"/>
+  <labels name="PolicyPolicyActionExternalLabel" figure="PolicyPolicyActionExternalLabelFigure" elementIcon="false"/>
+  <labels name="ActionActionPacketHeaderExternalLabel" figure="ActionActionPacketHeaderExternalLabelFigure" elementIcon="false"/>
+  <labels name="ActionActionForwardToNodeExternalLabel" figure="ActionActionForwardToNodeExternalLabelFigure" elementIcon="false"/>
+  <labels name="ConditionConditionTimeExternalLabel" figure="ConditionConditionTimeExternalLabelFigure" elementIcon="false"/>
+  <labels name="ConditionConditionTrafficExternalLabel" figure="ConditionConditionTrafficExternalLabelFigure" elementIcon="false"/>
+  <labels name="ConditionConditionPacketExternalLabel" figure="ConditionConditionPacketExternalLabelFigure" elementIcon="false"/>
 </gmfgraph:Canvas>

@@ -12,20 +12,23 @@ import mdn.MdnPackage;
 import mdn.diagram.edit.parts.ActionActionForwardToNodeEditPart;
 import mdn.diagram.edit.parts.ActionActionPacketHeaderEditPart;
 import mdn.diagram.edit.parts.ActionEditPart;
+import mdn.diagram.edit.parts.ConditionConditionPacketEditPart;
+import mdn.diagram.edit.parts.ConditionConditionTimeEditPart;
+import mdn.diagram.edit.parts.ConditionConditionTrafficEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
 import mdn.diagram.edit.parts.HostEditPart;
 import mdn.diagram.edit.parts.HostHostSwitchEditPart;
-import mdn.diagram.edit.parts.HostSourceHostPolicyEditPart;
 import mdn.diagram.edit.parts.PacketHeaderEditPart;
 import mdn.diagram.edit.parts.PolicyEditPart;
 import mdn.diagram.edit.parts.PolicyPolicyActionEditPart;
 import mdn.diagram.edit.parts.PolicyPolicyConditionEditPart;
+import mdn.diagram.edit.parts.PolicySourceHostPolicyEditPart;
 import mdn.diagram.edit.parts.PolicyTargetHostPolicyEditPart;
 import mdn.diagram.edit.parts.SdnEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
 import mdn.diagram.edit.parts.SwitchSwitchControllerEditPart;
-import mdn.diagram.edit.parts.SwitchSwitchEditPart;
+import mdn.diagram.edit.parts.SwitchSwitchesEditPart;
 import mdn.diagram.edit.parts.TimeEditPart;
 import mdn.diagram.edit.parts.TrafficEditPart;
 import mdn.diagram.part.MdnDiagramEditorPlugin;
@@ -87,7 +90,6 @@ public class MdnElementTypes {
 	 * @generated
 	 */
 	public static final IElementType Action_2011 = getElementType("mdn.diagram.Action_2011"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -115,15 +117,16 @@ public class MdnElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType HostSourceHostPolicy_4007 = getElementType("mdn.diagram.HostSourceHostPolicy_4007"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
 	public static final IElementType SwitchSwitchController_4006 = getElementType("mdn.diagram.SwitchSwitchController_4006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType SwitchSwitch_4008 = getElementType("mdn.diagram.SwitchSwitch_4008"); //$NON-NLS-1$
+	public static final IElementType SwitchSwitches_4022 = getElementType("mdn.diagram.SwitchSwitches_4022"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType PolicySourceHostPolicy_4023 = getElementType("mdn.diagram.PolicySourceHostPolicy_4023"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -144,6 +147,18 @@ public class MdnElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ActionActionForwardToNode_4013 = getElementType("mdn.diagram.ActionActionForwardToNode_4013"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConditionConditionTime_4017 = getElementType("mdn.diagram.ConditionConditionTime_4017"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConditionConditionTraffic_4018 = getElementType("mdn.diagram.ConditionConditionTraffic_4018"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConditionConditionPacket_4019 = getElementType("mdn.diagram.ConditionConditionPacket_4019"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -280,14 +295,14 @@ public class MdnElementTypes {
 			elements.put(HostHostSwitch_4004,
 					MdnPackage.eINSTANCE.getHost_HostSwitch());
 
-			elements.put(HostSourceHostPolicy_4007,
-					MdnPackage.eINSTANCE.getHost_SourceHostPolicy());
-
 			elements.put(SwitchSwitchController_4006,
 					MdnPackage.eINSTANCE.getSwitch_SwitchController());
 
-			elements.put(SwitchSwitch_4008,
-					MdnPackage.eINSTANCE.getSwitch_Switch());
+			elements.put(SwitchSwitches_4022,
+					MdnPackage.eINSTANCE.getSwitch_Switches());
+
+			elements.put(PolicySourceHostPolicy_4023,
+					MdnPackage.eINSTANCE.getPolicy_SourceHostPolicy());
 
 			elements.put(PolicyTargetHostPolicy_4009,
 					MdnPackage.eINSTANCE.getPolicy_TargetHostPolicy());
@@ -303,6 +318,15 @@ public class MdnElementTypes {
 
 			elements.put(ActionActionForwardToNode_4013,
 					MdnPackage.eINSTANCE.getAction_ActionForwardToNode());
+
+			elements.put(ConditionConditionTime_4017,
+					MdnPackage.eINSTANCE.getCondition_ConditionTime());
+
+			elements.put(ConditionConditionTraffic_4018,
+					MdnPackage.eINSTANCE.getCondition_ConditionTraffic());
+
+			elements.put(ConditionConditionPacket_4019,
+					MdnPackage.eINSTANCE.getCondition_ConditionPacket());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -331,14 +355,17 @@ public class MdnElementTypes {
 			KNOWN_ELEMENT_TYPES.add(PacketHeader_2009);
 			KNOWN_ELEMENT_TYPES.add(Policy_2004);
 			KNOWN_ELEMENT_TYPES.add(HostHostSwitch_4004);
-			KNOWN_ELEMENT_TYPES.add(HostSourceHostPolicy_4007);
 			KNOWN_ELEMENT_TYPES.add(SwitchSwitchController_4006);
-			KNOWN_ELEMENT_TYPES.add(SwitchSwitch_4008);
+			KNOWN_ELEMENT_TYPES.add(SwitchSwitches_4022);
+			KNOWN_ELEMENT_TYPES.add(PolicySourceHostPolicy_4023);
 			KNOWN_ELEMENT_TYPES.add(PolicyTargetHostPolicy_4009);
 			KNOWN_ELEMENT_TYPES.add(PolicyPolicyCondition_4016);
 			KNOWN_ELEMENT_TYPES.add(PolicyPolicyAction_4015);
 			KNOWN_ELEMENT_TYPES.add(ActionActionPacketHeader_4012);
 			KNOWN_ELEMENT_TYPES.add(ActionActionForwardToNode_4013);
+			KNOWN_ELEMENT_TYPES.add(ConditionConditionTime_4017);
+			KNOWN_ELEMENT_TYPES.add(ConditionConditionTraffic_4018);
+			KNOWN_ELEMENT_TYPES.add(ConditionConditionPacket_4019);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -370,12 +397,12 @@ public class MdnElementTypes {
 			return Policy_2004;
 		case HostHostSwitchEditPart.VISUAL_ID:
 			return HostHostSwitch_4004;
-		case HostSourceHostPolicyEditPart.VISUAL_ID:
-			return HostSourceHostPolicy_4007;
 		case SwitchSwitchControllerEditPart.VISUAL_ID:
 			return SwitchSwitchController_4006;
-		case SwitchSwitchEditPart.VISUAL_ID:
-			return SwitchSwitch_4008;
+		case SwitchSwitchesEditPart.VISUAL_ID:
+			return SwitchSwitches_4022;
+		case PolicySourceHostPolicyEditPart.VISUAL_ID:
+			return PolicySourceHostPolicy_4023;
 		case PolicyTargetHostPolicyEditPart.VISUAL_ID:
 			return PolicyTargetHostPolicy_4009;
 		case PolicyPolicyConditionEditPart.VISUAL_ID:
@@ -386,6 +413,12 @@ public class MdnElementTypes {
 			return ActionActionPacketHeader_4012;
 		case ActionActionForwardToNodeEditPart.VISUAL_ID:
 			return ActionActionForwardToNode_4013;
+		case ConditionConditionTimeEditPart.VISUAL_ID:
+			return ConditionConditionTime_4017;
+		case ConditionConditionTrafficEditPart.VISUAL_ID:
+			return ConditionConditionTraffic_4018;
+		case ConditionConditionPacketEditPart.VISUAL_ID:
+			return ConditionConditionPacket_4019;
 		}
 		return null;
 	}

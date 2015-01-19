@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link mdn.impl.HostImpl#getHostSwitch <em>Host Switch</em>}</li>
- *   <li>{@link mdn.impl.HostImpl#getSourceHostPolicy <em>Source Host Policy</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,16 +38,6 @@ public class HostImpl extends NetworkNodeImpl implements Host
    * @ordered
    */
   protected Switch hostSwitch;
-
-  /**
-   * The cached value of the '{@link #getSourceHostPolicy() <em>Source Host Policy</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSourceHostPolicy()
-   * @generated
-   * @ordered
-   */
-  protected Policy sourceHostPolicy;
 
   /**
    * <!-- begin-user-doc -->
@@ -119,49 +108,6 @@ public class HostImpl extends NetworkNodeImpl implements Host
    * <!-- end-user-doc -->
    * @generated
    */
-  public Policy getSourceHostPolicy()
-  {
-    if (sourceHostPolicy != null && sourceHostPolicy.eIsProxy())
-    {
-      InternalEObject oldSourceHostPolicy = (InternalEObject)sourceHostPolicy;
-      sourceHostPolicy = (Policy)eResolveProxy(oldSourceHostPolicy);
-      if (sourceHostPolicy != oldSourceHostPolicy)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MdnPackage.HOST__SOURCE_HOST_POLICY, oldSourceHostPolicy, sourceHostPolicy));
-      }
-    }
-    return sourceHostPolicy;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Policy basicGetSourceHostPolicy()
-  {
-    return sourceHostPolicy;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSourceHostPolicy(Policy newSourceHostPolicy)
-  {
-    Policy oldSourceHostPolicy = sourceHostPolicy;
-    sourceHostPolicy = newSourceHostPolicy;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.HOST__SOURCE_HOST_POLICY, oldSourceHostPolicy, sourceHostPolicy));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -170,9 +116,6 @@ public class HostImpl extends NetworkNodeImpl implements Host
       case MdnPackage.HOST__HOST_SWITCH:
         if (resolve) return getHostSwitch();
         return basicGetHostSwitch();
-      case MdnPackage.HOST__SOURCE_HOST_POLICY:
-        if (resolve) return getSourceHostPolicy();
-        return basicGetSourceHostPolicy();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -189,9 +132,6 @@ public class HostImpl extends NetworkNodeImpl implements Host
     {
       case MdnPackage.HOST__HOST_SWITCH:
         setHostSwitch((Switch)newValue);
-        return;
-      case MdnPackage.HOST__SOURCE_HOST_POLICY:
-        setSourceHostPolicy((Policy)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -210,9 +150,6 @@ public class HostImpl extends NetworkNodeImpl implements Host
       case MdnPackage.HOST__HOST_SWITCH:
         setHostSwitch((Switch)null);
         return;
-      case MdnPackage.HOST__SOURCE_HOST_POLICY:
-        setSourceHostPolicy((Policy)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -229,8 +166,6 @@ public class HostImpl extends NetworkNodeImpl implements Host
     {
       case MdnPackage.HOST__HOST_SWITCH:
         return hostSwitch != null;
-      case MdnPackage.HOST__SOURCE_HOST_POLICY:
-        return sourceHostPolicy != null;
     }
     return super.eIsSet(featureID);
   }

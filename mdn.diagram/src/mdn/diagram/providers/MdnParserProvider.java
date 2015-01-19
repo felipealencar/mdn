@@ -186,9 +186,9 @@ public class MdnParserProvider extends AbstractProvider implements
 					MdnPackage.eINSTANCE.getPacketHeader_Header(),
 					MdnPackage.eINSTANCE.getPacketHeader_Value() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			parser.setViewPattern("{0}: [{1}]{2}"); //$NON-NLS-1$
-			parser.setEditorPattern("{0}: [{1}]{2}"); //$NON-NLS-1$
-			parser.setEditPattern("{0}: [{1}]{2}"); //$NON-NLS-1$
+			parser.setViewPattern("{0}: [{1}] {2}"); //$NON-NLS-1$
+			parser.setEditorPattern("{0}: [{1}] {2}"); //$NON-NLS-1$
+			parser.setEditPattern("{0}: [{1}] {2}"); //$NON-NLS-1$
 			packetHeaderOperatorHeaderValue_5009Parser = parser;
 		}
 		return packetHeaderOperatorHeaderValue_5009Parser;

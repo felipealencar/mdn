@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see mdn.MdnPackage#getPacketHeader()
- * @model annotation="gmf.node figure='figures.PacketHeaderFigure' label.icon='false' tool.small.bundle='mdn.edit' tool.small.path='/icons/full/obj16/packetheader.gif' label.placement='external' label='operator,header,value' label.pattern='{0}: [{1}]{2}'"
+ * @model annotation="gmf.node figure='figures.PacketHeaderFigure' label.icon='false' tool.small.bundle='mdn.edit' tool.small.path='/icons/full/obj16/packetheader.gif' label.placement='external' label='operator,header,value' label.pattern='{0}: [{1}] {2}'"
  * @generated
  */
 public interface PacketHeader extends PolicyObject

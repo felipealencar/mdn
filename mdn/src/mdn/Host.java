@@ -12,7 +12,6 @@ package mdn;
  * The following features are supported:
  * <ul>
  *   <li>{@link mdn.Host#getHostSwitch <em>Host Switch</em>}</li>
- *   <li>{@link mdn.Host#getSourceHostPolicy <em>Source Host Policy</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,31 +46,5 @@ public interface Host extends NetworkNode
    * @generated
    */
   void setHostSwitch(Switch value);
-
-  /**
-   * Returns the value of the '<em><b>Source Host Policy</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Source Host Policy</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Source Host Policy</em>' reference.
-   * @see #setSourceHostPolicy(Policy)
-   * @see mdn.MdnPackage#getHost_SourceHostPolicy()
-   * @model annotation="gmf.link target.decoration='none' source.decoration='none' style='dash' color='0,0,0'"
-   * @generated
-   */
-  Policy getSourceHostPolicy();
-
-  /**
-   * Sets the value of the '{@link mdn.Host#getSourceHostPolicy <em>Source Host Policy</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Source Host Policy</em>' reference.
-   * @see #getSourceHostPolicy()
-   * @generated
-   */
-  void setSourceHostPolicy(Policy value);
 
 } // Host

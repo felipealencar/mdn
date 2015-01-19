@@ -18,6 +18,7 @@ import mdn.PolicyObject;
 import mdn.RelationalOperators;
 import mdn.Sdn;
 import mdn.Switch;
+import mdn.Switches;
 import mdn.Time;
 import mdn.Traffic;
 
@@ -297,16 +298,6 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getHost_SourceHostPolicy()
-  {
-    return (EReference)hostEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getSwitch()
   {
     return switchEClass;
@@ -337,7 +328,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSwitch_Switch()
+  public EReference getSwitch_Switches()
   {
     return (EReference)switchEClass.getEStructuralFeatures().get(2);
   }
@@ -397,7 +388,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPolicy_TargetHostPolicy()
+  public EReference getPolicy_SourceHostPolicy()
   {
     return (EReference)policyEClass.getEStructuralFeatures().get(0);
   }
@@ -407,9 +398,19 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getPolicy_TargetHostPolicy()
+  {
+    return (EReference)policyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getPolicy_Name()
   {
-    return (EAttribute)policyEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)policyEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -419,7 +420,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    */
   public EReference getPolicy_PolicyCondition()
   {
-    return (EReference)policyEClass.getEStructuralFeatures().get(2);
+    return (EReference)policyEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -429,7 +430,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    */
   public EReference getPolicy_PolicyAction()
   {
-    return (EReference)policyEClass.getEStructuralFeatures().get(3);
+    return (EReference)policyEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -732,12 +733,11 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
 
     hostEClass = createEClass(HOST);
     createEReference(hostEClass, HOST__HOST_SWITCH);
-    createEReference(hostEClass, HOST__SOURCE_HOST_POLICY);
 
     switchEClass = createEClass(SWITCH);
     createEAttribute(switchEClass, SWITCH__PORTS);
     createEReference(switchEClass, SWITCH__SWITCH_CONTROLLER);
-    createEReference(switchEClass, SWITCH__SWITCH);
+    createEReference(switchEClass, SWITCH__SWITCHES);
 
     networkNodeEClass = createEClass(NETWORK_NODE);
     createEAttribute(networkNodeEClass, NETWORK_NODE__NAME);
@@ -745,6 +745,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
     createEAttribute(networkNodeEClass, NETWORK_NODE__IP);
 
     policyEClass = createEClass(POLICY);
+    createEReference(policyEClass, POLICY__SOURCE_HOST_POLICY);
     createEReference(policyEClass, POLICY__TARGET_HOST_POLICY);
     createEAttribute(policyEClass, POLICY__NAME);
     createEReference(policyEClass, POLICY__POLICY_CONDITION);
@@ -834,12 +835,11 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
 
     initEClass(hostEClass, Host.class, "Host", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getHost_HostSwitch(), this.getSwitch(), null, "hostSwitch", null, 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHost_SourceHostPolicy(), this.getPolicy(), null, "sourceHostPolicy", null, 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(switchEClass, Switch.class, "Switch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSwitch_Ports(), ecorePackage.getEInt(), "ports", null, 0, 1, Switch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSwitch_SwitchController(), this.getController(), null, "switchController", null, 0, -1, Switch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSwitch_Switch(), this.getSwitch(), null, "switch", null, 0, -1, Switch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSwitch_Switches(), this.getSwitch(), null, "switches", null, 0, -1, Switch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(networkNodeEClass, NetworkNode.class, "NetworkNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNetworkNode_Name(), ecorePackage.getEString(), "name", null, 0, 1, NetworkNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -847,7 +847,8 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
     initEAttribute(getNetworkNode_Ip(), ecorePackage.getEString(), "ip", null, 0, 1, NetworkNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(policyEClass, Policy.class, "Policy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPolicy_TargetHostPolicy(), this.getHost(), null, "targetHostPolicy", null, 0, 1, Policy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPolicy_SourceHostPolicy(), this.getHost(), null, "sourceHostPolicy", null, 0, -1, Policy.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPolicy_TargetHostPolicy(), this.getHost(), null, "targetHostPolicy", null, 0, -1, Policy.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPolicy_Name(), ecorePackage.getEString(), "name", null, 0, 1, Policy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPolicy_PolicyCondition(), this.getCondition(), null, "policyCondition", null, 0, 1, Policy.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPolicy_PolicyAction(), this.getAction(), null, "policyAction", null, 0, 1, Policy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -940,7 +941,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        source, 
        new String[] 
        {
-       });																			
+       });																						
   }
 
   /**
@@ -957,7 +958,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        source, 
        new String[] 
        {
-       });																		
+       });																					
   }
 
   /**
@@ -992,7 +993,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "tool.small.path", "/icons/full/obj16/host.gif",
        "figure", "figures.HostFigure",
        "label.placement", "external"
-       });				
+       });			
     addAnnotation
       (switchEClass, 
        source, 
@@ -1016,7 +1017,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "tool.small.bundle", "mdn.edit",
        "tool.small.path", "/icons/full/obj16/policy.gif",
        "label.placement", "external"
-       });					
+       });						
     addAnnotation
       (actionEClass, 
        source, 
@@ -1040,7 +1041,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "tool.small.path", "/icons/full/obj16/condition.gif",
        "label.placement", "external",
        "figure", "figures.ConditionFigure"
-       });		
+       });					
     addAnnotation
       (trafficEClass, 
        source, 
@@ -1078,7 +1079,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "tool.small.path", "/icons/full/obj16/packetheader.gif",
        "label.placement", "external",
        "label", "operator,header,value",
-       "label.pattern", "{0}: [{1}]{2}"
+       "label.pattern", "{0}: [{1}] {2}"
        });
   }
 
@@ -1100,16 +1101,6 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "source.decoration", "none",
        "style", "solid",
        "color", "0,0,0"
-       });		
-    addAnnotation
-      (getHost_SourceHostPolicy(), 
-       source, 
-       new String[] 
-       {
-       "target.decoration", "none",
-       "source.decoration", "none",
-       "style", "dash",
-       "color", "0,0,0"
        });			
     addAnnotation
       (getSwitch_SwitchController(), 
@@ -1122,15 +1113,28 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "color", "0,0,0"
        });		
     addAnnotation
-      (getSwitch_Switch(), 
+      (getSwitch_Switches(), 
        source, 
        new String[] 
        {
        "target.decoration", "none",
        "source.decoration", "none",
        "style", "solid",
-       "color", "0,0,0"
+       "color", "0,0,0",
+       "switches.constraint", "self <> oppositeEnd",
+       "source.constraint", "self <> oppositeEnd"
        });			
+    addAnnotation
+      (getPolicy_SourceHostPolicy(), 
+       source, 
+       new String[] 
+       {
+       "target.decoration", "none",
+       "source.decoration", "none",
+       "style", "dash",
+       "color", "0,0,0",
+       "tool.name", "sourceHost"
+       });		
     addAnnotation
       (getPolicy_TargetHostPolicy(), 
        source, 
@@ -1139,7 +1143,8 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "target.decoration", "arrow",
        "source.decoration", "none",
        "style", "dash",
-       "color", "0,0,0"
+       "color", "0,0,0",
+       "tool.name", "targetHost"
        });		
     addAnnotation
       (getPolicy_PolicyCondition(), 
@@ -1180,7 +1185,37 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "source.decoration", "none",
        "style", "dash",
        "color", "0,0,0"
-       });				
+       });			
+    addAnnotation
+      (getCondition_ConditionTime(), 
+       source, 
+       new String[] 
+       {
+       "target.decoration", "none",
+       "source.decoration", "none",
+       "style", "dash",
+       "color", "0,0,0"
+       });		
+    addAnnotation
+      (getCondition_ConditionTraffic(), 
+       source, 
+       new String[] 
+       {
+       "target.decoration", "none",
+       "source.decoration", "none",
+       "style", "dash",
+       "color", "0,0,0"
+       });		
+    addAnnotation
+      (getCondition_ConditionPacket(), 
+       source, 
+       new String[] 
+       {
+       "target.decoration", "none",
+       "source.decoration", "none",
+       "style", "dash",
+       "color", "0,0,0"
+       });			
   }
 
 } //MdnPackageImpl

@@ -2,6 +2,7 @@
  */
 package mdn;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -12,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link mdn.Policy#getSourceHostPolicy <em>Source Host Policy</em>}</li>
  *   <li>{@link mdn.Policy#getTargetHostPolicy <em>Target Host Policy</em>}</li>
  *   <li>{@link mdn.Policy#getName <em>Name</em>}</li>
  *   <li>{@link mdn.Policy#getPolicyCondition <em>Policy Condition</em>}</li>
@@ -26,30 +28,38 @@ import org.eclipse.emf.ecore.EObject;
 public interface Policy extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Target Host Policy</b></em>' reference.
+   * Returns the value of the '<em><b>Source Host Policy</b></em>' reference list.
+   * The list contents are of type {@link mdn.Host}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Source Host Policy</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Source Host Policy</em>' reference list.
+   * @see mdn.MdnPackage#getPolicy_SourceHostPolicy()
+   * @model transient="true"
+   *        annotation="gmf.link target.decoration='none' source.decoration='none' style='dash' color='0,0,0' tool.name='sourceHost'"
+   * @generated
+   */
+  EList<Host> getSourceHostPolicy();
+
+  /**
+   * Returns the value of the '<em><b>Target Host Policy</b></em>' reference list.
+   * The list contents are of type {@link mdn.Host}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Target Host Policy</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Target Host Policy</em>' reference.
-   * @see #setTargetHostPolicy(Host)
+   * @return the value of the '<em>Target Host Policy</em>' reference list.
    * @see mdn.MdnPackage#getPolicy_TargetHostPolicy()
-   * @model annotation="gmf.link target.decoration='arrow' source.decoration='none' style='dash' color='0,0,0'"
+   * @model transient="true"
+   *        annotation="gmf.link target.decoration='arrow' source.decoration='none' style='dash' color='0,0,0' tool.name='targetHost'"
    * @generated
    */
-  Host getTargetHostPolicy();
-
-  /**
-   * Sets the value of the '{@link mdn.Policy#getTargetHostPolicy <em>Target Host Policy</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Target Host Policy</em>' reference.
-   * @see #getTargetHostPolicy()
-   * @generated
-   */
-  void setTargetHostPolicy(Host value);
+  EList<Host> getTargetHostPolicy();
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
