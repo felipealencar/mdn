@@ -249,31 +249,6 @@ public class MdnItemProviderAdapterFactory extends MdnAdapterFactory implements 
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link mdn.RelationalOperator} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected RelationalOperatorItemProvider relationalOperatorItemProvider;
-
-  /**
-   * This creates an adapter for a {@link mdn.RelationalOperator}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createRelationalOperatorAdapter()
-  {
-    if (relationalOperatorItemProvider == null)
-    {
-      relationalOperatorItemProvider = new RelationalOperatorItemProvider(this);
-    }
-
-    return relationalOperatorItemProvider;
-  }
-
-  /**
    * This keeps track of the one adapter used for all {@link mdn.Traffic} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -466,7 +441,6 @@ public class MdnItemProviderAdapterFactory extends MdnAdapterFactory implements 
     if (policyItemProvider != null) policyItemProvider.dispose();
     if (actionItemProvider != null) actionItemProvider.dispose();
     if (conditionItemProvider != null) conditionItemProvider.dispose();
-    if (relationalOperatorItemProvider != null) relationalOperatorItemProvider.dispose();
     if (trafficItemProvider != null) trafficItemProvider.dispose();
     if (timeItemProvider != null) timeItemProvider.dispose();
     if (packetHeaderItemProvider != null) packetHeaderItemProvider.dispose();

@@ -63,7 +63,7 @@ public class SwitchItemProvider
 
       addPortsPropertyDescriptor(object);
       addSwitchControllerPropertyDescriptor(object);
-      addSwitchPropertyDescriptor(object);
+      addSwitchesPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -115,20 +115,20 @@ public class SwitchItemProvider
   }
 
   /**
-   * This adds a property descriptor for the Switch feature.
+   * This adds a property descriptor for the Switches feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addSwitchPropertyDescriptor(Object object)
+  protected void addSwitchesPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_Switch_switch_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Switch_switch_feature", "_UI_Switch_type"),
-         MdnPackage.Literals.SWITCH__SWITCH,
+         getString("_UI_Switch_switches_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Switch_switches_feature", "_UI_Switch_type"),
+         MdnPackage.Literals.SWITCH__SWITCHES,
          true,
          false,
          true,

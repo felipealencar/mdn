@@ -13,8 +13,6 @@ import mdn.MdnPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -23,7 +21,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -33,7 +30,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class ConditionItemProvider
-  extends ItemProviderAdapter
+  extends PolicyObjectItemProvider
   implements
     IEditingDomainItemProvider,
     IStructuredItemContentProvider,
@@ -65,80 +62,33 @@ public class ConditionItemProvider
     {
       super.getPropertyDescriptors(object);
 
-      addConditionOperatorPropertyDescriptor(object);
-      addTypePropertyDescriptor(object);
-      addConditionTrafficPropertyDescriptor(object);
+      addConditionPropertyDescriptor(object);
       addConditionTimePropertyDescriptor(object);
-      addConditionHeaderPropertyDescriptor(object);
+      addConditionTrafficPropertyDescriptor(object);
+      addConditionPacketPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
 
   /**
-   * This adds a property descriptor for the Condition Operator feature.
+   * This adds a property descriptor for the Condition feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addConditionOperatorPropertyDescriptor(Object object)
+  protected void addConditionPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_Condition_conditionOperator_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Condition_conditionOperator_feature", "_UI_Condition_type"),
-         MdnPackage.Literals.CONDITION__CONDITION_OPERATOR,
-         true,
-         false,
-         true,
-         null,
-         null,
-         null));
-  }
-
-  /**
-   * This adds a property descriptor for the Type feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addTypePropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Condition_type_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Condition_type_feature", "_UI_Condition_type"),
-         MdnPackage.Literals.CONDITION__TYPE,
+         getString("_UI_Condition_condition_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Condition_condition_feature", "_UI_Condition_type"),
+         MdnPackage.Literals.CONDITION__CONDITION,
          true,
          false,
          false,
          ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
-  }
-
-  /**
-   * This adds a property descriptor for the Condition Traffic feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addConditionTrafficPropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Condition_conditionTraffic_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Condition_conditionTraffic_feature", "_UI_Condition_type"),
-         MdnPackage.Literals.CONDITION__CONDITION_TRAFFIC,
-         true,
-         false,
-         true,
-         null,
          null,
          null));
   }
@@ -167,20 +117,43 @@ public class ConditionItemProvider
   }
 
   /**
-   * This adds a property descriptor for the Condition Header feature.
+   * This adds a property descriptor for the Condition Traffic feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addConditionHeaderPropertyDescriptor(Object object)
+  protected void addConditionTrafficPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_Condition_conditionHeader_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Condition_conditionHeader_feature", "_UI_Condition_type"),
-         MdnPackage.Literals.CONDITION__CONDITION_HEADER,
+         getString("_UI_Condition_conditionTraffic_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Condition_conditionTraffic_feature", "_UI_Condition_type"),
+         MdnPackage.Literals.CONDITION__CONDITION_TRAFFIC,
+         true,
+         false,
+         true,
+         null,
+         null,
+         null));
+  }
+
+  /**
+   * This adds a property descriptor for the Condition Packet feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addConditionPacketPropertyDescriptor(Object object)
+  {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_Condition_conditionPacket_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Condition_conditionPacket_feature", "_UI_Condition_type"),
+         MdnPackage.Literals.CONDITION__CONDITION_PACKET,
          true,
          false,
          true,
@@ -210,7 +183,7 @@ public class ConditionItemProvider
   @Override
   public String getText(Object object)
   {
-    Conditions labelValue = ((Condition)object).getType();
+    Conditions labelValue = ((Condition)object).getCondition();
     String label = labelValue == null ? null : labelValue.toString();
     return label == null || label.length() == 0 ?
       getString("_UI_Condition_type") :
@@ -231,7 +204,7 @@ public class ConditionItemProvider
 
     switch (notification.getFeatureID(Condition.class))
     {
-      case MdnPackage.CONDITION__TYPE:
+      case MdnPackage.CONDITION__CONDITION:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
     }
@@ -249,18 +222,6 @@ public class ConditionItemProvider
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
   {
     super.collectNewChildDescriptors(newChildDescriptors, object);
-  }
-
-  /**
-   * Return the resource locator for this item provider's resources.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ResourceLocator getResourceLocator()
-  {
-    return MdnEditPlugin.INSTANCE;
   }
 
 }

@@ -7,12 +7,11 @@ import java.util.Collection;
 import java.util.List;
 
 import mdn.MdnPackage;
+import mdn.RelationalOperators;
 import mdn.Time;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -22,7 +21,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -32,7 +30,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class TimeItemProvider
-  extends ItemProviderAdapter
+  extends PolicyObjectItemProvider
   implements
     IEditingDomainItemProvider,
     IStructuredItemContentProvider,
@@ -64,27 +62,28 @@ public class TimeItemProvider
     {
       super.getPropertyDescriptors(object);
 
-      addHourPropertyDescriptor(object);
-      addDatePropertyDescriptor(object);
+      addOperatorPropertyDescriptor(object);
+      addBeginDatePropertyDescriptor(object);
+      addEndDatePropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
 
   /**
-   * This adds a property descriptor for the Hour feature.
+   * This adds a property descriptor for the Operator feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addHourPropertyDescriptor(Object object)
+  protected void addOperatorPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_Time_hour_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Time_hour_feature", "_UI_Time_type"),
-         MdnPackage.Literals.TIME__HOUR,
+         getString("_UI_Time_operator_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Time_operator_feature", "_UI_Time_type"),
+         MdnPackage.Literals.TIME__OPERATOR,
          true,
          false,
          false,
@@ -94,20 +93,43 @@ public class TimeItemProvider
   }
 
   /**
-   * This adds a property descriptor for the Date feature.
+   * This adds a property descriptor for the Begin Date feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addDatePropertyDescriptor(Object object)
+  protected void addBeginDatePropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_Time_date_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Time_date_feature", "_UI_Time_type"),
-         MdnPackage.Literals.TIME__DATE,
+         getString("_UI_Time_beginDate_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Time_beginDate_feature", "_UI_Time_type"),
+         MdnPackage.Literals.TIME__BEGIN_DATE,
+         true,
+         false,
+         false,
+         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         null,
+         null));
+  }
+
+  /**
+   * This adds a property descriptor for the End Date feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addEndDatePropertyDescriptor(Object object)
+  {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_Time_endDate_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Time_endDate_feature", "_UI_Time_type"),
+         MdnPackage.Literals.TIME__END_DATE,
          true,
          false,
          false,
@@ -137,7 +159,8 @@ public class TimeItemProvider
   @Override
   public String getText(Object object)
   {
-    String label = ((Time)object).getHour();
+    RelationalOperators labelValue = ((Time)object).getOperator();
+    String label = labelValue == null ? null : labelValue.toString();
     return label == null || label.length() == 0 ?
       getString("_UI_Time_type") :
       getString("_UI_Time_type") + " " + label;
@@ -157,8 +180,9 @@ public class TimeItemProvider
 
     switch (notification.getFeatureID(Time.class))
     {
-      case MdnPackage.TIME__HOUR:
-      case MdnPackage.TIME__DATE:
+      case MdnPackage.TIME__OPERATOR:
+      case MdnPackage.TIME__BEGIN_DATE:
+      case MdnPackage.TIME__END_DATE:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
     }
@@ -176,18 +200,6 @@ public class TimeItemProvider
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
   {
     super.collectNewChildDescriptors(newChildDescriptors, object);
-  }
-
-  /**
-   * Return the resource locator for this item provider's resources.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ResourceLocator getResourceLocator()
-  {
-    return MdnEditPlugin.INSTANCE;
   }
 
 }

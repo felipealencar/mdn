@@ -85,6 +85,7 @@ public class SdnItemProvider
       super.getChildrenFeatures(object);
       childrenFeatures.add(MdnPackage.Literals.SDN__NODES);
       childrenFeatures.add(MdnPackage.Literals.SDN__POLICIES);
+      childrenFeatures.add(MdnPackage.Literals.SDN__POLICY_OBJECTS);
     }
     return childrenFeatures;
   }
@@ -143,6 +144,7 @@ public class SdnItemProvider
     {
       case MdnPackage.SDN__NODES:
       case MdnPackage.SDN__POLICIES:
+      case MdnPackage.SDN__POLICY_OBJECTS:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
         return;
     }
@@ -180,6 +182,31 @@ public class SdnItemProvider
       (createChildParameter
         (MdnPackage.Literals.SDN__POLICIES,
          MdnFactory.eINSTANCE.createPolicy()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (MdnPackage.Literals.SDN__POLICY_OBJECTS,
+         MdnFactory.eINSTANCE.createAction()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (MdnPackage.Literals.SDN__POLICY_OBJECTS,
+         MdnFactory.eINSTANCE.createCondition()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (MdnPackage.Literals.SDN__POLICY_OBJECTS,
+         MdnFactory.eINSTANCE.createTraffic()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (MdnPackage.Literals.SDN__POLICY_OBJECTS,
+         MdnFactory.eINSTANCE.createTime()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (MdnPackage.Literals.SDN__POLICY_OBJECTS,
+         MdnFactory.eINSTANCE.createPacketHeader()));
   }
 
   /**

@@ -64,12 +64,36 @@ public class PolicyItemProvider
     {
       super.getPropertyDescriptors(object);
 
+      addSourceHostPolicyPropertyDescriptor(object);
       addTargetHostPolicyPropertyDescriptor(object);
-      addPolicyActionPropertyDescriptor(object);
-      addPolicyConditionPropertyDescriptor(object);
       addNamePropertyDescriptor(object);
+      addPolicyConditionPropertyDescriptor(object);
+      addPolicyActionPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
+  }
+
+  /**
+   * This adds a property descriptor for the Source Host Policy feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addSourceHostPolicyPropertyDescriptor(Object object)
+  {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_Policy_sourceHostPolicy_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Policy_sourceHostPolicy_feature", "_UI_Policy_type"),
+         MdnPackage.Literals.POLICY__SOURCE_HOST_POLICY,
+         true,
+         false,
+         true,
+         null,
+         null,
+         null));
   }
 
   /**
@@ -96,24 +120,24 @@ public class PolicyItemProvider
   }
 
   /**
-   * This adds a property descriptor for the Policy Action feature.
+   * This adds a property descriptor for the Name feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addPolicyActionPropertyDescriptor(Object object)
+  protected void addNamePropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_Policy_policyAction_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Policy_policyAction_feature", "_UI_Policy_type"),
-         MdnPackage.Literals.POLICY__POLICY_ACTION,
+         getString("_UI_Policy_name_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Policy_name_feature", "_UI_Policy_type"),
+         MdnPackage.Literals.POLICY__NAME,
          true,
          false,
-         true,
-         null,
+         false,
+         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
          null,
          null));
   }
@@ -142,24 +166,24 @@ public class PolicyItemProvider
   }
 
   /**
-   * This adds a property descriptor for the Name feature.
+   * This adds a property descriptor for the Policy Action feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addNamePropertyDescriptor(Object object)
+  protected void addPolicyActionPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_Policy_name_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Policy_name_feature", "_UI_Policy_type"),
-         MdnPackage.Literals.POLICY__NAME,
+         getString("_UI_Policy_policyAction_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Policy_policyAction_feature", "_UI_Policy_type"),
+         MdnPackage.Literals.POLICY__POLICY_ACTION,
          true,
          false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         true,
+         null,
          null,
          null));
   }

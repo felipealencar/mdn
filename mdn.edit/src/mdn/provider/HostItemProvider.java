@@ -60,7 +60,6 @@ public class HostItemProvider
       super.getPropertyDescriptors(object);
 
       addHostSwitchPropertyDescriptor(object);
-      addSourceHostPolicyPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -80,29 +79,6 @@ public class HostItemProvider
          getString("_UI_Host_hostSwitch_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Host_hostSwitch_feature", "_UI_Host_type"),
          MdnPackage.Literals.HOST__HOST_SWITCH,
-         true,
-         false,
-         true,
-         null,
-         null,
-         null));
-  }
-
-  /**
-   * This adds a property descriptor for the Source Host Policy feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addSourceHostPolicyPropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Host_sourceHostPolicy_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Host_sourceHostPolicy_feature", "_UI_Host_type"),
-         MdnPackage.Literals.HOST__SOURCE_HOST_POLICY,
          true,
          false,
          true,

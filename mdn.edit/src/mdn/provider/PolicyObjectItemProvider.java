@@ -6,33 +6,26 @@ package mdn.provider;
 import java.util.Collection;
 import java.util.List;
 
-import mdn.MdnPackage;
-import mdn.RelationalOperator;
-import mdn.RelationalOperators;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link mdn.RelationalOperator} object.
+ * This is the item provider adapter for a {@link mdn.PolicyObject} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RelationalOperatorItemProvider
+public class PolicyObjectItemProvider
   extends ItemProviderAdapter
   implements
     IEditingDomainItemProvider,
@@ -47,7 +40,7 @@ public class RelationalOperatorItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
-  public RelationalOperatorItemProvider(AdapterFactory adapterFactory)
+  public PolicyObjectItemProvider(AdapterFactory adapterFactory)
   {
     super(adapterFactory);
   }
@@ -65,44 +58,8 @@ public class RelationalOperatorItemProvider
     {
       super.getPropertyDescriptors(object);
 
-      addOperatorPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
-  }
-
-  /**
-   * This adds a property descriptor for the Operator feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addOperatorPropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_RelationalOperator_operator_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_RelationalOperator_operator_feature", "_UI_RelationalOperator_type"),
-         MdnPackage.Literals.RELATIONAL_OPERATOR__OPERATOR,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
-  }
-
-  /**
-   * This returns RelationalOperator.gif.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object getImage(Object object)
-  {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/RelationalOperator"));
   }
 
   /**
@@ -114,11 +71,7 @@ public class RelationalOperatorItemProvider
   @Override
   public String getText(Object object)
   {
-    RelationalOperators labelValue = ((RelationalOperator)object).getOperator();
-    String label = labelValue == null ? null : labelValue.toString();
-    return label == null || label.length() == 0 ?
-      getString("_UI_RelationalOperator_type") :
-      getString("_UI_RelationalOperator_type") + " " + label;
+    return getString("_UI_PolicyObject_type");
   }
 
   /**
@@ -132,13 +85,6 @@ public class RelationalOperatorItemProvider
   public void notifyChanged(Notification notification)
   {
     updateChildren(notification);
-
-    switch (notification.getFeatureID(RelationalOperator.class))
-    {
-      case MdnPackage.RELATIONAL_OPERATOR__OPERATOR:
-        fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-        return;
-    }
     super.notifyChanged(notification);
   }
 
