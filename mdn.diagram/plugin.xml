@@ -18,6 +18,32 @@
       </parser>
    </extension>
 
+	<extension point="org.eclipse.ui.views">
+	        <view id="mdn.diagram.m2t.TransformationView"
+	             name="Exportar para script"
+	          class="mdn.diagram.m2t.TransformationView"
+	          icon="icons/obj16/transformation.png"/>
+	</extension>
+	
+	<extension point="org.eclipse.ui.actionSets">
+	   <actionSet
+	            description="Exportar para script  "
+	            id="mdn.diagram.m2t.ModelToTextAction.actionSet"
+	            label="Exportar para script  "
+	            visible="true">
+	      <action
+	               class="mdn.diagram.m2t.ModelToTextAction"
+	               icon="icons/obj16/transformation.png"
+	               id="mdn.diagram.m2t.ModelToTextAction"
+	               label="Exportar para script"
+	               mode="FORCE_TEXT"
+	               style="push"
+	               toolbarPath="transformationGroup"
+	               tooltip="Exportar para script  ">
+	      </action>
+	   </actionSet>
+	</extension>
+
    <extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
       <editor

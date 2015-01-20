@@ -40,6 +40,9 @@ Require-Bundle: org.eclipse.core.runtime,
  mdn.edit;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
- mdn.figures
+ mdn.figures,
+ org.eclipse.epsilon.egl.engine,
+ org.eclipse.epsilon.emc.emf,
+ org.eclipse.epsilon.eol.engine
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
