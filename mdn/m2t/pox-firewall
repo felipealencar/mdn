@@ -1,28 +1,22 @@
-[%
-for (policy in Policy.all) {
-	if (policy.select(p|p.policyAction.isDefined()).size() > 0) {
-		if (policy.policyAction.type.value = Actions#DROP.value and policy.sourceHostPolicy.isDefined() and policy.targetHostPolicy.isDefined()) {
-%]
-[%=policy.sourceHostPolicy%]
-[%
-		}
-	}
-}
-%] 
-
-	em que source e target != null
-		verifico
-			se action é igual a drop, então
-				recupero os dados do source
-				recupero os dados do target
-			 	adiciono no algoritmo blocker
-
-
+"""
+Block TCP ports
+ 
+Save as ext/blocker.py and run along with l2_learning.
+ 
+You can specify ports to block on the commandline:
+./pox.py forwarding.l2_learning blocker --ports=80,8888,8000
+ 
+Alternatively, if you run with the "py" component, you can use the CLI:
+./pox.py forwarding.l2_learning blocker py
+ ...
+POX> block(80, 8888, 8000)
+"""
+ 
 from pox.core import core
  
 # A set of ports to block
 block_ports = set()
-
+ 
 def block_handler (event):
   # Handles packet events and kills the ones with a blocked port number
  
@@ -53,32 +47,3 @@ def launch (ports = ''):
  
   # Listen to packet events
   core.openflow.addListenerByName("PacketIn", block_handler)
-
-
-
-[%for (controller in Controller.all) {%]
-	[%=Controller.type%]
-	teste
-   	[%for (s in Switch) {%]
-   		[%=s.name%]
-   		teste
-   	[%}%]
-[%}%]
-
-[%
-operation isEmpty (object) {
-   if(object.size > 0){
-      return false;
-   }
-   return true;
-}
-%]
-
-[%
-operation verifySubFolders (object) {
-   if(not isEmpty(object)){
-      %]cd [%=object.name%]
-      [%
-      } 
-   }
-%]

@@ -20,7 +20,7 @@ public class TransformationView extends ViewPart {
 
  public void createPartControl(Composite parent) {
   text = new Text(parent, SWT.BORDER | SWT.V_SCROLL);
-  text.setText("código gerado aqui");
+  text.setText("The application code appears here.");
  }
 
  public void setInput(String parameter){

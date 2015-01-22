@@ -45,7 +45,7 @@ public class ModelToTextAction implements IWorkbenchWindowActionDelegate {
 			// Obtém o modelo EMF do editor
 			Resource resource = getFirstSemanticModelResource(friendsDiagramEditor.getEditingDomain().getResourceSet());
 
-			if (resource == null){ System.out.println("teste"); return;}
+			if (resource == null){return;}
 
 			// Envolve o modelo EMF neste InMemoryEmfModel
 			InMemoryEmfModel m = new InMemoryEmfModel("M", resource, MdnPackage.eINSTANCE);
@@ -68,10 +68,8 @@ public class ModelToTextAction implements IWorkbenchWindowActionDelegate {
 			}
 			
 			try {
-				//FileLocator.resolve(fileURL).toURI()
 				module.parse(uri);
 			} catch (Exception e) {
-				System.out.println("teste");
 				e.printStackTrace();
 			}
 
