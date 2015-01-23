@@ -1,69 +1,42 @@
+import pox
+import pprint
+from pox.lib.packet.ethernet import ethernet, ETHER_BROADCAST
+from pox.lib.packet.ipv4 import ipv4
+from pox.lib.packet.arp import arp
+from pox.lib.addresses import IPAddr, EthAddr
+from pox.lib.util import str_to_bool, dpidToStr
+from pox.lib.recoco import Timer
+
+from pox.core import core
+
+log = core.getLogger()
 [%
 for (policy in Policy.all) {
 	if (policy.select(p|p.policyAction.isDefined()).size() > 0) {
 		if (policy.policyAction.type.value = Actions#DROP.value and policy.sourceHostPolicy.isDefined() and policy.targetHostPolicy.isDefined()) {
 %]
-[%=policy.sourceHostPolicy%]
-[%
-		}
-	}
-}
-%] 
-
-	em que source e target != null
-		verifico
-			se action é igual a drop, então
-				recupero os dados do source
-				recupero os dados do target
-			 	adiciono no algoritmo blocker
 
 
-from pox.core import core
- 
-# A set of ports to block
-block_ports = set()
+block_ips = set()
 
 def block_handler (event):
-  # Handles packet events and kills the ones with a blocked port number
- 
-  tcpp = event.parsed.find('tcp')
-  if not tcpp: return # Not TCP
-  if tcpp.srcport in block_ports or tcpp.dstport in block_ports:
-    # Halt the event, stopping l2_learning from seeing it
-    # (and installing a table entry for it)
-    core.getLogger("blocker").debug("Blocked TCP %s <-> %s",
-                                    tcpp.srcport, tcpp.dstport)
+  
+  # Handles packet events and kills the ones with blocked property
+  packet = event.parsed
+  ip = packet.find('ipv4')
+
+  if ip is None:
+    # This packet isn't IP!
+    return
+  elif str(ip.srcip) == '10.0.0.1':
+    # The IP is in the block list
+    print("nao pode source %s - destination %s", ip.srcip, ip.dstip)  
     event.halt = True
- 
-def unblock (*ports):
-  block_ports.difference_update(ports)
- 
-def block (*ports):
-  block_ports.update(ports)
- 
-def launch (ports = ''):
- 
-  # Add ports from commandline to list of ports to block
-  block_ports.update(int(x) for x in ports.replace(",", " ").split())
- 
-  # Add functions to Interactive so when you run POX with py, you
-  # can easily add/remove ports to block.
-  core.Interactive.variables['block'] = block
-  core.Interactive.variables['unblock'] = unblock
- 
-  # Listen to packet events
-  core.openflow.addListenerByName("PacketIn", block_handler)
+  else:
+    print("pode source %s - destination %s", ip.srcip, ip.dstip)
 
-
-
-[%for (controller in Controller.all) {%]
-	[%=Controller.type%]
-	teste
-   	[%for (s in Switch) {%]
-   		[%=s.name%]
-   		teste
-   	[%}%]
-[%}%]
+def launch ():
+    core.openflow.addListenerByName("PacketIn", block_handler)
 
 [%
 operation isEmpty (object) {

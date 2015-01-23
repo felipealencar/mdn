@@ -15,7 +15,7 @@ POX> block(80, 8888, 8000)
 from pox.core import core
  
 # A set of ports to block
-block_ports = set()
+block = set()
  
 def block_handler (event):
   # Handles packet events and kills the ones with a blocked port number
