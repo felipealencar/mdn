@@ -13,7 +13,9 @@ log = core.getLogger()
 [%
 for (policy in Policy.all) {
 	if (policy.select(p|p.policyAction.isDefined()).size() > 0) {
-		if (policy.policyAction.type.value = Actions#DROP.value and policy.sourceHostPolicy.isDefined() and policy.targetHostPolicy.isDefined()) {
+		if (policy.policyAction.type.value = Actions#DROP.value and policy.sourceHostPolicy.isDefined() and policy.targetHostPolicy.isDefined()) {}
+	}
+}
 %]
 
 
