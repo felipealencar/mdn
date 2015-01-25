@@ -1,44 +1,54 @@
-import pox
-import pprint
-from pox.lib.packet.ethernet import ethernet, ETHER_BROADCAST
-from pox.lib.packet.ipv4 import ipv4
-from pox.lib.packet.arp import arp
-from pox.lib.addresses import IPAddr, EthAddr
-from pox.lib.util import str_to_bool, dpidToStr
-from pox.lib.recoco import Timer
-
-from pox.core import core
-
-log = core.getLogger()
 [%
+import "header.egl";
+import "utils.egl";
+import "condition.egl"; 
+%]
+
+[% var header = getCodeHeader(); %]
+[%=header%]
+[% 
 for (policy in Policy.all) {
-	if (policy.select(p|p.policyAction.isDefined()).size() > 0) {
-		if (policy.policyAction.type.value = Actions#DROP.value and policy.sourceHostPolicy.isDefined() and policy.targetHostPolicy.isDefined()) {}
+	if (policy.policyAction.isDefined()) {
+		if (policy.policyAction.type.value = Actions#DROP.value and policy.sourceHostPolicy.isDefined() and policy.targetHostPolicy.isDefined()) {
+%]
+			block_ips = set()
+			[% /*TODO: DEFINIR ID PARA MÉTODOS HANDLER E DEPOIS ESCREVÊ-LOS NO MÉTODO LAUNCHER*/ %]
+			def block_handler (event):
+			  
+			# Handles packet events and kills the ones with blocked property
+		 	packet = event.parsed
+			ip = packet.find('ipv4')
+	
+			# This packet isn't IP!
+			if ip is None: 
+			    return
+		    # The flow is in the block list
+			elif str(ip.srcip) == '[%=policy.sourceHostPolicy.ip.toString()%]' and str(ip.dstip) == '[%=policy.targetHostPolicy.ip.toString()%]':
+				# Verify its conditions, if any				
+				//conditions.egl
+				[% var stringConditions : String = verifyConditions(policy); %]
+				[% if (stringConditions.length() > 1) { %]
+				[%='if ('+stringConditions+')'%]:
+					print("It is in the blocked list source %s - destination %s", ip.srcip, ip.dstip)
+					event.halt = True
+				else
+					event.halt = False
+				[% } %]
+				[% else { %]
+				print("It is in the blocked list source %s - destination %s", ip.srcip, ip.dstip)
+				event.halt = True
+				[% } %]		
+			else:
+			    print("Allowed source %s - destination %s", ip.srcip, ip.dstip)
+
+			def launch ():
+			    core.openflow.addListenerByName("PacketIn", block_handler)
+[%		
+		}
 	}
 }
 %]
 
-
-block_ips = set()
-
-def block_handler (event):
-  
-  # Handles packet events and kills the ones with blocked property
-  packet = event.parsed
-  ip = packet.find('ipv4')
-
-  if ip is None:
-    # This packet isn't IP!
-    return
-  elif str(ip.srcip) == '10.0.0.1':
-    # The IP is in the block list
-    print("nao pode source %s - destination %s", ip.srcip, ip.dstip)  
-    event.halt = True
-  else:
-    print("pode source %s - destination %s", ip.srcip, ip.dstip)
-
-def launch ():
-    core.openflow.addListenerByName("PacketIn", block_handler)
 
 [%
 operation isEmpty (object) {

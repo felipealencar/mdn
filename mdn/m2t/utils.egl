@@ -1,0 +1,54 @@
+[% 
+operation dateToNum(date : Any) : String {
+	var dateString : String = date.toString();
+	var dateSequence : Sequence = dateString.split(' ');
+	var dateYear : String;
+	var dateMonth : String;
+	var dateDay : String;
+	var i : Integer = 0;
+	
+	for (datePart : String in dateSequence) {
+		if(i == 1) {
+			dateMonth = datePart;
+		}
+		if(i == 2) {
+			dateDay = datePart;
+		}		
+		if(i == 5) {
+			dateYear = datePart;
+		}	
+		i = i+1;
+	}
+	
+	var stringDate : String = dateYear+monthNameToNum(dateMonth)+dateDay;
+	stringDate.print();
+	return stringDate;
+}
+
+operation monthNameToNum(month : Any) : String {
+	if (month == 'Jan')
+		return '01';
+	else if (month == 'Feb' or month == 'Fev') 
+		return '02';
+	else if (month == 'Mar')
+		return '03';
+	else if (month == 'Apr' or month == 'Abr')
+		return '04';
+	else if (month == 'May' or month == 'Mai')
+		return '05';
+	else if (month == 'Jun')
+		return '06';
+	else if (month == 'Jul')
+		return '07';
+	else if (month == 'Aug' or month == 'Ago')
+		return '08'; 
+	else if (month == 'Set')
+		return '09'; 
+	else if (month == 'Oct' or month == 'Out')
+		return '10';
+	else if (month == 'Nov')
+		return '11';
+	else if (month == 'Dec' or month == 'Dez')
+		return '12';
+}
+%]

@@ -1,0 +1,21 @@
+[%
+operation getCodeHeader() : String {
+	var header : String;
+
+	header = "
+	    import pox
+	    import pprint
+	    import datetime
+	    from pox.lib.packet.ethernet import ethernet, ETHER_BROADCAST
+		from pox.lib.packet.ipv4 import ipv4
+		from pox.lib.packet.arp import arp
+		from pox.lib.addresses import IPAddr, EthAddr
+		from pox.lib.util import str_to_bool, dpidToStr
+		from pox.lib.recoco import Timer
+	    from pox.core import core
+	
+		log = core.getLogger()";
+
+    return header;
+}
+%]

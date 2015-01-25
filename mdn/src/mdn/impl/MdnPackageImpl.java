@@ -900,6 +900,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
     addEEnumLiteral(actionsEEnum, Actions.FORWARD);
     addEEnumLiteral(actionsEEnum, Actions.DROP);
     addEEnumLiteral(actionsEEnum, Actions.MODIFY);
+    addEEnumLiteral(actionsEEnum, Actions.MONITOR);
 
     initEEnum(conditionsEEnum, Conditions.class, "Conditions");
     addEEnumLiteral(conditionsEEnum, Conditions.WHEN);

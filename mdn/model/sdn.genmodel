@@ -23,6 +23,7 @@
       <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Actions/FORWARD"/>
       <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Actions/DROP"/>
       <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Actions/MODIFY"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Actions/MONITOR"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="sdn.ecore#//Conditions">
       <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Conditions/WHEN"/>

@@ -94,6 +94,7 @@
     <eLiterals name="FORWARD"/>
     <eLiterals name="DROP" value="1"/>
     <eLiterals name="MODIFY" value="2"/>
+    <eLiterals name="MONITOR"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Policy">
     <eAnnotations source="gmf.node">

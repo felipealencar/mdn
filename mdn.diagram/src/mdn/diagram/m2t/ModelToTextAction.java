@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.epsilon.egl.EglFileGeneratingTemplateFactory;
 import org.eclipse.epsilon.egl.EglTemplateFactoryModuleAdapter;
 import org.eclipse.epsilon.emc.emf.InMemoryEmfModel;
+import org.eclipse.epsilon.eol.dom.Import;
 import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
@@ -74,6 +75,7 @@ public class ModelToTextAction implements IWorkbenchWindowActionDelegate {
 			}
 
 			module.getContext().getModelRepository().addModel(m);
+			
 
 			TransformationView view = null;
 			try {

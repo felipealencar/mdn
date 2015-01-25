@@ -1,0 +1,54 @@
+[% 
+operation verifyConditions(policy : Any) : String {
+
+	var conditions : Integer;
+	var stringCondition : String;
+	conditions = 0;
+	stringCondition = '';
+	
+	if (policy.policyCondition.isDefined()) {
+		//Verify if packet condition is defined
+		if (policy.policyCondition.conditionPacket.isDefined()) {
+			if(policy.policyCondition.conditionPacket.header == PacketHeaders#IN_PORT) {
+				stringCondition = '(str(ip.inport) == ' + policy.policyCondition.conditionPacket.value.toString() + ')';
+			}
+			else if(policy.policyCondition.conditionPacket.header == PacketHeaders#MAC_SRC or policy.policyCondition.conditionPacket.header == PacketHeaders#MAC_DST) {
+			
+			}
+			else if(policy.policyCondition.conditionPacket.header == PacketHeaders#VLAN_ID) {
+			
+			}
+			else if(policy.policyCondition.conditionPacket.header == PacketHeaders#VLAN_PRIO) {
+			
+			}
+			else if(policy.policyCondition.conditionPacket.header == PacketHeaders#ETH_TYPE) {
+			
+			}
+			else if(policy.policyCondition.conditionPacket.header == PacketHeaders#IP_SRC or policy.policyCondition.conditionPacket.header == PacketHeaders#IP_DST) {
+			
+			}
+			conditions = conditions + 1;						
+		}
+		//Verify if time condition is defined
+		if (policy.policyCondition.conditionTime.isDefined()) {
+%]
+			[%='now = datetime.datetime.now()'%]
+			
+[%
+			var conditionTime : String = '(int(str(now.year) + str(now.month) + str(now.day)) >= ' + dateToNum(policy.policyCondition.conditionTime.beginDate) + ' and ' + 'int(str(now.year) + str(now.month) + str(now.day)) <= ' + dateToNum(policy.policyCondition.conditionTime.endDate) + ')';
+			if (conditions > 0) {
+				stringCondition = stringCondition + ' and ' + conditionTime;
+			}
+			else {
+				stringCondition = conditionTime;
+			}
+			conditions = conditions + 1;
+		}
+		//Verify if time traffic is defined
+		if (policy.policyCondition.conditionTraffic.isDefined()) {
+		
+		}
+	}
+	return stringCondition;
+}	
+%]

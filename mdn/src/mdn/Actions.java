@@ -47,7 +47,15 @@ public enum Actions implements Enumerator
    * @generated
    * @ordered
    */
-  MODIFY(2, "MODIFY", "MODIFY");
+  MODIFY(2, "MODIFY", "MODIFY"), /**
+   * The '<em><b>MONITOR</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #MONITOR_VALUE
+   * @generated
+   * @ordered
+   */
+  MONITOR(0, "MONITOR", "MONITOR");
 
   /**
    * The '<em><b>FORWARD</b></em>' literal value.
@@ -95,6 +103,21 @@ public enum Actions implements Enumerator
   public static final int MODIFY_VALUE = 2;
 
   /**
+   * The '<em><b>MONITOR</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>MONITOR</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #MONITOR
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int MONITOR_VALUE = 0;
+
+  /**
    * An array of all the '<em><b>Actions</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -106,6 +129,7 @@ public enum Actions implements Enumerator
       FORWARD,
       DROP,
       MODIFY,
+      MONITOR,
     };
 
   /**
