@@ -7,18 +7,23 @@ import "condition.egl";
 [% var header = getCodeHeader(); %]
 [%=header%]
 [% 
+var policyCounter : Integer = 0;
+var counterActionDrop : Integer = 0;
+var counterActionModify : Integer = 0;
+var counterActionForward : Integer = 0;
+var counterActionMonitor : Integer = 0;
+%]
+def mdn_handler (event):
+	  
+	# Handles packet events and kills the ones with blocked property
+ 	packet = event.parsed
+				
+[%
 for (policy in Policy.all) {
 	if (policy.policyAction.isDefined()) {
 		if (policy.policyAction.type.value = Actions#DROP.value and policy.sourceHostPolicy.isDefined() and policy.targetHostPolicy.isDefined()) {
 %]
-			block_ips = set()
-			[% /*TODO: DEFINIR ID PARA MÉTODOS HANDLER E DEPOIS ESCREVÊ-LOS NO MÉTODO LAUNCHER*/ %]
-			def block_handler (event):
-			  
-			# Handles packet events and kills the ones with blocked property
-		 	packet = event.parsed
 			ip = packet.find('ipv4')
-	
 			# This packet isn't IP!
 			if ip is None: 
 			    return
@@ -40,13 +45,23 @@ for (policy in Policy.all) {
 				[% } %]		
 			else:
 			    print("Allowed source %s - destination %s", ip.srcip, ip.dstip)
-
-			def launch ():
-			    core.openflow.addListenerByName("PacketIn", block_handler)
-[%		
+[%			
+			if(counterActionDrop == 0) {
+				counterActionDrop = counterActionDrop + 1;
+			}			
 		}
 	}
 }
+if(counterActionDrop > 0) {
+%]
+def launch ():
+	core.openflow.addListenerByName("PacketIn", mdn_handler)
+				
+[%
+}
+%]		
+		
+[%
 %]
 
 
