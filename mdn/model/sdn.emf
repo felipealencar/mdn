@@ -2,7 +2,7 @@
 @namespace(uri="mdn", prefix="")
 package mdn;
 
-@gmf.diagram
+@gmf.diagram(foo="bar", onefile="true", rcp="true")
 class Sdn {
   val NetworkNode[*] nodes;
   val Policy[*] policies;
@@ -34,9 +34,6 @@ class Host extends NetworkNode {
 
   @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0")
   ref Switch hostSwitch;
-
-  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
-  ref Policy sourceHostPolicy;
 }
 
 @gmf.node(label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/switch.gif", figure="figures.SwitchFigure", label.placement="external")
@@ -46,11 +43,8 @@ class Switch extends NetworkNode {
   @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0")
   ref Controller[*] switchController;
 
-  @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0", source.constraint="self <> oppositeEnd")
-  ref Switch[1] source;
-
-  @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0", source.constraint="self <> oppositeEnd")
-  ref Switch[1] target;
+  @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0", switches.constraint="self <> oppositeEnd", source.constraint="self <> oppositeEnd")
+  ref Switch[*] switches;
 }
 
 abstract class NetworkNode {
@@ -63,13 +57,17 @@ enum Actions {
   FORWARD = 0;
   DROP = 1;
   MODIFY = 2;
+  MONITOR = 0;
 }
 
 @gmf.node(figure="figures.PolicyFigure", label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/policy.gif", label.placement="external")
 class Policy {
 
-  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
-  ref Host targetHostPolicy;
+  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0", tool.name="sourceHost")
+  transient ref Host[*] sourceHostPolicy;
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0", tool.name="targetHost")
+  transient ref Host[*] targetHostPolicy;
   attr String name;
 
   @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")

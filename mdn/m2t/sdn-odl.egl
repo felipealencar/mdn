@@ -1,0 +1,41 @@
+[% import "header.egl"; %]
+[% var policyCounter : Integer = 0; %]
+[%for (policy in Policy.all) {
+	if (policy.policyAction.isDefined()) {
+		if (policy.policyAction.type.value = Actions#MONITOR.value and policy.sourceHostPolicy.isDefined() and policy.targetHostPolicy.isDefined()) {
+%]
+public class Policy[%=policyCounter%]PacketInDispatcherImpl implements PacketProcessingListener {
+    
+    private Map<InstanceIdentifier<Node>, PacketProcessingListener> handlerMapping;
+    
+    /**
+     * default constructor
+     */
+    public PacketInDispatcherImpl() {
+        handlerMapping = new HashMap<>();
+    }
+
+    @Override
+    public void onPacketReceived(PacketReceived notification) {
+        // find corresponding handler
+
+        InstanceIdentifier<?> incomingIp = [%= policy.sourceHostPolicy.hostSwitch.ports %];
+        InstanceIdentifier<Node> nodeOfPacket = incomingIp.firstIdentifierOf(Node.class);
+        /**
+         * Lookup up the the packet-in listener for this node.
+         * 
+         */
+        PacketProcessingListener nodeHandler = handlerMapping.get(nodeOfPacket);
+        
+        if (nodeHandler != null) {
+            nodeHandler.onPacketReceived(notification);
+        }
+    }
+    
+	[...]
+    }
+}
+[%			policyCounter = policyCounter + 1;
+		}
+	}
+} %]

@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Set;
 
 import mdn.diagram.providers.MdnMarkerNavigationProvider;
+import mdn.diagram.providers.MdnValidationDecoratorProvider;
 import mdn.diagram.providers.MdnValidationProvider;
 
 import org.eclipse.core.resources.IFile;

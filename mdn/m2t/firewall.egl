@@ -1,0 +1,30 @@
+[% 
+operation actionDrop(policy : Any) : String {
+%]
+  ip = packet.find('ipv4')
+  # This packet isn't IP!
+  if ip is None: 
+    return
+  # The flow is in the block list
+  [% var srcIP = policy.sourceHostPolicy.ip.toString(); %]
+  [% var dstIP = policy.targetHostPolicy.ip.toString(); %]
+  [% srcIP = srcIP.substring(1, srcIP.length()-1); %]
+  [% dstIP = dstIP.substring(1, dstIP.length()-1); %]
+  elif str(ip.srcip) == [%='\''+srcIP+'\''%] and str(ip.dstip) == [%='\''+dstIP+'\''%]:
+	# Verify its conditions, if any				
+	[% var stringConditions : String = verifyConditions(policy); %]
+	[% if (stringConditions.length() > 1) { %]
+    [%='if ('+stringConditions+')'%]:
+      print("It is in the blocked list source %s - destination %s", ip.srcip, ip.dstip)
+      event.halt = True
+	  else
+        event.halt = False
+	[% } %]
+	[% else { %]
+      print("It is in the blocked list source %s - destination %s", ip.srcip, ip.dstip)
+      event.halt = True
+	[% } %]		
+  else:
+    print("Allowed source %s - destination %s", ip.srcip, ip.dstip)
+[%
+}%]

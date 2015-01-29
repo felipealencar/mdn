@@ -14,10 +14,12 @@ import mdn.diagram.part.MdnDiagramEditor;
 import mdn.diagram.part.MdnDiagramEditorPlugin;
 import mdn.diagram.part.MdnVisualIDRegistry;
 
+import mdn.diagram.part.ValidationMarker;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.Label;
 import org.eclipse.emf.transaction.util.TransactionUtil;

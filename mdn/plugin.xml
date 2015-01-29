@@ -11,5 +11,17 @@
             uri="mdn"
             class="mdn.MdnPackage"/>
    </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="mdn.diagram.MdnApplication"
+            name="mdn">
+         <property
+               name="appName"
+               value="mdn">
+         </property>
+      </product>
+   </extension>
 
 </plugin>

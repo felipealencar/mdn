@@ -1,7 +1,9 @@
 [%
 import "header.egl";
 import "utils.egl";
-import "condition.egl"; 
+import "condition.egl";
+import "firewall.egl"; 
+import "monitor.egl"; 
 %]
 
 [% var header = getCodeHeader(); %]
@@ -14,54 +16,54 @@ var counterActionForward : Integer = 0;
 var counterActionMonitor : Integer = 0;
 %]
 def mdn_handler (event):
-	  
-	# Handles packet events and kills the ones with blocked property
- 	packet = event.parsed
+  # Handles packet events and kills the ones with blocked property
+  packet = event.parsed
 				
 [%
 for (policy in Policy.all) {
 	if (policy.policyAction.isDefined()) {
 		if (policy.policyAction.type.value = Actions#DROP.value and policy.sourceHostPolicy.isDefined() and policy.targetHostPolicy.isDefined()) {
-%]
-			ip = packet.find('ipv4')
-			# This packet isn't IP!
-			if ip is None: 
-			    return
-		    # The flow is in the block list
-			elif str(ip.srcip) == '[%=policy.sourceHostPolicy.ip.toString()%]' and str(ip.dstip) == '[%=policy.targetHostPolicy.ip.toString()%]':
-				# Verify its conditions, if any				
-				//conditions.egl
-				[% var stringConditions : String = verifyConditions(policy); %]
-				[% if (stringConditions.length() > 1) { %]
-				[%='if ('+stringConditions+')'%]:
-					print("It is in the blocked list source %s - destination %s", ip.srcip, ip.dstip)
-					event.halt = True
-				else
-					event.halt = False
-				[% } %]
-				[% else { %]
-				print("It is in the blocked list source %s - destination %s", ip.srcip, ip.dstip)
-				event.halt = True
-				[% } %]		
-			else:
-			    print("Allowed source %s - destination %s", ip.srcip, ip.dstip)
-[%			
+			
 			if(counterActionDrop == 0) {
+				
 				counterActionDrop = counterActionDrop + 1;
-			}			
+			}		
+  actionDrop(policy);
+			
+	
+		}
+		//SE A AÇÃO FOR MONITOR
+		if (policy.policyAction.type.value = Actions#MONITOR.value and policy.sourceHostPolicy.isDefined() and policy.targetHostPolicy.isDefined()) {
+
+  monitorAction(policy);	
+			
+			if(counterActionMonitor == 0) {
+				counterActionMonitor = counterActionMonitor + 1;
+			}	
 		}
 	}
 }
-if(counterActionDrop > 0) {
 %]
 def launch ():
-	core.openflow.addListenerByName("PacketIn", mdn_handler)
+[%
+if(counterActionDrop > 0) {
+%]
+  core.openflow.addListenerByName("PacketIn", mdn_handler)
 				
 [%
 }
+if(counterActionMonitor > 0) {
 %]		
-		
+  from pox.lib.recoco import Timer
+
+  # attach handsers to listners
+  core.openflow.addListenerByName("FlowStatsReceived", _handle_flowstats_received) 
+  core.openflow.addListenerByName("PortStatsReceived", _handle_portstats_received) 
+
+  # timer set to execute every five seconds
+  Timer(5, _timer_func, recurring=True)	
 [%
+}
 %]
 
 

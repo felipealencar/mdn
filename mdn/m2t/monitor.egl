@@ -1,0 +1,41 @@
+[% 
+operation monitorAction(policy : Any) : String {
+%]
+def _timer_func ():
+	for connection in core.openflow._connections.values():
+		connection.send(of.ofp_stats_request(body=of.ofp_flow_stats_request()))
+		connection.send(of.ofp_stats_request(body=of.ofp_port_stats_request()))
+	log.debug("Sent %i flow/port stats request(s)", len(core.openflow._connections))
+	
+def _handle_flowstats_received (event):
+  stats = flow_stats_to_list(event.stats)
+  log.debug("FlowStatsReceived from %s: %s", 
+    dpidToStr(event.connection.dpid), stats)
+
+  # Get number of bytes/packets in flows for web traffic only
+  web_bytes = 0
+  web_flows = 0
+  web_packet = 0
+  for f in event.stats:
+  
+  	[% for (policy in Policy.All) { %]
+  	  [% var srcIP = policy.sourceHostPolicy.ip.toString(); %]
+      [% var dstIP = policy.targetHostPolicy.ip.toString(); %]
+      [% srcIP = srcIP.substring(1, srcIP.length()-1); %]
+      [% dstIP = dstIP.substring(1, dstIP.length()-1); %]
+    if f.match.ip_dst == [%=dstIP%] or f.match.ip_src == [%=srcIP%]:
+      web_bytes += f.byte_count
+      web_packet += f.packet_count
+      web_flows += 1
+    [% } %]
+  log.info("Web traffic from %s: %s bytes (%s packets) over %s flows", 
+    dpidToStr(event.connection.dpid), web_bytes, web_packet, web_flows)
+    
+# handler to display port statistics received in JSON format
+def _handle_portstats_received (event):
+  stats = flow_stats_to_list(event.stats)
+  log.debug("PortStatsReceived from %s: %s", 
+    dpidToStr(event.connection.dpid), stats)
+[%
+}
+%]

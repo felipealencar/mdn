@@ -124,72 +124,72 @@ public class MdnNavigatorLabelProvider extends LabelProvider implements
 	 */
 	public Image getImage(View view) {
 		switch (MdnVisualIDRegistry.getVisualID(view)) {
-		case PolicySourceHostPolicyEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?mdn?Policy?sourceHostPolicy", MdnElementTypes.PolicySourceHostPolicy_4023); //$NON-NLS-1$
-		case ConditionConditionTimeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?mdn?Condition?conditionTime", MdnElementTypes.ConditionConditionTime_4017); //$NON-NLS-1$
-		case ActionActionPacketHeaderEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?mdn?Action?actionPacketHeader", MdnElementTypes.ActionActionPacketHeader_4012); //$NON-NLS-1$
-		case PolicyPolicyActionEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?mdn?Policy?policyAction", MdnElementTypes.PolicyPolicyAction_4015); //$NON-NLS-1$
-		case SwitchSwitchesEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?mdn?Switch?switches", MdnElementTypes.SwitchSwitches_4022); //$NON-NLS-1$
-		case TrafficEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?mdn?Traffic", MdnElementTypes.Traffic_2007); //$NON-NLS-1$
-		case PolicyTargetHostPolicyEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?mdn?Policy?targetHostPolicy", MdnElementTypes.PolicyTargetHostPolicy_4009); //$NON-NLS-1$
-		case ControllerEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?mdn?Controller", MdnElementTypes.Controller_2001); //$NON-NLS-1$
-		case SwitchEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?mdn?Switch", MdnElementTypes.Switch_2003); //$NON-NLS-1$
-		case SwitchSwitchControllerEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?mdn?Switch?switchController", MdnElementTypes.SwitchSwitchController_4006); //$NON-NLS-1$
-		case ActionEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?mdn?Action", MdnElementTypes.Action_2011); //$NON-NLS-1$
-		case PolicyEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?mdn?Policy", MdnElementTypes.Policy_2004); //$NON-NLS-1$
-		case HostEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?mdn?Host", MdnElementTypes.Host_2002); //$NON-NLS-1$
-		case PacketHeaderEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?mdn?PacketHeader", MdnElementTypes.PacketHeader_2009); //$NON-NLS-1$
-		case PolicyPolicyConditionEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?mdn?Policy?policyCondition", MdnElementTypes.PolicyPolicyCondition_4016); //$NON-NLS-1$
-		case TimeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?mdn?Time", MdnElementTypes.Time_2008); //$NON-NLS-1$
-		case ConditionEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?mdn?Condition", MdnElementTypes.Condition_2010); //$NON-NLS-1$
 		case SdnEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Diagram?mdn?Sdn", MdnElementTypes.Sdn_1000); //$NON-NLS-1$
-		case ConditionConditionTrafficEditPart.VISUAL_ID:
+		case PolicyPolicyConditionEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?mdn?Condition?conditionTraffic", MdnElementTypes.ConditionConditionTraffic_4018); //$NON-NLS-1$
-		case ActionActionForwardToNodeEditPart.VISUAL_ID:
+					"Navigator?Link?mdn?Policy?policyCondition", MdnElementTypes.PolicyPolicyCondition_4016); //$NON-NLS-1$
+		case HostEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?mdn?Action?actionForwardToNode", MdnElementTypes.ActionActionForwardToNode_4013); //$NON-NLS-1$
-		case ConditionConditionPacketEditPart.VISUAL_ID:
+					"Navigator?TopLevelNode?mdn?Host", MdnElementTypes.Host_2002); //$NON-NLS-1$
+		case ControllerEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?mdn?Condition?conditionPacket", MdnElementTypes.ConditionConditionPacket_4019); //$NON-NLS-1$
+					"Navigator?TopLevelNode?mdn?Controller", MdnElementTypes.Controller_2001); //$NON-NLS-1$
 		case HostHostSwitchEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?mdn?Host?hostSwitch", MdnElementTypes.HostHostSwitch_4004); //$NON-NLS-1$
+		case SwitchEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?mdn?Switch", MdnElementTypes.Switch_2003); //$NON-NLS-1$
+		case PacketHeaderEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?mdn?PacketHeader", MdnElementTypes.PacketHeader_2009); //$NON-NLS-1$
+		case SwitchSwitchControllerEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?mdn?Switch?switchController", MdnElementTypes.SwitchSwitchController_4006); //$NON-NLS-1$
+		case ConditionConditionTimeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?mdn?Condition?conditionTime", MdnElementTypes.ConditionConditionTime_4017); //$NON-NLS-1$
+		case ConditionConditionPacketEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?mdn?Condition?conditionPacket", MdnElementTypes.ConditionConditionPacket_4019); //$NON-NLS-1$
+		case PolicyPolicyActionEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?mdn?Policy?policyAction", MdnElementTypes.PolicyPolicyAction_4015); //$NON-NLS-1$
+		case ConditionEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?mdn?Condition", MdnElementTypes.Condition_2010); //$NON-NLS-1$
+		case TrafficEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?mdn?Traffic", MdnElementTypes.Traffic_2007); //$NON-NLS-1$
+		case ActionActionPacketHeaderEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?mdn?Action?actionPacketHeader", MdnElementTypes.ActionActionPacketHeader_4012); //$NON-NLS-1$
+		case TimeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?mdn?Time", MdnElementTypes.Time_2008); //$NON-NLS-1$
+		case ConditionConditionTrafficEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?mdn?Condition?conditionTraffic", MdnElementTypes.ConditionConditionTraffic_4018); //$NON-NLS-1$
+		case PolicySourceHostPolicyEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?mdn?Policy?sourceHostPolicy", MdnElementTypes.PolicySourceHostPolicy_4023); //$NON-NLS-1$
+		case SwitchSwitchesEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?mdn?Switch?switches", MdnElementTypes.SwitchSwitches_4022); //$NON-NLS-1$
+		case ActionEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?mdn?Action", MdnElementTypes.Action_2011); //$NON-NLS-1$
+		case ActionActionForwardToNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?mdn?Action?actionForwardToNode", MdnElementTypes.ActionActionForwardToNode_4013); //$NON-NLS-1$
+		case PolicyTargetHostPolicyEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?mdn?Policy?targetHostPolicy", MdnElementTypes.PolicyTargetHostPolicy_4009); //$NON-NLS-1$
+		case PolicyEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?mdn?Policy", MdnElementTypes.Policy_2004); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -250,50 +250,50 @@ public class MdnNavigatorLabelProvider extends LabelProvider implements
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (MdnVisualIDRegistry.getVisualID(view)) {
-		case PolicySourceHostPolicyEditPart.VISUAL_ID:
-			return getPolicySourceHostPolicy_4023Text(view);
-		case ConditionConditionTimeEditPart.VISUAL_ID:
-			return getConditionConditionTime_4017Text(view);
-		case ActionActionPacketHeaderEditPart.VISUAL_ID:
-			return getActionActionPacketHeader_4012Text(view);
-		case PolicyPolicyActionEditPart.VISUAL_ID:
-			return getPolicyPolicyAction_4015Text(view);
-		case SwitchSwitchesEditPart.VISUAL_ID:
-			return getSwitchSwitches_4022Text(view);
-		case TrafficEditPart.VISUAL_ID:
-			return getTraffic_2007Text(view);
-		case PolicyTargetHostPolicyEditPart.VISUAL_ID:
-			return getPolicyTargetHostPolicy_4009Text(view);
-		case ControllerEditPart.VISUAL_ID:
-			return getController_2001Text(view);
-		case SwitchEditPart.VISUAL_ID:
-			return getSwitch_2003Text(view);
-		case SwitchSwitchControllerEditPart.VISUAL_ID:
-			return getSwitchSwitchController_4006Text(view);
-		case ActionEditPart.VISUAL_ID:
-			return getAction_2011Text(view);
-		case PolicyEditPart.VISUAL_ID:
-			return getPolicy_2004Text(view);
-		case HostEditPart.VISUAL_ID:
-			return getHost_2002Text(view);
-		case PacketHeaderEditPart.VISUAL_ID:
-			return getPacketHeader_2009Text(view);
-		case PolicyPolicyConditionEditPart.VISUAL_ID:
-			return getPolicyPolicyCondition_4016Text(view);
-		case TimeEditPart.VISUAL_ID:
-			return getTime_2008Text(view);
-		case ConditionEditPart.VISUAL_ID:
-			return getCondition_2010Text(view);
 		case SdnEditPart.VISUAL_ID:
 			return getSdn_1000Text(view);
-		case ConditionConditionTrafficEditPart.VISUAL_ID:
-			return getConditionConditionTraffic_4018Text(view);
-		case ActionActionForwardToNodeEditPart.VISUAL_ID:
-			return getActionActionForwardToNode_4013Text(view);
-		case ConditionConditionPacketEditPart.VISUAL_ID:
-			return getConditionConditionPacket_4019Text(view);
+		case PolicyPolicyConditionEditPart.VISUAL_ID:
+			return getPolicyPolicyCondition_4016Text(view);
+		case HostEditPart.VISUAL_ID:
+			return getHost_2002Text(view);
+		case ControllerEditPart.VISUAL_ID:
+			return getController_2001Text(view);
 		case HostHostSwitchEditPart.VISUAL_ID:
 			return getHostHostSwitch_4004Text(view);
+		case SwitchEditPart.VISUAL_ID:
+			return getSwitch_2003Text(view);
+		case PacketHeaderEditPart.VISUAL_ID:
+			return getPacketHeader_2009Text(view);
+		case SwitchSwitchControllerEditPart.VISUAL_ID:
+			return getSwitchSwitchController_4006Text(view);
+		case ConditionConditionTimeEditPart.VISUAL_ID:
+			return getConditionConditionTime_4017Text(view);
+		case ConditionConditionPacketEditPart.VISUAL_ID:
+			return getConditionConditionPacket_4019Text(view);
+		case PolicyPolicyActionEditPart.VISUAL_ID:
+			return getPolicyPolicyAction_4015Text(view);
+		case ConditionEditPart.VISUAL_ID:
+			return getCondition_2010Text(view);
+		case TrafficEditPart.VISUAL_ID:
+			return getTraffic_2007Text(view);
+		case ActionActionPacketHeaderEditPart.VISUAL_ID:
+			return getActionActionPacketHeader_4012Text(view);
+		case TimeEditPart.VISUAL_ID:
+			return getTime_2008Text(view);
+		case ConditionConditionTrafficEditPart.VISUAL_ID:
+			return getConditionConditionTraffic_4018Text(view);
+		case PolicySourceHostPolicyEditPart.VISUAL_ID:
+			return getPolicySourceHostPolicy_4023Text(view);
+		case SwitchSwitchesEditPart.VISUAL_ID:
+			return getSwitchSwitches_4022Text(view);
+		case ActionEditPart.VISUAL_ID:
+			return getAction_2011Text(view);
+		case ActionActionForwardToNodeEditPart.VISUAL_ID:
+			return getActionActionForwardToNode_4013Text(view);
+		case PolicyTargetHostPolicyEditPart.VISUAL_ID:
+			return getPolicyTargetHostPolicy_4009Text(view);
+		case PolicyEditPart.VISUAL_ID:
+			return getPolicy_2004Text(view);
 		}
 		return getUnknownElementText(view);
 	}

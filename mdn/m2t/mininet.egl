@@ -1,0 +1,31 @@
+from mininet.topo import Topo
+from mininet.net import Mininet
+from mininet.util import dumpNodeConnections
+from mininet.log import setLogLevel
+
+class MultipleSwitchTopo( Topo ):
+  def __init__(self):
+    Topo.__init__( self )
+
+	[% for (switches in Switch.all) { %]
+    [%=switches.name+' = self.addSwitch("'+switches.name+'")'%]
+		
+	[% } %]
+	
+	[% for (switches in Switch.all) { %]
+		[% if (switches.switches.isDefined()) { %]
+			[% for (autoswitches in switches.switches) { %]
+    [%='self.addLink('+switches.name+', '+autoswitches.name+')'%]
+			[% } %]
+		[% } %]
+	[% } %]
+	
+	
+	[% for (host in Host.all) {	%]
+    [%=host.name+' = self.addHost(\''+host.name+'\', ip=\''+host.ip+'\')'%]
+    [%='self.addLink('+host.name+', '+host.hostSwitch.name+')'%]
+	[% } %]
+	
+topos = { 'multipleswitchtopo': ( lambda : MultipleSwitchTopo() ) }
+	
+

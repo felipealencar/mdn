@@ -12,7 +12,7 @@ def handle_flow_stats (event):
   log.info("Web traffic: %s bytes over %s flows", web_bytes, web_flows)
  
 # Listen for flow stats
-core.openflow.addListenerByName("FlowStatsReceived", handle_flow_stats)
+core.openflow.addListenerByName("FlowStatsReceived", mdn_handler)
  
 # Now actually request flow stats from all switches
 for con in core.openflow.connections: # make this _connections.keys() for pre-betta
