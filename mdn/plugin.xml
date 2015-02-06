@@ -15,7 +15,6 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            application="mdn.diagram.MdnApplication"
             name="mdn">
          <property
                name="appName"

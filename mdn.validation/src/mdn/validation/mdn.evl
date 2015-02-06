@@ -148,7 +148,7 @@ context Policy {
 
 context Time {
 	constraint validDate {
-		check : self.beginDate < self.endDate
+		check : self.dateToInt(self.beginDate, self.endDate) 
 		message : 'The Time clause requires that begin date less than end data.'
 	}
 }
@@ -223,4 +223,15 @@ context Action {
 
 operation Any println() : Any {
 	("Printing : " + self)->println();
+}
+
+operation Any dateToInt(beginDate : Any, endDate : Any) : Boolean {
+	var date = new Native("java.util.Date");
+	date = beginDate;
+	if(date.compareTo(endDate) <= 0){
+		return true;
+	}
+	else
+		return false;
+	
 }

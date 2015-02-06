@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="mdn" uid="mdn" id="mdn.product" application="mdn.diagram.MdnApplication" version="1" useFeatures="false" includeLaunchers="true">
+<product name="mdn" uid="mdn" id="mdn.product" version="1" useFeatures="false" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
@@ -13,7 +13,11 @@
    <launcher name="mdneditor">
       <solaris/>
       <win useIco="false">
-         <bmp/>
+         <bmp
+            winSmallHigh="/mdn/mdn16x16.bmp"
+            winMediumHigh="/mdn/mdn32x32.bmp"
+            winLargeHigh="/mdn/mdn48x48.bmp"
+            winExtraLargeHigh="/mdn/mdn256X256.bmp"/>
       </win>
    </launcher>
 
