@@ -60,7 +60,7 @@ public class PacketHeaderCreateCommand extends EditElementCommand {
 		PacketHeader newElement = MdnFactory.eINSTANCE.createPacketHeader();
 
 		Sdn owner = (Sdn) getElementToEdit();
-		owner.getPolicyObjects().add(newElement);
+		owner.getRuleObjects().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

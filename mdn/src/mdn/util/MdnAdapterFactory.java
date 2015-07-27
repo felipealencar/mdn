@@ -100,9 +100,9 @@ public class MdnAdapterFactory extends AdapterFactoryImpl
         return createNetworkNodeAdapter();
       }
       @Override
-      public Adapter casePolicy(Policy object)
+      public Adapter caseRule(Rule object)
       {
-        return createPolicyAdapter();
+        return createRuleAdapter();
       }
       @Override
       public Adapter caseAction(Action object)
@@ -130,9 +130,14 @@ public class MdnAdapterFactory extends AdapterFactoryImpl
         return createPacketHeaderAdapter();
       }
       @Override
-      public Adapter casePolicyObject(PolicyObject object)
+      public Adapter caseRuleObject(RuleObject object)
       {
-        return createPolicyObjectAdapter();
+        return createRuleObjectAdapter();
+      }
+      @Override
+      public Adapter caseGroup(Group object)
+      {
+        return createGroupAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -232,16 +237,16 @@ public class MdnAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link mdn.Policy <em>Policy</em>}'.
+   * Creates a new adapter for an object of class '{@link mdn.Rule <em>Rule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see mdn.Policy
+   * @see mdn.Rule
    * @generated
    */
-  public Adapter createPolicyAdapter()
+  public Adapter createRuleAdapter()
   {
     return null;
   }
@@ -322,16 +327,31 @@ public class MdnAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link mdn.PolicyObject <em>Policy Object</em>}'.
+   * Creates a new adapter for an object of class '{@link mdn.RuleObject <em>Rule Object</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see mdn.PolicyObject
+   * @see mdn.RuleObject
    * @generated
    */
-  public Adapter createPolicyObjectAdapter()
+  public Adapter createRuleObjectAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link mdn.Group <em>Group</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see mdn.Group
+   * @generated
+   */
+  public Adapter createGroupAdapter()
   {
     return null;
   }

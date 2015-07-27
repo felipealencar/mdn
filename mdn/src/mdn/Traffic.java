@@ -21,7 +21,7 @@ package mdn;
  * @model annotation="gmf.node figure='figures.TrafficFigure' label='operator,value,unit' label.pattern='{0}: {2}{1}' label.icon='false' tool.small.bundle='mdn.edit' tool.small.path='/icons/full/obj16/traffic.gif' label.placement='external'"
  * @generated
  */
-public interface Traffic extends PolicyObject
+public interface Traffic extends RuleObject
 {
   /**
    * Returns the value of the '<em><b>Operator</b></em>' attribute.

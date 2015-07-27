@@ -22,7 +22,7 @@ import java.util.Date;
  * @model annotation="gmf.node figure='figures.TimeFigure' label.icon='false' tool.small.bundle='mdn.edit' tool.small.path='/icons/full/obj16/time.gif' label.placement='external' label='operator,beginDate,endDate' label.pattern='{0}: {1} - {2}'"
  * @generated
  */
-public interface Time extends PolicyObject
+public interface Time extends RuleObject
 {
   /**
    * Returns the value of the '<em><b>Begin Date</b></em>' attribute.

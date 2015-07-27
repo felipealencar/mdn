@@ -96,15 +96,15 @@ context Host {
 	}
 }
 
-context Policy {
-	constraint policyWithOneSourceHostRequiresDifferenteTargetHost {
+context Rule {
+	constraint ruleWithOneSourceHostRequiresDifferenteTargetHost {
 		check {
-			var policies = Policy.all.select(p|p = self);
+			var policies = Rule.all.select(p|p = self);
 			var sourceHosts = 0;
 			var targetHosts = 0;
 			for (p in policies) { 
-				sourceHosts = p.sourceHostPolicy;
-				targetHosts = p.targetHostPolicy;
+				sourceHosts = p.sourceHostRule;
+				targetHosts = p.targetHostRule;
 				if(sourceHosts.size() = 1){
 					for (tH in targetHosts) { 
 						if(sourceHosts.ip = tH.ip or sourceHosts.ip = null or tH.ip = null){
@@ -120,10 +120,10 @@ context Policy {
 	
 	constraint hasOneCondition {
 		check {
-			var policies = Policy.all.select(p|p = self);
+			var policies = Rule.all.select(p|p = self);
 			var conditions = 0;
 			for (p in policies) { 
-				conditions = p.policyCondition;
+				conditions = p.ruleCondition;
 				if(conditions.size() > 1){
 					return false;
 				}
@@ -137,7 +137,7 @@ context Policy {
 		check : self.name.isDefined()
 		message : 'Unnamed ' + self.eClass().name.toUpperCase() + ' not allowed'
 		fix {
-        	title : 'Define the name of the policy '
+        	title : 'Define the name of the rule '
           	do {
             	var name := UserInput.prompt('What is the name?');
               	if (name.isDefined()) self.name := name;

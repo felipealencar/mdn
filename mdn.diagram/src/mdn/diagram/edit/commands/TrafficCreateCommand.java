@@ -60,7 +60,7 @@ public class TrafficCreateCommand extends EditElementCommand {
 		Traffic newElement = MdnFactory.eINSTANCE.createTraffic();
 
 		Sdn owner = (Sdn) getElementToEdit();
-		owner.getPolicyObjects().add(newElement);
+		owner.getRuleObjects().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

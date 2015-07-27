@@ -64,7 +64,7 @@ public class TimeOperatorBeginDateEndDatEditPart extends LabelEditPart
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5008;
+	public static final int VISUAL_ID = 5015;
 
 	/**
 	 * @generated
@@ -347,7 +347,7 @@ public class TimeOperatorBeginDateEndDatEditPart extends LabelEditPart
 		if (parser == null) {
 			parser = MdnParserProvider
 					.getParser(
-							MdnElementTypes.Time_2008,
+							MdnElementTypes.Time_2015,
 							getParserElement(),
 							MdnVisualIDRegistry
 									.getType(mdn.diagram.edit.parts.TimeOperatorBeginDateEndDatEditPart.VISUAL_ID));

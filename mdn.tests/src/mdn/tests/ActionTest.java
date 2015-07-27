@@ -15,7 +15,7 @@ import mdn.MdnFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActionTest extends PolicyObjectTest
+public class ActionTest extends RuleObjectTest
 {
 
   /**

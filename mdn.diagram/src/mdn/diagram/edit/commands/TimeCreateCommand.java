@@ -60,7 +60,7 @@ public class TimeCreateCommand extends EditElementCommand {
 		Time newElement = MdnFactory.eINSTANCE.createTime();
 
 		Sdn owner = (Sdn) getElementToEdit();
-		owner.getPolicyObjects().add(newElement);
+		owner.getRuleObjects().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

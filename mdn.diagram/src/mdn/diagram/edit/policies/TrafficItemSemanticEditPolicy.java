@@ -34,7 +34,7 @@ public class TrafficItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	public TrafficItemSemanticEditPolicy() {
-		super(MdnElementTypes.Traffic_2007);
+		super(MdnElementTypes.Traffic_2014);
 	}
 
 	/**

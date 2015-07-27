@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="gmf.node label='condition' label.icon='false' tool.small.bundle='mdn.edit' tool.small.path='/icons/full/obj16/condition.gif' label.placement='external' figure='figures.ConditionFigure'"
  * @generated
  */
-public interface Condition extends PolicyObject
+public interface Condition extends RuleObject
 {
   /**
    * Returns the value of the '<em><b>Condition</b></em>' attribute.

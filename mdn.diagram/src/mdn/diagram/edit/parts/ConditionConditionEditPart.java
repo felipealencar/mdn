@@ -63,7 +63,7 @@ public class ConditionConditionEditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5010;
+	public static final int VISUAL_ID = 5013;
 
 	/**
 	 * @generated
@@ -346,7 +346,7 @@ public class ConditionConditionEditPart extends LabelEditPart implements
 		if (parser == null) {
 			parser = MdnParserProvider
 					.getParser(
-							MdnElementTypes.Condition_2010,
+							MdnElementTypes.Condition_2013,
 							getParserElement(),
 							MdnVisualIDRegistry
 									.getType(mdn.diagram.edit.parts.ConditionConditionEditPart.VISUAL_ID));

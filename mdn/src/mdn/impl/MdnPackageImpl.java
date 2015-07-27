@@ -7,6 +7,7 @@ import mdn.Actions;
 import mdn.Condition;
 import mdn.Conditions;
 import mdn.Controller;
+import mdn.Group;
 import mdn.Host;
 import mdn.MdnFactory;
 import mdn.MdnPackage;
@@ -16,6 +17,8 @@ import mdn.PacketHeaders;
 import mdn.Policy;
 import mdn.PolicyObject;
 import mdn.RelationalOperators;
+import mdn.Rule;
+import mdn.RuleObject;
 import mdn.Sdn;
 import mdn.Switch;
 import mdn.Switches;
@@ -78,7 +81,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass policyEClass = null;
+  private EClass ruleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -120,7 +123,14 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass policyObjectEClass = null;
+  private EClass ruleObjectEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass groupEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -248,9 +258,19 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSdn_PolicyObjects()
+  public EReference getSdn_RuleObjects()
   {
     return (EReference)sdnEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSdn_Groups()
+  {
+    return (EReference)sdnEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -378,9 +398,9 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPolicy()
+  public EClass getRule()
   {
-    return policyEClass;
+    return ruleEClass;
   }
 
   /**
@@ -388,9 +408,9 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPolicy_SourceHostPolicy()
+  public EReference getRule_SourceHostRule()
   {
-    return (EReference)policyEClass.getEStructuralFeatures().get(0);
+    return (EReference)ruleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -398,9 +418,9 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPolicy_TargetHostPolicy()
+  public EReference getRule_TargetHostRule()
   {
-    return (EReference)policyEClass.getEStructuralFeatures().get(1);
+    return (EReference)ruleEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -408,9 +428,9 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPolicy_Name()
+  public EAttribute getRule_Name()
   {
-    return (EAttribute)policyEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -418,9 +438,9 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPolicy_PolicyCondition()
+  public EReference getRule_RuleCondition()
   {
-    return (EReference)policyEClass.getEStructuralFeatures().get(3);
+    return (EReference)ruleEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -428,9 +448,19 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPolicy_PolicyAction()
+  public EReference getRule_RuleAction()
   {
-    return (EReference)policyEClass.getEStructuralFeatures().get(4);
+    return (EReference)ruleEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRule_TargetGroupRule()
+  {
+    return (EReference)ruleEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -648,9 +678,49 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPolicyObject()
+  public EClass getRuleObject()
   {
-    return policyObjectEClass;
+    return ruleObjectEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGroup()
+  {
+    return groupEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGroup_HostsGroup()
+  {
+    return (EReference)groupEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGroup_Ip()
+  {
+    return (EAttribute)groupEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGroup_Name()
+  {
+    return (EAttribute)groupEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -726,7 +796,8 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
     sdnEClass = createEClass(SDN);
     createEReference(sdnEClass, SDN__NODES);
     createEReference(sdnEClass, SDN__POLICIES);
-    createEReference(sdnEClass, SDN__POLICY_OBJECTS);
+    createEReference(sdnEClass, SDN__RULE_OBJECTS);
+    createEReference(sdnEClass, SDN__GROUPS);
 
     controllerEClass = createEClass(CONTROLLER);
     createEAttribute(controllerEClass, CONTROLLER__TYPE);
@@ -744,12 +815,13 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
     createEAttribute(networkNodeEClass, NETWORK_NODE__MAC);
     createEAttribute(networkNodeEClass, NETWORK_NODE__IP);
 
-    policyEClass = createEClass(POLICY);
-    createEReference(policyEClass, POLICY__SOURCE_HOST_POLICY);
-    createEReference(policyEClass, POLICY__TARGET_HOST_POLICY);
-    createEAttribute(policyEClass, POLICY__NAME);
-    createEReference(policyEClass, POLICY__POLICY_CONDITION);
-    createEReference(policyEClass, POLICY__POLICY_ACTION);
+    ruleEClass = createEClass(RULE);
+    createEReference(ruleEClass, RULE__SOURCE_HOST_RULE);
+    createEReference(ruleEClass, RULE__TARGET_HOST_RULE);
+    createEAttribute(ruleEClass, RULE__NAME);
+    createEReference(ruleEClass, RULE__RULE_CONDITION);
+    createEReference(ruleEClass, RULE__RULE_ACTION);
+    createEReference(ruleEClass, RULE__TARGET_GROUP_RULE);
 
     actionEClass = createEClass(ACTION);
     createEAttribute(actionEClass, ACTION__TYPE);
@@ -777,7 +849,12 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
     createEAttribute(packetHeaderEClass, PACKET_HEADER__HEADER);
     createEAttribute(packetHeaderEClass, PACKET_HEADER__VALUE);
 
-    policyObjectEClass = createEClass(POLICY_OBJECT);
+    ruleObjectEClass = createEClass(RULE_OBJECT);
+
+    groupEClass = createEClass(GROUP);
+    createEReference(groupEClass, GROUP__HOSTS_GROUP);
+    createEAttribute(groupEClass, GROUP__IP);
+    createEAttribute(groupEClass, GROUP__NAME);
 
     // Create enums
     packetHeadersEEnum = createEEnum(PACKET_HEADERS);
@@ -818,17 +895,18 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
     controllerEClass.getESuperTypes().add(this.getNetworkNode());
     hostEClass.getESuperTypes().add(this.getNetworkNode());
     switchEClass.getESuperTypes().add(this.getNetworkNode());
-    actionEClass.getESuperTypes().add(this.getPolicyObject());
-    conditionEClass.getESuperTypes().add(this.getPolicyObject());
-    trafficEClass.getESuperTypes().add(this.getPolicyObject());
-    timeEClass.getESuperTypes().add(this.getPolicyObject());
-    packetHeaderEClass.getESuperTypes().add(this.getPolicyObject());
+    actionEClass.getESuperTypes().add(this.getRuleObject());
+    conditionEClass.getESuperTypes().add(this.getRuleObject());
+    trafficEClass.getESuperTypes().add(this.getRuleObject());
+    timeEClass.getESuperTypes().add(this.getRuleObject());
+    packetHeaderEClass.getESuperTypes().add(this.getRuleObject());
 
     // Initialize classes and features; add operations and parameters
     initEClass(sdnEClass, Sdn.class, "Sdn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSdn_Nodes(), this.getNetworkNode(), null, "nodes", null, 0, -1, Sdn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSdn_Policies(), this.getPolicy(), null, "policies", null, 0, -1, Sdn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSdn_PolicyObjects(), this.getPolicyObject(), null, "policyObjects", null, 0, -1, Sdn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSdn_Policies(), this.getRule(), null, "policies", null, 0, -1, Sdn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSdn_RuleObjects(), this.getRuleObject(), null, "ruleObjects", null, 0, -1, Sdn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSdn_Groups(), this.getGroup(), null, "groups", null, 0, -1, Sdn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(controllerEClass, Controller.class, "Controller", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getController_Type(), ecorePackage.getEString(), "type", null, 0, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -846,12 +924,13 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
     initEAttribute(getNetworkNode_Mac(), ecorePackage.getEString(), "mac", null, 0, 1, NetworkNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getNetworkNode_Ip(), ecorePackage.getEString(), "ip", null, 0, 1, NetworkNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(policyEClass, Policy.class, "Policy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPolicy_SourceHostPolicy(), this.getHost(), null, "sourceHostPolicy", null, 0, -1, Policy.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPolicy_TargetHostPolicy(), this.getHost(), null, "targetHostPolicy", null, 0, -1, Policy.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPolicy_Name(), ecorePackage.getEString(), "name", null, 0, 1, Policy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPolicy_PolicyCondition(), this.getCondition(), null, "policyCondition", null, 0, 1, Policy.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPolicy_PolicyAction(), this.getAction(), null, "policyAction", null, 0, 1, Policy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRule_SourceHostRule(), this.getHost(), null, "sourceHostRule", null, 0, -1, Rule.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_TargetHostRule(), this.getHost(), null, "targetHostRule", null, 0, -1, Rule.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRule_Name(), ecorePackage.getEString(), "name", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_RuleCondition(), this.getCondition(), null, "ruleCondition", null, 0, 1, Rule.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_RuleAction(), this.getAction(), null, "ruleAction", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_TargetGroupRule(), this.getGroup(), null, "targetGroupRule", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAction_Type(), this.getActions(), "type", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -879,7 +958,12 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
     initEAttribute(getPacketHeader_Header(), this.getPacketHeaders(), "header", "", 0, 1, PacketHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPacketHeader_Value(), ecorePackage.getEString(), "value", null, 0, 1, PacketHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(policyObjectEClass, PolicyObject.class, "PolicyObject", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(ruleObjectEClass, RuleObject.class, "RuleObject", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(groupEClass, Group.class, "Group", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGroup_HostsGroup(), this.getHost(), null, "hostsGroup", null, 0, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGroup_Ip(), ecorePackage.getEString(), "ip", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGroup_Name(), ecorePackage.getEString(), "name", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(packetHeadersEEnum, PacketHeaders.class, "PacketHeaders");
@@ -901,6 +985,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
     addEEnumLiteral(actionsEEnum, Actions.DROP);
     addEEnumLiteral(actionsEEnum, Actions.MODIFY);
     addEEnumLiteral(actionsEEnum, Actions.MONITOR);
+    addEEnumLiteral(actionsEEnum, Actions.LOAD_BALANCE);
 
     initEEnum(conditionsEEnum, Conditions.class, "Conditions");
     addEEnumLiteral(conditionsEEnum, Conditions.WHEN);
@@ -926,6 +1011,8 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
     createGmf_2Annotations();
     // gmf.link
     createGmf_3Annotations();
+    // gmf.compartment
+    createGmf_4Annotations();
   }
 
   /**
@@ -942,7 +1029,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        source, 
        new String[] 
        {
-       });																						
+       });																									
   }
 
   /**
@@ -959,7 +1046,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        source, 
        new String[] 
        {
-       });																					
+       });																								
   }
 
   /**
@@ -1008,7 +1095,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "label.placement", "external"
        });				
     addAnnotation
-      (policyEClass, 
+      (ruleEClass, 
        source, 
        new String[] 
        {
@@ -1018,7 +1105,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "tool.small.bundle", "mdn.edit",
        "tool.small.path", "/icons/full/obj16/policy.gif",
        "label.placement", "external"
-       });						
+       });							
     addAnnotation
       (actionEClass, 
        source, 
@@ -1081,7 +1168,17 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "label.placement", "external",
        "label", "operator,header,value",
        "label.pattern", "{0}: [{1}] {2}"
-       });
+       });		
+    addAnnotation
+      (groupEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "name",
+       "label.icon", "false",
+       "tool.small.bundle", "mdn.edit",
+       "label.placement", "external"
+       });	
   }
 
   /**
@@ -1126,7 +1223,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "source.constraint", "self <> oppositeEnd"
        });			
     addAnnotation
-      (getPolicy_SourceHostPolicy(), 
+      (getRule_SourceHostRule(), 
        source, 
        new String[] 
        {
@@ -1137,7 +1234,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "tool.name", "sourceHost"
        });		
     addAnnotation
-      (getPolicy_TargetHostPolicy(), 
+      (getRule_TargetHostRule(), 
        source, 
        new String[] 
        {
@@ -1148,7 +1245,7 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "tool.name", "targetHost"
        });		
     addAnnotation
-      (getPolicy_PolicyCondition(), 
+      (getRule_RuleCondition(), 
        source, 
        new String[] 
        {
@@ -1158,14 +1255,26 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "color", "0,0,0"
        });		
     addAnnotation
-      (getPolicy_PolicyAction(), 
+      (getRule_RuleAction(), 
        source, 
        new String[] 
        {
        "target.decoration", "none",
        "source.decoration", "none",
        "style", "dash",
-       "color", "0,0,0"
+       "color", "0,0,0",
+       "tool.name", "ruleAction"
+       });		
+    addAnnotation
+      (getRule_TargetGroupRule(), 
+       source, 
+       new String[] 
+       {
+       "target.decoration", "arrow",
+       "source.decoration", "none",
+       "style", "dash",
+       "color", "0,0,0",
+       "tool.name", "targetGroup"
        });			
     addAnnotation
       (getAction_ActionPacketHeader(), 
@@ -1216,7 +1325,24 @@ public class MdnPackageImpl extends EPackageImpl implements MdnPackage
        "source.decoration", "none",
        "style", "dash",
        "color", "0,0,0"
-       });			
+       });					
+  }
+
+  /**
+   * Initializes the annotations for <b>gmf.compartment</b>.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void createGmf_4Annotations()
+  {
+    String source = "gmf.compartment";																											
+    addAnnotation
+      (getGroup_HostsGroup(), 
+       source, 
+       new String[] 
+       {
+       });
   }
 
 } //MdnPackageImpl

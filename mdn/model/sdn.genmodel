@@ -24,6 +24,7 @@
       <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Actions/DROP"/>
       <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Actions/MODIFY"/>
       <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Actions/MONITOR"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Actions/LOAD_BALANCE"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="sdn.ecore#//Conditions">
       <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Conditions/WHEN"/>
@@ -40,7 +41,8 @@
     <genClasses ecoreClass="sdn.ecore#//Sdn">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sdn.ecore#//Sdn/nodes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sdn.ecore#//Sdn/policies"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sdn.ecore#//Sdn/policyObjects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sdn.ecore#//Sdn/ruleObjects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sdn.ecore#//Sdn/groups"/>
     </genClasses>
     <genClasses ecoreClass="sdn.ecore#//Controller">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Controller/type"/>
@@ -58,12 +60,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//NetworkNode/mac"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//NetworkNode/ip"/>
     </genClasses>
-    <genClasses ecoreClass="sdn.ecore#//Policy">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Policy/sourceHostPolicy"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Policy/targetHostPolicy"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Policy/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Policy/policyCondition"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Policy/policyAction"/>
+    <genClasses ecoreClass="sdn.ecore#//Rule">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Rule/sourceHostRule"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Rule/targetHostRule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Rule/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Rule/ruleCondition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Rule/ruleAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Rule/targetGroupRule"/>
     </genClasses>
     <genClasses ecoreClass="sdn.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Action/type"/>
@@ -91,6 +94,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//PacketHeader/header"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//PacketHeader/value"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="sdn.ecore#//PolicyObject"/>
+    <genClasses image="false" ecoreClass="sdn.ecore#//RuleObject"/>
+    <genClasses ecoreClass="sdn.ecore#//Group">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sdn.ecore#//Group/hostsGroup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Group/ip"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Group/name"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -174,28 +174,28 @@ public class MdnItemProviderAdapterFactory extends MdnAdapterFactory implements 
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link mdn.Policy} instances.
+   * This keeps track of the one adapter used for all {@link mdn.Rule} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PolicyItemProvider policyItemProvider;
+  protected RuleItemProvider ruleItemProvider;
 
   /**
-   * This creates an adapter for a {@link mdn.Policy}.
+   * This creates an adapter for a {@link mdn.Rule}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
   @Override
-  public Adapter createPolicyAdapter()
+  public Adapter createRuleAdapter()
   {
-    if (policyItemProvider == null)
+    if (ruleItemProvider == null)
     {
-      policyItemProvider = new PolicyItemProvider(this);
+      ruleItemProvider = new RuleItemProvider(this);
     }
 
-    return policyItemProvider;
+    return ruleItemProvider;
   }
 
   /**
@@ -324,6 +324,31 @@ public class MdnItemProviderAdapterFactory extends MdnAdapterFactory implements 
   }
 
   /**
+   * This keeps track of the one adapter used for all {@link mdn.Group} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected GroupItemProvider groupItemProvider;
+
+  /**
+   * This creates an adapter for a {@link mdn.Group}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createGroupAdapter()
+  {
+    if (groupItemProvider == null)
+    {
+      groupItemProvider = new GroupItemProvider(this);
+    }
+
+    return groupItemProvider;
+  }
+
+  /**
    * This returns the root adapter factory that contains this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -438,12 +463,13 @@ public class MdnItemProviderAdapterFactory extends MdnAdapterFactory implements 
     if (controllerItemProvider != null) controllerItemProvider.dispose();
     if (hostItemProvider != null) hostItemProvider.dispose();
     if (switchItemProvider != null) switchItemProvider.dispose();
-    if (policyItemProvider != null) policyItemProvider.dispose();
+    if (ruleItemProvider != null) ruleItemProvider.dispose();
     if (actionItemProvider != null) actionItemProvider.dispose();
     if (conditionItemProvider != null) conditionItemProvider.dispose();
     if (trafficItemProvider != null) trafficItemProvider.dispose();
     if (timeItemProvider != null) timeItemProvider.dispose();
     if (packetHeaderItemProvider != null) packetHeaderItemProvider.dispose();
+    if (groupItemProvider != null) groupItemProvider.dispose();
   }
 
 }

@@ -255,7 +255,7 @@ public class ControllerEditPart extends AbstractBorderedShapeEditPart {
 		if (relationshipType == MdnElementTypes.SwitchSwitchController_4006) {
 			types.add(MdnElementTypes.Switch_2003);
 		} else if (relationshipType == MdnElementTypes.ActionActionForwardToNode_4013) {
-			types.add(MdnElementTypes.Action_2011);
+			types.add(MdnElementTypes.Action_2012);
 		}
 		return types;
 	}

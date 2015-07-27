@@ -9,11 +9,11 @@ import mdn.diagram.edit.commands.ActionActionForwardToNodeCreateCommand;
 import mdn.diagram.edit.commands.ActionActionForwardToNodeReorientCommand;
 import mdn.diagram.edit.commands.ActionActionPacketHeaderCreateCommand;
 import mdn.diagram.edit.commands.ActionActionPacketHeaderReorientCommand;
-import mdn.diagram.edit.commands.PolicyPolicyActionCreateCommand;
-import mdn.diagram.edit.commands.PolicyPolicyActionReorientCommand;
+import mdn.diagram.edit.commands.RuleRuleActionCreateCommand;
+import mdn.diagram.edit.commands.RuleRuleActionReorientCommand;
 import mdn.diagram.edit.parts.ActionActionForwardToNodeEditPart;
 import mdn.diagram.edit.parts.ActionActionPacketHeaderEditPart;
-import mdn.diagram.edit.parts.PolicyPolicyActionEditPart;
+import mdn.diagram.edit.parts.RuleRuleActionEditPart;
 import mdn.diagram.part.MdnVisualIDRegistry;
 import mdn.diagram.providers.MdnElementTypes;
 
@@ -39,7 +39,7 @@ public class ActionItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 	 * @generated
 	 */
 	public ActionItemSemanticEditPolicy() {
-		super(MdnElementTypes.Action_2011);
+		super(MdnElementTypes.Action_2012);
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class ActionItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (MdnVisualIDRegistry.getVisualID(incomingLink) == PolicyPolicyActionEditPart.VISUAL_ID) {
+			if (MdnVisualIDRegistry.getVisualID(incomingLink) == RuleRuleActionEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
@@ -107,7 +107,7 @@ public class ActionItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (MdnElementTypes.PolicyPolicyAction_4015 == req.getElementType()) {
+		if (MdnElementTypes.RuleRuleAction_4027 == req.getElementType()) {
 			return null;
 		}
 		if (MdnElementTypes.ActionActionPacketHeader_4012 == req
@@ -128,8 +128,8 @@ public class ActionItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (MdnElementTypes.PolicyPolicyAction_4015 == req.getElementType()) {
-			return getGEFWrapper(new PolicyPolicyActionCreateCommand(req,
+		if (MdnElementTypes.RuleRuleAction_4027 == req.getElementType()) {
+			return getGEFWrapper(new RuleRuleActionCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
 		if (MdnElementTypes.ActionActionPacketHeader_4012 == req
@@ -152,8 +152,8 @@ public class ActionItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy 
 	protected Command getReorientReferenceRelationshipCommand(
 			ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case PolicyPolicyActionEditPart.VISUAL_ID:
-			return getGEFWrapper(new PolicyPolicyActionReorientCommand(req));
+		case RuleRuleActionEditPart.VISUAL_ID:
+			return getGEFWrapper(new RuleRuleActionReorientCommand(req));
 		case ActionActionPacketHeaderEditPart.VISUAL_ID:
 			return getGEFWrapper(new ActionActionPacketHeaderReorientCommand(
 					req));

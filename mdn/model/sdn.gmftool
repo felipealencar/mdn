@@ -45,6 +45,15 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Group"
+          description="Create new Group">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Host"
           description="Create new Host">
         <smallIcon
@@ -67,8 +76,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Policy"
-          description="Create new Policy">
+          title="Rule"
+          description="Create new Rule">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/full/obj16/policy.gif"
@@ -170,17 +179,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="PolicyAction"
-          description="Create new PolicyAction">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="PolicyCondition"
-          description="Create new PolicyCondition">
+          title="RuleCondition"
+          description="Create new RuleCondition">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -206,8 +206,26 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="ruleAction"
+          description="Create new ruleAction">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="sourceHost"
           description="Create new sourceHost">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="targetGroup"
+          description="Create new targetGroup">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

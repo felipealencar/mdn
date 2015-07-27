@@ -110,10 +110,10 @@ public class MdnSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MdnPackage.POLICY:
+      case MdnPackage.RULE:
       {
-        Policy policy = (Policy)theEObject;
-        T result = casePolicy(policy);
+        Rule rule = (Rule)theEObject;
+        T result = caseRule(rule);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -121,7 +121,7 @@ public class MdnSwitch<T> extends Switch<T>
       {
         Action action = (Action)theEObject;
         T result = caseAction(action);
-        if (result == null) result = casePolicyObject(action);
+        if (result == null) result = caseRuleObject(action);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -129,7 +129,7 @@ public class MdnSwitch<T> extends Switch<T>
       {
         Condition condition = (Condition)theEObject;
         T result = caseCondition(condition);
-        if (result == null) result = casePolicyObject(condition);
+        if (result == null) result = caseRuleObject(condition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -137,7 +137,7 @@ public class MdnSwitch<T> extends Switch<T>
       {
         Traffic traffic = (Traffic)theEObject;
         T result = caseTraffic(traffic);
-        if (result == null) result = casePolicyObject(traffic);
+        if (result == null) result = caseRuleObject(traffic);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -145,7 +145,7 @@ public class MdnSwitch<T> extends Switch<T>
       {
         Time time = (Time)theEObject;
         T result = caseTime(time);
-        if (result == null) result = casePolicyObject(time);
+        if (result == null) result = caseRuleObject(time);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -153,14 +153,21 @@ public class MdnSwitch<T> extends Switch<T>
       {
         PacketHeader packetHeader = (PacketHeader)theEObject;
         T result = casePacketHeader(packetHeader);
-        if (result == null) result = casePolicyObject(packetHeader);
+        if (result == null) result = caseRuleObject(packetHeader);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MdnPackage.POLICY_OBJECT:
+      case MdnPackage.RULE_OBJECT:
       {
-        PolicyObject policyObject = (PolicyObject)theEObject;
-        T result = casePolicyObject(policyObject);
+        RuleObject ruleObject = (RuleObject)theEObject;
+        T result = caseRuleObject(ruleObject);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MdnPackage.GROUP:
+      {
+        Group group = (Group)theEObject;
+        T result = caseGroup(group);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -249,17 +256,17 @@ public class MdnSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Policy</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Rule</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Policy</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Rule</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePolicy(Policy object)
+  public T caseRule(Rule object)
   {
     return null;
   }
@@ -345,17 +352,33 @@ public class MdnSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Policy Object</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Rule Object</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Policy Object</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Rule Object</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePolicyObject(PolicyObject object)
+  public T caseRuleObject(RuleObject object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Group</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Group</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGroup(Group object)
   {
     return null;
   }

@@ -15,12 +15,12 @@ public class MdnNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 4025;
+	private static final int GROUP_CATEGORY = 7003;
 
 	/**
 	 * @generated
 	 */
-	private static final int SHORTCUTS_CATEGORY = 4024;
+	private static final int SHORTCUTS_CATEGORY = 7002;
 
 	/**
 	 * @generated

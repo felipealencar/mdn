@@ -64,7 +64,7 @@ public class TrafficOperatorUnitValueEditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5007;
+	public static final int VISUAL_ID = 5014;
 
 	/**
 	 * @generated
@@ -347,7 +347,7 @@ public class TrafficOperatorUnitValueEditPart extends LabelEditPart implements
 		if (parser == null) {
 			parser = MdnParserProvider
 					.getParser(
-							MdnElementTypes.Traffic_2007,
+							MdnElementTypes.Traffic_2014,
 							getParserElement(),
 							MdnVisualIDRegistry
 									.getType(mdn.diagram.edit.parts.TrafficOperatorUnitValueEditPart.VISUAL_ID));

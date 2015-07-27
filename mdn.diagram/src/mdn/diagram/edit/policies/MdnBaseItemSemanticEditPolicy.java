@@ -8,10 +8,12 @@ import java.util.Iterator;
 import mdn.Action;
 import mdn.Condition;
 import mdn.Controller;
+import mdn.Group;
 import mdn.Host;
 import mdn.NetworkNode;
 import mdn.PacketHeader;
 import mdn.Policy;
+import mdn.Rule;
 import mdn.Switch;
 import mdn.Time;
 import mdn.Traffic;
@@ -375,57 +377,68 @@ public class MdnBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreatePolicySourceHostPolicy_4023(Policy source,
-				Host target) {
+		public boolean canCreateRuleSourceHostRule_4024(Rule source, Host target) {
 			if (source != null) {
-				if (source.getSourceHostPolicy().contains(target)) {
+				if (source.getSourceHostRule().contains(target)) {
 					return false;
 				}
 			}
 
-			return canExistPolicySourceHostPolicy_4023(source, target);
+			return canExistRuleSourceHostRule_4024(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreatePolicyTargetHostPolicy_4009(Policy source,
-				Host target) {
+		public boolean canCreateRuleTargetHostRule_4025(Rule source, Host target) {
 			if (source != null) {
-				if (source.getTargetHostPolicy().contains(target)) {
+				if (source.getTargetHostRule().contains(target)) {
 					return false;
 				}
 			}
 
-			return canExistPolicyTargetHostPolicy_4009(source, target);
+			return canExistRuleTargetHostRule_4025(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreatePolicyPolicyCondition_4016(Policy source,
+		public boolean canCreateRuleRuleCondition_4026(Rule source,
 				Condition target) {
 			if (source != null) {
-				if (source.getPolicyCondition() != null) {
+				if (source.getRuleCondition() != null) {
 					return false;
 				}
 			}
 
-			return canExistPolicyPolicyCondition_4016(source, target);
+			return canExistRuleRuleCondition_4026(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreatePolicyPolicyAction_4015(Policy source,
-				Action target) {
+		public boolean canCreateRuleRuleAction_4027(Rule source, Action target) {
 			if (source != null) {
-				if (source.getPolicyAction() != null) {
+				if (source.getRuleAction() != null) {
 					return false;
 				}
 			}
 
-			return canExistPolicyPolicyAction_4015(source, target);
+			return canExistRuleRuleAction_4027(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateRuleTargetGroupRule_4028(Rule source,
+				Group target) {
+			if (source != null) {
+				if (source.getTargetGroupRule() != null) {
+					return false;
+				}
+			}
+
+			return canExistRuleTargetGroupRule_4028(source, target);
 		}
 
 		/**
@@ -523,23 +536,21 @@ public class MdnBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistPolicySourceHostPolicy_4023(Policy source,
-				Host target) {
+		public boolean canExistRuleSourceHostRule_4024(Rule source, Host target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistPolicyTargetHostPolicy_4009(Policy source,
-				Host target) {
+		public boolean canExistRuleTargetHostRule_4025(Rule source, Host target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistPolicyPolicyCondition_4016(Policy source,
+		public boolean canExistRuleRuleCondition_4026(Rule source,
 				Condition target) {
 			return true;
 		}
@@ -547,8 +558,15 @@ public class MdnBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistPolicyPolicyAction_4015(Policy source,
-				Action target) {
+		public boolean canExistRuleRuleAction_4027(Rule source, Action target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistRuleTargetGroupRule_4028(Rule source,
+				Group target) {
 			return true;
 		}
 

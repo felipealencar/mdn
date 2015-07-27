@@ -2,11 +2,12 @@
 @namespace(uri="mdn", prefix="")
 package mdn;
 
-@gmf.diagram(foo="bar", onefile="true", rcp="true")
+@gmf.diagram
 class Sdn {
   val NetworkNode[*] nodes;
   val Policy[*] policies;
   val PolicyObject[*] policyObjects;
+  val Group[*] groups;
 }
 
 @gmf.node(figure="figures.ControllerFigure", label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/controller.gif", label.placement="external")
@@ -138,5 +139,9 @@ class PacketHeader extends PolicyObject {
 }
 
 abstract class PolicyObject {
+}
+
+class Group {
+  val Host[*] hostsGroup;
 }
 

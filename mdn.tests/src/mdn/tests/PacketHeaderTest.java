@@ -15,7 +15,7 @@ import mdn.PacketHeader;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PacketHeaderTest extends PolicyObjectTest
+public class PacketHeaderTest extends RuleObjectTest
 {
 
   /**

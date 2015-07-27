@@ -16,17 +16,23 @@ import mdn.diagram.edit.parts.ConditionConditionTrafficEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
 import mdn.diagram.edit.parts.ControllerNameEditPart;
+import mdn.diagram.edit.parts.GroupEditPart;
+import mdn.diagram.edit.parts.GroupGroupHostsGroupCompartmentEditPart;
+import mdn.diagram.edit.parts.GroupNameEditPart;
+import mdn.diagram.edit.parts.Host2EditPart;
 import mdn.diagram.edit.parts.HostEditPart;
 import mdn.diagram.edit.parts.HostHostSwitchEditPart;
+import mdn.diagram.edit.parts.HostName2EditPart;
 import mdn.diagram.edit.parts.HostNameEditPart;
 import mdn.diagram.edit.parts.PacketHeaderEditPart;
 import mdn.diagram.edit.parts.PacketHeaderOperatorHeaderValueEditPart;
-import mdn.diagram.edit.parts.PolicyEditPart;
-import mdn.diagram.edit.parts.PolicyNameEditPart;
-import mdn.diagram.edit.parts.PolicyPolicyActionEditPart;
-import mdn.diagram.edit.parts.PolicyPolicyConditionEditPart;
-import mdn.diagram.edit.parts.PolicySourceHostPolicyEditPart;
-import mdn.diagram.edit.parts.PolicyTargetHostPolicyEditPart;
+import mdn.diagram.edit.parts.RuleEditPart;
+import mdn.diagram.edit.parts.RuleNameEditPart;
+import mdn.diagram.edit.parts.RuleRuleActionEditPart;
+import mdn.diagram.edit.parts.RuleRuleConditionEditPart;
+import mdn.diagram.edit.parts.RuleSourceHostRuleEditPart;
+import mdn.diagram.edit.parts.RuleTargetGroupRuleEditPart;
+import mdn.diagram.edit.parts.RuleTargetHostRuleEditPart;
 import mdn.diagram.edit.parts.SdnEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
 import mdn.diagram.edit.parts.SwitchNameEditPart;
@@ -39,6 +45,7 @@ import mdn.diagram.edit.parts.TrafficOperatorUnitValueEditPart;
 import mdn.diagram.edit.parts.WrappingLabel10EditPart;
 import mdn.diagram.edit.parts.WrappingLabel11EditPart;
 import mdn.diagram.edit.parts.WrappingLabel12EditPart;
+import mdn.diagram.edit.parts.WrappingLabel13EditPart;
 import mdn.diagram.edit.parts.WrappingLabel2EditPart;
 import mdn.diagram.edit.parts.WrappingLabel3EditPart;
 import mdn.diagram.edit.parts.WrappingLabel4EditPart;
@@ -82,6 +89,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.RelativeBendpoints;
 import org.eclipse.gmf.runtime.notation.Routing;
 import org.eclipse.gmf.runtime.notation.Shape;
+import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.notation.datatype.RelativeBendpoint;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -185,7 +193,9 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 				case TrafficEditPart.VISUAL_ID:
 				case TimeEditPart.VISUAL_ID:
 				case PacketHeaderEditPart.VISUAL_ID:
-				case PolicyEditPart.VISUAL_ID:
+				case RuleEditPart.VISUAL_ID:
+				case GroupEditPart.VISUAL_ID:
+				case Host2EditPart.VISUAL_ID:
 					if (domainElement == null
 							|| visualID != MdnVisualIDRegistry.getNodeVisualID(
 									op.getContainerView(), domainElement)) {
@@ -205,7 +215,9 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 				|| TrafficEditPart.VISUAL_ID == visualID
 				|| TimeEditPart.VISUAL_ID == visualID
 				|| PacketHeaderEditPart.VISUAL_ID == visualID
-				|| PolicyEditPart.VISUAL_ID == visualID;
+				|| RuleEditPart.VISUAL_ID == visualID
+				|| GroupEditPart.VISUAL_ID == visualID
+				|| Host2EditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -272,22 +284,28 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 			return createSwitch_2003(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case ActionEditPart.VISUAL_ID:
-			return createAction_2011(domainElement, containerView, index,
+			return createAction_2012(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case ConditionEditPart.VISUAL_ID:
-			return createCondition_2010(domainElement, containerView, index,
+			return createCondition_2013(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case TrafficEditPart.VISUAL_ID:
-			return createTraffic_2007(domainElement, containerView, index,
+			return createTraffic_2014(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case TimeEditPart.VISUAL_ID:
-			return createTime_2008(domainElement, containerView, index,
+			return createTime_2015(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case PacketHeaderEditPart.VISUAL_ID:
-			return createPacketHeader_2009(domainElement, containerView, index,
+			return createPacketHeader_2016(domainElement, containerView, index,
 					persisted, preferencesHint);
-		case PolicyEditPart.VISUAL_ID:
-			return createPolicy_2004(domainElement, containerView, index,
+		case RuleEditPart.VISUAL_ID:
+			return createRule_2017(domainElement, containerView, index,
+					persisted, preferencesHint);
+		case GroupEditPart.VISUAL_ID:
+			return createGroup_2018(domainElement, containerView, index,
+					persisted, preferencesHint);
+		case Host2EditPart.VISUAL_ID:
+			return createHost_3001(domainElement, containerView, index,
 					persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
@@ -312,17 +330,20 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		case SwitchSwitchesEditPart.VISUAL_ID:
 			return createSwitchSwitches_4022(containerView, index, persisted,
 					preferencesHint);
-		case PolicySourceHostPolicyEditPart.VISUAL_ID:
-			return createPolicySourceHostPolicy_4023(containerView, index,
+		case RuleSourceHostRuleEditPart.VISUAL_ID:
+			return createRuleSourceHostRule_4024(containerView, index,
 					persisted, preferencesHint);
-		case PolicyTargetHostPolicyEditPart.VISUAL_ID:
-			return createPolicyTargetHostPolicy_4009(containerView, index,
+		case RuleTargetHostRuleEditPart.VISUAL_ID:
+			return createRuleTargetHostRule_4025(containerView, index,
 					persisted, preferencesHint);
-		case PolicyPolicyConditionEditPart.VISUAL_ID:
-			return createPolicyPolicyCondition_4016(containerView, index,
+		case RuleRuleConditionEditPart.VISUAL_ID:
+			return createRuleRuleCondition_4026(containerView, index,
 					persisted, preferencesHint);
-		case PolicyPolicyActionEditPart.VISUAL_ID:
-			return createPolicyPolicyAction_4015(containerView, index,
+		case RuleRuleActionEditPart.VISUAL_ID:
+			return createRuleRuleAction_4027(containerView, index, persisted,
+					preferencesHint);
+		case RuleTargetGroupRuleEditPart.VISUAL_ID:
+			return createRuleTargetGroupRule_4028(containerView, index,
 					persisted, preferencesHint);
 		case ActionActionPacketHeaderEditPart.VISUAL_ID:
 			return createActionActionPacketHeader_4012(containerView, index,
@@ -495,7 +516,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
-	public Node createAction_2011(EObject domainElement, View containerView,
+	public Node createAction_2012(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -531,20 +552,20 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5011 = createLabel(node,
+		Node label5012 = createLabel(node,
 				MdnVisualIDRegistry.getType(ActionTypeEditPart.VISUAL_ID));
-		label5011.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5012.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5011 = (Location) label5011.getLayoutConstraint();
-		location5011.setX(0);
-		location5011.setY(5);
+		Location location5012 = (Location) label5012.getLayoutConstraint();
+		location5012.setX(0);
+		location5012.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createCondition_2010(EObject domainElement, View containerView,
+	public Node createCondition_2013(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -580,21 +601,21 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5010 = createLabel(node,
+		Node label5013 = createLabel(node,
 				MdnVisualIDRegistry
 						.getType(ConditionConditionEditPart.VISUAL_ID));
-		label5010.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5013.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5010 = (Location) label5010.getLayoutConstraint();
-		location5010.setX(0);
-		location5010.setY(5);
+		Location location5013 = (Location) label5013.getLayoutConstraint();
+		location5013.setX(0);
+		location5013.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createTraffic_2007(EObject domainElement, View containerView,
+	public Node createTraffic_2014(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -630,21 +651,21 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5007 = createLabel(node,
+		Node label5014 = createLabel(node,
 				MdnVisualIDRegistry
 						.getType(TrafficOperatorUnitValueEditPart.VISUAL_ID));
-		label5007.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5014.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5007 = (Location) label5007.getLayoutConstraint();
-		location5007.setX(0);
-		location5007.setY(5);
+		Location location5014 = (Location) label5014.getLayoutConstraint();
+		location5014.setX(0);
+		location5014.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createTime_2008(EObject domainElement, View containerView,
+	public Node createTime_2015(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -680,21 +701,21 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5008 = createLabel(node,
+		Node label5015 = createLabel(node,
 				MdnVisualIDRegistry
 						.getType(TimeOperatorBeginDateEndDatEditPart.VISUAL_ID));
-		label5008.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5015.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5008 = (Location) label5008.getLayoutConstraint();
-		location5008.setX(0);
-		location5008.setY(5);
+		Location location5015 = (Location) label5015.getLayoutConstraint();
+		location5015.setX(0);
+		location5015.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createPacketHeader_2009(EObject domainElement,
+	public Node createPacketHeader_2016(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -732,26 +753,26 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5009 = createLabel(
+		Node label5016 = createLabel(
 				node,
 				MdnVisualIDRegistry
 						.getType(PacketHeaderOperatorHeaderValueEditPart.VISUAL_ID));
-		label5009.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5016.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5009 = (Location) label5009.getLayoutConstraint();
-		location5009.setX(0);
-		location5009.setY(5);
+		Location location5016 = (Location) label5016.getLayoutConstraint();
+		location5016.setX(0);
+		location5016.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createPolicy_2004(EObject domainElement, View containerView,
+	public Node createRule_2017(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(MdnVisualIDRegistry.getType(PolicyEditPart.VISUAL_ID));
+		node.setType(MdnVisualIDRegistry.getType(RuleEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
@@ -783,13 +804,117 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5004 = createLabel(node,
-				MdnVisualIDRegistry.getType(PolicyNameEditPart.VISUAL_ID));
-		label5004.setLayoutConstraint(NotationFactory.eINSTANCE
+		Node label5017 = createLabel(node,
+				MdnVisualIDRegistry.getType(RuleNameEditPart.VISUAL_ID));
+		label5017.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5004 = (Location) label5004.getLayoutConstraint();
-		location5004.setX(0);
-		location5004.setY(5);
+		Location location5017 = (Location) label5017.getLayoutConstraint();
+		location5017.setX(0);
+		location5017.setY(5);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createGroup_2018(EObject domainElement, View containerView,
+			int index, boolean persisted, PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.getStyles().add(
+				NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(MdnVisualIDRegistry.getType(GroupEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5019 = createLabel(node,
+				MdnVisualIDRegistry.getType(GroupNameEditPart.VISUAL_ID));
+		label5019.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5019 = (Location) label5019.getLayoutConstraint();
+		location5019.setX(0);
+		location5019.setY(5);
+		createCompartment(
+				node,
+				MdnVisualIDRegistry
+						.getType(GroupGroupHostsGroupCompartmentEditPart.VISUAL_ID),
+				true, false, false, false);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createHost_3001(EObject domainElement, View containerView,
+			int index, boolean persisted, PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(MdnVisualIDRegistry.getType(Host2EditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5018 = createLabel(node,
+				MdnVisualIDRegistry.getType(HostName2EditPart.VISUAL_ID));
+		label5018.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5018 = (Location) label5018.getLayoutConstraint();
+		location5018.setX(0);
+		location5018.setY(5);
 		return node;
 	}
 
@@ -964,8 +1089,8 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
-	public Edge createPolicySourceHostPolicy_4023(View containerView,
-			int index, boolean persisted, PreferencesHint preferencesHint) {
+	public Edge createRuleSourceHostRule_4024(View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
 		Edge edge = NotationFactory.eINSTANCE.createEdge();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
@@ -979,7 +1104,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
 		edge.setType(MdnVisualIDRegistry
-				.getType(PolicySourceHostPolicyEditPart.VISUAL_ID));
+				.getType(RuleSourceHostRuleEditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
@@ -1005,23 +1130,23 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
 					routing);
 		}
-		Node label6022 = createLabel(edge,
+		Node label6023 = createLabel(edge,
 				MdnVisualIDRegistry.getType(WrappingLabel4EditPart.VISUAL_ID));
-		label6022.getStyles().add(
+		label6023.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
-		label6022.setLayoutConstraint(NotationFactory.eINSTANCE
+		label6023.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location6022 = (Location) label6022.getLayoutConstraint();
-		location6022.setX(0);
-		location6022.setY(40);
+		Location location6023 = (Location) label6023.getLayoutConstraint();
+		location6023.setX(0);
+		location6023.setY(40);
 		return edge;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Edge createPolicyTargetHostPolicy_4009(View containerView,
-			int index, boolean persisted, PreferencesHint preferencesHint) {
+	public Edge createRuleTargetHostRule_4025(View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
 		Edge edge = NotationFactory.eINSTANCE.createEdge();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
@@ -1035,7 +1160,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
 		edge.setType(MdnVisualIDRegistry
-				.getType(PolicyTargetHostPolicyEditPart.VISUAL_ID));
+				.getType(RuleTargetHostRuleEditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
@@ -1061,22 +1186,22 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
 					routing);
 		}
-		Node label6008 = createLabel(edge,
+		Node label6024 = createLabel(edge,
 				MdnVisualIDRegistry.getType(WrappingLabel5EditPart.VISUAL_ID));
-		label6008.getStyles().add(
+		label6024.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
-		label6008.setLayoutConstraint(NotationFactory.eINSTANCE
+		label6024.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location6008 = (Location) label6008.getLayoutConstraint();
-		location6008.setX(0);
-		location6008.setY(40);
+		Location location6024 = (Location) label6024.getLayoutConstraint();
+		location6024.setX(0);
+		location6024.setY(40);
 		return edge;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Edge createPolicyPolicyCondition_4016(View containerView, int index,
+	public Edge createRuleRuleCondition_4026(View containerView, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
 		Edge edge = NotationFactory.eINSTANCE.createEdge();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
@@ -1091,7 +1216,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
 		edge.setType(MdnVisualIDRegistry
-				.getType(PolicyPolicyConditionEditPart.VISUAL_ID));
+				.getType(RuleRuleConditionEditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
@@ -1117,22 +1242,22 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
 					routing);
 		}
-		Node label6015 = createLabel(edge,
+		Node label6025 = createLabel(edge,
 				MdnVisualIDRegistry.getType(WrappingLabel6EditPart.VISUAL_ID));
-		label6015.getStyles().add(
+		label6025.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
-		label6015.setLayoutConstraint(NotationFactory.eINSTANCE
+		label6025.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location6015 = (Location) label6015.getLayoutConstraint();
-		location6015.setX(0);
-		location6015.setY(40);
+		Location location6025 = (Location) label6025.getLayoutConstraint();
+		location6025.setX(0);
+		location6025.setY(40);
 		return edge;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Edge createPolicyPolicyAction_4015(View containerView, int index,
+	public Edge createRuleRuleAction_4027(View containerView, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
 		Edge edge = NotationFactory.eINSTANCE.createEdge();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
@@ -1147,7 +1272,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
 		edge.setType(MdnVisualIDRegistry
-				.getType(PolicyPolicyActionEditPart.VISUAL_ID));
+				.getType(RuleRuleActionEditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
@@ -1173,15 +1298,71 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
 					routing);
 		}
-		Node label6014 = createLabel(edge,
+		Node label6026 = createLabel(edge,
 				MdnVisualIDRegistry.getType(WrappingLabel7EditPart.VISUAL_ID));
-		label6014.getStyles().add(
+		label6026.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
-		label6014.setLayoutConstraint(NotationFactory.eINSTANCE
+		label6026.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location6014 = (Location) label6014.getLayoutConstraint();
-		location6014.setX(0);
-		location6014.setY(40);
+		Location location6026 = (Location) label6026.getLayoutConstraint();
+		location6026.setX(0);
+		location6026.setY(40);
+		return edge;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Edge createRuleTargetGroupRule_4028(View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
+		Edge edge = NotationFactory.eINSTANCE.createEdge();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
+				.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
+				2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(MdnVisualIDRegistry
+				.getType(RuleTargetGroupRuleEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+		FontStyle edgeFontStyle = (FontStyle) edge
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		Routing routing = Routing.get(prefStore
+				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge,
+					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
+					routing);
+		}
+		Node label6027 = createLabel(edge,
+				MdnVisualIDRegistry.getType(WrappingLabel8EditPart.VISUAL_ID));
+		label6027.getStyles().add(
+				NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6027.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location6027 = (Location) label6027.getLayoutConstraint();
+		location6027.setX(0);
+		location6027.setY(40);
 		return edge;
 	}
 
@@ -1230,7 +1411,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 					routing);
 		}
 		Node label6011 = createLabel(edge,
-				MdnVisualIDRegistry.getType(WrappingLabel8EditPart.VISUAL_ID));
+				MdnVisualIDRegistry.getType(WrappingLabel9EditPart.VISUAL_ID));
 		label6011.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6011.setLayoutConstraint(NotationFactory.eINSTANCE
@@ -1286,7 +1467,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 					routing);
 		}
 		Node label6012 = createLabel(edge,
-				MdnVisualIDRegistry.getType(WrappingLabel9EditPart.VISUAL_ID));
+				MdnVisualIDRegistry.getType(WrappingLabel10EditPart.VISUAL_ID));
 		label6012.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6012.setLayoutConstraint(NotationFactory.eINSTANCE
@@ -1342,7 +1523,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 					routing);
 		}
 		Node label6016 = createLabel(edge,
-				MdnVisualIDRegistry.getType(WrappingLabel10EditPart.VISUAL_ID));
+				MdnVisualIDRegistry.getType(WrappingLabel11EditPart.VISUAL_ID));
 		label6016.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6016.setLayoutConstraint(NotationFactory.eINSTANCE
@@ -1398,7 +1579,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 					routing);
 		}
 		Node label6017 = createLabel(edge,
-				MdnVisualIDRegistry.getType(WrappingLabel11EditPart.VISUAL_ID));
+				MdnVisualIDRegistry.getType(WrappingLabel12EditPart.VISUAL_ID));
 		label6017.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6017.setLayoutConstraint(NotationFactory.eINSTANCE
@@ -1454,7 +1635,7 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 					routing);
 		}
 		Node label6018 = createLabel(edge,
-				MdnVisualIDRegistry.getType(WrappingLabel12EditPart.VISUAL_ID));
+				MdnVisualIDRegistry.getType(WrappingLabel13EditPart.VISUAL_ID));
 		label6018.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6018.setLayoutConstraint(NotationFactory.eINSTANCE
@@ -1485,6 +1666,38 @@ public class MdnViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	private Node createLabel(View owner, String hint) {
 		DecorationNode rv = NotationFactory.eINSTANCE.createDecorationNode();
+		rv.setType(hint);
+		ViewUtil.insertChildView(owner, rv, ViewUtil.APPEND, true);
+		return rv;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Node createCompartment(View owner, String hint,
+			boolean canCollapse, boolean hasTitle, boolean canSort,
+			boolean canFilter) {
+		//SemanticListCompartment rv = NotationFactory.eINSTANCE.createSemanticListCompartment();
+		//rv.setShowTitle(showTitle);
+		//rv.setCollapsed(isCollapsed);
+		Node rv;
+		if (canCollapse) {
+			rv = NotationFactory.eINSTANCE.createBasicCompartment();
+		} else {
+			rv = NotationFactory.eINSTANCE.createDecorationNode();
+		}
+		if (hasTitle) {
+			TitleStyle ts = NotationFactory.eINSTANCE.createTitleStyle();
+			ts.setShowTitle(true);
+			rv.getStyles().add(ts);
+		}
+		if (canSort) {
+			rv.getStyles().add(NotationFactory.eINSTANCE.createSortingStyle());
+		}
+		if (canFilter) {
+			rv.getStyles()
+					.add(NotationFactory.eINSTANCE.createFilteringStyle());
+		}
 		rv.setType(hint);
 		ViewUtil.insertChildView(owner, rv, ViewUtil.APPEND, true);
 		return rv;

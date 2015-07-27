@@ -9,7 +9,7 @@ import "monitor.egl";
 [% var header = getCodeHeader(); %]
 [%=header%]
 [% 
-var policyCounter : Integer = 0;
+var ruleCounter : Integer = 0;
 var counterActionDrop : Integer = 0;
 var counterActionModify : Integer = 0;
 var counterActionForward : Integer = 0;
@@ -20,22 +20,22 @@ def mdn_handler (event):
   packet = event.parsed
 				
 [%
-for (policy in Policy.all) {
-	if (policy.policyAction.isDefined()) {
-		if (policy.policyAction.type.value = Actions#DROP.value and policy.sourceHostPolicy.isDefined() and policy.targetHostPolicy.isDefined()) {
+for (rule in Rule.all) {
+	if (rule.ruleAction.isDefined()) {
+		if (rule.ruleAction.type.value = Actions#DROP.value and rule.sourceHostRule.isDefined() and rule.targetHostRule.isDefined()) {
 			
 			if(counterActionDrop == 0) {
 				
 				counterActionDrop = counterActionDrop + 1;
 			}		
-  actionDrop(policy);
+  actionDrop(rule);
 			
 	
 		}
 		//SE A AÇÃO FOR MONITOR
-		if (policy.policyAction.type.value = Actions#MONITOR.value and policy.sourceHostPolicy.isDefined() and policy.targetHostPolicy.isDefined()) {
+		if (rule.ruleAction.type.value = Actions#MONITOR.value and rule.sourceHostRule.isDefined() and rule.targetHostRule.isDefined()) {
 
-  monitorAction(policy);	
+  monitorAction(rule);	
 			
 			if(counterActionMonitor == 0) {
 				counterActionMonitor = counterActionMonitor + 1;
@@ -43,6 +43,9 @@ for (policy in Policy.all) {
 		}
 	}
 }
+%]
+[%
+
 %]
 def launch ():
 [%

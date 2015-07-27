@@ -17,9 +17,11 @@ import mdn.MdnPackage;
 import mdn.diagram.edit.parts.ActionEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
+import mdn.diagram.edit.parts.GroupEditPart;
+import mdn.diagram.edit.parts.Host2EditPart;
 import mdn.diagram.edit.parts.HostEditPart;
 import mdn.diagram.edit.parts.PacketHeaderEditPart;
-import mdn.diagram.edit.parts.PolicyEditPart;
+import mdn.diagram.edit.parts.RuleEditPart;
 import mdn.diagram.edit.parts.SdnEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
 import mdn.diagram.edit.parts.TimeEditPart;
@@ -80,8 +82,9 @@ public class SdnCanonicalEditPolicy extends CanonicalEditPolicy {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize.add(MdnPackage.eINSTANCE.getSdn_Nodes());
 			myFeaturesToSynchronize.add(MdnPackage.eINSTANCE
-					.getSdn_PolicyObjects());
+					.getSdn_RuleObjects());
 			myFeaturesToSynchronize.add(MdnPackage.eINSTANCE.getSdn_Policies());
+			myFeaturesToSynchronize.add(MdnPackage.eINSTANCE.getSdn_Groups());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -127,7 +130,8 @@ public class SdnCanonicalEditPolicy extends CanonicalEditPolicy {
 		case TrafficEditPart.VISUAL_ID:
 		case TimeEditPart.VISUAL_ID:
 		case PacketHeaderEditPart.VISUAL_ID:
-		case PolicyEditPart.VISUAL_ID:
+		case RuleEditPart.VISUAL_ID:
+		case GroupEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -324,7 +328,7 @@ public class SdnCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(MdnDiagramUpdater
-						.getAction_2011ContainedLinks(view));
+						.getAction_2012ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -332,7 +336,7 @@ public class SdnCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ConditionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(MdnDiagramUpdater
-						.getCondition_2010ContainedLinks(view));
+						.getCondition_2013ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -340,7 +344,7 @@ public class SdnCanonicalEditPolicy extends CanonicalEditPolicy {
 		case TrafficEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(MdnDiagramUpdater
-						.getTraffic_2007ContainedLinks(view));
+						.getTraffic_2014ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -348,7 +352,7 @@ public class SdnCanonicalEditPolicy extends CanonicalEditPolicy {
 		case TimeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(MdnDiagramUpdater
-						.getTime_2008ContainedLinks(view));
+						.getTime_2015ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -356,15 +360,31 @@ public class SdnCanonicalEditPolicy extends CanonicalEditPolicy {
 		case PacketHeaderEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(MdnDiagramUpdater
-						.getPacketHeader_2009ContainedLinks(view));
+						.getPacketHeader_2016ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case PolicyEditPart.VISUAL_ID: {
+		case RuleEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(MdnDiagramUpdater
-						.getPolicy_2004ContainedLinks(view));
+						.getRule_2017ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case GroupEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(MdnDiagramUpdater
+						.getGroup_2018ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case Host2EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(MdnDiagramUpdater
+						.getHost_3001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

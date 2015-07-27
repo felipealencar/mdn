@@ -86,13 +86,22 @@ public interface MdnPackage extends EPackage
   int SDN__POLICIES = 1;
 
   /**
-   * The feature id for the '<em><b>Policy Objects</b></em>' containment reference list.
+   * The feature id for the '<em><b>Rule Objects</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SDN__POLICY_OBJECTS = 2;
+  int SDN__RULE_OBJECTS = 2;
+
+  /**
+   * The feature id for the '<em><b>Groups</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SDN__GROUPS = 3;
 
   /**
    * The number of structural features of the '<em>Sdn</em>' class.
@@ -101,7 +110,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SDN_FEATURE_COUNT = 3;
+  int SDN_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link mdn.impl.NetworkNodeImpl <em>Network Node</em>}' class.
@@ -333,32 +342,32 @@ public interface MdnPackage extends EPackage
   int SWITCH_FEATURE_COUNT = NETWORK_NODE_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link mdn.impl.PolicyImpl <em>Policy</em>}' class.
+   * The meta object id for the '{@link mdn.impl.RuleImpl <em>Rule</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see mdn.impl.PolicyImpl
-   * @see mdn.impl.MdnPackageImpl#getPolicy()
+   * @see mdn.impl.RuleImpl
+   * @see mdn.impl.MdnPackageImpl#getRule()
    * @generated
    */
-  int POLICY = 5;
+  int RULE = 5;
 
   /**
-   * The feature id for the '<em><b>Source Host Policy</b></em>' reference list.
+   * The feature id for the '<em><b>Source Host Rule</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POLICY__SOURCE_HOST_POLICY = 0;
+  int RULE__SOURCE_HOST_RULE = 0;
 
   /**
-   * The feature id for the '<em><b>Target Host Policy</b></em>' reference list.
+   * The feature id for the '<em><b>Target Host Rule</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POLICY__TARGET_HOST_POLICY = 1;
+  int RULE__TARGET_HOST_RULE = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -367,34 +376,62 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POLICY__NAME = 2;
+  int RULE__NAME = 2;
 
   /**
-   * The feature id for the '<em><b>Policy Condition</b></em>' reference.
+   * The feature id for the '<em><b>Rule Condition</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POLICY__POLICY_CONDITION = 3;
+  int RULE__RULE_CONDITION = 3;
 
   /**
-   * The feature id for the '<em><b>Policy Action</b></em>' reference.
+   * The feature id for the '<em><b>Rule Action</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POLICY__POLICY_ACTION = 4;
+  int RULE__RULE_ACTION = 4;
 
   /**
-   * The number of structural features of the '<em>Policy</em>' class.
+   * The feature id for the '<em><b>Target Group Rule</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POLICY_FEATURE_COUNT = 5;
+  int RULE__TARGET_GROUP_RULE = 5;
+
+  /**
+   * The number of structural features of the '<em>Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_FEATURE_COUNT = 6;
+
+  /**
+   * The meta object id for the '{@link mdn.impl.RuleObjectImpl <em>Rule Object</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see mdn.impl.RuleObjectImpl
+   * @see mdn.impl.MdnPackageImpl#getRuleObject()
+   * @generated
+   */
+  int RULE_OBJECT = 11;
+
+  /**
+   * The number of structural features of the '<em>Rule Object</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_OBJECT_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link mdn.impl.ActionImpl <em>Action</em>}' class.
@@ -407,16 +444,6 @@ public interface MdnPackage extends EPackage
   int ACTION = 6;
 
   /**
-   * The meta object id for the '{@link mdn.impl.PolicyObjectImpl <em>Policy Object</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see mdn.impl.PolicyObjectImpl
-   * @see mdn.impl.MdnPackageImpl#getPolicyObject()
-   * @generated
-   */
-  int POLICY_OBJECT = 11;
-
-  /**
    * The meta object id for the '{@link mdn.impl.ConditionImpl <em>Condition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -427,22 +454,13 @@ public interface MdnPackage extends EPackage
   int CONDITION = 7;
 
   /**
-   * The number of structural features of the '<em>Policy Object</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POLICY_OBJECT_FEATURE_COUNT = 0;
-
-  /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION__TYPE = POLICY_OBJECT_FEATURE_COUNT + 0;
+  int ACTION__TYPE = RULE_OBJECT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Action Packet Header</b></em>' reference.
@@ -451,7 +469,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION__ACTION_PACKET_HEADER = POLICY_OBJECT_FEATURE_COUNT + 1;
+  int ACTION__ACTION_PACKET_HEADER = RULE_OBJECT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Action Forward To Node</b></em>' reference.
@@ -460,7 +478,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION__ACTION_FORWARD_TO_NODE = POLICY_OBJECT_FEATURE_COUNT + 2;
+  int ACTION__ACTION_FORWARD_TO_NODE = RULE_OBJECT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Action</em>' class.
@@ -469,7 +487,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_FEATURE_COUNT = POLICY_OBJECT_FEATURE_COUNT + 3;
+  int ACTION_FEATURE_COUNT = RULE_OBJECT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' attribute.
@@ -478,7 +496,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITION__CONDITION = POLICY_OBJECT_FEATURE_COUNT + 0;
+  int CONDITION__CONDITION = RULE_OBJECT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Condition Time</b></em>' reference.
@@ -487,7 +505,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITION__CONDITION_TIME = POLICY_OBJECT_FEATURE_COUNT + 1;
+  int CONDITION__CONDITION_TIME = RULE_OBJECT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Condition Traffic</b></em>' reference.
@@ -496,7 +514,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITION__CONDITION_TRAFFIC = POLICY_OBJECT_FEATURE_COUNT + 2;
+  int CONDITION__CONDITION_TRAFFIC = RULE_OBJECT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Condition Packet</b></em>' reference.
@@ -505,7 +523,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITION__CONDITION_PACKET = POLICY_OBJECT_FEATURE_COUNT + 3;
+  int CONDITION__CONDITION_PACKET = RULE_OBJECT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Condition</em>' class.
@@ -514,7 +532,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITION_FEATURE_COUNT = POLICY_OBJECT_FEATURE_COUNT + 4;
+  int CONDITION_FEATURE_COUNT = RULE_OBJECT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link mdn.impl.TrafficImpl <em>Traffic</em>}' class.
@@ -533,7 +551,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRAFFIC__OPERATOR = POLICY_OBJECT_FEATURE_COUNT + 0;
+  int TRAFFIC__OPERATOR = RULE_OBJECT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Unit</b></em>' attribute.
@@ -542,7 +560,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRAFFIC__UNIT = POLICY_OBJECT_FEATURE_COUNT + 1;
+  int TRAFFIC__UNIT = RULE_OBJECT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -551,7 +569,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRAFFIC__VALUE = POLICY_OBJECT_FEATURE_COUNT + 2;
+  int TRAFFIC__VALUE = RULE_OBJECT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Traffic</em>' class.
@@ -560,7 +578,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRAFFIC_FEATURE_COUNT = POLICY_OBJECT_FEATURE_COUNT + 3;
+  int TRAFFIC_FEATURE_COUNT = RULE_OBJECT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link mdn.impl.TimeImpl <em>Time</em>}' class.
@@ -579,7 +597,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TIME__OPERATOR = POLICY_OBJECT_FEATURE_COUNT + 0;
+  int TIME__OPERATOR = RULE_OBJECT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Begin Date</b></em>' attribute.
@@ -588,7 +606,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TIME__BEGIN_DATE = POLICY_OBJECT_FEATURE_COUNT + 1;
+  int TIME__BEGIN_DATE = RULE_OBJECT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>End Date</b></em>' attribute.
@@ -597,7 +615,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TIME__END_DATE = POLICY_OBJECT_FEATURE_COUNT + 2;
+  int TIME__END_DATE = RULE_OBJECT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Time</em>' class.
@@ -606,7 +624,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TIME_FEATURE_COUNT = POLICY_OBJECT_FEATURE_COUNT + 3;
+  int TIME_FEATURE_COUNT = RULE_OBJECT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link mdn.impl.PacketHeaderImpl <em>Packet Header</em>}' class.
@@ -625,7 +643,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PACKET_HEADER__OPERATOR = POLICY_OBJECT_FEATURE_COUNT + 0;
+  int PACKET_HEADER__OPERATOR = RULE_OBJECT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -634,7 +652,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PACKET_HEADER__HEADER = POLICY_OBJECT_FEATURE_COUNT + 1;
+  int PACKET_HEADER__HEADER = RULE_OBJECT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -643,7 +661,7 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PACKET_HEADER__VALUE = POLICY_OBJECT_FEATURE_COUNT + 2;
+  int PACKET_HEADER__VALUE = RULE_OBJECT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Packet Header</em>' class.
@@ -652,7 +670,53 @@ public interface MdnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PACKET_HEADER_FEATURE_COUNT = POLICY_OBJECT_FEATURE_COUNT + 3;
+  int PACKET_HEADER_FEATURE_COUNT = RULE_OBJECT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link mdn.impl.GroupImpl <em>Group</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see mdn.impl.GroupImpl
+   * @see mdn.impl.MdnPackageImpl#getGroup()
+   * @generated
+   */
+  int GROUP = 12;
+
+  /**
+   * The feature id for the '<em><b>Hosts Group</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP__HOSTS_GROUP = 0;
+
+  /**
+   * The feature id for the '<em><b>Ip</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP__IP = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP__NAME = 2;
+
+  /**
+   * The number of structural features of the '<em>Group</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link mdn.PacketHeaders <em>Packet Headers</em>}' enum.
@@ -662,7 +726,7 @@ public interface MdnPackage extends EPackage
    * @see mdn.impl.MdnPackageImpl#getPacketHeaders()
    * @generated
    */
-  int PACKET_HEADERS = 12;
+  int PACKET_HEADERS = 13;
 
   /**
    * The meta object id for the '{@link mdn.Actions <em>Actions</em>}' enum.
@@ -672,7 +736,7 @@ public interface MdnPackage extends EPackage
    * @see mdn.impl.MdnPackageImpl#getActions()
    * @generated
    */
-  int ACTIONS = 13;
+  int ACTIONS = 14;
 
   /**
    * The meta object id for the '{@link mdn.Conditions <em>Conditions</em>}' enum.
@@ -682,7 +746,7 @@ public interface MdnPackage extends EPackage
    * @see mdn.impl.MdnPackageImpl#getConditions()
    * @generated
    */
-  int CONDITIONS = 14;
+  int CONDITIONS = 15;
 
   /**
    * The meta object id for the '{@link mdn.RelationalOperators <em>Relational Operators</em>}' enum.
@@ -692,7 +756,7 @@ public interface MdnPackage extends EPackage
    * @see mdn.impl.MdnPackageImpl#getRelationalOperators()
    * @generated
    */
-  int RELATIONAL_OPERATORS = 15;
+  int RELATIONAL_OPERATORS = 16;
 
 
   /**
@@ -728,15 +792,26 @@ public interface MdnPackage extends EPackage
   EReference getSdn_Policies();
 
   /**
-   * Returns the meta object for the containment reference list '{@link mdn.Sdn#getPolicyObjects <em>Policy Objects</em>}'.
+   * Returns the meta object for the containment reference list '{@link mdn.Sdn#getRuleObjects <em>Rule Objects</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Policy Objects</em>'.
-   * @see mdn.Sdn#getPolicyObjects()
+   * @return the meta object for the containment reference list '<em>Rule Objects</em>'.
+   * @see mdn.Sdn#getRuleObjects()
    * @see #getSdn()
    * @generated
    */
-  EReference getSdn_PolicyObjects();
+  EReference getSdn_RuleObjects();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link mdn.Sdn#getGroups <em>Groups</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Groups</em>'.
+   * @see mdn.Sdn#getGroups()
+   * @see #getSdn()
+   * @generated
+   */
+  EReference getSdn_Groups();
 
   /**
    * Returns the meta object for class '{@link mdn.Controller <em>Controller</em>}'.
@@ -867,69 +942,80 @@ public interface MdnPackage extends EPackage
   EAttribute getNetworkNode_Ip();
 
   /**
-   * Returns the meta object for class '{@link mdn.Policy <em>Policy</em>}'.
+   * Returns the meta object for class '{@link mdn.Rule <em>Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Policy</em>'.
-   * @see mdn.Policy
+   * @return the meta object for class '<em>Rule</em>'.
+   * @see mdn.Rule
    * @generated
    */
-  EClass getPolicy();
+  EClass getRule();
 
   /**
-   * Returns the meta object for the reference list '{@link mdn.Policy#getSourceHostPolicy <em>Source Host Policy</em>}'.
+   * Returns the meta object for the reference list '{@link mdn.Rule#getSourceHostRule <em>Source Host Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Source Host Policy</em>'.
-   * @see mdn.Policy#getSourceHostPolicy()
-   * @see #getPolicy()
+   * @return the meta object for the reference list '<em>Source Host Rule</em>'.
+   * @see mdn.Rule#getSourceHostRule()
+   * @see #getRule()
    * @generated
    */
-  EReference getPolicy_SourceHostPolicy();
+  EReference getRule_SourceHostRule();
 
   /**
-   * Returns the meta object for the reference list '{@link mdn.Policy#getTargetHostPolicy <em>Target Host Policy</em>}'.
+   * Returns the meta object for the reference list '{@link mdn.Rule#getTargetHostRule <em>Target Host Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Target Host Policy</em>'.
-   * @see mdn.Policy#getTargetHostPolicy()
-   * @see #getPolicy()
+   * @return the meta object for the reference list '<em>Target Host Rule</em>'.
+   * @see mdn.Rule#getTargetHostRule()
+   * @see #getRule()
    * @generated
    */
-  EReference getPolicy_TargetHostPolicy();
+  EReference getRule_TargetHostRule();
 
   /**
-   * Returns the meta object for the attribute '{@link mdn.Policy#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link mdn.Rule#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see mdn.Policy#getName()
-   * @see #getPolicy()
+   * @see mdn.Rule#getName()
+   * @see #getRule()
    * @generated
    */
-  EAttribute getPolicy_Name();
+  EAttribute getRule_Name();
 
   /**
-   * Returns the meta object for the reference '{@link mdn.Policy#getPolicyCondition <em>Policy Condition</em>}'.
+   * Returns the meta object for the reference '{@link mdn.Rule#getRuleCondition <em>Rule Condition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Policy Condition</em>'.
-   * @see mdn.Policy#getPolicyCondition()
-   * @see #getPolicy()
+   * @return the meta object for the reference '<em>Rule Condition</em>'.
+   * @see mdn.Rule#getRuleCondition()
+   * @see #getRule()
    * @generated
    */
-  EReference getPolicy_PolicyCondition();
+  EReference getRule_RuleCondition();
 
   /**
-   * Returns the meta object for the reference '{@link mdn.Policy#getPolicyAction <em>Policy Action</em>}'.
+   * Returns the meta object for the reference '{@link mdn.Rule#getRuleAction <em>Rule Action</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Policy Action</em>'.
-   * @see mdn.Policy#getPolicyAction()
-   * @see #getPolicy()
+   * @return the meta object for the reference '<em>Rule Action</em>'.
+   * @see mdn.Rule#getRuleAction()
+   * @see #getRule()
    * @generated
    */
-  EReference getPolicy_PolicyAction();
+  EReference getRule_RuleAction();
+
+  /**
+   * Returns the meta object for the reference '{@link mdn.Rule#getTargetGroupRule <em>Target Group Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Target Group Rule</em>'.
+   * @see mdn.Rule#getTargetGroupRule()
+   * @see #getRule()
+   * @generated
+   */
+  EReference getRule_TargetGroupRule();
 
   /**
    * Returns the meta object for class '{@link mdn.Action <em>Action</em>}'.
@@ -1158,14 +1244,57 @@ public interface MdnPackage extends EPackage
   EAttribute getPacketHeader_Value();
 
   /**
-   * Returns the meta object for class '{@link mdn.PolicyObject <em>Policy Object</em>}'.
+   * Returns the meta object for class '{@link mdn.RuleObject <em>Rule Object</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Policy Object</em>'.
-   * @see mdn.PolicyObject
+   * @return the meta object for class '<em>Rule Object</em>'.
+   * @see mdn.RuleObject
    * @generated
    */
-  EClass getPolicyObject();
+  EClass getRuleObject();
+
+  /**
+   * Returns the meta object for class '{@link mdn.Group <em>Group</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Group</em>'.
+   * @see mdn.Group
+   * @generated
+   */
+  EClass getGroup();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link mdn.Group#getHostsGroup <em>Hosts Group</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Hosts Group</em>'.
+   * @see mdn.Group#getHostsGroup()
+   * @see #getGroup()
+   * @generated
+   */
+  EReference getGroup_HostsGroup();
+
+  /**
+   * Returns the meta object for the attribute '{@link mdn.Group#getIp <em>Ip</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ip</em>'.
+   * @see mdn.Group#getIp()
+   * @see #getGroup()
+   * @generated
+   */
+  EAttribute getGroup_Ip();
+
+  /**
+   * Returns the meta object for the attribute '{@link mdn.Group#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see mdn.Group#getName()
+   * @see #getGroup()
+   * @generated
+   */
+  EAttribute getGroup_Name();
 
   /**
    * Returns the meta object for enum '{@link mdn.PacketHeaders <em>Packet Headers</em>}'.
@@ -1257,12 +1386,20 @@ public interface MdnPackage extends EPackage
     EReference SDN__POLICIES = eINSTANCE.getSdn_Policies();
 
     /**
-     * The meta object literal for the '<em><b>Policy Objects</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Rule Objects</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SDN__POLICY_OBJECTS = eINSTANCE.getSdn_PolicyObjects();
+    EReference SDN__RULE_OBJECTS = eINSTANCE.getSdn_RuleObjects();
+
+    /**
+     * The meta object literal for the '<em><b>Groups</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SDN__GROUPS = eINSTANCE.getSdn_Groups();
 
     /**
      * The meta object literal for the '{@link mdn.impl.ControllerImpl <em>Controller</em>}' class.
@@ -1369,30 +1506,30 @@ public interface MdnPackage extends EPackage
     EAttribute NETWORK_NODE__IP = eINSTANCE.getNetworkNode_Ip();
 
     /**
-     * The meta object literal for the '{@link mdn.impl.PolicyImpl <em>Policy</em>}' class.
+     * The meta object literal for the '{@link mdn.impl.RuleImpl <em>Rule</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see mdn.impl.PolicyImpl
-     * @see mdn.impl.MdnPackageImpl#getPolicy()
+     * @see mdn.impl.RuleImpl
+     * @see mdn.impl.MdnPackageImpl#getRule()
      * @generated
      */
-    EClass POLICY = eINSTANCE.getPolicy();
+    EClass RULE = eINSTANCE.getRule();
 
     /**
-     * The meta object literal for the '<em><b>Source Host Policy</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Source Host Rule</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference POLICY__SOURCE_HOST_POLICY = eINSTANCE.getPolicy_SourceHostPolicy();
+    EReference RULE__SOURCE_HOST_RULE = eINSTANCE.getRule_SourceHostRule();
 
     /**
-     * The meta object literal for the '<em><b>Target Host Policy</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Target Host Rule</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference POLICY__TARGET_HOST_POLICY = eINSTANCE.getPolicy_TargetHostPolicy();
+    EReference RULE__TARGET_HOST_RULE = eINSTANCE.getRule_TargetHostRule();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1400,23 +1537,31 @@ public interface MdnPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute POLICY__NAME = eINSTANCE.getPolicy_Name();
+    EAttribute RULE__NAME = eINSTANCE.getRule_Name();
 
     /**
-     * The meta object literal for the '<em><b>Policy Condition</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Rule Condition</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference POLICY__POLICY_CONDITION = eINSTANCE.getPolicy_PolicyCondition();
+    EReference RULE__RULE_CONDITION = eINSTANCE.getRule_RuleCondition();
 
     /**
-     * The meta object literal for the '<em><b>Policy Action</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Rule Action</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference POLICY__POLICY_ACTION = eINSTANCE.getPolicy_PolicyAction();
+    EReference RULE__RULE_ACTION = eINSTANCE.getRule_RuleAction();
+
+    /**
+     * The meta object literal for the '<em><b>Target Group Rule</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RULE__TARGET_GROUP_RULE = eINSTANCE.getRule_TargetGroupRule();
 
     /**
      * The meta object literal for the '{@link mdn.impl.ActionImpl <em>Action</em>}' class.
@@ -1597,14 +1742,48 @@ public interface MdnPackage extends EPackage
     EAttribute PACKET_HEADER__VALUE = eINSTANCE.getPacketHeader_Value();
 
     /**
-     * The meta object literal for the '{@link mdn.impl.PolicyObjectImpl <em>Policy Object</em>}' class.
+     * The meta object literal for the '{@link mdn.impl.RuleObjectImpl <em>Rule Object</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see mdn.impl.PolicyObjectImpl
-     * @see mdn.impl.MdnPackageImpl#getPolicyObject()
+     * @see mdn.impl.RuleObjectImpl
+     * @see mdn.impl.MdnPackageImpl#getRuleObject()
      * @generated
      */
-    EClass POLICY_OBJECT = eINSTANCE.getPolicyObject();
+    EClass RULE_OBJECT = eINSTANCE.getRuleObject();
+
+    /**
+     * The meta object literal for the '{@link mdn.impl.GroupImpl <em>Group</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see mdn.impl.GroupImpl
+     * @see mdn.impl.MdnPackageImpl#getGroup()
+     * @generated
+     */
+    EClass GROUP = eINSTANCE.getGroup();
+
+    /**
+     * The meta object literal for the '<em><b>Hosts Group</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GROUP__HOSTS_GROUP = eINSTANCE.getGroup_HostsGroup();
+
+    /**
+     * The meta object literal for the '<em><b>Ip</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GROUP__IP = eINSTANCE.getGroup_Ip();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GROUP__NAME = eINSTANCE.getGroup_Name();
 
     /**
      * The meta object literal for the '{@link mdn.PacketHeaders <em>Packet Headers</em>}' enum.

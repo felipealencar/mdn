@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class ActionImpl extends PolicyObjectImpl implements Action
+public class ActionImpl extends RuleObjectImpl implements Action
 {
   /**
    * The default value of the '{@link #getType() <em>Type</em>}' attribute.

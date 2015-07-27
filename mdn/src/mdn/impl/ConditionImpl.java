@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class ConditionImpl extends PolicyObjectImpl implements Condition
+public class ConditionImpl extends RuleObjectImpl implements Condition
 {
   /**
    * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.

@@ -69,12 +69,13 @@ public class MdnFactoryImpl extends EFactoryImpl implements MdnFactory
       case MdnPackage.CONTROLLER: return createController();
       case MdnPackage.HOST: return createHost();
       case MdnPackage.SWITCH: return createSwitch();
-      case MdnPackage.POLICY: return createPolicy();
+      case MdnPackage.RULE: return createRule();
       case MdnPackage.ACTION: return createAction();
       case MdnPackage.CONDITION: return createCondition();
       case MdnPackage.TRAFFIC: return createTraffic();
       case MdnPackage.TIME: return createTime();
       case MdnPackage.PACKET_HEADER: return createPacketHeader();
+      case MdnPackage.GROUP: return createGroup();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -175,10 +176,10 @@ public class MdnFactoryImpl extends EFactoryImpl implements MdnFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Policy createPolicy()
+  public Rule createRule()
   {
-    PolicyImpl policy = new PolicyImpl();
-    return policy;
+    RuleImpl rule = new RuleImpl();
+    return rule;
   }
 
   /**
@@ -234,6 +235,17 @@ public class MdnFactoryImpl extends EFactoryImpl implements MdnFactory
   {
     PacketHeaderImpl packetHeader = new PacketHeaderImpl();
     return packetHeader;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Group createGroup()
+  {
+    GroupImpl group = new GroupImpl();
+    return group;
   }
 
   /**

@@ -50,7 +50,7 @@ public class ConditionEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2010;
+	public static final int VISUAL_ID = 2013;
 
 	/**
 	 * @generated
@@ -273,11 +273,11 @@ public class ConditionEditPart extends AbstractBorderedShapeEditPart {
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == MdnElementTypes.ConditionConditionTime_4017) {
-			types.add(MdnElementTypes.Time_2008);
+			types.add(MdnElementTypes.Time_2015);
 		} else if (relationshipType == MdnElementTypes.ConditionConditionTraffic_4018) {
-			types.add(MdnElementTypes.Traffic_2007);
+			types.add(MdnElementTypes.Traffic_2014);
 		} else if (relationshipType == MdnElementTypes.ConditionConditionPacket_4019) {
-			types.add(MdnElementTypes.PacketHeader_2009);
+			types.add(MdnElementTypes.PacketHeader_2016);
 		}
 		return types;
 	}
@@ -287,7 +287,7 @@ public class ConditionEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(MdnElementTypes.PolicyPolicyCondition_4016);
+		types.add(MdnElementTypes.RuleRuleCondition_4026);
 		return types;
 	}
 
@@ -296,8 +296,8 @@ public class ConditionEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.PolicyPolicyCondition_4016) {
-			types.add(MdnElementTypes.Policy_2004);
+		if (relationshipType == MdnElementTypes.RuleRuleCondition_4026) {
+			types.add(MdnElementTypes.Rule_2017);
 		}
 		return types;
 	}

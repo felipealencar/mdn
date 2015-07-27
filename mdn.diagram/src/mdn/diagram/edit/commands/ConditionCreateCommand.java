@@ -60,7 +60,7 @@ public class ConditionCreateCommand extends EditElementCommand {
 		Condition newElement = MdnFactory.eINSTANCE.createCondition();
 
 		Sdn owner = (Sdn) getElementToEdit();
-		owner.getPolicyObjects().add(newElement);
+		owner.getRuleObjects().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

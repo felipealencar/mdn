@@ -11,12 +11,12 @@ import mdn.diagram.edit.commands.ConditionConditionTimeCreateCommand;
 import mdn.diagram.edit.commands.ConditionConditionTimeReorientCommand;
 import mdn.diagram.edit.commands.ConditionConditionTrafficCreateCommand;
 import mdn.diagram.edit.commands.ConditionConditionTrafficReorientCommand;
-import mdn.diagram.edit.commands.PolicyPolicyConditionCreateCommand;
-import mdn.diagram.edit.commands.PolicyPolicyConditionReorientCommand;
+import mdn.diagram.edit.commands.RuleRuleConditionCreateCommand;
+import mdn.diagram.edit.commands.RuleRuleConditionReorientCommand;
 import mdn.diagram.edit.parts.ConditionConditionPacketEditPart;
 import mdn.diagram.edit.parts.ConditionConditionTimeEditPart;
 import mdn.diagram.edit.parts.ConditionConditionTrafficEditPart;
-import mdn.diagram.edit.parts.PolicyPolicyConditionEditPart;
+import mdn.diagram.edit.parts.RuleRuleConditionEditPart;
 import mdn.diagram.part.MdnVisualIDRegistry;
 import mdn.diagram.providers.MdnElementTypes;
 
@@ -43,7 +43,7 @@ public class ConditionItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	public ConditionItemSemanticEditPolicy() {
-		super(MdnElementTypes.Condition_2010);
+		super(MdnElementTypes.Condition_2013);
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class ConditionItemSemanticEditPolicy extends
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (MdnVisualIDRegistry.getVisualID(incomingLink) == PolicyPolicyConditionEditPart.VISUAL_ID) {
+			if (MdnVisualIDRegistry.getVisualID(incomingLink) == RuleRuleConditionEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
@@ -119,7 +119,7 @@ public class ConditionItemSemanticEditPolicy extends
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (MdnElementTypes.PolicyPolicyCondition_4016 == req.getElementType()) {
+		if (MdnElementTypes.RuleRuleCondition_4026 == req.getElementType()) {
 			return null;
 		}
 		if (MdnElementTypes.ConditionConditionTime_4017 == req.getElementType()) {
@@ -144,8 +144,8 @@ public class ConditionItemSemanticEditPolicy extends
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (MdnElementTypes.PolicyPolicyCondition_4016 == req.getElementType()) {
-			return getGEFWrapper(new PolicyPolicyConditionCreateCommand(req,
+		if (MdnElementTypes.RuleRuleCondition_4026 == req.getElementType()) {
+			return getGEFWrapper(new RuleRuleConditionCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
 		if (MdnElementTypes.ConditionConditionTime_4017 == req.getElementType()) {
@@ -171,8 +171,8 @@ public class ConditionItemSemanticEditPolicy extends
 	protected Command getReorientReferenceRelationshipCommand(
 			ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case PolicyPolicyConditionEditPart.VISUAL_ID:
-			return getGEFWrapper(new PolicyPolicyConditionReorientCommand(req));
+		case RuleRuleConditionEditPart.VISUAL_ID:
+			return getGEFWrapper(new RuleRuleConditionReorientCommand(req));
 		case ConditionConditionTimeEditPart.VISUAL_ID:
 			return getGEFWrapper(new ConditionConditionTimeReorientCommand(req));
 		case ConditionConditionTrafficEditPart.VISUAL_ID:

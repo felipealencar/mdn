@@ -16,7 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link mdn.Sdn#getNodes <em>Nodes</em>}</li>
  *   <li>{@link mdn.Sdn#getPolicies <em>Policies</em>}</li>
- *   <li>{@link mdn.Sdn#getPolicyObjects <em>Policy Objects</em>}</li>
+ *   <li>{@link mdn.Sdn#getRuleObjects <em>Rule Objects</em>}</li>
+ *   <li>{@link mdn.Sdn#getGroups <em>Groups</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,7 +45,7 @@ public interface Sdn extends EObject
 
   /**
    * Returns the value of the '<em><b>Policies</b></em>' containment reference list.
-   * The list contents are of type {@link mdn.Policy}.
+   * The list contents are of type {@link mdn.Rule}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Policies</em>' containment reference list isn't clear,
@@ -56,22 +57,38 @@ public interface Sdn extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Policy> getPolicies();
+  EList<Rule> getPolicies();
 
   /**
-   * Returns the value of the '<em><b>Policy Objects</b></em>' containment reference list.
-   * The list contents are of type {@link mdn.PolicyObject}.
+   * Returns the value of the '<em><b>Rule Objects</b></em>' containment reference list.
+   * The list contents are of type {@link mdn.RuleObject}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Policy Objects</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Rule Objects</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Policy Objects</em>' containment reference list.
-   * @see mdn.MdnPackage#getSdn_PolicyObjects()
+   * @return the value of the '<em>Rule Objects</em>' containment reference list.
+   * @see mdn.MdnPackage#getSdn_RuleObjects()
    * @model containment="true"
    * @generated
    */
-  EList<PolicyObject> getPolicyObjects();
+  EList<RuleObject> getRuleObjects();
+
+  /**
+   * Returns the value of the '<em><b>Groups</b></em>' containment reference list.
+   * The list contents are of type {@link mdn.Group}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Groups</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Groups</em>' containment reference list.
+   * @see mdn.MdnPackage#getSdn_Groups()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Group> getGroups();
 
 } // Sdn

@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="gmf.node figure='figures.PacketHeaderFigure' label.icon='false' tool.small.bundle='mdn.edit' tool.small.path='/icons/full/obj16/packetheader.gif' label.placement='external' label='operator,header,value' label.pattern='{0}: [{1}] {2}'"
  * @generated
  */
-public interface PacketHeader extends PolicyObject
+public interface PacketHeader extends RuleObject
 {
   /**
    * Returns the value of the '<em><b>Operator</b></em>' attribute.

@@ -76,11 +76,26 @@ public class MdnEditPartFactory implements EditPartFactory {
 			case PacketHeaderOperatorHeaderValueEditPart.VISUAL_ID:
 				return new PacketHeaderOperatorHeaderValueEditPart(view);
 
-			case PolicyEditPart.VISUAL_ID:
-				return new PolicyEditPart(view);
+			case RuleEditPart.VISUAL_ID:
+				return new RuleEditPart(view);
 
-			case PolicyNameEditPart.VISUAL_ID:
-				return new PolicyNameEditPart(view);
+			case RuleNameEditPart.VISUAL_ID:
+				return new RuleNameEditPart(view);
+
+			case GroupEditPart.VISUAL_ID:
+				return new GroupEditPart(view);
+
+			case GroupNameEditPart.VISUAL_ID:
+				return new GroupNameEditPart(view);
+
+			case Host2EditPart.VISUAL_ID:
+				return new Host2EditPart(view);
+
+			case HostName2EditPart.VISUAL_ID:
+				return new HostName2EditPart(view);
+
+			case GroupGroupHostsGroupCompartmentEditPart.VISUAL_ID:
+				return new GroupGroupHostsGroupCompartmentEditPart(view);
 
 			case HostHostSwitchEditPart.VISUAL_ID:
 				return new HostHostSwitchEditPart(view);
@@ -100,59 +115,65 @@ public class MdnEditPartFactory implements EditPartFactory {
 			case WrappingLabel3EditPart.VISUAL_ID:
 				return new WrappingLabel3EditPart(view);
 
-			case PolicySourceHostPolicyEditPart.VISUAL_ID:
-				return new PolicySourceHostPolicyEditPart(view);
+			case RuleSourceHostRuleEditPart.VISUAL_ID:
+				return new RuleSourceHostRuleEditPart(view);
 
 			case WrappingLabel4EditPart.VISUAL_ID:
 				return new WrappingLabel4EditPart(view);
 
-			case PolicyTargetHostPolicyEditPart.VISUAL_ID:
-				return new PolicyTargetHostPolicyEditPart(view);
+			case RuleTargetHostRuleEditPart.VISUAL_ID:
+				return new RuleTargetHostRuleEditPart(view);
 
 			case WrappingLabel5EditPart.VISUAL_ID:
 				return new WrappingLabel5EditPart(view);
 
-			case PolicyPolicyConditionEditPart.VISUAL_ID:
-				return new PolicyPolicyConditionEditPart(view);
+			case RuleRuleConditionEditPart.VISUAL_ID:
+				return new RuleRuleConditionEditPart(view);
 
 			case WrappingLabel6EditPart.VISUAL_ID:
 				return new WrappingLabel6EditPart(view);
 
-			case PolicyPolicyActionEditPart.VISUAL_ID:
-				return new PolicyPolicyActionEditPart(view);
+			case RuleRuleActionEditPart.VISUAL_ID:
+				return new RuleRuleActionEditPart(view);
 
 			case WrappingLabel7EditPart.VISUAL_ID:
 				return new WrappingLabel7EditPart(view);
 
-			case ActionActionPacketHeaderEditPart.VISUAL_ID:
-				return new ActionActionPacketHeaderEditPart(view);
+			case RuleTargetGroupRuleEditPart.VISUAL_ID:
+				return new RuleTargetGroupRuleEditPart(view);
 
 			case WrappingLabel8EditPart.VISUAL_ID:
 				return new WrappingLabel8EditPart(view);
 
-			case ActionActionForwardToNodeEditPart.VISUAL_ID:
-				return new ActionActionForwardToNodeEditPart(view);
+			case ActionActionPacketHeaderEditPart.VISUAL_ID:
+				return new ActionActionPacketHeaderEditPart(view);
 
 			case WrappingLabel9EditPart.VISUAL_ID:
 				return new WrappingLabel9EditPart(view);
 
-			case ConditionConditionTimeEditPart.VISUAL_ID:
-				return new ConditionConditionTimeEditPart(view);
+			case ActionActionForwardToNodeEditPart.VISUAL_ID:
+				return new ActionActionForwardToNodeEditPart(view);
 
 			case WrappingLabel10EditPart.VISUAL_ID:
 				return new WrappingLabel10EditPart(view);
 
-			case ConditionConditionTrafficEditPart.VISUAL_ID:
-				return new ConditionConditionTrafficEditPart(view);
+			case ConditionConditionTimeEditPart.VISUAL_ID:
+				return new ConditionConditionTimeEditPart(view);
 
 			case WrappingLabel11EditPart.VISUAL_ID:
 				return new WrappingLabel11EditPart(view);
 
-			case ConditionConditionPacketEditPart.VISUAL_ID:
-				return new ConditionConditionPacketEditPart(view);
+			case ConditionConditionTrafficEditPart.VISUAL_ID:
+				return new ConditionConditionTrafficEditPart(view);
 
 			case WrappingLabel12EditPart.VISUAL_ID:
 				return new WrappingLabel12EditPart(view);
+
+			case ConditionConditionPacketEditPart.VISUAL_ID:
+				return new ConditionConditionPacketEditPart(view);
+
+			case WrappingLabel13EditPart.VISUAL_ID:
+				return new WrappingLabel13EditPart(view);
 
 			}
 		}

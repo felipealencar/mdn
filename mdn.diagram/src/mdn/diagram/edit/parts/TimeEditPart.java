@@ -49,7 +49,7 @@ public class TimeEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2008;
+	public static final int VISUAL_ID = 2015;
 
 	/**
 	 * @generated
@@ -252,7 +252,7 @@ public class TimeEditPart extends AbstractBorderedShapeEditPart {
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == MdnElementTypes.ConditionConditionTime_4017) {
-			types.add(MdnElementTypes.Condition_2010);
+			types.add(MdnElementTypes.Condition_2013);
 		}
 		return types;
 	}

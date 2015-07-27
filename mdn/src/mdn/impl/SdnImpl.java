@@ -4,8 +4,11 @@ package mdn.impl;
 
 import java.util.Collection;
 
+import mdn.Group;
 import mdn.MdnPackage;
 import mdn.NetworkNode;
+import mdn.Rule;
+import mdn.RuleObject;
 import mdn.Policy;
 import mdn.PolicyObject;
 import mdn.Sdn;
@@ -31,7 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link mdn.impl.SdnImpl#getNodes <em>Nodes</em>}</li>
  *   <li>{@link mdn.impl.SdnImpl#getPolicies <em>Policies</em>}</li>
- *   <li>{@link mdn.impl.SdnImpl#getPolicyObjects <em>Policy Objects</em>}</li>
+ *   <li>{@link mdn.impl.SdnImpl#getRuleObjects <em>Rule Objects</em>}</li>
+ *   <li>{@link mdn.impl.SdnImpl#getGroups <em>Groups</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,17 +61,27 @@ public class SdnImpl extends EObjectImpl implements Sdn
    * @generated
    * @ordered
    */
-  protected EList<Policy> policies;
+  protected EList<Rule> policies;
 
   /**
-   * The cached value of the '{@link #getPolicyObjects() <em>Policy Objects</em>}' containment reference list.
+   * The cached value of the '{@link #getRuleObjects() <em>Rule Objects</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPolicyObjects()
+   * @see #getRuleObjects()
    * @generated
    * @ordered
    */
-  protected EList<PolicyObject> policyObjects;
+  protected EList<RuleObject> ruleObjects;
+
+  /**
+   * The cached value of the '{@link #getGroups() <em>Groups</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getGroups()
+   * @generated
+   * @ordered
+   */
+  protected EList<Group> groups;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,11 +123,11 @@ public class SdnImpl extends EObjectImpl implements Sdn
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Policy> getPolicies()
+  public EList<Rule> getPolicies()
   {
     if (policies == null)
     {
-      policies = new EObjectContainmentEList<Policy>(Policy.class, this, MdnPackage.SDN__POLICIES);
+      policies = new EObjectContainmentEList<Rule>(Rule.class, this, MdnPackage.SDN__POLICIES);
     }
     return policies;
   }
@@ -123,13 +137,27 @@ public class SdnImpl extends EObjectImpl implements Sdn
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<PolicyObject> getPolicyObjects()
+  public EList<RuleObject> getRuleObjects()
   {
-    if (policyObjects == null)
+    if (ruleObjects == null)
     {
-      policyObjects = new EObjectContainmentEList<PolicyObject>(PolicyObject.class, this, MdnPackage.SDN__POLICY_OBJECTS);
+      ruleObjects = new EObjectContainmentEList<RuleObject>(RuleObject.class, this, MdnPackage.SDN__RULE_OBJECTS);
     }
-    return policyObjects;
+    return ruleObjects;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Group> getGroups()
+  {
+    if (groups == null)
+    {
+      groups = new EObjectContainmentEList<Group>(Group.class, this, MdnPackage.SDN__GROUPS);
+    }
+    return groups;
   }
 
   /**
@@ -146,8 +174,10 @@ public class SdnImpl extends EObjectImpl implements Sdn
         return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
       case MdnPackage.SDN__POLICIES:
         return ((InternalEList<?>)getPolicies()).basicRemove(otherEnd, msgs);
-      case MdnPackage.SDN__POLICY_OBJECTS:
-        return ((InternalEList<?>)getPolicyObjects()).basicRemove(otherEnd, msgs);
+      case MdnPackage.SDN__RULE_OBJECTS:
+        return ((InternalEList<?>)getRuleObjects()).basicRemove(otherEnd, msgs);
+      case MdnPackage.SDN__GROUPS:
+        return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -166,8 +196,10 @@ public class SdnImpl extends EObjectImpl implements Sdn
         return getNodes();
       case MdnPackage.SDN__POLICIES:
         return getPolicies();
-      case MdnPackage.SDN__POLICY_OBJECTS:
-        return getPolicyObjects();
+      case MdnPackage.SDN__RULE_OBJECTS:
+        return getRuleObjects();
+      case MdnPackage.SDN__GROUPS:
+        return getGroups();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -189,11 +221,15 @@ public class SdnImpl extends EObjectImpl implements Sdn
         return;
       case MdnPackage.SDN__POLICIES:
         getPolicies().clear();
-        getPolicies().addAll((Collection<? extends Policy>)newValue);
+        getPolicies().addAll((Collection<? extends Rule>)newValue);
         return;
-      case MdnPackage.SDN__POLICY_OBJECTS:
-        getPolicyObjects().clear();
-        getPolicyObjects().addAll((Collection<? extends PolicyObject>)newValue);
+      case MdnPackage.SDN__RULE_OBJECTS:
+        getRuleObjects().clear();
+        getRuleObjects().addAll((Collection<? extends RuleObject>)newValue);
+        return;
+      case MdnPackage.SDN__GROUPS:
+        getGroups().clear();
+        getGroups().addAll((Collection<? extends Group>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -215,8 +251,11 @@ public class SdnImpl extends EObjectImpl implements Sdn
       case MdnPackage.SDN__POLICIES:
         getPolicies().clear();
         return;
-      case MdnPackage.SDN__POLICY_OBJECTS:
-        getPolicyObjects().clear();
+      case MdnPackage.SDN__RULE_OBJECTS:
+        getRuleObjects().clear();
+        return;
+      case MdnPackage.SDN__GROUPS:
+        getGroups().clear();
         return;
     }
     super.eUnset(featureID);
@@ -236,8 +275,10 @@ public class SdnImpl extends EObjectImpl implements Sdn
         return nodes != null && !nodes.isEmpty();
       case MdnPackage.SDN__POLICIES:
         return policies != null && !policies.isEmpty();
-      case MdnPackage.SDN__POLICY_OBJECTS:
-        return policyObjects != null && !policyObjects.isEmpty();
+      case MdnPackage.SDN__RULE_OBJECTS:
+        return ruleObjects != null && !ruleObjects.isEmpty();
+      case MdnPackage.SDN__GROUPS:
+        return groups != null && !groups.isEmpty();
     }
     return super.eIsSet(featureID);
   }

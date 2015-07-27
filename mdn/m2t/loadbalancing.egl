@@ -1,0 +1,45 @@
+[% 
+operation actionLoadBalancing(rule : Any) : String {
+%]
+virtual_ip = IPAddr("10.0.0.1")
+
+host = {}
+host[0] = {'ip':IPAddr("10.0.0.3")}
+host[1] = {'ip':IPAddr("10.0.0.4")}
+host[2] = {'ip':IPAddr("10.0.0.5")}
+host[4] = {'ip':IPAddr("10.0.0.6")}
+
+total_hosts = len(host)
+
+host_index = 0 
+
+global host_index 
+packet = event.parsed
+
+# Only handle IPv4 packets
+if (not event.parsed.find("ipv4")):
+    return EventContinue
+
+msg = of.ofp_flow_mod()
+msg.match = of.ofp_match.from_packet(packet)
+
+# Only verify traffic destined to virtual IP
+if (msg.match.nw_dst != virtual_ip):
+    return EventContinue
+
+# Round robin algorithm
+index = host_index % total_hosts
+selected_host_ip = host[index]['ip']
+selected_host_mac = host[index]['mac']
+selected_host_outport = host[index]['outport']
+host_index += 1
+# Setup route to server
+msg.buffer_id = event.ofp.buffer_id
+msg.in_port = event.port
+
+msg.actions.append(of.ofp_action_dl_addr(of.OFPAT_SET_DL_DST, selected_server_mac))
+msg.actions.append(of.ofp_action_nw_addr(of.OFPAT_SET_NW_DST, selected_server_ip))
+event.connection.send(msg)
+[%
+}
+%]

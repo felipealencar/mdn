@@ -16,17 +16,23 @@ import mdn.diagram.edit.parts.ConditionConditionTrafficEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
 import mdn.diagram.edit.parts.ControllerNameEditPart;
+import mdn.diagram.edit.parts.GroupEditPart;
+import mdn.diagram.edit.parts.GroupGroupHostsGroupCompartmentEditPart;
+import mdn.diagram.edit.parts.GroupNameEditPart;
+import mdn.diagram.edit.parts.Host2EditPart;
 import mdn.diagram.edit.parts.HostEditPart;
 import mdn.diagram.edit.parts.HostHostSwitchEditPart;
+import mdn.diagram.edit.parts.HostName2EditPart;
 import mdn.diagram.edit.parts.HostNameEditPart;
 import mdn.diagram.edit.parts.PacketHeaderEditPart;
 import mdn.diagram.edit.parts.PacketHeaderOperatorHeaderValueEditPart;
-import mdn.diagram.edit.parts.PolicyEditPart;
-import mdn.diagram.edit.parts.PolicyNameEditPart;
-import mdn.diagram.edit.parts.PolicyPolicyActionEditPart;
-import mdn.diagram.edit.parts.PolicyPolicyConditionEditPart;
-import mdn.diagram.edit.parts.PolicySourceHostPolicyEditPart;
-import mdn.diagram.edit.parts.PolicyTargetHostPolicyEditPart;
+import mdn.diagram.edit.parts.RuleEditPart;
+import mdn.diagram.edit.parts.RuleNameEditPart;
+import mdn.diagram.edit.parts.RuleRuleActionEditPart;
+import mdn.diagram.edit.parts.RuleRuleConditionEditPart;
+import mdn.diagram.edit.parts.RuleSourceHostRuleEditPart;
+import mdn.diagram.edit.parts.RuleTargetGroupRuleEditPart;
+import mdn.diagram.edit.parts.RuleTargetHostRuleEditPart;
 import mdn.diagram.edit.parts.SdnEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
 import mdn.diagram.edit.parts.SwitchNameEditPart;
@@ -39,6 +45,7 @@ import mdn.diagram.edit.parts.TrafficOperatorUnitValueEditPart;
 import mdn.diagram.edit.parts.WrappingLabel10EditPart;
 import mdn.diagram.edit.parts.WrappingLabel11EditPart;
 import mdn.diagram.edit.parts.WrappingLabel12EditPart;
+import mdn.diagram.edit.parts.WrappingLabel13EditPart;
 import mdn.diagram.edit.parts.WrappingLabel2EditPart;
 import mdn.diagram.edit.parts.WrappingLabel3EditPart;
 import mdn.diagram.edit.parts.WrappingLabel4EditPart;
@@ -195,9 +202,19 @@ public class MdnVisualIDRegistry {
 					domainElement.eClass())) {
 				return PacketHeaderEditPart.VISUAL_ID;
 			}
-			if (MdnPackage.eINSTANCE.getPolicy().isSuperTypeOf(
+			if (MdnPackage.eINSTANCE.getRule().isSuperTypeOf(
 					domainElement.eClass())) {
-				return PolicyEditPart.VISUAL_ID;
+				return RuleEditPart.VISUAL_ID;
+			}
+			if (MdnPackage.eINSTANCE.getGroup().isSuperTypeOf(
+					domainElement.eClass())) {
+				return GroupEditPart.VISUAL_ID;
+			}
+			break;
+		case GroupGroupHostsGroupCompartmentEditPart.VISUAL_ID:
+			if (MdnPackage.eINSTANCE.getHost().isSuperTypeOf(
+					domainElement.eClass())) {
+				return Host2EditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -251,7 +268,10 @@ public class MdnVisualIDRegistry {
 			if (PacketHeaderEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (PolicyEditPart.VISUAL_ID == nodeVisualID) {
+			if (RuleEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (GroupEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -295,8 +315,26 @@ public class MdnVisualIDRegistry {
 				return true;
 			}
 			break;
-		case PolicyEditPart.VISUAL_ID:
-			if (PolicyNameEditPart.VISUAL_ID == nodeVisualID) {
+		case RuleEditPart.VISUAL_ID:
+			if (RuleNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case GroupEditPart.VISUAL_ID:
+			if (GroupNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (GroupGroupHostsGroupCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Host2EditPart.VISUAL_ID:
+			if (HostName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case GroupGroupHostsGroupCompartmentEditPart.VISUAL_ID:
+			if (Host2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -315,48 +353,53 @@ public class MdnVisualIDRegistry {
 				return true;
 			}
 			break;
-		case PolicySourceHostPolicyEditPart.VISUAL_ID:
+		case RuleSourceHostRuleEditPart.VISUAL_ID:
 			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case PolicyTargetHostPolicyEditPart.VISUAL_ID:
+		case RuleTargetHostRuleEditPart.VISUAL_ID:
 			if (WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case PolicyPolicyConditionEditPart.VISUAL_ID:
+		case RuleRuleConditionEditPart.VISUAL_ID:
 			if (WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case PolicyPolicyActionEditPart.VISUAL_ID:
+		case RuleRuleActionEditPart.VISUAL_ID:
 			if (WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ActionActionPacketHeaderEditPart.VISUAL_ID:
+		case RuleTargetGroupRuleEditPart.VISUAL_ID:
 			if (WrappingLabel8EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ActionActionForwardToNodeEditPart.VISUAL_ID:
+		case ActionActionPacketHeaderEditPart.VISUAL_ID:
 			if (WrappingLabel9EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ConditionConditionTimeEditPart.VISUAL_ID:
+		case ActionActionForwardToNodeEditPart.VISUAL_ID:
 			if (WrappingLabel10EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ConditionConditionTrafficEditPart.VISUAL_ID:
+		case ConditionConditionTimeEditPart.VISUAL_ID:
 			if (WrappingLabel11EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ConditionConditionPacketEditPart.VISUAL_ID:
+		case ConditionConditionTrafficEditPart.VISUAL_ID:
 			if (WrappingLabel12EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ConditionConditionPacketEditPart.VISUAL_ID:
+			if (WrappingLabel13EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -401,6 +444,12 @@ public class MdnVisualIDRegistry {
 	 * @generated
 	 */
 	public static boolean isCompartmentVisualID(int visualID) {
+		switch (visualID) {
+		case GroupGroupHostsGroupCompartmentEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
 		return false;
 	}
 
@@ -414,12 +463,13 @@ public class MdnVisualIDRegistry {
 		case ControllerEditPart.VISUAL_ID:
 		case HostEditPart.VISUAL_ID:
 		case SwitchEditPart.VISUAL_ID:
-		case PolicyEditPart.VISUAL_ID:
+		case ActionEditPart.VISUAL_ID:
+		case ConditionEditPart.VISUAL_ID:
 		case TrafficEditPart.VISUAL_ID:
 		case TimeEditPart.VISUAL_ID:
 		case PacketHeaderEditPart.VISUAL_ID:
-		case ConditionEditPart.VISUAL_ID:
-		case ActionEditPart.VISUAL_ID:
+		case RuleEditPart.VISUAL_ID:
+		case Host2EditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

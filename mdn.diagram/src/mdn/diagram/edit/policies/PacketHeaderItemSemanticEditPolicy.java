@@ -37,7 +37,7 @@ public class PacketHeaderItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	public PacketHeaderItemSemanticEditPolicy() {
-		super(MdnElementTypes.PacketHeader_2009);
+		super(MdnElementTypes.PacketHeader_2016);
 	}
 
 	/**

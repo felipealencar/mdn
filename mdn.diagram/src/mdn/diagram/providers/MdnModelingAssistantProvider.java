@@ -13,9 +13,12 @@ import java.util.List;
 import mdn.diagram.edit.parts.ActionEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
+import mdn.diagram.edit.parts.GroupEditPart;
+import mdn.diagram.edit.parts.GroupGroupHostsGroupCompartmentEditPart;
+import mdn.diagram.edit.parts.Host2EditPart;
 import mdn.diagram.edit.parts.HostEditPart;
 import mdn.diagram.edit.parts.PacketHeaderEditPart;
-import mdn.diagram.edit.parts.PolicyEditPart;
+import mdn.diagram.edit.parts.RuleEditPart;
 import mdn.diagram.edit.parts.SdnEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
 import mdn.diagram.edit.parts.TimeEditPart;
@@ -49,16 +52,22 @@ public class MdnModelingAssistantProvider extends ModelingAssistantProvider {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host
 				.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof SdnEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(9);
+			ArrayList<IElementType> types = new ArrayList<IElementType>(10);
 			types.add(MdnElementTypes.Controller_2001);
 			types.add(MdnElementTypes.Host_2002);
 			types.add(MdnElementTypes.Switch_2003);
-			types.add(MdnElementTypes.Action_2011);
-			types.add(MdnElementTypes.Condition_2010);
-			types.add(MdnElementTypes.Traffic_2007);
-			types.add(MdnElementTypes.Time_2008);
-			types.add(MdnElementTypes.PacketHeader_2009);
-			types.add(MdnElementTypes.Policy_2004);
+			types.add(MdnElementTypes.Action_2012);
+			types.add(MdnElementTypes.Condition_2013);
+			types.add(MdnElementTypes.Traffic_2014);
+			types.add(MdnElementTypes.Time_2015);
+			types.add(MdnElementTypes.PacketHeader_2016);
+			types.add(MdnElementTypes.Rule_2017);
+			types.add(MdnElementTypes.Group_2018);
+			return types;
+		}
+		if (editPart instanceof GroupGroupHostsGroupCompartmentEditPart) {
+			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+			types.add(MdnElementTypes.Host_3001);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -82,8 +91,11 @@ public class MdnModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ConditionEditPart) {
 			return ((ConditionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof PolicyEditPart) {
-			return ((PolicyEditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof RuleEditPart) {
+			return ((RuleEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof Host2EditPart) {
+			return ((Host2EditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -120,6 +132,12 @@ public class MdnModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((PacketHeaderEditPart) targetEditPart)
 					.getMARelTypesOnTarget();
 		}
+		if (targetEditPart instanceof GroupEditPart) {
+			return ((GroupEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Host2EditPart) {
+			return ((Host2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -148,8 +166,12 @@ public class MdnModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((ConditionEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof PolicyEditPart) {
-			return ((PolicyEditPart) sourceEditPart)
+		if (sourceEditPart instanceof RuleEditPart) {
+			return ((RuleEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof Host2EditPart) {
+			return ((Host2EditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		return Collections.EMPTY_LIST;
@@ -194,6 +216,14 @@ public class MdnModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((PacketHeaderEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof GroupEditPart) {
+			return ((GroupEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof Host2EditPart) {
+			return ((Host2EditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -220,8 +250,12 @@ public class MdnModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((ConditionEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof PolicyEditPart) {
-			return ((PolicyEditPart) sourceEditPart)
+		if (sourceEditPart instanceof RuleEditPart) {
+			return ((RuleEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Host2EditPart) {
+			return ((Host2EditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;

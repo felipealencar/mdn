@@ -49,7 +49,7 @@ public class PacketHeaderEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2009;
+	public static final int VISUAL_ID = 2016;
 
 	/**
 	 * @generated
@@ -253,9 +253,9 @@ public class PacketHeaderEditPart extends AbstractBorderedShapeEditPart {
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == MdnElementTypes.ActionActionPacketHeader_4012) {
-			types.add(MdnElementTypes.Action_2011);
+			types.add(MdnElementTypes.Action_2012);
 		} else if (relationshipType == MdnElementTypes.ConditionConditionPacket_4019) {
-			types.add(MdnElementTypes.Condition_2010);
+			types.add(MdnElementTypes.Condition_2013);
 		}
 		return types;
 	}

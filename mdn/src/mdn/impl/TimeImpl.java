@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class TimeImpl extends PolicyObjectImpl implements Time
+public class TimeImpl extends RuleObjectImpl implements Time
 {
   /**
    * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.

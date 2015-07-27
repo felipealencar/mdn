@@ -60,7 +60,7 @@ public class ActionCreateCommand extends EditElementCommand {
 		Action newElement = MdnFactory.eINSTANCE.createAction();
 
 		Sdn owner = (Sdn) getElementToEdit();
-		owner.getPolicyObjects().add(newElement);
+		owner.getRuleObjects().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -49,7 +49,7 @@ public class TrafficEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2007;
+	public static final int VISUAL_ID = 2014;
 
 	/**
 	 * @generated
@@ -252,7 +252,7 @@ public class TrafficEditPart extends AbstractBorderedShapeEditPart {
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == MdnElementTypes.ConditionConditionTraffic_4018) {
-			types.add(MdnElementTypes.Condition_2010);
+			types.add(MdnElementTypes.Condition_2013);
 		}
 		return types;
 	}

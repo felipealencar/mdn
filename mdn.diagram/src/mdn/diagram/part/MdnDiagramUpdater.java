@@ -13,12 +13,13 @@ import java.util.Map;
 import mdn.Action;
 import mdn.Condition;
 import mdn.Controller;
+import mdn.Group;
 import mdn.Host;
 import mdn.MdnPackage;
 import mdn.NetworkNode;
 import mdn.PacketHeader;
-import mdn.Policy;
-import mdn.PolicyObject;
+import mdn.Rule;
+import mdn.RuleObject;
 import mdn.Sdn;
 import mdn.Switch;
 import mdn.Time;
@@ -31,14 +32,18 @@ import mdn.diagram.edit.parts.ConditionConditionTimeEditPart;
 import mdn.diagram.edit.parts.ConditionConditionTrafficEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
+import mdn.diagram.edit.parts.GroupEditPart;
+import mdn.diagram.edit.parts.GroupGroupHostsGroupCompartmentEditPart;
+import mdn.diagram.edit.parts.Host2EditPart;
 import mdn.diagram.edit.parts.HostEditPart;
 import mdn.diagram.edit.parts.HostHostSwitchEditPart;
 import mdn.diagram.edit.parts.PacketHeaderEditPart;
-import mdn.diagram.edit.parts.PolicyEditPart;
-import mdn.diagram.edit.parts.PolicyPolicyActionEditPart;
-import mdn.diagram.edit.parts.PolicyPolicyConditionEditPart;
-import mdn.diagram.edit.parts.PolicySourceHostPolicyEditPart;
-import mdn.diagram.edit.parts.PolicyTargetHostPolicyEditPart;
+import mdn.diagram.edit.parts.RuleEditPart;
+import mdn.diagram.edit.parts.RuleRuleActionEditPart;
+import mdn.diagram.edit.parts.RuleRuleConditionEditPart;
+import mdn.diagram.edit.parts.RuleSourceHostRuleEditPart;
+import mdn.diagram.edit.parts.RuleTargetGroupRuleEditPart;
+import mdn.diagram.edit.parts.RuleTargetHostRuleEditPart;
 import mdn.diagram.edit.parts.SdnEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
 import mdn.diagram.edit.parts.SwitchSwitchControllerEditPart;
@@ -73,6 +78,8 @@ public class MdnDiagramUpdater {
 		switch (MdnVisualIDRegistry.getVisualID(view)) {
 		case SdnEditPart.VISUAL_ID:
 			return getSdn_1000SemanticChildren(view);
+		case GroupGroupHostsGroupCompartmentEditPart.VISUAL_ID:
+			return getGroupGroupHostsGroupCompartment_7001SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -103,9 +110,9 @@ public class MdnDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getPolicyObjects().iterator(); it
+		for (Iterator<?> it = modelElement.getRuleObjects().iterator(); it
 				.hasNext();) {
-			PolicyObject childElement = (PolicyObject) it.next();
+			RuleObject childElement = (RuleObject) it.next();
 			int visualID = MdnVisualIDRegistry.getNodeVisualID(view,
 					childElement);
 			if (visualID == ActionEditPart.VISUAL_ID) {
@@ -131,10 +138,46 @@ public class MdnDiagramUpdater {
 		}
 		for (Iterator<?> it = modelElement.getPolicies().iterator(); it
 				.hasNext();) {
-			Policy childElement = (Policy) it.next();
+			Rule childElement = (Rule) it.next();
 			int visualID = MdnVisualIDRegistry.getNodeVisualID(view,
 					childElement);
-			if (visualID == PolicyEditPart.VISUAL_ID) {
+			if (visualID == RuleEditPart.VISUAL_ID) {
+				result.add(new MdnNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getGroups().iterator(); it.hasNext();) {
+			Group childElement = (Group) it.next();
+			int visualID = MdnVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == GroupEditPart.VISUAL_ID) {
+				result.add(new MdnNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MdnNodeDescriptor> getGroupGroupHostsGroupCompartment_7001SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Group modelElement = (Group) containerView.getElement();
+		LinkedList<MdnNodeDescriptor> result = new LinkedList<MdnNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getHostsGroup().iterator(); it
+				.hasNext();) {
+			Host childElement = (Host) it.next();
+			int visualID = MdnVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == Host2EditPart.VISUAL_ID) {
 				result.add(new MdnNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -156,17 +199,21 @@ public class MdnDiagramUpdater {
 		case SwitchEditPart.VISUAL_ID:
 			return getSwitch_2003ContainedLinks(view);
 		case ActionEditPart.VISUAL_ID:
-			return getAction_2011ContainedLinks(view);
+			return getAction_2012ContainedLinks(view);
 		case ConditionEditPart.VISUAL_ID:
-			return getCondition_2010ContainedLinks(view);
+			return getCondition_2013ContainedLinks(view);
 		case TrafficEditPart.VISUAL_ID:
-			return getTraffic_2007ContainedLinks(view);
+			return getTraffic_2014ContainedLinks(view);
 		case TimeEditPart.VISUAL_ID:
-			return getTime_2008ContainedLinks(view);
+			return getTime_2015ContainedLinks(view);
 		case PacketHeaderEditPart.VISUAL_ID:
-			return getPacketHeader_2009ContainedLinks(view);
-		case PolicyEditPart.VISUAL_ID:
-			return getPolicy_2004ContainedLinks(view);
+			return getPacketHeader_2016ContainedLinks(view);
+		case RuleEditPart.VISUAL_ID:
+			return getRule_2017ContainedLinks(view);
+		case GroupEditPart.VISUAL_ID:
+			return getGroup_2018ContainedLinks(view);
+		case Host2EditPart.VISUAL_ID:
+			return getHost_3001ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -183,17 +230,21 @@ public class MdnDiagramUpdater {
 		case SwitchEditPart.VISUAL_ID:
 			return getSwitch_2003IncomingLinks(view);
 		case ActionEditPart.VISUAL_ID:
-			return getAction_2011IncomingLinks(view);
+			return getAction_2012IncomingLinks(view);
 		case ConditionEditPart.VISUAL_ID:
-			return getCondition_2010IncomingLinks(view);
+			return getCondition_2013IncomingLinks(view);
 		case TrafficEditPart.VISUAL_ID:
-			return getTraffic_2007IncomingLinks(view);
+			return getTraffic_2014IncomingLinks(view);
 		case TimeEditPart.VISUAL_ID:
-			return getTime_2008IncomingLinks(view);
+			return getTime_2015IncomingLinks(view);
 		case PacketHeaderEditPart.VISUAL_ID:
-			return getPacketHeader_2009IncomingLinks(view);
-		case PolicyEditPart.VISUAL_ID:
-			return getPolicy_2004IncomingLinks(view);
+			return getPacketHeader_2016IncomingLinks(view);
+		case RuleEditPart.VISUAL_ID:
+			return getRule_2017IncomingLinks(view);
+		case GroupEditPart.VISUAL_ID:
+			return getGroup_2018IncomingLinks(view);
+		case Host2EditPart.VISUAL_ID:
+			return getHost_3001IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -210,17 +261,21 @@ public class MdnDiagramUpdater {
 		case SwitchEditPart.VISUAL_ID:
 			return getSwitch_2003OutgoingLinks(view);
 		case ActionEditPart.VISUAL_ID:
-			return getAction_2011OutgoingLinks(view);
+			return getAction_2012OutgoingLinks(view);
 		case ConditionEditPart.VISUAL_ID:
-			return getCondition_2010OutgoingLinks(view);
+			return getCondition_2013OutgoingLinks(view);
 		case TrafficEditPart.VISUAL_ID:
-			return getTraffic_2007OutgoingLinks(view);
+			return getTraffic_2014OutgoingLinks(view);
 		case TimeEditPart.VISUAL_ID:
-			return getTime_2008OutgoingLinks(view);
+			return getTime_2015OutgoingLinks(view);
 		case PacketHeaderEditPart.VISUAL_ID:
-			return getPacketHeader_2009OutgoingLinks(view);
-		case PolicyEditPart.VISUAL_ID:
-			return getPolicy_2004OutgoingLinks(view);
+			return getPacketHeader_2016OutgoingLinks(view);
+		case RuleEditPart.VISUAL_ID:
+			return getRule_2017OutgoingLinks(view);
+		case GroupEditPart.VISUAL_ID:
+			return getGroup_2018OutgoingLinks(view);
+		case Host2EditPart.VISUAL_ID:
+			return getHost_3001OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -264,7 +319,7 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getAction_2011ContainedLinks(View view) {
+	public static List<MdnLinkDescriptor> getAction_2012ContainedLinks(View view) {
 		Action modelElement = (Action) view.getElement();
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_ActionPacketHeader_4012(modelElement));
@@ -275,7 +330,7 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getCondition_2010ContainedLinks(
+	public static List<MdnLinkDescriptor> getCondition_2013ContainedLinks(
 			View view) {
 		Condition modelElement = (Condition) view.getElement();
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
@@ -288,7 +343,7 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getTraffic_2007ContainedLinks(
+	public static List<MdnLinkDescriptor> getTraffic_2014ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -296,14 +351,14 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getTime_2008ContainedLinks(View view) {
+	public static List<MdnLinkDescriptor> getTime_2015ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getPacketHeader_2009ContainedLinks(
+	public static List<MdnLinkDescriptor> getPacketHeader_2016ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -311,13 +366,31 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getPolicy_2004ContainedLinks(View view) {
-		Policy modelElement = (Policy) view.getElement();
+	public static List<MdnLinkDescriptor> getRule_2017ContainedLinks(View view) {
+		Rule modelElement = (Rule) view.getElement();
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Policy_SourceHostPolicy_4023(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Policy_TargetHostPolicy_4009(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Policy_PolicyCondition_4016(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Policy_PolicyAction_4015(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Rule_SourceHostRule_4024(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Rule_TargetHostRule_4025(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Rule_RuleCondition_4026(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Rule_RuleAction_4027(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Rule_TargetGroupRule_4028(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MdnLinkDescriptor> getGroup_2018ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MdnLinkDescriptor> getHost_3001ContainedLinks(View view) {
+		Host modelElement = (Host) view.getElement();
+		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Host_HostSwitch_4004(modelElement));
 		return result;
 	}
 
@@ -345,9 +418,9 @@ public class MdnDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Policy_SourceHostPolicy_4023(
+		result.addAll(getIncomingFeatureModelFacetLinks_Rule_SourceHostRule_4024(
 				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Policy_TargetHostPolicy_4009(
+		result.addAll(getIncomingFeatureModelFacetLinks_Rule_TargetHostRule_4025(
 				modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Action_ActionForwardToNode_4013(
 				modelElement, crossReferences));
@@ -374,12 +447,12 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getAction_2011IncomingLinks(View view) {
+	public static List<MdnLinkDescriptor> getAction_2012IncomingLinks(View view) {
 		Action modelElement = (Action) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Policy_PolicyAction_4015(
+		result.addAll(getIncomingFeatureModelFacetLinks_Rule_RuleAction_4027(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -387,13 +460,13 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getCondition_2010IncomingLinks(
+	public static List<MdnLinkDescriptor> getCondition_2013IncomingLinks(
 			View view) {
 		Condition modelElement = (Condition) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Policy_PolicyCondition_4016(
+		result.addAll(getIncomingFeatureModelFacetLinks_Rule_RuleCondition_4026(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -401,7 +474,7 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getTraffic_2007IncomingLinks(View view) {
+	public static List<MdnLinkDescriptor> getTraffic_2014IncomingLinks(View view) {
 		Traffic modelElement = (Traffic) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -414,7 +487,7 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getTime_2008IncomingLinks(View view) {
+	public static List<MdnLinkDescriptor> getTime_2015IncomingLinks(View view) {
 		Time modelElement = (Time) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -427,7 +500,7 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getPacketHeader_2009IncomingLinks(
+	public static List<MdnLinkDescriptor> getPacketHeader_2016IncomingLinks(
 			View view) {
 		PacketHeader modelElement = (PacketHeader) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
@@ -443,8 +516,38 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getPolicy_2004IncomingLinks(View view) {
+	public static List<MdnLinkDescriptor> getRule_2017IncomingLinks(View view) {
 		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MdnLinkDescriptor> getGroup_2018IncomingLinks(View view) {
+		Group modelElement = (Group) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Rule_TargetGroupRule_4028(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MdnLinkDescriptor> getHost_3001IncomingLinks(View view) {
+		Host modelElement = (Host) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Rule_SourceHostRule_4024(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Rule_TargetHostRule_4025(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Action_ActionForwardToNode_4013(
+				modelElement, crossReferences));
+		return result;
 	}
 
 	/**
@@ -479,7 +582,7 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getAction_2011OutgoingLinks(View view) {
+	public static List<MdnLinkDescriptor> getAction_2012OutgoingLinks(View view) {
 		Action modelElement = (Action) view.getElement();
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_ActionPacketHeader_4012(modelElement));
@@ -490,7 +593,7 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getCondition_2010OutgoingLinks(
+	public static List<MdnLinkDescriptor> getCondition_2013OutgoingLinks(
 			View view) {
 		Condition modelElement = (Condition) view.getElement();
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
@@ -503,21 +606,21 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getTraffic_2007OutgoingLinks(View view) {
+	public static List<MdnLinkDescriptor> getTraffic_2014OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getTime_2008OutgoingLinks(View view) {
+	public static List<MdnLinkDescriptor> getTime_2015OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getPacketHeader_2009OutgoingLinks(
+	public static List<MdnLinkDescriptor> getPacketHeader_2016OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -525,13 +628,31 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MdnLinkDescriptor> getPolicy_2004OutgoingLinks(View view) {
-		Policy modelElement = (Policy) view.getElement();
+	public static List<MdnLinkDescriptor> getRule_2017OutgoingLinks(View view) {
+		Rule modelElement = (Rule) view.getElement();
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Policy_SourceHostPolicy_4023(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Policy_TargetHostPolicy_4009(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Policy_PolicyCondition_4016(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Policy_PolicyAction_4015(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Rule_SourceHostRule_4024(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Rule_TargetHostRule_4025(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Rule_RuleCondition_4026(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Rule_RuleAction_4027(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Rule_TargetGroupRule_4028(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MdnLinkDescriptor> getGroup_2018OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MdnLinkDescriptor> getHost_3001OutgoingLinks(View view) {
+		Host modelElement = (Host) view.getElement();
+		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Host_HostSwitch_4004(modelElement));
 		return result;
 	}
 
@@ -598,7 +719,7 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<MdnLinkDescriptor> getIncomingFeatureModelFacetLinks_Policy_SourceHostPolicy_4023(
+	private static Collection<MdnLinkDescriptor> getIncomingFeatureModelFacetLinks_Rule_SourceHostRule_4024(
 			Host target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
@@ -606,10 +727,10 @@ public class MdnDiagramUpdater {
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == MdnPackage.eINSTANCE
-					.getPolicy_SourceHostPolicy()) {
+					.getRule_SourceHostRule()) {
 				result.add(new MdnLinkDescriptor(setting.getEObject(), target,
-						MdnElementTypes.PolicySourceHostPolicy_4023,
-						PolicySourceHostPolicyEditPart.VISUAL_ID));
+						MdnElementTypes.RuleSourceHostRule_4024,
+						RuleSourceHostRuleEditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -618,7 +739,7 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<MdnLinkDescriptor> getIncomingFeatureModelFacetLinks_Policy_TargetHostPolicy_4009(
+	private static Collection<MdnLinkDescriptor> getIncomingFeatureModelFacetLinks_Rule_TargetHostRule_4025(
 			Host target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
@@ -626,10 +747,10 @@ public class MdnDiagramUpdater {
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == MdnPackage.eINSTANCE
-					.getPolicy_TargetHostPolicy()) {
+					.getRule_TargetHostRule()) {
 				result.add(new MdnLinkDescriptor(setting.getEObject(), target,
-						MdnElementTypes.PolicyTargetHostPolicy_4009,
-						PolicyTargetHostPolicyEditPart.VISUAL_ID));
+						MdnElementTypes.RuleTargetHostRule_4025,
+						RuleTargetHostRuleEditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -638,7 +759,7 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<MdnLinkDescriptor> getIncomingFeatureModelFacetLinks_Policy_PolicyCondition_4016(
+	private static Collection<MdnLinkDescriptor> getIncomingFeatureModelFacetLinks_Rule_RuleCondition_4026(
 			Condition target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
@@ -646,10 +767,10 @@ public class MdnDiagramUpdater {
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == MdnPackage.eINSTANCE
-					.getPolicy_PolicyCondition()) {
+					.getRule_RuleCondition()) {
 				result.add(new MdnLinkDescriptor(setting.getEObject(), target,
-						MdnElementTypes.PolicyPolicyCondition_4016,
-						PolicyPolicyConditionEditPart.VISUAL_ID));
+						MdnElementTypes.RuleRuleCondition_4026,
+						RuleRuleConditionEditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -658,7 +779,7 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<MdnLinkDescriptor> getIncomingFeatureModelFacetLinks_Policy_PolicyAction_4015(
+	private static Collection<MdnLinkDescriptor> getIncomingFeatureModelFacetLinks_Rule_RuleAction_4027(
 			Action target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
@@ -666,10 +787,30 @@ public class MdnDiagramUpdater {
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == MdnPackage.eINSTANCE
-					.getPolicy_PolicyAction()) {
+					.getRule_RuleAction()) {
 				result.add(new MdnLinkDescriptor(setting.getEObject(), target,
-						MdnElementTypes.PolicyPolicyAction_4015,
-						PolicyPolicyActionEditPart.VISUAL_ID));
+						MdnElementTypes.RuleRuleAction_4027,
+						RuleRuleActionEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<MdnLinkDescriptor> getIncomingFeatureModelFacetLinks_Rule_TargetGroupRule_4028(
+			Group target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == MdnPackage.eINSTANCE
+					.getRule_TargetGroupRule()) {
+				result.add(new MdnLinkDescriptor(setting.getEObject(), target,
+						MdnElementTypes.RuleTargetGroupRule_4028,
+						RuleTargetGroupRuleEditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -826,15 +967,15 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<MdnLinkDescriptor> getOutgoingFeatureModelFacetLinks_Policy_SourceHostPolicy_4023(
-			Policy source) {
+	private static Collection<MdnLinkDescriptor> getOutgoingFeatureModelFacetLinks_Rule_SourceHostRule_4024(
+			Rule source) {
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
-		for (Iterator<?> destinations = source.getSourceHostPolicy().iterator(); destinations
+		for (Iterator<?> destinations = source.getSourceHostRule().iterator(); destinations
 				.hasNext();) {
 			Host destination = (Host) destinations.next();
 			result.add(new MdnLinkDescriptor(source, destination,
-					MdnElementTypes.PolicySourceHostPolicy_4023,
-					PolicySourceHostPolicyEditPart.VISUAL_ID));
+					MdnElementTypes.RuleSourceHostRule_4024,
+					RuleSourceHostRuleEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -842,15 +983,15 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<MdnLinkDescriptor> getOutgoingFeatureModelFacetLinks_Policy_TargetHostPolicy_4009(
-			Policy source) {
+	private static Collection<MdnLinkDescriptor> getOutgoingFeatureModelFacetLinks_Rule_TargetHostRule_4025(
+			Rule source) {
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
-		for (Iterator<?> destinations = source.getTargetHostPolicy().iterator(); destinations
+		for (Iterator<?> destinations = source.getTargetHostRule().iterator(); destinations
 				.hasNext();) {
 			Host destination = (Host) destinations.next();
 			result.add(new MdnLinkDescriptor(source, destination,
-					MdnElementTypes.PolicyTargetHostPolicy_4009,
-					PolicyTargetHostPolicyEditPart.VISUAL_ID));
+					MdnElementTypes.RuleTargetHostRule_4025,
+					RuleTargetHostRuleEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -858,32 +999,48 @@ public class MdnDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<MdnLinkDescriptor> getOutgoingFeatureModelFacetLinks_Policy_PolicyCondition_4016(
-			Policy source) {
+	private static Collection<MdnLinkDescriptor> getOutgoingFeatureModelFacetLinks_Rule_RuleCondition_4026(
+			Rule source) {
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
-		Condition destination = source.getPolicyCondition();
+		Condition destination = source.getRuleCondition();
 		if (destination == null) {
 			return result;
 		}
 		result.add(new MdnLinkDescriptor(source, destination,
-				MdnElementTypes.PolicyPolicyCondition_4016,
-				PolicyPolicyConditionEditPart.VISUAL_ID));
+				MdnElementTypes.RuleRuleCondition_4026,
+				RuleRuleConditionEditPart.VISUAL_ID));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private static Collection<MdnLinkDescriptor> getOutgoingFeatureModelFacetLinks_Policy_PolicyAction_4015(
-			Policy source) {
+	private static Collection<MdnLinkDescriptor> getOutgoingFeatureModelFacetLinks_Rule_RuleAction_4027(
+			Rule source) {
 		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
-		Action destination = source.getPolicyAction();
+		Action destination = source.getRuleAction();
 		if (destination == null) {
 			return result;
 		}
 		result.add(new MdnLinkDescriptor(source, destination,
-				MdnElementTypes.PolicyPolicyAction_4015,
-				PolicyPolicyActionEditPart.VISUAL_ID));
+				MdnElementTypes.RuleRuleAction_4027,
+				RuleRuleActionEditPart.VISUAL_ID));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<MdnLinkDescriptor> getOutgoingFeatureModelFacetLinks_Rule_TargetGroupRule_4028(
+			Rule source) {
+		LinkedList<MdnLinkDescriptor> result = new LinkedList<MdnLinkDescriptor>();
+		Group destination = source.getTargetGroupRule();
+		if (destination == null) {
+			return result;
+		}
+		result.add(new MdnLinkDescriptor(source, destination,
+				MdnElementTypes.RuleTargetGroupRule_4028,
+				RuleTargetGroupRuleEditPart.VISUAL_ID));
 		return result;
 	}
 

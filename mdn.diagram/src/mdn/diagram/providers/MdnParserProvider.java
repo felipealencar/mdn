@@ -7,9 +7,11 @@ import mdn.MdnPackage;
 import mdn.diagram.edit.parts.ActionTypeEditPart;
 import mdn.diagram.edit.parts.ConditionConditionEditPart;
 import mdn.diagram.edit.parts.ControllerNameEditPart;
+import mdn.diagram.edit.parts.GroupNameEditPart;
+import mdn.diagram.edit.parts.HostName2EditPart;
 import mdn.diagram.edit.parts.HostNameEditPart;
 import mdn.diagram.edit.parts.PacketHeaderOperatorHeaderValueEditPart;
-import mdn.diagram.edit.parts.PolicyNameEditPart;
+import mdn.diagram.edit.parts.RuleNameEditPart;
 import mdn.diagram.edit.parts.SwitchNameEditPart;
 import mdn.diagram.edit.parts.TimeOperatorBeginDateEndDatEditPart;
 import mdn.diagram.edit.parts.TrafficOperatorUnitValueEditPart;
@@ -93,48 +95,48 @@ public class MdnParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser actionType_5011Parser;
+	private IParser actionType_5012Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getActionType_5011Parser() {
-		if (actionType_5011Parser == null) {
+	private IParser getActionType_5012Parser() {
+		if (actionType_5012Parser == null) {
 			EAttribute editableFeature = MdnPackage.eINSTANCE.getAction_Type();
 			EnumParser parser = new EnumParser(editableFeature);
-			actionType_5011Parser = parser;
+			actionType_5012Parser = parser;
 		}
-		return actionType_5011Parser;
+		return actionType_5012Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser conditionCondition_5010Parser;
+	private IParser conditionCondition_5013Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getConditionCondition_5010Parser() {
-		if (conditionCondition_5010Parser == null) {
+	private IParser getConditionCondition_5013Parser() {
+		if (conditionCondition_5013Parser == null) {
 			EAttribute editableFeature = MdnPackage.eINSTANCE
 					.getCondition_Condition();
 			EnumParser parser = new EnumParser(editableFeature);
-			conditionCondition_5010Parser = parser;
+			conditionCondition_5013Parser = parser;
 		}
-		return conditionCondition_5010Parser;
+		return conditionCondition_5013Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser trafficOperatorUnitValue_5007Parser;
+	private IParser trafficOperatorUnitValue_5014Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getTrafficOperatorUnitValue_5007Parser() {
-		if (trafficOperatorUnitValue_5007Parser == null) {
+	private IParser getTrafficOperatorUnitValue_5014Parser() {
+		if (trafficOperatorUnitValue_5014Parser == null) {
 			EAttribute[] features = new EAttribute[] {
 					MdnPackage.eINSTANCE.getTraffic_Operator(),
 					MdnPackage.eINSTANCE.getTraffic_Unit(),
@@ -143,21 +145,21 @@ public class MdnParserProvider extends AbstractProvider implements
 			parser.setViewPattern("{0}: {2}{1}"); //$NON-NLS-1$
 			parser.setEditorPattern("{0}: {2}{1}"); //$NON-NLS-1$
 			parser.setEditPattern("{0}: {2}{1}"); //$NON-NLS-1$
-			trafficOperatorUnitValue_5007Parser = parser;
+			trafficOperatorUnitValue_5014Parser = parser;
 		}
-		return trafficOperatorUnitValue_5007Parser;
+		return trafficOperatorUnitValue_5014Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser timeOperatorBeginDateEndDate_5008Parser;
+	private IParser timeOperatorBeginDateEndDate_5015Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getTimeOperatorBeginDateEndDate_5008Parser() {
-		if (timeOperatorBeginDateEndDate_5008Parser == null) {
+	private IParser getTimeOperatorBeginDateEndDate_5015Parser() {
+		if (timeOperatorBeginDateEndDate_5015Parser == null) {
 			EAttribute[] features = new EAttribute[] {
 					MdnPackage.eINSTANCE.getTime_Operator(),
 					MdnPackage.eINSTANCE.getTime_BeginDate(),
@@ -166,21 +168,21 @@ public class MdnParserProvider extends AbstractProvider implements
 			parser.setViewPattern("{0}: {1} - {2}"); //$NON-NLS-1$
 			parser.setEditorPattern("{0}: {1} - {2}"); //$NON-NLS-1$
 			parser.setEditPattern("{0}: {1} - {2}"); //$NON-NLS-1$
-			timeOperatorBeginDateEndDate_5008Parser = parser;
+			timeOperatorBeginDateEndDate_5015Parser = parser;
 		}
-		return timeOperatorBeginDateEndDate_5008Parser;
+		return timeOperatorBeginDateEndDate_5015Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser packetHeaderOperatorHeaderValue_5009Parser;
+	private IParser packetHeaderOperatorHeaderValue_5016Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getPacketHeaderOperatorHeaderValue_5009Parser() {
-		if (packetHeaderOperatorHeaderValue_5009Parser == null) {
+	private IParser getPacketHeaderOperatorHeaderValue_5016Parser() {
+		if (packetHeaderOperatorHeaderValue_5016Parser == null) {
 			EAttribute[] features = new EAttribute[] {
 					MdnPackage.eINSTANCE.getPacketHeader_Operator(),
 					MdnPackage.eINSTANCE.getPacketHeader_Header(),
@@ -189,27 +191,63 @@ public class MdnParserProvider extends AbstractProvider implements
 			parser.setViewPattern("{0}: [{1}] {2}"); //$NON-NLS-1$
 			parser.setEditorPattern("{0}: [{1}] {2}"); //$NON-NLS-1$
 			parser.setEditPattern("{0}: [{1}] {2}"); //$NON-NLS-1$
-			packetHeaderOperatorHeaderValue_5009Parser = parser;
+			packetHeaderOperatorHeaderValue_5016Parser = parser;
 		}
-		return packetHeaderOperatorHeaderValue_5009Parser;
+		return packetHeaderOperatorHeaderValue_5016Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser policyName_5004Parser;
+	private IParser ruleName_5017Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getPolicyName_5004Parser() {
-		if (policyName_5004Parser == null) {
+	private IParser getRuleName_5017Parser() {
+		if (ruleName_5017Parser == null) {
 			EAttribute[] features = new EAttribute[] { MdnPackage.eINSTANCE
-					.getPolicy_Name() };
+					.getRule_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			policyName_5004Parser = parser;
+			ruleName_5017Parser = parser;
 		}
-		return policyName_5004Parser;
+		return ruleName_5017Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser groupName_5019Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getGroupName_5019Parser() {
+		if (groupName_5019Parser == null) {
+			EAttribute[] features = new EAttribute[] { MdnPackage.eINSTANCE
+					.getGroup_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			groupName_5019Parser = parser;
+		}
+		return groupName_5019Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser hostName_5018Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getHostName_5018Parser() {
+		if (hostName_5018Parser == null) {
+			EAttribute[] features = new EAttribute[] { MdnPackage.eINSTANCE
+					.getNetworkNode_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			hostName_5018Parser = parser;
+		}
+		return hostName_5018Parser;
 	}
 
 	/**
@@ -225,18 +263,22 @@ public class MdnParserProvider extends AbstractProvider implements
 			return getSwitchName_5003Parser();
 
 		case ActionTypeEditPart.VISUAL_ID:
-			return getActionType_5011Parser();
+			return getActionType_5012Parser();
 
 		case ConditionConditionEditPart.VISUAL_ID:
-			return getConditionCondition_5010Parser();
+			return getConditionCondition_5013Parser();
 		case TrafficOperatorUnitValueEditPart.VISUAL_ID:
-			return getTrafficOperatorUnitValue_5007Parser();
+			return getTrafficOperatorUnitValue_5014Parser();
 		case TimeOperatorBeginDateEndDatEditPart.VISUAL_ID:
-			return getTimeOperatorBeginDateEndDate_5008Parser();
+			return getTimeOperatorBeginDateEndDate_5015Parser();
 		case PacketHeaderOperatorHeaderValueEditPart.VISUAL_ID:
-			return getPacketHeaderOperatorHeaderValue_5009Parser();
-		case PolicyNameEditPart.VISUAL_ID:
-			return getPolicyName_5004Parser();
+			return getPacketHeaderOperatorHeaderValue_5016Parser();
+		case RuleNameEditPart.VISUAL_ID:
+			return getRuleName_5017Parser();
+		case GroupNameEditPart.VISUAL_ID:
+			return getGroupName_5019Parser();
+		case HostName2EditPart.VISUAL_ID:
+			return getHostName_5018Parser();
 		}
 		return null;
 	}

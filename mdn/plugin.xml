@@ -15,7 +15,8 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            name="mdn">
+            name="mdn"
+            application="org.eclipse.ui.ide.workbench">
          <property
                name="appName"
                value="mdn">

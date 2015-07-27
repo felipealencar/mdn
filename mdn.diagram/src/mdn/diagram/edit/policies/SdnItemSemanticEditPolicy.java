@@ -6,9 +6,10 @@ package mdn.diagram.edit.policies;
 import mdn.diagram.edit.commands.ActionCreateCommand;
 import mdn.diagram.edit.commands.ConditionCreateCommand;
 import mdn.diagram.edit.commands.ControllerCreateCommand;
+import mdn.diagram.edit.commands.GroupCreateCommand;
 import mdn.diagram.edit.commands.HostCreateCommand;
 import mdn.diagram.edit.commands.PacketHeaderCreateCommand;
-import mdn.diagram.edit.commands.PolicyCreateCommand;
+import mdn.diagram.edit.commands.RuleCreateCommand;
 import mdn.diagram.edit.commands.SwitchCreateCommand;
 import mdn.diagram.edit.commands.TimeCreateCommand;
 import mdn.diagram.edit.commands.TrafficCreateCommand;
@@ -46,23 +47,26 @@ public class SdnItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy {
 		if (MdnElementTypes.Switch_2003 == req.getElementType()) {
 			return getGEFWrapper(new SwitchCreateCommand(req));
 		}
-		if (MdnElementTypes.Action_2011 == req.getElementType()) {
+		if (MdnElementTypes.Action_2012 == req.getElementType()) {
 			return getGEFWrapper(new ActionCreateCommand(req));
 		}
-		if (MdnElementTypes.Condition_2010 == req.getElementType()) {
+		if (MdnElementTypes.Condition_2013 == req.getElementType()) {
 			return getGEFWrapper(new ConditionCreateCommand(req));
 		}
-		if (MdnElementTypes.Traffic_2007 == req.getElementType()) {
+		if (MdnElementTypes.Traffic_2014 == req.getElementType()) {
 			return getGEFWrapper(new TrafficCreateCommand(req));
 		}
-		if (MdnElementTypes.Time_2008 == req.getElementType()) {
+		if (MdnElementTypes.Time_2015 == req.getElementType()) {
 			return getGEFWrapper(new TimeCreateCommand(req));
 		}
-		if (MdnElementTypes.PacketHeader_2009 == req.getElementType()) {
+		if (MdnElementTypes.PacketHeader_2016 == req.getElementType()) {
 			return getGEFWrapper(new PacketHeaderCreateCommand(req));
 		}
-		if (MdnElementTypes.Policy_2004 == req.getElementType()) {
-			return getGEFWrapper(new PolicyCreateCommand(req));
+		if (MdnElementTypes.Rule_2017 == req.getElementType()) {
+			return getGEFWrapper(new RuleCreateCommand(req));
+		}
+		if (MdnElementTypes.Group_2018 == req.getElementType()) {
+			return getGEFWrapper(new GroupCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

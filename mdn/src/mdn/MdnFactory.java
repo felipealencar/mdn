@@ -59,13 +59,13 @@ public interface MdnFactory extends EFactory
   Switch createSwitch();
 
   /**
-   * Returns a new object of class '<em>Policy</em>'.
+   * Returns a new object of class '<em>Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Policy</em>'.
+   * @return a new object of class '<em>Rule</em>'.
    * @generated
    */
-  Policy createPolicy();
+  Rule createRule();
 
   /**
    * Returns a new object of class '<em>Action</em>'.
@@ -111,6 +111,15 @@ public interface MdnFactory extends EFactory
    * @generated
    */
   PacketHeader createPacketHeader();
+
+  /**
+   * Returns a new object of class '<em>Group</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Group</em>'.
+   * @generated
+   */
+  Group createGroup();
 
   /**
    * Returns the package supported by this factory.

@@ -275,8 +275,8 @@ public class HostEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(MdnElementTypes.PolicySourceHostPolicy_4023);
-		types.add(MdnElementTypes.PolicyTargetHostPolicy_4009);
+		types.add(MdnElementTypes.RuleSourceHostRule_4024);
+		types.add(MdnElementTypes.RuleTargetHostRule_4025);
 		types.add(MdnElementTypes.ActionActionForwardToNode_4013);
 		return types;
 	}
@@ -286,12 +286,12 @@ public class HostEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.PolicySourceHostPolicy_4023) {
-			types.add(MdnElementTypes.Policy_2004);
-		} else if (relationshipType == MdnElementTypes.PolicyTargetHostPolicy_4009) {
-			types.add(MdnElementTypes.Policy_2004);
+		if (relationshipType == MdnElementTypes.RuleSourceHostRule_4024) {
+			types.add(MdnElementTypes.Rule_2017);
+		} else if (relationshipType == MdnElementTypes.RuleTargetHostRule_4025) {
+			types.add(MdnElementTypes.Rule_2017);
 		} else if (relationshipType == MdnElementTypes.ActionActionForwardToNode_4013) {
-			types.add(MdnElementTypes.Action_2011);
+			types.add(MdnElementTypes.Action_2012);
 		}
 		return types;
 	}

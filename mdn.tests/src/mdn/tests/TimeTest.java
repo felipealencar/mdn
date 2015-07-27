@@ -15,7 +15,7 @@ import mdn.Time;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TimeTest extends PolicyObjectTest
+public class TimeTest extends RuleObjectTest
 {
 
   /**

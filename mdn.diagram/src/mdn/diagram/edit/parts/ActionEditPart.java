@@ -50,7 +50,7 @@ public class ActionEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2011;
+	public static final int VISUAL_ID = 2012;
 
 	/**
 	 * @generated
@@ -266,6 +266,9 @@ public class ActionEditPart extends AbstractBorderedShapeEditPart {
 		if (targetEditPart instanceof SwitchEditPart) {
 			types.add(MdnElementTypes.ActionActionForwardToNode_4013);
 		}
+		if (targetEditPart instanceof Host2EditPart) {
+			types.add(MdnElementTypes.ActionActionForwardToNode_4013);
+		}
 		return types;
 	}
 
@@ -275,11 +278,12 @@ public class ActionEditPart extends AbstractBorderedShapeEditPart {
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == MdnElementTypes.ActionActionPacketHeader_4012) {
-			types.add(MdnElementTypes.PacketHeader_2009);
+			types.add(MdnElementTypes.PacketHeader_2016);
 		} else if (relationshipType == MdnElementTypes.ActionActionForwardToNode_4013) {
 			types.add(MdnElementTypes.Controller_2001);
 			types.add(MdnElementTypes.Host_2002);
 			types.add(MdnElementTypes.Switch_2003);
+			types.add(MdnElementTypes.Host_3001);
 		}
 		return types;
 	}
@@ -289,7 +293,7 @@ public class ActionEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(MdnElementTypes.PolicyPolicyAction_4015);
+		types.add(MdnElementTypes.RuleRuleAction_4027);
 		return types;
 	}
 
@@ -298,8 +302,8 @@ public class ActionEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.PolicyPolicyAction_4015) {
-			types.add(MdnElementTypes.Policy_2004);
+		if (relationshipType == MdnElementTypes.RuleRuleAction_4027) {
+			types.add(MdnElementTypes.Rule_2017);
 		}
 		return types;
 	}

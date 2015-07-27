@@ -64,7 +64,7 @@ public class PacketHeaderOperatorHeaderValueEditPart extends LabelEditPart
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5009;
+	public static final int VISUAL_ID = 5016;
 
 	/**
 	 * @generated
@@ -347,7 +347,7 @@ public class PacketHeaderOperatorHeaderValueEditPart extends LabelEditPart
 		if (parser == null) {
 			parser = MdnParserProvider
 					.getParser(
-							MdnElementTypes.PacketHeader_2009,
+							MdnElementTypes.PacketHeader_2016,
 							getParserElement(),
 							MdnVisualIDRegistry
 									.getType(mdn.diagram.edit.parts.PacketHeaderOperatorHeaderValueEditPart.VISUAL_ID));

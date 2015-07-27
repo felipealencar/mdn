@@ -41,7 +41,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="sdn.gmftool#//@palette/@tools.0/@tools.3"/>
+          href="sdn.gmftool#//@palette/@tools.0/@tools.4"/>
       <diagramNode
           href="sdn.gmfgraph#Host"/>
     </ownedChild>
@@ -61,14 +61,14 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="sdn.gmftool#//@palette/@tools.0/@tools.6"/>
+          href="sdn.gmftool#//@palette/@tools.0/@tools.7"/>
       <diagramNode
           href="sdn.gmfgraph#Switch"/>
     </ownedChild>
   </nodes>
   <nodes>
     <containmentFeature
-        href="sdn.ecore#//Sdn/policyObjects"/>
+        href="sdn.ecore#//Sdn/ruleObjects"/>
     <ownedChild>
       <domainMetaElement
           href="sdn.ecore#//Action"/>
@@ -88,7 +88,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="sdn.ecore#//Sdn/policyObjects"/>
+        href="sdn.ecore#//Sdn/ruleObjects"/>
     <ownedChild>
       <domainMetaElement
           href="sdn.ecore#//Condition"/>
@@ -108,7 +108,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="sdn.ecore#//Sdn/policyObjects"/>
+        href="sdn.ecore#//Sdn/ruleObjects"/>
     <ownedChild>
       <domainMetaElement
           href="sdn.ecore#//Traffic"/>
@@ -128,14 +128,14 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="sdn.gmftool#//@palette/@tools.0/@tools.8"/>
+          href="sdn.gmftool#//@palette/@tools.0/@tools.9"/>
       <diagramNode
           href="sdn.gmfgraph#Traffic"/>
     </ownedChild>
   </nodes>
   <nodes>
     <containmentFeature
-        href="sdn.ecore#//Sdn/policyObjects"/>
+        href="sdn.ecore#//Sdn/ruleObjects"/>
     <ownedChild>
       <domainMetaElement
           href="sdn.ecore#//Time"/>
@@ -155,14 +155,14 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="sdn.gmftool#//@palette/@tools.0/@tools.7"/>
+          href="sdn.gmftool#//@palette/@tools.0/@tools.8"/>
       <diagramNode
           href="sdn.gmfgraph#Time"/>
     </ownedChild>
   </nodes>
   <nodes>
     <containmentFeature
-        href="sdn.ecore#//Sdn/policyObjects"/>
+        href="sdn.ecore#//Sdn/ruleObjects"/>
     <ownedChild>
       <domainMetaElement
           href="sdn.ecore#//PacketHeader"/>
@@ -182,7 +182,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="sdn.gmftool#//@palette/@tools.0/@tools.4"/>
+          href="sdn.gmftool#//@palette/@tools.0/@tools.5"/>
       <diagramNode
           href="sdn.gmfgraph#PacketHeader"/>
     </ownedChild>
@@ -192,19 +192,51 @@
         href="sdn.ecore#//Sdn/policies"/>
     <ownedChild>
       <domainMetaElement
-          href="sdn.ecore#//Policy"/>
+          href="sdn.ecore#//Rule"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="sdn.gmfgraph#PolicyLabel"/>
+            href="sdn.gmfgraph#RuleLabel"/>
         <features
-            href="sdn.ecore#//Policy/name"/>
+            href="sdn.ecore#//Rule/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="sdn.gmftool#//@palette/@tools.0/@tools.5"/>
+          href="sdn.gmftool#//@palette/@tools.0/@tools.6"/>
       <diagramNode
-          href="sdn.gmfgraph#Policy"/>
+          href="sdn.gmfgraph#Rule"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="sdn.ecore#//Sdn/groups"/>
+    <ownedChild
+        relatedDiagrams="//@diagram">
+      <domainMetaElement
+          href="sdn.ecore#//Group"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="sdn.gmfgraph#GroupLabel"/>
+        <features
+            href="sdn.ecore#//Group/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="sdn.gmftool#//@palette/@tools.0/@tools.3"/>
+      <diagramNode
+          href="sdn.gmfgraph#Group"/>
+      <children
+          compartment="//@nodes.9/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.1/@ownedChild">
+        <containmentFeature
+            href="sdn.ecore#//Group/hostsGroup"/>
+      </children>
+      <compartments
+          children="//@nodes.9/@ownedChild/@children.0">
+        <compartment
+            href="sdn.gmfgraph#GroupHostsGroupCompartment"/>
+      </compartments>
     </ownedChild>
   </nodes>
   <links>
@@ -232,7 +264,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="sdn.gmftool#//@palette/@tools.1/@tools.8"/>
+        href="sdn.gmftool#//@palette/@tools.1/@tools.7"/>
     <diagramLink
         href="sdn.gmfgraph#SwitchSwitchController"/>
     <linkMetaFeature
@@ -248,7 +280,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="sdn.gmftool#//@palette/@tools.1/@tools.9"/>
+        href="sdn.gmftool#//@palette/@tools.1/@tools.8"/>
     <diagramLink
         href="sdn.gmfgraph#SwitchSwitches"/>
     <linkMetaFeature
@@ -260,64 +292,80 @@
         xsi:type="gmfmap:DesignLabelMapping"
         readOnly="true">
       <diagramLabel
-          href="sdn.gmfgraph#PolicySourceHostPolicyExternalLabel"/>
+          href="sdn.gmfgraph#RuleSourceHostRuleExternalLabel"/>
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
         href="sdn.gmftool#//@palette/@tools.1/@tools.10"/>
     <diagramLink
-        href="sdn.gmfgraph#PolicySourceHostPolicy"/>
+        href="sdn.gmfgraph#RuleSourceHostRule"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="sdn.ecore#//Policy/sourceHostPolicy"/>
+        href="sdn.ecore#//Rule/sourceHostRule"/>
   </links>
   <links>
     <labelMappings
         xsi:type="gmfmap:DesignLabelMapping"
         readOnly="true">
       <diagramLabel
-          href="sdn.gmfgraph#PolicyTargetHostPolicyExternalLabel"/>
+          href="sdn.gmfgraph#RuleTargetHostRuleExternalLabel"/>
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="sdn.gmftool#//@palette/@tools.1/@tools.11"/>
+        href="sdn.gmftool#//@palette/@tools.1/@tools.12"/>
     <diagramLink
-        href="sdn.gmfgraph#PolicyTargetHostPolicy"/>
+        href="sdn.gmfgraph#RuleTargetHostRule"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="sdn.ecore#//Policy/targetHostPolicy"/>
+        href="sdn.ecore#//Rule/targetHostRule"/>
   </links>
   <links>
     <labelMappings
         xsi:type="gmfmap:DesignLabelMapping"
         readOnly="true">
       <diagramLabel
-          href="sdn.gmfgraph#PolicyPolicyConditionExternalLabel"/>
-    </labelMappings>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="sdn.gmftool#//@palette/@tools.1/@tools.7"/>
-    <diagramLink
-        href="sdn.gmfgraph#PolicyPolicyCondition"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="sdn.ecore#//Policy/policyCondition"/>
-  </links>
-  <links>
-    <labelMappings
-        xsi:type="gmfmap:DesignLabelMapping"
-        readOnly="true">
-      <diagramLabel
-          href="sdn.gmfgraph#PolicyPolicyActionExternalLabel"/>
+          href="sdn.gmfgraph#RuleRuleConditionExternalLabel"/>
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
         href="sdn.gmftool#//@palette/@tools.1/@tools.6"/>
     <diagramLink
-        href="sdn.gmfgraph#PolicyPolicyAction"/>
+        href="sdn.gmfgraph#RuleRuleCondition"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="sdn.ecore#//Policy/policyAction"/>
+        href="sdn.ecore#//Rule/ruleCondition"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="sdn.gmfgraph#RuleRuleActionExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="sdn.gmftool#//@palette/@tools.1/@tools.9"/>
+    <diagramLink
+        href="sdn.gmfgraph#RuleRuleAction"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="sdn.ecore#//Rule/ruleAction"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="sdn.gmfgraph#RuleTargetGroupRuleExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="sdn.gmftool#//@palette/@tools.1/@tools.11"/>
+    <diagramLink
+        href="sdn.gmfgraph#RuleTargetGroupRule"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="sdn.ecore#//Rule/targetGroupRule"/>
   </links>
   <links>
     <labelMappings

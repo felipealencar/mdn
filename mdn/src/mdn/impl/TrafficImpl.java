@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class TrafficImpl extends PolicyObjectImpl implements Traffic
+public class TrafficImpl extends RuleObjectImpl implements Traffic
 {
   /**
    * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.

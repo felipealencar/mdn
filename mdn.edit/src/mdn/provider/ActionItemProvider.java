@@ -30,7 +30,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class ActionItemProvider
-  extends PolicyObjectItemProvider
+  extends RuleObjectItemProvider
   implements
     IEditingDomainItemProvider,
     IStructuredItemContentProvider,

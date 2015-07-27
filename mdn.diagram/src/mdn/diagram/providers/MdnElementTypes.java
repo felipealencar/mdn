@@ -17,14 +17,17 @@ import mdn.diagram.edit.parts.ConditionConditionTimeEditPart;
 import mdn.diagram.edit.parts.ConditionConditionTrafficEditPart;
 import mdn.diagram.edit.parts.ConditionEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
+import mdn.diagram.edit.parts.GroupEditPart;
+import mdn.diagram.edit.parts.Host2EditPart;
 import mdn.diagram.edit.parts.HostEditPart;
 import mdn.diagram.edit.parts.HostHostSwitchEditPart;
 import mdn.diagram.edit.parts.PacketHeaderEditPart;
-import mdn.diagram.edit.parts.PolicyEditPart;
-import mdn.diagram.edit.parts.PolicyPolicyActionEditPart;
-import mdn.diagram.edit.parts.PolicyPolicyConditionEditPart;
-import mdn.diagram.edit.parts.PolicySourceHostPolicyEditPart;
-import mdn.diagram.edit.parts.PolicyTargetHostPolicyEditPart;
+import mdn.diagram.edit.parts.RuleEditPart;
+import mdn.diagram.edit.parts.RuleRuleActionEditPart;
+import mdn.diagram.edit.parts.RuleRuleConditionEditPart;
+import mdn.diagram.edit.parts.RuleSourceHostRuleEditPart;
+import mdn.diagram.edit.parts.RuleTargetGroupRuleEditPart;
+import mdn.diagram.edit.parts.RuleTargetHostRuleEditPart;
 import mdn.diagram.edit.parts.SdnEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
 import mdn.diagram.edit.parts.SwitchSwitchControllerEditPart;
@@ -89,27 +92,43 @@ public class MdnElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Action_2011 = getElementType("mdn.diagram.Action_2011"); //$NON-NLS-1$
+	public static final IElementType Action_2012 = getElementType("mdn.diagram.Action_2012"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType Condition_2010 = getElementType("mdn.diagram.Condition_2010"); //$NON-NLS-1$
+	public static final IElementType Condition_2013 = getElementType("mdn.diagram.Condition_2013"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType Traffic_2007 = getElementType("mdn.diagram.Traffic_2007"); //$NON-NLS-1$
+	public static final IElementType Traffic_2014 = getElementType("mdn.diagram.Traffic_2014"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType Time_2008 = getElementType("mdn.diagram.Time_2008"); //$NON-NLS-1$
+	public static final IElementType Time_2015 = getElementType("mdn.diagram.Time_2015"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType PacketHeader_2009 = getElementType("mdn.diagram.PacketHeader_2009"); //$NON-NLS-1$
+	public static final IElementType PacketHeader_2016 = getElementType("mdn.diagram.PacketHeader_2016"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType Policy_2004 = getElementType("mdn.diagram.Policy_2004"); //$NON-NLS-1$
+	public static final IElementType Rule_2017 = getElementType("mdn.diagram.Rule_2017"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Group_2018 = getElementType("mdn.diagram.Group_2018"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Host_3001 = getElementType("mdn.diagram.Host_3001"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -125,20 +144,28 @@ public class MdnElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType PolicySourceHostPolicy_4023 = getElementType("mdn.diagram.PolicySourceHostPolicy_4023"); //$NON-NLS-1$
+	public static final IElementType RuleSourceHostRule_4024 = getElementType("mdn.diagram.RuleSourceHostRule_4024"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType PolicyTargetHostPolicy_4009 = getElementType("mdn.diagram.PolicyTargetHostPolicy_4009"); //$NON-NLS-1$
+	public static final IElementType RuleTargetHostRule_4025 = getElementType("mdn.diagram.RuleTargetHostRule_4025"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType PolicyPolicyCondition_4016 = getElementType("mdn.diagram.PolicyPolicyCondition_4016"); //$NON-NLS-1$
+	public static final IElementType RuleRuleCondition_4026 = getElementType("mdn.diagram.RuleRuleCondition_4026"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType PolicyPolicyAction_4015 = getElementType("mdn.diagram.PolicyPolicyAction_4015"); //$NON-NLS-1$
+	public static final IElementType RuleRuleAction_4027 = getElementType("mdn.diagram.RuleRuleAction_4027"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType RuleTargetGroupRule_4028 = getElementType("mdn.diagram.RuleTargetGroupRule_4028"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -279,18 +306,22 @@ public class MdnElementTypes {
 
 			elements.put(Switch_2003, MdnPackage.eINSTANCE.getSwitch());
 
-			elements.put(Action_2011, MdnPackage.eINSTANCE.getAction());
+			elements.put(Action_2012, MdnPackage.eINSTANCE.getAction());
 
-			elements.put(Condition_2010, MdnPackage.eINSTANCE.getCondition());
+			elements.put(Condition_2013, MdnPackage.eINSTANCE.getCondition());
 
-			elements.put(Traffic_2007, MdnPackage.eINSTANCE.getTraffic());
+			elements.put(Traffic_2014, MdnPackage.eINSTANCE.getTraffic());
 
-			elements.put(Time_2008, MdnPackage.eINSTANCE.getTime());
+			elements.put(Time_2015, MdnPackage.eINSTANCE.getTime());
 
-			elements.put(PacketHeader_2009,
+			elements.put(PacketHeader_2016,
 					MdnPackage.eINSTANCE.getPacketHeader());
 
-			elements.put(Policy_2004, MdnPackage.eINSTANCE.getPolicy());
+			elements.put(Rule_2017, MdnPackage.eINSTANCE.getRule());
+
+			elements.put(Group_2018, MdnPackage.eINSTANCE.getGroup());
+
+			elements.put(Host_3001, MdnPackage.eINSTANCE.getHost());
 
 			elements.put(HostHostSwitch_4004,
 					MdnPackage.eINSTANCE.getHost_HostSwitch());
@@ -301,17 +332,20 @@ public class MdnElementTypes {
 			elements.put(SwitchSwitches_4022,
 					MdnPackage.eINSTANCE.getSwitch_Switches());
 
-			elements.put(PolicySourceHostPolicy_4023,
-					MdnPackage.eINSTANCE.getPolicy_SourceHostPolicy());
+			elements.put(RuleSourceHostRule_4024,
+					MdnPackage.eINSTANCE.getRule_SourceHostRule());
 
-			elements.put(PolicyTargetHostPolicy_4009,
-					MdnPackage.eINSTANCE.getPolicy_TargetHostPolicy());
+			elements.put(RuleTargetHostRule_4025,
+					MdnPackage.eINSTANCE.getRule_TargetHostRule());
 
-			elements.put(PolicyPolicyCondition_4016,
-					MdnPackage.eINSTANCE.getPolicy_PolicyCondition());
+			elements.put(RuleRuleCondition_4026,
+					MdnPackage.eINSTANCE.getRule_RuleCondition());
 
-			elements.put(PolicyPolicyAction_4015,
-					MdnPackage.eINSTANCE.getPolicy_PolicyAction());
+			elements.put(RuleRuleAction_4027,
+					MdnPackage.eINSTANCE.getRule_RuleAction());
+
+			elements.put(RuleTargetGroupRule_4028,
+					MdnPackage.eINSTANCE.getRule_TargetGroupRule());
 
 			elements.put(ActionActionPacketHeader_4012,
 					MdnPackage.eINSTANCE.getAction_ActionPacketHeader());
@@ -348,19 +382,22 @@ public class MdnElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Controller_2001);
 			KNOWN_ELEMENT_TYPES.add(Host_2002);
 			KNOWN_ELEMENT_TYPES.add(Switch_2003);
-			KNOWN_ELEMENT_TYPES.add(Action_2011);
-			KNOWN_ELEMENT_TYPES.add(Condition_2010);
-			KNOWN_ELEMENT_TYPES.add(Traffic_2007);
-			KNOWN_ELEMENT_TYPES.add(Time_2008);
-			KNOWN_ELEMENT_TYPES.add(PacketHeader_2009);
-			KNOWN_ELEMENT_TYPES.add(Policy_2004);
+			KNOWN_ELEMENT_TYPES.add(Action_2012);
+			KNOWN_ELEMENT_TYPES.add(Condition_2013);
+			KNOWN_ELEMENT_TYPES.add(Traffic_2014);
+			KNOWN_ELEMENT_TYPES.add(Time_2015);
+			KNOWN_ELEMENT_TYPES.add(PacketHeader_2016);
+			KNOWN_ELEMENT_TYPES.add(Rule_2017);
+			KNOWN_ELEMENT_TYPES.add(Group_2018);
+			KNOWN_ELEMENT_TYPES.add(Host_3001);
 			KNOWN_ELEMENT_TYPES.add(HostHostSwitch_4004);
 			KNOWN_ELEMENT_TYPES.add(SwitchSwitchController_4006);
 			KNOWN_ELEMENT_TYPES.add(SwitchSwitches_4022);
-			KNOWN_ELEMENT_TYPES.add(PolicySourceHostPolicy_4023);
-			KNOWN_ELEMENT_TYPES.add(PolicyTargetHostPolicy_4009);
-			KNOWN_ELEMENT_TYPES.add(PolicyPolicyCondition_4016);
-			KNOWN_ELEMENT_TYPES.add(PolicyPolicyAction_4015);
+			KNOWN_ELEMENT_TYPES.add(RuleSourceHostRule_4024);
+			KNOWN_ELEMENT_TYPES.add(RuleTargetHostRule_4025);
+			KNOWN_ELEMENT_TYPES.add(RuleRuleCondition_4026);
+			KNOWN_ELEMENT_TYPES.add(RuleRuleAction_4027);
+			KNOWN_ELEMENT_TYPES.add(RuleTargetGroupRule_4028);
 			KNOWN_ELEMENT_TYPES.add(ActionActionPacketHeader_4012);
 			KNOWN_ELEMENT_TYPES.add(ActionActionForwardToNode_4013);
 			KNOWN_ELEMENT_TYPES.add(ConditionConditionTime_4017);
@@ -384,31 +421,37 @@ public class MdnElementTypes {
 		case SwitchEditPart.VISUAL_ID:
 			return Switch_2003;
 		case ActionEditPart.VISUAL_ID:
-			return Action_2011;
+			return Action_2012;
 		case ConditionEditPart.VISUAL_ID:
-			return Condition_2010;
+			return Condition_2013;
 		case TrafficEditPart.VISUAL_ID:
-			return Traffic_2007;
+			return Traffic_2014;
 		case TimeEditPart.VISUAL_ID:
-			return Time_2008;
+			return Time_2015;
 		case PacketHeaderEditPart.VISUAL_ID:
-			return PacketHeader_2009;
-		case PolicyEditPart.VISUAL_ID:
-			return Policy_2004;
+			return PacketHeader_2016;
+		case RuleEditPart.VISUAL_ID:
+			return Rule_2017;
+		case GroupEditPart.VISUAL_ID:
+			return Group_2018;
+		case Host2EditPart.VISUAL_ID:
+			return Host_3001;
 		case HostHostSwitchEditPart.VISUAL_ID:
 			return HostHostSwitch_4004;
 		case SwitchSwitchControllerEditPart.VISUAL_ID:
 			return SwitchSwitchController_4006;
 		case SwitchSwitchesEditPart.VISUAL_ID:
 			return SwitchSwitches_4022;
-		case PolicySourceHostPolicyEditPart.VISUAL_ID:
-			return PolicySourceHostPolicy_4023;
-		case PolicyTargetHostPolicyEditPart.VISUAL_ID:
-			return PolicyTargetHostPolicy_4009;
-		case PolicyPolicyConditionEditPart.VISUAL_ID:
-			return PolicyPolicyCondition_4016;
-		case PolicyPolicyActionEditPart.VISUAL_ID:
-			return PolicyPolicyAction_4015;
+		case RuleSourceHostRuleEditPart.VISUAL_ID:
+			return RuleSourceHostRule_4024;
+		case RuleTargetHostRuleEditPart.VISUAL_ID:
+			return RuleTargetHostRule_4025;
+		case RuleRuleConditionEditPart.VISUAL_ID:
+			return RuleRuleCondition_4026;
+		case RuleRuleActionEditPart.VISUAL_ID:
+			return RuleRuleAction_4027;
+		case RuleTargetGroupRuleEditPart.VISUAL_ID:
+			return RuleTargetGroupRule_4028;
 		case ActionActionPacketHeaderEditPart.VISUAL_ID:
 			return ActionActionPacketHeader_4012;
 		case ActionActionForwardToNodeEditPart.VISUAL_ID:

@@ -15,7 +15,7 @@ import mdn.Traffic;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TrafficTest extends PolicyObjectTest
+public class TrafficTest extends RuleObjectTest
 {
 
   /**

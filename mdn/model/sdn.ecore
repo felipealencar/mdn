@@ -7,9 +7,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
         eType="#//NetworkNode" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="policies" upperBound="-1"
-        eType="#//Policy" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="policyObjects" upperBound="-1"
-        eType="#//PolicyObject" containment="true"/>
+        eType="#//Rule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleObjects" upperBound="-1"
+        eType="#//RuleObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
+        eType="#//Group" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//NetworkNode">
     <eAnnotations source="gmf.node">
@@ -95,8 +97,9 @@
     <eLiterals name="DROP" value="1"/>
     <eLiterals name="MODIFY" value="2"/>
     <eLiterals name="MONITOR"/>
+    <eLiterals name="LOAD_BALANCE"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Policy">
+  <eClassifiers xsi:type="ecore:EClass" name="Rule">
     <eAnnotations source="gmf.node">
       <details key="figure" value="figures.PolicyFigure"/>
       <details key="label" value="name"/>
@@ -105,7 +108,7 @@
       <details key="tool.small.path" value="/icons/full/obj16/policy.gif"/>
       <details key="label.placement" value="external"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceHostPolicy" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceHostRule" upperBound="-1"
         eType="#//Host" transient="true">
       <eAnnotations source="gmf.link">
         <details key="target.decoration" value="none"/>
@@ -115,7 +118,7 @@
         <details key="tool.name" value="sourceHost"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetHostPolicy" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetHostRule" upperBound="-1"
         eType="#//Host" transient="true">
       <eAnnotations source="gmf.link">
         <details key="target.decoration" value="arrow"/>
@@ -126,7 +129,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="policyCondition" eType="#//Condition"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleCondition" eType="#//Condition"
         transient="true">
       <eAnnotations source="gmf.link">
         <details key="target.decoration" value="none"/>
@@ -135,16 +138,26 @@
         <details key="color" value="0,0,0"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="policyAction" eType="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleAction" eType="#//Action">
       <eAnnotations source="gmf.link">
         <details key="target.decoration" value="none"/>
         <details key="source.decoration" value="none"/>
         <details key="style" value="dash"/>
         <details key="color" value="0,0,0"/>
+        <details key="tool.name" value="ruleAction"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetGroupRule" eType="#//Group">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="arrow"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+        <details key="tool.name" value="targetGroup"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//PolicyObject">
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//RuleObject">
     <eAnnotations source="gmf.node">
       <details key="figure" value="figures.ActionFigure"/>
       <details key="label" value="type"/>
@@ -171,7 +184,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Condition" eSuperTypes="#//PolicyObject">
+  <eClassifiers xsi:type="ecore:EClass" name="Condition" eSuperTypes="#//RuleObject">
     <eAnnotations source="gmf.node">
       <details key="label" value="condition"/>
       <details key="label.icon" value="false"/>
@@ -219,7 +232,7 @@
     <eLiterals name="IN"/>
     <eLiterals name="OUT"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Traffic" eSuperTypes="#//PolicyObject">
+  <eClassifiers xsi:type="ecore:EClass" name="Traffic" eSuperTypes="#//RuleObject">
     <eAnnotations source="gmf.node">
       <details key="figure" value="figures.TrafficFigure"/>
       <details key="label" value="operator,value,unit"/>
@@ -234,7 +247,7 @@
         defaultValueLiteral="MB"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Time" eSuperTypes="#//PolicyObject">
+  <eClassifiers xsi:type="ecore:EClass" name="Time" eSuperTypes="#//RuleObject">
     <eAnnotations source="gmf.node">
       <details key="figure" value="figures.TimeFigure"/>
       <details key="label.icon" value="false"/>
@@ -248,7 +261,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="beginDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PacketHeader" eSuperTypes="#//PolicyObject">
+  <eClassifiers xsi:type="ecore:EClass" name="PacketHeader" eSuperTypes="#//RuleObject">
     <eAnnotations source="gmf.node">
       <details key="figure" value="figures.PacketHeaderFigure"/>
       <details key="label.icon" value="false"/>
@@ -263,5 +276,19 @@
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PolicyObject" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleObject" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Group">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="tool.small.bundle" value="mdn.edit"/>
+      <details key="label.placement" value="external"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hostsGroup" upperBound="-1"
+        eType="#//Host" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

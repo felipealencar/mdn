@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *
  * @generated
  */
-public class PacketHeaderImpl extends PolicyObjectImpl implements PacketHeader
+public class PacketHeaderImpl extends RuleObjectImpl implements PacketHeader
 {
   /**
    * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.

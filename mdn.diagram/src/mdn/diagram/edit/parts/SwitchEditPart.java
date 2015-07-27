@@ -294,10 +294,11 @@ public class SwitchEditPart extends AbstractBorderedShapeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == MdnElementTypes.HostHostSwitch_4004) {
 			types.add(MdnElementTypes.Host_2002);
+			types.add(MdnElementTypes.Host_3001);
 		} else if (relationshipType == MdnElementTypes.SwitchSwitches_4022) {
 			types.add(MdnElementTypes.Switch_2003);
 		} else if (relationshipType == MdnElementTypes.ActionActionForwardToNode_4013) {
-			types.add(MdnElementTypes.Action_2011);
+			types.add(MdnElementTypes.Action_2012);
 		}
 		return types;
 	}

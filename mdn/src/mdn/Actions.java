@@ -55,7 +55,15 @@ public enum Actions implements Enumerator
    * @generated
    * @ordered
    */
-  MONITOR(0, "MONITOR", "MONITOR");
+  MONITOR(0, "MONITOR", "MONITOR"), /**
+   * The '<em><b>LOAD BALANCE</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #LOAD_BALANCE_VALUE
+   * @generated
+   * @ordered
+   */
+  LOAD_BALANCE(0, "LOAD_BALANCE", "LOAD_BALANCE");
 
   /**
    * The '<em><b>FORWARD</b></em>' literal value.
@@ -118,6 +126,21 @@ public enum Actions implements Enumerator
   public static final int MONITOR_VALUE = 0;
 
   /**
+   * The '<em><b>LOAD BALANCE</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>LOAD BALANCE</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #LOAD_BALANCE
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int LOAD_BALANCE_VALUE = 0;
+
+  /**
    * An array of all the '<em><b>Actions</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -130,6 +153,7 @@ public enum Actions implements Enumerator
       DROP,
       MODIFY,
       MONITOR,
+      LOAD_BALANCE,
     };
 
   /**

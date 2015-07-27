@@ -283,8 +283,8 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Mdn"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2011,2010,2007,2008,2009,2004"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4004,4006,4022,4023,4009,4016,4015,4012,4013,4017,4018,4019"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2012,2013,2014,2015,2016,2017,2018,3001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4004,4006,4022,4024,4025,4026,4027,4028,4012,4013,4017,4018,4019"/>
       </viewProvider>
    </extension>
 
@@ -296,16 +296,16 @@
             <method name="getType()" value="Mdn"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002,2003,2011,2010,2007,2008,2009,2004"/>
+            <method name="getType()" value="2001,2002,2003,2012,2013,2014,2015,2016,2017,2018,3001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4004,4006,4022,4023,4009,4016,4015,4012,4013,4017,4018,4019"/>
+            <method name="getType()" value="4004,4006,4022,4024,4025,4026,4027,4028,4012,4013,4017,4018,4019"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5002,5003,5011,5010,5007,5008,5009,5004"/>
+            <method name="getType()" value="5001,5002,5003,5012,5013,5014,5015,5016,5017,5019,5018"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value=""/>
+            <method name="getType()" value="7001"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -319,13 +319,15 @@
          <object class="mdn.diagram.edit.parts.ControllerEditPart" id="Controller_2001"/>
          <object class="mdn.diagram.edit.parts.HostEditPart" id="Host_2002"/>
          <object class="mdn.diagram.edit.parts.SwitchEditPart" id="Switch_2003"/>
-         <object class="mdn.diagram.edit.parts.ActionEditPart" id="Action_2011"/>
-         <object class="mdn.diagram.edit.parts.ConditionEditPart" id="Condition_2010"/>
-         <object class="mdn.diagram.edit.parts.TrafficEditPart" id="Traffic_2007"/>
-         <object class="mdn.diagram.edit.parts.TimeEditPart" id="Time_2008"/>
-         <object class="mdn.diagram.edit.parts.PacketHeaderEditPart" id="PacketHeader_2009"/>
-         <object class="mdn.diagram.edit.parts.PolicyEditPart" id="Policy_2004"/>
-         <context elements="Sdn_1000,Controller_2001,Host_2002,Switch_2003,Action_2011,Condition_2010,Traffic_2007,Time_2008,PacketHeader_2009,Policy_2004,"/>
+         <object class="mdn.diagram.edit.parts.ActionEditPart" id="Action_2012"/>
+         <object class="mdn.diagram.edit.parts.ConditionEditPart" id="Condition_2013"/>
+         <object class="mdn.diagram.edit.parts.TrafficEditPart" id="Traffic_2014"/>
+         <object class="mdn.diagram.edit.parts.TimeEditPart" id="Time_2015"/>
+         <object class="mdn.diagram.edit.parts.PacketHeaderEditPart" id="PacketHeader_2016"/>
+         <object class="mdn.diagram.edit.parts.RuleEditPart" id="Rule_2017"/>
+         <object class="mdn.diagram.edit.parts.GroupEditPart" id="Group_2018"/>
+         <object class="mdn.diagram.edit.parts.Host2EditPart" id="Host_3001"/>
+         <context elements="Sdn_1000,Controller_2001,Host_2002,Switch_2003,Action_2012,Condition_2013,Traffic_2014,Time_2015,PacketHeader_2016,Rule_2017,Group_2018,Host_3001"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -348,7 +350,7 @@
       <decoratorProvider class="mdn.diagram.providers.MdnShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
-            <method name="getType()" value="2001,2002,2003,2011,2010,2007,2008,2009,2004"/>
+            <method name="getType()" value="2001,2002,2003,2012,2013,2014,2015,2016,2017,2018"/>
          </object>
          <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
@@ -398,63 +400,82 @@
       </metamodel>
       <metamodel nsURI="mdn">
          <metamodelType
-               id="mdn.diagram.Action_2011"
-               name="%metatype.name.Action_2011"
+               id="mdn.diagram.Action_2012"
+               name="%metatype.name.Action_2012"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Action"
                edithelper="mdn.diagram.edit.helpers.ActionEditHelper">
-            <param name="semanticHint" value="2011"/>
+            <param name="semanticHint" value="2012"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="mdn">
          <metamodelType
-               id="mdn.diagram.Condition_2010"
-               name="%metatype.name.Condition_2010"
+               id="mdn.diagram.Condition_2013"
+               name="%metatype.name.Condition_2013"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Condition"
                edithelper="mdn.diagram.edit.helpers.ConditionEditHelper">
-            <param name="semanticHint" value="2010"/>
+            <param name="semanticHint" value="2013"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="mdn">
          <metamodelType
-               id="mdn.diagram.Traffic_2007"
-               name="%metatype.name.Traffic_2007"
+               id="mdn.diagram.Traffic_2014"
+               name="%metatype.name.Traffic_2014"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Traffic"
                edithelper="mdn.diagram.edit.helpers.TrafficEditHelper">
-            <param name="semanticHint" value="2007"/>
+            <param name="semanticHint" value="2014"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="mdn">
          <metamodelType
-               id="mdn.diagram.Time_2008"
-               name="%metatype.name.Time_2008"
+               id="mdn.diagram.Time_2015"
+               name="%metatype.name.Time_2015"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Time"
                edithelper="mdn.diagram.edit.helpers.TimeEditHelper">
-            <param name="semanticHint" value="2008"/>
+            <param name="semanticHint" value="2015"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="mdn">
          <metamodelType
-               id="mdn.diagram.PacketHeader_2009"
-               name="%metatype.name.PacketHeader_2009"
+               id="mdn.diagram.PacketHeader_2016"
+               name="%metatype.name.PacketHeader_2016"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="PacketHeader"
                edithelper="mdn.diagram.edit.helpers.PacketHeaderEditHelper">
-            <param name="semanticHint" value="2009"/>
+            <param name="semanticHint" value="2016"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="mdn">
          <metamodelType
-               id="mdn.diagram.Policy_2004"
-               name="%metatype.name.Policy_2004"
+               id="mdn.diagram.Rule_2017"
+               name="%metatype.name.Rule_2017"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Policy"
-               edithelper="mdn.diagram.edit.helpers.PolicyEditHelper">
-            <param name="semanticHint" value="2004"/>
+               eclass="Rule"
+               edithelper="mdn.diagram.edit.helpers.RuleEditHelper">
+            <param name="semanticHint" value="2017"/>
          </metamodelType>
+      </metamodel>
+      <metamodel nsURI="mdn">
+         <metamodelType
+               id="mdn.diagram.Group_2018"
+               name="%metatype.name.Group_2018"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Group"
+               edithelper="mdn.diagram.edit.helpers.GroupEditHelper">
+            <param name="semanticHint" value="2018"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="mdn">
+         <specializationType
+               id="mdn.diagram.Host_3001"
+               name="%metatype.name.Host_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="mdn.diagram.Host_2002"/>
+            <param name="semanticHint" value="3001"/>
+         </specializationType>
       </metamodel>
       <metamodel nsURI="mdn">
          <specializationType
@@ -485,38 +506,47 @@
       </metamodel>
       <metamodel nsURI="mdn">
          <specializationType
-               id="mdn.diagram.PolicySourceHostPolicy_4023"
-               name="%metatype.name.PolicySourceHostPolicy_4023"
+               id="mdn.diagram.RuleSourceHostRule_4024"
+               name="%metatype.name.RuleSourceHostRule_4024"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4023"/>
+            <param name="semanticHint" value="4024"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="mdn">
          <specializationType
-               id="mdn.diagram.PolicyTargetHostPolicy_4009"
-               name="%metatype.name.PolicyTargetHostPolicy_4009"
+               id="mdn.diagram.RuleTargetHostRule_4025"
+               name="%metatype.name.RuleTargetHostRule_4025"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4009"/>
+            <param name="semanticHint" value="4025"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="mdn">
          <specializationType
-               id="mdn.diagram.PolicyPolicyCondition_4016"
-               name="%metatype.name.PolicyPolicyCondition_4016"
+               id="mdn.diagram.RuleRuleCondition_4026"
+               name="%metatype.name.RuleRuleCondition_4026"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4016"/>
+            <param name="semanticHint" value="4026"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="mdn">
          <specializationType
-               id="mdn.diagram.PolicyPolicyAction_4015"
-               name="%metatype.name.PolicyPolicyAction_4015"
+               id="mdn.diagram.RuleRuleAction_4027"
+               name="%metatype.name.RuleRuleAction_4027"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4015"/>
+            <param name="semanticHint" value="4027"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="mdn">
+         <specializationType
+               id="mdn.diagram.RuleTargetGroupRule_4028"
+               name="%metatype.name.RuleTargetGroupRule_4028"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4028"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="mdn">
@@ -580,19 +610,22 @@
          <elementType ref="mdn.diagram.Controller_2001"/>
          <elementType ref="mdn.diagram.Host_2002"/>
          <elementType ref="mdn.diagram.Switch_2003"/>
-         <elementType ref="mdn.diagram.Action_2011"/>
-         <elementType ref="mdn.diagram.Condition_2010"/>
-         <elementType ref="mdn.diagram.Traffic_2007"/>
-         <elementType ref="mdn.diagram.Time_2008"/>
-         <elementType ref="mdn.diagram.PacketHeader_2009"/>
-         <elementType ref="mdn.diagram.Policy_2004"/>
+         <elementType ref="mdn.diagram.Action_2012"/>
+         <elementType ref="mdn.diagram.Condition_2013"/>
+         <elementType ref="mdn.diagram.Traffic_2014"/>
+         <elementType ref="mdn.diagram.Time_2015"/>
+         <elementType ref="mdn.diagram.PacketHeader_2016"/>
+         <elementType ref="mdn.diagram.Rule_2017"/>
+         <elementType ref="mdn.diagram.Group_2018"/>
+         <elementType ref="mdn.diagram.Host_3001"/>
          <elementType ref="mdn.diagram.HostHostSwitch_4004"/>
          <elementType ref="mdn.diagram.SwitchSwitchController_4006"/>
          <elementType ref="mdn.diagram.SwitchSwitches_4022"/>
-         <elementType ref="mdn.diagram.PolicySourceHostPolicy_4023"/>
-         <elementType ref="mdn.diagram.PolicyTargetHostPolicy_4009"/>
-         <elementType ref="mdn.diagram.PolicyPolicyCondition_4016"/>
-         <elementType ref="mdn.diagram.PolicyPolicyAction_4015"/>
+         <elementType ref="mdn.diagram.RuleSourceHostRule_4024"/>
+         <elementType ref="mdn.diagram.RuleTargetHostRule_4025"/>
+         <elementType ref="mdn.diagram.RuleRuleCondition_4026"/>
+         <elementType ref="mdn.diagram.RuleRuleAction_4027"/>
+         <elementType ref="mdn.diagram.RuleTargetGroupRule_4028"/>
          <elementType ref="mdn.diagram.ActionActionPacketHeader_4012"/>
          <elementType ref="mdn.diagram.ActionActionForwardToNode_4013"/>
          <elementType ref="mdn.diagram.ConditionConditionTime_4017"/>
@@ -690,8 +723,7 @@
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
       <persistent value="true"/>
-   </extension>
-<extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+   </extension><extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
       <?gmfgen generated="true"?>
        <propertyTester
            id="mdn.diagram.URIEditorInputPropertyTester"

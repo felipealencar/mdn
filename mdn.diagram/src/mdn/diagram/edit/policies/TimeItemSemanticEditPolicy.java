@@ -33,7 +33,7 @@ public class TimeItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy {
 	 * @generated
 	 */
 	public TimeItemSemanticEditPolicy() {
-		super(MdnElementTypes.Time_2008);
+		super(MdnElementTypes.Time_2015);
 	}
 
 	/**

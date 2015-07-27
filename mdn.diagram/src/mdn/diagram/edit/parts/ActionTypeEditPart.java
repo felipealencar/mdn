@@ -63,7 +63,7 @@ public class ActionTypeEditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5011;
+	public static final int VISUAL_ID = 5012;
 
 	/**
 	 * @generated
@@ -346,7 +346,7 @@ public class ActionTypeEditPart extends LabelEditPart implements
 		if (parser == null) {
 			parser = MdnParserProvider
 					.getParser(
-							MdnElementTypes.Action_2011,
+							MdnElementTypes.Action_2012,
 							getParserElement(),
 							MdnVisualIDRegistry
 									.getType(mdn.diagram.edit.parts.ActionTypeEditPart.VISUAL_ID));
