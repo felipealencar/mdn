@@ -3,7 +3,7 @@ context NetworkNode {
 		check : self.name.isDefined()
 		message : 'Unnamed ' + self.eClass().name.toUpperCase() + ' not allowed'
 		fix {
-        	title : 'Define the name of the node '
+        	title : 'Define the name of the nod '
           	do {
             	var type := UserInput.prompt('What is the name?');
               	if (type.isDefined()) self.type := type;
