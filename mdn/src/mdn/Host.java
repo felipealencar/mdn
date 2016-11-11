@@ -22,29 +22,29 @@ package mdn;
 public interface Host extends NetworkNode
 {
   /**
-   * Returns the value of the '<em><b>Host Switch</b></em>' reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Host Switch</b></em>' reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Host Switch</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Host Switch</em>' reference.
-   * @see #setHostSwitch(Switch)
-   * @see mdn.MdnPackage#getHost_HostSwitch()
-   * @model annotation="gmf.link target.decoration='none' source.decoration='none' style='solid' color='0,0,0'"
-   * @generated
-   */
+	 * @return the value of the '<em>Host Switch</em>' reference.
+	 * @see #setHostSwitch(Switch)
+	 * @see mdn.MdnPackage#getHost_HostSwitch()
+	 * @model annotation="gmf.link target.decoration='none' source.decoration='none' style='solid' color='0,0,0'"
+	 * @generated
+	 */
   Switch getHostSwitch();
 
   /**
-   * Sets the value of the '{@link mdn.Host#getHostSwitch <em>Host Switch</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link mdn.Host#getHostSwitch <em>Host Switch</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Host Switch</em>' reference.
-   * @see #getHostSwitch()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Host Switch</em>' reference.
+	 * @see #getHostSwitch()
+	 * @generated
+	 */
   void setHostSwitch(Switch value);
 
 } // Host

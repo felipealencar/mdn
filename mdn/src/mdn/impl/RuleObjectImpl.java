@@ -21,24 +21,24 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 public abstract class RuleObjectImpl extends EObjectImpl implements RuleObject
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected RuleObjectImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return MdnPackage.Literals.RULE_OBJECT;
-  }
+		return MdnPackage.Literals.RULE_OBJECT;
+	}
 
 } //RuleObjectImpl

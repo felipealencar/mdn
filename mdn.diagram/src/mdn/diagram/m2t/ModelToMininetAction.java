@@ -1,6 +1,9 @@
 package mdn.diagram.m2t;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -12,7 +15,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.epsilon.egl.EglFileGeneratingTemplateFactory;
 import org.eclipse.epsilon.egl.EglTemplateFactoryModuleAdapter;
 import org.eclipse.epsilon.emc.emf.InMemoryEmfModel;
-import org.eclipse.epsilon.eol.dom.Import;
+//import org.eclipse.epsilon.eol.dom.Import;
 import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
@@ -34,64 +37,86 @@ public class ModelToMininetAction implements IWorkbenchWindowActionDelegate {
 	}
 
 	public void run(IAction action) {
-
+		long duration = 0;
+		int count = 0;
+		File file = new File("C:\\Users\\Felipe\\100-nos.txt");
+		try {
+			if(!file.exists())
+				System.out.println(file.createNewFile());
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		PrintWriter writer = null;
+		try {
+			writer = new PrintWriter(file);
+		} catch (FileNotFoundException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		// Acessa o editor ativo
 		IEditorPart editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 
 		// Caso seja um diagrama
 		if (editor instanceof MdnDiagramEditor) {
-
-			MdnDiagramEditor friendsDiagramEditor = (MdnDiagramEditor) editor;
-
-			// Obtém o modelo EMF do editor
-			Resource resource = getFirstSemanticModelResource(friendsDiagramEditor.getEditingDomain().getResourceSet());
-
-			if (resource == null){return;}
-
-			// Envolve o modelo EMF neste InMemoryEmfModel
-			InMemoryEmfModel m = new InMemoryEmfModel("M", resource, MdnPackage.eINSTANCE);
-
-			// Constrói o módulo EGL
-			EglTemplateFactoryModuleAdapter module = new EglTemplateFactoryModuleAdapter(new EglFileGeneratingTemplateFactory());
-
-			Bundle bundle = Platform.getBundle("mdn");
-			URL fileURL = bundle.getEntry("m2t/mininet.egl");
-			URI uri = null;
-			try {
-				System.out.println();
-				uri = new URI(FileLocator.resolve(fileURL).toString().replace(" ", "%20"));
-			} catch (IOException e2) {
-				// TODO Auto-generated catch block
-				e2.printStackTrace();
-			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			while (count < 50){
+				long startTime = System.nanoTime();
+				MdnDiagramEditor friendsDiagramEditor = (MdnDiagramEditor) editor;
+	
+				// Obtém o modelo EMF do editor
+				Resource resource = getFirstSemanticModelResource(friendsDiagramEditor.getEditingDomain().getResourceSet());
+	
+				if (resource == null){return;}
+	
+				// Envolve o modelo EMF neste InMemoryEmfModel
+				InMemoryEmfModel m = new InMemoryEmfModel("M", resource, MdnPackage.eINSTANCE);
+	
+				// Constrói o módulo EGL
+				EglTemplateFactoryModuleAdapter module = new EglTemplateFactoryModuleAdapter(new EglFileGeneratingTemplateFactory());
+	
+				Bundle bundle = Platform.getBundle("mdn");
+				URL fileURL = bundle.getEntry("m2t/mininet.egl");
+				URI uri = null;
+				try {
+					System.out.println();
+					uri = new URI(FileLocator.resolve(fileURL).toString().replace(" ", "%20"));
+				} catch (IOException e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				} catch (URISyntaxException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				try {
+					module.parse(uri);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+	
+				module.getContext().getModelRepository().addModel(m);
+				
+	
+				TransformationMininetView view = null;
+				try {
+					view = (TransformationMininetView) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView(TransformationMininetView.ID);
+				} catch (PartInitException e1) {
+					e1.printStackTrace();
+				}
+	
+				try {
+					view.setInput((String) module.execute());
+				} catch (EolRuntimeException e) {
+					e.printStackTrace();
+				}
+				long endTime = System.nanoTime();
+				duration = (endTime - startTime)/1000000;  //divide by 1000000 to get milliseconds.
+				writer.println(duration);
+				count++;
 			}
-			
-			try {
-				module.parse(uri);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
-			module.getContext().getModelRepository().addModel(m);
-			
-
-			TransformationMininetView view = null;
-			try {
-				view = (TransformationMininetView) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView(TransformationMininetView.ID);
-			} catch (PartInitException e1) {
-				e1.printStackTrace();
-			}
-
-			try {
-				view.setInput((String) module.execute());
-			} catch (EolRuntimeException e) {
-				e.printStackTrace();
-			}
-
 		}
-
+		writer.close();
+		System.out.println("duracao:"+duration);
 	}
 
 	public Resource getFirstSemanticModelResource(ResourceSet resourceSet) {

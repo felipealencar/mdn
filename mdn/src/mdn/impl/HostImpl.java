@@ -30,144 +30,138 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class HostImpl extends NetworkNodeImpl implements Host
 {
   /**
-   * The cached value of the '{@link #getHostSwitch() <em>Host Switch</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getHostSwitch() <em>Host Switch</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHostSwitch()
-   * @generated
-   * @ordered
-   */
+	 * @see #getHostSwitch()
+	 * @generated
+	 * @ordered
+	 */
   protected Switch hostSwitch;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected HostImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return MdnPackage.Literals.HOST;
-  }
+		return MdnPackage.Literals.HOST;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Switch getHostSwitch()
   {
-    if (hostSwitch != null && hostSwitch.eIsProxy())
-    {
-      InternalEObject oldHostSwitch = (InternalEObject)hostSwitch;
-      hostSwitch = (Switch)eResolveProxy(oldHostSwitch);
-      if (hostSwitch != oldHostSwitch)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MdnPackage.HOST__HOST_SWITCH, oldHostSwitch, hostSwitch));
-      }
-    }
-    return hostSwitch;
-  }
+		if (hostSwitch != null && hostSwitch.eIsProxy()) {
+			InternalEObject oldHostSwitch = (InternalEObject)hostSwitch;
+			hostSwitch = (Switch)eResolveProxy(oldHostSwitch);
+			if (hostSwitch != oldHostSwitch) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MdnPackage.HOST__HOST_SWITCH, oldHostSwitch, hostSwitch));
+			}
+		}
+		return hostSwitch;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Switch basicGetHostSwitch()
   {
-    return hostSwitch;
-  }
+		return hostSwitch;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setHostSwitch(Switch newHostSwitch)
   {
-    Switch oldHostSwitch = hostSwitch;
-    hostSwitch = newHostSwitch;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.HOST__HOST_SWITCH, oldHostSwitch, hostSwitch));
-  }
+		Switch oldHostSwitch = hostSwitch;
+		hostSwitch = newHostSwitch;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.HOST__HOST_SWITCH, oldHostSwitch, hostSwitch));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case MdnPackage.HOST__HOST_SWITCH:
-        if (resolve) return getHostSwitch();
-        return basicGetHostSwitch();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case MdnPackage.HOST__HOST_SWITCH:
+				if (resolve) return getHostSwitch();
+				return basicGetHostSwitch();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case MdnPackage.HOST__HOST_SWITCH:
-        setHostSwitch((Switch)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case MdnPackage.HOST__HOST_SWITCH:
+				setHostSwitch((Switch)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case MdnPackage.HOST__HOST_SWITCH:
-        setHostSwitch((Switch)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case MdnPackage.HOST__HOST_SWITCH:
+				setHostSwitch((Switch)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case MdnPackage.HOST__HOST_SWITCH:
-        return hostSwitch != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case MdnPackage.HOST__HOST_SWITCH:
+				return hostSwitch != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //HostImpl

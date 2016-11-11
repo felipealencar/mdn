@@ -26,9 +26,6 @@ public class MdnSheetLabelProvider extends BaseLabelProvider implements
 	 */
 	public String getText(Object element) {
 		element = unwrap(element);
-		if (element instanceof MdnNavigatorGroup) {
-			return ((MdnNavigatorGroup) element).getGroupName();
-		}
 		IElementType etype = getElementType(getView(element));
 		return etype == null ? "" : etype.getDisplayName();
 	}

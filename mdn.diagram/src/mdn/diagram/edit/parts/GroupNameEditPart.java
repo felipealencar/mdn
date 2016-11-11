@@ -361,7 +361,7 @@ public class GroupNameEditPart extends LabelEditPart implements
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager2(this, null,
+			setManager(new TextDirectEditManager(this, null,
 					MdnEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
@@ -385,8 +385,8 @@ public class GroupNameEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected void performDirectEdit(Point eventLocation) {
-		if (getManager().getClass() == TextDirectEditManager2.class) {
-			((TextDirectEditManager2) getManager()).show(eventLocation
+		if (getManager().getClass() == TextDirectEditManager.class) {
+			((TextDirectEditManager) getManager()).show(eventLocation
 					.getSWTPoint());
 		}
 	}
@@ -397,9 +397,6 @@ public class GroupNameEditPart extends LabelEditPart implements
 	private void performDirectEdit(char initialCharacter) {
 		if (getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
-		} else // 
-		if (getManager() instanceof TextDirectEditManager2) {
-			((TextDirectEditManager2) getManager()).show(initialCharacter);
 		} else //
 		{
 			performDirectEdit();

@@ -44,243 +44,234 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class SdnImpl extends EObjectImpl implements Sdn
 {
   /**
-   * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNodes()
-   * @generated
-   * @ordered
-   */
+	 * @see #getNodes()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<NetworkNode> nodes;
 
   /**
-   * The cached value of the '{@link #getPolicies() <em>Policies</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPolicies() <em>Policies</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPolicies()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPolicies()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Rule> policies;
 
   /**
-   * The cached value of the '{@link #getRuleObjects() <em>Rule Objects</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRuleObjects() <em>Rule Objects</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRuleObjects()
-   * @generated
-   * @ordered
-   */
+	 * @see #getRuleObjects()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<RuleObject> ruleObjects;
 
   /**
-   * The cached value of the '{@link #getGroups() <em>Groups</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGroups()
-   * @generated
-   * @ordered
-   */
+	 * @see #getGroups()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Group> groups;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SdnImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return MdnPackage.Literals.SDN;
-  }
+		return MdnPackage.Literals.SDN;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<NetworkNode> getNodes()
   {
-    if (nodes == null)
-    {
-      nodes = new EObjectContainmentEList<NetworkNode>(NetworkNode.class, this, MdnPackage.SDN__NODES);
-    }
-    return nodes;
-  }
+		if (nodes == null) {
+			nodes = new EObjectContainmentEList<NetworkNode>(NetworkNode.class, this, MdnPackage.SDN__NODES);
+		}
+		return nodes;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Rule> getPolicies()
   {
-    if (policies == null)
-    {
-      policies = new EObjectContainmentEList<Rule>(Rule.class, this, MdnPackage.SDN__POLICIES);
-    }
-    return policies;
-  }
+		if (policies == null) {
+			policies = new EObjectContainmentEList<Rule>(Rule.class, this, MdnPackage.SDN__POLICIES);
+		}
+		return policies;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<RuleObject> getRuleObjects()
   {
-    if (ruleObjects == null)
-    {
-      ruleObjects = new EObjectContainmentEList<RuleObject>(RuleObject.class, this, MdnPackage.SDN__RULE_OBJECTS);
-    }
-    return ruleObjects;
-  }
+		if (ruleObjects == null) {
+			ruleObjects = new EObjectContainmentEList<RuleObject>(RuleObject.class, this, MdnPackage.SDN__RULE_OBJECTS);
+		}
+		return ruleObjects;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Group> getGroups()
   {
-    if (groups == null)
-    {
-      groups = new EObjectContainmentEList<Group>(Group.class, this, MdnPackage.SDN__GROUPS);
-    }
-    return groups;
-  }
+		if (groups == null) {
+			groups = new EObjectContainmentEList<Group>(Group.class, this, MdnPackage.SDN__GROUPS);
+		}
+		return groups;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case MdnPackage.SDN__NODES:
-        return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
-      case MdnPackage.SDN__POLICIES:
-        return ((InternalEList<?>)getPolicies()).basicRemove(otherEnd, msgs);
-      case MdnPackage.SDN__RULE_OBJECTS:
-        return ((InternalEList<?>)getRuleObjects()).basicRemove(otherEnd, msgs);
-      case MdnPackage.SDN__GROUPS:
-        return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case MdnPackage.SDN__NODES:
+				return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
+			case MdnPackage.SDN__POLICIES:
+				return ((InternalEList<?>)getPolicies()).basicRemove(otherEnd, msgs);
+			case MdnPackage.SDN__RULE_OBJECTS:
+				return ((InternalEList<?>)getRuleObjects()).basicRemove(otherEnd, msgs);
+			case MdnPackage.SDN__GROUPS:
+				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case MdnPackage.SDN__NODES:
-        return getNodes();
-      case MdnPackage.SDN__POLICIES:
-        return getPolicies();
-      case MdnPackage.SDN__RULE_OBJECTS:
-        return getRuleObjects();
-      case MdnPackage.SDN__GROUPS:
-        return getGroups();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case MdnPackage.SDN__NODES:
+				return getNodes();
+			case MdnPackage.SDN__POLICIES:
+				return getPolicies();
+			case MdnPackage.SDN__RULE_OBJECTS:
+				return getRuleObjects();
+			case MdnPackage.SDN__GROUPS:
+				return getGroups();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case MdnPackage.SDN__NODES:
-        getNodes().clear();
-        getNodes().addAll((Collection<? extends NetworkNode>)newValue);
-        return;
-      case MdnPackage.SDN__POLICIES:
-        getPolicies().clear();
-        getPolicies().addAll((Collection<? extends Rule>)newValue);
-        return;
-      case MdnPackage.SDN__RULE_OBJECTS:
-        getRuleObjects().clear();
-        getRuleObjects().addAll((Collection<? extends RuleObject>)newValue);
-        return;
-      case MdnPackage.SDN__GROUPS:
-        getGroups().clear();
-        getGroups().addAll((Collection<? extends Group>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case MdnPackage.SDN__NODES:
+				getNodes().clear();
+				getNodes().addAll((Collection<? extends NetworkNode>)newValue);
+				return;
+			case MdnPackage.SDN__POLICIES:
+				getPolicies().clear();
+				getPolicies().addAll((Collection<? extends Rule>)newValue);
+				return;
+			case MdnPackage.SDN__RULE_OBJECTS:
+				getRuleObjects().clear();
+				getRuleObjects().addAll((Collection<? extends RuleObject>)newValue);
+				return;
+			case MdnPackage.SDN__GROUPS:
+				getGroups().clear();
+				getGroups().addAll((Collection<? extends Group>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case MdnPackage.SDN__NODES:
-        getNodes().clear();
-        return;
-      case MdnPackage.SDN__POLICIES:
-        getPolicies().clear();
-        return;
-      case MdnPackage.SDN__RULE_OBJECTS:
-        getRuleObjects().clear();
-        return;
-      case MdnPackage.SDN__GROUPS:
-        getGroups().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case MdnPackage.SDN__NODES:
+				getNodes().clear();
+				return;
+			case MdnPackage.SDN__POLICIES:
+				getPolicies().clear();
+				return;
+			case MdnPackage.SDN__RULE_OBJECTS:
+				getRuleObjects().clear();
+				return;
+			case MdnPackage.SDN__GROUPS:
+				getGroups().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case MdnPackage.SDN__NODES:
-        return nodes != null && !nodes.isEmpty();
-      case MdnPackage.SDN__POLICIES:
-        return policies != null && !policies.isEmpty();
-      case MdnPackage.SDN__RULE_OBJECTS:
-        return ruleObjects != null && !ruleObjects.isEmpty();
-      case MdnPackage.SDN__GROUPS:
-        return groups != null && !groups.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case MdnPackage.SDN__NODES:
+				return nodes != null && !nodes.isEmpty();
+			case MdnPackage.SDN__POLICIES:
+				return policies != null && !policies.isEmpty();
+			case MdnPackage.SDN__RULE_OBJECTS:
+				return ruleObjects != null && !ruleObjects.isEmpty();
+			case MdnPackage.SDN__GROUPS:
+				return groups != null && !groups.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //SdnImpl

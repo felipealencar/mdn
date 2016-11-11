@@ -19,78 +19,78 @@ public class SdnTest extends TestCase
 {
 
   /**
-   * The fixture for this Sdn test case.
-   * <!-- begin-user-doc -->
+	 * The fixture for this Sdn test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected Sdn fixture = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static void main(String[] args)
   {
-    TestRunner.run(SdnTest.class);
-  }
+		TestRunner.run(SdnTest.class);
+	}
 
   /**
-   * Constructs a new Sdn test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Sdn test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SdnTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Sets the fixture for this Sdn test case.
-   * <!-- begin-user-doc -->
+	 * Sets the fixture for this Sdn test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void setFixture(Sdn fixture)
   {
-    this.fixture = fixture;
-  }
+		this.fixture = fixture;
+	}
 
   /**
-   * Returns the fixture for this Sdn test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Sdn test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected Sdn getFixture()
   {
-    return fixture;
-  }
+		return fixture;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#setUp()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
   @Override
   protected void setUp() throws Exception
   {
-    setFixture(MdnFactory.eINSTANCE.createSdn());
-  }
+		setFixture(MdnFactory.eINSTANCE.createSdn());
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#tearDown()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
   @Override
   protected void tearDown() throws Exception
   {
-    setFixture(null);
-  }
+		setFixture(null);
+	}
 
 } //SdnTest

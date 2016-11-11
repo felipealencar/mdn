@@ -3,6 +3,14 @@
  */
 package mdn.diagram.part;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -68,16 +76,15 @@ public class ValidateAction extends Action {
 		if (workbenchPart instanceof IDiagramWorkbenchPart) {
 			final IDiagramWorkbenchPart part = (IDiagramWorkbenchPart) workbenchPart;
 			try {
-				new WorkspaceModifyDelegatingOperation(
-						new IRunnableWithProgress() {
+				new IRunnableWithProgress() {
 
-							public void run(IProgressMonitor monitor)
-									throws InterruptedException,
-									InvocationTargetException {
-								runValidation(part.getDiagramEditPart(),
-										part.getDiagram());
-							}
-						}).run(new NullProgressMonitor());
+					public void run(IProgressMonitor monitor)
+							throws InterruptedException,
+							InvocationTargetException {
+						runValidation(part.getDiagramEditPart(),
+								part.getDiagram());
+					}
+				}.run(new NullProgressMonitor());
 			} catch (Exception e) {
 				MdnDiagramEditorPlugin.getInstance().logError(
 						"Validation action failed", e); //$NON-NLS-1$
@@ -153,11 +160,8 @@ public class ValidateAction extends Action {
 	 * @generated
 	 */
 	private static void validate(DiagramEditPart diagramEditPart, View view) {
-		IFile target = view.eResource() != null ? WorkspaceSynchronizer
-				.getFile(view.eResource()) : null;
-		if (target != null) {
-			MdnMarkerNavigationProvider.deleteMarkers(target);
-		}
+		View target = view;
+		ValidationMarker.removeAllMarkers(diagramEditPart.getViewer());
 		Diagnostic diagnostic = runEMFValidator(view);
 		createMarkers(target, diagnostic, diagramEditPart);
 		IBatchValidator validator = (IBatchValidator) ModelValidationService
@@ -167,12 +171,19 @@ public class ValidateAction extends Action {
 			IStatus status = validator.validate(view.getElement());
 			createMarkers(target, status, diagramEditPart);
 		}
+		MdnValidationDecoratorProvider.refreshDecorators(view);
+		for (Iterator it = view.eAllContents(); it.hasNext();) {
+			EObject next = (EObject) it.next();
+			if (next instanceof View) {
+				MdnValidationDecoratorProvider.refreshDecorators((View) next);
+			}
+		}
 	}
 
 	/**
 	 * @generated
 	 */
-	private static void createMarkers(IFile target, IStatus validationStatus,
+	private static void createMarkers(View target, IStatus validationStatus,
 			DiagramEditPart diagramEditPart) {
 		if (validationStatus.isOK()) {
 			return;
@@ -196,7 +207,7 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
-	private static void createMarkers(IFile target,
+	private static void createMarkers(View target,
 			Diagnostic emfValidationStatus, DiagramEditPart diagramEditPart) {
 		if (emfValidationStatus.getSeverity() == Diagnostic.OK) {
 			return;
@@ -229,14 +240,14 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
-	private static void addMarker(EditPartViewer viewer, IFile target,
+	private static void addMarker(EditPartViewer viewer, View target,
 			String elementId, String location, String message,
 			int statusSeverity) {
 		if (target == null) {
 			return;
 		}
-		MdnMarkerNavigationProvider.addMarker(target, elementId, location,
-				message, statusSeverity);
+		new ValidationMarker(location, message, statusSeverity).add(viewer,
+				elementId);
 	}
 
 	/**

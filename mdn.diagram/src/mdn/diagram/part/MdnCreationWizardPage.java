@@ -14,7 +14,8 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 /**
  * @generated
  */
-public class MdnCreationWizardPage extends WizardNewFileCreationPage {
+public class MdnCreationWizardPage extends
+		mdn.diagram.application.WizardNewFileCreationPage {
 
 	/**
 	 * @generated
@@ -43,22 +44,7 @@ public class MdnCreationWizardPage extends WizardNewFileCreationPage {
 	 * @generated
 	 */
 	public URI getURI() {
-		return URI.createPlatformResourceURI(getFilePath().toString(), false);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IPath getFilePath() {
-		IPath path = getContainerFullPath();
-		if (path == null) {
-			path = new Path(""); //$NON-NLS-1$
-		}
-		String fileName = getFileName();
-		if (fileName != null) {
-			path = path.append(fileName);
-		}
-		return path;
+		return URI.createFileURI(getFilePath().toString());
 	}
 
 	/**

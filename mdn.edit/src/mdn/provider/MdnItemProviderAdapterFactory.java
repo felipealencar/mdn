@@ -35,441 +35,427 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 public class MdnItemProviderAdapterFactory extends MdnAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable
 {
   /**
-   * This keeps track of the root adapter factory that delegates to this adapter factory.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the root adapter factory that delegates to this adapter factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ComposedAdapterFactory parentAdapterFactory;
 
   /**
-   * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-   * <!-- begin-user-doc -->
+	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
   /**
-   * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-   * <!-- begin-user-doc -->
+	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
   /**
-   * This constructs an instance.
-   * <!-- begin-user-doc -->
+	 * This constructs an instance.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public MdnItemProviderAdapterFactory()
   {
-    supportedTypes.add(IEditingDomainItemProvider.class);
-    supportedTypes.add(IStructuredItemContentProvider.class);
-    supportedTypes.add(ITreeItemContentProvider.class);
-    supportedTypes.add(IItemLabelProvider.class);
-    supportedTypes.add(IItemPropertySource.class);
-  }
+		supportedTypes.add(IEditingDomainItemProvider.class);
+		supportedTypes.add(IStructuredItemContentProvider.class);
+		supportedTypes.add(ITreeItemContentProvider.class);
+		supportedTypes.add(IItemLabelProvider.class);
+		supportedTypes.add(IItemPropertySource.class);
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link mdn.Sdn} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link mdn.Sdn} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SdnItemProvider sdnItemProvider;
 
   /**
-   * This creates an adapter for a {@link mdn.Sdn}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link mdn.Sdn}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createSdnAdapter()
   {
-    if (sdnItemProvider == null)
-    {
-      sdnItemProvider = new SdnItemProvider(this);
-    }
+		if (sdnItemProvider == null) {
+			sdnItemProvider = new SdnItemProvider(this);
+		}
 
-    return sdnItemProvider;
-  }
+		return sdnItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link mdn.Controller} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link mdn.Controller} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ControllerItemProvider controllerItemProvider;
 
   /**
-   * This creates an adapter for a {@link mdn.Controller}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link mdn.Controller}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createControllerAdapter()
   {
-    if (controllerItemProvider == null)
-    {
-      controllerItemProvider = new ControllerItemProvider(this);
-    }
+		if (controllerItemProvider == null) {
+			controllerItemProvider = new ControllerItemProvider(this);
+		}
 
-    return controllerItemProvider;
-  }
+		return controllerItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link mdn.Host} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link mdn.Host} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected HostItemProvider hostItemProvider;
 
   /**
-   * This creates an adapter for a {@link mdn.Host}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link mdn.Host}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createHostAdapter()
   {
-    if (hostItemProvider == null)
-    {
-      hostItemProvider = new HostItemProvider(this);
-    }
+		if (hostItemProvider == null) {
+			hostItemProvider = new HostItemProvider(this);
+		}
 
-    return hostItemProvider;
-  }
+		return hostItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link mdn.Switch} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link mdn.Switch} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SwitchItemProvider switchItemProvider;
 
   /**
-   * This creates an adapter for a {@link mdn.Switch}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link mdn.Switch}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createSwitchAdapter()
   {
-    if (switchItemProvider == null)
-    {
-      switchItemProvider = new SwitchItemProvider(this);
-    }
+		if (switchItemProvider == null) {
+			switchItemProvider = new SwitchItemProvider(this);
+		}
 
-    return switchItemProvider;
-  }
+		return switchItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link mdn.Rule} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link mdn.Rule} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected RuleItemProvider ruleItemProvider;
 
   /**
-   * This creates an adapter for a {@link mdn.Rule}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link mdn.Rule}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createRuleAdapter()
   {
-    if (ruleItemProvider == null)
-    {
-      ruleItemProvider = new RuleItemProvider(this);
-    }
+		if (ruleItemProvider == null) {
+			ruleItemProvider = new RuleItemProvider(this);
+		}
 
-    return ruleItemProvider;
-  }
+		return ruleItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link mdn.Action} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link mdn.Action} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ActionItemProvider actionItemProvider;
 
   /**
-   * This creates an adapter for a {@link mdn.Action}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link mdn.Action}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createActionAdapter()
   {
-    if (actionItemProvider == null)
-    {
-      actionItemProvider = new ActionItemProvider(this);
-    }
+		if (actionItemProvider == null) {
+			actionItemProvider = new ActionItemProvider(this);
+		}
 
-    return actionItemProvider;
-  }
+		return actionItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link mdn.Condition} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link mdn.Condition} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ConditionItemProvider conditionItemProvider;
 
   /**
-   * This creates an adapter for a {@link mdn.Condition}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link mdn.Condition}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createConditionAdapter()
   {
-    if (conditionItemProvider == null)
-    {
-      conditionItemProvider = new ConditionItemProvider(this);
-    }
+		if (conditionItemProvider == null) {
+			conditionItemProvider = new ConditionItemProvider(this);
+		}
 
-    return conditionItemProvider;
-  }
+		return conditionItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link mdn.Traffic} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link mdn.Traffic} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected TrafficItemProvider trafficItemProvider;
 
   /**
-   * This creates an adapter for a {@link mdn.Traffic}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link mdn.Traffic}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createTrafficAdapter()
   {
-    if (trafficItemProvider == null)
-    {
-      trafficItemProvider = new TrafficItemProvider(this);
-    }
+		if (trafficItemProvider == null) {
+			trafficItemProvider = new TrafficItemProvider(this);
+		}
 
-    return trafficItemProvider;
-  }
+		return trafficItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link mdn.Time} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link mdn.Time} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected TimeItemProvider timeItemProvider;
 
   /**
-   * This creates an adapter for a {@link mdn.Time}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link mdn.Time}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createTimeAdapter()
   {
-    if (timeItemProvider == null)
-    {
-      timeItemProvider = new TimeItemProvider(this);
-    }
+		if (timeItemProvider == null) {
+			timeItemProvider = new TimeItemProvider(this);
+		}
 
-    return timeItemProvider;
-  }
+		return timeItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link mdn.PacketHeader} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link mdn.PacketHeader} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected PacketHeaderItemProvider packetHeaderItemProvider;
 
   /**
-   * This creates an adapter for a {@link mdn.PacketHeader}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link mdn.PacketHeader}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createPacketHeaderAdapter()
   {
-    if (packetHeaderItemProvider == null)
-    {
-      packetHeaderItemProvider = new PacketHeaderItemProvider(this);
-    }
+		if (packetHeaderItemProvider == null) {
+			packetHeaderItemProvider = new PacketHeaderItemProvider(this);
+		}
 
-    return packetHeaderItemProvider;
-  }
+		return packetHeaderItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link mdn.Group} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link mdn.Group} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected GroupItemProvider groupItemProvider;
 
   /**
-   * This creates an adapter for a {@link mdn.Group}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link mdn.Group}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createGroupAdapter()
   {
-    if (groupItemProvider == null)
-    {
-      groupItemProvider = new GroupItemProvider(this);
-    }
+		if (groupItemProvider == null) {
+			groupItemProvider = new GroupItemProvider(this);
+		}
 
-    return groupItemProvider;
-  }
+		return groupItemProvider;
+	}
 
   /**
-   * This returns the root adapter factory that contains this factory.
-   * <!-- begin-user-doc -->
+	 * This returns the root adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ComposeableAdapterFactory getRootAdapterFactory()
   {
-    return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
-  }
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+	}
 
   /**
-   * This sets the composed adapter factory that contains this factory.
-   * <!-- begin-user-doc -->
+	 * This sets the composed adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory)
   {
-    this.parentAdapterFactory = parentAdapterFactory;
-  }
+		this.parentAdapterFactory = parentAdapterFactory;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean isFactoryForType(Object type)
   {
-    return supportedTypes.contains(type) || super.isFactoryForType(type);
-  }
+		return supportedTypes.contains(type) || super.isFactoryForType(type);
+	}
 
   /**
-   * This implementation substitutes the factory itself as the key for the adapter.
-   * <!-- begin-user-doc -->
+	 * This implementation substitutes the factory itself as the key for the adapter.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter adapt(Notifier notifier, Object type)
   {
-    return super.adapt(notifier, this);
-  }
+		return super.adapt(notifier, this);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object adapt(Object object, Object type)
   {
-    if (isFactoryForType(type))
-    {
-      Object adapter = super.adapt(object, type);
-      if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
-      {
-        return adapter;
-      }
-    }
+		if (isFactoryForType(type)) {
+			Object adapter = super.adapt(object, type);
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+				return adapter;
+			}
+		}
 
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * This adds a listener.
-   * <!-- begin-user-doc -->
+	 * This adds a listener.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void addListener(INotifyChangedListener notifyChangedListener)
   {
-    changeNotifier.addListener(notifyChangedListener);
-  }
+		changeNotifier.addListener(notifyChangedListener);
+	}
 
   /**
-   * This removes a listener.
-   * <!-- begin-user-doc -->
+	 * This removes a listener.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void removeListener(INotifyChangedListener notifyChangedListener)
   {
-    changeNotifier.removeListener(notifyChangedListener);
-  }
+		changeNotifier.removeListener(notifyChangedListener);
+	}
 
   /**
-   * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-   * <!-- begin-user-doc -->
+	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void fireNotifyChanged(Notification notification)
   {
-    changeNotifier.fireNotifyChanged(notification);
+		changeNotifier.fireNotifyChanged(notification);
 
-    if (parentAdapterFactory != null)
-    {
-      parentAdapterFactory.fireNotifyChanged(notification);
-    }
-  }
+		if (parentAdapterFactory != null) {
+			parentAdapterFactory.fireNotifyChanged(notification);
+		}
+	}
 
   /**
-   * This disposes all of the item providers created by this factory. 
-   * <!-- begin-user-doc -->
+	 * This disposes all of the item providers created by this factory. 
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void dispose()
   {
-    if (sdnItemProvider != null) sdnItemProvider.dispose();
-    if (controllerItemProvider != null) controllerItemProvider.dispose();
-    if (hostItemProvider != null) hostItemProvider.dispose();
-    if (switchItemProvider != null) switchItemProvider.dispose();
-    if (ruleItemProvider != null) ruleItemProvider.dispose();
-    if (actionItemProvider != null) actionItemProvider.dispose();
-    if (conditionItemProvider != null) conditionItemProvider.dispose();
-    if (trafficItemProvider != null) trafficItemProvider.dispose();
-    if (timeItemProvider != null) timeItemProvider.dispose();
-    if (packetHeaderItemProvider != null) packetHeaderItemProvider.dispose();
-    if (groupItemProvider != null) groupItemProvider.dispose();
-  }
+		if (sdnItemProvider != null) sdnItemProvider.dispose();
+		if (controllerItemProvider != null) controllerItemProvider.dispose();
+		if (hostItemProvider != null) hostItemProvider.dispose();
+		if (switchItemProvider != null) switchItemProvider.dispose();
+		if (ruleItemProvider != null) ruleItemProvider.dispose();
+		if (actionItemProvider != null) actionItemProvider.dispose();
+		if (conditionItemProvider != null) conditionItemProvider.dispose();
+		if (trafficItemProvider != null) trafficItemProvider.dispose();
+		if (timeItemProvider != null) timeItemProvider.dispose();
+		if (packetHeaderItemProvider != null) packetHeaderItemProvider.dispose();
+		if (groupItemProvider != null) groupItemProvider.dispose();
+	}
 
 }

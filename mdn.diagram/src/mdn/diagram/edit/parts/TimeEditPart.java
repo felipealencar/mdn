@@ -141,7 +141,7 @@ public class TimeEditPart extends AbstractBorderedShapeEditPart {
 		if (borderItemEditPart instanceof TimeOperatorBeginDateEndDatEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(-5, -5));
+			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
@@ -235,26 +235,6 @@ public class TimeEditPart extends AbstractBorderedShapeEditPart {
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(MdnVisualIDRegistry
 				.getType(TimeOperatorBeginDateEndDatEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(MdnElementTypes.ConditionConditionTime_4017);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.ConditionConditionTime_4017) {
-			types.add(MdnElementTypes.Condition_2013);
-		}
-		return types;
 	}
 
 	/**

@@ -2,11 +2,11 @@
 @namespace(uri="mdn", prefix="")
 package mdn;
 
-@gmf.diagram
+@gmf.diagram(foo="bar", onefile="true", rcp="true", diagram.extension="mdn")
 class Sdn {
   val NetworkNode[*] nodes;
-  val Policy[*] policies;
-  val PolicyObject[*] policyObjects;
+  val Rule[*] policies;
+  val RuleObject[*] ruleObjects;
   val Group[*] groups;
 }
 
@@ -59,27 +59,31 @@ enum Actions {
   DROP = 1;
   MODIFY = 2;
   MONITOR = 0;
+  LOAD_BALANCE = 0;
 }
 
 @gmf.node(figure="figures.PolicyFigure", label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/policy.gif", label.placement="external")
-class Policy {
+class Rule {
 
   @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0", tool.name="sourceHost")
-  transient ref Host[*] sourceHostPolicy;
+  transient ref Host[*] sourceHostRule;
 
   @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0", tool.name="targetHost")
-  transient ref Host[*] targetHostPolicy;
+  transient ref Host[*] targetHostRule;
   attr String name;
 
   @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
-  transient ref Condition policyCondition;
+  transient ref Condition ruleCondition;
 
-  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
-  ref Action policyAction;
+  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0", tool.name="ruleAction")
+  ref Action ruleAction;
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0", tool.name="targetGroup")
+  ref Group targetGroupRule;
 }
 
 @gmf.node(figure="figures.ActionFigure", label="type", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/action.gif", label.placement="external")
-class Action extends PolicyObject {
+class Action extends RuleObject {
   attr Actions type;
 
   @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
@@ -90,7 +94,7 @@ class Action extends PolicyObject {
 }
 
 @gmf.node(label="condition", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/condition.gif", label.placement="external", figure="figures.ConditionFigure")
-class Condition extends PolicyObject {
+class Condition extends RuleObject {
   attr Conditions condition = "WHERE";
 
   @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
@@ -118,30 +122,35 @@ enum RelationalOperators {
 }
 
 @gmf.node(figure="figures.TrafficFigure", label="operator,value,unit", label.pattern="{0}: {2}{1}", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/traffic.gif", label.placement="external")
-class Traffic extends PolicyObject {
+class Traffic extends RuleObject {
   attr RelationalOperators operator;
   attr String unit = "MB";
   attr int value;
 }
 
 @gmf.node(figure="figures.TimeFigure", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/time.gif", label.placement="external", label="operator,beginDate,endDate", label.pattern="{0}: {1} - {2}")
-class Time extends PolicyObject {
+class Time extends RuleObject {
   attr RelationalOperators operator;
   attr EDate beginDate;
   attr EDate endDate;
 }
 
 @gmf.node(figure="figures.PacketHeaderFigure", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/packetheader.gif", label.placement="external", label="operator,header,value", label.pattern="{0}: [{1}] {2}")
-class PacketHeader extends PolicyObject {
+class PacketHeader extends RuleObject {
   attr RelationalOperators operator;
   attr PacketHeaders header = "";
   attr String value;
 }
 
-abstract class PolicyObject {
+abstract class RuleObject {
 }
 
+@gmf.node(label="name", label.icon="false", tool.small.bundle="mdn.edit", label.placement="external")
 class Group {
+
+  @gmf.compartment
   val Host[*] hostsGroup;
+  attr String ip;
+  attr String name;
 }
 

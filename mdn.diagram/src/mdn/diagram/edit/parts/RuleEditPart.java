@@ -142,7 +142,7 @@ public class RuleEditPart extends AbstractBorderedShapeEditPart {
 		if (borderItemEditPart instanceof RuleNameEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(-5, -5));
+			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
@@ -236,70 +236,6 @@ public class RuleEditPart extends AbstractBorderedShapeEditPart {
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(MdnVisualIDRegistry
 				.getType(RuleNameEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(5);
-		types.add(MdnElementTypes.RuleSourceHostRule_4024);
-		types.add(MdnElementTypes.RuleTargetHostRule_4025);
-		types.add(MdnElementTypes.RuleRuleCondition_4026);
-		types.add(MdnElementTypes.RuleRuleAction_4027);
-		types.add(MdnElementTypes.RuleTargetGroupRule_4028);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof HostEditPart) {
-			types.add(MdnElementTypes.RuleSourceHostRule_4024);
-		}
-		if (targetEditPart instanceof Host2EditPart) {
-			types.add(MdnElementTypes.RuleSourceHostRule_4024);
-		}
-		if (targetEditPart instanceof HostEditPart) {
-			types.add(MdnElementTypes.RuleTargetHostRule_4025);
-		}
-		if (targetEditPart instanceof Host2EditPart) {
-			types.add(MdnElementTypes.RuleTargetHostRule_4025);
-		}
-		if (targetEditPart instanceof ConditionEditPart) {
-			types.add(MdnElementTypes.RuleRuleCondition_4026);
-		}
-		if (targetEditPart instanceof ActionEditPart) {
-			types.add(MdnElementTypes.RuleRuleAction_4027);
-		}
-		if (targetEditPart instanceof GroupEditPart) {
-			types.add(MdnElementTypes.RuleTargetGroupRule_4028);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.RuleSourceHostRule_4024) {
-			types.add(MdnElementTypes.Host_2002);
-			types.add(MdnElementTypes.Host_3001);
-		} else if (relationshipType == MdnElementTypes.RuleTargetHostRule_4025) {
-			types.add(MdnElementTypes.Host_2002);
-			types.add(MdnElementTypes.Host_3001);
-		} else if (relationshipType == MdnElementTypes.RuleRuleCondition_4026) {
-			types.add(MdnElementTypes.Condition_2013);
-		} else if (relationshipType == MdnElementTypes.RuleRuleAction_4027) {
-			types.add(MdnElementTypes.Action_2012);
-		} else if (relationshipType == MdnElementTypes.RuleTargetGroupRule_4028) {
-			types.add(MdnElementTypes.Group_2018);
-		}
-		return types;
 	}
 
 	/**

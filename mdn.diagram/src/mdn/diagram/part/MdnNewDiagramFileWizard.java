@@ -41,7 +41,7 @@ public class MdnNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	private WizardNewFileCreationPage myFileCreationPage;
+	private mdn.diagram.application.WizardNewFileCreationPage myFileCreationPage;
 
 	/**
 	 * @generated
@@ -62,7 +62,7 @@ public class MdnNewDiagramFileWizard extends Wizard {
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
 
-		myFileCreationPage = new WizardNewFileCreationPage(
+		myFileCreationPage = new mdn.diagram.application.WizardNewFileCreationPage(
 				Messages.MdnNewDiagramFileWizard_CreationPageName,
 				StructuredSelection.EMPTY);
 		myFileCreationPage
@@ -85,7 +85,7 @@ public class MdnNewDiagramFileWizard extends Wizard {
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
 		myFileCreationPage.setFileName(MdnDiagramEditorUtil.getUniqueFileName(
-				filePath, fileName, "mdn_diagram")); //$NON-NLS-1$
+				filePath, fileName, "mdn")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
 				Messages.MdnNewDiagramFileWizard_RootSelectionPageName);
@@ -111,11 +111,9 @@ public class MdnNewDiagramFileWizard extends Wizard {
 	 */
 	public boolean performFinish() {
 		LinkedList<IFile> affectedFiles = new LinkedList<IFile>();
-		IFile diagramFile = myFileCreationPage.createNewFile();
-		MdnDiagramEditorUtil.setCharset(diagramFile);
-		affectedFiles.add(diagramFile);
-		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile
-				.getFullPath().toString(), true);
+		IPath diagramModelPath = myFileCreationPage.getContainerFullPath()
+				.append(myFileCreationPage.getFileName());
+		URI diagramModelURI = URI.createFileURI(diagramModelPath.toString());
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
 		final Resource diagramResource = resourceSet
 				.createResource(diagramModelURI);
@@ -139,6 +137,7 @@ public class MdnNewDiagramFileWizard extends Wizard {
 						SdnEditPart.MODEL_ID,
 						MdnDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
+				diagramResource.getContents().add(diagram.getElement());
 				return CommandResult.newOKCommandResult();
 			}
 		};
@@ -184,13 +183,13 @@ public class MdnNewDiagramFileWizard extends Wizard {
 		 * @generated
 		 */
 		protected boolean validatePage() {
-			if (selectedModelElement == null) {
+			if (getModelElement() == null) {
 				setErrorMessage(Messages.MdnNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;
 			}
 			boolean result = ViewService.getInstance().provides(
 					new CreateDiagramViewOperation(new EObjectAdapter(
-							selectedModelElement), SdnEditPart.MODEL_ID,
+							getModelElement()), SdnEditPart.MODEL_ID,
 							MdnDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 			setErrorMessage(result ? null
 					: Messages.MdnNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);

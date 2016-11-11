@@ -19,78 +19,78 @@ public class RuleTest extends TestCase
 {
 
   /**
-   * The fixture for this Rule test case.
-   * <!-- begin-user-doc -->
+	 * The fixture for this Rule test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected Rule fixture = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static void main(String[] args)
   {
-    TestRunner.run(RuleTest.class);
-  }
+		TestRunner.run(RuleTest.class);
+	}
 
   /**
-   * Constructs a new Rule test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Rule test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public RuleTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Sets the fixture for this Rule test case.
-   * <!-- begin-user-doc -->
+	 * Sets the fixture for this Rule test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void setFixture(Rule fixture)
   {
-    this.fixture = fixture;
-  }
+		this.fixture = fixture;
+	}
 
   /**
-   * Returns the fixture for this Rule test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Rule test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected Rule getFixture()
   {
-    return fixture;
-  }
+		return fixture;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#setUp()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
   @Override
   protected void setUp() throws Exception
   {
-    setFixture(MdnFactory.eINSTANCE.createRule());
-  }
+		setFixture(MdnFactory.eINSTANCE.createRule());
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#tearDown()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
   @Override
   protected void tearDown() throws Exception
   {
-    setFixture(null);
-  }
+		setFixture(null);
+	}
 
 } //RuleTest

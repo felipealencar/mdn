@@ -81,8 +81,7 @@ public class GroupEditPart extends AbstractBorderedShapeEditPart {
 				new GroupItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicyRoles.OPEN_ROLE,
-				new OpenDiagramEditPolicy());
-		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+				new OpenDiagramEditPolicy()); // XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
@@ -209,7 +208,7 @@ public class GroupEditPart extends AbstractBorderedShapeEditPart {
 		if (borderItemEditPart instanceof GroupNameEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(-5, -5));
+			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
@@ -308,26 +307,6 @@ public class GroupEditPart extends AbstractBorderedShapeEditPart {
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(MdnVisualIDRegistry
 				.getType(GroupNameEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(MdnElementTypes.RuleTargetGroupRule_4028);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.RuleTargetGroupRule_4028) {
-			types.add(MdnElementTypes.Rule_2017);
-		}
-		return types;
 	}
 
 	/**

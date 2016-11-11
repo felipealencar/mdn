@@ -10,6 +10,8 @@ import org.eclipse.osgi.util.NLS;
  */
 public class Messages extends NLS {
 
+	public static final String NavigatorGroupName_Sdn_1000_links = null;
+
 	/**
 	 * @generated
 	 */
@@ -26,6 +28,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String CreateShortcutAction_OpenModelTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String CreateShortcutAction_WizardTitle;
+
+	/**
+	 * @generated
+	 */
 	public static String MdnCreationWizardTitle;
 
 	/**
@@ -37,16 +49,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String MdnCreationWizard_DiagramModelFilePageDescription;
-
-	/**
-	 * @generated
-	 */
-	public static String MdnCreationWizard_DomainModelFilePageTitle;
-
-	/**
-	 * @generated
-	 */
-	public static String MdnCreationWizard_DomainModelFilePageDescription;
 
 	/**
 	 * @generated
@@ -232,6 +234,36 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String MdnElementChooserDialog_SelectModelElementTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String ShortcutCreationWizard_ReferencedElementSelectionPageName;
+
+	/**
+	 * @generated
+	 */
+	public static String ShortcutCreationWizard_ReferencedElementSelectionPageTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String ShortcutCreationWizard_ReferencedElementSelectionPageDescription;
+
+	/**
+	 * @generated
+	 */
+	public static String ShortcutCreationWizard_ReferencedElementSelectionPageMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String ShortcutCreationWizard_ReferencedElementSelectionPageEmptyError;
+
+	/**
+	 * @generated
+	 */
+	public static String ShortcutCreationWizard_ReferencedElementSelectionPageInvalidError;
 
 	/**
 	 * @generated
@@ -486,247 +518,92 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String DiagramEditorActionBarAdvisor_DefaultFileEditorTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramEditorActionBarAdvisor_DefaultFileEditorMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramEditorActionBarAdvisor_DefaultEditorOpenErrorTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramEditorActionBarAdvisor_AboutDialogTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramEditorActionBarAdvisor_AboutDialogMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String ApplicationMenuName_File;
+
+	/**
+	 * @generated
+	 */
+	public static String ApplicationMenuName_Edit;
+
+	/**
+	 * @generated
+	 */
+	public static String ApplicationMenuName_Window;
+
+	/**
+	 * @generated
+	 */
+	public static String ApplicationMenuName_Help;
+
+	/**
+	 * @generated
+	 */
+	public static String ApplicationMenuName_New;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramEditorWorkbenchWindowAdvisor_Title;
+
+	/**
+	 * @generated
+	 */
+	public static String WizardNewFileCreationPage_FileLabel;
+
+	/**
+	 * @generated
+	 */
+	public static String WizardNewFileCreationPage_BrowseButton;
+
+	/**
+	 * @generated
+	 */
+	public static String WizardNewFileCreationPage_SelectNewFileDialog;
+
+	/**
+	 * @generated
+	 */
+	public static String WizardNewFileCreationPage_EmptyFileNameError;
+
+	/**
+	 * @generated
+	 */
+	public static String WizardNewFileCreationPage_InvalidFileNameError;
+
+	/**
+	 * @generated
+	 */
 	public static String GroupGroupHostsGroupCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
 	public static String CommandName_OpenDiagram;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Sdn_1000_links;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Host_2002_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Host_2002_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Controller_2001_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RuleSourceHostRule_4024_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RuleSourceHostRule_4024_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HostHostSwitch_4004_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HostHostSwitch_4004_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Switch_2003_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Switch_2003_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SwitchSwitchController_4006_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SwitchSwitchController_4006_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ConditionConditionTime_4017_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ConditionConditionTime_4017_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Traffic_2014_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ConditionConditionPacket_4019_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ConditionConditionPacket_4019_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ActionActionPacketHeader_4012_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ActionActionPacketHeader_4012_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Action_2012_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Action_2012_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Rule_2017_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ConditionConditionTraffic_4018_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ConditionConditionTraffic_4018_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RuleTargetHostRule_4025_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RuleTargetHostRule_4025_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Time_2015_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SwitchSwitches_4022_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SwitchSwitches_4022_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ActionActionForwardToNode_4013_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ActionActionForwardToNode_4013_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Group_2018_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Condition_2013_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Condition_2013_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RuleRuleCondition_4026_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RuleRuleCondition_4026_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_PacketHeader_2016_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RuleRuleAction_4027_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RuleRuleAction_4027_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RuleTargetGroupRule_4028_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RuleTargetGroupRule_4028_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Host_3001_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Host_3001_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorActionProvider_OpenDiagramActionName;
-
-	/**
-	 * @generated
-	 */
-	public static String AbstractParser_UnexpectedValueType;
-
-	/**
-	 * @generated
-	 */
-	public static String AbstractParser_WrongStringConversion;
-
-	/**
-	 * @generated
-	 */
-	public static String AbstractParser_UnknownLiteral;
 
 	/**
 	 * @generated

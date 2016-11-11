@@ -25,81 +25,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface NetworkNode extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see mdn.MdnPackage#getNetworkNode_Name()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see mdn.MdnPackage#getNetworkNode_Name()
+	 * @model
+	 * @generated
+	 */
   String getName();
 
   /**
-   * Sets the value of the '{@link mdn.NetworkNode#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link mdn.NetworkNode#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Mac</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Mac</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Mac</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Mac</em>' attribute.
-   * @see #setMac(String)
-   * @see mdn.MdnPackage#getNetworkNode_Mac()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Mac</em>' attribute.
+	 * @see #setMac(String)
+	 * @see mdn.MdnPackage#getNetworkNode_Mac()
+	 * @model
+	 * @generated
+	 */
   String getMac();
 
   /**
-   * Sets the value of the '{@link mdn.NetworkNode#getMac <em>Mac</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link mdn.NetworkNode#getMac <em>Mac</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Mac</em>' attribute.
-   * @see #getMac()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Mac</em>' attribute.
+	 * @see #getMac()
+	 * @generated
+	 */
   void setMac(String value);
 
   /**
-   * Returns the value of the '<em><b>Ip</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ip</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Ip</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ip</em>' attribute.
-   * @see #setIp(String)
-   * @see mdn.MdnPackage#getNetworkNode_Ip()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Ip</em>' attribute.
+	 * @see #setIp(String)
+	 * @see mdn.MdnPackage#getNetworkNode_Ip()
+	 * @model
+	 * @generated
+	 */
   String getIp();
 
   /**
-   * Sets the value of the '{@link mdn.NetworkNode#getIp <em>Ip</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link mdn.NetworkNode#getIp <em>Ip</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ip</em>' attribute.
-   * @see #getIp()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Ip</em>' attribute.
+	 * @see #getIp()
+	 * @generated
+	 */
   void setIp(String value);
 
 } // NetworkNode

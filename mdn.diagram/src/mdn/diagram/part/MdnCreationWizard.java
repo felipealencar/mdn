@@ -40,11 +40,6 @@ public class MdnCreationWizard extends Wizard implements INewWizard {
 	/**
 	 * @generated
 	 */
-	protected MdnCreationWizardPage domainModelFilePage;
-
-	/**
-	 * @generated
-	 */
 	protected Resource diagram;
 
 	/**
@@ -105,45 +100,24 @@ public class MdnCreationWizard extends Wizard implements INewWizard {
 	 */
 	public void addPages() {
 		diagramModelFilePage = new MdnCreationWizardPage(
-				"DiagramModelFile", getSelection(), "mdn_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
+				"DiagramModelFile", getSelection(), "mdn"); //$NON-NLS-1$ //$NON-NLS-2$
 		diagramModelFilePage
 				.setTitle(Messages.MdnCreationWizard_DiagramModelFilePageTitle);
 		diagramModelFilePage
 				.setDescription(Messages.MdnCreationWizard_DiagramModelFilePageDescription);
 		addPage(diagramModelFilePage);
-
-		domainModelFilePage = new MdnCreationWizardPage(
-				"DomainModelFile", getSelection(), "mdn") { //$NON-NLS-1$ //$NON-NLS-2$
-
-			public void setVisible(boolean visible) {
-				if (visible) {
-					String fileName = diagramModelFilePage.getFileName();
-					fileName = fileName.substring(0, fileName.length()
-							- ".mdn_diagram".length()); //$NON-NLS-1$
-					setFileName(MdnDiagramEditorUtil.getUniqueFileName(
-							getContainerFullPath(), fileName, "mdn")); //$NON-NLS-1$
-				}
-				super.setVisible(visible);
-			}
-		};
-		domainModelFilePage
-				.setTitle(Messages.MdnCreationWizard_DomainModelFilePageTitle);
-		domainModelFilePage
-				.setDescription(Messages.MdnCreationWizard_DomainModelFilePageDescription);
-		addPage(domainModelFilePage);
 	}
 
 	/**
 	 * @generated
 	 */
 	public boolean performFinish() {
-		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
+		IRunnableWithProgress op = new IRunnableWithProgress() {
 
-			protected void execute(IProgressMonitor monitor)
-					throws CoreException, InterruptedException {
+			public void run(IProgressMonitor monitor)
+					throws InvocationTargetException, InterruptedException {
 				diagram = MdnDiagramEditorUtil.createDiagram(
-						diagramModelFilePage.getURI(),
-						domainModelFilePage.getURI(), monitor);
+						diagramModelFilePage.getURI(), monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
 					try {
 						MdnDiagramEditorUtil.openDiagram(diagram);

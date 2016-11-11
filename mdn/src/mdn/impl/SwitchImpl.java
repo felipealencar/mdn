@@ -37,221 +37,215 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 public class SwitchImpl extends NetworkNodeImpl implements Switch
 {
   /**
-   * The default value of the '{@link #getPorts() <em>Ports</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPorts() <em>Ports</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPorts()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPorts()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int PORTS_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getPorts() <em>Ports</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPorts()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPorts()
+	 * @generated
+	 * @ordered
+	 */
   protected int ports = PORTS_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSwitchController() <em>Switch Controller</em>}' reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSwitchController() <em>Switch Controller</em>}' reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSwitchController()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSwitchController()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Controller> switchController;
 
   /**
-   * The cached value of the '{@link #getSwitches() <em>Switches</em>}' reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSwitches() <em>Switches</em>}' reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSwitches()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSwitches()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Switch> switches;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SwitchImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return MdnPackage.Literals.SWITCH;
-  }
+		return MdnPackage.Literals.SWITCH;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getPorts()
   {
-    return ports;
-  }
+		return ports;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setPorts(int newPorts)
   {
-    int oldPorts = ports;
-    ports = newPorts;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.SWITCH__PORTS, oldPorts, ports));
-  }
+		int oldPorts = ports;
+		ports = newPorts;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.SWITCH__PORTS, oldPorts, ports));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Controller> getSwitchController()
   {
-    if (switchController == null)
-    {
-      switchController = new EObjectResolvingEList<Controller>(Controller.class, this, MdnPackage.SWITCH__SWITCH_CONTROLLER);
-    }
-    return switchController;
-  }
+		if (switchController == null) {
+			switchController = new EObjectResolvingEList<Controller>(Controller.class, this, MdnPackage.SWITCH__SWITCH_CONTROLLER);
+		}
+		return switchController;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Switch> getSwitches()
   {
-    if (switches == null)
-    {
-      switches = new EObjectResolvingEList<Switch>(Switch.class, this, MdnPackage.SWITCH__SWITCHES);
-    }
-    return switches;
-  }
+		if (switches == null) {
+			switches = new EObjectResolvingEList<Switch>(Switch.class, this, MdnPackage.SWITCH__SWITCHES);
+		}
+		return switches;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case MdnPackage.SWITCH__PORTS:
-        return getPorts();
-      case MdnPackage.SWITCH__SWITCH_CONTROLLER:
-        return getSwitchController();
-      case MdnPackage.SWITCH__SWITCHES:
-        return getSwitches();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case MdnPackage.SWITCH__PORTS:
+				return getPorts();
+			case MdnPackage.SWITCH__SWITCH_CONTROLLER:
+				return getSwitchController();
+			case MdnPackage.SWITCH__SWITCHES:
+				return getSwitches();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case MdnPackage.SWITCH__PORTS:
-        setPorts((Integer)newValue);
-        return;
-      case MdnPackage.SWITCH__SWITCH_CONTROLLER:
-        getSwitchController().clear();
-        getSwitchController().addAll((Collection<? extends Controller>)newValue);
-        return;
-      case MdnPackage.SWITCH__SWITCHES:
-        getSwitches().clear();
-        getSwitches().addAll((Collection<? extends Switch>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case MdnPackage.SWITCH__PORTS:
+				setPorts((Integer)newValue);
+				return;
+			case MdnPackage.SWITCH__SWITCH_CONTROLLER:
+				getSwitchController().clear();
+				getSwitchController().addAll((Collection<? extends Controller>)newValue);
+				return;
+			case MdnPackage.SWITCH__SWITCHES:
+				getSwitches().clear();
+				getSwitches().addAll((Collection<? extends Switch>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case MdnPackage.SWITCH__PORTS:
-        setPorts(PORTS_EDEFAULT);
-        return;
-      case MdnPackage.SWITCH__SWITCH_CONTROLLER:
-        getSwitchController().clear();
-        return;
-      case MdnPackage.SWITCH__SWITCHES:
-        getSwitches().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case MdnPackage.SWITCH__PORTS:
+				setPorts(PORTS_EDEFAULT);
+				return;
+			case MdnPackage.SWITCH__SWITCH_CONTROLLER:
+				getSwitchController().clear();
+				return;
+			case MdnPackage.SWITCH__SWITCHES:
+				getSwitches().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case MdnPackage.SWITCH__PORTS:
-        return ports != PORTS_EDEFAULT;
-      case MdnPackage.SWITCH__SWITCH_CONTROLLER:
-        return switchController != null && !switchController.isEmpty();
-      case MdnPackage.SWITCH__SWITCHES:
-        return switches != null && !switches.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case MdnPackage.SWITCH__PORTS:
+				return ports != PORTS_EDEFAULT;
+			case MdnPackage.SWITCH__SWITCH_CONTROLLER:
+				return switchController != null && !switchController.isEmpty();
+			case MdnPackage.SWITCH__SWITCHES:
+				return switches != null && !switches.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (ports: ");
-    result.append(ports);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (ports: ");
+		result.append(ports);
+		result.append(')');
+		return result.toString();
+	}
 
 } //SwitchImpl

@@ -39,6 +39,7 @@ import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocumentPro
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.part.LastClickPositionProvider;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -66,8 +67,7 @@ import org.eclipse.ui.part.ShowInContext;
 /**
  * @generated
  */
-public class MdnDiagramEditor extends DiagramDocumentEditor implements
-		IGotoMarker {
+public class MdnDiagramEditor extends DiagramDocumentEditor {
 
 	/**
 	 * @generated
@@ -78,6 +78,11 @@ public class MdnDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	public static final String CONTEXT_ID = "mdn.diagram.ui.diagramContext"; //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	private LastClickPositionProvider myLastClickPositionProvider;
 
 	/**
 	 * @generated
@@ -119,24 +124,8 @@ public class MdnDiagramEditor extends DiagramDocumentEditor implements
 	/**
 	 * @generated
 	 */
-	@SuppressWarnings("rawtypes")
-	public Object getAdapter(Class type) {
-		if (type == IShowInTargetList.class) {
-			return new IShowInTargetList() {
-				public String[] getShowInTargetIds() {
-					return new String[] { ProjectExplorer.VIEW_ID };
-				}
-			};
-		}
-		return super.getAdapter(type);
-	}
-
-	/**
-	 * @generated
-	 */
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput
-				|| input instanceof URIEditorInput) {
+		if (input instanceof URIEditorInput) {
 			return MdnDiagramEditorPlugin.getInstance().getDocumentProvider();
 		}
 		return super.getDocumentProvider(input);
@@ -158,142 +147,12 @@ public class MdnDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	protected void setDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput
-				|| input instanceof URIEditorInput) {
+		if (input instanceof URIEditorInput) {
 			setDocumentProvider(MdnDiagramEditorPlugin.getInstance()
 					.getDocumentProvider());
 		} else {
 			super.setDocumentProvider(input);
 		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public void gotoMarker(IMarker marker) {
-		MarkerNavigationService.getInstance().gotoMarker(this, marker);
-	}
-
-	/**
-	 * @generated
-	 */
-	public boolean isSaveAsAllowed() {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void doSaveAs() {
-		performSaveAs(new NullProgressMonitor());
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void performSaveAs(IProgressMonitor progressMonitor) {
-		Shell shell = getSite().getShell();
-		IEditorInput input = getEditorInput();
-		SaveAsDialog dialog = new SaveAsDialog(shell);
-		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input)
-				.getFile() : null;
-		if (original != null) {
-			dialog.setOriginalFile(original);
-		}
-		dialog.create();
-		IDocumentProvider provider = getDocumentProvider();
-		if (provider == null) {
-			// editor has been programmatically closed while the dialog was open
-			return;
-		}
-		if (provider.isDeleted(input) && original != null) {
-			String message = NLS.bind(
-					Messages.MdnDiagramEditor_SavingDeletedFile,
-					original.getName());
-			dialog.setErrorMessage(null);
-			dialog.setMessage(message, IMessageProvider.WARNING);
-		}
-		if (dialog.open() == Window.CANCEL) {
-			if (progressMonitor != null) {
-				progressMonitor.setCanceled(true);
-			}
-			return;
-		}
-		IPath filePath = dialog.getResult();
-		if (filePath == null) {
-			if (progressMonitor != null) {
-				progressMonitor.setCanceled(true);
-			}
-			return;
-		}
-		IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
-		IFile file = workspaceRoot.getFile(filePath);
-		final IEditorInput newInput = new FileEditorInput(file);
-		// Check if the editor is already open
-		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor()
-				.getEditorMatchingStrategy();
-		IEditorReference[] editorRefs = PlatformUI.getWorkbench()
-				.getActiveWorkbenchWindow().getActivePage()
-				.getEditorReferences();
-		for (int i = 0; i < editorRefs.length; i++) {
-			if (matchingStrategy.matches(editorRefs[i], newInput)) {
-				MessageDialog.openWarning(shell,
-						Messages.MdnDiagramEditor_SaveAsErrorTitle,
-						Messages.MdnDiagramEditor_SaveAsErrorMessage);
-				return;
-			}
-		}
-		boolean success = false;
-		try {
-			provider.aboutToChange(newInput);
-			getDocumentProvider(newInput).saveDocument(progressMonitor,
-					newInput,
-					getDocumentProvider().getDocument(getEditorInput()), true);
-			success = true;
-		} catch (CoreException x) {
-			IStatus status = x.getStatus();
-			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				ErrorDialog.openError(shell,
-						Messages.MdnDiagramEditor_SaveErrorTitle,
-						Messages.MdnDiagramEditor_SaveErrorMessage,
-						x.getStatus());
-			}
-		} finally {
-			provider.changed(newInput);
-			if (success) {
-				setInput(newInput);
-			}
-		}
-		if (progressMonitor != null) {
-			progressMonitor.setCanceled(!success);
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public ShowInContext getShowInContext() {
-		return new ShowInContext(getEditorInput(), getNavigatorSelection());
-	}
-
-	/**
-	 * @generated
-	 */
-	private ISelection getNavigatorSelection() {
-		IDiagramDocument document = getDiagramDocument();
-		if (document == null) {
-			return StructuredSelection.EMPTY;
-		}
-		Diagram diagram = document.getDiagram();
-		if (diagram == null || diagram.eResource() == null) {
-			return StructuredSelection.EMPTY;
-		}
-		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
-		if (file != null) {
-			MdnNavigatorItem item = new MdnNavigatorItem(diagram, file, false);
-			return new StructuredSelection(item);
-		}
-		return StructuredSelection.EMPTY;
 	}
 
 	/**
@@ -332,6 +191,37 @@ public class MdnDiagramEditor extends DiagramDocumentEditor implements
 					}
 
 				});
+		startupLastClickPositionProvider();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void startupLastClickPositionProvider() {
+		if (myLastClickPositionProvider == null) {
+			myLastClickPositionProvider = new LastClickPositionProvider(this);
+			myLastClickPositionProvider.attachToService();
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void shutDownLastClickPositionProvider() {
+		if (myLastClickPositionProvider != null) {
+			myLastClickPositionProvider.detachFromService();
+			myLastClickPositionProvider.dispose();
+			myLastClickPositionProvider = null;
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public void dispose() {
+		shutDownLastClickPositionProvider();
+		super.dispose();
 	}
 
 	/**
@@ -358,11 +248,7 @@ public class MdnDiagramEditor extends DiagramDocumentEditor implements
 				IStructuredSelection selection = (IStructuredSelection) transferedObject;
 				for (Iterator<?> it = selection.iterator(); it.hasNext();) {
 					Object nextSelectedObject = it.next();
-					if (nextSelectedObject instanceof MdnNavigatorItem) {
-						View view = ((MdnNavigatorItem) nextSelectedObject)
-								.getView();
-						nextSelectedObject = view.getElement();
-					} else if (nextSelectedObject instanceof IAdaptable) {
+					if (nextSelectedObject instanceof IAdaptable) {
 						IAdaptable adaptable = (IAdaptable) nextSelectedObject;
 						nextSelectedObject = adaptable
 								.getAdapter(EObject.class);

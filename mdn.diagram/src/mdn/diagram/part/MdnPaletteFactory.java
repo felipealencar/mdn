@@ -17,6 +17,8 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
+import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
 
 /**
  * @generated
@@ -80,7 +82,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAction1CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Action1CreationTool_title,
 				Messages.Action1CreationTool_desc,
 				Collections.singletonList(MdnElementTypes.Action_2012));
@@ -95,7 +97,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createCondition2CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Condition2CreationTool_title,
 				Messages.Condition2CreationTool_desc,
 				Collections.singletonList(MdnElementTypes.Condition_2013));
@@ -110,7 +112,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createController3CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Controller3CreationTool_title,
 				Messages.Controller3CreationTool_desc,
 				Collections.singletonList(MdnElementTypes.Controller_2001));
@@ -125,7 +127,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createGroup4CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Group4CreationTool_title,
 				Messages.Group4CreationTool_desc,
 				Collections.singletonList(MdnElementTypes.Group_2018));
@@ -143,7 +145,7 @@ public class MdnPaletteFactory {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(MdnElementTypes.Host_2002);
 		types.add(MdnElementTypes.Host_3001);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Host5CreationTool_title,
 				Messages.Host5CreationTool_desc, types);
 		entry.setId("createHost5CreationTool"); //$NON-NLS-1$
@@ -157,7 +159,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPacketHeader6CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.PacketHeader6CreationTool_title,
 				Messages.PacketHeader6CreationTool_desc,
 				Collections.singletonList(MdnElementTypes.PacketHeader_2016));
@@ -172,7 +174,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createRule7CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Rule7CreationTool_title,
 				Messages.Rule7CreationTool_desc,
 				Collections.singletonList(MdnElementTypes.Rule_2017));
@@ -187,7 +189,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createSwitch8CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Switch8CreationTool_title,
 				Messages.Switch8CreationTool_desc,
 				Collections.singletonList(MdnElementTypes.Switch_2003));
@@ -202,7 +204,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createTime9CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Time9CreationTool_title,
 				Messages.Time9CreationTool_desc,
 				Collections.singletonList(MdnElementTypes.Time_2015));
@@ -217,7 +219,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createTraffic10CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Traffic10CreationTool_title,
 				Messages.Traffic10CreationTool_desc,
 				Collections.singletonList(MdnElementTypes.Traffic_2014));
@@ -232,7 +234,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createActionForwardToNode1CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.ActionForwardToNode1CreationTool_title,
 				Messages.ActionForwardToNode1CreationTool_desc,
 				Collections
@@ -248,7 +250,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createActionPacketHeader2CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.ActionPacketHeader2CreationTool_title,
 				Messages.ActionPacketHeader2CreationTool_desc,
 				Collections
@@ -264,7 +266,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createConditionPacket3CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.ConditionPacket3CreationTool_title,
 				Messages.ConditionPacket3CreationTool_desc,
 				Collections
@@ -280,7 +282,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createConditionTime4CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.ConditionTime4CreationTool_title,
 				Messages.ConditionTime4CreationTool_desc,
 				Collections
@@ -296,7 +298,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createConditionTraffic5CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.ConditionTraffic5CreationTool_title,
 				Messages.ConditionTraffic5CreationTool_desc,
 				Collections
@@ -312,7 +314,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createHostSwitch6CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.HostSwitch6CreationTool_title,
 				Messages.HostSwitch6CreationTool_desc,
 				Collections.singletonList(MdnElementTypes.HostHostSwitch_4004));
@@ -327,7 +329,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createRuleCondition7CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.RuleCondition7CreationTool_title,
 				Messages.RuleCondition7CreationTool_desc,
 				Collections
@@ -343,7 +345,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createSwitchController8CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.SwitchController8CreationTool_title,
 				Messages.SwitchController8CreationTool_desc,
 				Collections
@@ -359,7 +361,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createSwitches9CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.Switches9CreationTool_title,
 				Messages.Switches9CreationTool_desc,
 				Collections.singletonList(MdnElementTypes.SwitchSwitches_4022));
@@ -374,7 +376,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createRuleAction10CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.RuleAction10CreationTool_title,
 				Messages.RuleAction10CreationTool_desc,
 				Collections.singletonList(MdnElementTypes.RuleRuleAction_4027));
@@ -389,7 +391,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createSourceHost11CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.SourceHost11CreationTool_title,
 				Messages.SourceHost11CreationTool_desc,
 				Collections
@@ -405,7 +407,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createTargetGroup12CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.TargetGroup12CreationTool_title,
 				Messages.TargetGroup12CreationTool_desc,
 				Collections
@@ -421,7 +423,7 @@ public class MdnPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createTargetHost13CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.TargetHost13CreationTool_title,
 				Messages.TargetHost13CreationTool_desc,
 				Collections
@@ -431,63 +433,5 @@ public class MdnPaletteFactory {
 				.getImageDescriptor(MdnElementTypes.RuleTargetHostRule_4025));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class NodeToolEntry extends ToolEntry {
-
-		/**
-		 * @generated
-		 */
-		private final List<IElementType> elementTypes;
-
-		/**
-		 * @generated
-		 */
-		private NodeToolEntry(String title, String description,
-				List<IElementType> elementTypes) {
-			super(title, description, null, null);
-			this.elementTypes = elementTypes;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class LinkToolEntry extends ToolEntry {
-
-		/**
-		 * @generated
-		 */
-		private final List<IElementType> relationshipTypes;
-
-		/**
-		 * @generated
-		 */
-		private LinkToolEntry(String title, String description,
-				List<IElementType> relationshipTypes) {
-			super(title, description, null, null);
-			this.relationshipTypes = relationshipTypes;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
 	}
 }

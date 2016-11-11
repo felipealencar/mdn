@@ -25,61 +25,61 @@ import org.eclipse.emf.common.util.EList;
 public interface Switch extends NetworkNode
 {
   /**
-   * Returns the value of the '<em><b>Ports</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ports</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Ports</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ports</em>' attribute.
-   * @see #setPorts(int)
-   * @see mdn.MdnPackage#getSwitch_Ports()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Ports</em>' attribute.
+	 * @see #setPorts(int)
+	 * @see mdn.MdnPackage#getSwitch_Ports()
+	 * @model
+	 * @generated
+	 */
   int getPorts();
 
   /**
-   * Sets the value of the '{@link mdn.Switch#getPorts <em>Ports</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link mdn.Switch#getPorts <em>Ports</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ports</em>' attribute.
-   * @see #getPorts()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Ports</em>' attribute.
+	 * @see #getPorts()
+	 * @generated
+	 */
   void setPorts(int value);
 
   /**
-   * Returns the value of the '<em><b>Switch Controller</b></em>' reference list.
-   * The list contents are of type {@link mdn.Controller}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Switch Controller</b></em>' reference list.
+	 * The list contents are of type {@link mdn.Controller}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Switch Controller</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Switch Controller</em>' reference list.
-   * @see mdn.MdnPackage#getSwitch_SwitchController()
-   * @model annotation="gmf.link target.decoration='none' source.decoration='none' style='solid' color='0,0,0'"
-   * @generated
-   */
+	 * @return the value of the '<em>Switch Controller</em>' reference list.
+	 * @see mdn.MdnPackage#getSwitch_SwitchController()
+	 * @model annotation="gmf.link target.decoration='none' source.decoration='none' style='solid' color='0,0,0'"
+	 * @generated
+	 */
   EList<Controller> getSwitchController();
 
   /**
-   * Returns the value of the '<em><b>Switches</b></em>' reference list.
-   * The list contents are of type {@link mdn.Switch}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Switches</b></em>' reference list.
+	 * The list contents are of type {@link mdn.Switch}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Switches</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Switches</em>' reference list.
-   * @see mdn.MdnPackage#getSwitch_Switches()
-   * @model annotation="gmf.link target.decoration='none' source.decoration='none' style='solid' color='0,0,0' switches.constraint='self <> oppositeEnd' source.constraint='self <> oppositeEnd'"
-   * @generated
-   */
+	 * @return the value of the '<em>Switches</em>' reference list.
+	 * @see mdn.MdnPackage#getSwitch_Switches()
+	 * @model annotation="gmf.link target.decoration='none' source.decoration='none' style='solid' color='0,0,0' switches.constraint='self <> oppositeEnd' source.constraint='self <> oppositeEnd'"
+	 * @generated
+	 */
   EList<Switch> getSwitches();
 
 } // Switch

@@ -7,9 +7,19 @@ Bundle-ClassPath: .
 Bundle-Activator: mdn.diagram.part.MdnDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: mdn.diagram.edit.parts,
+Export-Package: mdn.diagram.application,
+ mdn.diagram.edit.commands,
+ mdn.diagram.edit.helpers,
+ mdn.diagram.edit.parts,
+ mdn.diagram.edit.policies,
+ mdn.diagram.m2t,
+ mdn.diagram.navigator,
+ mdn.diagram.parsers,
  mdn.diagram.part,
- mdn.diagram.providers
+ mdn.diagram.preferences,
+ mdn.diagram.providers,
+ mdn.diagram.providers.assistants,
+ mdn.diagram.sheet
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
@@ -30,7 +40,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui.properties,
  org.eclipse.gmf.runtime.diagram.ui.providers,
  org.eclipse.gmf.runtime.diagram.ui.providers.ide,
- org.eclipse.gmf.runtime.diagram.ui.render,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
  org.eclipse.gmf.tooling.runtime;visibility:=reexport,
@@ -43,6 +52,7 @@ Require-Bundle: org.eclipse.core.runtime,
  mdn.figures,
  org.eclipse.epsilon.egl.engine,
  org.eclipse.epsilon.emc.emf,
- org.eclipse.epsilon.eol.engine
+ org.eclipse.epsilon.eol.engine,
+ org.eclipse.gmf.runtime.diagram.ui.render
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

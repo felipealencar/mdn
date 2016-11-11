@@ -142,7 +142,7 @@ public class HostEditPart extends AbstractBorderedShapeEditPart {
 		if (borderItemEditPart instanceof HostNameEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(-5, -5));
+			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
@@ -236,64 +236,6 @@ public class HostEditPart extends AbstractBorderedShapeEditPart {
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(MdnVisualIDRegistry
 				.getType(HostNameEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(MdnElementTypes.HostHostSwitch_4004);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof SwitchEditPart) {
-			types.add(MdnElementTypes.HostHostSwitch_4004);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.HostHostSwitch_4004) {
-			types.add(MdnElementTypes.Switch_2003);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(MdnElementTypes.RuleSourceHostRule_4024);
-		types.add(MdnElementTypes.RuleTargetHostRule_4025);
-		types.add(MdnElementTypes.ActionActionForwardToNode_4013);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.RuleSourceHostRule_4024) {
-			types.add(MdnElementTypes.Rule_2017);
-		} else if (relationshipType == MdnElementTypes.RuleTargetHostRule_4025) {
-			types.add(MdnElementTypes.Rule_2017);
-		} else if (relationshipType == MdnElementTypes.ActionActionForwardToNode_4013) {
-			types.add(MdnElementTypes.Action_2012);
-		}
-		return types;
 	}
 
 	/**

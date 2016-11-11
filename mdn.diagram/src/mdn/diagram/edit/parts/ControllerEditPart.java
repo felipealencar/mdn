@@ -141,7 +141,7 @@ public class ControllerEditPart extends AbstractBorderedShapeEditPart {
 		if (borderItemEditPart instanceof ControllerNameEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(-5, -5));
+			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
@@ -235,29 +235,6 @@ public class ControllerEditPart extends AbstractBorderedShapeEditPart {
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(MdnVisualIDRegistry
 				.getType(ControllerNameEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(MdnElementTypes.SwitchSwitchController_4006);
-		types.add(MdnElementTypes.ActionActionForwardToNode_4013);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.SwitchSwitchController_4006) {
-			types.add(MdnElementTypes.Switch_2003);
-		} else if (relationshipType == MdnElementTypes.ActionActionForwardToNode_4013) {
-			types.add(MdnElementTypes.Action_2012);
-		}
-		return types;
 	}
 
 	/**

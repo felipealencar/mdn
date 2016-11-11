@@ -37,261 +37,257 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 public class PacketHeaderImpl extends RuleObjectImpl implements PacketHeader
 {
   /**
-   * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOperator()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOperator()
+	 * @generated
+	 * @ordered
+	 */
   protected static final RelationalOperators OPERATOR_EDEFAULT = RelationalOperators.EQUAL_TO;
 
   /**
-   * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOperator()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOperator()
+	 * @generated
+	 * @ordered
+	 */
   protected RelationalOperators operator = OPERATOR_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHeader()
-   * @generated
-   * @ordered
-   */
+	 * @see #getHeader()
+	 * @generated
+	 * @ordered
+	 */
   protected static final PacketHeaders HEADER_EDEFAULT = PacketHeaders.IN_PORT;
 
   /**
-   * The cached value of the '{@link #getHeader() <em>Header</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getHeader() <em>Header</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHeader()
-   * @generated
-   * @ordered
-   */
+	 * @see #getHeader()
+	 * @generated
+	 * @ordered
+	 */
   protected PacketHeaders header = HEADER_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String VALUE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
   protected String value = VALUE_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected PacketHeaderImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return MdnPackage.Literals.PACKET_HEADER;
-  }
+		return MdnPackage.Literals.PACKET_HEADER;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public RelationalOperators getOperator()
   {
-    return operator;
-  }
+		return operator;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setOperator(RelationalOperators newOperator)
   {
-    RelationalOperators oldOperator = operator;
-    operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.PACKET_HEADER__OPERATOR, oldOperator, operator));
-  }
+		RelationalOperators oldOperator = operator;
+		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.PACKET_HEADER__OPERATOR, oldOperator, operator));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public PacketHeaders getHeader()
   {
-    return header;
-  }
+		return header;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setHeader(PacketHeaders newHeader)
   {
-    PacketHeaders oldHeader = header;
-    header = newHeader == null ? HEADER_EDEFAULT : newHeader;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.PACKET_HEADER__HEADER, oldHeader, header));
-  }
+		PacketHeaders oldHeader = header;
+		header = newHeader == null ? HEADER_EDEFAULT : newHeader;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.PACKET_HEADER__HEADER, oldHeader, header));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getValue()
   {
-    return value;
-  }
+		return value;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setValue(String newValue)
   {
-    String oldValue = value;
-    value = newValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.PACKET_HEADER__VALUE, oldValue, value));
-  }
+		String oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.PACKET_HEADER__VALUE, oldValue, value));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case MdnPackage.PACKET_HEADER__OPERATOR:
-        return getOperator();
-      case MdnPackage.PACKET_HEADER__HEADER:
-        return getHeader();
-      case MdnPackage.PACKET_HEADER__VALUE:
-        return getValue();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case MdnPackage.PACKET_HEADER__OPERATOR:
+				return getOperator();
+			case MdnPackage.PACKET_HEADER__HEADER:
+				return getHeader();
+			case MdnPackage.PACKET_HEADER__VALUE:
+				return getValue();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case MdnPackage.PACKET_HEADER__OPERATOR:
-        setOperator((RelationalOperators)newValue);
-        return;
-      case MdnPackage.PACKET_HEADER__HEADER:
-        setHeader((PacketHeaders)newValue);
-        return;
-      case MdnPackage.PACKET_HEADER__VALUE:
-        setValue((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case MdnPackage.PACKET_HEADER__OPERATOR:
+				setOperator((RelationalOperators)newValue);
+				return;
+			case MdnPackage.PACKET_HEADER__HEADER:
+				setHeader((PacketHeaders)newValue);
+				return;
+			case MdnPackage.PACKET_HEADER__VALUE:
+				setValue((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case MdnPackage.PACKET_HEADER__OPERATOR:
-        setOperator(OPERATOR_EDEFAULT);
-        return;
-      case MdnPackage.PACKET_HEADER__HEADER:
-        setHeader(HEADER_EDEFAULT);
-        return;
-      case MdnPackage.PACKET_HEADER__VALUE:
-        setValue(VALUE_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case MdnPackage.PACKET_HEADER__OPERATOR:
+				setOperator(OPERATOR_EDEFAULT);
+				return;
+			case MdnPackage.PACKET_HEADER__HEADER:
+				setHeader(HEADER_EDEFAULT);
+				return;
+			case MdnPackage.PACKET_HEADER__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case MdnPackage.PACKET_HEADER__OPERATOR:
-        return operator != OPERATOR_EDEFAULT;
-      case MdnPackage.PACKET_HEADER__HEADER:
-        return header != HEADER_EDEFAULT;
-      case MdnPackage.PACKET_HEADER__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case MdnPackage.PACKET_HEADER__OPERATOR:
+				return operator != OPERATOR_EDEFAULT;
+			case MdnPackage.PACKET_HEADER__HEADER:
+				return header != HEADER_EDEFAULT;
+			case MdnPackage.PACKET_HEADER__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (operator: ");
-    result.append(operator);
-    result.append(", header: ");
-    result.append(header);
-    result.append(", value: ");
-    result.append(value);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (operator: ");
+		result.append(operator);
+		result.append(", header: ");
+		result.append(header);
+		result.append(", value: ");
+		result.append(value);
+		result.append(')');
+		return result.toString();
+	}
 
 } //PacketHeaderImpl

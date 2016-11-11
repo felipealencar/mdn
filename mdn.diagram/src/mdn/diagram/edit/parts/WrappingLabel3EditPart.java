@@ -45,6 +45,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.directedit.TextDirectEditManager2;
 import org.eclipse.gmf.tooling.runtime.draw2d.labels.SimpleLabelDelegate;
+import org.eclipse.gmf.tooling.runtime.edit.policies.DefaultLinkLabelDragPolicy;
 import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ICellEditorValidator;
@@ -117,7 +118,7 @@ public class WrappingLabel3EditPart extends LabelEditPart implements
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE,
 				new MdnTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
-				new SdnEditPart.LinkLabelDragPolicy());
+				new DefaultLinkLabelDragPolicy());
 	}
 
 	/**
@@ -336,7 +337,7 @@ public class WrappingLabel3EditPart extends LabelEditPart implements
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager2(this, null,
+			setManager(new TextDirectEditManager(this, null,
 					MdnEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
@@ -360,8 +361,8 @@ public class WrappingLabel3EditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected void performDirectEdit(Point eventLocation) {
-		if (getManager().getClass() == TextDirectEditManager2.class) {
-			((TextDirectEditManager2) getManager()).show(eventLocation
+		if (getManager().getClass() == TextDirectEditManager.class) {
+			((TextDirectEditManager) getManager()).show(eventLocation
 					.getSWTPoint());
 		}
 	}
@@ -372,9 +373,6 @@ public class WrappingLabel3EditPart extends LabelEditPart implements
 	private void performDirectEdit(char initialCharacter) {
 		if (getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
-		} else // 
-		if (getManager() instanceof TextDirectEditManager2) {
-			((TextDirectEditManager2) getManager()).show(initialCharacter);
 		} else //
 		{
 			performDirectEdit();

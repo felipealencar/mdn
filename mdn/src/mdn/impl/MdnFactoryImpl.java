@@ -22,340 +22,334 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 public class MdnFactoryImpl extends EFactoryImpl implements MdnFactory
 {
   /**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static MdnFactory init()
   {
-    try
-    {
-      MdnFactory theMdnFactory = (MdnFactory)EPackage.Registry.INSTANCE.getEFactory("mdn"); 
-      if (theMdnFactory != null)
-      {
-        return theMdnFactory;
-      }
-    }
-    catch (Exception exception)
-    {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new MdnFactoryImpl();
-  }
+		try {
+			MdnFactory theMdnFactory = (MdnFactory)EPackage.Registry.INSTANCE.getEFactory(MdnPackage.eNS_URI);
+			if (theMdnFactory != null) {
+				return theMdnFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new MdnFactoryImpl();
+	}
 
   /**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public MdnFactoryImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EObject create(EClass eClass)
   {
-    switch (eClass.getClassifierID())
-    {
-      case MdnPackage.SDN: return createSdn();
-      case MdnPackage.CONTROLLER: return createController();
-      case MdnPackage.HOST: return createHost();
-      case MdnPackage.SWITCH: return createSwitch();
-      case MdnPackage.RULE: return createRule();
-      case MdnPackage.ACTION: return createAction();
-      case MdnPackage.CONDITION: return createCondition();
-      case MdnPackage.TRAFFIC: return createTraffic();
-      case MdnPackage.TIME: return createTime();
-      case MdnPackage.PACKET_HEADER: return createPacketHeader();
-      case MdnPackage.GROUP: return createGroup();
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eClass.getClassifierID()) {
+			case MdnPackage.SDN: return createSdn();
+			case MdnPackage.CONTROLLER: return createController();
+			case MdnPackage.HOST: return createHost();
+			case MdnPackage.SWITCH: return createSwitch();
+			case MdnPackage.RULE: return createRule();
+			case MdnPackage.ACTION: return createAction();
+			case MdnPackage.CONDITION: return createCondition();
+			case MdnPackage.TRAFFIC: return createTraffic();
+			case MdnPackage.TIME: return createTime();
+			case MdnPackage.PACKET_HEADER: return createPacketHeader();
+			case MdnPackage.GROUP: return createGroup();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object createFromString(EDataType eDataType, String initialValue)
   {
-    switch (eDataType.getClassifierID())
-    {
-      case MdnPackage.PACKET_HEADERS:
-        return createPacketHeadersFromString(eDataType, initialValue);
-      case MdnPackage.ACTIONS:
-        return createActionsFromString(eDataType, initialValue);
-      case MdnPackage.CONDITIONS:
-        return createConditionsFromString(eDataType, initialValue);
-      case MdnPackage.RELATIONAL_OPERATORS:
-        return createRelationalOperatorsFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case MdnPackage.PACKET_HEADERS:
+				return createPacketHeadersFromString(eDataType, initialValue);
+			case MdnPackage.ACTIONS:
+				return createActionsFromString(eDataType, initialValue);
+			case MdnPackage.CONDITIONS:
+				return createConditionsFromString(eDataType, initialValue);
+			case MdnPackage.RELATIONAL_OPERATORS:
+				return createRelationalOperatorsFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String convertToString(EDataType eDataType, Object instanceValue)
   {
-    switch (eDataType.getClassifierID())
-    {
-      case MdnPackage.PACKET_HEADERS:
-        return convertPacketHeadersToString(eDataType, instanceValue);
-      case MdnPackage.ACTIONS:
-        return convertActionsToString(eDataType, instanceValue);
-      case MdnPackage.CONDITIONS:
-        return convertConditionsToString(eDataType, instanceValue);
-      case MdnPackage.RELATIONAL_OPERATORS:
-        return convertRelationalOperatorsToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case MdnPackage.PACKET_HEADERS:
+				return convertPacketHeadersToString(eDataType, instanceValue);
+			case MdnPackage.ACTIONS:
+				return convertActionsToString(eDataType, instanceValue);
+			case MdnPackage.CONDITIONS:
+				return convertConditionsToString(eDataType, instanceValue);
+			case MdnPackage.RELATIONAL_OPERATORS:
+				return convertRelationalOperatorsToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Sdn createSdn()
   {
-    SdnImpl sdn = new SdnImpl();
-    return sdn;
-  }
+		SdnImpl sdn = new SdnImpl();
+		return sdn;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Controller createController()
   {
-    ControllerImpl controller = new ControllerImpl();
-    return controller;
-  }
+		ControllerImpl controller = new ControllerImpl();
+		return controller;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Host createHost()
   {
-    HostImpl host = new HostImpl();
-    return host;
-  }
+		HostImpl host = new HostImpl();
+		return host;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Switch createSwitch()
   {
-    SwitchImpl switch_ = new SwitchImpl();
-    return switch_;
-  }
+		SwitchImpl switch_ = new SwitchImpl();
+		return switch_;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Rule createRule()
   {
-    RuleImpl rule = new RuleImpl();
-    return rule;
-  }
+		RuleImpl rule = new RuleImpl();
+		return rule;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Action createAction()
   {
-    ActionImpl action = new ActionImpl();
-    return action;
-  }
+		ActionImpl action = new ActionImpl();
+		return action;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Condition createCondition()
   {
-    ConditionImpl condition = new ConditionImpl();
-    return condition;
-  }
+		ConditionImpl condition = new ConditionImpl();
+		return condition;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Traffic createTraffic()
   {
-    TrafficImpl traffic = new TrafficImpl();
-    return traffic;
-  }
+		TrafficImpl traffic = new TrafficImpl();
+		return traffic;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Time createTime()
   {
-    TimeImpl time = new TimeImpl();
-    return time;
-  }
+		TimeImpl time = new TimeImpl();
+		return time;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public PacketHeader createPacketHeader()
   {
-    PacketHeaderImpl packetHeader = new PacketHeaderImpl();
-    return packetHeader;
-  }
+		PacketHeaderImpl packetHeader = new PacketHeaderImpl();
+		return packetHeader;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Group createGroup()
   {
-    GroupImpl group = new GroupImpl();
-    return group;
-  }
+		GroupImpl group = new GroupImpl();
+		return group;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public PacketHeaders createPacketHeadersFromString(EDataType eDataType, String initialValue)
   {
-    PacketHeaders result = PacketHeaders.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
+		PacketHeaders result = PacketHeaders.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertPacketHeadersToString(EDataType eDataType, Object instanceValue)
   {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
+		return instanceValue == null ? null : instanceValue.toString();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Actions createActionsFromString(EDataType eDataType, String initialValue)
   {
-    Actions result = Actions.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
+		Actions result = Actions.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertActionsToString(EDataType eDataType, Object instanceValue)
   {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
+		return instanceValue == null ? null : instanceValue.toString();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Conditions createConditionsFromString(EDataType eDataType, String initialValue)
   {
-    Conditions result = Conditions.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
+		Conditions result = Conditions.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertConditionsToString(EDataType eDataType, Object instanceValue)
   {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
+		return instanceValue == null ? null : instanceValue.toString();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public RelationalOperators createRelationalOperatorsFromString(EDataType eDataType, String initialValue)
   {
-    RelationalOperators result = RelationalOperators.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
+		RelationalOperators result = RelationalOperators.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertRelationalOperatorsToString(EDataType eDataType, Object instanceValue)
   {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
+		return instanceValue == null ? null : instanceValue.toString();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public MdnPackage getMdnPackage()
   {
-    return (MdnPackage)getEPackage();
-  }
+		return (MdnPackage)getEPackage();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
+	 * @deprecated
+	 * @generated
+	 */
   @Deprecated
   public static MdnPackage getPackage()
   {
-    return MdnPackage.eINSTANCE;
-  }
+		return MdnPackage.eINSTANCE;
+	}
 
 } //MdnFactoryImpl

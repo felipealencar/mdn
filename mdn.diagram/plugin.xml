@@ -7,65 +7,65 @@
 
    <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
       <?gmfgen generated="true"?>
-      <fileTypes type="text" extension="mdn_diagram"/>
+      <fileTypes type="text" extension="mdn"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
       <?gmfgen generated="true"?>
       <parser
-         type="mdn_diagram"
+         type="mdn"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
 
 	<extension point="org.eclipse.ui.views">
 	        <view id="mdn.diagram.m2t.TransformationView"
-	             name="Application Code"
+	             name="%view.name"
 	          class="mdn.diagram.m2t.TransformationView"
 	          icon="icons/obj16/transformation.png"/>
 	</extension>
 	
 	<extension point="org.eclipse.ui.actionSets">
 	   <actionSet
-	            description="Export para script"
+	            description="%actionSet.description"
 	            id="mdn.diagram.m2t.ModelToTextAction.actionSet"
-	            label="Export to script  "
+	            label="%actionSet.label"
 	            visible="true">
 	      <action
 	               class="mdn.diagram.m2t.ModelToTextAction"
 	               icon="icons/obj16/transformation.png"
 	               id="mdn.diagram.m2t.ModelToTextAction"
-	               label="Export to script"
+	               label="%action.label"
 	               mode="FORCE_TEXT"
 	               style="push"
 	               toolbarPath="transformationGroup"
-	               tooltip="Export to script  ">
+	               tooltip="%action.tooltip">
 	      </action>
 	   </actionSet>
 	</extension>
 	
 	<extension point="org.eclipse.ui.views">
 	        <view id="mdn.diagram.m2t.TransformationMininetView"
-	             name="Mininet Script"
+	             name="%view.name.0"
 	          class="mdn.diagram.m2t.TransformationMininetView"
 	          icon="icons/obj16/transformation.png"/>
 	</extension>
 	
 	<extension point="org.eclipse.ui.actionSets">
 	   <actionSet
-	            description="Export to Mininet"
+	            description="%actionSet.description.0"
 	            id="mdn.diagram.m2t.ModelToMininetAction.actionSet"
-	            label="Export to Mininet"
+	            label="%actionSet.label.0"
 	            visible="true">
 	      <action
 	               class="mdn.diagram.m2t.ModelToMininetAction"
 	               icon="icons/obj16/transformation.png"
 	               id="mdn.diagram.m2t.ModelToMininetAction"
-	               label="Export to Mininet"
+	               label="%action.label.0"
 	               mode="FORCE_TEXT"
 	               style="push"
 	               toolbarPath="transformationGroup"
-	               tooltip="Export to Mininet">
+	               tooltip="%action.tooltip.0">
 	      </action>
 	   </actionSet>
 	</extension>
@@ -76,7 +76,7 @@
          id="mdn.diagram.part.MdnDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/MdnDiagramFile.gif"
-         extensions="mdn_diagram"
+         extensions="mdn"
          default="true"
          class="mdn.diagram.part.MdnDiagramEditor"
          matchingStrategy="mdn.diagram.part.MdnMatchingStrategy"
@@ -124,26 +124,6 @@
                <GlobalActionId actionId="save">
                </GlobalActionId>
             </ElementType>        
-         </ViewId>
-      </GlobalActionHandlerProvider>
-      <GlobalActionHandlerProvider
-         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
-         id="MdnPresentationPrint">
-         <Priority name="Lowest"/>
-         <ViewId id="mdn.diagram.part.MdnDiagramEditorID">
-            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-               <GlobalActionId actionId="print"/>
-            </ElementType>
-         </ViewId>
-      </GlobalActionHandlerProvider>
-      <GlobalActionHandlerProvider
-         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="MdnPresentationIDE">
-         <Priority name="Lowest"/>
-         <ViewId id="mdn.diagram.part.MdnDiagramEditorID">
-            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-               <GlobalActionId actionId="bookmark"/>
-            </ElementType>
          </ViewId>
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
@@ -269,7 +249,6 @@
             class="mdn.diagram.sheet.MdnPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="mdn.diagram.navigator.MdnAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>
@@ -313,22 +292,67 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="mdn.diagram.providers.MdnModelingAssistantProvider">
+      <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfSdnEditPart">
          <Priority name="Lowest"/>
          <object class="mdn.diagram.edit.parts.SdnEditPart" id="Sdn_1000"/>
-         <object class="mdn.diagram.edit.parts.ControllerEditPart" id="Controller_2001"/>
-         <object class="mdn.diagram.edit.parts.HostEditPart" id="Host_2002"/>
-         <object class="mdn.diagram.edit.parts.SwitchEditPart" id="Switch_2003"/>
-         <object class="mdn.diagram.edit.parts.ActionEditPart" id="Action_2012"/>
-         <object class="mdn.diagram.edit.parts.ConditionEditPart" id="Condition_2013"/>
-         <object class="mdn.diagram.edit.parts.TrafficEditPart" id="Traffic_2014"/>
-         <object class="mdn.diagram.edit.parts.TimeEditPart" id="Time_2015"/>
-         <object class="mdn.diagram.edit.parts.PacketHeaderEditPart" id="PacketHeader_2016"/>
-         <object class="mdn.diagram.edit.parts.RuleEditPart" id="Rule_2017"/>
-         <object class="mdn.diagram.edit.parts.GroupEditPart" id="Group_2018"/>
-         <object class="mdn.diagram.edit.parts.Host2EditPart" id="Host_3001"/>
-         <context elements="Sdn_1000,Controller_2001,Host_2002,Switch_2003,Action_2012,Condition_2013,Traffic_2014,Time_2015,PacketHeader_2016,Rule_2017,Group_2018,Host_3001"/>
+         <context elements="Sdn_1000"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfControllerEditPart">
+         <Priority name="Lowest"/>
+         <object class="mdn.diagram.edit.parts.ControllerEditPart" id="Controller_2001"/>
+         <context elements="Controller_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfHostEditPart">
+         <Priority name="Lowest"/>
+         <object class="mdn.diagram.edit.parts.HostEditPart" id="Host_2002"/>
+         <context elements="Host_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfSwitchEditPart">
+         <Priority name="Lowest"/>
+         <object class="mdn.diagram.edit.parts.SwitchEditPart" id="Switch_2003"/>
+         <context elements="Switch_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfActionEditPart">
+         <Priority name="Lowest"/>
+         <object class="mdn.diagram.edit.parts.ActionEditPart" id="Action_2012"/>
+         <context elements="Action_2012"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfConditionEditPart">
+         <Priority name="Lowest"/>
+         <object class="mdn.diagram.edit.parts.ConditionEditPart" id="Condition_2013"/>
+         <context elements="Condition_2013"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfTrafficEditPart">
+         <Priority name="Lowest"/>
+         <object class="mdn.diagram.edit.parts.TrafficEditPart" id="Traffic_2014"/>
+         <context elements="Traffic_2014"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfTimeEditPart">
+         <Priority name="Lowest"/>
+         <object class="mdn.diagram.edit.parts.TimeEditPart" id="Time_2015"/>
+         <context elements="Time_2015"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfPacketHeaderEditPart">
+         <Priority name="Lowest"/>
+         <object class="mdn.diagram.edit.parts.PacketHeaderEditPart" id="PacketHeader_2016"/>
+         <context elements="PacketHeader_2016"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfRuleEditPart">
+         <Priority name="Lowest"/>
+         <object class="mdn.diagram.edit.parts.RuleEditPart" id="Rule_2017"/>
+         <context elements="Rule_2017"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfGroupEditPart">
+         <Priority name="Lowest"/>
+         <object class="mdn.diagram.edit.parts.GroupEditPart" id="Group_2018"/>
+         <context elements="Group_2018"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfHost2EditPart">
+         <Priority name="Lowest"/>
+         <object class="mdn.diagram.edit.parts.Host2EditPart" id="Host_3001"/>
+         <context elements="Host_3001"/>
+      </modelingAssistantProvider>
+      
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
@@ -694,168 +718,116 @@
 
 
 
-<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+
+
+
+
+
+
+<extension point="org.eclipse.ui.actionSets" id="init-diagram-action">
       <?gmfgen generated="true"?>
-      <objectContribution
-            id="mdn.diagram.InitDiagram"
-            nameFilter="*.mdn"
-            objectClass="org.eclipse.core.resources.IFile">
+      <actionSet
+            label="%initDiagramActionLabel"
+            visible="true"
+            id="mdn.diagram.InitDiagram">
          <action
                label="%initDiagramActionLabel"
                class="mdn.diagram.part.MdnInitDiagramFileAction"
-               menubarPath="additions"
-               enablesFor="1"
+               menubarPath="file/additions"
                id="mdn.diagram.InitDiagramAction">
          </action>
-      </objectContribution>
+      </actionSet>
    </extension>
 
-<extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+<extension id="MdnApplication" point="org.eclipse.core.runtime.applications">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="mdn.diagram.providers.MdnMarkerNavigationProvider">
-         <MarkerType name="mdn.diagram.diagnostic"/>
-         <Priority name="Lowest"/>
-      </MarkerNavigationProvider>
+      <application>
+         <run class="mdn.diagram.application.MdnApplication"/>
+      </application>
    </extension>
 
-<extension id="diagnostic" name="Mdn Plugin problems" point="org.eclipse.core.resources.markers">
+<extension point="org.eclipse.ui.perspectives" id="rcp-perspective">
       <?gmfgen generated="true"?>
-      <super type="org.eclipse.core.resources.problemmarker"/>
-      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
-      <persistent value="true"/>
-   </extension><extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
-      <?gmfgen generated="true"?>
-       <propertyTester
-           id="mdn.diagram.URIEditorInputPropertyTester"
-           type="org.eclipse.emf.common.ui.URIEditorInput"
-           namespace="mdn.diagram"
-           properties="isURIEditorInput"
-           class="mdn.diagram.part.MdnUriEditorInputTester">
-       </propertyTester>
+      <perspective
+            id="mdn.diagram.MdnPerspective"
+            name="%perspectiveName"
+            class="mdn.diagram.application.DiagramEditorPerspective">
+      </perspective>
    </extension>
 
-<extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
+<extension point="org.eclipse.ui.commands" id="rcp-menu-commands">
       <?gmfgen generated="true"?>
-       <propertyTester
-           id="mdn.diagram.ShortcutPropertyTester"
-           type="org.eclipse.gmf.runtime.notation.View"
-           namespace="mdn.diagram"
-           properties="isShortcut"
-           class="mdn.diagram.part.MdnShortcutPropertyTester">
-       </propertyTester>
+      <command
+            name="%openURIActionLabel"
+            description="%openURIActionDescription"
+            categoryId="org.eclipse.ui.category.file"
+            id="mdn.diagram.OpenURICommand"/>  
+      <command
+            name="%openActionLabel"
+            description="%openActionDescription"
+            categoryId="org.eclipse.ui.category.file"
+            id="mdn.diagram.OpenCommand"/>  
    </extension>
 
-<extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+<extension point="org.eclipse.ui.bindings" id="rcp-command-bindings">
       <?gmfgen generated="true"?>
-      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
-         <includes>
-            <contentExtension pattern="mdn.diagram.resourceContent"/>
-			<contentExtension pattern="mdn.diagram.domainResourceContent"/>
-            <contentExtension pattern="mdn.diagram.navigatorLinkHelper"/>
-         </includes>
-      </viewerContentBinding>
-      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
-         <includes>
-            <actionExtension pattern="mdn.diagram.navigatorActionProvider"/>
-         </includes>
-      </viewerActionBinding>
+      <key
+            commandId="mdn.diagram.OpenURICommand"
+            sequence="M1+U"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            commandId="mdn.diagram.OpenCommand"
+            sequence="M1+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
    </extension>
 
-<extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+<extension point="org.eclipse.ui.actionSets" id="rcp-actions">
       <?gmfgen generated="true"?>
-      <navigatorContent
-            id="mdn.diagram.resourceContent" 
-            name="%navigatorContentName" 
-            priority="normal" 
-            contentProvider="mdn.diagram.navigator.MdnNavigatorContentProvider" 
-            labelProvider="mdn.diagram.navigator.MdnNavigatorLabelProvider"
-            icon="icons/obj16/MdnDiagramFile.gif"
-            activeByDefault="true">
-         <triggerPoints>
-            <or>
-	           <and>
-    	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="mdn_diagram"/>
-               </and>
-               <instanceof value="mdn.diagram.navigator.MdnAbstractNavigatorItem"/>
-           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
-           	      <test property="mdn.diagram.isShortcut"/>
-           	   </adapt>
-            </or>
-         </triggerPoints>
-         <possibleChildren>
-            <or>
-         	   <instanceof value="mdn.diagram.navigator.MdnAbstractNavigatorItem"/>
-           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
-           	      <test property="mdn.diagram.isShortcut"/>
-           	   </adapt>
-            </or>
-         </possibleChildren>
-         <commonSorter 
-               id="mdn.diagram.navigatorSorter" 
-               class="mdn.diagram.navigator.MdnNavigatorSorter">
-            <parentExpression>
-               <or>
-	              <and>
-    	             <instanceof value="org.eclipse.core.resources.IFile"/>
-        	         <test property="org.eclipse.core.resources.extension" value="mdn_diagram"/>
-                  </and>
-                  <instanceof value="mdn.diagram.navigator.MdnAbstractNavigatorItem"/>
-               </or>
-            </parentExpression>
-         </commonSorter>
-      </navigatorContent>
-      <navigatorContent
-            id="mdn.diagram.domainResourceContent" 
-            name="%domainNavigatorContentName" 
-            priority="normal" 
-            contentProvider="mdn.diagram.navigator.MdnDomainNavigatorContentProvider" 
-            labelProvider="mdn.diagram.navigator.MdnDomainNavigatorLabelProvider"
-            icon="icons/obj16/MdnDiagramFile.gif"
-            activeByDefault="true">
-         <triggerPoints>
-            <or>
-	           <and>
-    	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="mdn"/>
-               </and>
-               <instanceof value="mdn.diagram.navigator.MdnDomainNavigatorItem"/>
-            </or>
-         </triggerPoints>
-         <possibleChildren>
-            <instanceof value="mdn.diagram.navigator.MdnDomainNavigatorItem"/>
-         </possibleChildren>
-      </navigatorContent>
-      <actionProvider
-            id="mdn.diagram.navigatorActionProvider"
-            class="mdn.diagram.navigator.MdnNavigatorActionProvider">
-         <enablement>
-            <or>
-               <instanceof value="mdn.diagram.navigator.MdnAbstractNavigatorItem"/>
-           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
-           	      <test property="mdn.diagram.isShortcut"/>
-           	   </adapt>
-            </or>
-         </enablement>
-      </actionProvider>
+      <actionSet
+            label="%applicationActionSetLabel"
+            visible="true"
+            id="mdn.diagram.ActionSet">
+         <action
+               label="%newDiagramActionLabel"
+               class="mdn.diagram.application.DiagramEditorActionBarAdvisor$NewDiagramAction"
+               menubarPath="file/new/additions"
+               id="mdn.diagram.NewDiagramAction">
+         </action>
+         <action
+               label="%aboutActionLabel"
+               class="mdn.diagram.application.DiagramEditorActionBarAdvisor$AboutAction"
+               menubarPath="help/additions"
+               id="mdn.diagram.AboutAction">
+         </action>
+         <action
+               label="%openURIActionLabel"
+               definitionId="mdn.diagram.OpenURICommand"
+               class="mdn.diagram.application.DiagramEditorActionBarAdvisor$OpenURIAction"
+               menubarPath="file/additions"
+               id="mdn.diagram.OpenURIAction">
+         </action>
+         <action
+               label="%openActionLabel"
+               definitionId="mdn.diagram.OpenCommand"
+               class="mdn.diagram.application.DiagramEditorActionBarAdvisor$OpenAction"
+               menubarPath="file/additions"
+               id="mdn.diagram.OpenAction">
+         </action>
+      </actionSet>
    </extension>
+<extension
+      id="product"
+      point="org.eclipse.core.runtime.products">
+   <product
+         application="mdn.diagram.MdnApplication"
+         name="mdn">
+      <property
+            name="appName"
+            value="mdn">
+      </property>
+   </product>
+</extension>
 
-<extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
-      <?gmfgen generated="true"?>
-      <linkHelper
-            id="mdn.diagram.navigatorLinkHelper"
-            class="mdn.diagram.navigator.MdnNavigatorLinkHelper">
-         <editorInputEnablement>
-            <and>
-               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
-               <test property="mdn.diagram.isURIEditorInput"/>
-            </and>
-         </editorInputEnablement>
-         <selectionEnablement>
-            <instanceof value="mdn.diagram.navigator.MdnAbstractNavigatorItem"/>
-         </selectionEnablement>
-      </linkHelper>
-   </extension>
 
 
 

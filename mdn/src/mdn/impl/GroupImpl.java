@@ -40,257 +40,251 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class GroupImpl extends EObjectImpl implements Group
 {
   /**
-   * The cached value of the '{@link #getHostsGroup() <em>Hosts Group</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getHostsGroup() <em>Hosts Group</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHostsGroup()
-   * @generated
-   * @ordered
-   */
+	 * @see #getHostsGroup()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Host> hostsGroup;
 
   /**
-   * The default value of the '{@link #getIp() <em>Ip</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getIp() <em>Ip</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIp()
-   * @generated
-   * @ordered
-   */
+	 * @see #getIp()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String IP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getIp() <em>Ip</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIp() <em>Ip</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIp()
-   * @generated
-   * @ordered
-   */
+	 * @see #getIp()
+	 * @generated
+	 * @ordered
+	 */
   protected String ip = IP_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected String name = NAME_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected GroupImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return MdnPackage.Literals.GROUP;
-  }
+		return MdnPackage.Literals.GROUP;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Host> getHostsGroup()
   {
-    if (hostsGroup == null)
-    {
-      hostsGroup = new EObjectContainmentEList<Host>(Host.class, this, MdnPackage.GROUP__HOSTS_GROUP);
-    }
-    return hostsGroup;
-  }
+		if (hostsGroup == null) {
+			hostsGroup = new EObjectContainmentEList<Host>(Host.class, this, MdnPackage.GROUP__HOSTS_GROUP);
+		}
+		return hostsGroup;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getIp()
   {
-    return ip;
-  }
+		return ip;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setIp(String newIp)
   {
-    String oldIp = ip;
-    ip = newIp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.GROUP__IP, oldIp, ip));
-  }
+		String oldIp = ip;
+		ip = newIp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.GROUP__IP, oldIp, ip));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getName()
   {
-    return name;
-  }
+		return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setName(String newName)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.GROUP__NAME, oldName, name));
-  }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.GROUP__NAME, oldName, name));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case MdnPackage.GROUP__HOSTS_GROUP:
-        return ((InternalEList<?>)getHostsGroup()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case MdnPackage.GROUP__HOSTS_GROUP:
+				return ((InternalEList<?>)getHostsGroup()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case MdnPackage.GROUP__HOSTS_GROUP:
-        return getHostsGroup();
-      case MdnPackage.GROUP__IP:
-        return getIp();
-      case MdnPackage.GROUP__NAME:
-        return getName();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case MdnPackage.GROUP__HOSTS_GROUP:
+				return getHostsGroup();
+			case MdnPackage.GROUP__IP:
+				return getIp();
+			case MdnPackage.GROUP__NAME:
+				return getName();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case MdnPackage.GROUP__HOSTS_GROUP:
-        getHostsGroup().clear();
-        getHostsGroup().addAll((Collection<? extends Host>)newValue);
-        return;
-      case MdnPackage.GROUP__IP:
-        setIp((String)newValue);
-        return;
-      case MdnPackage.GROUP__NAME:
-        setName((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case MdnPackage.GROUP__HOSTS_GROUP:
+				getHostsGroup().clear();
+				getHostsGroup().addAll((Collection<? extends Host>)newValue);
+				return;
+			case MdnPackage.GROUP__IP:
+				setIp((String)newValue);
+				return;
+			case MdnPackage.GROUP__NAME:
+				setName((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case MdnPackage.GROUP__HOSTS_GROUP:
-        getHostsGroup().clear();
-        return;
-      case MdnPackage.GROUP__IP:
-        setIp(IP_EDEFAULT);
-        return;
-      case MdnPackage.GROUP__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case MdnPackage.GROUP__HOSTS_GROUP:
+				getHostsGroup().clear();
+				return;
+			case MdnPackage.GROUP__IP:
+				setIp(IP_EDEFAULT);
+				return;
+			case MdnPackage.GROUP__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case MdnPackage.GROUP__HOSTS_GROUP:
-        return hostsGroup != null && !hostsGroup.isEmpty();
-      case MdnPackage.GROUP__IP:
-        return IP_EDEFAULT == null ? ip != null : !IP_EDEFAULT.equals(ip);
-      case MdnPackage.GROUP__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case MdnPackage.GROUP__HOSTS_GROUP:
+				return hostsGroup != null && !hostsGroup.isEmpty();
+			case MdnPackage.GROUP__IP:
+				return IP_EDEFAULT == null ? ip != null : !IP_EDEFAULT.equals(ip);
+			case MdnPackage.GROUP__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (ip: ");
-    result.append(ip);
-    result.append(", name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (ip: ");
+		result.append(ip);
+		result.append(", name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
+	}
 
 } //GroupImpl

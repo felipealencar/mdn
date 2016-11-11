@@ -41,248 +41,246 @@ public class RuleItemProvider
     IItemPropertySource
 {
   /**
-   * This constructs an instance from a factory and a notifier.
-   * <!-- begin-user-doc -->
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public RuleItemProvider(AdapterFactory adapterFactory)
   {
-    super(adapterFactory);
-  }
+		super(adapterFactory);
+	}
 
   /**
-   * This returns the property descriptors for the adapted class.
-   * <!-- begin-user-doc -->
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
   {
-    if (itemPropertyDescriptors == null)
-    {
-      super.getPropertyDescriptors(object);
+		if (itemPropertyDescriptors == null) {
+			super.getPropertyDescriptors(object);
 
-      addSourceHostRulePropertyDescriptor(object);
-      addTargetHostRulePropertyDescriptor(object);
-      addNamePropertyDescriptor(object);
-      addRuleConditionPropertyDescriptor(object);
-      addRuleActionPropertyDescriptor(object);
-      addTargetGroupRulePropertyDescriptor(object);
-    }
-    return itemPropertyDescriptors;
-  }
+			addSourceHostRulePropertyDescriptor(object);
+			addTargetHostRulePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addRuleConditionPropertyDescriptor(object);
+			addRuleActionPropertyDescriptor(object);
+			addTargetGroupRulePropertyDescriptor(object);
+		}
+		return itemPropertyDescriptors;
+	}
 
   /**
-   * This adds a property descriptor for the Source Host Rule feature.
-   * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Source Host Rule feature.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void addSourceHostRulePropertyDescriptor(Object object)
   {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Rule_sourceHostRule_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Rule_sourceHostRule_feature", "_UI_Rule_type"),
-         MdnPackage.Literals.RULE__SOURCE_HOST_RULE,
-         true,
-         false,
-         true,
-         null,
-         null,
-         null));
-  }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Rule_sourceHostRule_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_sourceHostRule_feature", "_UI_Rule_type"),
+				 MdnPackage.Literals.RULE__SOURCE_HOST_RULE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
 
   /**
-   * This adds a property descriptor for the Target Host Rule feature.
-   * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Target Host Rule feature.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void addTargetHostRulePropertyDescriptor(Object object)
   {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Rule_targetHostRule_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Rule_targetHostRule_feature", "_UI_Rule_type"),
-         MdnPackage.Literals.RULE__TARGET_HOST_RULE,
-         true,
-         false,
-         true,
-         null,
-         null,
-         null));
-  }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Rule_targetHostRule_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_targetHostRule_feature", "_UI_Rule_type"),
+				 MdnPackage.Literals.RULE__TARGET_HOST_RULE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
 
   /**
-   * This adds a property descriptor for the Name feature.
-   * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void addNamePropertyDescriptor(Object object)
   {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Rule_name_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Rule_name_feature", "_UI_Rule_type"),
-         MdnPackage.Literals.RULE__NAME,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
-  }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Rule_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_name_feature", "_UI_Rule_type"),
+				 MdnPackage.Literals.RULE__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
 
   /**
-   * This adds a property descriptor for the Rule Condition feature.
-   * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Rule Condition feature.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void addRuleConditionPropertyDescriptor(Object object)
   {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Rule_ruleCondition_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Rule_ruleCondition_feature", "_UI_Rule_type"),
-         MdnPackage.Literals.RULE__RULE_CONDITION,
-         true,
-         false,
-         true,
-         null,
-         null,
-         null));
-  }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Rule_ruleCondition_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_ruleCondition_feature", "_UI_Rule_type"),
+				 MdnPackage.Literals.RULE__RULE_CONDITION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
 
   /**
-   * This adds a property descriptor for the Rule Action feature.
-   * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Rule Action feature.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void addRuleActionPropertyDescriptor(Object object)
   {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Rule_ruleAction_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Rule_ruleAction_feature", "_UI_Rule_type"),
-         MdnPackage.Literals.RULE__RULE_ACTION,
-         true,
-         false,
-         true,
-         null,
-         null,
-         null));
-  }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Rule_ruleAction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_ruleAction_feature", "_UI_Rule_type"),
+				 MdnPackage.Literals.RULE__RULE_ACTION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
 
   /**
-   * This adds a property descriptor for the Target Group Rule feature.
-   * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Target Group Rule feature.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void addTargetGroupRulePropertyDescriptor(Object object)
   {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Rule_targetGroupRule_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Rule_targetGroupRule_feature", "_UI_Rule_type"),
-         MdnPackage.Literals.RULE__TARGET_GROUP_RULE,
-         true,
-         false,
-         true,
-         null,
-         null,
-         null));
-  }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Rule_targetGroupRule_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_targetGroupRule_feature", "_UI_Rule_type"),
+				 MdnPackage.Literals.RULE__TARGET_GROUP_RULE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
 
   /**
-   * This returns Rule.gif.
-   * <!-- begin-user-doc -->
+	 * This returns Rule.gif.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object getImage(Object object)
   {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Rule"));
-  }
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Rule"));
+	}
 
   /**
-   * This returns the label text for the adapted class.
-   * <!-- begin-user-doc -->
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getText(Object object)
   {
-    String label = ((Rule)object).getName();
-    return label == null || label.length() == 0 ?
-      getString("_UI_Rule_type") :
-      getString("_UI_Rule_type") + " " + label;
-  }
+		String label = ((Rule)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Rule_type") :
+			getString("_UI_Rule_type") + " " + label;
+	}
 
   /**
-   * This handles model notifications by calling {@link #updateChildren} to update any cached
-   * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-   * <!-- begin-user-doc -->
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void notifyChanged(Notification notification)
   {
-    updateChildren(notification);
+		updateChildren(notification);
 
-    switch (notification.getFeatureID(Rule.class))
-    {
-      case MdnPackage.RULE__NAME:
-        fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-        return;
-    }
-    super.notifyChanged(notification);
-  }
+		switch (notification.getFeatureID(Rule.class)) {
+			case MdnPackage.RULE__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
+		super.notifyChanged(notification);
+	}
 
   /**
-   * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-   * that can be created under this object.
-   * <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
   {
-    super.collectNewChildDescriptors(newChildDescriptors, object);
-  }
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
 
   /**
-   * Return the resource locator for this item provider's resources.
-   * <!-- begin-user-doc -->
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public ResourceLocator getResourceLocator()
   {
-    return MdnEditPlugin.INSTANCE;
-  }
+		return MdnEditPlugin.INSTANCE;
+	}
 
 }

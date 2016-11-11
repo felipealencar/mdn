@@ -50,6 +50,7 @@ import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.part.DefaultDiagramEditorUtil;
 import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.wizard.Wizard;
@@ -84,31 +85,11 @@ public class MdnDiagramEditorUtil {
 	 */
 	public static boolean openDiagram(Resource diagram)
 			throws PartInitException {
-		String path = diagram.getURI().toPlatformString(true);
-		IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot()
-				.findMember(new Path(path));
-		if (workspaceResource instanceof IFile) {
-			IWorkbenchPage page = PlatformUI.getWorkbench()
-					.getActiveWorkbenchWindow().getActivePage();
-			return null != page.openEditor(new FileEditorInput(
-					(IFile) workspaceResource), MdnDiagramEditor.ID);
-		}
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static void setCharset(IFile file) {
-		if (file == null) {
-			return;
-		}
-		try {
-			file.setCharset("UTF-8", new NullProgressMonitor()); //$NON-NLS-1$
-		} catch (CoreException e) {
-			MdnDiagramEditorPlugin.getInstance().logError(
-					"Unable to set charset for file " + file.getFullPath(), e); //$NON-NLS-1$
-		}
+		IWorkbenchPage page = PlatformUI.getWorkbench()
+				.getActiveWorkbenchWindow().getActivePage();
+		page.openEditor(new URIEditorInput(diagram.getURI()),
+				MdnDiagramEditor.ID);
+		return true;
 	}
 
 	/**
@@ -116,27 +97,46 @@ public class MdnDiagramEditorUtil {
 	 */
 	public static String getUniqueFileName(IPath containerFullPath,
 			String fileName, String extension) {
-		if (containerFullPath == null) {
-			containerFullPath = new Path(""); //$NON-NLS-1$
+		return DefaultDiagramEditorUtil
+				.getUniqueFileName(containerFullPath, fileName, extension,
+						DefaultDiagramEditorUtil.EXISTS_AS_IO_FILE);
+	}
+
+	/**
+	 * Allows user to select file and loads it as a model.
+	 * 
+	 * @generated
+	 */
+	public static Resource openModel(Shell shell, String description,
+			TransactionalEditingDomain editingDomain) {
+		FileDialog fileDialog = new FileDialog(shell, SWT.OPEN);
+		if (description != null) {
+			fileDialog.setText(description);
 		}
-		if (fileName == null || fileName.trim().length() == 0) {
-			fileName = "default"; //$NON-NLS-1$
+		fileDialog.open();
+		String fileName = fileDialog.getFileName();
+		if (fileName == null || fileName.length() == 0) {
+			return null;
 		}
-		IPath filePath = containerFullPath.append(fileName);
-		if (extension != null && !extension.equals(filePath.getFileExtension())) {
-			filePath = filePath.addFileExtension(extension);
+		if (fileDialog.getFilterPath() != null) {
+			fileName = fileDialog.getFilterPath() + File.separator + fileName;
 		}
-		extension = filePath.getFileExtension();
-		fileName = filePath.removeFileExtension().lastSegment();
-		int i = 1;
-		while (ResourcesPlugin.getWorkspace().getRoot().exists(filePath)) {
-			i++;
-			filePath = containerFullPath.append(fileName + i);
-			if (extension != null) {
-				filePath = filePath.addFileExtension(extension);
-			}
+		URI uri = URI.createFileURI(fileName);
+		Resource resource = null;
+		try {
+			resource = editingDomain.getResourceSet().getResource(uri, true);
+		} catch (WrappedException we) {
+			MdnDiagramEditorPlugin.getInstance().logError(
+					"Unable to load resource: " + uri, we); //$NON-NLS-1$
+			MessageDialog
+					.openError(
+							shell,
+							Messages.MdnDiagramEditorUtil_OpenModelResourceErrorDialogTitle,
+							NLS.bind(
+									Messages.MdnDiagramEditorUtil_OpenModelResourceErrorDialogMessage,
+									fileName));
 		}
-		return filePath.lastSegment();
+		return resource;
 	}
 
 	/**
@@ -162,10 +162,9 @@ public class MdnDiagramEditorUtil {
 	}
 
 	/**
-	 * This method should be called within a workspace modify operation since it creates resources.
 	 * @generated
 	 */
-	public static Resource createDiagram(URI diagramURI, URI modelURI,
+	public static Resource createDiagram(URI diagramURI,
 			IProgressMonitor progressMonitor) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
 				.createEditingDomain();
@@ -173,8 +172,6 @@ public class MdnDiagramEditorUtil {
 				Messages.MdnDiagramEditorUtil_CreateDiagramProgressTask, 3);
 		final Resource diagramResource = editingDomain.getResourceSet()
 				.createResource(diagramURI);
-		final Resource modelResource = editingDomain.getResourceSet()
-				.createResource(modelURI);
 		final String diagramName = diagramURI.lastSegment();
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(
 				editingDomain,
@@ -184,7 +181,7 @@ public class MdnDiagramEditorUtil {
 					IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
 				Sdn model = createInitialModel();
-				attachModelToResource(model, modelResource);
+				attachModelToResource(model, diagramResource);
 
 				Diagram diagram = ViewService.createDiagram(model,
 						SdnEditPart.MODEL_ID,
@@ -196,8 +193,7 @@ public class MdnDiagramEditorUtil {
 				}
 
 				try {
-					modelResource.save(mdn.diagram.part.MdnDiagramEditorUtil
-							.getSaveOptions());
+
 					diagramResource.save(mdn.diagram.part.MdnDiagramEditorUtil
 							.getSaveOptions());
 				} catch (IOException e) {
@@ -215,8 +211,6 @@ public class MdnDiagramEditorUtil {
 			MdnDiagramEditorPlugin.getInstance().logError(
 					"Unable to create model and diagram", e); //$NON-NLS-1$
 		}
-		setCharset(WorkspaceSynchronizer.getFile(modelResource));
-		setCharset(WorkspaceSynchronizer.getFile(diagramResource));
 		return diagramResource;
 	}
 

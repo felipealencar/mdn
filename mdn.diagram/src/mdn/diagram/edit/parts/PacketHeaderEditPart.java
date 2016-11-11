@@ -141,7 +141,7 @@ public class PacketHeaderEditPart extends AbstractBorderedShapeEditPart {
 		if (borderItemEditPart instanceof PacketHeaderOperatorHeaderValueEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(-5, -5));
+			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
@@ -235,29 +235,6 @@ public class PacketHeaderEditPart extends AbstractBorderedShapeEditPart {
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(MdnVisualIDRegistry
 				.getType(PacketHeaderOperatorHeaderValueEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(MdnElementTypes.ActionActionPacketHeader_4012);
-		types.add(MdnElementTypes.ConditionConditionPacket_4019);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.ActionActionPacketHeader_4012) {
-			types.add(MdnElementTypes.Action_2012);
-		} else if (relationshipType == MdnElementTypes.ConditionConditionPacket_4019) {
-			types.add(MdnElementTypes.Condition_2013);
-		}
-		return types;
 	}
 
 	/**

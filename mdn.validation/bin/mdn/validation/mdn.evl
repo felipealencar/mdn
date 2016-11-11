@@ -9,7 +9,7 @@ context NetworkNode {
               	if (type.isDefined()) self.type := type;
           	}
       	}
-	}
+	} 
 	
 	constraint notNullIP {
 		check : self.ip.isDefined()
@@ -22,22 +22,248 @@ context NetworkNode {
           	}
       	}
 	}
-	
-	constraint uniqueMAC {
-		check {
-			var networkNodes = NetworkNode.all.select(nn|nn.mac = self.mac);
-			
-			return networkNodes.size() = 1;
-		}
-		message : 'Not unique MAC "' + self.mac + '" not allowed'
+	constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
 		fix {
-        	title : 'Define the correct MAC '
+        	title : 'Define the IP of the node '
           	do {
-            	var mac := UserInput.prompt('What is the MAC?');
-              	if (mac.isDefined()) self.mac := mac;
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
           	}
       	}
 	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+	constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}
+		constraint notNullIP2 {
+		check : self.ip.isDefined()
+		message : 'Invalid IP in ' + self.eClass().name.toUpperCase()
+		fix {
+        	title : 'Define the IP of the node '
+          	do {
+            	var ip := UserInput.prompt('What is the IP?');
+              	if (ip.isDefined()) self.ip := ip;
+          	}
+      	}
+	}	
 } 
 
 context Controller {
@@ -57,6 +283,7 @@ context Controller {
           	}
       	}
 	}
+	
 }
 
 context Switch {

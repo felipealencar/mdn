@@ -61,17 +61,6 @@ public class MdnValidationDecoratorProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private static final String MARKER_TYPE = MdnDiagramEditorPlugin.ID
-			+ ".diagnostic"; //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	private static MarkerObserver fileObserver;
-
-	/**
-	 * @generated
-	 */
 	private static Map/*<String, List<IDecorator>>*/allDecorators = new HashMap();
 
 	/**
@@ -204,60 +193,33 @@ public class MdnValidationDecoratorProvider extends AbstractProvider implements
 			}
 
 			// query for all the validation markers of the current resource
-			String elementId = ViewUtil.getIdStr(view);
-			if (elementId == null) {
-				return;
-			}
-			int severity = IMarker.SEVERITY_INFO;
-			IMarker foundMarker = null;
-			IResource resource = WorkspaceSynchronizer
-					.getFile(view.eResource());
-			if (resource == null || !resource.exists()) {
-				return;
-			}
-			IMarker[] markers = null;
-			try {
-				markers = resource.findMarkers(MARKER_TYPE, true,
-						IResource.DEPTH_INFINITE);
-			} catch (CoreException e) {
-				MdnDiagramEditorPlugin.getInstance().logError(
-						"Validation markers refresh failure", e); //$NON-NLS-1$
-			}
+			int severity = IStatus.INFO;
+			ValidationMarker foundMarker = null;
+			ValidationMarker[] markers = ValidationMarker.getMarkers(
+					editPart.getViewer(), viewId);
 			if (markers == null || markers.length == 0) {
 				return;
 			}
 			Label toolTip = null;
 			for (int i = 0; i < markers.length; i++) {
-				IMarker marker = markers[i];
-				String attribute = marker
-						.getAttribute(
-								org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID,
-								""); //$NON-NLS-1$
-				if (attribute.equals(elementId)) {
-					int nextSeverity = marker.getAttribute(IMarker.SEVERITY,
-							IMarker.SEVERITY_INFO);
-					Image nextImage = getImage(nextSeverity);
-					if (foundMarker == null) {
-						foundMarker = marker;
-						toolTip = new Label(marker.getAttribute(
-								IMarker.MESSAGE, ""), //$NON-NLS-1$
-								nextImage);
-					} else {
-						if (toolTip.getChildren().isEmpty()) {
-							Label comositeLabel = new Label();
-							FlowLayout fl = new FlowLayout(false);
-							fl.setMinorSpacing(0);
-							comositeLabel.setLayoutManager(fl);
-							comositeLabel.add(toolTip);
-							toolTip = comositeLabel;
-						}
-						toolTip.add(new Label(marker.getAttribute(
-								IMarker.MESSAGE, ""), //$NON-NLS-1$
-								nextImage));
+				ValidationMarker marker = markers[i];
+				int nextSeverity = marker.getStatusSeverity();
+				Image nextImage = getImage(nextSeverity);
+				if (foundMarker == null) {
+					foundMarker = marker;
+					toolTip = new Label(marker.getMessage(), nextImage);
+				} else {
+					if (toolTip.getChildren().isEmpty()) {
+						Label comositeLabel = new Label();
+						FlowLayout fl = new FlowLayout(false);
+						fl.setMinorSpacing(0);
+						comositeLabel.setLayoutManager(fl);
+						comositeLabel.add(toolTip);
+						toolTip = comositeLabel;
 					}
-					severity = (nextSeverity > severity) ? nextSeverity
-							: severity;
+					toolTip.add(new Label(marker.getMessage(), nextImage));
 				}
+				severity = (nextSeverity > severity) ? nextSeverity : severity;
 			}
 			if (foundMarker == null) {
 				return;
@@ -290,10 +252,10 @@ public class MdnValidationDecoratorProvider extends AbstractProvider implements
 		private Image getImage(int severity) {
 			String imageName = ISharedImages.IMG_OBJS_ERROR_TSK;
 			switch (severity) {
-			case IMarker.SEVERITY_ERROR:
+			case IStatus.ERROR:
 				imageName = ISharedImages.IMG_OBJS_ERROR_TSK;
 				break;
-			case IMarker.SEVERITY_WARNING:
+			case IStatus.WARNING:
 				imageName = ISharedImages.IMG_OBJS_WARN_TSK;
 				break;
 			default:
@@ -320,20 +282,6 @@ public class MdnValidationDecoratorProvider extends AbstractProvider implements
 			} else if (!list.contains(this)) {
 				list.add(this);
 			}
-
-			// start listening to changes in resources
-			View view = (View) getDecoratorTarget().getAdapter(View.class);
-			if (view == null) {
-				return;
-			}
-			Diagram diagramView = view.getDiagram();
-			if (diagramView == null) {
-				return;
-			}
-			if (fileObserver == null) {
-				FileChangeManager.getInstance().addFileObserver(
-						fileObserver = new MarkerObserver(diagramView));
-			}
 		}
 
 		/**
@@ -352,104 +300,7 @@ public class MdnValidationDecoratorProvider extends AbstractProvider implements
 					allDecorators.remove(viewId);
 				}
 			}
-
-			// stop listening to changes in resources if there are no more decorators
-			if (fileObserver != null && allDecorators.isEmpty()) {
-				FileChangeManager.getInstance()
-						.removeFileObserver(fileObserver);
-				fileObserver = null;
-			}
 			super.deactivate();
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	static class MarkerObserver implements IFileObserver {
-
-		/**
-		 * @generated
-		 */
-		private Diagram diagram;
-
-		/**
-		 * @generated
-		 */
-		private MarkerObserver(Diagram diagram) {
-			this.diagram = diagram;
-		}
-
-		/**
-		 * @generated
-		 */
-		public void handleFileRenamed(IFile oldFile, IFile file) {
-		}
-
-		/**
-		 * @generated
-		 */
-		public void handleFileMoved(IFile oldFile, IFile file) {
-		}
-
-		/**
-		 * @generated
-		 */
-		public void handleFileDeleted(IFile file) {
-		}
-
-		/**
-		 * @generated
-		 */
-		public void handleFileChanged(IFile file) {
-		}
-
-		/**
-		 * @generated
-		 */
-		public void handleMarkerAdded(IMarker marker) {
-			if (marker
-					.getAttribute(
-							org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID,
-							null) != null) {
-				handleMarkerChanged(marker);
-			}
-		}
-
-		/**
-		 * @generated
-		 */
-		public void handleMarkerDeleted(IMarker marker, Map attributes) {
-			String viewId = (String) attributes
-					.get(org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID);
-			refreshDecorators(viewId, diagram);
-		}
-
-		/**
-		 * @generated
-		 */
-		public void handleMarkerChanged(IMarker marker) {
-			if (!MARKER_TYPE.equals(getType(marker))) {
-				return;
-			}
-			String viewId = marker
-					.getAttribute(
-							org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID,
-							""); //$NON-NLS-1$
-			refreshDecorators(viewId, diagram);
-		}
-
-		/**
-		 * @generated
-		 */
-		private String getType(IMarker marker) {
-			try {
-				return marker.getType();
-			} catch (CoreException e) {
-				MdnDiagramEditorPlugin.getInstance().logError(
-						"Validation marker refresh failure", e); //$NON-NLS-1$
-				return ""; //$NON-NLS-1$
-			}
 		}
 	}
 }

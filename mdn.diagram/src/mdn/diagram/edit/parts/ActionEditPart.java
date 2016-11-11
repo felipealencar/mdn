@@ -142,7 +142,7 @@ public class ActionEditPart extends AbstractBorderedShapeEditPart {
 		if (borderItemEditPart instanceof ActionTypeEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(-5, -5));
+			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
@@ -236,76 +236,6 @@ public class ActionEditPart extends AbstractBorderedShapeEditPart {
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(MdnVisualIDRegistry
 				.getType(ActionTypeEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(MdnElementTypes.ActionActionPacketHeader_4012);
-		types.add(MdnElementTypes.ActionActionForwardToNode_4013);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof PacketHeaderEditPart) {
-			types.add(MdnElementTypes.ActionActionPacketHeader_4012);
-		}
-		if (targetEditPart instanceof ControllerEditPart) {
-			types.add(MdnElementTypes.ActionActionForwardToNode_4013);
-		}
-		if (targetEditPart instanceof HostEditPart) {
-			types.add(MdnElementTypes.ActionActionForwardToNode_4013);
-		}
-		if (targetEditPart instanceof SwitchEditPart) {
-			types.add(MdnElementTypes.ActionActionForwardToNode_4013);
-		}
-		if (targetEditPart instanceof Host2EditPart) {
-			types.add(MdnElementTypes.ActionActionForwardToNode_4013);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.ActionActionPacketHeader_4012) {
-			types.add(MdnElementTypes.PacketHeader_2016);
-		} else if (relationshipType == MdnElementTypes.ActionActionForwardToNode_4013) {
-			types.add(MdnElementTypes.Controller_2001);
-			types.add(MdnElementTypes.Host_2002);
-			types.add(MdnElementTypes.Switch_2003);
-			types.add(MdnElementTypes.Host_3001);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(MdnElementTypes.RuleRuleAction_4027);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == MdnElementTypes.RuleRuleAction_4027) {
-			types.add(MdnElementTypes.Rule_2017);
-		}
-		return types;
 	}
 
 	/**

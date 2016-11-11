@@ -28,46 +28,38 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 /**
  * @generated
  */
-public class MdnInitDiagramFileAction implements IObjectActionDelegate {
+public class MdnInitDiagramFileAction implements IWorkbenchWindowActionDelegate {
 
 	/**
 	 * @generated
 	 */
-	private IWorkbenchPart targetPart;
-	/**
-	 * @generated
-	 */
-	private URI domainModelURI;
+	private IWorkbenchWindow window;
 
 	/**
 	 * @generated
 	 */
-	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-		this.targetPart = targetPart;
+	public void init(IWorkbenchWindow window) {
+		this.window = window;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void dispose() {
+		window = null;
 	}
 
 	/**
 	 * @generated
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
-		domainModelURI = null;
-		action.setEnabled(false);
-		if (selection instanceof IStructuredSelection == false
-				|| selection.isEmpty()) {
-			return;
-		}
-		IFile file = (IFile) ((IStructuredSelection) selection)
-				.getFirstElement();
-		domainModelURI = URI.createPlatformResourceURI(file.getFullPath()
-				.toString(), true);
-		action.setEnabled(true);
 	}
 
 	/**
 	 * @generated
 	 */
 	private Shell getShell() {
-		return targetPart.getSite().getShell();
+		return window.getShell();
 	}
 
 	/**
@@ -76,22 +68,14 @@ public class MdnInitDiagramFileAction implements IObjectActionDelegate {
 	public void run(IAction action) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
 				.createEditingDomain();
-		ResourceSet resourceSet = editingDomain.getResourceSet();
-		EObject diagramRoot = null;
-		try {
-			Resource resource = resourceSet.getResource(domainModelURI, true);
-			diagramRoot = (EObject) resource.getContents().get(0);
-		} catch (WrappedException ex) {
-			MdnDiagramEditorPlugin.getInstance().logError(
-					"Unable to load resource: " + domainModelURI, ex); //$NON-NLS-1$
-		}
-		if (diagramRoot == null) {
-			MessageDialog.openError(getShell(),
-					Messages.InitDiagramFile_ResourceErrorDialogTitle,
-					Messages.InitDiagramFile_ResourceErrorDialogMessage);
+		Resource resource = MdnDiagramEditorUtil.openModel(getShell(),
+				Messages.InitDiagramFile_OpenModelFileDialogTitle,
+				editingDomain);
+		if (resource == null || resource.getContents().isEmpty()) {
 			return;
 		}
-		Wizard wizard = new MdnNewDiagramFileWizard(domainModelURI,
+		EObject diagramRoot = (EObject) resource.getContents().get(0);
+		Wizard wizard = new MdnNewDiagramFileWizard(resource.getURI(),
 				diagramRoot, editingDomain);
 		wizard.setWindowTitle(NLS.bind(Messages.InitDiagramFile_WizardTitle,
 				SdnEditPart.MODEL_ID));
