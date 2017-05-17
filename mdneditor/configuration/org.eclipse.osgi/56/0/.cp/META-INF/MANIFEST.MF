@@ -1,0 +1,71 @@
+Manifest-Version: 1.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Built-By: hudsonbuild
+Bundle-SymbolicName: org.eclipse.amalgam.discovery.modeling;singleton:
+ =true
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.ui,org.eclipse.am
+ algam.discovery.ui;bundle-version="1.0.0",org.eclipse.core.net;bundle
+ -version="1.2.200"
+Bundle-Activator: org.eclipse.amalgam.discovery.modeling.Activator
+Export-Package: org.eclipse.amalgam.discovery.modeling;x-internal:=tru
+ e,org.eclipse.amalgam.discovery.modeling.handlers;x-internal:=true
+Bundle-Version: 1.5.0.201404290822
+Build-Jdk: 1.7.0_51
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Eclipse Modeling Project
+Bundle-Name: Amalgam Modeling Discovery UI
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Bundle-ManifestVersion: 2
+
+Name: META-INF/maven/org.eclipse.amalgam/org.eclipse.amalgam.discovery
+ .modeling/pom.xml
+SHA1-Digest: i00xrVDXQtSRxv5040KlpKq3hvU=
+
+Name: intro/amalgamDiscovery.xml
+SHA1-Digest: 3w4/q5mQFLFYM5PWoQUX37CgfQM=
+
+Name: org/eclipse/amalgam/discovery/modeling/handlers/ModelingPackageD
+ iscovery.class
+SHA1-Digest: Vv+u1Aaw8XjC2p4mnta3/Q6sPZU=
+
+Name: org/eclipse/amalgam/discovery/modeling/handlers/ModelingDiscover
+ yAction.class
+SHA1-Digest: mB/BPeWSx72zyU6b2QMp6viLSQo=
+
+Name: icons/modeling32.png
+SHA1-Digest: ADlLWFV0eQ74YnLvHnPFkYLeLrs=
+
+Name: META-INF/maven/org.eclipse.amalgam/org.eclipse.amalgam.discovery
+ .modeling/pom.properties
+SHA1-Digest: GXkuKcQF6JpRBjV68J1ooL+DN7w=
+
+Name: about.html
+SHA1-Digest: ztzTKONYJdfqz4aa9yHkuSdsVnE=
+
+Name: org/eclipse/amalgam/discovery/modeling/Activator.class
+SHA1-Digest: izDgjTFuFXsVGJkzo45XHD8VvAU=
+
+Name: icons/modeling16.png
+SHA1-Digest: KettLzBpGACnApEEOLfyzhYHo30=
+
+Name: org/eclipse/amalgam/discovery/modeling/handlers/ModelingPackageD
+ iscovery$1.class
+SHA1-Digest: pH3YgZNcsSInpAzTcKKFdnoM4IE=
+
+Name: org/eclipse/amalgam/discovery/modeling/handlers/ModelingDiscover
+ yHandler.class
+SHA1-Digest: kLPSz68LC3feZNqzs4xk6s+pltI=
+
+Name: intro/css/overview.properties
+SHA1-Digest: zipIO9ctauZ0bQh+d9GBpdkynrU=
+
+Name: plugin.xml
+SHA1-Digest: 9R0UJdUodL9qw+PsgmY5F4nq124=
+
+Name: intro/css/overview.css
+SHA1-Digest: AavDm7mjtRW3svZa38Q0Xtjh4mw=
+
+Name: intro/images/banner-discovery.png
+SHA1-Digest: PRjm7eHzyk7VJ5FwKvovVeMDbpY=
+

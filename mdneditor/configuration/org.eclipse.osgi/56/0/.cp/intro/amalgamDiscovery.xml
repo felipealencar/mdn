@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<introContent>
+  <!-- Extension to the SDK Overview Page. -->
+  <extensionContent id="org.eclipse.amalgam.discovery" name="Install More Modeling Components" alt-style="css/overview.properties" style="css/overview.css" path="overview/@">
+     <group id="content-group" style-id="content-group">
+    	<link style-id="content-link" label="Install More Modeling Components" url="http://org.eclipse.ui.intro/runAction?pluginId=org.eclipse.amalgam.discovery.modeling&amp;class=org.eclipse.amalgam.discovery.modeling.handlers.ModelingDiscoveryAction" id="discovery">
+      		<text>Many modeling components are one-click away from you, click here to install them!</text>
+    	</link>
+    	<link style-id="content-link" label="Give feedback" url="http://www.eclipse.org/forums/index.php/m/675723/#msg_675723" id="feedback">
+      		<text>Please give us feedback about your usage of this package.</text>
+    	</link>
+    	
+     </group>
+  </extensionContent>
+</introContent>

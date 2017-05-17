@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+
+<HEAD>
+<TITLE>Store Feature Matrix (CDO Model Repository Documentation)</TITLE>
+
+<LINK REL="STYLESHEET" HREF="../book.css" CHARSET="ISO-8859-1" TYPE="text/css">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Store Feature Matrix (CDO Model Repository Documentation)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<!-- <div class="help_breadcrumbs"><a href="../Overview.html" title="CDO Model Repository Documentation">CDO Model Repository Documentation</a> > <a href="index.html" title="Category in CDO Model Repository Documentation">Reference</a></div> -->
+
+<table border="0">
+	<tr>
+		<td width="100%"><h1>Store Feature Matrix</h1></td>
+		<td align="right" valign="middle" nowrap><a href="schema/index.html" title="Backward to Extension Point Reference"><img src="../../images/backward.png" border="0"></a>&nbsp;<a href="MappingStrategies.html" title="Forward to DBStore Mapping Strategies"><img src="../../images/forward.png" border="0"></a></td>
+	</tr>
+</table>
+<p>
+ <table border="0" cellspacing="0" cellpadding="4">
+  <tr>
+    <td style="border-right:none;vertical-align:top;text-align:left;font:12px Arial;border-bottom:none;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:2px solid;background-color:#a8c7ff;font-weight:bold;border-top:2px solid;border-left:2px solid;">MEM</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:2px solid;background-color:#a8c7ff;font-weight:bold;border-top:2px solid;border-left:none;">DB</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:2px solid;background-color:#a8c7ff;font-weight:bold;border-top:2px solid;border-left:none;">Hibernate</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:2px solid;background-color:#a8c7ff;font-weight:bold;border-top:2px solid;border-left:none;">MongoDB</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:2px solid;background-color:#a8c7ff;font-weight:bold;border-top:2px solid;border-left:none;">DB4O</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:2px solid;background-color:#a8c7ff;font-weight:bold;border-top:2px solid;border-left:none;">Objectivity</td>
+  </tr>
+  <tr>
+    <td style="border-right:2px solid;vertical-align:top;text-align:left;font:12px Arial;border-bottom:none;background-color:#e0ebff;border-top:2px solid;border-left:2px solid;">Restartable</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+  </tr>
+  <tr>
+    <td style="border-right:2px solid;vertical-align:top;text-align:left;font:12px Arial;border-bottom:none;background-color:#e0ebff;border-top:none;border-left:2px solid;">Crash Recovery </td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+  </tr>
+  <tr>
+    <td style="border-right:2px solid;vertical-align:top;text-align:left;font:12px Arial;border-bottom:none;background-color:#e0ebff;border-top:none;border-left:2px solid;">Non-Auditing Mode</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+  </tr>
+  <tr>
+    <td style="border-right:2px solid;vertical-align:top;text-align:left;font:12px Arial;border-bottom:none;background-color:#e0ebff;border-top:none;border-left:2px solid;">Auditing Mode</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+  </tr>
+  <tr>
+    <td style="border-right:2px solid;vertical-align:top;text-align:left;font:12px Arial;border-bottom:none;background-color:#e0ebff;border-top:none;border-left:2px solid;">Branching Mode</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+  </tr>
+  <tr>
+    <td style="border-right:2px solid;vertical-align:top;text-align:left;font:12px Arial;border-bottom:none;background-color:#e0ebff;border-top:none;border-left:2px solid;">External References</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+  </tr>
+  <tr>
+    <td style="border-right:2px solid;vertical-align:top;text-align:left;font:12px Arial;border-bottom:none;background-color:#e0ebff;border-top:none;border-left:2px solid;">Meta References</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+  </tr>
+  <tr>
+    <td style="border-right:2px solid;vertical-align:top;text-align:left;font:12px Arial;border-bottom:none;background-color:#e0ebff;border-top:none;border-left:2px solid;">Query XRefs</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="border-right:2px solid;vertical-align:top;text-align:left;font:12px Arial;border-bottom:none;background-color:#e0ebff;border-top:none;border-left:2px solid;">Referential Integrity</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="border-right:2px solid;vertical-align:top;text-align:left;font:12px Arial;border-bottom:none;background-color:#e0ebff;border-top:none;border-left:2px solid;">Large Objects</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="border-right:2px solid;vertical-align:top;text-align:left;font:12px Arial;border-bottom:none;background-color:#e0ebff;border-top:none;border-left:2px solid;">Feature Maps</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+  </tr>
+  <tr>
+    <td style="border-right:2px solid;vertical-align:top;text-align:left;font:12px Arial;border-bottom:none;background-color:#e0ebff;border-top:none;border-left:2px solid;">Handle Revisions</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+  </tr>
+  <tr>
+    <td style="border-right:2px solid;vertical-align:top;text-align:left;font:12px Arial;border-bottom:none;background-color:#e0ebff;border-top:none;border-left:2px solid;">XML Import / Export</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:1px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="border-right:2px solid;vertical-align:top;text-align:left;font:12px Arial;border-bottom:2px solid;background-color:#e0ebff;border-top:none;border-left:2px solid;">Offline Support</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:2px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:2px solid;font-weight:bold;border-top:none;border-left:none;">X</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:2px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:2px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:1px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:2px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+    <td style="border-right:2px solid;vertical-align:top;text-align:center;font:12px Arial;border-bottom:2px solid;font-weight:bold;border-top:none;border-left:none;">&nbsp;</td>
+  </tr>
+</table>
+
+
+<p align="right">
+<a href="schema/index.html" title="Backward to Extension Point Reference"><img src="../../images/backward.png" border="0"></a>&nbsp;<a href="MappingStrategies.html" title="Forward to DBStore Mapping Strategies"><img src="../../images/forward.png" border="0"></a></p>
+<HR>
+<i>Copyright (c) 2011, 2012 Eike Stepper (Berlin, Germany) and others.</i>
+</BODY>
+</HTML>

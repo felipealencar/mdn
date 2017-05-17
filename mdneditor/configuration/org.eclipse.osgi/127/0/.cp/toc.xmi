@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:article="http://www.eclipse.org/ARTICLE/1.0">
+  <article:Plugin name="org.eclipse.emf.cdo" label="CDO Model Repository Client">
+    <packages name="org.eclipse.emf.cdo"/>
+    <packages name="org.eclipse.emf.cdo.eresource"/>
+    <packages name="org.eclipse.emf.cdo.eresource.impl"/>
+    <packages name="org.eclipse.emf.cdo.eresource.util"/>
+    <packages name="org.eclipse.emf.cdo.etypes"/>
+    <packages name="org.eclipse.emf.cdo.etypes.impl"/>
+    <packages name="org.eclipse.emf.cdo.etypes.util"/>
+    <packages name="org.eclipse.emf.cdo.session"/>
+    <packages name="org.eclipse.emf.cdo.session.remote"/>
+    <packages name="org.eclipse.emf.cdo.transaction"/>
+    <packages name="org.eclipse.emf.cdo.util"/>
+    <packages name="org.eclipse.emf.cdo.view"/>
+    <packages name="org.eclipse.emf.internal.cdo"/>
+    <packages name="org.eclipse.emf.spi.cdo"/>
+    <extensionPoints name="viewProviders"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.admin" label="CDO Model Repository Client Admin Support">
+    <packages name="org.eclipse.emf.cdo.admin"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.compare" label="CDO Model Repository Client Compare Support">
+    <packages name="org.eclipse.emf.cdo.compare"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.edit" label="CDO Model Repository Client Edit Support">
+    <packages name="org.eclipse.emf.cdo.edit"/>
+    <packages name="org.eclipse.emf.cdo.eresource.provider"/>
+    <packages name="org.eclipse.emf.cdo.etypes.provider"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.location" label="CDO Model Repository Client Location">
+    <packages name="org.eclipse.emf.cdo.location"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.net4j" label="CDO Model Repository Client Net4j Support">
+    <packages name="org.eclipse.emf.cdo.net4j"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.team" label="CDO Model Repository Client Team Support">
+    <packages name="org.eclipse.emf.cdo.team"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.ui" label="CDO Model Repository Client UI">
+    <packages name="org.eclipse.emf.cdo.ui"/>
+    <packages name="org.eclipse.emf.cdo.ui.widgets"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.ui.admin" label="CDO Model Repository Client UI Admin"/>
+  <article:Plugin name="org.eclipse.emf.cdo.ui.compare" label="CDO Model Repository Client UI Compare">
+    <packages name="org.eclipse.emf.cdo.ui.compare"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.ui.ide" label="CDO Model Repository Client UI IDE">
+    <packages name="org.eclipse.emf.cdo.ui.ide"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.ui.team" label="CDO Model Repository Client UI Team"/>
+  <article:Plugin name="org.eclipse.emf.cdo.workspace" label="CDO Model Repository Client Workspace">
+    <packages name="org.eclipse.emf.cdo.spi.workspace"/>
+    <packages name="org.eclipse.emf.cdo.workspace"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.workspace.efs" label="CDO Model Repository Client Workspace EFS">
+    <packages name="org.eclipse.emf.cdo.workspace.efs"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.common" label="CDO Model Repository Common">
+    <packages name="org.eclipse.emf.cdo.common"/>
+    <packages name="org.eclipse.emf.cdo.common.admin"/>
+    <packages name="org.eclipse.emf.cdo.common.branch"/>
+    <packages name="org.eclipse.emf.cdo.common.commit"/>
+    <packages name="org.eclipse.emf.cdo.common.commit.handler"/>
+    <packages name="org.eclipse.emf.cdo.common.id"/>
+    <packages name="org.eclipse.emf.cdo.common.lob"/>
+    <packages name="org.eclipse.emf.cdo.common.lock"/>
+    <packages name="org.eclipse.emf.cdo.common.model"/>
+    <packages name="org.eclipse.emf.cdo.common.protocol"/>
+    <packages name="org.eclipse.emf.cdo.common.revision"/>
+    <packages name="org.eclipse.emf.cdo.common.revision.delta"/>
+    <packages name="org.eclipse.emf.cdo.common.security"/>
+    <packages name="org.eclipse.emf.cdo.common.util"/>
+    <packages name="org.eclipse.emf.cdo.spi.common"/>
+    <packages name="org.eclipse.emf.cdo.spi.common.admin"/>
+    <packages name="org.eclipse.emf.cdo.spi.common.branch"/>
+    <packages name="org.eclipse.emf.cdo.spi.common.commit"/>
+    <packages name="org.eclipse.emf.cdo.spi.common.id"/>
+    <packages name="org.eclipse.emf.cdo.spi.common.lock"/>
+    <packages name="org.eclipse.emf.cdo.spi.common.model"/>
+    <packages name="org.eclipse.emf.cdo.spi.common.protocol"/>
+    <packages name="org.eclipse.emf.cdo.spi.common.revision"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.expressions" label="CDO Model Repository Expressions">
+    <packages name="org.eclipse.emf.cdo.expressions"/>
+    <packages name="org.eclipse.emf.cdo.expressions.impl"/>
+    <packages name="org.eclipse.emf.cdo.expressions.util"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.expressions.edit" label="CDO Model Repository Expressions Edit Support">
+    <packages name="org.eclipse.emf.cdo.expressions.provider"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.expressions.editor" label="CDO Model Repository Expressions Editor"/>
+  <article:Plugin name="org.eclipse.emf.cdo.security" label="CDO Model Repository Security">
+    <packages name="org.eclipse.emf.cdo.security"/>
+    <packages name="org.eclipse.emf.cdo.security.impl"/>
+    <packages name="org.eclipse.emf.cdo.security.util"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.security.edit" label="CDO Model Repository Security Edit Support">
+    <packages name="org.eclipse.emf.cdo.security.provider"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.security.editor" label="CDO Model Repository Security Editor"/>
+  <article:Plugin name="org.eclipse.emf.cdo.security.ui" label="CDO Model Repository Security UI">
+    <packages name="org.eclipse.emf.cdo.security.ui"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.server" label="CDO Model Repository Server">
+    <packages name="org.eclipse.emf.cdo.server"/>
+    <packages name="org.eclipse.emf.cdo.server.embedded"/>
+    <packages name="org.eclipse.emf.cdo.server.mem"/>
+    <packages name="org.eclipse.emf.cdo.spi.server"/>
+    <extensionPoints name="appExtensions"/>
+    <extensionPoints name="repositoryFactories"/>
+    <extensionPoints name="storeFactories"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.server.admin" label="CDO Model Repository Server Admin Support">
+    <packages name="org.eclipse.emf.cdo.server.admin"/>
+    <packages name="org.eclipse.emf.cdo.server.spi.admin"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.server.db" label="CDO Model Repository Server DB">
+    <packages name="org.eclipse.emf.cdo.server.db"/>
+    <packages name="org.eclipse.emf.cdo.server.db.mapping"/>
+    <extensionPoints name="mappingStrategies"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.server.db4o" label="CDO Model Repository Server DB4O">
+    <packages name="org.eclipse.emf.cdo.server.db4o"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.server.hibernate" label="CDO Model Repository Server Hibernate">
+    <packages name="org.eclipse.emf.cdo.server.hibernate"/>
+    <extensionPoints name="mappingProviderFactories"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.server.lissome" label="CDO Model Repository Server Lissome">
+    <packages name="org.eclipse.emf.cdo.server.lissome"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.server.mongodb" label="CDO Model Repository Server MongoDB">
+    <packages name="org.eclipse.emf.cdo.server.mongodb"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.server.net4j" label="CDO Model Repository Server Net4j Support">
+    <packages name="org.eclipse.emf.cdo.server.net4j"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.server.ocl" label="CDO Model Repository Server OCL Support">
+    <packages name="org.eclipse.emf.cdo.server.ocl"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.server.objectivity" label="CDO Model Repository Server Objectivity">
+    <packages name="org.eclipse.emf.cdo.server.objectivity"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.server.security" label="CDO Model Repository Server Security Support">
+    <packages name="org.eclipse.emf.cdo.server.security"/>
+    <packages name="org.eclipse.emf.cdo.server.spi.security"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.transfer" label="CDO Transfer Framework">
+    <packages name="org.eclipse.emf.cdo.spi.transfer"/>
+    <packages name="org.eclipse.emf.cdo.transfer"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.transfer.repository" label="CDO Transfer Framework (Repository Support)">
+    <packages name="org.eclipse.emf.cdo.transfer.spi.repository"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.transfer.ui" label="CDO Transfer Framework (UI)">
+    <packages name="org.eclipse.emf.cdo.transfer.spi.ui"/>
+    <packages name="org.eclipse.emf.cdo.transfer.ui"/>
+    <packages name="org.eclipse.emf.cdo.transfer.ui.swt"/>
+  </article:Plugin>
+  <article:Plugin name="org.eclipse.emf.cdo.transfer.workspace.ui" label="CDO Transfer Framework (Workspace Support UI)"/>
+  <article:Plugin name="org.eclipse.emf.cdo.transfer.workspace" label="CDO Transfer Framework (Workspace Support)">
+    <packages name="org.eclipse.emf.cdo.transfer.spi.workspace"/>
+  </article:Plugin>
+</xmi:XMI>

@@ -1,0 +1,436 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="de">
+<head>
+
+<title>Uses of Interface org.eclipse.emf.cdo.common.id.CDOIDProvider (CDO Model Repository Documentation)</title>
+<meta name="date" content="">
+<link rel="stylesheet" type="text/css" href="../../../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Uses of Interface org.eclipse.emf.cdo.common.id.CDOIDProvider (CDO Model Repository Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="../package-summary.html">Package</a></li>
+<li><a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">Class</a></li>
+<li class="navBarCell1Rev">Use</li>
+<li><a href="../../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev</li>
+<li>Next</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../../index.html?org/eclipse/emf/cdo/common/id/class-use/CDOIDProvider.html" target="_top">Frames</a></li>
+<li><a href="CDOIDProvider.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<div class="header">
+<h2 title="Uses of Interface org.eclipse.emf.cdo.common.id.CDOIDProvider" class="title">Uses of Interface<br>org.eclipse.emf.cdo.common.id.CDOIDProvider</h2>
+</div>
+<div class="classUseContainer">
+<ul class="blockList">
+<li class="blockList">
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing packages, and an explanation">
+<caption><span>Packages that use <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Package</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="#org.eclipse.emf.cdo.common.id">org.eclipse.emf.cdo.common.id</a></td>
+<td class="colLast">
+<div class="block">Common concepts for dealing with object and revision IDs.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="#org.eclipse.emf.cdo.common.protocol">org.eclipse.emf.cdo.common.protocol</a></td>
+<td class="colLast">
+<div class="block">Common concepts for dealing with protocols and CDO-specific I/O.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="#org.eclipse.emf.cdo.common.util">org.eclipse.emf.cdo.common.util</a></td>
+<td class="colLast">
+<div class="block">Common utility classes, some common interfaces and exceptions.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="#org.eclipse.emf.cdo.spi.common.protocol">org.eclipse.emf.cdo.spi.common.protocol</a></td>
+<td class="colLast">
+<div class="block">Common base implementations for dealing with I/O of CDO data structures.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="#org.eclipse.emf.cdo.spi.common.revision">org.eclipse.emf.cdo.spi.common.revision</a></td>
+<td class="colLast">
+<div class="block">Common service provider interfaces and useful base implementations for dealing with revisions and deltas.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="#org.eclipse.emf.cdo.spi.server">org.eclipse.emf.cdo.spi.server</a></td>
+<td class="colLast">
+<div class="block">Server service provider interfaces and useful base implementations.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="#org.eclipse.emf.spi.cdo">org.eclipse.emf.spi.cdo</a></td>
+<td class="colLast">
+<div class="block">Client service provider interfaces and useful base implementations.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<ul class="blockList">
+<li class="blockList"><a name="org.eclipse.emf.cdo.common.id">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a> in <a href="../../../../../../../org/eclipse/emf/cdo/common/id/package-summary.html">org.eclipse.emf.cdo.common.id</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing fields, and an explanation">
+<caption><span>Fields in <a href="../../../../../../../org/eclipse/emf/cdo/common/id/package-summary.html">org.eclipse.emf.cdo.common.id</a> declared as <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a></code></td>
+<td class="colLast"><span class="strong">CDOIDProvider.</span><code><strong><a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html#NOOP">NOOP</a></strong></code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="org.eclipse.emf.cdo.common.protocol">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a> in <a href="../../../../../../../org/eclipse/emf/cdo/common/protocol/package-summary.html">org.eclipse.emf.cdo.common.protocol</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../../../org/eclipse/emf/cdo/common/protocol/package-summary.html">org.eclipse.emf.cdo.common.protocol</a> that return <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a></code></td>
+<td class="colLast"><span class="strong">CDODataOutput.</span><code><strong><a href="../../../../../../../org/eclipse/emf/cdo/common/protocol/CDODataOutput.html#getIDProvider()">getIDProvider</a></strong>()</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="org.eclipse.emf.cdo.common.util">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a> in <a href="../../../../../../../org/eclipse/emf/cdo/common/util/package-summary.html">org.eclipse.emf.cdo.common.util</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../../../org/eclipse/emf/cdo/common/util/package-summary.html">org.eclipse.emf.cdo.common.util</a> with parameters of type <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../../../org/eclipse/emf/cdo/common/protocol/CDODataOutput.html" title="interface in org.eclipse.emf.cdo.common.protocol">CDODataOutput</a></code></td>
+<td class="colLast"><span class="strong">CDOCommonUtil.</span><code><strong><a href="../../../../../../../org/eclipse/emf/cdo/common/util/CDOCommonUtil.html#createCDODataOutput(org.eclipse.net4j.util.io.ExtendedDataOutput, org.eclipse.emf.cdo.common.model.CDOPackageRegistry, org.eclipse.emf.cdo.common.id.CDOIDProvider)">createCDODataOutput</a></strong>(<a href="../../../../../../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/io/ExtendedDataOutput.html?is-external=true" title="class or interface in org.eclipse.net4j.util.io">ExtendedDataOutput</a>&nbsp;extendedDataOutputStream,
+                   <a href="../../../../../../../org/eclipse/emf/cdo/common/model/CDOPackageRegistry.html" title="interface in org.eclipse.emf.cdo.common.model">CDOPackageRegistry</a>&nbsp;packageRegistry,
+                   <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a>&nbsp;idProvider)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>As of 4.3 use <a href="../../../../../../../org/eclipse/emf/cdo/common/util/CDOCommonUtil.html#createCDODataOutput(org.eclipse.net4j.util.io.ExtendedDataOutput, org.eclipse.emf.cdo.common.model.CDOPackageRegistry, org.eclipse.emf.cdo.common.id.CDOIDProvider, org.eclipse.emf.cdo.spi.common.revision.CDORevisionUnchunker)"><code>CDOCommonUtil.createCDODataOutput(ExtendedDataOutput, CDOPackageRegistry, CDOIDProvider, CDORevisionUnchunker)</code></a>.</i></div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../../../org/eclipse/emf/cdo/common/protocol/CDODataOutput.html" title="interface in org.eclipse.emf.cdo.common.protocol">CDODataOutput</a></code></td>
+<td class="colLast"><span class="strong">CDOCommonUtil.</span><code><strong><a href="../../../../../../../org/eclipse/emf/cdo/common/util/CDOCommonUtil.html#createCDODataOutput(org.eclipse.net4j.util.io.ExtendedDataOutput, org.eclipse.emf.cdo.common.model.CDOPackageRegistry, org.eclipse.emf.cdo.common.id.CDOIDProvider, org.eclipse.emf.cdo.spi.common.revision.CDORevisionUnchunker)">createCDODataOutput</a></strong>(<a href="../../../../../../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/io/ExtendedDataOutput.html?is-external=true" title="class or interface in org.eclipse.net4j.util.io">ExtendedDataOutput</a>&nbsp;extendedDataOutputStream,
+                   <a href="../../../../../../../org/eclipse/emf/cdo/common/model/CDOPackageRegistry.html" title="interface in org.eclipse.emf.cdo.common.model">CDOPackageRegistry</a>&nbsp;packageRegistry,
+                   <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a>&nbsp;idProvider,
+                   <a href="../../../../../../../org/eclipse/emf/cdo/spi/common/revision/CDORevisionUnchunker.html" title="interface in org.eclipse.emf.cdo.spi.common.revision">CDORevisionUnchunker</a>&nbsp;unchunker)</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="org.eclipse.emf.cdo.spi.common.protocol">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a> in <a href="../../../../../../../org/eclipse/emf/cdo/spi/common/protocol/package-summary.html">org.eclipse.emf.cdo.spi.common.protocol</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../../../org/eclipse/emf/cdo/spi/common/protocol/package-summary.html">org.eclipse.emf.cdo.spi.common.protocol</a> that return <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a></code></td>
+<td class="colLast"><span class="strong">CDODataOutputImpl.</span><code><strong><a href="../../../../../../../org/eclipse/emf/cdo/spi/common/protocol/CDODataOutputImpl.html#getIDProvider()">getIDProvider</a></strong>()</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="org.eclipse.emf.cdo.spi.common.revision">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a> in <a href="../../../../../../../org/eclipse/emf/cdo/spi/common/revision/package-summary.html">org.eclipse.emf.cdo.spi.common.revision</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../../../org/eclipse/emf/cdo/spi/common/revision/package-summary.html">org.eclipse.emf.cdo.spi.common.revision</a> with parameters of type <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="strong">BaseCDORevision.</span><code><strong><a href="../../../../../../../org/eclipse/emf/cdo/spi/common/revision/BaseCDORevision.html#convertEObjects(org.eclipse.emf.cdo.common.id.CDOIDProvider)">convertEObjects</a></strong>(<a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a>&nbsp;idProvider)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="strong">DelegatingCDORevision.</span><code><strong><a href="../../../../../../../org/eclipse/emf/cdo/spi/common/revision/DelegatingCDORevision.html#convertEObjects(org.eclipse.emf.cdo.common.id.CDOIDProvider)">convertEObjects</a></strong>(<a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a>&nbsp;oidProvider)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="strong">InternalCDORevision.</span><code><strong><a href="../../../../../../../org/eclipse/emf/cdo/spi/common/revision/InternalCDORevision.html#convertEObjects(org.eclipse.emf.cdo.common.id.CDOIDProvider)">convertEObjects</a></strong>(<a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a>&nbsp;oidProvider)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="strong">StubCDORevision.</span><code><strong><a href="../../../../../../../org/eclipse/emf/cdo/spi/common/revision/StubCDORevision.html#convertEObjects(org.eclipse.emf.cdo.common.id.CDOIDProvider)">convertEObjects</a></strong>(<a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a>&nbsp;oidProvider)</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="org.eclipse.emf.cdo.spi.server">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a> in <a href="../../../../../../../org/eclipse/emf/cdo/spi/server/package-summary.html">org.eclipse.emf.cdo.spi.server</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subinterfaces, and an explanation">
+<caption><span>Subinterfaces of <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a> in <a href="../../../../../../../org/eclipse/emf/cdo/spi/server/package-summary.html">org.eclipse.emf.cdo.spi.server</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Interface and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>interface&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../../org/eclipse/emf/cdo/spi/server/InternalSession.html" title="interface in org.eclipse.emf.cdo.spi.server">InternalSession</a></strong></code>
+<div class="block">If the meaning of this type isn't clear, there really should be more of a description here...</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="org.eclipse.emf.spi.cdo">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a> in <a href="../../../../../../../org/eclipse/emf/spi/cdo/package-summary.html">org.eclipse.emf.spi.cdo</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subinterfaces, and an explanation">
+<caption><span>Subinterfaces of <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a> in <a href="../../../../../../../org/eclipse/emf/spi/cdo/package-summary.html">org.eclipse.emf.spi.cdo</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Interface and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>interface&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../../org/eclipse/emf/spi/cdo/InternalCDOTransaction.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOTransaction</a></strong></code>
+<div class="block">If the meaning of this type isn't clear, there really should be more of a description here...</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>interface&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../../org/eclipse/emf/spi/cdo/InternalCDOView.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOView</a></strong></code>
+<div class="block">If the meaning of this type isn't clear, there really should be more of a description here...</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static interface&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../../org/eclipse/emf/spi/cdo/InternalCDOXATransaction.InternalCDOXACommitContext.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOXATransaction.InternalCDOXACommitContext</a></strong></code>
+<div class="block">If the meaning of this type isn't clear, there really should be more of a description here...</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../../../org/eclipse/emf/spi/cdo/package-summary.html">org.eclipse.emf.spi.cdo</a> that return <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a></code></td>
+<td class="colLast"><span class="strong">CDOSessionProtocol.CommitTransactionResult.</span><code><strong><a href="../../../../../../../org/eclipse/emf/spi/cdo/CDOSessionProtocol.CommitTransactionResult.html#getIDProvider()">getIDProvider</a></strong>()</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../../../org/eclipse/emf/spi/cdo/package-summary.html">org.eclipse.emf.spi.cdo</a> with parameters of type <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../../org/eclipse/emf/spi/cdo/CDOSessionProtocol.CommitTransactionResult.html" title="class in org.eclipse.emf.spi.cdo">CDOSessionProtocol.CommitTransactionResult</a></code></td>
+<td class="colLast"><span class="strong">CDOSessionProtocol.</span><code><strong><a href="../../../../../../../org/eclipse/emf/spi/cdo/CDOSessionProtocol.html#commitTransaction(int, java.lang.String, boolean, org.eclipse.emf.cdo.common.id.CDOIDProvider, org.eclipse.emf.cdo.common.commit.CDOCommitData, java.util.Collection, org.eclipse.net4j.util.om.monitor.OMMonitor)">commitTransaction</a></strong>(int&nbsp;transactionID,
+                 <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;comment,
+                 boolean&nbsp;releaseLocks,
+                 <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a>&nbsp;idProvider,
+                 <a href="../../../../../../../org/eclipse/emf/cdo/common/commit/CDOCommitData.html" title="interface in org.eclipse.emf.cdo.common.commit">CDOCommitData</a>&nbsp;commitData,
+                 <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../../org/eclipse/emf/cdo/common/lob/CDOLob.html" title="class in org.eclipse.emf.cdo.common.lob">CDOLob</a>&lt;?&gt;&gt;&nbsp;lobs,
+                 <a href="../../../../../../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/om/monitor/OMMonitor.html?is-external=true" title="class or interface in org.eclipse.net4j.util.om.monitor">OMMonitor</a>&nbsp;monitor)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Not called anymore. Use <code>#commitTransaction(InternalCDOCommitContext, OMMonitor)</code> instead.</i></div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="strong">CDOSessionProtocol.CommitTransactionResult.</span><code><strong><a href="../../../../../../../org/eclipse/emf/spi/cdo/CDOSessionProtocol.CommitTransactionResult.html#setIDProvider(org.eclipse.emf.cdo.common.id.CDOIDProvider)">setIDProvider</a></strong>(<a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a>&nbsp;idProvider)</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing constructors, and an explanation">
+<caption><span>Constructors in <a href="../../../../../../../org/eclipse/emf/spi/cdo/package-summary.html">org.eclipse.emf.spi.cdo</a> with parameters of type <a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colLast"><code><strong><a href="../../../../../../../org/eclipse/emf/spi/cdo/CDOSessionProtocol.CommitTransactionResult.PostCommitReferenceAdjuster.html#CDOSessionProtocol.CommitTransactionResult.PostCommitReferenceAdjuster(org.eclipse.emf.cdo.common.id.CDOIDProvider, org.eclipse.emf.cdo.spi.common.revision.CDOIDMapper)">CDOSessionProtocol.CommitTransactionResult.PostCommitReferenceAdjuster</a></strong>(<a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a>&nbsp;idProvider,
+                                                                      <a href="../../../../../../../org/eclipse/emf/cdo/spi/common/revision/CDOIDMapper.html" title="class in org.eclipse.emf.cdo.spi.common.revision">CDOIDMapper</a>&nbsp;idMapper)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colLast"><code><strong><a href="../../../../../../../org/eclipse/emf/spi/cdo/CDOSessionProtocol.CommitTransactionResult.html#CDOSessionProtocol.CommitTransactionResult(org.eclipse.emf.cdo.common.id.CDOIDProvider, byte, java.lang.String, org.eclipse.emf.cdo.common.branch.CDOBranchPoint, long, java.util.List, boolean)">CDOSessionProtocol.CommitTransactionResult</a></strong>(<a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a>&nbsp;idProvider,
+                                          byte&nbsp;rollbackReason,
+                                          <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;rollbackMessage,
+                                          <a href="../../../../../../../org/eclipse/emf/cdo/common/branch/CDOBranchPoint.html" title="interface in org.eclipse.emf.cdo.common.branch">CDOBranchPoint</a>&nbsp;branchPoint,
+                                          long&nbsp;previousTimeStamp,
+                                          <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../../org/eclipse/emf/cdo/CDOObjectReference.html" title="interface in org.eclipse.emf.cdo">CDOObjectReference</a>&gt;&nbsp;xRefs,
+                                          boolean&nbsp;clearResourcePathCache)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>As of 4.3</i></div>
+</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colLast"><code><strong><a href="../../../../../../../org/eclipse/emf/spi/cdo/CDOSessionProtocol.CommitTransactionResult.html#CDOSessionProtocol.CommitTransactionResult(org.eclipse.emf.cdo.common.id.CDOIDProvider, org.eclipse.emf.cdo.common.branch.CDOBranchPoint, long)">CDOSessionProtocol.CommitTransactionResult</a></strong>(<a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a>&nbsp;idProvider,
+                                          <a href="../../../../../../../org/eclipse/emf/cdo/common/branch/CDOBranchPoint.html" title="interface in org.eclipse.emf.cdo.common.branch">CDOBranchPoint</a>&nbsp;branchPoint,
+                                          long&nbsp;previousTimeStamp)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>As of 4.2</i></div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colLast"><code><strong><a href="../../../../../../../org/eclipse/emf/spi/cdo/CDOSessionProtocol.CommitTransactionResult.html#CDOSessionProtocol.CommitTransactionResult(org.eclipse.emf.cdo.common.id.CDOIDProvider, org.eclipse.emf.cdo.common.branch.CDOBranchPoint, long, boolean)">CDOSessionProtocol.CommitTransactionResult</a></strong>(<a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a>&nbsp;idProvider,
+                                          <a href="../../../../../../../org/eclipse/emf/cdo/common/branch/CDOBranchPoint.html" title="interface in org.eclipse.emf.cdo.common.branch">CDOBranchPoint</a>&nbsp;branchPoint,
+                                          long&nbsp;previousTimeStamp,
+                                          boolean&nbsp;clearResourcePathCache)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>As of 4.3</i></div>
+</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colLast"><code><strong><a href="../../../../../../../org/eclipse/emf/spi/cdo/CDOSessionProtocol.CommitTransactionResult.html#CDOSessionProtocol.CommitTransactionResult(org.eclipse.emf.cdo.common.id.CDOIDProvider, java.lang.String, org.eclipse.emf.cdo.common.branch.CDOBranchPoint, long, java.util.List)">CDOSessionProtocol.CommitTransactionResult</a></strong>(<a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">CDOIDProvider</a>&nbsp;idProvider,
+                                          <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;rollbackMessage,
+                                          <a href="../../../../../../../org/eclipse/emf/cdo/common/branch/CDOBranchPoint.html" title="interface in org.eclipse.emf.cdo.common.branch">CDOBranchPoint</a>&nbsp;branchPoint,
+                                          long&nbsp;previousTimeStamp,
+                                          <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../../org/eclipse/emf/cdo/CDOObjectReference.html" title="interface in org.eclipse.emf.cdo">CDOObjectReference</a>&gt;&nbsp;xRefs)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>As of 4.2</i></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="../package-summary.html">Package</a></li>
+<li><a href="../../../../../../../org/eclipse/emf/cdo/common/id/CDOIDProvider.html" title="interface in org.eclipse.emf.cdo.common.id">Class</a></li>
+<li class="navBarCell1Rev">Use</li>
+<li><a href="../../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev</li>
+<li>Next</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../../index.html?org/eclipse/emf/cdo/common/id/class-use/CDOIDProvider.html" target="_top">Frames</a></li>
+<li><a href="CDOIDProvider.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small><i>Copyright (c) 2011, 2012 Eike Stepper (Berlin, Germany) and others.</i></small></p>
+</body>
+</html>

@@ -1,0 +1,671 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="de">
+<head>
+
+<title>Realm (CDO Model Repository Documentation)</title>
+<meta name="date" content="">
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Realm (CDO Model Repository Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/Realm.html">Use</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/eclipse/emf/cdo/security/PermissionFilter.html" title="interface in org.eclipse.emf.cdo.security"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/eclipse/emf/cdo/security/RealmUtil.html" title="class in org.eclipse.emf.cdo.security"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/eclipse/emf/cdo/security/Realm.html" target="_top">Frames</a></li>
+<li><a href="Realm.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.eclipse.emf.cdo.security</div>
+<h2 title="Interface Realm" class="title">Interface Realm</h2>
+</div>
+<div class="contentContainer">
+<map id="APIVIZ" name="APIVIZ">
+<area shape="rect" id="node1" href="SecurityPackage.html" title="&#171;interface&#187; SecurityPackage" alt="" coords="5,184,125,224"/>
+<area shape="rect" id="node2" href="SecurityItemContainer.html" title="&#171;interface&#187; SecurityItemContainer" alt="" coords="9,5,159,45"/>
+<area shape="rect" id="node3" href="SecurityElement.html" title="&#171;interface&#187; SecurityElement" alt="" coords="189,5,307,45"/>
+<area shape="rect" id="node4" href="Realm.html" title="&#171;interface&#187; Realm" alt="" coords="123,88,208,128"/>
+<area shape="rect" id="node5" href="impl/RealmImpl.html" title="RealmImpl (org.eclipse.emf.cdo.security.impl)" alt="" coords="156,184,377,224"/>
+</map>
+<div id="apivizContainer" style="text-align: center;"><img src="Realm.png" usemap="#APIVIZ" border="0"></div>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a>, <a href="../../../../../org/eclipse/emf/cdo/common/id/CDOWithID.html" title="interface in org.eclipse.emf.cdo.common.id">CDOWithID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EObject</a>, <a href="../../../../../org/eclipse/emf/cdo/etypes/ModelElement.html" title="interface in org.eclipse.emf.cdo.etypes">ModelElement</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">Notifier</a>, <a href="../../../../../org/eclipse/emf/cdo/security/SecurityElement.html" title="interface in org.eclipse.emf.cdo.security">SecurityElement</a>, <a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemContainer</a>, <a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemProvider.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemProvider</a></dd>
+</dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><a href="../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html" title="class in org.eclipse.emf.cdo.security.impl">RealmImpl</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public interface <span class="strong">Realm</span>
+extends <a href="../../../../../org/eclipse/emf/cdo/security/SecurityElement.html" title="interface in org.eclipse.emf.cdo.security">SecurityElement</a>, <a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemContainer</a></pre>
+<div class="block"><!-- begin-user-doc -->
+ A representation of the model object '<em><b>Realm</b></em>'.</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm()"><code>SecurityPackage.getRealm()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd>
+<dt><span class="strong">Extends</span></dt>
+  <dd>SecurityItemContainer</dd>
+<dt><span class="strong">Model</span></dt>
+  <dd>annotation="http://www.eclipse.org/emf/2002/Ecore constraints='HasAdministrator'"</dd>
+<dt><span class="strong">No Implement</span></dt>
+  <dd>This interface is not intended to be implemented by clients.</dd>
+<dt><span class="strong">No Extend</span></dt>
+  <dd>This interface is not intended to be extended by clients.
+ <!-- end-user-doc -->
+
+ <p>
+ The following features are supported:
+ <ul>
+   <li><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getItems()"><code><em>Items</em></code></a></li>
+   <li><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getAllUsers()"><code><em>All Users</em></code></a></li>
+   <li><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getAllGroups()"><code><em>All Groups</em></code></a></li>
+   <li><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getAllRoles()"><code><em>All Roles</em></code></a></li>
+   <li><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getAllPermissions()"><code><em>All Permissions</em></code></a></li>
+   <li><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getName()"><code><em>Name</em></code></a></li>
+   <li><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultAccess()"><code><em>Default Access</em></code></a></li>
+   <li><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultUserDirectory()"><code><em>Default User Directory</em></code></a></li>
+   <li><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultGroupDirectory()"><code><em>Default Group Directory</em></code></a></li>
+   <li><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultRoleDirectory()"><code><em>Default Role Directory</em></code></a></li>
+ </ul>
+ </p></dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../org/eclipse/emf/cdo/security/Group.html" title="interface in org.eclipse.emf.cdo.security">Group</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getAllGroups()">getAllGroups</a></strong>()</code>
+<div class="block">Returns the value of the '<em><b>All Groups</b></em>' reference list.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../org/eclipse/emf/cdo/security/Permission.html" title="interface in org.eclipse.emf.cdo.security">Permission</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getAllPermissions()">getAllPermissions</a></strong>()</code>
+<div class="block">Returns the value of the '<em><b>All Permissions</b></em>' reference list.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../org/eclipse/emf/cdo/security/Role.html" title="interface in org.eclipse.emf.cdo.security">Role</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getAllRoles()">getAllRoles</a></strong>()</code>
+<div class="block">Returns the value of the '<em><b>All Roles</b></em>' reference list.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getAllUsers()">getAllUsers</a></strong>()</code>
+<div class="block">Returns the value of the '<em><b>All Users</b></em>' reference list.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/security/Access.html" title="enum in org.eclipse.emf.cdo.security">Access</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultAccess()">getDefaultAccess</a></strong>()</code>
+<div class="block">Returns the value of the '<em><b>Default Access</b></em>' attribute</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultGroupDirectory()">getDefaultGroupDirectory</a></strong>()</code>
+<div class="block">Returns the value of the '<em><b>Default Group Directory</b></em>' reference</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultRoleDirectory()">getDefaultRoleDirectory</a></strong>()</code>
+<div class="block">Returns the value of the '<em><b>Default Role Directory</b></em>' reference</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultUserDirectory()">getDefaultUserDirectory</a></strong>()</code>
+<div class="block">Returns the value of the '<em><b>Default User Directory</b></em>' reference</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../org/eclipse/emf/cdo/security/SecurityItem.html" title="interface in org.eclipse.emf.cdo.security">SecurityItem</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getItems()">getItems</a></strong>()</code>
+<div class="block">Returns the value of the '<em><b>Items</b></em>' containment reference list.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getName()">getName</a></strong>()</code>
+<div class="block">Returns the value of the '<em><b>Name</b></em>' attribute</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultAccess(org.eclipse.emf.cdo.security.Access)">setDefaultAccess</a></strong>(<a href="../../../../../org/eclipse/emf/cdo/security/Access.html" title="enum in org.eclipse.emf.cdo.security">Access</a>&nbsp;value)</code>
+<div class="block">Sets the value of the '<a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultAccess()"><code><em>Default Access</em></code></a>' attribute</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultGroupDirectory(org.eclipse.emf.cdo.security.Directory)">setDefaultGroupDirectory</a></strong>(<a href="../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;value)</code>
+<div class="block">Sets the value of the '<a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultGroupDirectory()"><code><em>Default Group Directory</em></code></a>' reference</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultRoleDirectory(org.eclipse.emf.cdo.security.Directory)">setDefaultRoleDirectory</a></strong>(<a href="../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;value)</code>
+<div class="block">Sets the value of the '<a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultRoleDirectory()"><code><em>Default Role Directory</em></code></a>' reference</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultUserDirectory(org.eclipse.emf.cdo.security.Directory)">setDefaultUserDirectory</a></strong>(<a href="../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;value)</code>
+<div class="block">Sets the value of the '<a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultUserDirectory()"><code><em>Default User Directory</em></code></a>' reference</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#setName(java.lang.String)">setName</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>
+<div class="block">Sets the value of the '<a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getName()"><code><em>Name</em></code></a>' attribute</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.cdo.security.SecurityElement">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.cdo.security.<a href="../../../../../org/eclipse/emf/cdo/security/SecurityElement.html" title="interface in org.eclipse.emf.cdo.security">SecurityElement</a></h3>
+<code><a href="../../../../../org/eclipse/emf/cdo/security/SecurityElement.html#getRealm()">getRealm</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.cdo.etypes.ModelElement">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.cdo.etypes.<a href="../../../../../org/eclipse/emf/cdo/etypes/ModelElement.html" title="interface in org.eclipse.emf.cdo.etypes">ModelElement</a></h3>
+<code><a href="../../../../../org/eclipse/emf/cdo/etypes/ModelElement.html#getAnnotation(java.lang.String)">getAnnotation</a>, <a href="../../../../../org/eclipse/emf/cdo/etypes/ModelElement.html#getAnnotations()">getAnnotations</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.cdo.CDOObject">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.cdo.<a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></h3>
+<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoConflict()">cdoConflict</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoDirectResource()">cdoDirectResource</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoHistory()">cdoHistory</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoID()">cdoID</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoInvalid()">cdoInvalid</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoLockState()">cdoLockState</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoPermission()">cdoPermission</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoPrefetch(int)">cdoPrefetch</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoReadLock()">cdoReadLock</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoReload()">cdoReload</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoResource()">cdoResource</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoRevision()">cdoRevision</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoRevision(boolean)">cdoRevision</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoState()">cdoState</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoView()">cdoView</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoWriteLock()">cdoWriteLock</a>, <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoWriteOption()">cdoWriteOption</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.ecore.EObject">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.ecore.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EObject</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eAllContents()" title="class or interface in org.eclipse.emf.ecore">eAllContents</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eClass()" title="class or interface in org.eclipse.emf.ecore">eClass</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eContainer()" title="class or interface in org.eclipse.emf.ecore">eContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eContainingFeature()" title="class or interface in org.eclipse.emf.ecore">eContainingFeature</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eContainmentFeature()" title="class or interface in org.eclipse.emf.ecore">eContainmentFeature</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eContents()" title="class or interface in org.eclipse.emf.ecore">eContents</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eCrossReferences()" title="class or interface in org.eclipse.emf.ecore">eCrossReferences</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eGet(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eGet(org.eclipse.emf.ecore.EStructuralFeature, boolean)" title="class or interface in org.eclipse.emf.ecore">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eInvoke(org.eclipse.emf.ecore.EOperation, org.eclipse.emf.common.util.EList)" title="class or interface in org.eclipse.emf.ecore">eInvoke</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eIsProxy()" title="class or interface in org.eclipse.emf.ecore">eIsProxy</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eIsSet(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore">eIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eResource()" title="class or interface in org.eclipse.emf.ecore">eResource</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eSet(org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore">eSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eUnset(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore">eUnset</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.common.notify.Notifier">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.common.notify.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">Notifier</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true#eAdapters()" title="class or interface in org.eclipse.emf.common.notify">eAdapters</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true#eDeliver()" title="class or interface in org.eclipse.emf.common.notify">eDeliver</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true#eNotify(org.eclipse.emf.common.notify.Notification)" title="class or interface in org.eclipse.emf.common.notify">eNotify</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true#eSetDeliver(boolean)" title="class or interface in org.eclipse.emf.common.notify">eSetDeliver</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.cdo.security.SecurityItemContainer">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.cdo.security.<a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemContainer</a></h3>
+<code><a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#addGroup(java.lang.String)">addGroup</a>, <a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#addRole(java.lang.String)">addRole</a>, <a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#addUser(org.eclipse.net4j.util.security.IPasswordCredentials)">addUser</a>, <a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#addUser(java.lang.String)">addUser</a>, <a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#addUser(java.lang.String, java.lang.String)">addUser</a>, <a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#removeGroup(java.lang.String)">removeGroup</a>, <a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#removeRole(java.lang.String)">removeRole</a>, <a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#removeUser(java.lang.String)">removeUser</a>, <a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#setPassword(java.lang.String, java.lang.String)">setPassword</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.cdo.security.SecurityItemProvider">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.cdo.security.<a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemProvider.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemProvider</a></h3>
+<code><a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemProvider.html#getGroup(java.lang.String)">getGroup</a>, <a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemProvider.html#getRole(java.lang.String)">getRole</a>, <a href="../../../../../org/eclipse/emf/cdo/security/SecurityItemProvider.html#getUser(java.lang.String)">getUser</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getItems()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getItems</h4>
+<pre><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../org/eclipse/emf/cdo/security/SecurityItem.html" title="interface in org.eclipse.emf.cdo.security">SecurityItem</a>&gt;&nbsp;getItems()</pre>
+<div class="block">Returns the value of the '<em><b>Items</b></em>' containment reference list.
+ The list contents are of type <a href="../../../../../org/eclipse/emf/cdo/security/SecurityItem.html" title="interface in org.eclipse.emf.cdo.security"><code>SecurityItem</code></a>.
+ <!-- begin-user-doc -->
+ <p>
+ If the meaning of the '<em>Items</em>' containment reference list isn't clear,
+ there really should be more of a description here...
+ </p>
+ <!-- end-user-doc --></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>Items</em>' containment reference list.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_Items()"><code>SecurityPackage.getRealm_Items()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd>
+<dt><span class="strong">Model</span></dt>
+  <dd>containment="true"</dd></dl>
+</li>
+</ul>
+<a name="getAllUsers()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllUsers</h4>
+<pre><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a>&gt;&nbsp;getAllUsers()</pre>
+<div class="block">Returns the value of the '<em><b>All Users</b></em>' reference list.
+ The list contents are of type <a href="../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security"><code>User</code></a>.
+ <!-- begin-user-doc -->
+ <p>
+ If the meaning of the '<em>All Users</em>' reference list isn't clear,
+ there really should be more of a description here...
+ </p>
+ <!-- end-user-doc --></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>All Users</em>' reference list.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_AllUsers()"><code>SecurityPackage.getRealm_AllUsers()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd>
+<dt><span class="strong">Model</span></dt>
+  <dd>transient="true" changeable="false" volatile="true" derived="true"</dd></dl>
+</li>
+</ul>
+<a name="getAllGroups()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllGroups</h4>
+<pre><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../org/eclipse/emf/cdo/security/Group.html" title="interface in org.eclipse.emf.cdo.security">Group</a>&gt;&nbsp;getAllGroups()</pre>
+<div class="block">Returns the value of the '<em><b>All Groups</b></em>' reference list.
+ The list contents are of type <a href="../../../../../org/eclipse/emf/cdo/security/Group.html" title="interface in org.eclipse.emf.cdo.security"><code>Group</code></a>.
+ <!-- begin-user-doc -->
+ <p>
+ If the meaning of the '<em>All Groups</em>' reference list isn't clear,
+ there really should be more of a description here...
+ </p>
+ <!-- end-user-doc --></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>All Groups</em>' reference list.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_AllGroups()"><code>SecurityPackage.getRealm_AllGroups()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd>
+<dt><span class="strong">Model</span></dt>
+  <dd>transient="true" changeable="false" volatile="true" derived="true"</dd></dl>
+</li>
+</ul>
+<a name="getAllRoles()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllRoles</h4>
+<pre><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../org/eclipse/emf/cdo/security/Role.html" title="interface in org.eclipse.emf.cdo.security">Role</a>&gt;&nbsp;getAllRoles()</pre>
+<div class="block">Returns the value of the '<em><b>All Roles</b></em>' reference list.
+ The list contents are of type <a href="../../../../../org/eclipse/emf/cdo/security/Role.html" title="interface in org.eclipse.emf.cdo.security"><code>Role</code></a>.
+ <!-- begin-user-doc -->
+ <p>
+ If the meaning of the '<em>All Roles</em>' reference list isn't clear,
+ there really should be more of a description here...
+ </p>
+ <!-- end-user-doc --></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>All Roles</em>' reference list.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_AllRoles()"><code>SecurityPackage.getRealm_AllRoles()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd>
+<dt><span class="strong">Model</span></dt>
+  <dd>transient="true" changeable="false" volatile="true" derived="true"</dd></dl>
+</li>
+</ul>
+<a name="getAllPermissions()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllPermissions</h4>
+<pre><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../org/eclipse/emf/cdo/security/Permission.html" title="interface in org.eclipse.emf.cdo.security">Permission</a>&gt;&nbsp;getAllPermissions()</pre>
+<div class="block">Returns the value of the '<em><b>All Permissions</b></em>' reference list.
+ The list contents are of type <a href="../../../../../org/eclipse/emf/cdo/security/Permission.html" title="interface in org.eclipse.emf.cdo.security"><code>Permission</code></a>.
+ <!-- begin-user-doc -->
+ <p>
+ If the meaning of the '<em>All Permissions</em>' reference list isn't clear,
+ there really should be more of a description here...
+ </p>
+ <!-- end-user-doc --></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>All Permissions</em>' reference list.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_AllPermissions()"><code>SecurityPackage.getRealm_AllPermissions()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd>
+<dt><span class="strong">Model</span></dt>
+  <dd>transient="true" changeable="false" volatile="true" derived="true"</dd></dl>
+</li>
+</ul>
+<a name="getName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getName</h4>
+<pre><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
+<div class="block">Returns the value of the '<em><b>Name</b></em>' attribute.
+ <!-- begin-user-doc -->
+ <p>
+ If the meaning of the '<em>Name</em>' attribute isn't clear,
+ there really should be more of a description here...
+ </p>
+ <!-- end-user-doc --></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>Name</em>' attribute.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#setName(java.lang.String)"><code>setName(String)</code></a>, 
+<a href="../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_Name()"><code>SecurityPackage.getRealm_Name()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd>
+<dt><span class="strong">Model</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="setName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setName</h4>
+<pre>void&nbsp;setName(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
+<div class="block">Sets the value of the '<a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getName()"><code><em>Name</em></code></a>' attribute.
+ <!-- begin-user-doc -->
+ <!-- end-user-doc --></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - the new value of the '<em>Name</em>' attribute.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getName()"><code>getName()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="getDefaultAccess()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultAccess</h4>
+<pre><a href="../../../../../org/eclipse/emf/cdo/security/Access.html" title="enum in org.eclipse.emf.cdo.security">Access</a>&nbsp;getDefaultAccess()</pre>
+<div class="block">Returns the value of the '<em><b>Default Access</b></em>' attribute.
+ <!-- begin-user-doc -->
+ <!-- end-user-doc -->
+ <!-- begin-model-doc -->
+ <p>The minimum level of access for all users on all objects in the repository.
+ This is not the default level of access for a user on an object that is not otherwise covered by some permission rule; all permissions are implicitly elevated to this level.
+ </p><p>
+ This default/minimum can be overridden, even to a lesser access level, for specific <a href="../../../../../org/eclipse/emf/cdo/security/User.html#setDefaultAccessOverride(org.eclipse.emf.cdo.security.Access)">users</a> on a case-by-case basis.</p>
+ <!-- end-model-doc --></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>Default Access</em>' attribute.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultAccess(org.eclipse.emf.cdo.security.Access)"><code>setDefaultAccess(Access)</code></a>, 
+<a href="../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_DefaultAccess()"><code>SecurityPackage.getRealm_DefaultAccess()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd>
+<dt><span class="strong">Model</span></dt>
+  <dd>dataType="org.eclipse.emf.cdo.security.AccessObject"</dd></dl>
+</li>
+</ul>
+<a name="setDefaultAccess(org.eclipse.emf.cdo.security.Access)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefaultAccess</h4>
+<pre>void&nbsp;setDefaultAccess(<a href="../../../../../org/eclipse/emf/cdo/security/Access.html" title="enum in org.eclipse.emf.cdo.security">Access</a>&nbsp;value)</pre>
+<div class="block">Sets the value of the '<a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultAccess()"><code><em>Default Access</em></code></a>' attribute.
+ <!-- begin-user-doc -->
+ <!-- end-user-doc --></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - the new value of the '<em>Default Access</em>' attribute.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultAccess()"><code>getDefaultAccess()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="getDefaultUserDirectory()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultUserDirectory</h4>
+<pre><a href="../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;getDefaultUserDirectory()</pre>
+<div class="block">Returns the value of the '<em><b>Default User Directory</b></em>' reference.
+ <!-- begin-user-doc -->
+ <p>
+ If the meaning of the '<em>Default User Directory</em>' reference isn't clear,
+ there really should be more of a description here...
+ </p></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>Default User Directory</em>' reference.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>4.2
+ <!-- end-user-doc --></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultUserDirectory(org.eclipse.emf.cdo.security.Directory)"><code>setDefaultUserDirectory(Directory)</code></a>, 
+<a href="../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_DefaultUserDirectory()"><code>SecurityPackage.getRealm_DefaultUserDirectory()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd>
+<dt><span class="strong">Model</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="setDefaultUserDirectory(org.eclipse.emf.cdo.security.Directory)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefaultUserDirectory</h4>
+<pre>void&nbsp;setDefaultUserDirectory(<a href="../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;value)</pre>
+<div class="block">Sets the value of the '<a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultUserDirectory()"><code><em>Default User Directory</em></code></a>' reference.
+ <!-- begin-user-doc --></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - the new value of the '<em>Default User Directory</em>' reference.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>4.2
+ <!-- end-user-doc --></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultUserDirectory()"><code>getDefaultUserDirectory()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="getDefaultGroupDirectory()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultGroupDirectory</h4>
+<pre><a href="../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;getDefaultGroupDirectory()</pre>
+<div class="block">Returns the value of the '<em><b>Default Group Directory</b></em>' reference.
+ <!-- begin-user-doc -->
+ <p>
+ If the meaning of the '<em>Default Group Directory</em>' reference isn't clear,
+ there really should be more of a description here...
+ </p></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>Default Group Directory</em>' reference.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>4.2
+ <!-- end-user-doc --></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultGroupDirectory(org.eclipse.emf.cdo.security.Directory)"><code>setDefaultGroupDirectory(Directory)</code></a>, 
+<a href="../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_DefaultGroupDirectory()"><code>SecurityPackage.getRealm_DefaultGroupDirectory()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd>
+<dt><span class="strong">Model</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="setDefaultGroupDirectory(org.eclipse.emf.cdo.security.Directory)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefaultGroupDirectory</h4>
+<pre>void&nbsp;setDefaultGroupDirectory(<a href="../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;value)</pre>
+<div class="block">Sets the value of the '<a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultGroupDirectory()"><code><em>Default Group Directory</em></code></a>' reference.
+ <!-- begin-user-doc --></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - the new value of the '<em>Default Group Directory</em>' reference.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>4.2
+ <!-- end-user-doc --></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultGroupDirectory()"><code>getDefaultGroupDirectory()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="getDefaultRoleDirectory()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultRoleDirectory</h4>
+<pre><a href="../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;getDefaultRoleDirectory()</pre>
+<div class="block">Returns the value of the '<em><b>Default Role Directory</b></em>' reference.
+ <!-- begin-user-doc -->
+ <p>
+ If the meaning of the '<em>Default Role Directory</em>' reference isn't clear,
+ there really should be more of a description here...
+ </p></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>Default Role Directory</em>' reference.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>4.2
+ <!-- end-user-doc --></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultRoleDirectory(org.eclipse.emf.cdo.security.Directory)"><code>setDefaultRoleDirectory(Directory)</code></a>, 
+<a href="../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_DefaultRoleDirectory()"><code>SecurityPackage.getRealm_DefaultRoleDirectory()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd>
+<dt><span class="strong">Model</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="setDefaultRoleDirectory(org.eclipse.emf.cdo.security.Directory)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setDefaultRoleDirectory</h4>
+<pre>void&nbsp;setDefaultRoleDirectory(<a href="../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;value)</pre>
+<div class="block">Sets the value of the '<a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultRoleDirectory()"><code><em>Default Role Directory</em></code></a>' reference.
+ <!-- begin-user-doc --></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - the new value of the '<em>Default Role Directory</em>' reference.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>4.2
+ <!-- end-user-doc --></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultRoleDirectory()"><code>getDefaultRoleDirectory()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/Realm.html">Use</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/eclipse/emf/cdo/security/PermissionFilter.html" title="interface in org.eclipse.emf.cdo.security"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/eclipse/emf/cdo/security/RealmUtil.html" title="class in org.eclipse.emf.cdo.security"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/eclipse/emf/cdo/security/Realm.html" target="_top">Frames</a></li>
+<li><a href="Realm.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small><i>Copyright (c) 2011, 2012 Eike Stepper (Berlin, Germany) and others.</i></small></p>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="de">
+<head>
+
+<title>org.eclipse.emf.cdo.server.spi.security (CDO Model Repository Documentation)</title>
+<meta name="date" content="">
+<link rel="stylesheet" type="text/css" href="../../../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="org.eclipse.emf.cdo.server.spi.security (CDO Model Repository Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../../overview-summary.html">Overview</a></li>
+<li class="navBarCell1Rev">Package</li>
+<li>Class</li>
+<li><a href="package-use.html">Use</a></li>
+<li><a href="../../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../../org/eclipse/emf/cdo/server/spi/admin/package-summary.html">Prev Package</a></li>
+<li><a href="../../../../../../../org/eclipse/emf/cdo/session/package-summary.html">Next Package</a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../../index.html?org/eclipse/emf/cdo/server/spi/security/package-summary.html" target="_top">Frames</a></li>
+<li><a href="package-summary.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<div class="header">
+<h1 title="Package" class="title">Package&nbsp;org.eclipse.emf.cdo.server.spi.security</h1>
+<div class="docSummary">
+<div class="block">Server provider interfaces (SPI) for the server integration of the <a href="../../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security"><code>Security</code></a> model.</div>
+</div>
+<p>See:&nbsp;<a href="#package_description">Description</a></p>
+</div>
+<div class="contentContainer">
+<map id="APIVIZ" name="APIVIZ">
+<area shape="rect" id="node1" href="AnnotationHandler.html" title="AnnotationHandler" alt="" coords="377,261,505,286"/>
+<area shape="rect" id="node2" href="AnnotationHandler.Factory.html" title="AnnotationHandler.Factory" alt="" coords="693,214,869,239"/>
+<area shape="rect" id="node3" href="HomeFolderHandler.html" title="HomeFolderHandler" alt="" coords="713,271,849,297"/>
+<area shape="rect" id="node4" href="HomeFolderHandler.Factory.html" title="HomeFolderHandler.Factory" alt="" coords="689,165,873,190"/>
+<area shape="rect" id="node5" href="SecurityManagerFactory.Annotation.html" title="SecurityManagerFactory.Annotation" alt="" coords="666,66,897,91"/>
+<area shape="rect" id="node6" href="SecurityManagerFactory.Default.html" title="SecurityManagerFactory.Default" alt="" coords="677,115,885,141"/>
+<area shape="rect" id="node7" title="Factory (org.eclipse.net4j.util.factory)" alt="" coords="39,143,228,183"/>
+<area shape="rect" id="node8" href="InternalSecurityManager.CommitHandler.Factory.html" title="InternalSecurityManager.CommitHandler.Factory" alt="" coords="291,206,592,231"/>
+<area shape="rect" id="node9" href="InternalSecurityManager.CommitHandler2.WithUser.html" title="InternalSecurityManager.CommitHandler2.WithUser" alt="" coords="622,321,941,346"/>
+<area shape="rect" id="node10" href="SecurityManagerFactory.html" title="SecurityManagerFactory" alt="" coords="361,78,522,103"/>
+<area shape="rect" id="node11" title="&#171;interface&#187; IManagedContainer.ContainerAware (org.eclipse.net4j.util.container)" alt="" coords="327,127,555,182"/>
+<area shape="rect" id="node12" href="../../security/ISecurityManager.html" title="&#171;interface&#187; ISecurityManager (org.eclipse.emf.cdo.server.security)" alt="" coords="18,6,249,61"/>
+<area shape="rect" id="node13" href="InternalSecurityManager.html" title="&#171;interface&#187; InternalSecurityManager" alt="" coords="360,13,523,53"/>
+<area shape="rect" id="node14" href="InternalSecurityManager.CommitHandler.html" title="&#171;interface&#187; InternalSecurityManager.CommitHandler" alt="" coords="6,289,261,329"/>
+<area shape="rect" id="node15" href="InternalSecurityManager.CommitHandler2.html" title="&#171;interface&#187; InternalSecurityManager.CommitHandler2" alt="" coords="310,311,573,351"/>
+</map>
+<div id="apivizContainer" style="text-align: center;margin-bottom: 1em;"><img src="package-summary.png" usemap="#APIVIZ" border="0"></div>
+<ul class="blockList">
+<li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Interface Summary table, listing interfaces, and an explanation">
+<caption><span>Interface Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Interface</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../../../org/eclipse/emf/cdo/server/spi/security/InternalSecurityManager.html" title="interface in org.eclipse.emf.cdo.server.spi.security">InternalSecurityManager</a></td>
+<td class="colLast">
+<div class="block">If the meaning of this type isn't clear, there really should be more of a description here...</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../../../org/eclipse/emf/cdo/server/spi/security/InternalSecurityManager.CommitHandler.html" title="interface in org.eclipse.emf.cdo.server.spi.security">InternalSecurityManager.CommitHandler</a></td>
+<td class="colLast">
+<div class="block">If the meaning of this type isn't clear, there really should be more of a description here...</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../../../org/eclipse/emf/cdo/server/spi/security/InternalSecurityManager.CommitHandler2.html" title="interface in org.eclipse.emf.cdo.server.spi.security">InternalSecurityManager.CommitHandler2</a></td>
+<td class="colLast">
+<div class="block">If the meaning of this type isn't clear, there really should be more of a description here...</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation">
+<caption><span>Class Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Class</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../../../org/eclipse/emf/cdo/server/spi/security/AnnotationHandler.html" title="class in org.eclipse.emf.cdo.server.spi.security">AnnotationHandler</a></td>
+<td class="colLast">
+<div class="block">If the meaning of this type isn't clear, there really should be more of a description here...</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../../../org/eclipse/emf/cdo/server/spi/security/AnnotationHandler.Factory.html" title="class in org.eclipse.emf.cdo.server.spi.security">AnnotationHandler.Factory</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../../../org/eclipse/emf/cdo/server/spi/security/HomeFolderHandler.html" title="class in org.eclipse.emf.cdo.server.spi.security">HomeFolderHandler</a></td>
+<td class="colLast">
+<div class="block">If the meaning of this type isn't clear, there really should be more of a description here...</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../../../org/eclipse/emf/cdo/server/spi/security/HomeFolderHandler.Factory.html" title="class in org.eclipse.emf.cdo.server.spi.security">HomeFolderHandler.Factory</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../../../org/eclipse/emf/cdo/server/spi/security/InternalSecurityManager.CommitHandler.Factory.html" title="class in org.eclipse.emf.cdo.server.spi.security">InternalSecurityManager.CommitHandler.Factory</a></td>
+<td class="colLast">
+<div class="block">Creates <a href="../../../../../../../org/eclipse/emf/cdo/server/spi/security/InternalSecurityManager.CommitHandler.html" title="interface in org.eclipse.emf.cdo.server.spi.security"><code>InternalSecurityManager.CommitHandler</code></a> instances.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../../../org/eclipse/emf/cdo/server/spi/security/InternalSecurityManager.CommitHandler2.WithUser.html" title="class in org.eclipse.emf.cdo.server.spi.security">InternalSecurityManager.CommitHandler2.WithUser</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../../../org/eclipse/emf/cdo/server/spi/security/SecurityManagerFactory.html" title="class in org.eclipse.emf.cdo.server.spi.security">SecurityManagerFactory</a></td>
+<td class="colLast">
+<div class="block">If the meaning of this type isn't clear, there really should be more of a description here...</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../../../org/eclipse/emf/cdo/server/spi/security/SecurityManagerFactory.Annotation.html" title="class in org.eclipse.emf.cdo.server.spi.security">SecurityManagerFactory.Annotation</a></td>
+<td class="colLast">Deprecated
+<div class="block"><i>As of 4.3 use <a href="../../../../../../../org/eclipse/emf/cdo/server/spi/security/SecurityManagerFactory.Default.html" title="class in org.eclipse.emf.cdo.server.spi.security"><code>SecurityManagerFactory.Default</code></a> with a description like "realmPath<b>:annotation</b>".</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../../../org/eclipse/emf/cdo/server/spi/security/SecurityManagerFactory.Default.html" title="class in org.eclipse.emf.cdo.server.spi.security">SecurityManagerFactory.Default</a></td>
+<td class="colLast">
+<div class="block">If the meaning of this type isn't clear, there really should be more of a description here...</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<a name="package_description">
+<!--   -->
+</a>
+<h2 title="Package org.eclipse.emf.cdo.server.spi.security Description">Package org.eclipse.emf.cdo.server.spi.security Description</h2>
+<div class="block">Server provider interfaces (SPI) for the server integration of the <a href="../../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security"><code>Security</code></a> model.</div>
+</div>
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../../overview-summary.html">Overview</a></li>
+<li class="navBarCell1Rev">Package</li>
+<li>Class</li>
+<li><a href="package-use.html">Use</a></li>
+<li><a href="../../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../../org/eclipse/emf/cdo/server/spi/admin/package-summary.html">Prev Package</a></li>
+<li><a href="../../../../../../../org/eclipse/emf/cdo/session/package-summary.html">Next Package</a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../../index.html?org/eclipse/emf/cdo/server/spi/security/package-summary.html" target="_top">Frames</a></li>
+<li><a href="package-summary.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small><i>Copyright (c) 2011, 2012 Eike Stepper (Berlin, Germany) and others.</i></small></p>
+</body>
+</html>

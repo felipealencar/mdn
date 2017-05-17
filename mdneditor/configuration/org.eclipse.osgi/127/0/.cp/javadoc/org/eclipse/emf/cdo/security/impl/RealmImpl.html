@@ -1,0 +1,1095 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="de">
+<head>
+
+<title>RealmImpl (CDO Model Repository Documentation)</title>
+<meta name="date" content="">
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="RealmImpl (CDO Model Repository Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/RealmImpl.html">Use</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/PermissionImpl.CommitImpactContext.html" title="interface in org.eclipse.emf.cdo.security.impl"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/ResourceFilterImpl.html" title="class in org.eclipse.emf.cdo.security.impl"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?org/eclipse/emf/cdo/security/impl/RealmImpl.html" target="_top">Frames</a></li>
+<li><a href="RealmImpl.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_org.eclipse.emf.ecore.impl.MinimalEObjectImpl">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.eclipse.emf.ecore.impl.BasicEObjectImpl">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.eclipse.emf.cdo.security.impl</div>
+<h2 title="Class RealmImpl" class="title">Class RealmImpl</h2>
+</div>
+<div class="contentContainer">
+<map id="APIVIZ" name="APIVIZ">
+<area shape="rect" id="node1" href="../Realm.html" title="&#171;interface&#187; Realm (org.eclipse.emf.cdo.security)" alt="" coords="5,6,197,61"/>
+<area shape="rect" id="node2" href="SecurityElementImpl.html" title="SecurityElementImpl" alt="" coords="227,21,369,46"/>
+<area shape="rect" id="node3" href="RealmImpl.html" title="RealmImpl" alt="" coords="159,101,241,126"/>
+</map>
+<div id="apivizContainer" style="text-align: center;"><img src="RealmImpl.png" usemap="#APIVIZ" border="0"></div>
+<ul class="inheritance">
+<li><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">org.eclipse.emf.common.notify.impl.BasicNotifierImpl</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">org.eclipse.emf.ecore.impl.BasicEObjectImpl</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">org.eclipse.emf.ecore.impl.MinimalEObjectImpl</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">org.eclipse.emf.ecore.impl.MinimalEStoreEObjectImpl</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html" title="class in org.eclipse.emf.internal.cdo">org.eclipse.emf.internal.cdo.CDOObjectImpl</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../../org/eclipse/emf/cdo/etypes/impl/ModelElementImpl.html" title="class in org.eclipse.emf.cdo.etypes.impl">org.eclipse.emf.cdo.etypes.impl.ModelElementImpl</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/SecurityElementImpl.html" title="class in org.eclipse.emf.cdo.security.impl">org.eclipse.emf.cdo.security.impl.SecurityElementImpl</a></li>
+<li>
+<ul class="inheritance">
+<li>org.eclipse.emf.cdo.security.impl.RealmImpl</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a>, <a href="../../../../../../org/eclipse/emf/cdo/common/id/CDOWithID.html" title="interface in org.eclipse.emf.cdo.common.id">CDOWithID</a>, <a href="../../../../../../org/eclipse/emf/cdo/common/model/CDOPackageTypeRegistry.CDOObjectMarker.html" title="interface in org.eclipse.emf.cdo.common.model">CDOPackageTypeRegistry.CDOObjectMarker</a>, <a href="../../../../../../org/eclipse/emf/cdo/etypes/ModelElement.html" title="interface in org.eclipse.emf.cdo.etypes">ModelElement</a>, <a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a>, <a href="../../../../../../org/eclipse/emf/cdo/security/SecurityElement.html" title="interface in org.eclipse.emf.cdo.security">SecurityElement</a>, <a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemContainer</a>, <a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemProvider.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemProvider</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">Notifier</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EObject</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.Internal.DynamicValueHolder.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature.Internal.DynamicValueHolder</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a>, <a href="../../../../../../org/eclipse/emf/spi/cdo/InternalCDOLoadable.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOLoadable</a>, <a href="../../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">RealmImpl</span>
+extends <a href="../../../../../../org/eclipse/emf/cdo/security/impl/SecurityElementImpl.html" title="class in org.eclipse.emf.cdo.security.impl">SecurityElementImpl</a>
+implements <a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></pre>
+<div class="block"><!-- begin-user-doc -->
+ An implementation of the model object '<em><b>Realm</b></em>'.
+ <!-- end-user-doc -->
+ <p>
+ The following features are implemented:
+ <ul>
+   <li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getItems()"><code><em>Items</em></code></a></li>
+   <li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getAllUsers()"><code><em>All Users</em></code></a></li>
+   <li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getAllGroups()"><code><em>All Groups</em></code></a></li>
+   <li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getAllRoles()"><code><em>All Roles</em></code></a></li>
+   <li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getAllPermissions()"><code><em>All Permissions</em></code></a></li>
+   <li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getName()"><code><em>Name</em></code></a></li>
+   <li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getDefaultAccess()"><code><em>Default Access</em></code></a></li>
+   <li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getDefaultUserDirectory()"><code><em>Default User Directory</em></code></a></li>
+   <li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getDefaultGroupDirectory()"><code><em>Default Group Directory</em></code></a></li>
+   <li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getDefaultRoleDirectory()"><code><em>Default Role Directory</em></code></a></li>
+ </ul>
+ </p></div>
+<dl><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.eclipse.emf.ecore.impl.MinimalEObjectImpl">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;org.eclipse.emf.ecore.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.Container.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl.Container</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.eclipse.emf.ecore.impl.BasicEObjectImpl">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;org.eclipse.emf.ecore.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.EPropertiesHolder.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl.EPropertiesHolder</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.EPropertiesHolderBaseImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl.EPropertiesHolderBaseImpl</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.EPropertiesHolderImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl.EPropertiesHolderImpl</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.eclipse.emf.common.notify.impl.BasicNotifierImpl">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;org.eclipse.emf.common.notify.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">BasicNotifierImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.EAdapterList.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">BasicNotifierImpl.EAdapterList</a>&lt;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.EAdapterList.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">E</a> extends <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a> & <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Adapter.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">Adapter</a>&gt;, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.EObservableAdapterList.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">BasicNotifierImpl.EObservableAdapterList</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.eclipse.emf.ecore.InternalEObject">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from interface&nbsp;org.eclipse.emf.ecore.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.EStore.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject.EStore</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.eclipse.emf.ecore.impl.BasicEObjectImpl">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.eclipse.emf.ecore.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#EVIRTUAL_GET" title="class or interface in org.eclipse.emf.ecore.impl">EVIRTUAL_GET</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#EVIRTUAL_IS_SET" title="class or interface in org.eclipse.emf.ecore.impl">EVIRTUAL_IS_SET</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#EVIRTUAL_NO_VALUE" title="class or interface in org.eclipse.emf.ecore.impl">EVIRTUAL_NO_VALUE</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#EVIRTUAL_SET" title="class or interface in org.eclipse.emf.ecore.impl">EVIRTUAL_SET</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#EVIRTUAL_UNSET" title="class or interface in org.eclipse.emf.ecore.impl">EVIRTUAL_UNSET</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.eclipse.emf.ecore.InternalEObject">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.eclipse.emf.ecore.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#EOPPOSITE_FEATURE_BASE" title="class or interface in org.eclipse.emf.ecore">EOPPOSITE_FEATURE_BASE</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.eclipse.emf.ecore.EStructuralFeature.Internal.DynamicValueHolder">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.eclipse.emf.ecore.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.Internal.DynamicValueHolder.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature.Internal.DynamicValueHolder</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.Internal.DynamicValueHolder.html?is-external=true#NIL" title="class or interface in org.eclipse.emf.ecore">NIL</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier</th>
+<th class="colLast" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected </code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#RealmImpl()">RealmImpl</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/Group.html" title="interface in org.eclipse.emf.cdo.security">Group</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#addGroup(java.lang.String)">addGroup</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/Role.html" title="interface in org.eclipse.emf.cdo.security">Role</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#addRole(java.lang.String)">addRole</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#addUser(org.eclipse.net4j.util.security.IPasswordCredentials)">addUser</a></strong>(<a href="../../../../../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/security/IPasswordCredentials.html?is-external=true" title="class or interface in org.eclipse.net4j.util.security">IPasswordCredentials</a>&nbsp;credentials)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#addUser(java.lang.String)">addUser</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#addUser(java.lang.String, java.lang.String)">addUser</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+       <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#addUser(org.eclipse.emf.cdo.security.User)">addUser</a></strong>(<a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a>&nbsp;user)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EClass.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EClass</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#eStaticClass()">eStaticClass</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/Group.html" title="interface in org.eclipse.emf.cdo.security">Group</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getAllGroups()">getAllGroups</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/Permission.html" title="interface in org.eclipse.emf.cdo.security">Permission</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getAllPermissions()">getAllPermissions</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/Role.html" title="interface in org.eclipse.emf.cdo.security">Role</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getAllRoles()">getAllRoles</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getAllUsers()">getAllUsers</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/Access.html" title="enum in org.eclipse.emf.cdo.security">Access</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getDefaultAccess()">getDefaultAccess</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getDefaultGroupDirectory()">getDefaultGroupDirectory</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getDefaultRoleDirectory()">getDefaultRoleDirectory</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getDefaultUserDirectory()">getDefaultUserDirectory</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/Group.html" title="interface in org.eclipse.emf.cdo.security">Group</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getGroup(java.lang.String)">getGroup</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItem.html" title="interface in org.eclipse.emf.cdo.security">SecurityItem</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getGroupItems()">getGroupItems</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItem.html" title="interface in org.eclipse.emf.cdo.security">SecurityItem</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getItems()">getItems</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getName()">getName</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getRealm()">getRealm</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/Role.html" title="interface in org.eclipse.emf.cdo.security">Role</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getRole(java.lang.String)">getRole</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItem.html" title="interface in org.eclipse.emf.cdo.security">SecurityItem</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getRoleItems()">getRoleItems</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getUser(java.lang.String)">getUser</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItem.html" title="interface in org.eclipse.emf.cdo.security">SecurityItem</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#getUserItems()">getUserItems</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/Group.html" title="interface in org.eclipse.emf.cdo.security">Group</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#removeGroup(java.lang.String)">removeGroup</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/Role.html" title="interface in org.eclipse.emf.cdo.security">Role</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#removeRole(java.lang.String)">removeRole</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#removeUser(java.lang.String)">removeUser</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#setDefaultAccess(org.eclipse.emf.cdo.security.Access)">setDefaultAccess</a></strong>(<a href="../../../../../../org/eclipse/emf/cdo/security/Access.html" title="enum in org.eclipse.emf.cdo.security">Access</a>&nbsp;newDefaultAccess)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#setDefaultGroupDirectory(org.eclipse.emf.cdo.security.Directory)">setDefaultGroupDirectory</a></strong>(<a href="../../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;newDefaultGroupDirectory)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#setDefaultRoleDirectory(org.eclipse.emf.cdo.security.Directory)">setDefaultRoleDirectory</a></strong>(<a href="../../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;newDefaultRoleDirectory)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#setDefaultUserDirectory(org.eclipse.emf.cdo.security.Directory)">setDefaultUserDirectory</a></strong>(<a href="../../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;newDefaultUserDirectory)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#setName(java.lang.String)">setName</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/security/impl/RealmImpl.html#setPassword(java.lang.String, java.lang.String)">setPassword</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+           <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.cdo.etypes.impl.ModelElementImpl">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.eclipse.emf.cdo.etypes.impl.<a href="../../../../../../org/eclipse/emf/cdo/etypes/impl/ModelElementImpl.html" title="class in org.eclipse.emf.cdo.etypes.impl">ModelElementImpl</a></h3>
+<code><a href="../../../../../../org/eclipse/emf/cdo/etypes/impl/ModelElementImpl.html#eStaticFeatureCount()">eStaticFeatureCount</a>, <a href="../../../../../../org/eclipse/emf/cdo/etypes/impl/ModelElementImpl.html#getAnnotation(java.lang.String)">getAnnotation</a>, <a href="../../../../../../org/eclipse/emf/cdo/etypes/impl/ModelElementImpl.html#getAnnotations()">getAnnotations</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.internal.cdo.CDOObjectImpl">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.eclipse.emf.internal.cdo.<a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html" title="class in org.eclipse.emf.internal.cdo">CDOObjectImpl</a></h3>
+<code><a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoClassInfo()">cdoClassInfo</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoConflict()">cdoConflict</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoDirectResource()">cdoDirectResource</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoHistory()">cdoHistory</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoID()">cdoID</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalDynamicFeature(int)">cdoInternalDynamicFeature</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalInstance()">cdoInternalInstance</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalPostAttach()">cdoInternalPostAttach</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalPostDetach(boolean)">cdoInternalPostDetach</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalPostInvalidate()">cdoInternalPostInvalidate</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalPostLoad()">cdoInternalPostLoad</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalPostRollback()">cdoInternalPostRollback</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalPreCommit()">cdoInternalPreCommit</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalPreLoad()">cdoInternalPreLoad</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalSetID(org.eclipse.emf.cdo.common.id.CDOID)">cdoInternalSetID</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalSetResource(org.eclipse.emf.cdo.eresource.CDOResource)">cdoInternalSetResource</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalSetRevision(org.eclipse.emf.cdo.common.revision.CDORevision)">cdoInternalSetRevision</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalSetState(org.eclipse.emf.cdo.CDOState)">cdoInternalSetState</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalSetView(org.eclipse.emf.cdo.view.CDOView)">cdoInternalSetView</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInvalid()">cdoInvalid</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoLockState()">cdoLockState</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoPermission()">cdoPermission</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoPrefetch(int)">cdoPrefetch</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoReadLock()">cdoReadLock</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoReload()">cdoReload</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoResource()">cdoResource</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoRevision()">cdoRevision</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoRevision(boolean)">cdoRevision</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoState()">cdoState</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoView()">cdoView</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoWriteLock()">cdoWriteLock</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoWriteOption()">cdoWriteOption</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#createFeatureMap(org.eclipse.emf.ecore.EStructuralFeature)">createFeatureMap</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#createList(org.eclipse.emf.ecore.EStructuralFeature)">createList</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#createLock(org.eclipse.emf.spi.cdo.InternalCDOObject, org.eclipse.net4j.util.concurrent.IRWLockManager.LockType)">createLock</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#createMap(org.eclipse.emf.ecore.EStructuralFeature)">createMap</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#createUnorderedList(org.eclipse.emf.ecore.EStructuralFeature)">createUnorderedList</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#dynamicGet(int)">dynamicGet</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#dynamicSet(int, java.lang.Object)">dynamicSet</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#dynamicUnset(int)">dynamicUnset</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eAdapterAdded(org.eclipse.emf.common.notify.Adapter)">eAdapterAdded</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eAdapterRemoved(org.eclipse.emf.common.notify.Adapter)">eAdapterRemoved</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eBasicAdapterListeners()">eBasicAdapterListeners</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eBasicSetAdapterListeners(org.eclipse.emf.common.notify.impl.BasicNotifierImpl.EObservableAdapterList.Listener[])">eBasicSetAdapterListeners</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject, int)">eBasicSetContainer</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject, int, org.eclipse.emf.common.notify.NotificationChain)">eBasicSetContainer</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eBasicSetSettings(java.lang.Object[])">eBasicSetSettings</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eBasicSettings()">eBasicSettings</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eClass()">eClass</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eContainerAdapterArray()">eContainerAdapterArray</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eContainerFeatureID()">eContainerFeatureID</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eDirectResource()">eDirectResource</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eDynamicClass()">eDynamicClass</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eDynamicFeature(int)">eDynamicFeature</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eDynamicFeatureID(org.eclipse.emf.ecore.EStructuralFeature)">eDynamicFeatureID</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eDynamicIsSet(int, org.eclipse.emf.ecore.EStructuralFeature)">eDynamicIsSet</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eHasSettings()">eHasSettings</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eInternalContainer()">eInternalContainer</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eInternalResource()">eInternalResource</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eIsCaching()">eIsCaching</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#equals(java.lang.Object)">equals</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eSetClass(org.eclipse.emf.ecore.EClass)">eSetClass</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eSetDirectResource(org.eclipse.emf.ecore.resource.Resource.Internal)">eSetDirectResource</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eSetResource(org.eclipse.emf.ecore.resource.Resource.Internal, org.eclipse.emf.common.notify.NotificationChain)">eSetResource</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eSettings()">eSettings</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eStore()">eStore</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#getLockState(org.eclipse.emf.spi.cdo.InternalCDOObject)">getLockState</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#hashCode()">hashCode</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#instanceToRevisionFeature(org.eclipse.emf.spi.cdo.InternalCDOView, org.eclipse.emf.spi.cdo.InternalCDOObject, org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)">instanceToRevisionFeature</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#revisionToInstanceFeature(org.eclipse.emf.spi.cdo.InternalCDOObject, org.eclipse.emf.cdo.spi.common.revision.InternalCDORevision, org.eclipse.emf.ecore.EStructuralFeature)">revisionToInstanceFeature</a>, <a href="../../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#toString()">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.ecore.impl.MinimalEStoreEObjectImpl">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.eclipse.emf.ecore.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eBasicContainerFeatureID()" title="class or interface in org.eclipse.emf.ecore.impl">eBasicContainerFeatureID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eBasicInternalContainer()" title="class or interface in org.eclipse.emf.ecore.impl">eBasicInternalContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eBasicSetAdapterArray(org.eclipse.emf.common.notify.Adapter[])" title="class or interface in org.eclipse.emf.ecore.impl">eBasicSetAdapterArray</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eDerivedStructuralFeatureID(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eDerivedStructuralFeatureID</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.ecore.impl.MinimalEObjectImpl">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.eclipse.emf.ecore.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eAdapters()" title="class or interface in org.eclipse.emf.ecore.impl">eAdapters</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicAdapterArray()" title="class or interface in org.eclipse.emf.ecore.impl">eBasicAdapterArray</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicAdapters()" title="class or interface in org.eclipse.emf.ecore.impl">eBasicAdapters</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicHasAdapters()" title="class or interface in org.eclipse.emf.ecore.impl">eBasicHasAdapters</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicProperties()" title="class or interface in org.eclipse.emf.ecore.impl">eBasicProperties</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject)" title="class or interface in org.eclipse.emf.ecore.impl">eBasicSetContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicSetContainerFeatureID(int)" title="class or interface in org.eclipse.emf.ecore.impl">eBasicSetContainerFeatureID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eContents()" title="class or interface in org.eclipse.emf.ecore.impl">eContents</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eCrossReferences()" title="class or interface in org.eclipse.emf.ecore.impl">eCrossReferences</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eDeliver()" title="class or interface in org.eclipse.emf.ecore.impl">eDeliver</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eIsProxy()" title="class or interface in org.eclipse.emf.ecore.impl">eIsProxy</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eProperties()" title="class or interface in org.eclipse.emf.ecore.impl">eProperties</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eProxyURI()" title="class or interface in org.eclipse.emf.ecore.impl">eProxyURI</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eSetDeliver(boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eSetDeliver</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eSetProxyURI(org.eclipse.emf.common.util.URI)" title="class or interface in org.eclipse.emf.ecore.impl">eSetProxyURI</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.ecore.impl.BasicEObjectImpl">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.eclipse.emf.ecore.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eAddVirtualValue(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eAddVirtualValue</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eAllContents()" title="class or interface in org.eclipse.emf.ecore.impl">eAllContents</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eBaseStructuralFeatureID(int, java.lang.Class)" title="class or interface in org.eclipse.emf.ecore.impl">eBaseStructuralFeatureID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eBasicRemoveFromContainer(org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eBasicRemoveFromContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eBasicRemoveFromContainerFeature(org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eBasicRemoveFromContainerFeature</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eComputeVirtualValuesCapacity(int)" title="class or interface in org.eclipse.emf.ecore.impl">eComputeVirtualValuesCapacity</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eContainer()" title="class or interface in org.eclipse.emf.ecore.impl">eContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eContainingFeature()" title="class or interface in org.eclipse.emf.ecore.impl">eContainingFeature</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eContainmentFeature()" title="class or interface in org.eclipse.emf.ecore.impl">eContainmentFeature</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eContainmentFeature(org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject, int)" title="class or interface in org.eclipse.emf.ecore.impl">eContainmentFeature</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eContains(org.eclipse.emf.ecore.EObject)" title="class or interface in org.eclipse.emf.ecore.impl">eContains</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDerivedOperationID(org.eclipse.emf.ecore.EOperation)" title="class or interface in org.eclipse.emf.ecore.impl">eDerivedOperationID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDerivedOperationID(int, java.lang.Class)" title="class or interface in org.eclipse.emf.ecore.impl">eDerivedOperationID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDerivedStructuralFeatureID(int, java.lang.Class)" title="class or interface in org.eclipse.emf.ecore.impl">eDerivedStructuralFeatureID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicBasicRemoveFromContainer(org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicBasicRemoveFromContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicGet(org.eclipse.emf.ecore.EStructuralFeature, boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicGet(int, boolean, boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicGet(int, org.eclipse.emf.ecore.EStructuralFeature, boolean, boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicInverseAdd(org.eclipse.emf.ecore.InternalEObject, int, java.lang.Class, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicInverseAdd</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicInverseAdd(org.eclipse.emf.ecore.InternalEObject, int, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicInverseAdd</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicInverseRemove(org.eclipse.emf.ecore.InternalEObject, int, java.lang.Class, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicInverseRemove</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicInverseRemove(org.eclipse.emf.ecore.InternalEObject, int, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicInverseRemove</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicInvoke(org.eclipse.emf.ecore.EOperation, org.eclipse.emf.common.util.EList)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicInvoke</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicInvoke(int, org.eclipse.emf.common.util.EList)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicInvoke</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicIsSet(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicIsSet(int)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicSet(org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicSet(int, org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicSet(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicUnset(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicUnset(int)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicUnset(int, org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eGet(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eGet(org.eclipse.emf.ecore.EStructuralFeature, boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eGet(org.eclipse.emf.ecore.EStructuralFeature, boolean, boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eGet(int, boolean, boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInverseAdd(org.eclipse.emf.ecore.InternalEObject, int, java.lang.Class, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eInverseAdd</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInverseAdd(org.eclipse.emf.ecore.InternalEObject, int, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eInverseAdd</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInverseRemove(org.eclipse.emf.ecore.InternalEObject, int, java.lang.Class, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eInverseRemove</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInverseRemove(org.eclipse.emf.ecore.InternalEObject, int, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eInverseRemove</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInvocationDelegate(org.eclipse.emf.ecore.EOperation)" title="class or interface in org.eclipse.emf.ecore.impl">eInvocationDelegate</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInvoke(org.eclipse.emf.ecore.EOperation, org.eclipse.emf.common.util.EList)" title="class or interface in org.eclipse.emf.ecore.impl">eInvoke</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInvoke(int, org.eclipse.emf.common.util.EList)" title="class or interface in org.eclipse.emf.ecore.impl">eInvoke</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eIsSet(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eIsSet(int)" title="class or interface in org.eclipse.emf.ecore.impl">eIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eObjectForURIFragmentSegment(java.lang.String)" title="class or interface in org.eclipse.emf.ecore.impl">eObjectForURIFragmentSegment</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eOpenGet(org.eclipse.emf.ecore.EStructuralFeature, boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eOpenGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eOpenIsSet(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eOpenIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eOpenSet(org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eOpenSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eOpenUnset(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eOpenUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eRemoveVirtualValue(int)" title="class or interface in org.eclipse.emf.ecore.impl">eRemoveVirtualValue</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eResolveProxy(org.eclipse.emf.ecore.InternalEObject)" title="class or interface in org.eclipse.emf.ecore.impl">eResolveProxy</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eResource()" title="class or interface in org.eclipse.emf.ecore.impl">eResource</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSet(org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSet(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSetStore(org.eclipse.emf.ecore.InternalEObject.EStore)" title="class or interface in org.eclipse.emf.ecore.impl">eSetStore</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSetting(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eSetting</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSettingDelegate(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eSettingDelegate</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSetVirtualIndexBits(int, int)" title="class or interface in org.eclipse.emf.ecore.impl">eSetVirtualIndexBits</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSetVirtualValue(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eSetVirtualValue</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSetVirtualValues(java.lang.Object[])" title="class or interface in org.eclipse.emf.ecore.impl">eSetVirtualValues</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eStaticOperationCount()" title="class or interface in org.eclipse.emf.ecore.impl">eStaticOperationCount</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eUnset(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eUnset(int)" title="class or interface in org.eclipse.emf.ecore.impl">eUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eURIFragmentSegment(org.eclipse.emf.ecore.EStructuralFeature, org.eclipse.emf.ecore.EObject)" title="class or interface in org.eclipse.emf.ecore.impl">eURIFragmentSegment</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualBitCount(int)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualBitCount</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualGet(int)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualGet(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualIndex(int, int)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualIndex</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualIndexBits(int)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualIndexBits</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualIsSet(int)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualSet(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualUnset(int)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualValue(int)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualValue</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualValues()" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualValues</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.common.notify.impl.BasicNotifierImpl">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.eclipse.emf.common.notify.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">BasicNotifierImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.html?is-external=true#eNotificationRequired()" title="class or interface in org.eclipse.emf.common.notify.impl">eNotificationRequired</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.html?is-external=true#eNotify(org.eclipse.emf.common.notify.Notification)" title="class or interface in org.eclipse.emf.common.notify.impl">eNotify</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.cdo.etypes.ModelElement">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.cdo.etypes.<a href="../../../../../../org/eclipse/emf/cdo/etypes/ModelElement.html" title="interface in org.eclipse.emf.cdo.etypes">ModelElement</a></h3>
+<code><a href="../../../../../../org/eclipse/emf/cdo/etypes/ModelElement.html#getAnnotation(java.lang.String)">getAnnotation</a>, <a href="../../../../../../org/eclipse/emf/cdo/etypes/ModelElement.html#getAnnotations()">getAnnotations</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.cdo.CDOObject">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.cdo.<a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></h3>
+<code><a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoConflict()">cdoConflict</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoDirectResource()">cdoDirectResource</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoHistory()">cdoHistory</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoID()">cdoID</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoInvalid()">cdoInvalid</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoLockState()">cdoLockState</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoPermission()">cdoPermission</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoPrefetch(int)">cdoPrefetch</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoReadLock()">cdoReadLock</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoReload()">cdoReload</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoResource()">cdoResource</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoRevision()">cdoRevision</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoRevision(boolean)">cdoRevision</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoState()">cdoState</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoView()">cdoView</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoWriteLock()">cdoWriteLock</a>, <a href="../../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoWriteOption()">cdoWriteOption</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.ecore.EObject">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.ecore.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EObject</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eAllContents()" title="class or interface in org.eclipse.emf.ecore">eAllContents</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eClass()" title="class or interface in org.eclipse.emf.ecore">eClass</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eContainer()" title="class or interface in org.eclipse.emf.ecore">eContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eContainingFeature()" title="class or interface in org.eclipse.emf.ecore">eContainingFeature</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eContainmentFeature()" title="class or interface in org.eclipse.emf.ecore">eContainmentFeature</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eContents()" title="class or interface in org.eclipse.emf.ecore">eContents</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eCrossReferences()" title="class or interface in org.eclipse.emf.ecore">eCrossReferences</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eGet(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eGet(org.eclipse.emf.ecore.EStructuralFeature, boolean)" title="class or interface in org.eclipse.emf.ecore">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eInvoke(org.eclipse.emf.ecore.EOperation, org.eclipse.emf.common.util.EList)" title="class or interface in org.eclipse.emf.ecore">eInvoke</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eIsProxy()" title="class or interface in org.eclipse.emf.ecore">eIsProxy</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eIsSet(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore">eIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eResource()" title="class or interface in org.eclipse.emf.ecore">eResource</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eSet(org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore">eSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eUnset(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore">eUnset</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.common.notify.Notifier">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.common.notify.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">Notifier</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true#eAdapters()" title="class or interface in org.eclipse.emf.common.notify">eAdapters</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true#eDeliver()" title="class or interface in org.eclipse.emf.common.notify">eDeliver</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true#eNotify(org.eclipse.emf.common.notify.Notification)" title="class or interface in org.eclipse.emf.common.notify">eNotify</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true#eSetDeliver(boolean)" title="class or interface in org.eclipse.emf.common.notify">eSetDeliver</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.ecore.InternalEObject">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.ecore.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eBaseStructuralFeatureID(int, java.lang.Class)" title="class or interface in org.eclipse.emf.ecore">eBaseStructuralFeatureID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eBasicRemoveFromContainer(org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore">eBasicRemoveFromContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eDerivedOperationID(int, java.lang.Class)" title="class or interface in org.eclipse.emf.ecore">eDerivedOperationID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eDerivedStructuralFeatureID(int, java.lang.Class)" title="class or interface in org.eclipse.emf.ecore">eDerivedStructuralFeatureID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eGet(org.eclipse.emf.ecore.EStructuralFeature, boolean, boolean)" title="class or interface in org.eclipse.emf.ecore">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eGet(int, boolean, boolean)" title="class or interface in org.eclipse.emf.ecore">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eInverseAdd(org.eclipse.emf.ecore.InternalEObject, int, java.lang.Class, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore">eInverseAdd</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eInverseRemove(org.eclipse.emf.ecore.InternalEObject, int, java.lang.Class, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore">eInverseRemove</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eInvoke(int, org.eclipse.emf.common.util.EList)" title="class or interface in org.eclipse.emf.ecore">eInvoke</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eIsSet(int)" title="class or interface in org.eclipse.emf.ecore">eIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eNotificationRequired()" title="class or interface in org.eclipse.emf.ecore">eNotificationRequired</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eObjectForURIFragmentSegment(java.lang.String)" title="class or interface in org.eclipse.emf.ecore">eObjectForURIFragmentSegment</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eProxyURI()" title="class or interface in org.eclipse.emf.ecore">eProxyURI</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eResolveProxy(org.eclipse.emf.ecore.InternalEObject)" title="class or interface in org.eclipse.emf.ecore">eResolveProxy</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eSet(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore">eSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eSetProxyURI(org.eclipse.emf.common.util.URI)" title="class or interface in org.eclipse.emf.ecore">eSetProxyURI</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eSetStore(org.eclipse.emf.ecore.InternalEObject.EStore)" title="class or interface in org.eclipse.emf.ecore">eSetStore</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eSetting(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore">eSetting</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eUnset(int)" title="class or interface in org.eclipse.emf.ecore">eUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eURIFragmentSegment(org.eclipse.emf.ecore.EStructuralFeature, org.eclipse.emf.ecore.EObject)" title="class or interface in org.eclipse.emf.ecore">eURIFragmentSegment</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="RealmImpl()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>RealmImpl</h4>
+<pre>protected&nbsp;RealmImpl()</pre>
+<div class="block"><!-- begin-user-doc -->
+ <!-- end-user-doc --></div>
+<dl><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="eStaticClass()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eStaticClass</h4>
+<pre>protected&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EClass.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EClass</a>&nbsp;eStaticClass()</pre>
+<div class="block"><!-- begin-user-doc -->
+ <!-- end-user-doc --></div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/impl/SecurityElementImpl.html#eStaticClass()">eStaticClass</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/impl/SecurityElementImpl.html" title="class in org.eclipse.emf.cdo.security.impl">SecurityElementImpl</a></code></dd>
+<dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="getItems()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getItems</h4>
+<pre>public&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItem.html" title="interface in org.eclipse.emf.cdo.security">SecurityItem</a>&gt;&nbsp;getItems()</pre>
+<div class="block"><!-- begin-user-doc -->
+ <!-- end-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getItems()">getItems</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>Items</em>' containment reference list.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_Items()"><code>SecurityPackage.getRealm_Items()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="getAllUsers()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllUsers</h4>
+<pre>public&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a>&gt;&nbsp;getAllUsers()</pre>
+<div class="block"><!-- begin-user-doc -->
+ <!-- end-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getAllUsers()">getAllUsers</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>All Users</em>' reference list.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_AllUsers()"><code>SecurityPackage.getRealm_AllUsers()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd>NOT</dd></dl>
+</li>
+</ul>
+<a name="getAllGroups()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllGroups</h4>
+<pre>public&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/Group.html" title="interface in org.eclipse.emf.cdo.security">Group</a>&gt;&nbsp;getAllGroups()</pre>
+<div class="block"><!-- begin-user-doc -->
+ <!-- end-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getAllGroups()">getAllGroups</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>All Groups</em>' reference list.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_AllGroups()"><code>SecurityPackage.getRealm_AllGroups()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd>NOT</dd></dl>
+</li>
+</ul>
+<a name="getAllRoles()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllRoles</h4>
+<pre>public&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/Role.html" title="interface in org.eclipse.emf.cdo.security">Role</a>&gt;&nbsp;getAllRoles()</pre>
+<div class="block"><!-- begin-user-doc -->
+ <!-- end-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getAllRoles()">getAllRoles</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>All Roles</em>' reference list.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_AllRoles()"><code>SecurityPackage.getRealm_AllRoles()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd>NOT</dd></dl>
+</li>
+</ul>
+<a name="getAllPermissions()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllPermissions</h4>
+<pre>public&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/Permission.html" title="interface in org.eclipse.emf.cdo.security">Permission</a>&gt;&nbsp;getAllPermissions()</pre>
+<div class="block"><!-- begin-user-doc -->
+ <!-- end-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getAllPermissions()">getAllPermissions</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>All Permissions</em>' reference list.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_AllPermissions()"><code>SecurityPackage.getRealm_AllPermissions()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd>NOT</dd></dl>
+</li>
+</ul>
+<a name="getName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getName</h4>
+<pre>public&nbsp;<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
+<div class="block"><!-- begin-user-doc -->
+ <!-- end-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getName()">getName</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>Name</em>' attribute.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#setName(java.lang.String)"><code>Realm.setName(String)</code></a>, 
+<a href="../../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_Name()"><code>SecurityPackage.getRealm_Name()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="setName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setName</h4>
+<pre>public&nbsp;void&nbsp;setName(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName)</pre>
+<div class="block"><!-- begin-user-doc -->
+ <!-- end-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#setName(java.lang.String)">setName</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>newName</code> - the new value of the '<em>Name</em>' attribute.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getName()"><code>Realm.getName()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="getDefaultAccess()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultAccess</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/Access.html" title="enum in org.eclipse.emf.cdo.security">Access</a>&nbsp;getDefaultAccess()</pre>
+<div class="block"><!-- begin-user-doc -->
+ <!-- end-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultAccess()">getDefaultAccess</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>Default Access</em>' attribute.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultAccess(org.eclipse.emf.cdo.security.Access)"><code>Realm.setDefaultAccess(Access)</code></a>, 
+<a href="../../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_DefaultAccess()"><code>SecurityPackage.getRealm_DefaultAccess()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="setDefaultAccess(org.eclipse.emf.cdo.security.Access)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefaultAccess</h4>
+<pre>public&nbsp;void&nbsp;setDefaultAccess(<a href="../../../../../../org/eclipse/emf/cdo/security/Access.html" title="enum in org.eclipse.emf.cdo.security">Access</a>&nbsp;newDefaultAccess)</pre>
+<div class="block"><!-- begin-user-doc -->
+ <!-- end-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultAccess(org.eclipse.emf.cdo.security.Access)">setDefaultAccess</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>newDefaultAccess</code> - the new value of the '<em>Default Access</em>' attribute.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultAccess()"><code>Realm.getDefaultAccess()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="getDefaultUserDirectory()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultUserDirectory</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;getDefaultUserDirectory()</pre>
+<div class="block"><!-- begin-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultUserDirectory()">getDefaultUserDirectory</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>Default User Directory</em>' reference.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>4.2
+ <!-- end-user-doc --></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultUserDirectory(org.eclipse.emf.cdo.security.Directory)"><code>Realm.setDefaultUserDirectory(Directory)</code></a>, 
+<a href="../../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_DefaultUserDirectory()"><code>SecurityPackage.getRealm_DefaultUserDirectory()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="setDefaultUserDirectory(org.eclipse.emf.cdo.security.Directory)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefaultUserDirectory</h4>
+<pre>public&nbsp;void&nbsp;setDefaultUserDirectory(<a href="../../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;newDefaultUserDirectory)</pre>
+<div class="block"><!-- begin-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultUserDirectory(org.eclipse.emf.cdo.security.Directory)">setDefaultUserDirectory</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>newDefaultUserDirectory</code> - the new value of the '<em>Default User Directory</em>' reference.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>4.2
+ <!-- end-user-doc --></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultUserDirectory()"><code>Realm.getDefaultUserDirectory()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="getDefaultGroupDirectory()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultGroupDirectory</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;getDefaultGroupDirectory()</pre>
+<div class="block"><!-- begin-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultGroupDirectory()">getDefaultGroupDirectory</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>Default Group Directory</em>' reference.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>4.2
+ <!-- end-user-doc --></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultGroupDirectory(org.eclipse.emf.cdo.security.Directory)"><code>Realm.setDefaultGroupDirectory(Directory)</code></a>, 
+<a href="../../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_DefaultGroupDirectory()"><code>SecurityPackage.getRealm_DefaultGroupDirectory()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="setDefaultGroupDirectory(org.eclipse.emf.cdo.security.Directory)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefaultGroupDirectory</h4>
+<pre>public&nbsp;void&nbsp;setDefaultGroupDirectory(<a href="../../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;newDefaultGroupDirectory)</pre>
+<div class="block"><!-- begin-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultGroupDirectory(org.eclipse.emf.cdo.security.Directory)">setDefaultGroupDirectory</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>newDefaultGroupDirectory</code> - the new value of the '<em>Default Group Directory</em>' reference.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>4.2
+ <!-- end-user-doc --></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultGroupDirectory()"><code>Realm.getDefaultGroupDirectory()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="getDefaultRoleDirectory()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultRoleDirectory</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;getDefaultRoleDirectory()</pre>
+<div class="block"><!-- begin-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultRoleDirectory()">getDefaultRoleDirectory</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value of the '<em>Default Role Directory</em>' reference.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>4.2
+ <!-- end-user-doc --></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultRoleDirectory(org.eclipse.emf.cdo.security.Directory)"><code>Realm.setDefaultRoleDirectory(Directory)</code></a>, 
+<a href="../../../../../../org/eclipse/emf/cdo/security/SecurityPackage.html#getRealm_DefaultRoleDirectory()"><code>SecurityPackage.getRealm_DefaultRoleDirectory()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="setDefaultRoleDirectory(org.eclipse.emf.cdo.security.Directory)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefaultRoleDirectory</h4>
+<pre>public&nbsp;void&nbsp;setDefaultRoleDirectory(<a href="../../../../../../org/eclipse/emf/cdo/security/Directory.html" title="interface in org.eclipse.emf.cdo.security">Directory</a>&nbsp;newDefaultRoleDirectory)</pre>
+<div class="block"><!-- begin-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#setDefaultRoleDirectory(org.eclipse.emf.cdo.security.Directory)">setDefaultRoleDirectory</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>newDefaultRoleDirectory</code> - the new value of the '<em>Default Role Directory</em>' reference.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>4.2
+ <!-- end-user-doc --></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html#getDefaultRoleDirectory()"><code>Realm.getDefaultRoleDirectory()</code></a></dd><dt><span class="strong">Generated</span></dt>
+  <dd></dd></dl>
+</li>
+</ul>
+<a name="getRole(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRole</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/Role.html" title="interface in org.eclipse.emf.cdo.security">Role</a>&nbsp;getRole(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemProvider.html#getRole(java.lang.String)">getRole</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemProvider.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemProvider</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="getGroup(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getGroup</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/Group.html" title="interface in org.eclipse.emf.cdo.security">Group</a>&nbsp;getGroup(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemProvider.html#getGroup(java.lang.String)">getGroup</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemProvider.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemProvider</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="getUser(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUser</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a>&nbsp;getUser(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemProvider.html#getUser(java.lang.String)">getUser</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemProvider.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemProvider</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="getRoleItems()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRoleItems</h4>
+<pre>protected&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItem.html" title="interface in org.eclipse.emf.cdo.security">SecurityItem</a>&gt;&nbsp;getRoleItems()</pre>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="getGroupItems()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getGroupItems</h4>
+<pre>protected&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItem.html" title="interface in org.eclipse.emf.cdo.security">SecurityItem</a>&gt;&nbsp;getGroupItems()</pre>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="getUserItems()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUserItems</h4>
+<pre>protected&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItem.html" title="interface in org.eclipse.emf.cdo.security">SecurityItem</a>&gt;&nbsp;getUserItems()</pre>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="addRole(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addRole</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/Role.html" title="interface in org.eclipse.emf.cdo.security">Role</a>&nbsp;addRole(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#addRole(java.lang.String)">addRole</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemContainer</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="addGroup(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addGroup</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/Group.html" title="interface in org.eclipse.emf.cdo.security">Group</a>&nbsp;addGroup(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#addGroup(java.lang.String)">addGroup</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemContainer</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="addUser(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addUser</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a>&nbsp;addUser(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#addUser(java.lang.String)">addUser</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemContainer</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="addUser(java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addUser</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a>&nbsp;addUser(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+           <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#addUser(java.lang.String, java.lang.String)">addUser</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemContainer</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="addUser(org.eclipse.net4j.util.security.IPasswordCredentials)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addUser</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a>&nbsp;addUser(<a href="../../../../../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/security/IPasswordCredentials.html?is-external=true" title="class or interface in org.eclipse.net4j.util.security">IPasswordCredentials</a>&nbsp;credentials)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#addUser(org.eclipse.net4j.util.security.IPasswordCredentials)">addUser</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemContainer</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.3</dd></dl>
+</li>
+</ul>
+<a name="addUser(org.eclipse.emf.cdo.security.User)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addUser</h4>
+<pre>protected&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a>&nbsp;addUser(<a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a>&nbsp;user)</pre>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="setPassword(java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPassword</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a>&nbsp;setPassword(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+               <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#setPassword(java.lang.String, java.lang.String)">setPassword</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemContainer</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.3</dd></dl>
+</li>
+</ul>
+<a name="removeRole(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeRole</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/Role.html" title="interface in org.eclipse.emf.cdo.security">Role</a>&nbsp;removeRole(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#removeRole(java.lang.String)">removeRole</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemContainer</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="removeGroup(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeGroup</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/Group.html" title="interface in org.eclipse.emf.cdo.security">Group</a>&nbsp;removeGroup(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#removeGroup(java.lang.String)">removeGroup</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemContainer</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="removeUser(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeUser</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/User.html" title="interface in org.eclipse.emf.cdo.security">User</a>&nbsp;removeUser(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html#removeUser(java.lang.String)">removeUser</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityItemContainer.html" title="interface in org.eclipse.emf.cdo.security">SecurityItemContainer</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="getRealm()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getRealm</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/security/Realm.html" title="interface in org.eclipse.emf.cdo.security">Realm</a>&nbsp;getRealm()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/impl/SecurityElementImpl.html#getRealm()">SecurityElementImpl</a></code></strong></div>
+<div class="block"><!-- begin-user-doc -->
+ <!-- end-user-doc --></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityElement.html#getRealm()">getRealm</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/SecurityElement.html" title="interface in org.eclipse.emf.cdo.security">SecurityElement</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../../org/eclipse/emf/cdo/security/impl/SecurityElementImpl.html#getRealm()">getRealm</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../org/eclipse/emf/cdo/security/impl/SecurityElementImpl.html" title="class in org.eclipse.emf.cdo.security.impl">SecurityElementImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/RealmImpl.html">Use</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/PermissionImpl.CommitImpactContext.html" title="interface in org.eclipse.emf.cdo.security.impl"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../../org/eclipse/emf/cdo/security/impl/ResourceFilterImpl.html" title="class in org.eclipse.emf.cdo.security.impl"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?org/eclipse/emf/cdo/security/impl/RealmImpl.html" target="_top">Frames</a></li>
+<li><a href="RealmImpl.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_org.eclipse.emf.ecore.impl.MinimalEObjectImpl">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.eclipse.emf.ecore.impl.BasicEObjectImpl">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small><i>Copyright (c) 2011, 2012 Eike Stepper (Berlin, Germany) and others.</i></small></p>
+</body>
+</html>

@@ -1,0 +1,9 @@
+!SESSION Tue Dec 06 13:33:32 CET 2016 ------------------------------------------
+!ENTRY org.eclipse.equinox.launcher 4 0 2016-12-06 13:33:32.657
+!MESSAGE Exception launching the Eclipse Platform:
+!STACK
+java.lang.RuntimeException: Could not find framework
+	at org.eclipse.equinox.launcher.Main.getBootPath(Main.java:985)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:564)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+

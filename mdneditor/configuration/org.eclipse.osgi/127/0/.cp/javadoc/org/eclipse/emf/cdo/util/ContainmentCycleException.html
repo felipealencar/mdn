@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="de">
+<head>
+
+<title>ContainmentCycleException (CDO Model Repository Documentation)</title>
+<meta name="date" content="">
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ContainmentCycleException (CDO Model Repository Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/ContainmentCycleException.html">Use</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/eclipse/emf/cdo/util/ConcurrentAccessException.html" title="class in org.eclipse.emf.cdo.util"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/eclipse/emf/cdo/util/DanglingIntegrityException.html" title="class in org.eclipse.emf.cdo.util"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/eclipse/emf/cdo/util/ContainmentCycleException.html" target="_top">Frames</a></li>
+<li><a href="ContainmentCycleException.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#methods_inherited_from_class_org.eclipse.emf.cdo.util.CommitException">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li>Method</li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.eclipse.emf.cdo.util</div>
+<h2 title="Class ContainmentCycleException" class="title">Class ContainmentCycleException</h2>
+</div>
+<div class="contentContainer">
+<map id="APIVIZ" name="APIVIZ">
+<area shape="rect" id="node1" href="ContainmentCycleException.html" title="&#171;exception&#187; ContainmentCycleException" alt="" coords="5,84,192,124"/>
+<area shape="rect" id="node2" href="ConcurrentAccessException.html" title="&#171;exception&#187; ConcurrentAccessException" alt="" coords="5,5,192,45"/>
+</map>
+<div id="apivizContainer" style="text-align: center;"><img src="ContainmentCycleException.png" usemap="#APIVIZ" border="0"></div>
+<ul class="inheritance">
+<li><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">java.lang.Throwable</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">java.lang.Exception</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../org/eclipse/emf/cdo/util/CommitException.html" title="class in org.eclipse.emf.cdo.util">org.eclipse.emf.cdo.util.CommitException</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../org/eclipse/emf/cdo/util/ConcurrentAccessException.html" title="class in org.eclipse.emf.cdo.util">org.eclipse.emf.cdo.util.ConcurrentAccessException</a></li>
+<li>
+<ul class="inheritance">
+<li>org.eclipse.emf.cdo.util.ContainmentCycleException</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">ContainmentCycleException</span>
+extends <a href="../../../../../org/eclipse/emf/cdo/util/ConcurrentAccessException.html" title="class in org.eclipse.emf.cdo.util">ConcurrentAccessException</a></pre>
+<div class="block">A <a href="../../../../../org/eclipse/emf/cdo/util/ConcurrentAccessException.html" title="class in org.eclipse.emf.cdo.util"><code>concurrent access exception</code></a> that indicates an attempt of the local transaction to introduce a <i>containment cycle</i>.
+ A containment cycle is an effect of a network race condition between two transactions that commit changes to possibly disjunct sets of objects. As a result
+ the overall tree structure of the model would be destroyed in a way that the tree root would no longer be reachable from objects involved in the containment cycle.
+ Commits that attempt to introduce containment cycles are detected by the repository and canceled. Note that locking all involved <b>dirty</b> objects
+ does not properly address the problem because the involved container objects may not be dirty.
+ <p>
+ It's usually possible and adequate to <a href="../../../../../org/eclipse/emf/cdo/transaction/CDOUserTransaction.html#rollback()"><code>rollback</code></a> the transaction, <i>replay</i> the model modifications and
+ commit the transaction again (optimistic strategy). Pessimistic locks on the dirty objects can not safely avoid the problem; you must expect this exception to occur.</div>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../serialized-form.html#org.eclipse.emf.cdo.util.ContainmentCycleException">Serialized Form</a></dd><dt><span class="strong">No Extend</span></dt>
+  <dd>This interface is not intended to be extended by clients.</dd>
+<dt><span class="strong">No Instantiate</span></dt>
+  <dd>This class is not intended to be instantiated by clients.</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/eclipse/emf/cdo/util/ContainmentCycleException.html#ContainmentCycleException(java.lang.String)">ContainmentCycleException</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;message)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.cdo.util.CommitException">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.eclipse.emf.cdo.util.<a href="../../../../../org/eclipse/emf/cdo/util/CommitException.html" title="class in org.eclipse.emf.cdo.util">CommitException</a></h3>
+<code><a href="../../../../../org/eclipse/emf/cdo/util/CommitException.html#isLocal()">isLocal</a>, <a href="../../../../../org/eclipse/emf/cdo/util/CommitException.html#wrap()">wrap</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Throwable">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a></h3>
+<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true#addSuppressed(java.lang.Throwable)" title="class or interface in java.lang">addSuppressed</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true#fillInStackTrace()" title="class or interface in java.lang">fillInStackTrace</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true#getCause()" title="class or interface in java.lang">getCause</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true#getLocalizedMessage()" title="class or interface in java.lang">getLocalizedMessage</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true#getMessage()" title="class or interface in java.lang">getMessage</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true#getStackTrace()" title="class or interface in java.lang">getStackTrace</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true#getSuppressed()" title="class or interface in java.lang">getSuppressed</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true#initCause(java.lang.Throwable)" title="class or interface in java.lang">initCause</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true#printStackTrace()" title="class or interface in java.lang">printStackTrace</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true#printStackTrace(java.io.PrintStream)" title="class or interface in java.lang">printStackTrace</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true#printStackTrace(java.io.PrintWriter)" title="class or interface in java.lang">printStackTrace</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true#setStackTrace(java.lang.StackTraceElement[])" title="class or interface in java.lang">setStackTrace</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true#toString()" title="class or interface in java.lang">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ContainmentCycleException(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ContainmentCycleException</h4>
+<pre>public&nbsp;ContainmentCycleException(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;message)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/ContainmentCycleException.html">Use</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/eclipse/emf/cdo/util/ConcurrentAccessException.html" title="class in org.eclipse.emf.cdo.util"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/eclipse/emf/cdo/util/DanglingIntegrityException.html" title="class in org.eclipse.emf.cdo.util"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/eclipse/emf/cdo/util/ContainmentCycleException.html" target="_top">Frames</a></li>
+<li><a href="ContainmentCycleException.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#methods_inherited_from_class_org.eclipse.emf.cdo.util.CommitException">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li>Method</li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small><i>Copyright (c) 2011, 2012 Eike Stepper (Berlin, Germany) and others.</i></small></p>
+</body>
+</html>

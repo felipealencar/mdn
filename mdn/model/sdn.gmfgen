@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" sameFileForDiagramAndModel="true" diagramFileExtension="mdn" copyrightText="">
+  <diagram visualID="1000" editPartClassName="SdnEditPart" itemSemanticEditPolicyClassName="SdnItemSemanticEditPolicy" canonicalEditPolicyClassName="SdnCanonicalEditPolicy" iconProviderPriority="Low" validationProviderPriority="Low" validationEnabled="true" validationDecorators="true" liveValidationUIFeedback="true">
+    <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
+    <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="SdnEditHelper"/>
+    <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
+    <containsShortcutsTo>mdn</containsShortcutsTo>
+    <shortcutsProvidedFor>mdn</shortcutsProvidedFor>
+    <domainDiagramElement href="sdn.genmodel#//mdn/Sdn"/>
+    <childNodes visualID="3001" editPartClassName="Host2EditPart" itemSemanticEditPolicyClassName="Host2ItemSemanticEditPolicy" canonicalEditPolicyClassName="Host2CanonicalEditPolicy" graphicalNodeEditPolicyClassName="Host2GraphicalNodeEditPolicy" createCommandClassName="Host2CreateCommand" containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:SpecializationType" metamodelType="//@diagram/@topLevelNodes.1/@elementType"/>
+      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="HostFigure"/>
+      <modelFacet>
+        <metaClass href="sdn.genmodel#//mdn/Host"/>
+        <containmentMetaFeature href="sdn.genmodel#//mdn/Group/hostsGroup"/>
+        <childMetaFeature href="sdn.genmodel#//mdn/Group/hostsGroup"/>
+      </modelFacet>
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5018" editPartClassName="HostName2EditPart" itemSemanticEditPolicyClassName="HostName2ItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="HostLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HostLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HostLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Host&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="sdn.genmodel#//mdn/NetworkNode/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <topLevelNodes visualID="2001" editPartClassName="ControllerEditPart" itemSemanticEditPolicyClassName="ControllerItemSemanticEditPolicy" canonicalEditPolicyClassName="ControllerCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ControllerGraphicalNodeEditPolicy" createCommandClassName="ControllerCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ControllerEditHelper"/>
+      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="ControllerFigure"/>
+      <modelFacet>
+        <metaClass href="sdn.genmodel#//mdn/Controller"/>
+        <containmentMetaFeature href="sdn.genmodel#//mdn/Sdn/nodes"/>
+        <childMetaFeature href="sdn.genmodel#//mdn/Sdn/nodes"/>
+      </modelFacet>
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5001" editPartClassName="ControllerNameEditPart" itemSemanticEditPolicyClassName="ControllerNameItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ControllerLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ControllerLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ControllerLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Controller&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="sdn.genmodel#//mdn/NetworkNode/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2002" editPartClassName="HostEditPart" itemSemanticEditPolicyClassName="HostItemSemanticEditPolicy" canonicalEditPolicyClassName="HostCanonicalEditPolicy" graphicalNodeEditPolicyClassName="HostGraphicalNodeEditPolicy" createCommandClassName="HostCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="HostEditHelper"/>
+      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="HostFigure"/>
+      <modelFacet>
+        <metaClass href="sdn.genmodel#//mdn/Host"/>
+        <containmentMetaFeature href="sdn.genmodel#//mdn/Sdn/nodes"/>
+        <childMetaFeature href="sdn.genmodel#//mdn/Sdn/nodes"/>
+      </modelFacet>
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5002" editPartClassName="HostNameEditPart" itemSemanticEditPolicyClassName="HostNameItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="HostLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HostLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HostLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Host&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="sdn.genmodel#//mdn/NetworkNode/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2003" editPartClassName="SwitchEditPart" itemSemanticEditPolicyClassName="SwitchItemSemanticEditPolicy" canonicalEditPolicyClassName="SwitchCanonicalEditPolicy" graphicalNodeEditPolicyClassName="SwitchGraphicalNodeEditPolicy" createCommandClassName="SwitchCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="SwitchEditHelper"/>
+      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="SwitchFigure"/>
+      <modelFacet>
+        <metaClass href="sdn.genmodel#//mdn/Switch"/>
+        <containmentMetaFeature href="sdn.genmodel#//mdn/Sdn/nodes"/>
+        <childMetaFeature href="sdn.genmodel#//mdn/Sdn/nodes"/>
+      </modelFacet>
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5003" editPartClassName="SwitchNameEditPart" itemSemanticEditPolicyClassName="SwitchNameItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="SwitchLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SwitchLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SwitchLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Switch&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="sdn.genmodel#//mdn/NetworkNode/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2019" editPartClassName="AppMonitorEditPart" itemSemanticEditPolicyClassName="AppMonitorItemSemanticEditPolicy" canonicalEditPolicyClassName="AppMonitorCanonicalEditPolicy" graphicalNodeEditPolicyClassName="AppMonitorGraphicalNodeEditPolicy" createCommandClassName="AppMonitorCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="AppMonitorEditHelper"/>
+      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="ActionFigure"/>
+      <modelFacet>
+        <metaClass href="sdn.genmodel#//mdn/AppMonitor"/>
+        <containmentMetaFeature href="sdn.genmodel#//mdn/Sdn/apps"/>
+        <childMetaFeature href="sdn.genmodel#//mdn/Sdn/apps"/>
+      </modelFacet>
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5020" editPartClassName="AppMonitorNameEditPart" itemSemanticEditPolicyClassName="AppMonitorNameItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AppMonitorLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AppMonitorLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AppMonitorLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;AppMonitor&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="sdn.genmodel#//mdn/App/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2021" editPartClassName="RuleEditPart" itemSemanticEditPolicyClassName="RuleItemSemanticEditPolicy" canonicalEditPolicyClassName="RuleCanonicalEditPolicy" graphicalNodeEditPolicyClassName="RuleGraphicalNodeEditPolicy" createCommandClassName="RuleCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="RuleEditHelper"/>
+      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="RuleFigure"/>
+      <modelFacet>
+        <metaClass href="sdn.genmodel#//mdn/Rule"/>
+        <containmentMetaFeature href="sdn.genmodel#//mdn/Sdn/ruleObjects"/>
+        <childMetaFeature href="sdn.genmodel#//mdn/Sdn/ruleObjects"/>
+      </modelFacet>
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5022" editPartClassName="RuleNameEditPart" itemSemanticEditPolicyClassName="RuleNameItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="RuleLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RuleLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RuleLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Rule&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="sdn.genmodel#//mdn/AppObject/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2013" editPartClassName="ConditionEditPart" itemSemanticEditPolicyClassName="ConditionItemSemanticEditPolicy" canonicalEditPolicyClassName="ConditionCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ConditionGraphicalNodeEditPolicy" createCommandClassName="ConditionCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ConditionEditHelper"/>
+      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="ConditionFigure"/>
+      <modelFacet>
+        <metaClass href="sdn.genmodel#//mdn/Condition"/>
+        <containmentMetaFeature href="sdn.genmodel#//mdn/Sdn/ruleObjects"/>
+        <childMetaFeature href="sdn.genmodel#//mdn/Sdn/ruleObjects"/>
+      </modelFacet>
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5013" editPartClassName="ConditionConditionEditPart" itemSemanticEditPolicyClassName="ConditionConditionItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ConditionLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ConditionLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ConditionLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Condition&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.1">
+          <metaFeatures href="sdn.genmodel#//mdn/Condition/condition"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2014" editPartClassName="TrafficEditPart" itemSemanticEditPolicyClassName="TrafficItemSemanticEditPolicy" canonicalEditPolicyClassName="TrafficCanonicalEditPolicy" graphicalNodeEditPolicyClassName="TrafficGraphicalNodeEditPolicy" createCommandClassName="TrafficCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="TrafficEditHelper"/>
+      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="TrafficFigure"/>
+      <modelFacet>
+        <metaClass href="sdn.genmodel#//mdn/Traffic"/>
+        <containmentMetaFeature href="sdn.genmodel#//mdn/Sdn/ruleObjects"/>
+        <childMetaFeature href="sdn.genmodel#//mdn/Sdn/ruleObjects"/>
+      </modelFacet>
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5014" editPartClassName="TrafficOperatorUnitValueEditPart" itemSemanticEditPolicyClassName="TrafficOperatorUnitValueItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="TrafficLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TrafficLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TrafficLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Traffic&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="{0}: {2}{1}" editorPattern="{0}: {2}{1}" editPattern="{0}: {2}{1}">
+          <metaFeatures href="sdn.genmodel#//mdn/Traffic/operator"/>
+          <metaFeatures href="sdn.genmodel#//mdn/Traffic/unit"/>
+          <metaFeatures href="sdn.genmodel#//mdn/Traffic/value"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2015" editPartClassName="TimeEditPart" itemSemanticEditPolicyClassName="TimeItemSemanticEditPolicy" canonicalEditPolicyClassName="TimeCanonicalEditPolicy" graphicalNodeEditPolicyClassName="TimeGraphicalNodeEditPolicy" createCommandClassName="TimeCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="TimeEditHelper"/>
+      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="TimeFigure"/>
+      <modelFacet>
+        <metaClass href="sdn.genmodel#//mdn/Time"/>
+        <containmentMetaFeature href="sdn.genmodel#//mdn/Sdn/ruleObjects"/>
+        <childMetaFeature href="sdn.genmodel#//mdn/Sdn/ruleObjects"/>
+      </modelFacet>
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5015" editPartClassName="TimeOperatorBeginDateEndDatEditPart" itemSemanticEditPolicyClassName="TimeOperatorBeginDateEndDatItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="TimeLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TimeLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TimeLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Time&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="{0}: {1} - {2}" editorPattern="{0}: {1} - {2}" editPattern="{0}: {1} - {2}">
+          <metaFeatures href="sdn.genmodel#//mdn/Time/operator"/>
+          <metaFeatures href="sdn.genmodel#//mdn/Time/beginDate"/>
+          <metaFeatures href="sdn.genmodel#//mdn/Time/endDate"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2016" editPartClassName="PacketHeaderEditPart" itemSemanticEditPolicyClassName="PacketHeaderItemSemanticEditPolicy" canonicalEditPolicyClassName="PacketHeaderCanonicalEditPolicy" graphicalNodeEditPolicyClassName="PacketHeaderGraphicalNodeEditPolicy" createCommandClassName="PacketHeaderCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="PacketHeaderEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="PacketHeaderFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PacketHeaderFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PacketHeaderFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass href="sdn.genmodel#//mdn/PacketHeader"/>
+        <containmentMetaFeature href="sdn.genmodel#//mdn/Sdn/ruleObjects"/>
+        <childMetaFeature href="sdn.genmodel#//mdn/Sdn/ruleObjects"/>
+      </modelFacet>
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5016" editPartClassName="PacketHeaderOperatorHeaderValueEditPart" itemSemanticEditPolicyClassName="PacketHeaderOperatorHeaderValueItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="PacketHeaderLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PacketHeaderLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PacketHeaderLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;PacketHeader&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="{0}: [{1}] {2}" editorPattern="{0}: [{1}] {2}" editPattern="{0}: [{1}] {2}">
+          <metaFeatures href="sdn.genmodel#//mdn/PacketHeader/operator"/>
+          <metaFeatures href="sdn.genmodel#//mdn/PacketHeader/header"/>
+          <metaFeatures href="sdn.genmodel#//mdn/PacketHeader/value"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2020" editPartClassName="AppEditPart" itemSemanticEditPolicyClassName="AppItemSemanticEditPolicy" canonicalEditPolicyClassName="AppCanonicalEditPolicy" graphicalNodeEditPolicyClassName="AppGraphicalNodeEditPolicy" createCommandClassName="AppCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="AppEditHelper"/>
+      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="ActionFigure"/>
+      <modelFacet>
+        <metaClass href="sdn.genmodel#//mdn/App"/>
+        <containmentMetaFeature href="sdn.genmodel#//mdn/Sdn/apps"/>
+        <childMetaFeature href="sdn.genmodel#//mdn/Sdn/apps"/>
+      </modelFacet>
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5021" editPartClassName="AppNameEditPart" itemSemanticEditPolicyClassName="AppNameItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AppLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AppLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AppLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;App&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="sdn.genmodel#//mdn/App/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2018" editPartClassName="GroupEditPart" itemSemanticEditPolicyClassName="GroupItemSemanticEditPolicy" canonicalEditPolicyClassName="GroupCanonicalEditPolicy" compartments="//@diagram/@compartments.0" graphicalNodeEditPolicyClassName="GroupGraphicalNodeEditPolicy" createCommandClassName="GroupCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="GroupEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="GroupFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class GroupFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fGroupHostsGroupCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public GroupFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fGroupHostsGroupCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fGroupHostsGroupCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fGroupHostsGroupCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getGroupHostsGroupCompartmentFigure() {&#xA;&#x9;&#x9;return fGroupHostsGroupCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
+      <modelFacet>
+        <metaClass href="sdn.genmodel#//mdn/Group"/>
+        <containmentMetaFeature href="sdn.genmodel#//mdn/Sdn/groups"/>
+        <childMetaFeature href="sdn.genmodel#//mdn/Sdn/groups"/>
+      </modelFacet>
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5019" editPartClassName="GroupNameEditPart" itemSemanticEditPolicyClassName="GroupNameItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="GroupLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class GroupLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public GroupLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Group&quot;);&#xA;this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="sdn.genmodel#//mdn/Group/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <links visualID="4004" editPartClassName="HostHostSwitchEditPart" itemSemanticEditPolicyClassName="HostHostSwitchItemSemanticEditPolicy" createCommandClassName="HostHostSwitchCreateCommand" reorientCommandClassName="HostHostSwitchReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="HostHostSwitchFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HostHostSwitchFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HostHostSwitchFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="sdn.genmodel#//mdn/Host/hostSwitch"/>
+      </modelFacet>
+      <labels visualID="6003" editPartClassName="WrappingLabelEditPart" itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy" readOnly="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
+      </labels>
+    </links>
+    <links visualID="4006" editPartClassName="SwitchSwitchControllerEditPart" itemSemanticEditPolicyClassName="SwitchSwitchControllerItemSemanticEditPolicy" createCommandClassName="SwitchSwitchControllerCreateCommand" reorientCommandClassName="SwitchSwitchControllerReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="SwitchSwitchControllerFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SwitchSwitchControllerFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SwitchSwitchControllerFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="sdn.genmodel#//mdn/Switch/switchController"/>
+      </modelFacet>
+      <labels visualID="6005" editPartClassName="WrappingLabel2EditPart" itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy" readOnly="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
+      </labels>
+    </links>
+    <links visualID="4022" editPartClassName="SwitchSwitchesEditPart" itemSemanticEditPolicyClassName="SwitchSwitchesItemSemanticEditPolicy" createCommandClassName="SwitchSwitchesCreateCommand" reorientCommandClassName="SwitchSwitchesReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="SwitchSwitchesFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SwitchSwitchesFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SwitchSwitchesFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="sdn.genmodel#//mdn/Switch/switches"/>
+      </modelFacet>
+      <labels visualID="6021" editPartClassName="WrappingLabel3EditPart" itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy" readOnly="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
+      </labels>
+    </links>
+    <links visualID="4024" editPartClassName="RuleSourceHostRuleEditPart" itemSemanticEditPolicyClassName="RuleSourceHostRuleItemSemanticEditPolicy" createCommandClassName="RuleSourceHostRuleCreateCommand" reorientCommandClassName="RuleSourceHostRuleReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="RuleSourceHostRuleFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RuleSourceHostRuleFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RuleSourceHostRuleFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="sdn.genmodel#//mdn/Rule/sourceHostRule"/>
+      </modelFacet>
+      <labels visualID="6023" editPartClassName="WrappingLabel4EditPart" itemSemanticEditPolicyClassName="WrappingLabel4ItemSemanticEditPolicy" readOnly="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
+      </labels>
+    </links>
+    <links visualID="4025" editPartClassName="RuleTargetHostRuleEditPart" itemSemanticEditPolicyClassName="RuleTargetHostRuleItemSemanticEditPolicy" createCommandClassName="RuleTargetHostRuleCreateCommand" reorientCommandClassName="RuleTargetHostRuleReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="RuleTargetHostRuleFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RuleTargetHostRuleFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RuleTargetHostRuleFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="sdn.genmodel#//mdn/Rule/targetHostRule"/>
+      </modelFacet>
+      <labels visualID="6024" editPartClassName="WrappingLabel5EditPart" itemSemanticEditPolicyClassName="WrappingLabel5ItemSemanticEditPolicy" readOnly="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
+      </labels>
+    </links>
+    <links visualID="4026" editPartClassName="RuleRuleConditionEditPart" itemSemanticEditPolicyClassName="RuleRuleConditionItemSemanticEditPolicy" createCommandClassName="RuleRuleConditionCreateCommand" reorientCommandClassName="RuleRuleConditionReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="RuleRuleConditionFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RuleRuleConditionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RuleRuleConditionFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="sdn.genmodel#//mdn/Rule/ruleCondition"/>
+      </modelFacet>
+      <labels visualID="6025" editPartClassName="WrappingLabel6EditPart" itemSemanticEditPolicyClassName="WrappingLabel6ItemSemanticEditPolicy" readOnly="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
+      </labels>
+    </links>
+    <links visualID="4028" editPartClassName="RuleTargetGroupRuleEditPart" itemSemanticEditPolicyClassName="RuleTargetGroupRuleItemSemanticEditPolicy" createCommandClassName="RuleTargetGroupRuleCreateCommand" reorientCommandClassName="RuleTargetGroupRuleReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="RuleTargetGroupRuleFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RuleTargetGroupRuleFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RuleTargetGroupRuleFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="sdn.genmodel#//mdn/Rule/targetGroupRule"/>
+      </modelFacet>
+      <labels visualID="6027" editPartClassName="WrappingLabel7EditPart" itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy" readOnly="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
+      </labels>
+    </links>
+    <links visualID="4029" editPartClassName="AppActionPacketHeaderEditPart" itemSemanticEditPolicyClassName="AppActionPacketHeaderItemSemanticEditPolicy" createCommandClassName="AppActionPacketHeaderCreateCommand" reorientCommandClassName="AppActionPacketHeaderReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AppActionPacketHeaderFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AppActionPacketHeaderFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AppActionPacketHeaderFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="sdn.genmodel#//mdn/App/actionPacketHeader"/>
+      </modelFacet>
+      <labels visualID="6028" editPartClassName="WrappingLabel8EditPart" itemSemanticEditPolicyClassName="WrappingLabel8ItemSemanticEditPolicy" readOnly="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
+      </labels>
+    </links>
+    <links visualID="4030" editPartClassName="AppAppToNetworkNodeEditPart" itemSemanticEditPolicyClassName="AppAppToNetworkNodeItemSemanticEditPolicy" createCommandClassName="AppAppToNetworkNodeCreateCommand" reorientCommandClassName="AppAppToNetworkNodeReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AppAppToNetworkNodeFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AppAppToNetworkNodeFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AppAppToNetworkNodeFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="sdn.genmodel#//mdn/App/appToNetworkNode"/>
+      </modelFacet>
+      <labels visualID="6029" editPartClassName="WrappingLabel9EditPart" itemSemanticEditPolicyClassName="WrappingLabel9ItemSemanticEditPolicy" readOnly="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
+      </labels>
+    </links>
+    <links visualID="4031" editPartClassName="AppControllerAppEditPart" itemSemanticEditPolicyClassName="AppControllerAppItemSemanticEditPolicy" createCommandClassName="AppControllerAppCreateCommand" reorientCommandClassName="AppControllerAppReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AppControllerAppFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AppControllerAppFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AppControllerAppFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="sdn.genmodel#//mdn/App/controllerApp"/>
+      </modelFacet>
+      <labels visualID="6030" editPartClassName="WrappingLabel10EditPart" itemSemanticEditPolicyClassName="WrappingLabel10ItemSemanticEditPolicy" readOnly="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
+      </labels>
+    </links>
+    <links visualID="4032" editPartClassName="AppAppRuleEditPart" itemSemanticEditPolicyClassName="AppAppRuleItemSemanticEditPolicy" createCommandClassName="AppAppRuleCreateCommand" reorientCommandClassName="AppAppRuleReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AppAppRuleFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AppAppRuleFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AppAppRuleFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="sdn.genmodel#//mdn/App/appRule"/>
+      </modelFacet>
+      <labels visualID="6031" editPartClassName="WrappingLabel11EditPart" itemSemanticEditPolicyClassName="WrappingLabel11ItemSemanticEditPolicy" readOnly="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
+      </labels>
+    </links>
+    <links visualID="4017" editPartClassName="ConditionConditionTimeEditPart" itemSemanticEditPolicyClassName="ConditionConditionTimeItemSemanticEditPolicy" createCommandClassName="ConditionConditionTimeCreateCommand" reorientCommandClassName="ConditionConditionTimeReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ConditionConditionTimeFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ConditionConditionTimeFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ConditionConditionTimeFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="sdn.genmodel#//mdn/Condition/conditionTime"/>
+      </modelFacet>
+      <labels visualID="6016" editPartClassName="WrappingLabel12EditPart" itemSemanticEditPolicyClassName="WrappingLabel12ItemSemanticEditPolicy" readOnly="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
+      </labels>
+    </links>
+    <links visualID="4018" editPartClassName="ConditionConditionTrafficEditPart" itemSemanticEditPolicyClassName="ConditionConditionTrafficItemSemanticEditPolicy" createCommandClassName="ConditionConditionTrafficCreateCommand" reorientCommandClassName="ConditionConditionTrafficReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ConditionConditionTrafficFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ConditionConditionTrafficFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ConditionConditionTrafficFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="sdn.genmodel#//mdn/Condition/conditionTraffic"/>
+      </modelFacet>
+      <labels visualID="6017" editPartClassName="WrappingLabel13EditPart" itemSemanticEditPolicyClassName="WrappingLabel13ItemSemanticEditPolicy" readOnly="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
+      </labels>
+    </links>
+    <links visualID="4019" editPartClassName="ConditionConditionPacketEditPart" itemSemanticEditPolicyClassName="ConditionConditionPacketItemSemanticEditPolicy" createCommandClassName="ConditionConditionPacketCreateCommand" reorientCommandClassName="ConditionConditionPacketReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ConditionConditionPacketFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ConditionConditionPacketFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ConditionConditionPacketFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="sdn.genmodel#//mdn/Condition/conditionPacket"/>
+      </modelFacet>
+      <labels visualID="6018" editPartClassName="WrappingLabel14EditPart" itemSemanticEditPolicyClassName="WrappingLabel14ItemSemanticEditPolicy" readOnly="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
+      </labels>
+    </links>
+    <compartments visualID="7001" editPartClassName="GroupGroupHostsGroupCompartmentEditPart" itemSemanticEditPolicyClassName="GroupGroupHostsGroupCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="GroupGroupHostsGroupCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="GroupHostsGroupCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.10" listLayout="false">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getGroupHostsGroupCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <palette>
+      <groups title="Objects" collapse="true">
+        <entries xsi:type="gmfgen:ToolEntry" title="App" description="Create new App" smallIconPath="/mdn.edit/icons/full/obj16/action.gif" genNodes="//@diagram/@topLevelNodes.9"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="AppMonitor" description="Create new AppMonitor" smallIconPath="/mdn.edit/icons/full/obj16/action.gif" genNodes="//@diagram/@topLevelNodes.3"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Condition" description="Create new Condition" smallIconPath="/mdn.edit/icons/full/obj16/condition.gif" genNodes="//@diagram/@topLevelNodes.5"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Controller" description="Create new Controller" smallIconPath="/mdn.edit/icons/full/obj16/controller.gif" genNodes="//@diagram/@topLevelNodes.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Group" description="Create new Group" genNodes="//@diagram/@topLevelNodes.10"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Host" description="Create new Host" smallIconPath="/mdn.edit/icons/full/obj16/host.gif" genNodes="//@diagram/@topLevelNodes.1 //@diagram/@childNodes.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="PacketHeader" description="Create new PacketHeader" smallIconPath="/mdn.edit/icons/full/obj16/packetheader.gif" genNodes="//@diagram/@topLevelNodes.8"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Rule" description="Create new Rule" smallIconPath="/mdn.edit/icons/full/obj16/policy.gif" genNodes="//@diagram/@topLevelNodes.4"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Switch" description="Create new Switch" smallIconPath="/mdn.edit/icons/full/obj16/switch.gif" genNodes="//@diagram/@topLevelNodes.2"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Time" description="Create new Time" smallIconPath="/mdn.edit/icons/full/obj16/time.gif" genNodes="//@diagram/@topLevelNodes.7"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Traffic" description="Create new Traffic" smallIconPath="/mdn.edit/icons/full/obj16/traffic.gif" genNodes="//@diagram/@topLevelNodes.6"/>
+      </groups>
+      <groups title="Connections" collapse="true">
+        <entries xsi:type="gmfgen:ToolEntry" title="ActionPacketHeader" description="Create new ActionPacketHeader" genLinks="//@diagram/@links.7"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="AppRule" description="Create new AppRule" genLinks="//@diagram/@links.10"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="AppToNetworkNode" description="Create new AppToNetworkNode" genLinks="//@diagram/@links.8"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="ConditionPacket" description="Create new ConditionPacket" genLinks="//@diagram/@links.13"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="ConditionTime" description="Create new ConditionTime" genLinks="//@diagram/@links.11"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="ConditionTraffic" description="Create new ConditionTraffic" genLinks="//@diagram/@links.12"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="ControllerApp" description="Create new ControllerApp" genLinks="//@diagram/@links.9"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="HostSwitch" description="Create new HostSwitch" genLinks="//@diagram/@links.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="RuleCondition" description="Create new RuleCondition" genLinks="//@diagram/@links.5"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="SourceHostRule" description="Create new SourceHostRule" genLinks="//@diagram/@links.3"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="SwitchController" description="Create new SwitchController" genLinks="//@diagram/@links.1"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Switches" description="Create new Switches" genLinks="//@diagram/@links.2"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="TargetGroupRule" description="Create new TargetGroupRule" genLinks="//@diagram/@links.6"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="TargetHostRule" description="Create new TargetHostRule" genLinks="//@diagram/@links.4"/>
+      </groups>
+    </palette>
+    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="mdn.diagram.general" name="Mdn Diagram">
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="mdn.diagram.appearance" name="Appearance" kind="Appearance"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="mdn.diagram.connections" name="Connections" kind="Connections"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="mdn.diagram.printing" name="Printing" kind="Printing"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="mdn.diagram.rulersAndGrid" name="Rulers And Grid" kind="RulersAndGrid"/>
+    </preferencePages>
+  </diagram>
+  <plugin>
+    <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
+    <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
+    <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
+    <requiredPlugins>mdn.figures</requiredPlugins>
+  </plugin>
+  <editor/>
+  <diagramUpdater/>
+  <propertySheet>
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="appearance"/>
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="diagram"/>
+    <tabs xsi:type="gmfgen:GenCustomPropertyTab" iD="domain" label="Core">
+      <filter xsi:type="gmfgen:TypeTabFilter">
+        <types>org.eclipse.gmf.runtime.notation.View</types>
+        <types>org.eclipse.gef.EditPart</types>
+      </filter>
+    </tabs>
+  </propertySheet>
+  <application>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="CLOSE"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="CLOSE_ALL"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="SAVE"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="SAVE_AS"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="SAVE_ALL"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="QUIT"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="UNDO"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="REDO"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="CUT"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="COPY"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="PASTE"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="DELETE"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="SELECT_ALL"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="OPEN_NEW_WINDOW"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="PRINT"/>
+    <mainMenu>
+      <items xsi:type="gmfgen:GenMenuManager" iD="org.eclipse.ui.IWorkbenchActionConstants.M_FILE" name="&amp;File">
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.FILE_START"/>
+        <items xsi:type="gmfgen:GenMenuManager" iD="&quot;new&quot;" name="&amp;New">
+          <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
+        </items>
+        <items xsi:type="gmfgen:GenSeparator"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
+        <items xsi:type="gmfgen:GenSeparator"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.0"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.1"/>
+        <items xsi:type="gmfgen:GenSeparator"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.2"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.3"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.4"/>
+        <items xsi:type="gmfgen:GenSeparator"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.5"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.FILE_END"/>
+      </items>
+      <items xsi:type="gmfgen:GenMenuManager" iD="org.eclipse.ui.IWorkbenchActionConstants.M_EDIT" name="&amp;Edit">
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.EDIT_START"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.6"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.7"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.UNDO_EXT"/>
+        <items xsi:type="gmfgen:GenSeparator"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.8"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.9"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.10"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.CUT_EXT"/>
+        <items xsi:type="gmfgen:GenSeparator"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.11"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.12"/>
+        <items xsi:type="gmfgen:GenSeparator"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.ADD_EXT"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.EDIT_END"/>
+        <items xsi:type="gmfgen:GenSeparator" groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
+      </items>
+      <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
+      <items xsi:type="gmfgen:GenMenuManager" iD="org.eclipse.ui.IWorkbenchActionConstants.M_WINDOW" name="&amp;Window">
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.13"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
+      </items>
+      <items xsi:type="gmfgen:GenMenuManager" iD="org.eclipse.ui.IWorkbenchActionConstants.M_HELP" name="&amp;Help">
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.HELP_START"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.HELP_END"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
+      </items>
+    </mainMenu>
+    <mainToolBar>
+      <items xsi:type="gmfgen:GenGroupMarker" groupName="&quot;group.file&quot;"/>
+      <items xsi:type="gmfgen:GenToolBarManager" iD="org.eclipse.ui.IWorkbenchActionConstants.TOOLBAR_FILE">
+        <items xsi:type="gmfgen:GenSeparator" groupName="org.eclipse.ui.IWorkbenchActionConstants.NEW_GROUP"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.NEW_EXT"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.SAVE_GROUP"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.2"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.SAVE_EXT"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.14"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.PRINT_EXT"/>
+        <items xsi:type="gmfgen:GenSeparator" groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
+      </items>
+      <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
+      <items xsi:type="gmfgen:GenGroupMarker" groupName="&quot;group.nav&quot;"/>
+      <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.GROUP_EDITOR"/>
+      <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.GROUP_HELP"/>
+      <items xsi:type="gmfgen:GenToolBarManager" iD="org.eclipse.ui.IWorkbenchActionConstants.TOOLBAR_HELP">
+        <items xsi:type="gmfgen:GenSeparator" groupName="org.eclipse.ui.IWorkbenchActionConstants.GROUP_HELP"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.GROUP_APP"/>
+      </items>
+    </mainToolBar>
+  </application>
+  <domainGenModel href="sdn.genmodel#/"/>
+  <labelParsers extensibleViaService="true">
+    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@topLevelNodes.8/@labels.0/@modelFacet //@diagram/@topLevelNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.10/@labels.0/@modelFacet"/>
+    <implementations xsi:type="gmfgen:PredefinedEnumParser" uses="//@diagram/@topLevelNodes.5/@labels.0/@modelFacet"/>
+    <implementations xsi:type="gmfgen:ExternalParser" uses="//@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet //@diagram/@links.3/@labels.0/@modelFacet //@diagram/@links.4/@labels.0/@modelFacet //@diagram/@links.5/@labels.0/@modelFacet //@diagram/@links.6/@labels.0/@modelFacet //@diagram/@links.7/@labels.0/@modelFacet //@diagram/@links.8/@labels.0/@modelFacet //@diagram/@links.9/@labels.0/@modelFacet //@diagram/@links.10/@labels.0/@modelFacet //@diagram/@links.11/@labels.0/@modelFacet //@diagram/@links.12/@labels.0/@modelFacet //@diagram/@links.13/@labels.0/@modelFacet"/>
+  </labelParsers>
+  <contextMenus context="//@diagram">
+    <items xsi:type="gmfgen:LoadResourceAction"/>
+  </contextMenus>
+</gmfgen:GenEditorGenerator>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/mdn/src" modelPluginID="mdn"
+    modelName="Mdn" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>sdn.ecore</foreignModel>
+  <genPackages prefix="Mdn" disposableProviderFactory="true" ecorePackage="sdn.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sdn.ecore#//PacketHeaders">
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IN_PORT"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/ETH_SRC"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/ETH_DST"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/VLAN_ID"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/VLAN_PRIO"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/ETH_TYPE"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IPV4_SRC"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IPV4_DST"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IP_TOS"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IP_PORT"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/L4_SPORT"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/L4_DPORT"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IN_PHY_PORT"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/METADATA"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/VLAN_VID"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/VLAN_PCP"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IP_DSCP"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IP_ECN"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IP_PROTO"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/TCP_SRC"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/TCP_DST"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/UDP_SRC"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/UDP_DST"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/SCTP_SRC"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/SCTP_DST"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/ICMPV4_TYPE"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/ICMPV4_CODE"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/ARP_OP"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/ARP_SPA"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/ARP_TPA"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/ARP_SHA"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/ARP_THA"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IPV6_SRC"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IPV6_DST"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IPV6_LABEL"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/ICMPV6_TYPE"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/ICMPV6_CODE"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IPV6_ND_TARGET"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IPV6_ND_SLL"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IPV6_ND_TLL"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/MPLS_LABEL"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/MPLS_TC"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/MPLS_BOS"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/PBB_ISID"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/TUNNEL_ID"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//PacketHeaders/IPV6_EXTHDR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sdn.ecore#//Actions">
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Actions/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Actions/DELETE"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Actions/MODIFY"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Actions/DELETE_STRICT"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Actions/MODIFY_STRICT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sdn.ecore#//Conditions">
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Conditions/WHEN"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Conditions/WHERE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sdn.ecore#//RelationalOperators">
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//RelationalOperators/EQUAL_TO"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//RelationalOperators/NOT_EQUAL_TO"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//RelationalOperators/GREATER_THAN"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//RelationalOperators/LESS_THAN"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//RelationalOperators/IN"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//RelationalOperators/OUT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sdn.ecore#//AppMonitorTypes">
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//AppMonitorTypes/SFLOW"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//AppMonitorTypes/NETFLOW"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//AppMonitorTypes/FLOWMETERS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sdn.ecore#//ControllerTypes">
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//ControllerTypes/POX"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//ControllerTypes/RYU"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//ControllerTypes/OPENDAYLIGHT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sdn.ecore#//Instructions">
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Instructions/WRITE_ACTIONS"/>
+      <genEnumLiterals ecoreEnumLiteral="sdn.ecore#//Instructions/GOTO_TABLE"/>
+    </genEnums>
+    <genClasses ecoreClass="sdn.ecore#//Sdn">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sdn.ecore#//Sdn/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sdn.ecore#//Sdn/apps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sdn.ecore#//Sdn/ruleObjects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sdn.ecore#//Sdn/groups"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sdn.ecore#//NetworkNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//NetworkNode/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//NetworkNode/mac"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//NetworkNode/ip"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//Controller">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Controller/type"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//Host">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Host/hostSwitch"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//Switch">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Switch/ports"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Switch/switchController"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Switch/switches"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//OpenFlowSwitch">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//OpenFlowSwitch/tableSpace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//OpenFlowSwitch/switchIsOpenFlow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//OpenFlowSwitch/requiredHeaders"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//OpenFlowSwitch/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//OpenFlowSwitch/supportedProtocols"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//OpenFlowSwitch/optionalHeaders"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//OpenFlowSwitch/availableTableSpace"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sdn.ecore#//AppObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//AppObject/name"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//Rule">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Rule/sourceHostRule"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Rule/targetHostRule"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Rule/ruleCondition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Rule/targetGroupRule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Rule/actions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Rule/flowRule"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//App">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//App/actionPacketHeader"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//App/appToNetworkNode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//App/controllerApp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//App/appRule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//App/name"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//Condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Condition/condition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Condition/conditionTime"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Condition/conditionTraffic"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Condition/conditionPacket"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//Traffic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Traffic/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Traffic/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Traffic/value"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//Time">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Time/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Time/beginDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Time/endDate"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//PacketHeader">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//PacketHeader/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//PacketHeader/header"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//PacketHeader/value"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//AppMonitor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//AppMonitor/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//AppMonitor/serverAddress"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//Flow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Flow/matchFields"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Flow/matchValues"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Flow/flowSourceHost"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Flow/flowDestinationHost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Flow/priority"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//Group">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sdn.ecore#//Group/hostsGroup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Group/ip"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Group/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sdn.ecore#//Group/switchesGroup"/>
+    </genClasses>
+    <genClasses ecoreClass="sdn.ecore#//Instruction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Instruction/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sdn.ecore#//Instruction/tableId"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Instruction/instructionSwitch"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sdn.ecore#//Instruction/instructionRules"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

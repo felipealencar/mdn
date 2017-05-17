@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="de">
+<head>
+
+<title>org.eclipse.emf.cdo.server.hibernate (CDO Model Repository Documentation)</title>
+<meta name="date" content="">
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="org.eclipse.emf.cdo.server.hibernate (CDO Model Repository Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li class="navBarCell1Rev">Package</li>
+<li>Class</li>
+<li><a href="package-use.html">Use</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../org/eclipse/emf/cdo/server/embedded/package-summary.html">Prev Package</a></li>
+<li><a href="../../../../../../org/eclipse/emf/cdo/server/lissome/package-summary.html">Next Package</a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?org/eclipse/emf/cdo/server/hibernate/package-summary.html" target="_top">Frames</a></li>
+<li><a href="package-summary.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<div class="header">
+<h1 title="Package" class="title">Package&nbsp;org.eclipse.emf.cdo.server.hibernate</h1>
+<div class="docSummary">
+<div class="block">Server concepts for dealing with Hibernate stores and accessors.</div>
+</div>
+<p>See:&nbsp;<a href="#package_description">Description</a></p>
+</div>
+<div class="contentContainer">
+<map id="APIVIZ" name="APIVIZ">
+<area shape="rect" id="node1" title="&#171;interface&#187; IDBConnectionProvider (org.eclipse.net4j.db)" alt="" coords="40,342,195,397"/>
+<area shape="rect" id="node2" href="IHibernateMappingProvider.html" title="&#171;interface&#187; IHibernateMappingProvider" alt="" coords="30,277,205,317"/>
+<area shape="rect" id="node3" href="IHibernateMappingProvider.Factory.html" title="&#171;interface&#187; IHibernateMappingProvider.Factory" alt="" coords="6,213,229,253"/>
+<area shape="rect" id="node4" href="IHibernateStore.html" title="&#171;interface&#187; IHibernateStore" alt="" coords="298,389,409,429"/>
+<area shape="rect" id="node5" href="IHibernateStoreAccessor.html" title="&#171;interface&#187; IHibernateStoreAccessor" alt="" coords="34,149,201,189"/>
+<area shape="rect" id="node6" href="IHibernateStoreChunkReader.html" title="&#171;interface&#187; IHibernateStoreChunkReader" alt="" coords="259,77,448,117"/>
+<area shape="rect" id="node7" href="../IStore.html" title="&#171;interface&#187; IStore (org.eclipse.emf.cdo.server)" alt="" coords="27,421,208,475"/>
+<area shape="rect" id="node8" href="../IStoreChunkReader.html" title="&#171;interface&#187; IStoreChunkReader (org.eclipse.emf.cdo.server)" alt="" coords="27,70,208,125"/>
+<area shape="rect" id="node9" href="CDOHibernateUtil.html" title="&#171;static&#187; CDOHibernateUtil" alt="" coords="55,5,179,45"/>
+</map>
+<div id="apivizContainer" style="text-align: center;margin-bottom: 1em;"><img src="package-summary.png" usemap="#APIVIZ" border="0"></div>
+<ul class="blockList">
+<li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Interface Summary table, listing interfaces, and an explanation">
+<caption><span>Interface Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Interface</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../../org/eclipse/emf/cdo/server/hibernate/IHibernateMappingProvider.html" title="interface in org.eclipse.emf.cdo.server.hibernate">IHibernateMappingProvider</a></td>
+<td class="colLast">
+<div class="block">A mapping provider adds a hibernate mapping to a hibernate configuration object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../../org/eclipse/emf/cdo/server/hibernate/IHibernateMappingProvider.Factory.html" title="interface in org.eclipse.emf.cdo.server.hibernate">IHibernateMappingProvider.Factory</a></td>
+<td class="colLast">
+<div class="block">Creates <a href="../../../../../../org/eclipse/emf/cdo/server/hibernate/IHibernateMappingProvider.html" title="interface in org.eclipse.emf.cdo.server.hibernate"><code>mapping provider</code></a> instances.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../../org/eclipse/emf/cdo/server/hibernate/IHibernateStore.html" title="interface in org.eclipse.emf.cdo.server.hibernate">IHibernateStore</a></td>
+<td class="colLast">
+<div class="block">The Hibernate store manages the Hibernate <code>SessionFactory</code> and the installed
+ <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EPackage.html?is-external=true" title="class or interface in org.eclipse.emf.ecore"><code>EPackage</code></a> instances.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../../org/eclipse/emf/cdo/server/hibernate/IHibernateStoreAccessor.html" title="interface in org.eclipse.emf.cdo.server.hibernate">IHibernateStoreAccessor</a></td>
+<td class="colLast">
+<div class="block">The Hibernate store accessor works with Hibernate <code>Session</code> instances
+ to persist changes in the database, it obtains the <code>Session</code> from the 
+ <a href="../../../../../../org/eclipse/emf/cdo/server/hibernate/IHibernateStore.html" title="interface in org.eclipse.emf.cdo.server.hibernate"><code>IHibernateStore</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../../org/eclipse/emf/cdo/server/hibernate/IHibernateStoreChunkReader.html" title="interface in org.eclipse.emf.cdo.server.hibernate">IHibernateStoreChunkReader</a></td>
+<td class="colLast">
+<div class="block">Hibernate specific implementation of the <a href="../../../../../../org/eclipse/emf/cdo/server/IStoreChunkReader.html" title="interface in org.eclipse.emf.cdo.server"><code>IStoreChunkReader</code></a>.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation">
+<caption><span>Class Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Class</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../../org/eclipse/emf/cdo/server/hibernate/CDOHibernateUtil.html" title="class in org.eclipse.emf.cdo.server.hibernate">CDOHibernateUtil</a></td>
+<td class="colLast">
+<div class="block">Various static methods that may help in setting up and dealing with <a href="../../../../../../org/eclipse/emf/cdo/server/hibernate/IHibernateStore.html" title="interface in org.eclipse.emf.cdo.server.hibernate"><code>Hibernate stores</code></a>.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<a name="package_description">
+<!--   -->
+</a>
+<h2 title="Package org.eclipse.emf.cdo.server.hibernate Description">Package org.eclipse.emf.cdo.server.hibernate Description</h2>
+<div class="block">Server concepts for dealing with Hibernate stores and accessors.</div>
+</div>
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li class="navBarCell1Rev">Package</li>
+<li>Class</li>
+<li><a href="package-use.html">Use</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../org/eclipse/emf/cdo/server/embedded/package-summary.html">Prev Package</a></li>
+<li><a href="../../../../../../org/eclipse/emf/cdo/server/lissome/package-summary.html">Next Package</a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?org/eclipse/emf/cdo/server/hibernate/package-summary.html" target="_top">Frames</a></li>
+<li><a href="package-summary.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small><i>Copyright (c) 2011, 2012 Eike Stepper (Berlin, Germany) and others.</i></small></p>
+</body>
+</html>

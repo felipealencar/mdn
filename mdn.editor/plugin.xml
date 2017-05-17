@@ -7,6 +7,7 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated sdn -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
@@ -22,6 +23,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
+      <!-- @generated sdn -->
       <editor
             id="mdn.presentation.MdnEditorID"
             name="%_UI_MdnEditor_label"

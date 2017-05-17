@@ -1,0 +1,1836 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="de">
+<head>
+
+<title>CDOObjectImpl (CDO Model Repository Documentation)</title>
+<meta name="date" content="">
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="CDOObjectImpl (CDO Model Repository Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/CDOObjectImpl.html">Use</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li>Next Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/eclipse/emf/internal/cdo/CDOObjectImpl.html" target="_top">Frames</a></li>
+<li><a href="CDOObjectImpl.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_org.eclipse.emf.ecore.impl.MinimalEObjectImpl">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.eclipse.emf.ecore.impl.BasicEObjectImpl">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.eclipse.emf.internal.cdo</div>
+<h2 title="Class CDOObjectImpl" class="title">Class CDOObjectImpl</h2>
+</div>
+<div class="contentContainer">
+<map id="APIVIZ" name="APIVIZ">
+<area shape="rect" id="node1" href="CDOObjectImpl.html" title="CDOObjectImpl" alt="" coords="285,335,397,361"/>
+<area shape="rect" id="node2" href="../../cdo/expressions/impl/ContainedObjectImpl.html" title="ContainedObjectImpl (org.eclipse.emf.cdo.expressions.impl)" alt="" coords="493,5,739,45"/>
+<area shape="rect" id="node3" href="../../cdo/expressions/impl/LinkedExpressionImpl.html" title="LinkedExpressionImpl (org.eclipse.emf.cdo.expressions.impl)" alt="" coords="493,64,739,104"/>
+<area shape="rect" id="node4" href="../../cdo/expressions/impl/LinkedObjectImpl.html" title="LinkedObjectImpl (org.eclipse.emf.cdo.expressions.impl)" alt="" coords="493,123,739,163"/>
+<area shape="rect" id="node5" href="../../cdo/expressions/impl/ListConstructionImpl.html" title="ListConstructionImpl (org.eclipse.emf.cdo.expressions.impl)" alt="" coords="493,181,739,221"/>
+<area shape="rect" id="node6" href="../../cdo/security/impl/UserPasswordImpl.html" title="UserPasswordImpl (org.eclipse.emf.cdo.security.impl)" alt="" coords="505,240,727,280"/>
+<area shape="rect" id="node7" href="../../cdo/expressions/impl/AccessImpl.html" title="AccessImpl (org.eclipse.emf.cdo.expressions.impl)" alt="" coords="493,299,739,339"/>
+<area shape="rect" id="node8" href="../../cdo/eresource/impl/CDOResourceNodeImpl.html" title="CDOResourceNodeImpl (org.eclipse.emf.cdo.eresource.impl)" alt="" coords="499,357,733,397"/>
+<area shape="rect" id="node9" href="../../cdo/expressions/impl/InvocationImpl.html" title="InvocationImpl (org.eclipse.emf.cdo.expressions.impl)" alt="" coords="493,416,739,456"/>
+<area shape="rect" id="node10" title="MinimalEStoreEObjectImpl (org.eclipse.emf.ecore.impl)" alt="" coords="6,295,189,335"/>
+<area shape="rect" id="node11" href="../../cdo/etypes/impl/ModelElementImpl.html" title="ModelElementImpl (org.eclipse.emf.cdo.etypes.impl)" alt="" coords="509,475,723,515"/>
+<area shape="rect" id="node12" href="../../cdo/security/impl/PermissionFilterImpl.html" title="PermissionFilterImpl (org.eclipse.emf.cdo.security.impl)" alt="" coords="505,533,727,573"/>
+<area shape="rect" id="node13" href="../../cdo/security/impl/PermissionImpl.html" title="PermissionImpl (org.eclipse.emf.cdo.security.impl)" alt="" coords="505,592,727,632"/>
+<area shape="rect" id="node14" href="../../cdo/expressions/impl/ValueImpl.html" title="ValueImpl (org.eclipse.emf.cdo.expressions.impl)" alt="" coords="493,651,739,691"/>
+<area shape="rect" id="node15" href="../../spi/cdo/InternalCDOObject.html" title="&#171;interface&#187; InternalCDOObject (org.eclipse.emf.spi.cdo)" alt="" coords="15,354,179,409"/>
+</map>
+<div id="apivizContainer" style="text-align: center;"><img src="CDOObjectImpl.png" usemap="#APIVIZ" border="0"></div>
+<ul class="inheritance">
+<li><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">org.eclipse.emf.common.notify.impl.BasicNotifierImpl</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">org.eclipse.emf.ecore.impl.BasicEObjectImpl</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">org.eclipse.emf.ecore.impl.MinimalEObjectImpl</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">org.eclipse.emf.ecore.impl.MinimalEStoreEObjectImpl</a></li>
+<li>
+<ul class="inheritance">
+<li>org.eclipse.emf.internal.cdo.CDOObjectImpl</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a>, <a href="../../../../../org/eclipse/emf/cdo/common/id/CDOWithID.html" title="interface in org.eclipse.emf.cdo.common.id">CDOWithID</a>, <a href="../../../../../org/eclipse/emf/cdo/common/model/CDOPackageTypeRegistry.CDOObjectMarker.html" title="interface in org.eclipse.emf.cdo.common.model">CDOPackageTypeRegistry.CDOObjectMarker</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">Notifier</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EObject</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.Internal.DynamicValueHolder.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature.Internal.DynamicValueHolder</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a>, <a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOLoadable.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOLoadable</a>, <a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../../org/eclipse/emf/cdo/expressions/impl/AccessImpl.html" title="class in org.eclipse.emf.cdo.expressions.impl">AccessImpl</a>, <a href="../../../../../org/eclipse/emf/cdo/eresource/impl/CDOResourceNodeImpl.html" title="class in org.eclipse.emf.cdo.eresource.impl">CDOResourceNodeImpl</a>, <a href="../../../../../org/eclipse/emf/cdo/expressions/impl/ContainedObjectImpl.html" title="class in org.eclipse.emf.cdo.expressions.impl">ContainedObjectImpl</a>, <a href="../../../../../org/eclipse/emf/cdo/expressions/impl/InvocationImpl.html" title="class in org.eclipse.emf.cdo.expressions.impl">InvocationImpl</a>, <a href="../../../../../org/eclipse/emf/cdo/expressions/impl/LinkedExpressionImpl.html" title="class in org.eclipse.emf.cdo.expressions.impl">LinkedExpressionImpl</a>, <a href="../../../../../org/eclipse/emf/cdo/expressions/impl/LinkedObjectImpl.html" title="class in org.eclipse.emf.cdo.expressions.impl">LinkedObjectImpl</a>, <a href="../../../../../org/eclipse/emf/cdo/expressions/impl/ListConstructionImpl.html" title="class in org.eclipse.emf.cdo.expressions.impl">ListConstructionImpl</a>, <a href="../../../../../org/eclipse/emf/cdo/etypes/impl/ModelElementImpl.html" title="class in org.eclipse.emf.cdo.etypes.impl">ModelElementImpl</a>, <a href="../../../../../org/eclipse/emf/cdo/security/impl/PermissionFilterImpl.html" title="class in org.eclipse.emf.cdo.security.impl">PermissionFilterImpl</a>, <a href="../../../../../org/eclipse/emf/cdo/security/impl/PermissionImpl.html" title="class in org.eclipse.emf.cdo.security.impl">PermissionImpl</a>, <a href="../../../../../org/eclipse/emf/cdo/security/impl/UserPasswordImpl.html" title="class in org.eclipse.emf.cdo.security.impl">UserPasswordImpl</a>, <a href="../../../../../org/eclipse/emf/cdo/expressions/impl/ValueImpl.html" title="class in org.eclipse.emf.cdo.expressions.impl">ValueImpl</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">CDOObjectImpl</span>
+extends <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a>
+implements <a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></pre>
+<div class="block">The base class of all <em>native</em> <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo"><code>objects</code></a>.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.eclipse.emf.ecore.impl.MinimalEObjectImpl">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;org.eclipse.emf.ecore.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.Container.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl.Container</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.eclipse.emf.ecore.impl.BasicEObjectImpl">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;org.eclipse.emf.ecore.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.EPropertiesHolder.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl.EPropertiesHolder</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.EPropertiesHolderBaseImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl.EPropertiesHolderBaseImpl</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.EPropertiesHolderImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl.EPropertiesHolderImpl</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.eclipse.emf.common.notify.impl.BasicNotifierImpl">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;org.eclipse.emf.common.notify.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">BasicNotifierImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.EAdapterList.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">BasicNotifierImpl.EAdapterList</a>&lt;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.EAdapterList.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">E</a> extends <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a> & <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Adapter.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">Adapter</a>&gt;, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.EObservableAdapterList.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">BasicNotifierImpl.EObservableAdapterList</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.eclipse.emf.ecore.InternalEObject">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from interface&nbsp;org.eclipse.emf.ecore.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.EStore.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject.EStore</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.eclipse.emf.ecore.impl.BasicEObjectImpl">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.eclipse.emf.ecore.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#EVIRTUAL_GET" title="class or interface in org.eclipse.emf.ecore.impl">EVIRTUAL_GET</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#EVIRTUAL_IS_SET" title="class or interface in org.eclipse.emf.ecore.impl">EVIRTUAL_IS_SET</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#EVIRTUAL_NO_VALUE" title="class or interface in org.eclipse.emf.ecore.impl">EVIRTUAL_NO_VALUE</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#EVIRTUAL_SET" title="class or interface in org.eclipse.emf.ecore.impl">EVIRTUAL_SET</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#EVIRTUAL_UNSET" title="class or interface in org.eclipse.emf.ecore.impl">EVIRTUAL_UNSET</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.eclipse.emf.ecore.InternalEObject">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.eclipse.emf.ecore.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#EOPPOSITE_FEATURE_BASE" title="class or interface in org.eclipse.emf.ecore">EOPPOSITE_FEATURE_BASE</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.eclipse.emf.ecore.EStructuralFeature.Internal.DynamicValueHolder">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.eclipse.emf.ecore.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.Internal.DynamicValueHolder.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature.Internal.DynamicValueHolder</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.Internal.DynamicValueHolder.html?is-external=true#NIL" title="class or interface in org.eclipse.emf.ecore">NIL</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#CDOObjectImpl()">CDOObjectImpl</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/spi/common/model/InternalCDOClassInfo.html" title="interface in org.eclipse.emf.cdo.spi.common.model">InternalCDOClassInfo</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoClassInfo()">cdoClassInfo</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoConflict()">cdoConflict</a></strong>()</code>
+<div class="block">Returns <code>true</code> if this object contains local changes that are conflicting with recognized remote
+ changes, <code>false</code> otherwise.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/eresource/CDOResource.html" title="interface in org.eclipse.emf.cdo.eresource">CDOResource</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoDirectResource()">cdoDirectResource</a></strong>()</code>
+<div class="block">Returns the directly containing <a href="../../../../../org/eclipse/emf/cdo/eresource/CDOResource.html" title="interface in org.eclipse.emf.cdo.eresource"><code>resource</code></a> of this object, or <code>null</code> if this object is
+ not an element of the <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/resource/Resource.html?is-external=true#getContents()" title="class or interface in org.eclipse.emf.ecore.resource"><code>contents</code></a> list of any CDO resource.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/CDOObjectHistory.html" title="interface in org.eclipse.emf.cdo">CDOObjectHistory</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoHistory()">cdoHistory</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/common/id/CDOID.html" title="interface in org.eclipse.emf.cdo.common.id">CDOID</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoID()">cdoID</a></strong>()</code>
+<div class="block">Returns the <em>technical</em> object identifier of this object, or <code>null</code> if the <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoState()"><code>state</code></a> of this object is <a href="../../../../../org/eclipse/emf/cdo/CDOState.html#TRANSIENT"><code>TRANSIENT</code></a> or <a href="../../../../../org/eclipse/emf/cdo/CDOState.html#INVALID"><code>INVALID</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalDynamicFeature(int)">cdoInternalDynamicFeature</a></strong>(int&nbsp;dynamicFeatureID)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalInstance()">cdoInternalInstance</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalPostAttach()">cdoInternalPostAttach</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalPostDetach(boolean)">cdoInternalPostDetach</a></strong>(boolean&nbsp;remote)</code>
+<div class="block">It is really important for accessing the data to go through <a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoStore()"><code>cdoStore()</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalPostInvalidate()">cdoInternalPostInvalidate</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalPostLoad()">cdoInternalPostLoad</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalPostRollback()">cdoInternalPostRollback</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalPreCommit()">cdoInternalPreCommit</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalPreLoad()">cdoInternalPreLoad</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalSetID(org.eclipse.emf.cdo.common.id.CDOID)">cdoInternalSetID</a></strong>(<a href="../../../../../org/eclipse/emf/cdo/common/id/CDOID.html" title="interface in org.eclipse.emf.cdo.common.id">CDOID</a>&nbsp;id)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalSetResource(org.eclipse.emf.cdo.eresource.CDOResource)">cdoInternalSetResource</a></strong>(<a href="../../../../../org/eclipse/emf/cdo/eresource/CDOResource.html" title="interface in org.eclipse.emf.cdo.eresource">CDOResource</a>&nbsp;resource)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalSetRevision(org.eclipse.emf.cdo.common.revision.CDORevision)">cdoInternalSetRevision</a></strong>(<a href="../../../../../org/eclipse/emf/cdo/common/revision/CDORevision.html" title="interface in org.eclipse.emf.cdo.common.revision">CDORevision</a>&nbsp;revision)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/CDOState.html" title="enum in org.eclipse.emf.cdo">CDOState</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalSetState(org.eclipse.emf.cdo.CDOState)">cdoInternalSetState</a></strong>(<a href="../../../../../org/eclipse/emf/cdo/CDOState.html" title="enum in org.eclipse.emf.cdo">CDOState</a>&nbsp;state)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInternalSetView(org.eclipse.emf.cdo.view.CDOView)">cdoInternalSetView</a></strong>(<a href="../../../../../org/eclipse/emf/cdo/view/CDOView.html" title="interface in org.eclipse.emf.cdo.view">CDOView</a>&nbsp;view)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoInvalid()">cdoInvalid</a></strong>()</code>
+<div class="block">Returns <code>true</code> if this object is considered as locally invalid (TODO Simon: please briefly explain what
+ this state means) , <code>false</code> otherwise.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/common/lock/CDOLockState.html" title="interface in org.eclipse.emf.cdo.common.lock">CDOLockState</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoLockState()">cdoLockState</a></strong>()</code>
+<div class="block">Returns the <a href="../../../../../org/eclipse/emf/cdo/common/lock/CDOLockState.html" title="interface in org.eclipse.emf.cdo.common.lock"><code>CDOLockState</code></a> of this object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/common/security/CDOPermission.html" title="enum in org.eclipse.emf.cdo.common.security">CDOPermission</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoPermission()">cdoPermission</a></strong>()</code>
+<div class="block">Returns the permission of the current <a href="../../../../../org/eclipse/emf/cdo/session/CDOSession.html" title="interface in org.eclipse.emf.cdo.session"><code>session</code></a>'s user for this object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoPrefetch(int)">cdoPrefetch</a></strong>(int&nbsp;depth)</code>
+<div class="block">Ensures that the revisions of the contained objects up to the given depth are in the local
+ <a href="../../../../../org/eclipse/emf/cdo/common/revision/CDORevisionManager.html" title="interface in org.eclipse.emf.cdo.common.revision"><code>revision cache</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/CDOLock.html" title="interface in org.eclipse.emf.cdo">CDOLock</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoReadLock()">cdoReadLock</a></strong>()</code>
+<div class="block">Returns the read lock associated with this object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoReload()">cdoReload</a></strong>()</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/eresource/CDOResource.html" title="interface in org.eclipse.emf.cdo.eresource">CDOResource</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoResource()">cdoResource</a></strong>()</code>
+<div class="block">Returns the <a href="../../../../../org/eclipse/emf/cdo/eresource/CDOResource.html" title="interface in org.eclipse.emf.cdo.eresource"><code>resource</code></a> of this object, no matter where this object is located in the containment
+ tree of that resource, or <code>null</code> if this object is not contained in a CDO resource.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/spi/common/revision/InternalCDORevision.html" title="interface in org.eclipse.emf.cdo.spi.common.revision">InternalCDORevision</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoRevision()">cdoRevision</a></strong>()</code>
+<div class="block">Returns the <a href="../../../../../org/eclipse/emf/cdo/common/revision/CDORevision.html" title="interface in org.eclipse.emf.cdo.common.revision"><code>revision</code></a> of this object, or <code>null</code> if this object does currently not
+ have a revision.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/spi/common/revision/InternalCDORevision.html" title="interface in org.eclipse.emf.cdo.spi.common.revision">InternalCDORevision</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoRevision(boolean)">cdoRevision</a></strong>(boolean&nbsp;loadOnDemand)</code>
+<div class="block">Returns the <a href="../../../../../org/eclipse/emf/cdo/common/revision/CDORevision.html" title="interface in org.eclipse.emf.cdo.common.revision"><code>revision</code></a> of this object, or <code>null</code> if this object does currently not
+ have a revision and loadOnDemand is <code>false</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/CDOState.html" title="enum in org.eclipse.emf.cdo">CDOState</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoState()">cdoState</a></strong>()</code>
+<div class="block">Returns the local <a href="../../../../../org/eclipse/emf/cdo/CDOState.html" title="enum in org.eclipse.emf.cdo"><code>state</code></a> of this object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOView.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOView</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoView()">cdoView</a></strong>()</code>
+<div class="block">Returns the <a href="../../../../../org/eclipse/emf/cdo/view/CDOView.html" title="interface in org.eclipse.emf.cdo.view"><code>view</code></a> this object is associated with, or <code>null</code> if this object is not
+ associated with a view.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/CDOLock.html" title="interface in org.eclipse.emf.cdo">CDOLock</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoWriteLock()">cdoWriteLock</a></strong>()</code>
+<div class="block">Returns the write lock associated with this object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/eclipse/emf/cdo/CDOLock.html" title="interface in org.eclipse.emf.cdo">CDOLock</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoWriteOption()">cdoWriteOption</a></strong>()</code>
+<div class="block">Returns the write option associated with this object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/util/FeatureMap.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.util">FeatureMap</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#createFeatureMap(org.eclipse.emf.ecore.EStructuralFeature)">createFeatureMap</a></strong>(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eStructuralFeature)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;?&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#createList(org.eclipse.emf.ecore.EStructuralFeature)">createList</a></strong>(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eStructuralFeature)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../org/eclipse/emf/cdo/CDOLock.html" title="interface in org.eclipse.emf.cdo">CDOLock</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#createLock(org.eclipse.emf.spi.cdo.InternalCDOObject, org.eclipse.net4j.util.concurrent.IRWLockManager.LockType)">createLock</a></strong>(<a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a>&nbsp;object,
+          <a href="../../../../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/concurrent/IRWLockManager.LockType.html?is-external=true" title="class or interface in org.eclipse.net4j.util.concurrent">IRWLockManager.LockType</a>&nbsp;type)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected org.eclipse.emf.internal.cdo.CDOObjectImpl.CDOStoreEcoreEMap</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#createMap(org.eclipse.emf.ecore.EStructuralFeature)">createMap</a></strong>(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eStructuralFeature)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected org.eclipse.emf.internal.cdo.CDOObjectImpl.CDOStoreUnorderedEList&lt;<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#createUnorderedList(org.eclipse.emf.ecore.EStructuralFeature)">createUnorderedList</a></strong>(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eStructuralFeature)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#dynamicGet(int)">dynamicGet</a></strong>(int&nbsp;dynamicFeatureID)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#dynamicSet(int, java.lang.Object)">dynamicSet</a></strong>(int&nbsp;dynamicFeatureID,
+          <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#dynamicUnset(int)">dynamicUnset</a></strong>(int&nbsp;dynamicFeatureID)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eAdapterAdded(org.eclipse.emf.common.notify.Adapter)">eAdapterAdded</a></strong>(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Adapter.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">Adapter</a>&nbsp;adapter)</code>
+<div class="block">This method must not be private because the MinimalEStoreEObjectImpl in CDO's ecore.minimal (retrofitting) fragment
+ introduces it as a protected method and calls it.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eAdapterRemoved(org.eclipse.emf.common.notify.Adapter)">eAdapterRemoved</a></strong>(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Adapter.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">Adapter</a>&nbsp;adapter)</code>
+<div class="block">This method must not be private because the MinimalEStoreEObjectImpl in CDO's ecore.minimal (retrofitting) fragment
+ introduces it as a protected method and calls it.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.EObservableAdapterList.Listener.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">BasicNotifierImpl.EObservableAdapterList.Listener</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eBasicAdapterListeners()">eBasicAdapterListeners</a></strong>()</code>
+<div class="block">This method is not called by the MinimalEStoreEObjectImpl in CDO's ecore.minimal (retrofitting) fragment
+ but it is called by the normal MinimalEObjectImpl as of EMF 2.9.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eBasicSetAdapterListeners(org.eclipse.emf.common.notify.impl.BasicNotifierImpl.EObservableAdapterList.Listener[])">eBasicSetAdapterListeners</a></strong>(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.EObservableAdapterList.Listener.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">BasicNotifierImpl.EObservableAdapterList.Listener</a>[]&nbsp;eAdapterListeners)</code>
+<div class="block">This method is not called by the MinimalEStoreEObjectImpl in CDO's ecore.minimal (retrofitting) fragment
+ but it is called by the normal MinimalEObjectImpl as of EMF 2.9.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject, int)">eBasicSetContainer</a></strong>(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a>&nbsp;newEContainer,
+                  int&nbsp;newContainerFeatureID)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/NotificationChain.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">NotificationChain</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject, int, org.eclipse.emf.common.notify.NotificationChain)">eBasicSetContainer</a></strong>(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a>&nbsp;newContainer,
+                  int&nbsp;newContainerFeatureID,
+                  <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/NotificationChain.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">NotificationChain</a>&nbsp;msgs)</code>
+<div class="block">Code taken from <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject, int)" title="class or interface in org.eclipse.emf.ecore.impl"><code>BasicEObjectImpl.eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject, int)</code></a> and modified to detect whether the object is moved in the
+ same context.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eBasicSetSettings(java.lang.Object[])">eBasicSetSettings</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;settings)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eBasicSettings()">eBasicSettings</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EClass.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EClass</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eClass()">eClass</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Adapter.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">Adapter</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eContainerAdapterArray()">eContainerAdapterArray</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eContainerFeatureID()">eContainerFeatureID</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/resource/Resource.Internal.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.resource">Resource.Internal</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eDirectResource()">eDirectResource</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EClass.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EClass</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eDynamicClass()">eDynamicClass</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eDynamicFeature(int)">eDynamicFeature</a></strong>(int&nbsp;dynamicFeatureID)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eDynamicFeatureID(org.eclipse.emf.ecore.EStructuralFeature)">eDynamicFeatureID</a></strong>(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eStructuralFeature)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eDynamicIsSet(int, org.eclipse.emf.ecore.EStructuralFeature)">eDynamicIsSet</a></strong>(int&nbsp;dynamicFeatureID,
+             <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eFeature)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eHasSettings()">eHasSettings</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eInternalContainer()">eInternalContainer</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/resource/Resource.Internal.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.resource">Resource.Internal</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eInternalResource()">eInternalResource</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eIsCaching()">eIsCaching</a></strong>()</code>
+<div class="block">Don't cache non-transient features in this CDOObject's <a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eSettings()"><code>eSettings()</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#equals(java.lang.Object)">equals</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;obj)</code>
+<div class="block">Specializing the behaviour of <a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#equals(java.lang.Object)"><code>equals(Object)</code></a> is not permitted as per <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore"><code>EObject</code></a> specification.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eSetClass(org.eclipse.emf.ecore.EClass)">eSetClass</a></strong>(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EClass.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EClass</a>&nbsp;eClass)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eSetDirectResource(org.eclipse.emf.ecore.resource.Resource.Internal)">eSetDirectResource</a></strong>(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/resource/Resource.Internal.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.resource">Resource.Internal</a>&nbsp;resource)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/NotificationChain.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">NotificationChain</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eSetResource(org.eclipse.emf.ecore.resource.Resource.Internal, org.eclipse.emf.common.notify.NotificationChain)">eSetResource</a></strong>(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/resource/Resource.Internal.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.resource">Resource.Internal</a>&nbsp;resource,
+            <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/NotificationChain.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">NotificationChain</a>&nbsp;notifications)</code>
+<div class="block">Code took from <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSetResource(org.eclipse.emf.ecore.resource.Resource.Internal, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl"><code>BasicEObjectImpl.eSetResource(org.eclipse.emf.ecore.resource.Resource.Internal, org.eclipse.emf.common.notify.NotificationChain)</code></a> and modify it to detect when object are moved in the same
+ context.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.Internal.DynamicValueHolder.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature.Internal.DynamicValueHolder</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eSettings()">eSettings</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.EStore.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject.EStore</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eStore()">eStore</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../org/eclipse/emf/cdo/common/lock/CDOLockState.html" title="interface in org.eclipse.emf.cdo.common.lock">CDOLockState</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#getLockState(org.eclipse.emf.spi.cdo.InternalCDOObject)">getLockState</a></strong>(<a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a>&nbsp;object)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#hashCode()">hashCode</a></strong>()</code>
+<div class="block">Specializing the behaviour of <a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#hashCode()"><code>hashCode()</code></a> is not permitted as per <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore"><code>EObject</code></a> specification.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#instanceToRevisionFeature(org.eclipse.emf.spi.cdo.InternalCDOView, org.eclipse.emf.spi.cdo.InternalCDOObject, org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)">instanceToRevisionFeature</a></strong>(<a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOView.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOView</a>&nbsp;view,
+                         <a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a>&nbsp;object,
+                         <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;feature,
+                         <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;setting)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#revisionToInstanceFeature(org.eclipse.emf.spi.cdo.InternalCDOObject, org.eclipse.emf.cdo.spi.common.revision.InternalCDORevision, org.eclipse.emf.ecore.EStructuralFeature)">revisionToInstanceFeature</a></strong>(<a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a>&nbsp;instance,
+                         <a href="../../../../../org/eclipse/emf/cdo/spi/common/revision/InternalCDORevision.html" title="interface in org.eclipse.emf.cdo.spi.common.revision">InternalCDORevision</a>&nbsp;revision,
+                         <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eFeature)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#toString()">toString</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.ecore.impl.MinimalEStoreEObjectImpl">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.eclipse.emf.ecore.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eBasicContainerFeatureID()" title="class or interface in org.eclipse.emf.ecore.impl">eBasicContainerFeatureID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eBasicInternalContainer()" title="class or interface in org.eclipse.emf.ecore.impl">eBasicInternalContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eBasicSetAdapterArray(org.eclipse.emf.common.notify.Adapter[])" title="class or interface in org.eclipse.emf.ecore.impl">eBasicSetAdapterArray</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eDerivedStructuralFeatureID(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eDerivedStructuralFeatureID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eStaticFeatureCount()" title="class or interface in org.eclipse.emf.ecore.impl">eStaticFeatureCount</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.ecore.impl.MinimalEObjectImpl">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.eclipse.emf.ecore.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eAdapters()" title="class or interface in org.eclipse.emf.ecore.impl">eAdapters</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicAdapterArray()" title="class or interface in org.eclipse.emf.ecore.impl">eBasicAdapterArray</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicAdapters()" title="class or interface in org.eclipse.emf.ecore.impl">eBasicAdapters</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicHasAdapters()" title="class or interface in org.eclipse.emf.ecore.impl">eBasicHasAdapters</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicProperties()" title="class or interface in org.eclipse.emf.ecore.impl">eBasicProperties</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject)" title="class or interface in org.eclipse.emf.ecore.impl">eBasicSetContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicSetContainerFeatureID(int)" title="class or interface in org.eclipse.emf.ecore.impl">eBasicSetContainerFeatureID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eContents()" title="class or interface in org.eclipse.emf.ecore.impl">eContents</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eCrossReferences()" title="class or interface in org.eclipse.emf.ecore.impl">eCrossReferences</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eDeliver()" title="class or interface in org.eclipse.emf.ecore.impl">eDeliver</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eIsProxy()" title="class or interface in org.eclipse.emf.ecore.impl">eIsProxy</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eProperties()" title="class or interface in org.eclipse.emf.ecore.impl">eProperties</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eProxyURI()" title="class or interface in org.eclipse.emf.ecore.impl">eProxyURI</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eSetDeliver(boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eSetDeliver</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eSetProxyURI(org.eclipse.emf.common.util.URI)" title="class or interface in org.eclipse.emf.ecore.impl">eSetProxyURI</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.ecore.impl.BasicEObjectImpl">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.eclipse.emf.ecore.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eAddVirtualValue(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eAddVirtualValue</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eAllContents()" title="class or interface in org.eclipse.emf.ecore.impl">eAllContents</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eBaseStructuralFeatureID(int, java.lang.Class)" title="class or interface in org.eclipse.emf.ecore.impl">eBaseStructuralFeatureID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eBasicRemoveFromContainer(org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eBasicRemoveFromContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eBasicRemoveFromContainerFeature(org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eBasicRemoveFromContainerFeature</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eComputeVirtualValuesCapacity(int)" title="class or interface in org.eclipse.emf.ecore.impl">eComputeVirtualValuesCapacity</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eContainer()" title="class or interface in org.eclipse.emf.ecore.impl">eContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eContainingFeature()" title="class or interface in org.eclipse.emf.ecore.impl">eContainingFeature</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eContainmentFeature()" title="class or interface in org.eclipse.emf.ecore.impl">eContainmentFeature</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eContainmentFeature(org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject, int)" title="class or interface in org.eclipse.emf.ecore.impl">eContainmentFeature</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eContains(org.eclipse.emf.ecore.EObject)" title="class or interface in org.eclipse.emf.ecore.impl">eContains</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDerivedOperationID(org.eclipse.emf.ecore.EOperation)" title="class or interface in org.eclipse.emf.ecore.impl">eDerivedOperationID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDerivedOperationID(int, java.lang.Class)" title="class or interface in org.eclipse.emf.ecore.impl">eDerivedOperationID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDerivedStructuralFeatureID(int, java.lang.Class)" title="class or interface in org.eclipse.emf.ecore.impl">eDerivedStructuralFeatureID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicBasicRemoveFromContainer(org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicBasicRemoveFromContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicGet(org.eclipse.emf.ecore.EStructuralFeature, boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicGet(int, boolean, boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicGet(int, org.eclipse.emf.ecore.EStructuralFeature, boolean, boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicInverseAdd(org.eclipse.emf.ecore.InternalEObject, int, java.lang.Class, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicInverseAdd</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicInverseAdd(org.eclipse.emf.ecore.InternalEObject, int, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicInverseAdd</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicInverseRemove(org.eclipse.emf.ecore.InternalEObject, int, java.lang.Class, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicInverseRemove</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicInverseRemove(org.eclipse.emf.ecore.InternalEObject, int, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicInverseRemove</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicInvoke(org.eclipse.emf.ecore.EOperation, org.eclipse.emf.common.util.EList)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicInvoke</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicInvoke(int, org.eclipse.emf.common.util.EList)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicInvoke</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicIsSet(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicIsSet(int)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicSet(org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicSet(int, org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicSet(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicUnset(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicUnset(int)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicUnset(int, org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eGet(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eGet(org.eclipse.emf.ecore.EStructuralFeature, boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eGet(org.eclipse.emf.ecore.EStructuralFeature, boolean, boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eGet(int, boolean, boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInverseAdd(org.eclipse.emf.ecore.InternalEObject, int, java.lang.Class, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eInverseAdd</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInverseAdd(org.eclipse.emf.ecore.InternalEObject, int, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eInverseAdd</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInverseRemove(org.eclipse.emf.ecore.InternalEObject, int, java.lang.Class, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eInverseRemove</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInverseRemove(org.eclipse.emf.ecore.InternalEObject, int, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eInverseRemove</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInvocationDelegate(org.eclipse.emf.ecore.EOperation)" title="class or interface in org.eclipse.emf.ecore.impl">eInvocationDelegate</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInvoke(org.eclipse.emf.ecore.EOperation, org.eclipse.emf.common.util.EList)" title="class or interface in org.eclipse.emf.ecore.impl">eInvoke</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInvoke(int, org.eclipse.emf.common.util.EList)" title="class or interface in org.eclipse.emf.ecore.impl">eInvoke</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eIsSet(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eIsSet(int)" title="class or interface in org.eclipse.emf.ecore.impl">eIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eObjectForURIFragmentSegment(java.lang.String)" title="class or interface in org.eclipse.emf.ecore.impl">eObjectForURIFragmentSegment</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eOpenGet(org.eclipse.emf.ecore.EStructuralFeature, boolean)" title="class or interface in org.eclipse.emf.ecore.impl">eOpenGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eOpenIsSet(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eOpenIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eOpenSet(org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eOpenSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eOpenUnset(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eOpenUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eRemoveVirtualValue(int)" title="class or interface in org.eclipse.emf.ecore.impl">eRemoveVirtualValue</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eResolveProxy(org.eclipse.emf.ecore.InternalEObject)" title="class or interface in org.eclipse.emf.ecore.impl">eResolveProxy</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eResource()" title="class or interface in org.eclipse.emf.ecore.impl">eResource</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSet(org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSet(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSetStore(org.eclipse.emf.ecore.InternalEObject.EStore)" title="class or interface in org.eclipse.emf.ecore.impl">eSetStore</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSetting(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eSetting</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSettingDelegate(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eSettingDelegate</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSetVirtualIndexBits(int, int)" title="class or interface in org.eclipse.emf.ecore.impl">eSetVirtualIndexBits</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSetVirtualValue(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eSetVirtualValue</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSetVirtualValues(java.lang.Object[])" title="class or interface in org.eclipse.emf.ecore.impl">eSetVirtualValues</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eStaticClass()" title="class or interface in org.eclipse.emf.ecore.impl">eStaticClass</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eStaticOperationCount()" title="class or interface in org.eclipse.emf.ecore.impl">eStaticOperationCount</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eUnset(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eUnset(int)" title="class or interface in org.eclipse.emf.ecore.impl">eUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eURIFragmentSegment(org.eclipse.emf.ecore.EStructuralFeature, org.eclipse.emf.ecore.EObject)" title="class or interface in org.eclipse.emf.ecore.impl">eURIFragmentSegment</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualBitCount(int)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualBitCount</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualGet(int)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualGet(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualIndex(int, int)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualIndex</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualIndexBits(int)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualIndexBits</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualIsSet(int)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualSet(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualUnset(int)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualValue(int)" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualValue</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eVirtualValues()" title="class or interface in org.eclipse.emf.ecore.impl">eVirtualValues</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.common.notify.impl.BasicNotifierImpl">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.eclipse.emf.common.notify.impl.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">BasicNotifierImpl</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.html?is-external=true#eNotificationRequired()" title="class or interface in org.eclipse.emf.common.notify.impl">eNotificationRequired</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.html?is-external=true#eNotify(org.eclipse.emf.common.notify.Notification)" title="class or interface in org.eclipse.emf.common.notify.impl">eNotify</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.ecore.InternalEObject">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.ecore.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eBaseStructuralFeatureID(int, java.lang.Class)" title="class or interface in org.eclipse.emf.ecore">eBaseStructuralFeatureID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eBasicRemoveFromContainer(org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore">eBasicRemoveFromContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eDerivedOperationID(int, java.lang.Class)" title="class or interface in org.eclipse.emf.ecore">eDerivedOperationID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eDerivedStructuralFeatureID(int, java.lang.Class)" title="class or interface in org.eclipse.emf.ecore">eDerivedStructuralFeatureID</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eGet(org.eclipse.emf.ecore.EStructuralFeature, boolean, boolean)" title="class or interface in org.eclipse.emf.ecore">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eGet(int, boolean, boolean)" title="class or interface in org.eclipse.emf.ecore">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eInverseAdd(org.eclipse.emf.ecore.InternalEObject, int, java.lang.Class, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore">eInverseAdd</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eInverseRemove(org.eclipse.emf.ecore.InternalEObject, int, java.lang.Class, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore">eInverseRemove</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eInvoke(int, org.eclipse.emf.common.util.EList)" title="class or interface in org.eclipse.emf.ecore">eInvoke</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eIsSet(int)" title="class or interface in org.eclipse.emf.ecore">eIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eNotificationRequired()" title="class or interface in org.eclipse.emf.ecore">eNotificationRequired</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eObjectForURIFragmentSegment(java.lang.String)" title="class or interface in org.eclipse.emf.ecore">eObjectForURIFragmentSegment</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eProxyURI()" title="class or interface in org.eclipse.emf.ecore">eProxyURI</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eResolveProxy(org.eclipse.emf.ecore.InternalEObject)" title="class or interface in org.eclipse.emf.ecore">eResolveProxy</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eSet(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore">eSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eSetProxyURI(org.eclipse.emf.common.util.URI)" title="class or interface in org.eclipse.emf.ecore">eSetProxyURI</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eSetStore(org.eclipse.emf.ecore.InternalEObject.EStore)" title="class or interface in org.eclipse.emf.ecore">eSetStore</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eSetting(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore">eSetting</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eUnset(int)" title="class or interface in org.eclipse.emf.ecore">eUnset</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eURIFragmentSegment(org.eclipse.emf.ecore.EStructuralFeature, org.eclipse.emf.ecore.EObject)" title="class or interface in org.eclipse.emf.ecore">eURIFragmentSegment</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.ecore.EObject">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.ecore.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EObject</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eAllContents()" title="class or interface in org.eclipse.emf.ecore">eAllContents</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eContainer()" title="class or interface in org.eclipse.emf.ecore">eContainer</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eContainingFeature()" title="class or interface in org.eclipse.emf.ecore">eContainingFeature</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eContainmentFeature()" title="class or interface in org.eclipse.emf.ecore">eContainmentFeature</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eContents()" title="class or interface in org.eclipse.emf.ecore">eContents</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eCrossReferences()" title="class or interface in org.eclipse.emf.ecore">eCrossReferences</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eGet(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eGet(org.eclipse.emf.ecore.EStructuralFeature, boolean)" title="class or interface in org.eclipse.emf.ecore">eGet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eInvoke(org.eclipse.emf.ecore.EOperation, org.eclipse.emf.common.util.EList)" title="class or interface in org.eclipse.emf.ecore">eInvoke</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eIsProxy()" title="class or interface in org.eclipse.emf.ecore">eIsProxy</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eIsSet(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore">eIsSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eResource()" title="class or interface in org.eclipse.emf.ecore">eResource</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eSet(org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore">eSet</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eUnset(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore">eUnset</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.eclipse.emf.common.notify.Notifier">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.eclipse.emf.common.notify.<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">Notifier</a></h3>
+<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true#eAdapters()" title="class or interface in org.eclipse.emf.common.notify">eAdapters</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true#eDeliver()" title="class or interface in org.eclipse.emf.common.notify">eDeliver</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true#eNotify(org.eclipse.emf.common.notify.Notification)" title="class or interface in org.eclipse.emf.common.notify">eNotify</a>, <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Notifier.html?is-external=true#eSetDeliver(boolean)" title="class or interface in org.eclipse.emf.common.notify">eSetDeliver</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="CDOObjectImpl()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>CDOObjectImpl</h4>
+<pre>public&nbsp;CDOObjectImpl()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="cdoClassInfo()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoClassInfo</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/cdo/spi/common/model/InternalCDOClassInfo.html" title="interface in org.eclipse.emf.cdo.spi.common.model">InternalCDOClassInfo</a>&nbsp;cdoClassInfo()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoClassInfo()">cdoClassInfo</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="cdoState()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoState</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/cdo/CDOState.html" title="enum in org.eclipse.emf.cdo">CDOState</a>&nbsp;cdoState()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoState()">CDOObject</a></code></strong></div>
+<div class="block">Returns the local <a href="../../../../../org/eclipse/emf/cdo/CDOState.html" title="enum in org.eclipse.emf.cdo"><code>state</code></a> of this object.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoState()">cdoState</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="cdoView()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoView</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOView.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOView</a>&nbsp;cdoView()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoView()">CDOObject</a></code></strong></div>
+<div class="block">Returns the <a href="../../../../../org/eclipse/emf/cdo/view/CDOView.html" title="interface in org.eclipse.emf.cdo.view"><code>view</code></a> this object is associated with, or <code>null</code> if this object is not
+ associated with a view. This view manages all aspects of this object and cahces it as long as required.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoView()">cdoView</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoView()">cdoView</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="cdoID()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoID</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/cdo/common/id/CDOID.html" title="interface in org.eclipse.emf.cdo.common.id">CDOID</a>&nbsp;cdoID()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoID()">CDOObject</a></code></strong></div>
+<div class="block">Returns the <em>technical</em> object identifier of this object, or <code>null</code> if the <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoState()"><code>state</code></a> of this object is <a href="../../../../../org/eclipse/emf/cdo/CDOState.html#TRANSIENT"><code>TRANSIENT</code></a> or <a href="../../../../../org/eclipse/emf/cdo/CDOState.html#INVALID"><code>INVALID</code></a>.
+ <p>
+ If the state of this object is <a href="../../../../../org/eclipse/emf/cdo/CDOState.html#NEW"><code>NEW</code></a> the returned CDOID instance can be cast to
+ <a href="../../../../../org/eclipse/emf/cdo/common/id/CDOIDTemp.html" title="interface in org.eclipse.emf.cdo.common.id"><code>CDOIDTemp</code></a> and is unique in the scope of the associated <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoView()"><code>transaction</code></a>. In all other states
+ a non-<code>null</code> return value uniquely identifies a persistent object in the scope of the whole repository.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoID()">cdoID</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/common/id/CDOWithID.html#cdoID()">cdoID</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/common/id/CDOWithID.html" title="interface in org.eclipse.emf.cdo.common.id">CDOWithID</a></code></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoState()"><code>CDOObject.cdoState()</code></a></dd></dl>
+</li>
+</ul>
+<a name="cdoRevision()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoRevision</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/cdo/spi/common/revision/InternalCDORevision.html" title="interface in org.eclipse.emf.cdo.spi.common.revision">InternalCDORevision</a>&nbsp;cdoRevision()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoRevision()">CDOObject</a></code></strong></div>
+<div class="block">Returns the <a href="../../../../../org/eclipse/emf/cdo/common/revision/CDORevision.html" title="interface in org.eclipse.emf.cdo.common.revision"><code>revision</code></a> of this object, or <code>null</code> if this object does currently not
+ have a revision. The revision is used to store all modeled data of this object, together with some technical data
+ required by the framework.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoRevision()">cdoRevision</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoRevision()">cdoRevision</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="cdoRevision(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoRevision</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/cdo/spi/common/revision/InternalCDORevision.html" title="interface in org.eclipse.emf.cdo.spi.common.revision">InternalCDORevision</a>&nbsp;cdoRevision(boolean&nbsp;loadOnDemand)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoRevision(boolean)">CDOObject</a></code></strong></div>
+<div class="block">Returns the <a href="../../../../../org/eclipse/emf/cdo/common/revision/CDORevision.html" title="interface in org.eclipse.emf.cdo.common.revision"><code>revision</code></a> of this object, or <code>null</code> if this object does currently not
+ have a revision and loadOnDemand is <code>false</code>. The revision is used to store all modeled data of this object, 
+ together with some technical data required by the framework.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoRevision(boolean)">cdoRevision</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoRevision(boolean)">cdoRevision</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.3</dd></dl>
+</li>
+</ul>
+<a name="cdoPermission()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoPermission</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/cdo/common/security/CDOPermission.html" title="enum in org.eclipse.emf.cdo.common.security">CDOPermission</a>&nbsp;cdoPermission()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoPermission()">CDOObject</a></code></strong></div>
+<div class="block">Returns the permission of the current <a href="../../../../../org/eclipse/emf/cdo/session/CDOSession.html" title="interface in org.eclipse.emf.cdo.session"><code>session</code></a>'s user for this object.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoPermission()">cdoPermission</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.3</dd></dl>
+</li>
+</ul>
+<a name="cdoResource()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoResource</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/cdo/eresource/CDOResource.html" title="interface in org.eclipse.emf.cdo.eresource">CDOResource</a>&nbsp;cdoResource()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoResource()">CDOObject</a></code></strong></div>
+<div class="block">Returns the <a href="../../../../../org/eclipse/emf/cdo/eresource/CDOResource.html" title="interface in org.eclipse.emf.cdo.eresource"><code>resource</code></a> of this object, no matter where this object is located in the containment
+ tree of that resource, or <code>null</code> if this object is not contained in a CDO resource.
+ <p>
+ This method may not return <code>null</code> return for objects that have no <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoDirectResource()"><code>direct
+ resource</code></a>. Please note that, depending on the containment depth of this object, the evaluation of the resource can
+ be a costly operation.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoResource()">cdoResource</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoDirectResource()"><code>CDOObject.cdoDirectResource()</code></a></dd></dl>
+</li>
+</ul>
+<a name="cdoDirectResource()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoDirectResource</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/cdo/eresource/CDOResource.html" title="interface in org.eclipse.emf.cdo.eresource">CDOResource</a>&nbsp;cdoDirectResource()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoDirectResource()">CDOObject</a></code></strong></div>
+<div class="block">Returns the directly containing <a href="../../../../../org/eclipse/emf/cdo/eresource/CDOResource.html" title="interface in org.eclipse.emf.cdo.eresource"><code>resource</code></a> of this object, or <code>null</code> if this object is
+ not an element of the <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/resource/Resource.html?is-external=true#getContents()" title="class or interface in org.eclipse.emf.ecore.resource"><code>contents</code></a> list of any CDO resource.
+ <p>
+ Please note that, independend of the containment depth of this object, the evaluation of the direct resource is an
+ operation with a constant cost.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoDirectResource()">cdoDirectResource</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="cdoPrefetch(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoPrefetch</h4>
+<pre>public final&nbsp;void&nbsp;cdoPrefetch(int&nbsp;depth)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoPrefetch(int)">CDOObject</a></code></strong></div>
+<div class="block">Ensures that the revisions of the contained objects up to the given depth are in the local
+ <a href="../../../../../org/eclipse/emf/cdo/common/revision/CDORevisionManager.html" title="interface in org.eclipse.emf.cdo.common.revision"><code>revision cache</code></a>. Subsequent access to the respective contained objects will not lead to
+ server round-trips after calling this method.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoPrefetch(int)">cdoPrefetch</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>depth</code> - <a href="../../../../../org/eclipse/emf/cdo/common/revision/CDORevision.html#DEPTH_NONE"><code>CDORevision.DEPTH_NONE</code></a>, <a href="../../../../../org/eclipse/emf/cdo/common/revision/CDORevision.html#DEPTH_INFINITE"><code>CDORevision.DEPTH_INFINITE</code></a> or any other positive integer number.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>3.0</dd></dl>
+</li>
+</ul>
+<a name="cdoReload()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoReload</h4>
+<pre><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public final&nbsp;void&nbsp;cdoReload()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoReload()">cdoReload</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="cdoHistory()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoHistory</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/cdo/CDOObjectHistory.html" title="interface in org.eclipse.emf.cdo">CDOObjectHistory</a>&nbsp;cdoHistory()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoHistory()">cdoHistory</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="cdoConflict()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoConflict</h4>
+<pre>public final&nbsp;boolean&nbsp;cdoConflict()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoConflict()">CDOObject</a></code></strong></div>
+<div class="block">Returns <code>true</code> if this object contains local changes that are conflicting with recognized remote
+ changes, <code>false</code> otherwise.
+ <p>
+ This method is a convenience method to determine whether the <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoState()"><code>state</code></a> of this object is either
+ <a href="../../../../../org/eclipse/emf/cdo/CDOState.html#CONFLICT"><code>CONFLICT</code></a> or <a href="../../../../../org/eclipse/emf/cdo/CDOState.html#INVALID_CONFLICT"><code>INVALID_CONFLICT</code></a>.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoConflict()">cdoConflict</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="cdoInvalid()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInvalid</h4>
+<pre>public final&nbsp;boolean&nbsp;cdoInvalid()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoInvalid()">CDOObject</a></code></strong></div>
+<div class="block">Returns <code>true</code> if this object is considered as locally invalid (TODO Simon: please briefly explain what
+ this state means) , <code>false</code> otherwise.
+ <p>
+ This method is a convenience method to determine whether the <a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoState()"><code>state</code></a> of this object is either
+ <a href="../../../../../org/eclipse/emf/cdo/CDOState.html#INVALID"><code>INVALID</code></a> or <a href="../../../../../org/eclipse/emf/cdo/CDOState.html#INVALID_CONFLICT"><code>INVALID_CONFLICT</code></a>.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoInvalid()">cdoInvalid</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="cdoReadLock()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoReadLock</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/cdo/CDOLock.html" title="interface in org.eclipse.emf.cdo">CDOLock</a>&nbsp;cdoReadLock()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoReadLock()">CDOObject</a></code></strong></div>
+<div class="block">Returns the read lock associated with this object.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoReadLock()">cdoReadLock</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>Never <code>null</code>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="cdoWriteLock()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoWriteLock</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/cdo/CDOLock.html" title="interface in org.eclipse.emf.cdo">CDOLock</a>&nbsp;cdoWriteLock()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoWriteLock()">CDOObject</a></code></strong></div>
+<div class="block">Returns the write lock associated with this object.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoWriteLock()">cdoWriteLock</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>Never <code>null</code>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="cdoWriteOption()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoWriteOption</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/cdo/CDOLock.html" title="interface in org.eclipse.emf.cdo">CDOLock</a>&nbsp;cdoWriteOption()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoWriteOption()">CDOObject</a></code></strong></div>
+<div class="block">Returns the write option associated with this object.
+ <p>
+ A write option is a lock that
+ <li>is exclusive; i.e. can only be held by one view</li>
+ <li>prevents other views from obtaining a write lock on the same object</li>
+ <li>does not prevent other views from obtaining a read lock on the same object</li>
+ <p>
+ It thus allows a view to ensure that it is the only that who will be able to obtain a write lock in the future,
+ without preventing read locks to be obtained by others at this moment.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoWriteOption()">cdoWriteOption</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.1</dd></dl>
+</li>
+</ul>
+<a name="cdoLockState()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoLockState</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/cdo/common/lock/CDOLockState.html" title="interface in org.eclipse.emf.cdo.common.lock">CDOLockState</a>&nbsp;cdoLockState()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoLockState()">CDOObject</a></code></strong></div>
+<div class="block">Returns the <a href="../../../../../org/eclipse/emf/cdo/common/lock/CDOLockState.html" title="interface in org.eclipse.emf.cdo.common.lock"><code>CDOLockState</code></a> of this object.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html#cdoLockState()">cdoLockState</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/cdo/CDOObject.html" title="interface in org.eclipse.emf.cdo">CDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.1</dd></dl>
+</li>
+</ul>
+<a name="cdoInternalSetState(org.eclipse.emf.cdo.CDOState)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInternalSetState</h4>
+<pre>public final&nbsp;<a href="../../../../../org/eclipse/emf/cdo/CDOState.html" title="enum in org.eclipse.emf.cdo">CDOState</a>&nbsp;cdoInternalSetState(<a href="../../../../../org/eclipse/emf/cdo/CDOState.html" title="enum in org.eclipse.emf.cdo">CDOState</a>&nbsp;state)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoInternalSetState(org.eclipse.emf.cdo.CDOState)">cdoInternalSetState</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="cdoInternalSetView(org.eclipse.emf.cdo.view.CDOView)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInternalSetView</h4>
+<pre>public final&nbsp;void&nbsp;cdoInternalSetView(<a href="../../../../../org/eclipse/emf/cdo/view/CDOView.html" title="interface in org.eclipse.emf.cdo.view">CDOView</a>&nbsp;view)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoInternalSetView(org.eclipse.emf.cdo.view.CDOView)">cdoInternalSetView</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="cdoInternalSetID(org.eclipse.emf.cdo.common.id.CDOID)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInternalSetID</h4>
+<pre>public final&nbsp;void&nbsp;cdoInternalSetID(<a href="../../../../../org/eclipse/emf/cdo/common/id/CDOID.html" title="interface in org.eclipse.emf.cdo.common.id">CDOID</a>&nbsp;id)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoInternalSetID(org.eclipse.emf.cdo.common.id.CDOID)">cdoInternalSetID</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="cdoInternalSetRevision(org.eclipse.emf.cdo.common.revision.CDORevision)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInternalSetRevision</h4>
+<pre>public final&nbsp;void&nbsp;cdoInternalSetRevision(<a href="../../../../../org/eclipse/emf/cdo/common/revision/CDORevision.html" title="interface in org.eclipse.emf.cdo.common.revision">CDORevision</a>&nbsp;revision)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoInternalSetRevision(org.eclipse.emf.cdo.common.revision.CDORevision)">cdoInternalSetRevision</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="cdoInternalSetResource(org.eclipse.emf.cdo.eresource.CDOResource)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInternalSetResource</h4>
+<pre>public final&nbsp;void&nbsp;cdoInternalSetResource(<a href="../../../../../org/eclipse/emf/cdo/eresource/CDOResource.html" title="interface in org.eclipse.emf.cdo.eresource">CDOResource</a>&nbsp;resource)</pre>
+</li>
+</ul>
+<a name="cdoInternalPreLoad()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInternalPreLoad</h4>
+<pre>public&nbsp;void&nbsp;cdoInternalPreLoad()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOLoadable.html#cdoInternalPreLoad()">cdoInternalPreLoad</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOLoadable.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOLoadable</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="cdoInternalPostLoad()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInternalPostLoad</h4>
+<pre>public final&nbsp;void&nbsp;cdoInternalPostLoad()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOLoadable.html#cdoInternalPostLoad()">cdoInternalPostLoad</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOLoadable.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOLoadable</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="cdoInternalPostInvalidate()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInternalPostInvalidate</h4>
+<pre>public final&nbsp;void&nbsp;cdoInternalPostInvalidate()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoInternalPostInvalidate()">cdoInternalPostInvalidate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="cdoInternalPostAttach()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInternalPostAttach</h4>
+<pre>public final&nbsp;void&nbsp;cdoInternalPostAttach()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoInternalPostAttach()">cdoInternalPostAttach</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="cdoInternalPostDetach(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInternalPostDetach</h4>
+<pre>public&nbsp;void&nbsp;cdoInternalPostDetach(boolean&nbsp;remote)</pre>
+<div class="block">It is really important for accessing the data to go through <a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#cdoStore()"><code>cdoStore()</code></a>. <a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eStore()"><code>eStore()</code></a> will redirect
+ you to the transient data.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoInternalPostDetach(boolean)">cdoInternalPostDetach</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="cdoInternalPostRollback()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInternalPostRollback</h4>
+<pre>public final&nbsp;void&nbsp;cdoInternalPostRollback()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoInternalPostRollback()">cdoInternalPostRollback</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>3.0</dd></dl>
+</li>
+</ul>
+<a name="cdoInternalPreCommit()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInternalPreCommit</h4>
+<pre>public final&nbsp;void&nbsp;cdoInternalPreCommit()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoInternalPreCommit()">cdoInternalPreCommit</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="cdoInternalInstance()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInternalInstance</h4>
+<pre>public final&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a>&nbsp;cdoInternalInstance()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoInternalInstance()">cdoInternalInstance</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="cdoInternalDynamicFeature(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cdoInternalDynamicFeature</h4>
+<pre><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public final&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;cdoInternalDynamicFeature(int&nbsp;dynamicFeatureID)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html#cdoInternalDynamicFeature(int)">cdoInternalDynamicFeature</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eStore()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eStore</h4>
+<pre>public final&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.EStore.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject.EStore</a>&nbsp;eStore()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eStore()" title="class or interface in org.eclipse.emf.ecore">eStore</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eStore()" title="class or interface in org.eclipse.emf.ecore.impl">eStore</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="eDynamicClass()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eDynamicClass</h4>
+<pre>protected final&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EClass.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EClass</a>&nbsp;eDynamicClass()</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eDynamicClass()" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicClass</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eClass()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eClass</h4>
+<pre>public final&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EClass.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EClass</a>&nbsp;eClass()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true#eClass()" title="class or interface in org.eclipse.emf.ecore">eClass</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EObject</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eClass()" title="class or interface in org.eclipse.emf.ecore.impl">eClass</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eSetClass(org.eclipse.emf.ecore.EClass)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eSetClass</h4>
+<pre>public&nbsp;void&nbsp;eSetClass(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EClass.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EClass</a>&nbsp;eClass)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eSetClass(org.eclipse.emf.ecore.EClass)" title="class or interface in org.eclipse.emf.ecore">eSetClass</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eSetClass(org.eclipse.emf.ecore.EClass)" title="class or interface in org.eclipse.emf.ecore.impl">eSetClass</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eDirectResource()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eDirectResource</h4>
+<pre>public&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/resource/Resource.Internal.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.resource">Resource.Internal</a>&nbsp;eDirectResource()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eDirectResource()" title="class or interface in org.eclipse.emf.ecore">eDirectResource</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eDirectResource()" title="class or interface in org.eclipse.emf.ecore.impl">eDirectResource</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="eInternalResource()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eInternalResource</h4>
+<pre>public final&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/resource/Resource.Internal.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.resource">Resource.Internal</a>&nbsp;eInternalResource()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eInternalResource()" title="class or interface in org.eclipse.emf.ecore">eInternalResource</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eInternalResource()" title="class or interface in org.eclipse.emf.ecore.impl">eInternalResource</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="dynamicGet(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dynamicGet</h4>
+<pre>public final&nbsp;<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;dynamicGet(int&nbsp;dynamicFeatureID)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.Internal.DynamicValueHolder.html?is-external=true#dynamicGet(int)" title="class or interface in org.eclipse.emf.ecore">dynamicGet</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.Internal.DynamicValueHolder.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature.Internal.DynamicValueHolder</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#dynamicGet(int)" title="class or interface in org.eclipse.emf.ecore.impl">dynamicGet</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="dynamicSet(int, java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dynamicSet</h4>
+<pre>public final&nbsp;void&nbsp;dynamicSet(int&nbsp;dynamicFeatureID,
+              <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.Internal.DynamicValueHolder.html?is-external=true#dynamicSet(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore">dynamicSet</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.Internal.DynamicValueHolder.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature.Internal.DynamicValueHolder</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#dynamicSet(int, java.lang.Object)" title="class or interface in org.eclipse.emf.ecore.impl">dynamicSet</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="dynamicUnset(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dynamicUnset</h4>
+<pre>public final&nbsp;void&nbsp;dynamicUnset(int&nbsp;dynamicFeatureID)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.Internal.DynamicValueHolder.html?is-external=true#dynamicUnset(int)" title="class or interface in org.eclipse.emf.ecore">dynamicUnset</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.Internal.DynamicValueHolder.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature.Internal.DynamicValueHolder</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#dynamicUnset(int)" title="class or interface in org.eclipse.emf.ecore.impl">dynamicUnset</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eDynamicIsSet(int, org.eclipse.emf.ecore.EStructuralFeature)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eDynamicIsSet</h4>
+<pre>protected final&nbsp;boolean&nbsp;eDynamicIsSet(int&nbsp;dynamicFeatureID,
+                    <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eFeature)</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eDynamicIsSet(int, org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicIsSet</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="eInternalContainer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eInternalContainer</h4>
+<pre>public final&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a>&nbsp;eInternalContainer()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eInternalContainer()" title="class or interface in org.eclipse.emf.ecore">eInternalContainer</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eInternalContainer()" title="class or interface in org.eclipse.emf.ecore.impl">eInternalContainer</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eContainerFeatureID()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eContainerFeatureID</h4>
+<pre>public final&nbsp;int&nbsp;eContainerFeatureID()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eContainerFeatureID()" title="class or interface in org.eclipse.emf.ecore">eContainerFeatureID</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eContainerFeatureID()" title="class or interface in org.eclipse.emf.ecore.impl">eContainerFeatureID</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject, int, org.eclipse.emf.common.notify.NotificationChain)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eBasicSetContainer</h4>
+<pre>public final&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/NotificationChain.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">NotificationChain</a>&nbsp;eBasicSetContainer(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a>&nbsp;newContainer,
+                                   int&nbsp;newContainerFeatureID,
+                                   <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/NotificationChain.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">NotificationChain</a>&nbsp;msgs)</pre>
+<div class="block">Code taken from <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject, int)" title="class or interface in org.eclipse.emf.ecore.impl"><code>BasicEObjectImpl.eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject, int)</code></a> and modified to detect whether the object is moved in the
+ same context. (E.g.: An object is moved from resA to resB. resA and resB belongs to the same CDORepositoryInfo.
+ Without this special handling, a detach and newObject will be generated for the object moved)</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject, int, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore">eBasicSetContainer</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject, int, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eBasicSetContainer</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="eSetResource(org.eclipse.emf.ecore.resource.Resource.Internal, org.eclipse.emf.common.notify.NotificationChain)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eSetResource</h4>
+<pre>public final&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/NotificationChain.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">NotificationChain</a>&nbsp;eSetResource(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/resource/Resource.Internal.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.resource">Resource.Internal</a>&nbsp;resource,
+                             <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/NotificationChain.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">NotificationChain</a>&nbsp;notifications)</pre>
+<div class="block">Code took from <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSetResource(org.eclipse.emf.ecore.resource.Resource.Internal, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl"><code>BasicEObjectImpl.eSetResource(org.eclipse.emf.ecore.resource.Resource.Internal, org.eclipse.emf.common.notify.NotificationChain)</code></a> and modify it to detect when object are moved in the same
+ context.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true#eSetResource(org.eclipse.emf.ecore.resource.Resource.Internal, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore">eSetResource</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eSetResource(org.eclipse.emf.ecore.resource.Resource.Internal, org.eclipse.emf.common.notify.NotificationChain)" title="class or interface in org.eclipse.emf.ecore.impl">eSetResource</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="eSetDirectResource(org.eclipse.emf.ecore.resource.Resource.Internal)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eSetDirectResource</h4>
+<pre>protected final&nbsp;void&nbsp;eSetDirectResource(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/resource/Resource.Internal.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.resource">Resource.Internal</a>&nbsp;resource)</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eSetDirectResource(org.eclipse.emf.ecore.resource.Resource.Internal)" title="class or interface in org.eclipse.emf.ecore.impl">eSetDirectResource</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eBasicSetContainer</h4>
+<pre>protected final&nbsp;void&nbsp;eBasicSetContainer(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/InternalEObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">InternalEObject</a>&nbsp;newEContainer,
+                      int&nbsp;newContainerFeatureID)</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicSetContainer(org.eclipse.emf.ecore.InternalEObject, int)" title="class or interface in org.eclipse.emf.ecore.impl">eBasicSetContainer</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eDynamicFeatureID(org.eclipse.emf.ecore.EStructuralFeature)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eDynamicFeatureID</h4>
+<pre>protected final&nbsp;int&nbsp;eDynamicFeatureID(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eStructuralFeature)</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicFeatureID(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicFeatureID</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eDynamicFeature(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eDynamicFeature</h4>
+<pre>protected final&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eDynamicFeature(int&nbsp;dynamicFeatureID)</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eDynamicFeature(int)" title="class or interface in org.eclipse.emf.ecore.impl">eDynamicFeature</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eSettings()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eSettings</h4>
+<pre>protected final&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.Internal.DynamicValueHolder.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature.Internal.DynamicValueHolder</a>&nbsp;eSettings()</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eSettings()" title="class or interface in org.eclipse.emf.ecore.impl">eSettings</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eHasSettings()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eHasSettings</h4>
+<pre>protected final&nbsp;boolean&nbsp;eHasSettings()</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eHasSettings()" title="class or interface in org.eclipse.emf.ecore.impl">eHasSettings</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eBasicSettings()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eBasicSettings</h4>
+<pre>protected final&nbsp;<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;eBasicSettings()</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicSettings()" title="class or interface in org.eclipse.emf.ecore.impl">eBasicSettings</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eBasicSetSettings(java.lang.Object[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eBasicSetSettings</h4>
+<pre>protected final&nbsp;void&nbsp;eBasicSetSettings(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;settings)</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true#eBasicSetSettings(java.lang.Object[])" title="class or interface in org.eclipse.emf.ecore.impl">eBasicSetSettings</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eIsCaching()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eIsCaching</h4>
+<pre>protected final&nbsp;boolean&nbsp;eIsCaching()</pre>
+<div class="block">Don't cache non-transient features in this CDOObject's <a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#eSettings()"><code>eSettings()</code></a>.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eIsCaching()" title="class or interface in org.eclipse.emf.ecore.impl">eIsCaching</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eContainerAdapterArray()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eContainerAdapterArray</h4>
+<pre>protected final&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Adapter.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">Adapter</a>[]&nbsp;eContainerAdapterArray()</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#eContainerAdapterArray()" title="class or interface in org.eclipse.emf.ecore.impl">eContainerAdapterArray</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="eBasicAdapterListeners()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eBasicAdapterListeners</h4>
+<pre>protected final&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.EObservableAdapterList.Listener.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">BasicNotifierImpl.EObservableAdapterList.Listener</a>[]&nbsp;eBasicAdapterListeners()</pre>
+<div class="block">This method is not called by the MinimalEStoreEObjectImpl in CDO's ecore.minimal (retrofitting) fragment
+ but it is called by the normal MinimalEObjectImpl as of EMF 2.9.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eBasicAdapterListeners()" title="class or interface in org.eclipse.emf.ecore.impl">eBasicAdapterListeners</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="eBasicSetAdapterListeners(org.eclipse.emf.common.notify.impl.BasicNotifierImpl.EObservableAdapterList.Listener[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eBasicSetAdapterListeners</h4>
+<pre>protected final&nbsp;void&nbsp;eBasicSetAdapterListeners(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/impl/BasicNotifierImpl.EObservableAdapterList.Listener.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify.impl">BasicNotifierImpl.EObservableAdapterList.Listener</a>[]&nbsp;eAdapterListeners)</pre>
+<div class="block">This method is not called by the MinimalEStoreEObjectImpl in CDO's ecore.minimal (retrofitting) fragment
+ but it is called by the normal MinimalEObjectImpl as of EMF 2.9.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eBasicSetAdapterListeners(org.eclipse.emf.common.notify.impl.BasicNotifierImpl.EObservableAdapterList.Listener[])" title="class or interface in org.eclipse.emf.ecore.impl">eBasicSetAdapterListeners</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="eAdapterAdded(org.eclipse.emf.common.notify.Adapter)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eAdapterAdded</h4>
+<pre>protected final&nbsp;void&nbsp;eAdapterAdded(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Adapter.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">Adapter</a>&nbsp;adapter)</pre>
+<div class="block">This method must not be private because the MinimalEStoreEObjectImpl in CDO's ecore.minimal (retrofitting) fragment
+ introduces it as a protected method and calls it.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eAdapterAdded(org.eclipse.emf.common.notify.Adapter)" title="class or interface in org.eclipse.emf.ecore.impl">eAdapterAdded</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="eAdapterRemoved(org.eclipse.emf.common.notify.Adapter)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eAdapterRemoved</h4>
+<pre>protected final&nbsp;void&nbsp;eAdapterRemoved(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/notify/Adapter.html?is-external=true" title="class or interface in org.eclipse.emf.common.notify">Adapter</a>&nbsp;adapter)</pre>
+<div class="block">This method must not be private because the MinimalEStoreEObjectImpl in CDO's ecore.minimal (retrofitting) fragment
+ introduces it as a protected method and calls it.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#eAdapterRemoved(org.eclipse.emf.common.notify.Adapter)" title="class or interface in org.eclipse.emf.ecore.impl">eAdapterRemoved</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></code></dd>
+<dt><span class="strong">Since:</span></dt>
+  <dd>4.2</dd></dl>
+</li>
+</ul>
+<a name="hashCode()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hashCode</h4>
+<pre>public final&nbsp;int&nbsp;hashCode()</pre>
+<div class="block">Specializing the behaviour of <a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#hashCode()"><code>hashCode()</code></a> is not permitted as per <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore"><code>EObject</code></a> specification.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="equals(java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>equals</h4>
+<pre>public final&nbsp;boolean&nbsp;equals(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;obj)</pre>
+<div class="block">Specializing the behaviour of <a href="../../../../../org/eclipse/emf/internal/cdo/CDOObjectImpl.html#equals(java.lang.Object)"><code>equals(Object)</code></a> is not permitted as per <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html?is-external=true" title="class or interface in org.eclipse.emf.ecore"><code>EObject</code></a> specification.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="toString()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true#toString()" title="class or interface in org.eclipse.emf.ecore.impl">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/BasicEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">BasicEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="createFeatureMap(org.eclipse.emf.ecore.EStructuralFeature)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createFeatureMap</h4>
+<pre>protected final&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/util/FeatureMap.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.util">FeatureMap</a>&nbsp;createFeatureMap(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eStructuralFeature)</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#createFeatureMap(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">createFeatureMap</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="createMap(org.eclipse.emf.ecore.EStructuralFeature)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createMap</h4>
+<pre>protected final&nbsp;org.eclipse.emf.internal.cdo.CDOObjectImpl.CDOStoreEcoreEMap&nbsp;createMap(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eStructuralFeature)</pre>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>4.1</dd></dl>
+</li>
+</ul>
+<a name="createUnorderedList(org.eclipse.emf.ecore.EStructuralFeature)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createUnorderedList</h4>
+<pre>protected final&nbsp;org.eclipse.emf.internal.cdo.CDOObjectImpl.CDOStoreUnorderedEList&lt;<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;createUnorderedList(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eStructuralFeature)</pre>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>4.1</dd></dl>
+</li>
+</ul>
+<a name="createList(org.eclipse.emf.ecore.EStructuralFeature)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createList</h4>
+<pre>protected&nbsp;<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/EList.html?is-external=true" title="class or interface in org.eclipse.emf.common.util">EList</a>&lt;?&gt;&nbsp;createList(<a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eStructuralFeature)</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true#createList(org.eclipse.emf.ecore.EStructuralFeature)" title="class or interface in org.eclipse.emf.ecore.impl">createList</a></code>&nbsp;in class&nbsp;<code><a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/impl/MinimalEStoreEObjectImpl.html?is-external=true" title="class or interface in org.eclipse.emf.ecore.impl">MinimalEStoreEObjectImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="instanceToRevisionFeature(org.eclipse.emf.spi.cdo.InternalCDOView, org.eclipse.emf.spi.cdo.InternalCDOObject, org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>instanceToRevisionFeature</h4>
+<pre>public static&nbsp;void&nbsp;instanceToRevisionFeature(<a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOView.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOView</a>&nbsp;view,
+                             <a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a>&nbsp;object,
+                             <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;feature,
+                             <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;setting)</pre>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>3.0</dd></dl>
+</li>
+</ul>
+<a name="revisionToInstanceFeature(org.eclipse.emf.spi.cdo.InternalCDOObject, org.eclipse.emf.cdo.spi.common.revision.InternalCDORevision, org.eclipse.emf.ecore.EStructuralFeature)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>revisionToInstanceFeature</h4>
+<pre>public static&nbsp;void&nbsp;revisionToInstanceFeature(<a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a>&nbsp;instance,
+                             <a href="../../../../../org/eclipse/emf/cdo/spi/common/revision/InternalCDORevision.html" title="interface in org.eclipse.emf.cdo.spi.common.revision">InternalCDORevision</a>&nbsp;revision,
+                             <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EStructuralFeature.html?is-external=true" title="class or interface in org.eclipse.emf.ecore">EStructuralFeature</a>&nbsp;eFeature)</pre>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd></dl>
+</li>
+</ul>
+<a name="createLock(org.eclipse.emf.spi.cdo.InternalCDOObject, org.eclipse.net4j.util.concurrent.IRWLockManager.LockType)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createLock</h4>
+<pre>public static&nbsp;<a href="../../../../../org/eclipse/emf/cdo/CDOLock.html" title="interface in org.eclipse.emf.cdo">CDOLock</a>&nbsp;createLock(<a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a>&nbsp;object,
+                 <a href="../../../../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/concurrent/IRWLockManager.LockType.html?is-external=true" title="class or interface in org.eclipse.net4j.util.concurrent">IRWLockManager.LockType</a>&nbsp;type)</pre>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>4.1</dd></dl>
+</li>
+</ul>
+<a name="getLockState(org.eclipse.emf.spi.cdo.InternalCDOObject)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getLockState</h4>
+<pre>public static&nbsp;<a href="../../../../../org/eclipse/emf/cdo/common/lock/CDOLockState.html" title="interface in org.eclipse.emf.cdo.common.lock">CDOLockState</a>&nbsp;getLockState(<a href="../../../../../org/eclipse/emf/spi/cdo/InternalCDOObject.html" title="interface in org.eclipse.emf.spi.cdo">InternalCDOObject</a>&nbsp;object)</pre>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>4.1</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/CDOObjectImpl.html">Use</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li>Next Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/eclipse/emf/internal/cdo/CDOObjectImpl.html" target="_top">Frames</a></li>
+<li><a href="CDOObjectImpl.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_org.eclipse.emf.ecore.impl.MinimalEObjectImpl">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.eclipse.emf.ecore.impl.BasicEObjectImpl">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small><i>Copyright (c) 2011, 2012 Eike Stepper (Berlin, Germany) and others.</i></small></p>
+</body>
+</html>

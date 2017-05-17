@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+  	<extensionContent id="cdo-introExtension" style="css/cdo.css" name="CDO Model Repository" path="overview/@">
+		<group style-id="content-group" id="cdo-introLink-group">
+       		<link label="CDO Model Repository" url="http://org.eclipse.ui.intro/showHelpTopic?id=/org.eclipse.emf.cdo.doc/javadoc/overview-summary.html" id="cdo-introLink" style-id="content-link">
+          		<text>Learn about distributed shared EMF models</text>
+       		</link>
+       	</group>
+  	</extensionContent>
+</introContent>

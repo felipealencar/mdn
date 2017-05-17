@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+
+<HEAD>
+<TITLE>Understanding the Architecture of a Client Application (CDO Model Repository Documentation)</TITLE>
+
+<LINK REL="STYLESHEET" HREF="../../book.css" CHARSET="ISO-8859-1" TYPE="text/css">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Understanding the Architecture of a Client Application (CDO Model Repository Documentation)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<!-- <div class="help_breadcrumbs"><a href="../../Overview.html" title="CDO Model Repository Documentation">CDO Model Repository Documentation</a> > <a href="../index.html" title="Category in CDO Model Repository Documentation">Programmer's Guide</a> > <a href="index.html" title="Category in CDO Model Repository Documentation">Developing Client Applications</a></div> -->
+
+<table border="0">
+	<tr>
+		<td width="100%"><h1>Understanding the Architecture of a Client Application</h1></td>
+		<td align="right" valign="middle" nowrap><a href="index.html" title="Backward to Developing Client Applications"><img src="../../../images/backward.png" border="0"></a>&nbsp;<a href="ViewProviders.html" title="Forward to View Providers"><img src="../../../images/forward.png" border="0"></a></td>
+	</tr>
+</table>
+<p class="author">Author: Eike Stepper</p>
+<p>
+ The architecture of a CDO application is characterized by its mandatory dependency on EMF, the Eclipse Modeling
+ Framework. Most of the time an application interacts with the object graph of the model through standard EMF APIs
+ because CDO model graph objects are <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EObject.html" title="Interface in org.eclipse.emf.ecore"><code>EObjects</code></a>. While CDO's basic functionality integrates nicely and
+ transparently with EMF's extension mechansims some of the more advanced functions may require to add direct
+ dependendcies on CDO to your application code.
+ <p>
+ The following diagram illustrates the major building blocks of a CDO application: <p align="center"><img src="application-architecture.png"></p>
+
+
+<h2><a name="OSGi"></a>1&nbsp;&nbsp;OSGi</h2>
+<p>
+ All components of CDO are implemented as <a href="http://www.osgi.org">OSGi</a> bundles. The core components of
+ both clients and servers do not require OSGi to actually run to be functional, they can perfectly be operated
+ stand-alone. If OSGi is running the setup and configuration of some CDO facilities is a little simpler than in
+ stand-alone mode because the needed <a href="../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/factory/IFactory.html" title="Interface in org.eclipse.net4j.util.factory"><code>factories</code></a> get automatically registered with the central
+ <a href="../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/container/IPluginContainer.html" title="Interface in org.eclipse.net4j.util.container"><code>wiring container</code></a>.
+ <p>
+ CDO utilizes an <a href="../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/om/OMPlatform.html" title="Interface in org.eclipse.net4j.util.om"><code>operations and maintenance</code></a> framework to abstract common platform services such
+ as <a href="../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/om/log/OMLogger.html" title="Interface in org.eclipse.net4j.util.om.log"><code>logging</code></a>, <a href="../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/om/trace/OMTracer.html" title="Interface in org.eclipse.net4j.util.om.trace"><code>tracing</code></a>, <a href="../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/om/monitor/OMMonitor.html" title="Interface in org.eclipse.net4j.util.om.monitor"><code>monitoring</code></a> and <a href="../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/om/pref/OMPreference.html" title="Interface in org.eclipse.net4j.util.om.pref"><code>configuration</code></a>. Without the need to depend on additional external libraries these services integrate seamlessly
+ with OSGi, if available at runtime, or emulate similar functionality if running stand-alone.
+
+<h2><a name="EMF"></a>2&nbsp;&nbsp;EMF</h2>
+<p>
+ The <a href="http://www.eclipse.org/modeling/emf">Eclipse Modeling Framework</a> is a modeling framework and code
+ generation facility for building tools and other applications based on a structured data model. From a model
+ specification described in XMI, EMF provides tools and runtime support to produce a set of Java classes for the model,
+ along with a set of adapter classes that enable viewing and command-based editing of the model, and a basic editor.
+
+<h2><a name="Client"></a>3&nbsp;&nbsp;CDO Client</h2>
+<p>
+ The CDO client enables an application to open one or more <a href="../../../javadoc/org/eclipse/emf/cdo/session/CDOSession.html" title="Interface in org.eclipse.emf.cdo.session"><code>sessions</code></a>. Each session represents
+ a connection to a <a href="../../../javadoc/org/eclipse/emf/cdo/server/IRepository.html" title="Interface in org.eclipse.emf.cdo.server"><code>repository</code></a> and provides a broad API to interact with it. A session does <b>not</b>
+ provide direct access to model <i>instances</i>; <a href="../../../javadoc/org/eclipse/emf/cdo/view/CDOView.html" title="Interface in org.eclipse.emf.cdo.view"><code>views</code></a> or <a href="../../../javadoc/org/eclipse/emf/cdo/transaction/CDOTransaction.html" title="Interface in org.eclipse.emf.cdo.transaction"><code>transactions</code></a> are needed
+ to navigate or modify the model instance graph.
+ <p>
+ A session consists of several generic (network and storage independent) <b>components</b>, such as:
+ <p>
+ <ul>
+ <li>a <a href="../../../javadoc/org/eclipse/emf/cdo/common/revision/CDORevision.html" title="Interface in org.eclipse.emf.cdo.common.revision"><code>revision</code></a> <a href="../../../javadoc/org/eclipse/emf/cdo/common/revision/CDORevisionManager.html" title="Interface in org.eclipse.emf.cdo.common.revision"><code>manager</code></a> and <a href="../../../javadoc/org/eclipse/emf/cdo/common/revision/CDORevisionCache.html" title="Interface in org.eclipse.emf.cdo.common.revision"><code>cache</code></a>,
+ <li>a <a href="../../../javadoc/org/eclipse/emf/cdo/common/branch/CDOBranch.html" title="Interface in org.eclipse.emf.cdo.common.branch"><code>branch</code></a> <a href="../../../javadoc/org/eclipse/emf/cdo/common/branch/CDOBranchManager.html" title="Interface in org.eclipse.emf.cdo.common.branch"><code>manager</code></a>,
+ <li>a <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/EPackage.html" title="Interface in org.eclipse.emf.ecore"><code>package</code></a> <a href="../../../javadoc/org/eclipse/emf/cdo/common/model/CDOPackageRegistry.html" title="Interface in org.eclipse.emf.cdo.common.model"><code>registry</code></a>,
+ <li>a <a href="../../../javadoc/org/eclipse/emf/cdo/common/commit/CDOCommitInfo.html" title="Interface in org.eclipse.emf.cdo.common.commit"><code>commit info</code></a> <a href="../../../javadoc/org/eclipse/emf/cdo/common/commit/CDOCommitInfoManager.html" title="Interface in org.eclipse.emf.cdo.common.commit"><code>manager</code></a>,
+ </ul>
+ <p>
+ All <b>communication aspects</b> (the sending/receiving of signals to/from a network system) are fully abstracted
+ through the service provider interface (SPI) <a href="../../../javadoc/org/eclipse/emf/spi/cdo/CDOSessionProtocol.html" title="Interface in org.eclipse.emf.spi.cdo"><code>CDOSessionProtocol</code></a>. Concrete implementations are fully separated
+ and can be plugged into the core as described in <a href="Architecture.html#Protocol" title="Chapter in CDO Model Repository Documentation">Protocol</a>.<p><b>See Also:</b></p>
+<ul>
+	<li><a href="Architecture.html#EMF" title="Chapter in CDO Model Repository Documentation">EMF</a></li>
+	<li><a href="Architecture.html#Models" title="Chapter in CDO Model Repository Documentation">Models</a></li>
+</ul>
+
+
+<h2><a name="Net4j"></a>4&nbsp;&nbsp;Net4j Core</h2>
+<p>
+ The <i>Net4j Signalling Platform</i> is an extensible client/server communications framework. Net4j eases the
+ development of fast and maintainable application <a href="../../../../org.eclipse.net4j.doc/javadoc/org/eclipse/net4j/signal/ISignalProtocol.html" title="Interface in org.eclipse.net4j.signal"><code>protocols</code></a> that are independent of the
+ physical <a href="../../../../org.eclipse.net4j.doc/javadoc/org/eclipse/net4j/connector/IConnector.html" title="Interface in org.eclipse.net4j.connector"><code>transport</code></a> medium. Transport protocols are pluggable and Net4j ships with support for
+ <a href="../../../../org.eclipse.net4j.doc/javadoc/org/eclipse/net4j/tcp/ITCPConnector.html" title="Interface in org.eclipse.net4j.tcp"><code>TCP</code></a>, <a href="../../../../org.eclipse.net4j.doc/javadoc/org/eclipse/net4j/tcp/ssl/SSLUtil.html" title="Class in org.eclipse.net4j.tcp.ssl"><code>SSL</code></a>, <a href="../../../../org.eclipse.net4j.doc/javadoc/org/eclipse/net4j/http/common/IHTTPConnector.html" title="Interface in org.eclipse.net4j.http.common"><code>HTTP</code></a> and <a href="../../../../org.eclipse.net4j.doc/javadoc/org/eclipse/net4j/jvm/IJVMConnector.html" title="Interface in org.eclipse.net4j.jvm"><code>JVM</code></a>
+ (in-process) transport. The core of Net4j is a fast, asynchronous and non-blocking <a href="../../../../org.eclipse.net4j.doc/javadoc/org/eclipse/net4j/buffer/IBuffer.html" title="Interface in org.eclipse.net4j.buffer"><code>buffer</code></a>
+ multiplexing kernel, based on <a href="Architecture.html#OSGi" title="Chapter in CDO Model Repository Documentation">OSGi</a> but also executable stand-alone.<p><b>See Also:</b></p>
+<ul>
+	<li><a href="Architecture.html#Transport" title="Chapter in CDO Model Repository Documentation">Transport</a></li>
+	<li><a href="Architecture.html#Protocol" title="Chapter in CDO Model Repository Documentation">Protocol</a></li>
+</ul>
+
+
+<h2><a name="Models"></a>5&nbsp;&nbsp;Models</h2>
+<p>
+ The models, usually in the form of interfaces that are generated by <a href="Architecture.html#EMF" title="Chapter in CDO Model Repository Documentation">EMF</a>, represent the business knowledge
+ in an application. They define the structure (and, mostly irrelevant for CDO, the behaviour) of the business entities
+ and they're used by the generic <a href="Architecture.html#Client" title="Chapter in CDO Model Repository Documentation">CDO client</a> to manage, e.g., load, commit, query, the business data.
+ <p>
+ CDO can transparently support <i>scalable</i> models such that arbitrary, single <a href="../../../javadoc/org/eclipse/emf/cdo/CDOObject.html" title="Interface in org.eclipse.emf.cdo"><code>objects</code></a> are loaded
+ on demand and automatically unloaded (garbage collected) when they're no longer needed. For these sophisticated
+ features to work properly and efficiently the models have to be re-generated with slightly modified GenModel properties.
+ The CDO SDK comes with a convenient migrator tool for existing GenModels and an importer tool for new GenModels.<p><b>See Also:</b></p>
+<ul>
+	<li><a href="Architecture.html#EMF" title="Chapter in CDO Model Repository Documentation">EMF</a></li>
+</ul>
+
+
+<h2><a name="Protocol"></a>6&nbsp;&nbsp;Protocol</h2>
+<p>
+ A concrete communications adapter, a <a href="../../../javadoc/org/eclipse/emf/spi/cdo/CDOSessionProtocol.html" title="Interface in org.eclipse.emf.spi.cdo"><code>CDOSessionProtocol</code></a> implementation that operates inside the
+ <a href="Architecture.html#Client" title="Chapter in CDO Model Repository Documentation">CDO client</a>. The only session protocol implementation that currently ships with CDO is based on
+ <a href="Architecture.html#Net4j" title="Chapter in CDO Model Repository Documentation">Net4j Core</a>.
+
+<h2><a name="Transport"></a>7&nbsp;&nbsp;Transport</h2>
+<p>
+ A concrete transport adapter, an <a href="../../../../org.eclipse.net4j.doc/javadoc/org/eclipse/net4j/connector/IConnector.html" title="Interface in org.eclipse.net4j.connector"><code>IConnector</code></a> implementation that operates on top of the
+ <a href="Architecture.html#Net4j" title="Chapter in CDO Model Repository Documentation">Net4j core</a>. Net4j currently ships with <a href="../../../../org.eclipse.net4j.doc/javadoc/org/eclipse/net4j/jvm/IJVMConnector.html" title="Interface in org.eclipse.net4j.jvm"><code>IJVMConnector</code></a>, <a href="../../../../org.eclipse.net4j.doc/javadoc/org/eclipse/net4j/tcp/ITCPConnector.html" title="Interface in org.eclipse.net4j.tcp"><code>ITCPConnector</code></a>
+ (optionally with SSL support) and <a href="../../../../org.eclipse.net4j.doc/javadoc/org/eclipse/net4j/http/common/IHTTPConnector.html" title="Interface in org.eclipse.net4j.http.common"><code>IHTTPConnector</code></a>.
+ <p>
+ The <a href="../server/Architecture.html" title="Article in CDO Model Repository Documentation">server</a> must be deployed and configured with
+ the matching <a href="../server/Architecture.html#Transport" title="Chapter in CDO Model Repository Documentation">transport</a>.
+
+<p align="right">
+<a href="index.html" title="Backward to Developing Client Applications"><img src="../../../images/backward.png" border="0"></a>&nbsp;<a href="ViewProviders.html" title="Forward to View Providers"><img src="../../../images/forward.png" border="0"></a></p>
+<HR>
+<i>Copyright (c) 2011, 2012 Eike Stepper (Berlin, Germany) and others.</i>
+</BODY>
+</HTML>

@@ -91,104 +91,101 @@ import org.eclipse.ui.PartInitException;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MdnModelWizard extends Wizard implements INewWizard
-{
-  /**
+public class MdnModelWizard extends Wizard implements INewWizard {
+	/**
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static final List<String> FILE_EXTENSIONS =
-    Collections.unmodifiableList(Arrays.asList(MdnEditorPlugin.INSTANCE.getString("_UI_MdnEditorFilenameExtensions").split("\\s*,\\s*")));
+	public static final List<String> FILE_EXTENSIONS =
+		Collections.unmodifiableList(Arrays.asList(MdnEditorPlugin.INSTANCE.getString("_UI_MdnEditorFilenameExtensions").split("\\s*,\\s*")));
 
-  /**
+	/**
 	 * A formatted list of supported file extensions, suitable for display.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static final String FORMATTED_FILE_EXTENSIONS =
-    MdnEditorPlugin.INSTANCE.getString("_UI_MdnEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+	public static final String FORMATTED_FILE_EXTENSIONS =
+		MdnEditorPlugin.INSTANCE.getString("_UI_MdnEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
-  /**
+	/**
 	 * This caches an instance of the model package.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected MdnPackage mdnPackage = MdnPackage.eINSTANCE;
+	protected MdnPackage mdnPackage = MdnPackage.eINSTANCE;
 
-  /**
+	/**
 	 * This caches an instance of the model factory.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected MdnFactory mdnFactory = mdnPackage.getMdnFactory();
+	protected MdnFactory mdnFactory = mdnPackage.getMdnFactory();
 
-  /**
+	/**
 	 * This is the file creation page.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected MdnModelWizardNewFileCreationPage newFileCreationPage;
+	protected MdnModelWizardNewFileCreationPage newFileCreationPage;
 
-  /**
+	/**
 	 * This is the initial object creation page.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected MdnModelWizardInitialObjectCreationPage initialObjectCreationPage;
+	protected MdnModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
-  /**
+	/**
 	 * Remember the selection during initialization for populating the default container.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected IStructuredSelection selection;
+	protected IStructuredSelection selection;
 
-  /**
+	/**
 	 * Remember the workbench during initialization.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected IWorkbench workbench;
+	protected IWorkbench workbench;
 
-  /**
+	/**
 	 * Caches the names of the types that can be created as the root object.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected List<String> initialObjectNames;
+	protected List<String> initialObjectNames;
 
-  /**
+	/**
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void init(IWorkbench workbench, IStructuredSelection selection)
-  {
+	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(MdnEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
 		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(MdnEditorPlugin.INSTANCE.getImage("full/wizban/NewMdn")));
 	}
 
-  /**
+	/**
 	 * Returns the names of the types that can be created as the root object.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected Collection<String> getInitialObjectNames()
-  {
+	protected Collection<String> getInitialObjectNames() {
 		if (initialObjectNames == null) {
 			initialObjectNames = new ArrayList<String>();
 			for (EClassifier eClassifier : mdnPackage.getEClassifiers()) {
@@ -204,28 +201,26 @@ public class MdnModelWizard extends Wizard implements INewWizard
 		return initialObjectNames;
 	}
 
-  /**
+	/**
 	 * Create a new model.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected EObject createInitialModel()
-  {
+	protected EObject createInitialModel() {
 		EClass eClass = (EClass)mdnPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
 		EObject rootObject = mdnFactory.create(eClass);
 		return rootObject;
 	}
 
-  /**
+	/**
 	 * Do the work after everything is specified.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean performFinish()
-  {
+	@Override
+	public boolean performFinish() {
 		try {
 			// Remember the file.
 			//
@@ -309,34 +304,31 @@ public class MdnModelWizard extends Wizard implements INewWizard
 		}
 	}
 
-  /**
+	/**
 	 * This is the one page of the wizard.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public class MdnModelWizardNewFileCreationPage extends WizardNewFileCreationPage
-  {
-    /**
+	public class MdnModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+		/**
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-    public MdnModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection)
-    {
+		public MdnModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
 			super(pageId, selection);
 		}
 
-    /**
+		/**
 		 * The framework calls this to see if the file is correct.
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-    @Override
-    protected boolean validatePage()
-    {
+		@Override
+		protected boolean validatePage() {
 			if (super.validatePage()) {
 				String extension = new Path(getFileName()).getFileExtension();
 				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
@@ -349,64 +341,60 @@ public class MdnModelWizard extends Wizard implements INewWizard
 			return false;
 		}
 
-    /**
+		/**
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-    public IFile getModelFile()
-    {
+		public IFile getModelFile() {
 			return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
 		}
-  }
+	}
 
-  /**
+	/**
 	 * This is the page where the type of object to create is selected.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public class MdnModelWizardInitialObjectCreationPage extends WizardPage
-  {
-    /**
+	public class MdnModelWizardInitialObjectCreationPage extends WizardPage {
+		/**
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-    protected Combo initialObjectField;
+		protected Combo initialObjectField;
 
-    /**
+		/**
 		 * @generated
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 */
-    protected List<String> encodings;
+		protected List<String> encodings;
 
-    /**
+		/**
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-    protected Combo encodingField;
+		protected Combo encodingField;
 
-    /**
+		/**
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-    public MdnModelWizardInitialObjectCreationPage(String pageId)
-    {
+		public MdnModelWizardInitialObjectCreationPage(String pageId) {
 			super(pageId);
 		}
 
-    /**
+		/**
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-    public void createControl(Composite parent)
-    {
+		public void createControl(Composite parent) {
 			Composite composite = new Composite(parent, SWT.NONE); {
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
@@ -473,36 +461,34 @@ public class MdnModelWizard extends Wizard implements INewWizard
 			setControl(composite);
 		}
 
-    /**
+		/**
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-    protected ModifyListener validator =
-      new ModifyListener() {
+		protected ModifyListener validator =
+			new ModifyListener() {
 				public void modifyText(ModifyEvent e) {
 					setPageComplete(validatePage());
 				}
 			};
 
-    /**
+		/**
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-    protected boolean validatePage()
-    {
+		protected boolean validatePage() {
 			return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
 		}
 
-    /**
+		/**
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-    @Override
-    public void setVisible(boolean visible)
-    {
+		@Override
+		public void setVisible(boolean visible) {
 			super.setVisible(visible);
 			if (visible) {
 				if (initialObjectField.getItemCount() == 1) {
@@ -516,13 +502,12 @@ public class MdnModelWizard extends Wizard implements INewWizard
 			}
 		}
 
-    /**
+		/**
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-    public String getInitialObjectName()
-    {
+		public String getInitialObjectName() {
 			String label = initialObjectField.getText();
 
 			for (String name : getInitialObjectNames()) {
@@ -533,24 +518,22 @@ public class MdnModelWizard extends Wizard implements INewWizard
 			return null;
 		}
 
-    /**
+		/**
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-    public String getEncoding()
-    {
+		public String getEncoding() {
 			return encodingField.getText();
 		}
 
-    /**
+		/**
 		 * Returns the label for the specified type name.
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-    protected String getLabel(String typeName)
-    {
+		protected String getLabel(String typeName) {
 			try {
 				return MdnEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
 			}
@@ -560,13 +543,12 @@ public class MdnModelWizard extends Wizard implements INewWizard
 			return typeName;
 		}
 
-    /**
+		/**
 		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-    protected Collection<String> getEncodings()
-    {
+		protected Collection<String> getEncodings() {
 			if (encodings == null) {
 				encodings = new ArrayList<String>();
 				for (StringTokenizer stringTokenizer = new StringTokenizer(MdnEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
@@ -575,17 +557,16 @@ public class MdnModelWizard extends Wizard implements INewWizard
 			}
 			return encodings;
 		}
-  }
+	}
 
-  /**
+	/**
 	 * The framework calls this to create the contents of the wizard.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-  public void addPages()
-  {
+		@Override
+	public void addPages() {
 		// Create a page, set the title, and the initial model file name.
 		//
 		newFileCreationPage = new MdnModelWizardNewFileCreationPage("Whatever", selection);
@@ -633,14 +614,13 @@ public class MdnModelWizard extends Wizard implements INewWizard
 		addPage(initialObjectCreationPage);
 	}
 
-  /**
+	/**
 	 * Get the file from the page.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public IFile getModelFile()
-  {
+	public IFile getModelFile() {
 		return newFileCreationPage.getModelFile();
 	}
 

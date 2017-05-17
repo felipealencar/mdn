@@ -1,0 +1,791 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="de">
+<head>
+
+<title>CDOQueryQueue (CDO Model Repository Documentation)</title>
+<meta name="date" content="">
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="CDOQueryQueue (CDO Model Repository Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/CDOQueryQueue.html">Use</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryInfo.html" title="interface in org.eclipse.emf.cdo.common.util"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.BlockingCloseableIteratorImpl.html" title="class in org.eclipse.emf.cdo.common.util"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" target="_top">Frames</a></li>
+<li><a href="CDOQueryQueue.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.eclipse.emf.cdo.common.util</div>
+<h2 title="Class CDOQueryQueue" class="title">Class CDOQueryQueue&lt;E&gt;</h2>
+</div>
+<div class="contentContainer">
+<map id="APIVIZ" name="APIVIZ">
+<area shape="rect" id="node1" title="&#171;interface&#187; Queue (java.util)" alt="" coords="5,6,91,61"/>
+<area shape="rect" id="node2" title="&#171;interface&#187; Closeable (org.eclipse.net4j.util.collection)" alt="" coords="120,6,325,61"/>
+<area shape="rect" id="node3" href="CDOQueryQueue.html" title="CDOQueryQueue" alt="" coords="73,101,196,126"/>
+</map>
+<div id="apivizContainer" style="text-align: center;"><img src="CDOQueryQueue.png" usemap="#APIVIZ" border="0"></div>
+<ul class="inheritance">
+<li><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.eclipse.emf.cdo.common.util.CDOQueryQueue&lt;E&gt;</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;E&gt;, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;E&gt;, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true" title="class or interface in java.util">Queue</a>&lt;E&gt;, <a href="../../../../../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/collection/Closeable.html?is-external=true" title="class or interface in org.eclipse.net4j.util.collection">Closeable</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">CDOQueryQueue&lt;E&gt;</span>
+extends <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true" title="class or interface in java.util">Queue</a>&lt;E&gt;, <a href="../../../../../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/collection/Closeable.html?is-external=true" title="class or interface in org.eclipse.net4j.util.collection">Closeable</a></pre>
+<div class="block">The <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true" title="class or interface in java.util"><code>queue</code></a> that represents the result of a CDOQuery.</div>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>2.0</dd>
+<dt><span class="strong">No Implement</span></dt>
+  <dd>This interface is not intended to be implemented by clients.</dd>
+<dt><span class="strong">No Extend</span></dt>
+  <dd>This interface is not intended to be extended by clients.</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.BlockingCloseableIteratorImpl.html" title="class in org.eclipse.emf.cdo.common.util">CDOQueryQueue.BlockingCloseableIteratorImpl</a></strong></code>
+<div class="block">A blocking iterator that takes elements from a <a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="class in org.eclipse.emf.cdo.common.util"><code>CDOQueryQueue</code></a>.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#CDOQueryQueue()">CDOQueryQueue</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#add(E)">add</a></strong>(<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&nbsp;e)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#addAll(java.util.Collection)">addAll</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;? extends <a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;&nbsp;c)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#clear()">clear</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#close()">close</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;?&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#comparator()">comparator</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#contains(java.lang.Object)">contains</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#containsAll(java.util.Collection)">containsAll</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;?&gt;&nbsp;c)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#element()">element</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#equals(java.lang.Object)">equals</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;obj)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#hashCode()">hashCode</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#isClosed()">isClosed</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#isEmpty()">isEmpty</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/common/util/BlockingCloseableIterator.html" title="interface in org.eclipse.emf.cdo.common.util">BlockingCloseableIterator</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#iterator()">iterator</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#offer(E)">offer</a></strong>(<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&nbsp;e)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#offer(E, long, java.util.concurrent.TimeUnit)">offer</a></strong>(<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&nbsp;e,
+     long&nbsp;timeout,
+     <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;unit)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#peek()">peek</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#poll()">poll</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#poll(long, java.util.concurrent.TimeUnit)">poll</a></strong>(long&nbsp;timeout,
+    <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;unit)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#put(E)">put</a></strong>(<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&nbsp;e)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#remainingCapacity()">remainingCapacity</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#remove()">remove</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#remove(java.lang.Object)">remove</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#removeAll(java.util.Collection)">removeAll</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;?&gt;&nbsp;c)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#retainAll(java.util.Collection)">retainAll</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;?&gt;&nbsp;c)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#setException(java.lang.Throwable)">setException</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&nbsp;exception)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#size()">size</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#take()">take</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#toArray()">toArray</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#toArray(java.lang.Object[])">toArray</a></strong>(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;a)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html#toString()">toString</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="CDOQueryQueue()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>CDOQueryQueue</h4>
+<pre>public&nbsp;CDOQueryQueue()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setException(java.lang.Throwable)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setException</h4>
+<pre>public&nbsp;void&nbsp;setException(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&nbsp;exception)</pre>
+</li>
+</ul>
+<a name="close()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>close</h4>
+<pre>public&nbsp;void&nbsp;close()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/collection/Closeable.html?is-external=true#close()" title="class or interface in org.eclipse.net4j.util.collection">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/collection/Closeable.html?is-external=true" title="class or interface in org.eclipse.net4j.util.collection">Closeable</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="isClosed()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isClosed</h4>
+<pre>public&nbsp;boolean&nbsp;isClosed()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/collection/Closeable.html?is-external=true#isClosed()" title="class or interface in org.eclipse.net4j.util.collection">isClosed</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../../../org.eclipse.net4j.util.doc/javadoc/org/eclipse/net4j/util/collection/Closeable.html?is-external=true" title="class or interface in org.eclipse.net4j.util.collection">Closeable</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="add(java.lang.Object)">
+<!--   -->
+</a><a name="add(E)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>add</h4>
+<pre>public&nbsp;boolean&nbsp;add(<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&nbsp;e)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#add(E)" title="class or interface in java.util">add</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true#add(E)" title="class or interface in java.util">add</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true" title="class or interface in java.util">Queue</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="clear()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clear</h4>
+<pre>public&nbsp;void&nbsp;clear()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#clear()" title="class or interface in java.util">clear</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="contains(java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>contains</h4>
+<pre>public&nbsp;boolean&nbsp;contains(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#contains(java.lang.Object)" title="class or interface in java.util">contains</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="element()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>element</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&nbsp;element()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true#element()" title="class or interface in java.util">element</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true" title="class or interface in java.util">Queue</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="equals(java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>equals</h4>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;obj)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.util">equals</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="hashCode()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hashCode</h4>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#hashCode()" title="class or interface in java.util">hashCode</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="isEmpty()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isEmpty</h4>
+<pre>public&nbsp;boolean&nbsp;isEmpty()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#isEmpty()" title="class or interface in java.util">isEmpty</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="iterator()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>iterator</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/common/util/BlockingCloseableIterator.html" title="interface in org.eclipse.emf.cdo.common.util">BlockingCloseableIterator</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;&nbsp;iterator()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Iterable.html?is-external=true#iterator()" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#iterator()" title="class or interface in java.util">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="offer(java.lang.Object,long,java.util.concurrent.TimeUnit)">
+<!--   -->
+</a><a name="offer(E, long, java.util.concurrent.TimeUnit)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>offer</h4>
+<pre>public&nbsp;boolean&nbsp;offer(<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&nbsp;e,
+            long&nbsp;timeout,
+            <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;unit)</pre>
+</li>
+</ul>
+<a name="offer(java.lang.Object)">
+<!--   -->
+</a><a name="offer(E)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>offer</h4>
+<pre>public&nbsp;boolean&nbsp;offer(<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&nbsp;e)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true#offer(E)" title="class or interface in java.util">offer</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true" title="class or interface in java.util">Queue</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="peek()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>peek</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&nbsp;peek()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true#peek()" title="class or interface in java.util">peek</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true" title="class or interface in java.util">Queue</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="poll(long, java.util.concurrent.TimeUnit)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>poll</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&nbsp;poll(long&nbsp;timeout,
+     <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;unit)
+       throws <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></dd></dl>
+</li>
+</ul>
+<a name="put(java.lang.Object)">
+<!--   -->
+</a><a name="put(E)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>put</h4>
+<pre>public&nbsp;void&nbsp;put(<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&nbsp;e)</pre>
+</li>
+</ul>
+<a name="remainingCapacity()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>remainingCapacity</h4>
+<pre>public&nbsp;int&nbsp;remainingCapacity()</pre>
+</li>
+</ul>
+<a name="remove()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>remove</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&nbsp;remove()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true#remove()" title="class or interface in java.util">remove</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true" title="class or interface in java.util">Queue</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="remove(java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>remove</h4>
+<pre>public&nbsp;boolean&nbsp;remove(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#remove(java.lang.Object)" title="class or interface in java.util">remove</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="size()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>size</h4>
+<pre>public&nbsp;int&nbsp;size()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#size()" title="class or interface in java.util">size</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="take()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>take</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&nbsp;take()
+       throws <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></dd></dl>
+</li>
+</ul>
+<a name="toArray()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toArray</h4>
+<pre>public&nbsp;<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;toArray()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#toArray()" title="class or interface in java.util">toArray</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="toArray(java.lang.Object[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toArray</h4>
+<pre>public&nbsp;<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;toArray(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;a)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#toArray(T[])" title="class or interface in java.util">toArray</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="toString()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="poll()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>poll</h4>
+<pre>public&nbsp;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&nbsp;poll()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true#poll()" title="class or interface in java.util">poll</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Queue.html?is-external=true" title="class or interface in java.util">Queue</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="comparator()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>comparator</h4>
+<pre>public&nbsp;<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;?&gt;&nbsp;comparator()</pre>
+</li>
+</ul>
+<a name="containsAll(java.util.Collection)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>containsAll</h4>
+<pre>public&nbsp;boolean&nbsp;containsAll(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;?&gt;&nbsp;c)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#containsAll(java.util.Collection)" title="class or interface in java.util">containsAll</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="addAll(java.util.Collection)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addAll</h4>
+<pre>public&nbsp;boolean&nbsp;addAll(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;? extends <a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;&nbsp;c)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#addAll(java.util.Collection)" title="class or interface in java.util">addAll</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="removeAll(java.util.Collection)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeAll</h4>
+<pre>public&nbsp;boolean&nbsp;removeAll(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;?&gt;&nbsp;c)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#removeAll(java.util.Collection)" title="class or interface in java.util">removeAll</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="retainAll(java.util.Collection)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>retainAll</h4>
+<pre>public&nbsp;boolean&nbsp;retainAll(<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;?&gt;&nbsp;c)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true#retainAll(java.util.Collection)" title="class or interface in java.util">retainAll</a></code>&nbsp;in interface&nbsp;<code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" title="type parameter in CDOQueryQueue">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/CDOQueryQueue.html">Use</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryInfo.html" title="interface in org.eclipse.emf.cdo.common.util"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../../org/eclipse/emf/cdo/common/util/CDOQueryQueue.BlockingCloseableIteratorImpl.html" title="class in org.eclipse.emf.cdo.common.util"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?org/eclipse/emf/cdo/common/util/CDOQueryQueue.html" target="_top">Frames</a></li>
+<li><a href="CDOQueryQueue.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small><i>Copyright (c) 2011, 2012 Eike Stepper (Berlin, Germany) and others.</i></small></p>
+</body>
+</html>

@@ -18,9 +18,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
         eType="#//Group" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkNode" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//NetworkNode">
     <eAnnotations source="gmf.node">
-      <details key="figure" value="figures.ControllerFigure"/>
+      <details key="figure" value="ControllerFigure"/>
       <details key="label" value="name"/>
       <details key="label.icon" value="false"/>
       <details key="tool.small.bundle" value="mdn.edit"/>
@@ -28,7 +33,283 @@
       <details key="label.placement" value="external"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ControllerTypes"
-        defaultValueLiteral=""/>
+        defaultValueLiteral="RYU"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Host" eSuperTypes="#//NetworkNode">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="tool.small.bundle" value="mdn.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/host.gif"/>
+      <details key="figure" value="HostFigure"/>
+      <details key="label.placement" value="external"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hostSwitch" eType="#//Switch">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="none"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="solid"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Switch" eSuperTypes="#//NetworkNode">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="tool.small.bundle" value="mdn.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/switch.gif"/>
+      <details key="figure" value="SwitchFigure"/>
+      <details key="label.placement" value="external"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ports" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="switchController" upperBound="-1"
+        eType="#//Controller">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="none"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="solid"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="switches" upperBound="-1"
+        eType="#//Switch">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="none"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="solid"/>
+        <details key="color" value="0,0,0"/>
+        <details key="switches.constraint" value="self &lt;> oppositeEnd"/>
+        <details key="source.constraint" value="self &lt;> oppositeEnd"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpenFlowSwitch">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableSpace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="switchIsOpenFlow" eType="#//Switch"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredHeaders" unique="false"
+        lowerBound="1" upperBound="-1" eType="#//PacketHeaders"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="supportedProtocols" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optionalHeaders" unique="false"
+        upperBound="-1" eType="#//PacketHeaders"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="availableTableSpace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AppObject" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rule" eSuperTypes="#//AppObject">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="RuleFigure"/>
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="tool.small.bundle" value="mdn.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/policy.gif"/>
+      <details key="label.placement" value="external"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceHostRule" upperBound="-1"
+        eType="#//Host" transient="true">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="none"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetHostRule" upperBound="-1"
+        eType="#//Host" transient="true">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="arrow"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleCondition" upperBound="-1"
+        eType="#//Condition" transient="true">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="none"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetGroupRule" upperBound="-1"
+        eType="#//Group">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="arrow"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actions" eType="#//Actions"
+        defaultValueLiteral="ADD"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowRule" eType="#//Flow"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="App">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="ActionFigure"/>
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="tool.small.bundle" value="mdn.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/action.gif"/>
+      <details key="label.placement" value="external"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actionPacketHeader" upperBound="-1"
+        eType="#//PacketHeader">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="arrow"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appToNetworkNode" eType="#//NetworkNode">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="arrow"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controllerApp" upperBound="-1"
+        eType="#//Controller">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="arrow"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appRule" upperBound="-1"
+        eType="#//Rule" transient="true">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="arrow"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="App"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition" eSuperTypes="#//AppObject">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="condition"/>
+      <details key="label.icon" value="false"/>
+      <details key="tool.small.bundle" value="mdn.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/condition.gif"/>
+      <details key="label.placement" value="external"/>
+      <details key="figure" value="ConditionFigure"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="#//Conditions"
+        defaultValueLiteral="WHERE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTime" eType="#//Time">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="none"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTraffic" eType="#//Traffic">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="none"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionPacket" eType="#//PacketHeader">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="none"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Traffic" eSuperTypes="#//AppObject">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="TrafficFigure"/>
+      <details key="label" value="operator,value,unit"/>
+      <details key="label.pattern" value="{0}: {2}{1}"/>
+      <details key="label.icon" value="false"/>
+      <details key="tool.small.bundle" value="mdn.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/traffic.gif"/>
+      <details key="label.placement" value="external"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//RelationalOperators"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="MB"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Time" eSuperTypes="#//AppObject">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="TimeFigure"/>
+      <details key="label.icon" value="false"/>
+      <details key="tool.small.bundle" value="mdn.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/time.gif"/>
+      <details key="label.placement" value="external"/>
+      <details key="label" value="operator,beginDate,endDate"/>
+      <details key="label.pattern" value="{0}: {1} - {2}"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//RelationalOperators"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beginDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PacketHeader" eSuperTypes="#//AppObject">
+    <eAnnotations source="gmf.node">
+      <details key="label.icon" value="false"/>
+      <details key="tool.small.bundle" value="mdn.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/packetheader.gif"/>
+      <details key="label.placement" value="external"/>
+      <details key="label" value="operator,header,value"/>
+      <details key="label.pattern" value="{0}: [{1}] {2}"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//RelationalOperators"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" eType="#//PacketHeaders"
+        defaultValueLiteral="IPV4_DST"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AppMonitor" eSuperTypes="#//App">
+    <eAnnotations source="gmf.node"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AppMonitorTypes"
+        defaultValueLiteral="NETFLOW"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Flow">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="matchFields" unique="false"
+        eType="#//PacketHeaders"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="matchValues" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowSourceHost" eType="#//Host"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowDestinationHost" eType="#//Host"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Group">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="tool.small.bundle" value="mdn.edit"/>
+      <details key="label.placement" value="external"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hostsGroup" upperBound="-1"
+        eType="#//Host" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="switchesGroup" upperBound="-1"
+        eType="#//Switch" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" unique="false" upperBound="-1"
+        eType="#//Instructions"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instructionSwitch" eType="#//OpenFlowSwitch"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instructionRules" upperBound="-1"
+        eType="#//Rule"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PacketHeaders">
     <eLiterals name="IN_PORT"/>
@@ -45,7 +326,6 @@
     <eLiterals name="L4_DPORT" value="11"/>
     <eLiterals name="IN_PHY_PORT"/>
     <eLiterals name="METADATA"/>
-    <eLiterals name="ETH_TYPE"/>
     <eLiterals name="VLAN_VID"/>
     <eLiterals name="VLAN_PCP"/>
     <eLiterals name="IP_DSCP"/>
@@ -79,184 +359,12 @@
     <eLiterals name="TUNNEL_ID"/>
     <eLiterals name="IPV6_EXTHDR"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Host" eSuperTypes="#//NetworkNode">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
-      <details key="label.icon" value="false"/>
-      <details key="tool.small.bundle" value="mdn.edit"/>
-      <details key="tool.small.path" value="/icons/full/obj16/host.gif"/>
-      <details key="figure" value="figures.HostFigure"/>
-      <details key="label.placement" value="external"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hostSwitch" eType="#//Switch">
-      <eAnnotations source="gmf.link">
-        <details key="target.decoration" value="none"/>
-        <details key="source.decoration" value="none"/>
-        <details key="style" value="solid"/>
-        <details key="color" value="0,0,0"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Switch" eSuperTypes="#//NetworkNode">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
-      <details key="label.icon" value="false"/>
-      <details key="tool.small.bundle" value="mdn.edit"/>
-      <details key="tool.small.path" value="/icons/full/obj16/switch.gif"/>
-      <details key="figure" value="figures.SwitchFigure"/>
-      <details key="label.placement" value="external"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ports" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="switchController" upperBound="-1"
-        eType="#//Controller">
-      <eAnnotations source="gmf.link">
-        <details key="target.decoration" value="none"/>
-        <details key="source.decoration" value="none"/>
-        <details key="style" value="solid"/>
-        <details key="color" value="0,0,0"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="switches" upperBound="-1"
-        eType="#//Switch">
-      <eAnnotations source="gmf.link">
-        <details key="target.decoration" value="none"/>
-        <details key="source.decoration" value="none"/>
-        <details key="style" value="solid"/>
-        <details key="color" value="0,0,0"/>
-        <details key="switches.constraint" value="self &lt;> oppositeEnd"/>
-        <details key="source.constraint" value="self &lt;> oppositeEnd"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NetworkNode" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Actions">
     <eLiterals name="ADD"/>
     <eLiterals name="DELETE" value="1"/>
     <eLiterals name="MODIFY" value="2"/>
     <eLiterals name="DELETE_STRICT"/>
     <eLiterals name="MODIFY_STRICT"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Rule">
-    <eAnnotations source="gmf.node">
-      <details key="figure" value="figures.PolicyFigure"/>
-      <details key="label" value="name"/>
-      <details key="label.icon" value="false"/>
-      <details key="tool.small.bundle" value="mdn.edit"/>
-      <details key="tool.small.path" value="/icons/full/obj16/policy.gif"/>
-      <details key="label.placement" value="external"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceHostRule" upperBound="-1"
-        eType="#//Host" transient="true">
-      <eAnnotations source="gmf.link">
-        <details key="target.decoration" value="none"/>
-        <details key="source.decoration" value="none"/>
-        <details key="style" value="dash"/>
-        <details key="color" value="0,0,0"/>
-        <details key="tool.name" value="sourceHost"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetHostRule" upperBound="-1"
-        eType="#//Host" transient="true">
-      <eAnnotations source="gmf.link">
-        <details key="target.decoration" value="arrow"/>
-        <details key="source.decoration" value="none"/>
-        <details key="style" value="dash"/>
-        <details key="color" value="0,0,0"/>
-        <details key="tool.name" value="targetHost"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleCondition" upperBound="-1"
-        eType="#//Condition" transient="true">
-      <eAnnotations source="gmf.link">
-        <details key="target.decoration" value="none"/>
-        <details key="source.decoration" value="none"/>
-        <details key="style" value="dash"/>
-        <details key="color" value="0,0,0"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetGroupRule" upperBound="-1"
-        eType="#//Group">
-      <eAnnotations source="gmf.link">
-        <details key="target.decoration" value="arrow"/>
-        <details key="source.decoration" value="none"/>
-        <details key="style" value="dash"/>
-        <details key="color" value="0,0,0"/>
-        <details key="tool.name" value="targetGroup"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="App" eSuperTypes="#//AppObject">
-    <eAnnotations source="gmf.node">
-      <details key="figure" value="figures.ActionFigure"/>
-      <details key="label" value="type"/>
-      <details key="label.icon" value="false"/>
-      <details key="tool.small.bundle" value="mdn.edit"/>
-      <details key="tool.small.path" value="/icons/full/obj16/action.gif"/>
-      <details key="label.placement" value="external"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actions" unique="false"
-        upperBound="-1" eType="#//Actions"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actionPacketHeader" eType="#//PacketHeader">
-      <eAnnotations source="gmf.link">
-        <details key="target.decoration" value="arrow"/>
-        <details key="source.decoration" value="none"/>
-        <details key="style" value="dash"/>
-        <details key="color" value="0,0,0"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="appToNetworkNode" eType="#//NetworkNode">
-      <eAnnotations source="gmf.link">
-        <details key="target.decoration" value="arrow"/>
-        <details key="source.decoration" value="none"/>
-        <details key="style" value="dash"/>
-        <details key="color" value="0,0,0"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controllerApp" upperBound="-1"
-        eType="#//Controller"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="appRule" upperBound="-1"
-        eType="#//Rule"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Condition" eSuperTypes="#//AppObject">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="condition"/>
-      <details key="label.icon" value="false"/>
-      <details key="tool.small.bundle" value="mdn.edit"/>
-      <details key="tool.small.path" value="/icons/full/obj16/condition.gif"/>
-      <details key="label.placement" value="external"/>
-      <details key="figure" value="figures.ConditionFigure"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="#//Conditions"
-        defaultValueLiteral="WHERE"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTime" eType="#//Time">
-      <eAnnotations source="gmf.link">
-        <details key="target.decoration" value="none"/>
-        <details key="source.decoration" value="none"/>
-        <details key="style" value="dash"/>
-        <details key="color" value="0,0,0"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTraffic" eType="#//Traffic">
-      <eAnnotations source="gmf.link">
-        <details key="target.decoration" value="none"/>
-        <details key="source.decoration" value="none"/>
-        <details key="style" value="dash"/>
-        <details key="color" value="0,0,0"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionPacket" eType="#//PacketHeader">
-      <eAnnotations source="gmf.link">
-        <details key="target.decoration" value="none"/>
-        <details key="source.decoration" value="none"/>
-        <details key="style" value="dash"/>
-        <details key="color" value="0,0,0"/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Conditions">
     <eLiterals name="WHEN"/>
@@ -270,99 +378,18 @@
     <eLiterals name="IN"/>
     <eLiterals name="OUT"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Traffic" eSuperTypes="#//AppObject">
-    <eAnnotations source="gmf.node">
-      <details key="figure" value="figures.TrafficFigure"/>
-      <details key="label" value="operator,value,unit"/>
-      <details key="label.pattern" value="{0}: {2}{1}"/>
-      <details key="label.icon" value="false"/>
-      <details key="tool.small.bundle" value="mdn.edit"/>
-      <details key="tool.small.path" value="/icons/full/obj16/traffic.gif"/>
-      <details key="label.placement" value="external"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//RelationalOperators"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="MB"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Time" eSuperTypes="#//AppObject">
-    <eAnnotations source="gmf.node">
-      <details key="figure" value="figures.TimeFigure"/>
-      <details key="label.icon" value="false"/>
-      <details key="tool.small.bundle" value="mdn.edit"/>
-      <details key="tool.small.path" value="/icons/full/obj16/time.gif"/>
-      <details key="label.placement" value="external"/>
-      <details key="label" value="operator,beginDate,endDate"/>
-      <details key="label.pattern" value="{0}: {1} - {2}"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//RelationalOperators"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beginDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PacketHeader" eSuperTypes="#//AppObject">
-    <eAnnotations source="gmf.node">
-      <details key="figure" value="figures.PacketHeaderFigure"/>
-      <details key="label.icon" value="false"/>
-      <details key="tool.small.bundle" value="mdn.edit"/>
-      <details key="tool.small.path" value="/icons/full/obj16/packetheader.gif"/>
-      <details key="label.placement" value="external"/>
-      <details key="label" value="operator,header,value"/>
-      <details key="label.pattern" value="{0}: [{1}] {2}"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//RelationalOperators"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" eType="#//PacketHeaders"
-        defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AppObject" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Group">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
-      <details key="label.icon" value="false"/>
-      <details key="tool.small.bundle" value="mdn.edit"/>
-      <details key="label.placement" value="external"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hostsGroup" upperBound="-1"
-        eType="#//Host" containment="true">
-      <eAnnotations source="gmf.compartment"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="switchesGroup" upperBound="-1"
-        eType="#//Switch" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OpenFlowSwitch">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableSpace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="switchIsOpenFlow" eType="#//Switch"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="supportedHeaders" eType="#//PacketHeaders"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AppMonitor">
-    <eAnnotations source="gmf.node"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AppMonitorTypes"
-        defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="appMonitor" upperBound="-1"
-        eType="#//App"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AppMonitorTypes">
     <eLiterals name="SFLOW"/>
     <eLiterals name="NETFLOW"/>
+    <eLiterals name="FLOWMETERS"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ControllerTypes">
     <eLiterals name="POX"/>
     <eLiterals name="RYU"/>
     <eLiterals name="OPENDAYLIGHT"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Flow"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AppFirewall">
-    <eAnnotations source="gmf.node"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="appFirewall" upperBound="-1"
-        eType="#//App"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AppLoadBalancing">
-    <eAnnotations source="gmf.node"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="appLoadBalancing" upperBound="-1"
-        eType="#//App"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Instructions">
+    <eLiterals name="WRITE_ACTIONS"/>
+    <eLiterals name="GOTO_TABLE"/>
   </eClassifiers>
 </ecore:EPackage>

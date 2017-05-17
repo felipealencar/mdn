@@ -1,0 +1,217 @@
+/**
+ */
+package mdn.impl;
+
+import mdn.AppMonitor;
+import mdn.AppMonitorTypes;
+import mdn.MdnPackage;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>App Monitor</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link mdn.impl.AppMonitorImpl#getType <em>Type</em>}</li>
+ *   <li>{@link mdn.impl.AppMonitorImpl#getServerAddress <em>Server Address</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class AppMonitorImpl extends AppImpl implements AppMonitor {
+	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final AppMonitorTypes TYPE_EDEFAULT = AppMonitorTypes.NETFLOW;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected AppMonitorTypes type = TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getServerAddress() <em>Server Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServerAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SERVER_ADDRESS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getServerAddress() <em>Server Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServerAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected String serverAddress = SERVER_ADDRESS_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AppMonitorImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return MdnPackage.Literals.APP_MONITOR;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AppMonitorTypes getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(AppMonitorTypes newType) {
+		AppMonitorTypes oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.APP_MONITOR__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getServerAddress() {
+		return serverAddress;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setServerAddress(String newServerAddress) {
+		String oldServerAddress = serverAddress;
+		serverAddress = newServerAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.APP_MONITOR__SERVER_ADDRESS, oldServerAddress, serverAddress));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case MdnPackage.APP_MONITOR__TYPE:
+				return getType();
+			case MdnPackage.APP_MONITOR__SERVER_ADDRESS:
+				return getServerAddress();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case MdnPackage.APP_MONITOR__TYPE:
+				setType((AppMonitorTypes)newValue);
+				return;
+			case MdnPackage.APP_MONITOR__SERVER_ADDRESS:
+				setServerAddress((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case MdnPackage.APP_MONITOR__TYPE:
+				setType(TYPE_EDEFAULT);
+				return;
+			case MdnPackage.APP_MONITOR__SERVER_ADDRESS:
+				setServerAddress(SERVER_ADDRESS_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case MdnPackage.APP_MONITOR__TYPE:
+				return type != TYPE_EDEFAULT;
+			case MdnPackage.APP_MONITOR__SERVER_ADDRESS:
+				return SERVER_ADDRESS_EDEFAULT == null ? serverAddress != null : !SERVER_ADDRESS_EDEFAULT.equals(serverAddress);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (type: ");
+		result.append(type);
+		result.append(", serverAddress: ");
+		result.append(serverAddress);
+		result.append(')');
+		return result.toString();
+	}
+
+} //AppMonitorImpl

@@ -18,58 +18,6 @@
       </parser>
    </extension>
 
-	<extension point="org.eclipse.ui.views">
-	        <view id="mdn.diagram.m2t.TransformationView"
-	             name="%view.name"
-	          class="mdn.diagram.m2t.TransformationView"
-	          icon="icons/obj16/transformation.png"/>
-	</extension>
-	
-	<extension point="org.eclipse.ui.actionSets">
-	   <actionSet
-	            description="%actionSet.description"
-	            id="mdn.diagram.m2t.ModelToTextAction.actionSet"
-	            label="%actionSet.label"
-	            visible="true">
-	      <action
-	               class="mdn.diagram.m2t.ModelToTextAction"
-	               icon="icons/obj16/transformation.png"
-	               id="mdn.diagram.m2t.ModelToTextAction"
-	               label="%action.label"
-	               mode="FORCE_TEXT"
-	               style="push"
-	               toolbarPath="transformationGroup"
-	               tooltip="%action.tooltip">
-	      </action>
-	   </actionSet>
-	</extension>
-	
-	<extension point="org.eclipse.ui.views">
-	        <view id="mdn.diagram.m2t.TransformationMininetView"
-	             name="%view.name.0"
-	          class="mdn.diagram.m2t.TransformationMininetView"
-	          icon="icons/obj16/transformation.png"/>
-	</extension>
-	
-	<extension point="org.eclipse.ui.actionSets">
-	   <actionSet
-	            description="%actionSet.description.0"
-	            id="mdn.diagram.m2t.ModelToMininetAction.actionSet"
-	            label="%actionSet.label.0"
-	            visible="true">
-	      <action
-	               class="mdn.diagram.m2t.ModelToMininetAction"
-	               icon="icons/obj16/transformation.png"
-	               id="mdn.diagram.m2t.ModelToMininetAction"
-	               label="%action.label.0"
-	               mode="FORCE_TEXT"
-	               style="push"
-	               toolbarPath="transformationGroup"
-	               tooltip="%action.tooltip.0">
-	      </action>
-	   </actionSet>
-	</extension>
-
    <extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
       <editor
@@ -106,7 +54,21 @@
       </wizard>
    </extension>
 
-   	
+      <extension point="org.eclipse.ui.actionSets" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <actionSet
+            label="%initDiagramActionLabel"
+            visible="true"
+            id="mdn.diagram.InitDiagram">
+         <action
+               label="%initDiagramActionLabel"
+               class="mdn.diagram.part.MdnInitDiagramFileAction"
+               menubarPath="file/additions"
+               id="mdn.diagram.InitDiagramAction">
+         </action>
+      </actionSet>
+   </extension>
+	
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
@@ -140,9 +102,6 @@
       </GlobalActionHandlerProvider>
    </extension>
 
-
-   
-      
 
    <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
@@ -262,8 +221,8 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Mdn"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2012,2013,2014,2015,2016,2017,2018,3001"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4004,4006,4022,4024,4025,4026,4027,4028,4012,4013,4017,4018,4019"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2019,2021,2013,2014,2015,2016,2020,2018,3001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4004,4006,4022,4024,4025,4026,4028,4029,4030,4031,4032,4017,4018,4019"/>
       </viewProvider>
    </extension>
 
@@ -275,13 +234,13 @@
             <method name="getType()" value="Mdn"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002,2003,2012,2013,2014,2015,2016,2017,2018,3001"/>
+            <method name="getType()" value="2001,2002,2003,2019,2021,2013,2014,2015,2016,2020,2018,3001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4004,4006,4022,4024,4025,4026,4027,4028,4012,4013,4017,4018,4019"/>
+            <method name="getType()" value="4004,4006,4022,4024,4025,4026,4028,4029,4030,4031,4032,4017,4018,4019"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5002,5003,5012,5013,5014,5015,5016,5017,5019,5018"/>
+            <method name="getType()" value="5001,5002,5003,5020,5022,5013,5014,5015,5016,5021,5019,5018"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7001"/>
@@ -290,6 +249,7 @@
       </editpartProvider>
    </extension>
 
+   
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfSdnEditPart">
@@ -312,10 +272,15 @@
          <object class="mdn.diagram.edit.parts.SwitchEditPart" id="Switch_2003"/>
          <context elements="Switch_2003"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfActionEditPart">
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfAppMonitorEditPart">
          <Priority name="Lowest"/>
-         <object class="mdn.diagram.edit.parts.ActionEditPart" id="Action_2012"/>
-         <context elements="Action_2012"/>
+         <object class="mdn.diagram.edit.parts.AppMonitorEditPart" id="AppMonitor_2019"/>
+         <context elements="AppMonitor_2019"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfRuleEditPart">
+         <Priority name="Lowest"/>
+         <object class="mdn.diagram.edit.parts.RuleEditPart" id="Rule_2021"/>
+         <context elements="Rule_2021"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfConditionEditPart">
          <Priority name="Lowest"/>
@@ -337,10 +302,10 @@
          <object class="mdn.diagram.edit.parts.PacketHeaderEditPart" id="PacketHeader_2016"/>
          <context elements="PacketHeader_2016"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfRuleEditPart">
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfAppEditPart">
          <Priority name="Lowest"/>
-         <object class="mdn.diagram.edit.parts.RuleEditPart" id="Rule_2017"/>
-         <context elements="Rule_2017"/>
+         <object class="mdn.diagram.edit.parts.AppEditPart" id="App_2020"/>
+         <context elements="App_2020"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfGroupEditPart">
          <Priority name="Lowest"/>
@@ -354,6 +319,7 @@
       </modelingAssistantProvider>
       
    </extension>
+
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
@@ -374,7 +340,7 @@
       <decoratorProvider class="mdn.diagram.providers.MdnShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
-            <method name="getType()" value="2001,2002,2003,2012,2013,2014,2015,2016,2017,2018"/>
+            <method name="getType()" value="2001,2002,2003,2019,2021,2013,2014,2015,2016,2020,2018"/>
          </object>
          <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
@@ -424,12 +390,22 @@
       </metamodel>
       <metamodel nsURI="mdn">
          <metamodelType
-               id="mdn.diagram.Action_2012"
-               name="%metatype.name.Action_2012"
+               id="mdn.diagram.AppMonitor_2019"
+               name="%metatype.name.AppMonitor_2019"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Action"
-               edithelper="mdn.diagram.edit.helpers.ActionEditHelper">
-            <param name="semanticHint" value="2012"/>
+               eclass="AppMonitor"
+               edithelper="mdn.diagram.edit.helpers.AppMonitorEditHelper">
+            <param name="semanticHint" value="2019"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="mdn">
+         <metamodelType
+               id="mdn.diagram.Rule_2021"
+               name="%metatype.name.Rule_2021"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Rule"
+               edithelper="mdn.diagram.edit.helpers.RuleEditHelper">
+            <param name="semanticHint" value="2021"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="mdn">
@@ -474,12 +450,12 @@
       </metamodel>
       <metamodel nsURI="mdn">
          <metamodelType
-               id="mdn.diagram.Rule_2017"
-               name="%metatype.name.Rule_2017"
+               id="mdn.diagram.App_2020"
+               name="%metatype.name.App_2020"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Rule"
-               edithelper="mdn.diagram.edit.helpers.RuleEditHelper">
-            <param name="semanticHint" value="2017"/>
+               eclass="App"
+               edithelper="mdn.diagram.edit.helpers.AppEditHelper">
+            <param name="semanticHint" value="2020"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="mdn">
@@ -557,15 +533,6 @@
       </metamodel>
       <metamodel nsURI="mdn">
          <specializationType
-               id="mdn.diagram.RuleRuleAction_4027"
-               name="%metatype.name.RuleRuleAction_4027"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4027"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="mdn">
-         <specializationType
                id="mdn.diagram.RuleTargetGroupRule_4028"
                name="%metatype.name.RuleTargetGroupRule_4028"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
@@ -575,20 +542,38 @@
       </metamodel>
       <metamodel nsURI="mdn">
          <specializationType
-               id="mdn.diagram.ActionActionPacketHeader_4012"
-               name="%metatype.name.ActionActionPacketHeader_4012"
+               id="mdn.diagram.AppActionPacketHeader_4029"
+               name="%metatype.name.AppActionPacketHeader_4029"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4012"/>
+            <param name="semanticHint" value="4029"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="mdn">
          <specializationType
-               id="mdn.diagram.ActionActionForwardToNode_4013"
-               name="%metatype.name.ActionActionForwardToNode_4013"
+               id="mdn.diagram.AppAppToNetworkNode_4030"
+               name="%metatype.name.AppAppToNetworkNode_4030"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4013"/>
+            <param name="semanticHint" value="4030"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="mdn">
+         <specializationType
+               id="mdn.diagram.AppControllerApp_4031"
+               name="%metatype.name.AppControllerApp_4031"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4031"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="mdn">
+         <specializationType
+               id="mdn.diagram.AppAppRule_4032"
+               name="%metatype.name.AppAppRule_4032"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4032"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="mdn">
@@ -634,12 +619,13 @@
          <elementType ref="mdn.diagram.Controller_2001"/>
          <elementType ref="mdn.diagram.Host_2002"/>
          <elementType ref="mdn.diagram.Switch_2003"/>
-         <elementType ref="mdn.diagram.Action_2012"/>
+         <elementType ref="mdn.diagram.AppMonitor_2019"/>
+         <elementType ref="mdn.diagram.Rule_2021"/>
          <elementType ref="mdn.diagram.Condition_2013"/>
          <elementType ref="mdn.diagram.Traffic_2014"/>
          <elementType ref="mdn.diagram.Time_2015"/>
          <elementType ref="mdn.diagram.PacketHeader_2016"/>
-         <elementType ref="mdn.diagram.Rule_2017"/>
+         <elementType ref="mdn.diagram.App_2020"/>
          <elementType ref="mdn.diagram.Group_2018"/>
          <elementType ref="mdn.diagram.Host_3001"/>
          <elementType ref="mdn.diagram.HostHostSwitch_4004"/>
@@ -648,21 +634,95 @@
          <elementType ref="mdn.diagram.RuleSourceHostRule_4024"/>
          <elementType ref="mdn.diagram.RuleTargetHostRule_4025"/>
          <elementType ref="mdn.diagram.RuleRuleCondition_4026"/>
-         <elementType ref="mdn.diagram.RuleRuleAction_4027"/>
          <elementType ref="mdn.diagram.RuleTargetGroupRule_4028"/>
-         <elementType ref="mdn.diagram.ActionActionPacketHeader_4012"/>
-         <elementType ref="mdn.diagram.ActionActionForwardToNode_4013"/>
+         <elementType ref="mdn.diagram.AppActionPacketHeader_4029"/>
+         <elementType ref="mdn.diagram.AppAppToNetworkNode_4030"/>
+         <elementType ref="mdn.diagram.AppControllerApp_4031"/>
+         <elementType ref="mdn.diagram.AppAppRule_4032"/>
          <elementType ref="mdn.diagram.ConditionConditionTime_4017"/>
          <elementType ref="mdn.diagram.ConditionConditionTraffic_4018"/>
          <elementType ref="mdn.diagram.ConditionConditionPacket_4019"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
-	   
-	   
-	   
-      
-	      <extension point="org.eclipse.ui.commands" id="update-cmd">
+
+   <extension id="MdnApplication" point="org.eclipse.core.runtime.applications">
+      <?gmfgen generated="true"?>
+      <application>
+         <run class="mdn.diagram.application.MdnApplication"/>
+      </application>
+   </extension>
+
+   <extension point="org.eclipse.ui.perspectives" id="rcp-perspective">
+      <?gmfgen generated="true"?>
+      <perspective
+            id="mdn.diagram.MdnPerspective"
+            name="%perspectiveName"
+            class="mdn.diagram.application.DiagramEditorPerspective">
+      </perspective>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="rcp-menu-commands">
+      <?gmfgen generated="true"?>
+      <command
+            name="%openURIActionLabel"
+            description="%openURIActionDescription"
+            categoryId="org.eclipse.ui.category.file"
+            id="mdn.diagram.OpenURICommand"/>  
+      <command
+            name="%openActionLabel"
+            description="%openActionDescription"
+            categoryId="org.eclipse.ui.category.file"
+            id="mdn.diagram.OpenCommand"/>  
+   </extension>
+
+   <extension point="org.eclipse.ui.bindings" id="rcp-command-bindings">
+      <?gmfgen generated="true"?>
+      <key
+            commandId="mdn.diagram.OpenURICommand"
+            sequence="M1+U"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            commandId="mdn.diagram.OpenCommand"
+            sequence="M1+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets" id="rcp-actions">
+      <?gmfgen generated="true"?>
+      <actionSet
+            label="%applicationActionSetLabel"
+            visible="true"
+            id="mdn.diagram.ActionSet">
+         <action
+               label="%newDiagramActionLabel"
+               class="mdn.diagram.application.DiagramEditorActionBarAdvisor$NewDiagramAction"
+               menubarPath="file/new/additions"
+               id="mdn.diagram.NewDiagramAction">
+         </action>
+         <action
+               label="%aboutActionLabel"
+               class="mdn.diagram.application.DiagramEditorActionBarAdvisor$AboutAction"
+               menubarPath="help/additions"
+               id="mdn.diagram.AboutAction">
+         </action>
+         <action
+               label="%openURIActionLabel"
+               definitionId="mdn.diagram.OpenURICommand"
+               class="mdn.diagram.application.DiagramEditorActionBarAdvisor$OpenURIAction"
+               menubarPath="file/additions"
+               id="mdn.diagram.OpenURIAction">
+         </action>
+         <action
+               label="%openActionLabel"
+               definitionId="mdn.diagram.OpenCommand"
+               class="mdn.diagram.application.DiagramEditorActionBarAdvisor$OpenAction"
+               menubarPath="file/additions"
+               id="mdn.diagram.OpenAction">
+         </action>
+      </actionSet>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
@@ -713,123 +773,6 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
-
-
-
-
-
-
-
-
-
-
-
-<extension point="org.eclipse.ui.actionSets" id="init-diagram-action">
-      <?gmfgen generated="true"?>
-      <actionSet
-            label="%initDiagramActionLabel"
-            visible="true"
-            id="mdn.diagram.InitDiagram">
-         <action
-               label="%initDiagramActionLabel"
-               class="mdn.diagram.part.MdnInitDiagramFileAction"
-               menubarPath="file/additions"
-               id="mdn.diagram.InitDiagramAction">
-         </action>
-      </actionSet>
-   </extension>
-
-<extension id="MdnApplication" point="org.eclipse.core.runtime.applications">
-      <?gmfgen generated="true"?>
-      <application>
-         <run class="mdn.diagram.application.MdnApplication"/>
-      </application>
-   </extension>
-
-<extension point="org.eclipse.ui.perspectives" id="rcp-perspective">
-      <?gmfgen generated="true"?>
-      <perspective
-            id="mdn.diagram.MdnPerspective"
-            name="%perspectiveName"
-            class="mdn.diagram.application.DiagramEditorPerspective">
-      </perspective>
-   </extension>
-
-<extension point="org.eclipse.ui.commands" id="rcp-menu-commands">
-      <?gmfgen generated="true"?>
-      <command
-            name="%openURIActionLabel"
-            description="%openURIActionDescription"
-            categoryId="org.eclipse.ui.category.file"
-            id="mdn.diagram.OpenURICommand"/>  
-      <command
-            name="%openActionLabel"
-            description="%openActionDescription"
-            categoryId="org.eclipse.ui.category.file"
-            id="mdn.diagram.OpenCommand"/>  
-   </extension>
-
-<extension point="org.eclipse.ui.bindings" id="rcp-command-bindings">
-      <?gmfgen generated="true"?>
-      <key
-            commandId="mdn.diagram.OpenURICommand"
-            sequence="M1+U"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
-      <key
-            commandId="mdn.diagram.OpenCommand"
-            sequence="M1+O"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
-   </extension>
-
-<extension point="org.eclipse.ui.actionSets" id="rcp-actions">
-      <?gmfgen generated="true"?>
-      <actionSet
-            label="%applicationActionSetLabel"
-            visible="true"
-            id="mdn.diagram.ActionSet">
-         <action
-               label="%newDiagramActionLabel"
-               class="mdn.diagram.application.DiagramEditorActionBarAdvisor$NewDiagramAction"
-               menubarPath="file/new/additions"
-               id="mdn.diagram.NewDiagramAction">
-         </action>
-         <action
-               label="%aboutActionLabel"
-               class="mdn.diagram.application.DiagramEditorActionBarAdvisor$AboutAction"
-               menubarPath="help/additions"
-               id="mdn.diagram.AboutAction">
-         </action>
-         <action
-               label="%openURIActionLabel"
-               definitionId="mdn.diagram.OpenURICommand"
-               class="mdn.diagram.application.DiagramEditorActionBarAdvisor$OpenURIAction"
-               menubarPath="file/additions"
-               id="mdn.diagram.OpenURIAction">
-         </action>
-         <action
-               label="%openActionLabel"
-               definitionId="mdn.diagram.OpenCommand"
-               class="mdn.diagram.application.DiagramEditorActionBarAdvisor$OpenAction"
-               menubarPath="file/additions"
-               id="mdn.diagram.OpenAction">
-         </action>
-      </actionSet>
-   </extension>
-<extension
-      id="product"
-      point="org.eclipse.core.runtime.products">
-   <product
-         application="mdn.diagram.MdnApplication"
-         name="mdn">
-      <property
-            name="appName"
-            value="mdn">
-      </property>
-   </product>
-</extension>
-
-
-
 
    <!-- optionally, specify keybindings -->
 </plugin>

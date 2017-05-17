@@ -13,37 +13,33 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MdnAllTests extends TestSuite
-{
+public class MdnAllTests extends TestSuite {
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static void main(String[] args)
-  {
+	public static void main(String[] args) {
 		TestRunner.run(suite());
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static Test suite()
-  {
+	public static Test suite() {
 		TestSuite suite = new MdnAllTests("Mdn Tests");
 		return suite;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public MdnAllTests(String name)
-  {
+	public MdnAllTests(String name) {
 		super(name);
 	}
 

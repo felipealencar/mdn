@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+
+<HEAD>
+<TITLE>View Providers (CDO Model Repository Documentation)</TITLE>
+
+<LINK REL="STYLESHEET" HREF="../../book.css" CHARSET="ISO-8859-1" TYPE="text/css">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="View Providers (CDO Model Repository Documentation)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<!-- <div class="help_breadcrumbs"><a href="../../Overview.html" title="CDO Model Repository Documentation">CDO Model Repository Documentation</a> > <a href="../index.html" title="Category in CDO Model Repository Documentation">Programmer's Guide</a> > <a href="index.html" title="Category in CDO Model Repository Documentation">Developing Client Applications</a></div> -->
+
+<table border="0">
+	<tr>
+		<td width="100%"><h1>View Providers</h1></td>
+		<td align="right" valign="middle" nowrap><a href="Architecture.html" title="Backward to Understanding the Architecture of a Client Application"><img src="../../../images/backward.png" border="0"></a>&nbsp;<a href="../server/index.html" title="Forward to Dealing with Servers"><img src="../../../images/forward.png" border="0"></a></td>
+	</tr>
+</table>
+<p class="author">Author: Victor Roldan Betancort</p>
+<p>
+ A <a href="../../../javadoc/org/eclipse/emf/cdo/view/CDOViewProvider.html" title="Interface in org.eclipse.emf.cdo.view"><code>view provider</code></a> allows clients to inject custom logic into the <a href="../../../javadoc/org/eclipse/emf/cdo/eresource/CDOResourceFactory.html" title="Interface in org.eclipse.emf.cdo.eresource"><code>resource factory</code></a> mechansim, capable of handling the whole <a href="../../../javadoc/org/eclipse/emf/cdo/session/CDOSession.html" title="Interface in org.eclipse.emf.cdo.session"><code>session</code></a> and <a href="../../../javadoc/org/eclipse/emf/cdo/view/CDOView.html" title="Interface in org.eclipse.emf.cdo.view"><code>view</code></a>
+ instantiation process. This permits to obtain <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/resource/Resource.html" title="Interface in org.eclipse.emf.ecore.resource"><code>resources</code></a> through the <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/resource/ResourceSet.html" title="Interface in org.eclipse.emf.ecore.resource"><code>resource set</code></a>
+ API transparently, without any prior CDO client API code. The view provider automatically kicks in the middle of the
+ <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/resource/ResourceSet.html" title="Interface in org.eclipse.emf.ecore.resource"><code>ResourceSet.getResource()</code></a> call, forgetting
+ about the whole openning session / openning transaction process, which happens behind the scenes.
+ <p>
+ This is quite useful when integrating CDO with EMF-based frameworks and tools that are not prepared for a CDO
+ scenario themselves.
+ <p>
+ <b>Table of Contents</b> <p>
+<table border="0">
+<tr><td>1&nbsp;</td><td colspan="3"><a href="ViewProviders.html#ProviderImplementation" title="Chapter in CDO Model Repository Documentation">Implementing a View Provider</a></td></tr>
+<tr><td>2&nbsp;</td><td colspan="3"><a href="ViewProviders.html#ContributeProviderProgrammatically" title="Chapter in CDO Model Repository Documentation">Contributing View Providers Programmatically</a></td></tr>
+<tr><td>3&nbsp;</td><td colspan="3"><a href="ViewProviders.html#ContributeProviderUsingExtensionPoint" title="Chapter in CDO Model Repository Documentation">Contributing View Providers Using Extension Points</a></td></tr>
+</table>
+</p>
+
+
+<h2><a name="ProviderImplementation"></a>1&nbsp;&nbsp;Implementing a View Provider</h2>
+<p>
+ Clients should implement the <a href="../../../javadoc/org/eclipse/emf/cdo/view/CDOViewProvider.html" title="Interface in org.eclipse.emf.cdo.view"><code>CDOViewProvider</code></a> interface, or sub class the <a href="../../../javadoc/org/eclipse/emf/cdo/view/AbstractCDOViewProvider.html" title="Class in org.eclipse.emf.cdo.view"><code>AbstractCDOViewProvider</code></a>
+ class, which provides common functionality.
+ <p>
+ The example below shows a simple implementation that opens a <b>new</b> <a href="../../../javadoc/org/eclipse/emf/cdo/session/CDOSession.html" title="Interface in org.eclipse.emf.cdo.session"><code>session</code></a> to a local
+ server and a <b>new</b> <a href="../../../javadoc/org/eclipse/emf/cdo/transaction/CDOTransaction.html" title="Interface in org.eclipse.emf.cdo.transaction"><code>transaction</code></a> on that session.
+ <p>
+ 
+
+<div class="snippet" style="margin-left:24px;" align="left">
+  <a name="snippet_example"></a>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><img src="../../../images/editor-top-left-java.png"></td>
+      <td style="background-image:url(../../../images/editor-top1.png); background-repeat:repeat-x;" width="1px"><font face="Segoe UI,Arial" size="-1">ExampleViewProvider.java</font></td>
+      <td width="1px"><img src="../../../images/editor-close.png"></td>
+      <td style="background-image:url(../../../images/editor-top2.png); background-repeat:repeat-x;">&nbsp;</td>
+      <td><img src="../../../images/editor-top-right.png"></td>
+    </tr>
+    <tr>
+      <td style="background-image:url(../../../images/editor-left.png); background-repeat:repeat-y;">&nbsp;</td>
+      <td colspan="3" align="left" valign="top" nowrap>
+        <div style="margin:10px 0px 10px 0px;">
+          <code>
+            <a name="callout_example_1_code" href="#callout_example_1" alt="The example provider catches all URIs with shape &quot;cdo.local:&quot;." title="The example provider catches all URIs with shape &quot;cdo.local:&quot;."><img src="../../../images/callout-1.png" width="16" height="16" border="0" align="top"></a>&nbsp;<font color="#7f0055"><b>new&nbsp;</b></font>AbstractCDOViewProvider(<font color="#2a00ff">&#34;cdo\\.local:.*&#34;</font>,&nbsp;<font color="#990000">100</font>)<br/>
+            {<br/>
+            &nbsp;&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font>IManagedContainer&nbsp;container;<br/>
+            <br/>
+            &nbsp;&nbsp;<a name="callout_example_2_code" href="#callout_example_2" alt="Register the provider with CDOViewProviderRegistry." title="Register the provider with CDOViewProviderRegistry."><img src="../../../images/callout-2.png" width="16" height="16" border="0" align="top"></a>&nbsp;<font color="#7f0055"><b>public&nbsp;</b></font>CDOView&nbsp;getView(URI&nbsp;uri,&nbsp;ResourceSet&nbsp;resourceSet)<br/>
+            &nbsp;&nbsp;{<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;<font color="#7f0055"><b>if&nbsp;</b></font>(container&nbsp;==&nbsp;<font color="#7f0055"><b>null</b></font>)<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;container&nbsp;=&nbsp;<font color="#7f0055"><b>new&nbsp;</b></font>ManagedContainer();<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Net4jUtil.prepareContainer(container);<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCPUtil.prepareContainer(container);<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;container.activate();<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+            <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;<font color="#7f0055"><b>int&nbsp;</b></font>startIndex&nbsp;=&nbsp;uri.toString().indexOf(<font color="#990000">':'</font>);<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;repoName&nbsp;=&nbsp;uri.toString().substring(startIndex);<br/>
+            <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;IConnector&nbsp;connector&nbsp;=&nbsp;(IConnector)container.getElement(<font color="#2a00ff">&#34;org.eclipse.net4j.connectors&#34;</font>,&nbsp;<font color="#2a00ff">&#34;tcp&#34;</font>,&nbsp;<font color="#2a00ff">&#34;localhost&#34;</font>);<br/>
+            <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;CDONet4jSessionConfiguration&nbsp;config&nbsp;=&nbsp;CDONet4jUtil.createNet4jSessionConfiguration();<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;config.setConnector(connector);<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;config.setRepositoryName(repoName);<br/>
+            <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;CDOSession&nbsp;session&nbsp;=&nbsp;config.openNet4jSession();<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;<font color="#7f0055"><b>return&nbsp;</b></font>session.openTransaction();<br/>
+            &nbsp;&nbsp;}<br/>
+            };
+          </code>
+        </div>
+      </td>
+      <td style="background-image:url(../../../images/editor-right.png); background-repeat:repeat-y;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><img src="../../../images/editor-bottom-left.png"></td>
+      <td style="background-image:url(../../../images/editor-bottom.png); background-repeat:repeat-x;" colspan="3">&nbsp;</td>
+      <td><img src="../../../images/editor-bottom-right.png"></td>
+    </tr>
+  </table>
+</div>
+<p>
+<div style="margin-left:24px;"><a name="callout_example_1" href="#callout_example_1_code" alt="Jump to snippet..." title="Jump to snippet..."><img src="../../../images/callout-1.png" width="16" height="16" border="0" align="top"></a>&nbsp;The example provider catches all URIs with shape "cdo.local:<repoName>".
+
+</div>
+<div style="margin-left:24px;"><a name="callout_example_2" href="#callout_example_2_code" alt="Jump to snippet..." title="Jump to snippet..."><img src="../../../images/callout-2.png" width="16" height="16" border="0" align="top"></a>&nbsp;Register the provider with <a href="../../../javadoc/org/eclipse/emf/cdo/view/CDOViewProviderRegistry.html" title="Interface in org.eclipse.emf.cdo.view"><code>CDOViewProviderRegistry</code></a>.
+
+</div>
+<p>
+
+
+<h2><a name="ContributeProviderProgrammatically"></a>2&nbsp;&nbsp;Contributing View Providers Programmatically</h2>
+<p>
+ A client's view provider implementation can be contributed programmatically to the <a href="../../../javadoc/org/eclipse/emf/cdo/view/CDOViewProviderRegistry.html" title="Interface in org.eclipse.emf.cdo.view"><code>CDOViewProviderRegistry</code></a>,
+ as the following example suggests:
+ <p>
+ 
+
+<div class="snippet" style="margin-left:24px;" align="left">
+  <a name="snippet_snippet2"></a>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><img src="../../../images/editor-top-left-java.png"></td>
+      <td style="background-image:url(../../../images/editor-top1.png); background-repeat:repeat-x;" width="1px"><font face="Segoe UI,Arial" size="-1">ProviderContribution.java</font></td>
+      <td width="1px"><img src="../../../images/editor-close.png"></td>
+      <td style="background-image:url(../../../images/editor-top2.png); background-repeat:repeat-x;">&nbsp;</td>
+      <td><img src="../../../images/editor-top-right.png"></td>
+    </tr>
+    <tr>
+      <td style="background-image:url(../../../images/editor-left.png); background-repeat:repeat-y;">&nbsp;</td>
+      <td colspan="3" align="left" valign="top" nowrap>
+        <div style="margin:10px 0px 10px 0px;">
+          <code>
+            <font color="#3f7f5f">//&nbsp;Instantiate&nbsp;your&nbsp;view&nbsp;provider</font><br/>
+            CDOViewProvider&nbsp;viewProvider&nbsp;=&nbsp;<a name="callout_snippet2_1_code" href="#callout_snippet2_1" alt="Get the target CDOViewProvider implementation." title="Get the target CDOViewProvider implementation."><img src="../../../images/callout-1.png" width="16" height="16" border="0" align="top"></a>&nbsp;org.eclipse.emf.internal.cdo.view.PluginContainerViewProvider.INSTANCE;<br/>
+            <br/>
+            <font color="#3f7f5f">//&nbsp;Add&nbsp;the&nbsp;instance&nbsp;to&nbsp;the&nbsp;registry</font><br/>
+            <a name="callout_snippet2_2_code" href="#callout_snippet2_2" alt="Add the provider instance to CDOViewProviderRegistry." title="Add the provider instance to CDOViewProviderRegistry."><img src="../../../images/callout-2.png" width="16" height="16" border="0" align="top"></a>&nbsp;CDOViewProviderRegistry.INSTANCE.addViewProvider(viewProvider);
+          </code>
+        </div>
+      </td>
+      <td style="background-image:url(../../../images/editor-right.png); background-repeat:repeat-y;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><img src="../../../images/editor-bottom-left.png"></td>
+      <td style="background-image:url(../../../images/editor-bottom.png); background-repeat:repeat-x;" colspan="3">&nbsp;</td>
+      <td><img src="../../../images/editor-bottom-right.png"></td>
+    </tr>
+  </table>
+</div>
+<p>
+<div style="margin-left:24px;"><a name="callout_snippet2_1" href="#callout_snippet2_1_code" alt="Jump to snippet..." title="Jump to snippet..."><img src="../../../images/callout-1.png" width="16" height="16" border="0" align="top"></a>&nbsp;Get the target <a href="../../../javadoc/org/eclipse/emf/cdo/view/CDOViewProvider.html" title="Interface in org.eclipse.emf.cdo.view"><code>CDOViewProvider</code></a> implementation.
+
+</div>
+<div style="margin-left:24px;"><a name="callout_snippet2_2" href="#callout_snippet2_2_code" alt="Jump to snippet..." title="Jump to snippet..."><img src="../../../images/callout-2.png" width="16" height="16" border="0" align="top"></a>&nbsp;Add the provider instance to <a href="../../../javadoc/org/eclipse/emf/cdo/view/CDOViewProviderRegistry.html" title="Interface in org.eclipse.emf.cdo.view"><code>CDOViewProviderRegistry</code></a>.
+
+</div>
+<p>
+
+
+<h2><a name="ContributeProviderUsingExtensionPoint"></a>3&nbsp;&nbsp;Contributing View Providers Using Extension Points</h2>
+<p>
+ A specific <a href="../../../javadoc/org/eclipse/emf/cdo/view/CDOViewProvider.html" title="Interface in org.eclipse.emf.cdo.view"><code>CDOViewProvider</code></a> implementation can also be contributed using the
+ <code>org.eclipse.emf.cdo.viewProviders</code> extension point. Clients specify:
+ <p>
+ <ul>
+ <li>A mandatory <b><code>class</code></b> implementing the <a href="../../../javadoc/org/eclipse/emf/cdo/view/CDOViewProvider.html" title="Interface in org.eclipse.emf.cdo.view"><code>CDOViewProvider</code></a> interface.
+ <li>A mandatory <b>regular expression</b> string indicating the shape of <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/common/util/URI.html" title="Class in org.eclipse.emf.common.util"><code>URIs</code></a> that should match with the contributed provider.
+ <li>An optional <b><code>priority</code></b> integer value, to indicate preference over other implementations
+ matching the same regular expression. A higher value indicates a higher priority, <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Integer.html" title="Class in java.lang"><code>Integer#MAX_VALUE</code></a> being
+ the maximum priority value and <a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/Integer.html" title="Class in java.lang"><code>Integer#MIN_VALUE</code></a> the minimum.
+ </ul>
+
+<p align="right">
+<a href="Architecture.html" title="Backward to Understanding the Architecture of a Client Application"><img src="../../../images/backward.png" border="0"></a>&nbsp;<a href="../server/index.html" title="Forward to Dealing with Servers"><img src="../../../images/forward.png" border="0"></a></p>
+<HR>
+<i>Copyright (c) 2011, 2012 Eike Stepper (Berlin, Germany) and others.</i>
+</BODY>
+</HTML>

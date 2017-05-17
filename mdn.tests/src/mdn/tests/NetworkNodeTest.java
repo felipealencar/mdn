@@ -12,47 +12,43 @@ import mdn.NetworkNode;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class NetworkNodeTest extends TestCase
-{
+public abstract class NetworkNodeTest extends TestCase {
 
-  /**
+	/**
 	 * The fixture for this Network Node test case.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected NetworkNode fixture = null;
+	protected NetworkNode fixture = null;
 
-  /**
+	/**
 	 * Constructs a new Network Node test case with the given name.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NetworkNodeTest(String name)
-  {
+	public NetworkNodeTest(String name) {
 		super(name);
 	}
 
-  /**
+	/**
 	 * Sets the fixture for this Network Node test case.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected void setFixture(NetworkNode fixture)
-  {
+	protected void setFixture(NetworkNode fixture) {
 		this.fixture = fixture;
 	}
 
-  /**
+	/**
 	 * Returns the fixture for this Network Node test case.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected NetworkNode getFixture()
-  {
+	protected NetworkNode getFixture() {
 		return fixture;
 	}
 
