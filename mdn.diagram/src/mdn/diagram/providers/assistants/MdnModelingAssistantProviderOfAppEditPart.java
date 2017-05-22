@@ -11,6 +11,7 @@ import mdn.diagram.edit.parts.AppEditPart;
 import mdn.diagram.edit.parts.ControllerEditPart;
 import mdn.diagram.edit.parts.Host2EditPart;
 import mdn.diagram.edit.parts.HostEditPart;
+import mdn.diagram.edit.parts.OpenFlowSwitchEditPart;
 import mdn.diagram.edit.parts.PacketHeaderEditPart;
 import mdn.diagram.edit.parts.RuleEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
@@ -41,11 +42,12 @@ public class MdnModelingAssistantProviderOfAppEditPart extends
 	 * @generated
 	 */
 	public List<IElementType> doGetRelTypesOnSource(AppEditPart source) {
-		List<IElementType> types = new ArrayList<IElementType>(4);
+		List<IElementType> types = new ArrayList<IElementType>(5);
 		types.add(MdnElementTypes.AppActionPacketHeader_4029);
 		types.add(MdnElementTypes.AppAppToNetworkNode_4030);
 		types.add(MdnElementTypes.AppControllerApp_4031);
 		types.add(MdnElementTypes.AppAppRule_4032);
+		types.add(MdnElementTypes.AppTargetSwitch_4033);
 		return types;
 	}
 
@@ -72,6 +74,9 @@ public class MdnModelingAssistantProviderOfAppEditPart extends
 		if (targetEditPart instanceof PacketHeaderEditPart) {
 			types.add(MdnElementTypes.AppActionPacketHeader_4029);
 		}
+		if (targetEditPart instanceof OpenFlowSwitchEditPart) {
+			types.add(MdnElementTypes.AppAppToNetworkNode_4030);
+		}
 		if (targetEditPart instanceof ControllerEditPart) {
 			types.add(MdnElementTypes.AppAppToNetworkNode_4030);
 		}
@@ -89,6 +94,12 @@ public class MdnModelingAssistantProviderOfAppEditPart extends
 		}
 		if (targetEditPart instanceof RuleEditPart) {
 			types.add(MdnElementTypes.AppAppRule_4032);
+		}
+		if (targetEditPart instanceof OpenFlowSwitchEditPart) {
+			types.add(MdnElementTypes.AppTargetSwitch_4033);
+		}
+		if (targetEditPart instanceof SwitchEditPart) {
+			types.add(MdnElementTypes.AppTargetSwitch_4033);
 		}
 		return types;
 	}
@@ -114,6 +125,7 @@ public class MdnModelingAssistantProviderOfAppEditPart extends
 		if (relationshipType == MdnElementTypes.AppActionPacketHeader_4029) {
 			types.add(MdnElementTypes.PacketHeader_2016);
 		} else if (relationshipType == MdnElementTypes.AppAppToNetworkNode_4030) {
+			types.add(MdnElementTypes.OpenFlowSwitch_2022);
 			types.add(MdnElementTypes.Controller_2001);
 			types.add(MdnElementTypes.Host_2002);
 			types.add(MdnElementTypes.Switch_2003);
@@ -122,6 +134,9 @@ public class MdnModelingAssistantProviderOfAppEditPart extends
 			types.add(MdnElementTypes.Controller_2001);
 		} else if (relationshipType == MdnElementTypes.AppAppRule_4032) {
 			types.add(MdnElementTypes.Rule_2021);
+		} else if (relationshipType == MdnElementTypes.AppTargetSwitch_4033) {
+			types.add(MdnElementTypes.OpenFlowSwitch_2022);
+			types.add(MdnElementTypes.Switch_2003);
 		}
 		return types;
 	}

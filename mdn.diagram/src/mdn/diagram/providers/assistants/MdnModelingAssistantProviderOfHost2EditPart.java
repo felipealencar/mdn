@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import mdn.diagram.edit.parts.Host2EditPart;
+import mdn.diagram.edit.parts.OpenFlowSwitchEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
 import mdn.diagram.providers.MdnElementTypes;
 import mdn.diagram.providers.MdnModelingAssistantProvider;
@@ -61,6 +62,9 @@ public class MdnModelingAssistantProviderOfHost2EditPart extends
 	public List<IElementType> doGetRelTypesOnSourceAndTarget(
 			Host2EditPart source, IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
+		if (targetEditPart instanceof OpenFlowSwitchEditPart) {
+			types.add(MdnElementTypes.HostHostSwitch_4004);
+		}
 		if (targetEditPart instanceof SwitchEditPart) {
 			types.add(MdnElementTypes.HostHostSwitch_4004);
 		}
@@ -86,6 +90,7 @@ public class MdnModelingAssistantProviderOfHost2EditPart extends
 			IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == MdnElementTypes.HostHostSwitch_4004) {
+			types.add(MdnElementTypes.OpenFlowSwitch_2022);
 			types.add(MdnElementTypes.Switch_2003);
 		}
 		return types;

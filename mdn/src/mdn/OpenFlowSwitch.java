@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link mdn.OpenFlowSwitch#getTableSpace <em>Table Space</em>}</li>
- *   <li>{@link mdn.OpenFlowSwitch#getSwitchIsOpenFlow <em>Switch Is Open Flow</em>}</li>
  *   <li>{@link mdn.OpenFlowSwitch#getRequiredHeaders <em>Required Headers</em>}</li>
  *   <li>{@link mdn.OpenFlowSwitch#getVersion <em>Version</em>}</li>
  *   <li>{@link mdn.OpenFlowSwitch#getSupportedProtocols <em>Supported Protocols</em>}</li>
@@ -25,10 +24,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see mdn.MdnPackage#getOpenFlowSwitch()
- * @model
+ * @model annotation="gmf.node label='name' label.icon='false' tool.small.bundle='mdn.edit' tool.small.path='/icons/full/obj16/openflowswitch.gif' figure='OpenFlowSwitchFigure' label.placement='external'"
  * @generated
  */
-public interface OpenFlowSwitch extends EObject {
+public interface OpenFlowSwitch extends Switch {
 	/**
 	 * Returns the value of the '<em><b>Table Space</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -54,32 +53,6 @@ public interface OpenFlowSwitch extends EObject {
 	 * @generated
 	 */
 	void setTableSpace(float value);
-
-	/**
-	 * Returns the value of the '<em><b>Switch Is Open Flow</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Switch Is Open Flow</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Switch Is Open Flow</em>' reference.
-	 * @see #setSwitchIsOpenFlow(Switch)
-	 * @see mdn.MdnPackage#getOpenFlowSwitch_SwitchIsOpenFlow()
-	 * @model
-	 * @generated
-	 */
-	Switch getSwitchIsOpenFlow();
-
-	/**
-	 * Sets the value of the '{@link mdn.OpenFlowSwitch#getSwitchIsOpenFlow <em>Switch Is Open Flow</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Switch Is Open Flow</em>' reference.
-	 * @see #getSwitchIsOpenFlow()
-	 * @generated
-	 */
-	void setSwitchIsOpenFlow(Switch value);
 
 	/**
 	 * Returns the value of the '<em><b>Required Headers</b></em>' attribute list.
@@ -126,30 +99,20 @@ public interface OpenFlowSwitch extends EObject {
 	void setVersion(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Supported Protocols</b></em>' attribute.
+	 * Returns the value of the '<em><b>Supported Protocols</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Supported Protocols</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Supported Protocols</em>' attribute.
-	 * @see #setSupportedProtocols(String)
+	 * @return the value of the '<em>Supported Protocols</em>' attribute list.
 	 * @see mdn.MdnPackage#getOpenFlowSwitch_SupportedProtocols()
 	 * @model
 	 * @generated
 	 */
-	String getSupportedProtocols();
-
-	/**
-	 * Sets the value of the '{@link mdn.OpenFlowSwitch#getSupportedProtocols <em>Supported Protocols</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Supported Protocols</em>' attribute.
-	 * @see #getSupportedProtocols()
-	 * @generated
-	 */
-	void setSupportedProtocols(String value);
+	EList<String> getSupportedProtocols();
 
 	/**
 	 * Returns the value of the '<em><b>Optional Headers</b></em>' attribute list.

@@ -65,6 +65,7 @@ public class AppItemProvider
 			addControllerAppPropertyDescriptor(object);
 			addAppRulePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addTargetSwitchPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -175,6 +176,28 @@ public class AppItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Target Switch feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetSwitchPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_App_targetSwitch_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_App_targetSwitch_feature", "_UI_App_type"),
+				 MdnPackage.Literals.APP__TARGET_SWITCH,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

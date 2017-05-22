@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import mdn.diagram.edit.parts.ControllerEditPart;
+import mdn.diagram.edit.parts.OpenFlowSwitchEditPart;
 import mdn.diagram.edit.parts.SwitchEditPart;
 import mdn.diagram.providers.MdnElementTypes;
 import mdn.diagram.providers.MdnModelingAssistantProvider;
@@ -65,6 +66,9 @@ public class MdnModelingAssistantProviderOfSwitchEditPart extends
 		if (targetEditPart instanceof ControllerEditPart) {
 			types.add(MdnElementTypes.SwitchSwitchController_4006);
 		}
+		if (targetEditPart instanceof OpenFlowSwitchEditPart) {
+			types.add(MdnElementTypes.SwitchSwitches_4022);
+		}
 		if (targetEditPart instanceof SwitchEditPart) {
 			types.add(MdnElementTypes.SwitchSwitches_4022);
 		}
@@ -92,6 +96,7 @@ public class MdnModelingAssistantProviderOfSwitchEditPart extends
 		if (relationshipType == MdnElementTypes.SwitchSwitchController_4006) {
 			types.add(MdnElementTypes.Controller_2001);
 		} else if (relationshipType == MdnElementTypes.SwitchSwitches_4022) {
+			types.add(MdnElementTypes.OpenFlowSwitch_2022);
 			types.add(MdnElementTypes.Switch_2003);
 		}
 		return types;
@@ -111,10 +116,11 @@ public class MdnModelingAssistantProviderOfSwitchEditPart extends
 	 * @generated
 	 */
 	public List<IElementType> doGetRelTypesOnTarget(SwitchEditPart target) {
-		List<IElementType> types = new ArrayList<IElementType>(3);
+		List<IElementType> types = new ArrayList<IElementType>(4);
 		types.add(MdnElementTypes.HostHostSwitch_4004);
 		types.add(MdnElementTypes.SwitchSwitches_4022);
 		types.add(MdnElementTypes.AppAppToNetworkNode_4030);
+		types.add(MdnElementTypes.AppTargetSwitch_4033);
 		return types;
 	}
 
@@ -140,8 +146,12 @@ public class MdnModelingAssistantProviderOfSwitchEditPart extends
 			types.add(MdnElementTypes.Host_2002);
 			types.add(MdnElementTypes.Host_3001);
 		} else if (relationshipType == MdnElementTypes.SwitchSwitches_4022) {
+			types.add(MdnElementTypes.OpenFlowSwitch_2022);
 			types.add(MdnElementTypes.Switch_2003);
 		} else if (relationshipType == MdnElementTypes.AppAppToNetworkNode_4030) {
+			types.add(MdnElementTypes.AppMonitor_2019);
+			types.add(MdnElementTypes.App_2020);
+		} else if (relationshipType == MdnElementTypes.AppTargetSwitch_4033) {
 			types.add(MdnElementTypes.AppMonitor_2019);
 			types.add(MdnElementTypes.App_2020);
 		}

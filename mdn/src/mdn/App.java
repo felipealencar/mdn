@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link mdn.App#getControllerApp <em>Controller App</em>}</li>
  *   <li>{@link mdn.App#getAppRule <em>App Rule</em>}</li>
  *   <li>{@link mdn.App#getName <em>Name</em>}</li>
+ *   <li>{@link mdn.App#getTargetSwitch <em>Target Switch</em>}</li>
  * </ul>
  * </p>
  *
@@ -127,5 +128,22 @@ public interface App extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Target Switch</b></em>' reference list.
+	 * The list contents are of type {@link mdn.Switch}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Target Switch</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target Switch</em>' reference list.
+	 * @see mdn.MdnPackage#getApp_TargetSwitch()
+	 * @model transient="true"
+	 *        annotation="gmf.link target.decoration='arrow' source.decoration='none' style='dash' color='0,0,0'"
+	 * @generated
+	 */
+	EList<Switch> getTargetSwitch();
 
 } // App

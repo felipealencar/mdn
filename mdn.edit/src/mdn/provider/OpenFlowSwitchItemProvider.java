@@ -32,13 +32,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class OpenFlowSwitchItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends SwitchItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -61,7 +55,6 @@ public class OpenFlowSwitchItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTableSpacePropertyDescriptor(object);
-			addSwitchIsOpenFlowPropertyDescriptor(object);
 			addRequiredHeadersPropertyDescriptor(object);
 			addVersionPropertyDescriptor(object);
 			addSupportedProtocolsPropertyDescriptor(object);
@@ -89,28 +82,6 @@ public class OpenFlowSwitchItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Switch Is Open Flow feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSwitchIsOpenFlowPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OpenFlowSwitch_switchIsOpenFlow_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OpenFlowSwitch_switchIsOpenFlow_feature", "_UI_OpenFlowSwitch_type"),
-				 MdnPackage.Literals.OPEN_FLOW_SWITCH__SWITCH_IS_OPEN_FLOW,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
@@ -244,8 +215,10 @@ public class OpenFlowSwitchItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		OpenFlowSwitch openFlowSwitch = (OpenFlowSwitch)object;
-		return getString("_UI_OpenFlowSwitch_type") + " " + openFlowSwitch.getTableSpace();
+		String label = ((OpenFlowSwitch)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_OpenFlowSwitch_type") :
+			getString("_UI_OpenFlowSwitch_type") + " " + label;
 	}
 	
 
@@ -283,17 +256,6 @@ public class OpenFlowSwitchItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return MdnEditPlugin.INSTANCE;
 	}
 
 }

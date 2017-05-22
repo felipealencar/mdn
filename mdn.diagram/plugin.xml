@@ -221,8 +221,8 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Mdn"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2019,2021,2013,2014,2015,2016,2020,2018,3001"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4004,4006,4022,4024,4025,4026,4028,4029,4030,4031,4032,4017,4018,4019"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2022,2001,2002,2003,2019,2021,2013,2014,2015,2016,2020,2018,3001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4004,4006,4022,4024,4025,4026,4028,4029,4030,4031,4032,4033,4017,4018,4019"/>
       </viewProvider>
    </extension>
 
@@ -234,13 +234,13 @@
             <method name="getType()" value="Mdn"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002,2003,2019,2021,2013,2014,2015,2016,2020,2018,3001"/>
+            <method name="getType()" value="2022,2001,2002,2003,2019,2021,2013,2014,2015,2016,2020,2018,3001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4004,4006,4022,4024,4025,4026,4028,4029,4030,4031,4032,4017,4018,4019"/>
+            <method name="getType()" value="4004,4006,4022,4024,4025,4026,4028,4029,4030,4031,4032,4033,4017,4018,4019"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5002,5003,5020,5022,5013,5014,5015,5016,5021,5019,5018"/>
+            <method name="getType()" value="5023,5001,5002,5003,5020,5022,5013,5014,5015,5016,5021,5019,5018"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7001"/>
@@ -256,6 +256,11 @@
          <Priority name="Lowest"/>
          <object class="mdn.diagram.edit.parts.SdnEditPart" id="Sdn_1000"/>
          <context elements="Sdn_1000"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfOpenFlowSwitchEditPart">
+         <Priority name="Lowest"/>
+         <object class="mdn.diagram.edit.parts.OpenFlowSwitchEditPart" id="OpenFlowSwitch_2022"/>
+         <context elements="OpenFlowSwitch_2022"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="mdn.diagram.providers.assistants.MdnModelingAssistantProviderOfControllerEditPart">
          <Priority name="Lowest"/>
@@ -340,7 +345,7 @@
       <decoratorProvider class="mdn.diagram.providers.MdnShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
-            <method name="getType()" value="2001,2002,2003,2019,2021,2013,2014,2015,2016,2020,2018"/>
+            <method name="getType()" value="2022,2001,2002,2003,2019,2021,2013,2014,2015,2016,2020,2018"/>
          </object>
          <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
@@ -356,6 +361,16 @@
                eclass="Sdn"
                edithelper="mdn.diagram.edit.helpers.SdnEditHelper">
             <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="mdn">
+         <metamodelType
+               id="mdn.diagram.OpenFlowSwitch_2022"
+               name="%metatype.name.OpenFlowSwitch_2022"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="OpenFlowSwitch"
+               edithelper="mdn.diagram.edit.helpers.OpenFlowSwitchEditHelper">
+            <param name="semanticHint" value="2022"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="mdn">
@@ -578,6 +593,15 @@
       </metamodel>
       <metamodel nsURI="mdn">
          <specializationType
+               id="mdn.diagram.AppTargetSwitch_4033"
+               name="%metatype.name.AppTargetSwitch_4033"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4033"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="mdn">
+         <specializationType
                id="mdn.diagram.ConditionConditionTime_4017"
                name="%metatype.name.ConditionConditionTime_4017"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
@@ -616,6 +640,7 @@
       </clientContext> 
       <binding context="mdn.diagram.TypeContext">
          <elementType ref="mdn.diagram.Sdn_1000"/>
+         <elementType ref="mdn.diagram.OpenFlowSwitch_2022"/>
          <elementType ref="mdn.diagram.Controller_2001"/>
          <elementType ref="mdn.diagram.Host_2002"/>
          <elementType ref="mdn.diagram.Switch_2003"/>
@@ -639,6 +664,7 @@
          <elementType ref="mdn.diagram.AppAppToNetworkNode_4030"/>
          <elementType ref="mdn.diagram.AppControllerApp_4031"/>
          <elementType ref="mdn.diagram.AppAppRule_4032"/>
+         <elementType ref="mdn.diagram.AppTargetSwitch_4033"/>
          <elementType ref="mdn.diagram.ConditionConditionTime_4017"/>
          <elementType ref="mdn.diagram.ConditionConditionTraffic_4018"/>
          <elementType ref="mdn.diagram.ConditionConditionPacket_4019"/>
@@ -773,6 +799,29 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
-
+   <extension point="org.eclipse.ui.views">
+        <view id="mdn.transformation.TransformationView"
+             name="Export to script"
+          class="mdn.transformation.TransformationView"
+          icon="icons/obj16/transformation.png"/>
+   </extension>
+   <extension point="org.eclipse.ui.actionSets">
+	   <actionSet
+	            description="Export to script"
+	            id="mdn.transformation.M2TAction.actionSet"
+	            label="Exportar para script  "
+	            visible="true">
+	      <action
+	               class="mdn.transformation.M2TAction"
+	               icon="icons/obj16/transformation.png"
+	               id="mdn.transformation.M2TAction"
+	               label="Export to script"
+	               mode="FORCE_TEXT"
+	               style="push"
+	               toolbarPath="transformationGroup"
+	               tooltip="Export to script">
+	      </action>
+	   </actionSet>
+   </extension>
    <!-- optionally, specify keybindings -->
 </plugin>

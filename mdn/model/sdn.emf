@@ -1,0 +1,244 @@
+@gmf
+@namespace(uri="mdn", prefix="")
+package mdn;
+
+@gmf.diagram(foo="bar", onefile="true", rcp="true", diagram.extension="mdn")
+class Sdn {
+  val NetworkNode[*] nodes;
+  val App[*] apps;
+  val AppObject[*] ruleObjects;
+  val Group[*] groups;
+}
+
+abstract class NetworkNode {
+  attr String name;
+  attr String mac;
+  attr String ip;
+}
+
+@gmf.node(figure="ControllerFigure", label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/controller.gif", label.placement="external")
+class Controller extends NetworkNode {
+  attr ControllerTypes type = "RYU";
+}
+
+@gmf.node(label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/host.gif", figure="HostFigure", label.placement="external")
+class Host extends NetworkNode {
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0")
+  ref Switch hostSwitch;
+}
+
+@gmf.node(label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/switch.gif", figure="SwitchFigure", label.placement="external")
+class Switch extends NetworkNode {
+  attr int ports;
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0")
+  ref Controller[*] switchController;
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="solid", color="0,0,0", switches.constraint="self <> oppositeEnd", source.constraint="self <> oppositeEnd")
+  ref Switch[*] switches;
+}
+
+class OpenFlowSwitch {
+  attr float tableSpace;
+  ref Switch switchIsOpenFlow;
+  !unique attr PacketHeaders[+] requiredHeaders;
+  attr String version;
+  attr String supportedProtocols;
+  !unique attr PacketHeaders[*] optionalHeaders;
+  attr float availableTableSpace;
+}
+
+abstract class AppObject {
+  attr String name;
+}
+
+@gmf.node(figure="RuleFigure", label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/policy.gif", label.placement="external")
+class Rule extends AppObject {
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
+  transient ref Host[*] sourceHostRule;
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
+  transient ref Host[*] targetHostRule;
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
+  transient ref Condition[*] ruleCondition;
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
+  ref Group[*] targetGroupRule;
+  attr Actions actions = "ADD";
+  ref Flow flowRule;
+}
+
+@gmf.node(figure="ActionFigure", label="name", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/action.gif", label.placement="external")
+class App {
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
+  ref PacketHeader[*] actionPacketHeader;
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
+  ref NetworkNode appToNetworkNode;
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
+  ref Controller[*] controllerApp;
+
+  @gmf.link(target.decoration="arrow", source.decoration="none", style="dash", color="0,0,0")
+  transient ref Rule[*] appRule;
+  attr String name = "App";
+}
+
+@gmf.node(label="condition", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/condition.gif", label.placement="external", figure="ConditionFigure")
+class Condition extends AppObject {
+  attr Conditions condition = "WHERE";
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
+  ref Time conditionTime;
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
+  ref Traffic conditionTraffic;
+
+  @gmf.link(target.decoration="none", source.decoration="none", style="dash", color="0,0,0")
+  ref PacketHeader conditionPacket;
+}
+
+@gmf.node(figure="TrafficFigure", label="operator,value,unit", label.pattern="{0}: {2}{1}", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/traffic.gif", label.placement="external")
+class Traffic extends AppObject {
+  attr RelationalOperators operator;
+  attr String unit = "MB";
+  attr int value;
+}
+
+@gmf.node(figure="TimeFigure", label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/time.gif", label.placement="external", label="operator,beginDate,endDate", label.pattern="{0}: {1} - {2}")
+class Time extends AppObject {
+  attr RelationalOperators operator;
+  attr EDate beginDate;
+  attr EDate endDate;
+}
+
+@gmf.node(label.icon="false", tool.small.bundle="mdn.edit", tool.small.path="/icons/full/obj16/packetheader.gif", label.placement="external", label="operator,header,value", label.pattern="{0}: [{1}] {2}")
+class PacketHeader extends AppObject {
+  attr RelationalOperators operator;
+  attr PacketHeaders header = "IPV4_DST";
+  attr String value;
+}
+
+@gmf.node
+class AppMonitor extends App {
+  attr AppMonitorTypes type = "NETFLOW";
+  attr String serverAddress;
+}
+
+class Flow {
+  !unique attr PacketHeaders matchFields;
+  attr String matchValues;
+  ref Host flowSourceHost;
+  ref Host flowDestinationHost;
+  attr int priority;
+}
+
+@gmf.node(label="name", label.icon="false", tool.small.bundle="mdn.edit", label.placement="external")
+class Group {
+
+  @gmf.compartment
+  val Host[*] hostsGroup;
+  attr String ip;
+  attr String name;
+  val Switch[*] switchesGroup;
+}
+
+class Instruction {
+  !unique attr Instructions[*] type;
+  attr int tableId;
+  ref OpenFlowSwitch instructionSwitch;
+  ref Rule[*] instructionRules;
+}
+
+enum PacketHeaders {
+  IN_PORT = 0;
+  ETH_SRC = 1;
+  ETH_DST = 2;
+  VLAN_ID = 3;
+  VLAN_PRIO = 4;
+  ETH_TYPE = 5;
+  IPV4_SRC = 6;
+  IPV4_DST = 7;
+  IP_TOS = 8;
+  IP_PORT = 9;
+  L4_SPORT = 10;
+  L4_DPORT = 11;
+  IN_PHY_PORT = 0;
+  METADATA = 0;
+  VLAN_VID = 0;
+  VLAN_PCP = 0;
+  IP_DSCP = 0;
+  IP_ECN = 0;
+  IP_PROTO = 0;
+  TCP_SRC = 0;
+  TCP_DST = 0;
+  UDP_SRC = 0;
+  UDP_DST = 0;
+  SCTP_SRC = 0;
+  SCTP_DST = 0;
+  ICMPV4_TYPE = 0;
+  ICMPV4_CODE = 0;
+  ARP_OP = 0;
+  ARP_SPA = 0;
+  ARP_TPA = 0;
+  ARP_SHA = 0;
+  ARP_THA = 0;
+  IPV6_SRC = 0;
+  IPV6_DST = 0;
+  IPV6_LABEL = 0;
+  ICMPV6_TYPE = 0;
+  ICMPV6_CODE = 0;
+  IPV6_ND_TARGET = 0;
+  IPV6_ND_SLL = 0;
+  IPV6_ND_TLL = 0;
+  MPLS_LABEL = 0;
+  MPLS_TC = 0;
+  MPLS_BOS = 0;
+  PBB_ISID = 0;
+  TUNNEL_ID = 0;
+  IPV6_EXTHDR = 0;
+}
+
+enum Actions {
+  ADD = 0;
+  DELETE = 1;
+  MODIFY = 2;
+  DELETE_STRICT = 0;
+  MODIFY_STRICT = 0;
+}
+
+enum Conditions {
+  WHEN = 0;
+  WHERE = 1;
+}
+
+enum RelationalOperators {
+  EQUAL_TO = 0;
+  NOT_EQUAL_TO = 1;
+  GREATER_THAN = 2;
+  LESS_THAN = 3;
+  IN = 0;
+  OUT = 0;
+}
+
+enum AppMonitorTypes {
+  SFLOW = 0;
+  NETFLOW = 0;
+  FLOWMETERS = 0;
+}
+
+enum ControllerTypes {
+  POX = 0;
+  RYU = 0;
+  OPENDAYLIGHT = 0;
+}
+
+enum Instructions {
+  WRITE_ACTIONS = 0;
+  GOTO_TABLE = 0;
+}
+

@@ -214,6 +214,11 @@ public class GroupItemProvider
 			(createChildParameter
 				(MdnPackage.Literals.GROUP__SWITCHES_GROUP,
 				 MdnFactory.eINSTANCE.createSwitch()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MdnPackage.Literals.GROUP__SWITCHES_GROUP,
+				 MdnFactory.eINSTANCE.createOpenFlowSwitch()));
 	}
 
 	/**

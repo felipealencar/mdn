@@ -47,6 +47,7 @@ public class AppMonitorItemProvider extends AppItemProvider {
 
 			addTypePropertyDescriptor(object);
 			addServerAddressPropertyDescriptor(object);
+			addFlowToMonitorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,6 +92,28 @@ public class AppMonitorItemProvider extends AppItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Flow To Monitor feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFlowToMonitorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AppMonitor_flowToMonitor_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AppMonitor_flowToMonitor_feature", "_UI_AppMonitor_type"),
+				 MdnPackage.Literals.APP_MONITOR__FLOW_TO_MONITOR,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

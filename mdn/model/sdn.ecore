@@ -83,14 +83,24 @@
         <details key="source.constraint" value="self &lt;> oppositeEnd"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        iD="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OpenFlowSwitch">
+  <eClassifiers xsi:type="ecore:EClass" name="OpenFlowSwitch" eSuperTypes="#//Switch">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="tool.small.bundle" value="mdn.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/openflowswitch.gif"/>
+      <details key="figure" value="OpenFlowSwitchFigure"/>
+      <details key="label.placement" value="external"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableSpace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="switchIsOpenFlow" eType="#//Switch"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredHeaders" unique="false"
         lowerBound="1" upperBound="-1" eType="#//PacketHeaders"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="supportedProtocols" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="supportedProtocols" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optionalHeaders" unique="false"
         upperBound="-1" eType="#//PacketHeaders"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="availableTableSpace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
@@ -193,6 +203,15 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="App"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetSwitch" upperBound="-1"
+        eType="#//Switch" transient="true">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="arrow"/>
+        <details key="source.decoration" value="none"/>
+        <details key="style" value="dash"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condition" eSuperTypes="#//AppObject">
     <eAnnotations source="gmf.node">
@@ -275,9 +294,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AppMonitor" eSuperTypes="#//App">
     <eAnnotations source="gmf.node"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AppMonitorTypes"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AppMonitorProtocols"
         defaultValueLiteral="NETFLOW"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowToMonitor" upperBound="-1"
+        eType="#//Flow" transient="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Flow">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="matchFields" unique="false"
@@ -378,10 +399,10 @@
     <eLiterals name="IN"/>
     <eLiterals name="OUT"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="AppMonitorTypes">
-    <eLiterals name="SFLOW"/>
-    <eLiterals name="NETFLOW"/>
-    <eLiterals name="FLOWMETERS"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="AppMonitorProtocols">
+    <eLiterals name="SFLOW" value="1"/>
+    <eLiterals name="NETFLOW" value="2"/>
+    <eLiterals name="FLOWMETERS" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ControllerTypes">
     <eLiterals name="POX"/>

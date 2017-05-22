@@ -171,6 +171,11 @@ public class SdnItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(MdnPackage.Literals.SDN__NODES,
+				 MdnFactory.eINSTANCE.createOpenFlowSwitch()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(MdnPackage.Literals.SDN__APPS,
 				 MdnFactory.eINSTANCE.createApp()));
 

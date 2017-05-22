@@ -2,6 +2,8 @@
  */
 package mdn;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +15,7 @@ package mdn;
  * <ul>
  *   <li>{@link mdn.AppMonitor#getType <em>Type</em>}</li>
  *   <li>{@link mdn.AppMonitor#getServerAddress <em>Server Address</em>}</li>
+ *   <li>{@link mdn.AppMonitor#getFlowToMonitor <em>Flow To Monitor</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,7 +27,7 @@ public interface AppMonitor extends App {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The default value is <code>"NETFLOW"</code>.
-	 * The literals are from the enumeration {@link mdn.AppMonitorTypes}.
+	 * The literals are from the enumeration {@link mdn.AppMonitorProtocols}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -32,24 +35,24 @@ public interface AppMonitor extends App {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see mdn.AppMonitorTypes
-	 * @see #setType(AppMonitorTypes)
+	 * @see mdn.AppMonitorProtocols
+	 * @see #setType(AppMonitorProtocols)
 	 * @see mdn.MdnPackage#getAppMonitor_Type()
 	 * @model default="NETFLOW"
 	 * @generated
 	 */
-	AppMonitorTypes getType();
+	AppMonitorProtocols getType();
 
 	/**
 	 * Sets the value of the '{@link mdn.AppMonitor#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see mdn.AppMonitorTypes
+	 * @see mdn.AppMonitorProtocols
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(AppMonitorTypes value);
+	void setType(AppMonitorProtocols value);
 
 	/**
 	 * Returns the value of the '<em><b>Server Address</b></em>' attribute.
@@ -76,5 +79,21 @@ public interface AppMonitor extends App {
 	 * @generated
 	 */
 	void setServerAddress(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Flow To Monitor</b></em>' reference list.
+	 * The list contents are of type {@link mdn.Flow}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Flow To Monitor</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Flow To Monitor</em>' reference list.
+	 * @see mdn.MdnPackage#getAppMonitor_FlowToMonitor()
+	 * @model transient="true"
+	 * @generated
+	 */
+	EList<Flow> getFlowToMonitor();
 
 } // AppMonitor

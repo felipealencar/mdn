@@ -2,15 +2,20 @@
  */
 package mdn.impl;
 
+import java.util.Collection;
 import mdn.AppMonitor;
+import mdn.AppMonitorProtocols;
 import mdn.AppMonitorTypes;
+import mdn.Flow;
 import mdn.MdnPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link mdn.impl.AppMonitorImpl#getType <em>Type</em>}</li>
  *   <li>{@link mdn.impl.AppMonitorImpl#getServerAddress <em>Server Address</em>}</li>
+ *   <li>{@link mdn.impl.AppMonitorImpl#getFlowToMonitor <em>Flow To Monitor</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,7 +41,7 @@ public class AppMonitorImpl extends AppImpl implements AppMonitor {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final AppMonitorTypes TYPE_EDEFAULT = AppMonitorTypes.NETFLOW;
+	protected static final AppMonitorProtocols TYPE_EDEFAULT = AppMonitorProtocols.NETFLOW;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -45,7 +51,7 @@ public class AppMonitorImpl extends AppImpl implements AppMonitor {
 	 * @generated
 	 * @ordered
 	 */
-	protected AppMonitorTypes type = TYPE_EDEFAULT;
+	protected AppMonitorProtocols type = TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getServerAddress() <em>Server Address</em>}' attribute.
@@ -66,6 +72,16 @@ public class AppMonitorImpl extends AppImpl implements AppMonitor {
 	 * @ordered
 	 */
 	protected String serverAddress = SERVER_ADDRESS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFlowToMonitor() <em>Flow To Monitor</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFlowToMonitor()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Flow> flowToMonitor;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,7 +107,7 @@ public class AppMonitorImpl extends AppImpl implements AppMonitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AppMonitorTypes getType() {
+	public AppMonitorProtocols getType() {
 		return type;
 	}
 
@@ -100,8 +116,8 @@ public class AppMonitorImpl extends AppImpl implements AppMonitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(AppMonitorTypes newType) {
-		AppMonitorTypes oldType = type;
+	public void setType(AppMonitorProtocols newType) {
+		AppMonitorProtocols oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.APP_MONITOR__TYPE, oldType, type));
@@ -133,6 +149,18 @@ public class AppMonitorImpl extends AppImpl implements AppMonitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Flow> getFlowToMonitor() {
+		if (flowToMonitor == null) {
+			flowToMonitor = new EObjectResolvingEList<Flow>(Flow.class, this, MdnPackage.APP_MONITOR__FLOW_TO_MONITOR);
+		}
+		return flowToMonitor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +168,8 @@ public class AppMonitorImpl extends AppImpl implements AppMonitor {
 				return getType();
 			case MdnPackage.APP_MONITOR__SERVER_ADDRESS:
 				return getServerAddress();
+			case MdnPackage.APP_MONITOR__FLOW_TO_MONITOR:
+				return getFlowToMonitor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -149,14 +179,19 @@ public class AppMonitorImpl extends AppImpl implements AppMonitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MdnPackage.APP_MONITOR__TYPE:
-				setType((AppMonitorTypes)newValue);
+				setType((AppMonitorProtocols)newValue);
 				return;
 			case MdnPackage.APP_MONITOR__SERVER_ADDRESS:
 				setServerAddress((String)newValue);
+				return;
+			case MdnPackage.APP_MONITOR__FLOW_TO_MONITOR:
+				getFlowToMonitor().clear();
+				getFlowToMonitor().addAll((Collection<? extends Flow>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +211,9 @@ public class AppMonitorImpl extends AppImpl implements AppMonitor {
 			case MdnPackage.APP_MONITOR__SERVER_ADDRESS:
 				setServerAddress(SERVER_ADDRESS_EDEFAULT);
 				return;
+			case MdnPackage.APP_MONITOR__FLOW_TO_MONITOR:
+				getFlowToMonitor().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +230,8 @@ public class AppMonitorImpl extends AppImpl implements AppMonitor {
 				return type != TYPE_EDEFAULT;
 			case MdnPackage.APP_MONITOR__SERVER_ADDRESS:
 				return SERVER_ADDRESS_EDEFAULT == null ? serverAddress != null : !SERVER_ADDRESS_EDEFAULT.equals(serverAddress);
+			case MdnPackage.APP_MONITOR__FLOW_TO_MONITOR:
+				return flowToMonitor != null && !flowToMonitor.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

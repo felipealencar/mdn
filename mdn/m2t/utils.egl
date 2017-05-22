@@ -51,4 +51,9 @@ operation monthNameToNum(month : Any) : String {
 	else if (month == 'Dec' or month == 'Dez')
 		return '12';
 }
+
+//Recebe lista de switches
+//Identifica switch incapaz
+//Identifica switch capaz
+//Buscar caminho mais curto do switch incapaz para o capaz
 %]

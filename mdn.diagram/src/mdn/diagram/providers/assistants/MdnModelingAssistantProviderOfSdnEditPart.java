@@ -23,7 +23,8 @@ public class MdnModelingAssistantProviderOfSdnEditPart extends
 	 */
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
-		List<IElementType> types = new ArrayList<IElementType>(11);
+		List<IElementType> types = new ArrayList<IElementType>(12);
+		types.add(MdnElementTypes.OpenFlowSwitch_2022);
 		types.add(MdnElementTypes.Controller_2001);
 		types.add(MdnElementTypes.Host_2002);
 		types.add(MdnElementTypes.Switch_2003);

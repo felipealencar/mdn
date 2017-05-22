@@ -60,6 +60,7 @@ public class MdnModelingAssistantProviderOfControllerEditPart extends
 			IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == MdnElementTypes.SwitchSwitchController_4006) {
+			types.add(MdnElementTypes.OpenFlowSwitch_2022);
 			types.add(MdnElementTypes.Switch_2003);
 		} else if (relationshipType == MdnElementTypes.AppAppToNetworkNode_4030) {
 			types.add(MdnElementTypes.AppMonitor_2019);

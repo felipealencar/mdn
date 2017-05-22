@@ -48,6 +48,7 @@ public class SwitchItemProvider extends NetworkNodeItemProvider {
 			addPortsPropertyDescriptor(object);
 			addSwitchControllerPropertyDescriptor(object);
 			addSwitchesPropertyDescriptor(object);
+			addIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -119,6 +120,28 @@ public class SwitchItemProvider extends NetworkNodeItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Switch_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Switch_id_feature", "_UI_Switch_type"),
+				 MdnPackage.Literals.SWITCH__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Switch.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -157,6 +180,7 @@ public class SwitchItemProvider extends NetworkNodeItemProvider {
 
 		switch (notification.getFeatureID(Switch.class)) {
 			case MdnPackage.SWITCH__PORTS:
+			case MdnPackage.SWITCH__ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

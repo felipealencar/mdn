@@ -13,10 +13,13 @@ import mdn.diagram.edit.commands.AppAppToNetworkNodeCreateCommand;
 import mdn.diagram.edit.commands.AppAppToNetworkNodeReorientCommand;
 import mdn.diagram.edit.commands.AppControllerAppCreateCommand;
 import mdn.diagram.edit.commands.AppControllerAppReorientCommand;
+import mdn.diagram.edit.commands.AppTargetSwitchCreateCommand;
+import mdn.diagram.edit.commands.AppTargetSwitchReorientCommand;
 import mdn.diagram.edit.parts.AppActionPacketHeaderEditPart;
 import mdn.diagram.edit.parts.AppAppRuleEditPart;
 import mdn.diagram.edit.parts.AppAppToNetworkNodeEditPart;
 import mdn.diagram.edit.parts.AppControllerAppEditPart;
+import mdn.diagram.edit.parts.AppTargetSwitchEditPart;
 import mdn.diagram.part.MdnVisualIDRegistry;
 import mdn.diagram.providers.MdnElementTypes;
 
@@ -87,6 +90,14 @@ public class AppItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy {
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
+			if (MdnVisualIDRegistry.getVisualID(outgoingLink) == AppTargetSwitchEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
 		}
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
@@ -131,6 +142,10 @@ public class AppItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy {
 			return getGEFWrapper(new AppAppRuleCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
+		if (MdnElementTypes.AppTargetSwitch_4033 == req.getElementType()) {
+			return getGEFWrapper(new AppTargetSwitchCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -149,6 +164,9 @@ public class AppItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy {
 			return null;
 		}
 		if (MdnElementTypes.AppAppRule_4032 == req.getElementType()) {
+			return null;
+		}
+		if (MdnElementTypes.AppTargetSwitch_4033 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -171,6 +189,8 @@ public class AppItemSemanticEditPolicy extends MdnBaseItemSemanticEditPolicy {
 			return getGEFWrapper(new AppControllerAppReorientCommand(req));
 		case AppAppRuleEditPart.VISUAL_ID:
 			return getGEFWrapper(new AppAppRuleReorientCommand(req));
+		case AppTargetSwitchEditPart.VISUAL_ID:
+			return getGEFWrapper(new AppTargetSwitchReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

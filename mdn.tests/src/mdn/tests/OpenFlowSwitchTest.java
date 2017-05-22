@@ -15,15 +15,7 @@ import mdn.OpenFlowSwitch;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OpenFlowSwitchTest extends TestCase {
-
-	/**
-	 * The fixture for this Open Flow Switch test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected OpenFlowSwitch fixture = null;
+public class OpenFlowSwitchTest extends SwitchTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +37,14 @@ public class OpenFlowSwitchTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Open Flow Switch test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(OpenFlowSwitch fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Open Flow Switch test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected OpenFlowSwitch getFixture() {
-		return fixture;
+		return (OpenFlowSwitch)fixture;
 	}
 
 	/**

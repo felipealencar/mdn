@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +30,6 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link mdn.impl.OpenFlowSwitchImpl#getTableSpace <em>Table Space</em>}</li>
- *   <li>{@link mdn.impl.OpenFlowSwitchImpl#getSwitchIsOpenFlow <em>Switch Is Open Flow</em>}</li>
  *   <li>{@link mdn.impl.OpenFlowSwitchImpl#getRequiredHeaders <em>Required Headers</em>}</li>
  *   <li>{@link mdn.impl.OpenFlowSwitchImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link mdn.impl.OpenFlowSwitchImpl#getSupportedProtocols <em>Supported Protocols</em>}</li>
@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *
  * @generated
  */
-public class OpenFlowSwitchImpl extends EObjectImpl implements OpenFlowSwitch {
+public class OpenFlowSwitchImpl extends SwitchImpl implements OpenFlowSwitch {
 	/**
 	 * The default value of the '{@link #getTableSpace() <em>Table Space</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -60,16 +60,6 @@ public class OpenFlowSwitchImpl extends EObjectImpl implements OpenFlowSwitch {
 	 * @ordered
 	 */
 	protected float tableSpace = TABLE_SPACE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSwitchIsOpenFlow() <em>Switch Is Open Flow</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSwitchIsOpenFlow()
-	 * @generated
-	 * @ordered
-	 */
-	protected Switch switchIsOpenFlow;
 
 	/**
 	 * The cached value of the '{@link #getRequiredHeaders() <em>Required Headers</em>}' attribute list.
@@ -102,24 +92,14 @@ public class OpenFlowSwitchImpl extends EObjectImpl implements OpenFlowSwitch {
 	protected String version = VERSION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSupportedProtocols() <em>Supported Protocols</em>}' attribute.
+	 * The cached value of the '{@link #getSupportedProtocols() <em>Supported Protocols</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSupportedProtocols()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SUPPORTED_PROTOCOLS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSupportedProtocols() <em>Supported Protocols</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSupportedProtocols()
-	 * @generated
-	 * @ordered
-	 */
-	protected String supportedProtocols = SUPPORTED_PROTOCOLS_EDEFAULT;
+	protected EList<String> supportedProtocols;
 
 	/**
 	 * The cached value of the '{@link #getOptionalHeaders() <em>Optional Headers</em>}' attribute list.
@@ -196,44 +176,6 @@ public class OpenFlowSwitchImpl extends EObjectImpl implements OpenFlowSwitch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Switch getSwitchIsOpenFlow() {
-		if (switchIsOpenFlow != null && switchIsOpenFlow.eIsProxy()) {
-			InternalEObject oldSwitchIsOpenFlow = (InternalEObject)switchIsOpenFlow;
-			switchIsOpenFlow = (Switch)eResolveProxy(oldSwitchIsOpenFlow);
-			if (switchIsOpenFlow != oldSwitchIsOpenFlow) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MdnPackage.OPEN_FLOW_SWITCH__SWITCH_IS_OPEN_FLOW, oldSwitchIsOpenFlow, switchIsOpenFlow));
-			}
-		}
-		return switchIsOpenFlow;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Switch basicGetSwitchIsOpenFlow() {
-		return switchIsOpenFlow;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSwitchIsOpenFlow(Switch newSwitchIsOpenFlow) {
-		Switch oldSwitchIsOpenFlow = switchIsOpenFlow;
-		switchIsOpenFlow = newSwitchIsOpenFlow;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.OPEN_FLOW_SWITCH__SWITCH_IS_OPEN_FLOW, oldSwitchIsOpenFlow, switchIsOpenFlow));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<PacketHeaders> getRequiredHeaders() {
 		if (requiredHeaders == null) {
 			requiredHeaders = new EDataTypeEList<PacketHeaders>(PacketHeaders.class, this, MdnPackage.OPEN_FLOW_SWITCH__REQUIRED_HEADERS);
@@ -267,20 +209,11 @@ public class OpenFlowSwitchImpl extends EObjectImpl implements OpenFlowSwitch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getSupportedProtocols() {
+	public EList<String> getSupportedProtocols() {
+		if (supportedProtocols == null) {
+			supportedProtocols = new EDataTypeUniqueEList<String>(String.class, this, MdnPackage.OPEN_FLOW_SWITCH__SUPPORTED_PROTOCOLS);
+		}
 		return supportedProtocols;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSupportedProtocols(String newSupportedProtocols) {
-		String oldSupportedProtocols = supportedProtocols;
-		supportedProtocols = newSupportedProtocols;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MdnPackage.OPEN_FLOW_SWITCH__SUPPORTED_PROTOCOLS, oldSupportedProtocols, supportedProtocols));
 	}
 
 	/**
@@ -326,9 +259,6 @@ public class OpenFlowSwitchImpl extends EObjectImpl implements OpenFlowSwitch {
 		switch (featureID) {
 			case MdnPackage.OPEN_FLOW_SWITCH__TABLE_SPACE:
 				return getTableSpace();
-			case MdnPackage.OPEN_FLOW_SWITCH__SWITCH_IS_OPEN_FLOW:
-				if (resolve) return getSwitchIsOpenFlow();
-				return basicGetSwitchIsOpenFlow();
 			case MdnPackage.OPEN_FLOW_SWITCH__REQUIRED_HEADERS:
 				return getRequiredHeaders();
 			case MdnPackage.OPEN_FLOW_SWITCH__VERSION:
@@ -355,9 +285,6 @@ public class OpenFlowSwitchImpl extends EObjectImpl implements OpenFlowSwitch {
 			case MdnPackage.OPEN_FLOW_SWITCH__TABLE_SPACE:
 				setTableSpace((Float)newValue);
 				return;
-			case MdnPackage.OPEN_FLOW_SWITCH__SWITCH_IS_OPEN_FLOW:
-				setSwitchIsOpenFlow((Switch)newValue);
-				return;
 			case MdnPackage.OPEN_FLOW_SWITCH__REQUIRED_HEADERS:
 				getRequiredHeaders().clear();
 				getRequiredHeaders().addAll((Collection<? extends PacketHeaders>)newValue);
@@ -366,7 +293,8 @@ public class OpenFlowSwitchImpl extends EObjectImpl implements OpenFlowSwitch {
 				setVersion((String)newValue);
 				return;
 			case MdnPackage.OPEN_FLOW_SWITCH__SUPPORTED_PROTOCOLS:
-				setSupportedProtocols((String)newValue);
+				getSupportedProtocols().clear();
+				getSupportedProtocols().addAll((Collection<? extends String>)newValue);
 				return;
 			case MdnPackage.OPEN_FLOW_SWITCH__OPTIONAL_HEADERS:
 				getOptionalHeaders().clear();
@@ -390,9 +318,6 @@ public class OpenFlowSwitchImpl extends EObjectImpl implements OpenFlowSwitch {
 			case MdnPackage.OPEN_FLOW_SWITCH__TABLE_SPACE:
 				setTableSpace(TABLE_SPACE_EDEFAULT);
 				return;
-			case MdnPackage.OPEN_FLOW_SWITCH__SWITCH_IS_OPEN_FLOW:
-				setSwitchIsOpenFlow((Switch)null);
-				return;
 			case MdnPackage.OPEN_FLOW_SWITCH__REQUIRED_HEADERS:
 				getRequiredHeaders().clear();
 				return;
@@ -400,7 +325,7 @@ public class OpenFlowSwitchImpl extends EObjectImpl implements OpenFlowSwitch {
 				setVersion(VERSION_EDEFAULT);
 				return;
 			case MdnPackage.OPEN_FLOW_SWITCH__SUPPORTED_PROTOCOLS:
-				setSupportedProtocols(SUPPORTED_PROTOCOLS_EDEFAULT);
+				getSupportedProtocols().clear();
 				return;
 			case MdnPackage.OPEN_FLOW_SWITCH__OPTIONAL_HEADERS:
 				getOptionalHeaders().clear();
@@ -422,14 +347,12 @@ public class OpenFlowSwitchImpl extends EObjectImpl implements OpenFlowSwitch {
 		switch (featureID) {
 			case MdnPackage.OPEN_FLOW_SWITCH__TABLE_SPACE:
 				return tableSpace != TABLE_SPACE_EDEFAULT;
-			case MdnPackage.OPEN_FLOW_SWITCH__SWITCH_IS_OPEN_FLOW:
-				return switchIsOpenFlow != null;
 			case MdnPackage.OPEN_FLOW_SWITCH__REQUIRED_HEADERS:
 				return requiredHeaders != null && !requiredHeaders.isEmpty();
 			case MdnPackage.OPEN_FLOW_SWITCH__VERSION:
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 			case MdnPackage.OPEN_FLOW_SWITCH__SUPPORTED_PROTOCOLS:
-				return SUPPORTED_PROTOCOLS_EDEFAULT == null ? supportedProtocols != null : !SUPPORTED_PROTOCOLS_EDEFAULT.equals(supportedProtocols);
+				return supportedProtocols != null && !supportedProtocols.isEmpty();
 			case MdnPackage.OPEN_FLOW_SWITCH__OPTIONAL_HEADERS:
 				return optionalHeaders != null && !optionalHeaders.isEmpty();
 			case MdnPackage.OPEN_FLOW_SWITCH__AVAILABLE_TABLE_SPACE:

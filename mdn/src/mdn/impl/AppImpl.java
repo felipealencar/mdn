@@ -11,6 +11,7 @@ import mdn.NetworkNode;
 import mdn.PacketHeader;
 import mdn.Rule;
 
+import mdn.Switch;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -35,6 +36,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link mdn.impl.AppImpl#getControllerApp <em>Controller App</em>}</li>
  *   <li>{@link mdn.impl.AppImpl#getAppRule <em>App Rule</em>}</li>
  *   <li>{@link mdn.impl.AppImpl#getName <em>Name</em>}</li>
+ *   <li>{@link mdn.impl.AppImpl#getTargetSwitch <em>Target Switch</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,6 +102,16 @@ public class AppImpl extends EObjectImpl implements App {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTargetSwitch() <em>Target Switch</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetSwitch()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Switch> targetSwitch;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,6 +232,18 @@ public class AppImpl extends EObjectImpl implements App {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Switch> getTargetSwitch() {
+		if (targetSwitch == null) {
+			targetSwitch = new EObjectResolvingEList<Switch>(Switch.class, this, MdnPackage.APP__TARGET_SWITCH);
+		}
+		return targetSwitch;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -234,6 +258,8 @@ public class AppImpl extends EObjectImpl implements App {
 				return getAppRule();
 			case MdnPackage.APP__NAME:
 				return getName();
+			case MdnPackage.APP__TARGET_SWITCH:
+				return getTargetSwitch();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -265,6 +291,10 @@ public class AppImpl extends EObjectImpl implements App {
 			case MdnPackage.APP__NAME:
 				setName((String)newValue);
 				return;
+			case MdnPackage.APP__TARGET_SWITCH:
+				getTargetSwitch().clear();
+				getTargetSwitch().addAll((Collection<? extends Switch>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -292,6 +322,9 @@ public class AppImpl extends EObjectImpl implements App {
 			case MdnPackage.APP__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case MdnPackage.APP__TARGET_SWITCH:
+				getTargetSwitch().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -314,6 +347,8 @@ public class AppImpl extends EObjectImpl implements App {
 				return appRule != null && !appRule.isEmpty();
 			case MdnPackage.APP__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case MdnPackage.APP__TARGET_SWITCH:
+				return targetSwitch != null && !targetSwitch.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
