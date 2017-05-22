@@ -6,4 +6,4 @@ Model-Driven Networking (MDN) is a modeling framework to create and describe app
 
 This repository contains both the source code and the MDN editor that could be used to model SDN applications.
 
-If you would like to contribute to this project or have any questions about configuring it in your environment, contact me: 
+If you would like to contribute to this project or have any questions about configuring it in your environment, contact me: fal3@cin.ufpe.br.
