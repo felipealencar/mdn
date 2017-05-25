@@ -127,7 +127,7 @@ class SimpleSwitch13(app_manager.RyuApp):
         self.logger.info("%s %s", dp.id, eth_IP)
 
         print self.add_flow(dp, 2, match, actions)
-
+[% //IMPROVE COMPATIBILITY %]
     @set_ev_cls(dpset.EventDP, dpset.DPSET_EV_DISPATCHER)
     def handler_datapath(self, ev):
 [% /*CHECK APPLICATIONS
@@ -135,28 +135,26 @@ class SimpleSwitch13(app_manager.RyuApp):
 	 CHECK SOURCE/TARGET SWITCH HAS THE APP PROTOCOL
 	 	IF HAS: DP.ID -> NORMAL LEARNING
 	 	IF HASNT: DP.ID -> FLOOD OR TRAFFIC SHAPPING*/ %]
-[% /* TODO: NAVIGATE BY THE APPMONITOR */
-var supportedProcotols : String;
-var supportedProcotols2 : String;
-supportedProcotols2 = "";
-%]
+[% /* TODO: NAVIGATE BY THE APPMONITOR */ %]
 [% for(monitor in AppMonitor.all) {
-	for (s in OpenFlowSwitch.All) {
-		/*("monitortypegetname(): "+monitor.type.getName().toLowerCase()).println();
-		monitor.targetSwitch.supportedProtocols.asString().println();
-		("monitortargetSwitch(): "+monitor.targetSwitch.supportedProtocols.concat().toLowerCase()).println();*/
-		monitor.targetSwitch.supportedProtocols.concat().toLowerCase().equals(monitor.type.getName().toLowerCase()).println();
-		if (monitor.targetSwitch.supportedProtocols.concat().toLowerCase().contains(monitor.type.getName().toLowerCase())
-			or monitor.targetSwitch.supportedProtocols.concat().toLowerCase() == monitor.type.getName().toLowerCase()){	%]
+	//Comparing if the target switch supports the protocol used by the monitor, if not:
+	if (monitor.targetSwitch.supportedProtocols.concat().toLowerCase().contains(monitor.type.getName().toLowerCase()) == false){
+		//Configuring the switches for flow delegation algorithm
+		for (s in OpenFlowSwitch.All) { %]
+			[% /*The target switch is equal to the current switch. Install the flow rules at to delegate the traffic.*/ %]
+			[% if (s.id == monitor.targetSwitch.id) { %]
 	 	if ev.enter and ev.dp.id == [%=s.id%]:
             print('mirroring flows from dpid', ev.dp.id)
 	        self.switch_to_monitor.append(ev.dp.id)
             self._define_flow_rule_to_mirror_and_monitor(ev.dp)
-[%		}
-		else {%]
+			[% } %]
+			[% /*Install the metadata to match and flood the flows coming from the monitored switches.*/ %]
+			[% /*TODO: Traffic shape.*/ %]
+			[% else {%]
         if ev.enter and ev.dp.id == [%=s.id%]:
 	        print('handle mirrored flow in dpid', ev.dp.id)
 	        self._handle_mirrored_flow(ev.dp)
-	  [%}
+[%			} 
+		}
 	}	
 } %]
