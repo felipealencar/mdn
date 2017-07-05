@@ -127,7 +127,8 @@ class SimpleSwitch13(app_manager.RyuApp):
         self.logger.info("%s %s", dp.id, eth_IP)
 
         print self.add_flow(dp, 2, match, actions)
-[% //IMPROVE COMPATIBILITY %]
+[% /*IMPROVE COMPATIBILITY*/ %]
+[% /*TODO: CHANGE EVENT TO AN ACTIVE BEHAVIOR (GETTING PORT NUMBERS)*/ %]
     @set_ev_cls(dpset.EventDP, dpset.DPSET_EV_DISPATCHER)
     def handler_datapath(self, ev):
 [% /*CHECK APPLICATIONS
@@ -139,22 +140,37 @@ class SimpleSwitch13(app_manager.RyuApp):
 [% for(monitor in AppMonitor.all) {
 	//Comparing if the target switch supports the protocol used by the monitor, if not:
 	if (monitor.targetSwitch.supportedProtocols.concat().toLowerCase().contains(monitor.type.getName().toLowerCase()) == false){
+		var startTime : Real := Native('java.lang.System').nanoTime();
+		System.out.println(startTime);
+		var elapsedTime : Real = 0.0;
+        for (s in OpenFlowSwitch.All) {
+			if (s.supportedProtocols.concat().toLowerCase().contains(monitor.type.getName().toLowerCase())){
+			    break;
+			}
+		}
+		elapsedTime = Native('java.lang.System').nanoTime();
+		System.out.println(elapsedTime);
+        elapsedTime = elapsedTime - startTime;
+        System.out.println(elapsedTime);
 		//Configuring the switches for flow delegation algorithm
 		for (s in OpenFlowSwitch.All) { %]
 			[% /*The target switch is equal to the current switch. Install the flow rules at to delegate the traffic.*/ %]
-			[% if (s.id == monitor.targetSwitch.id) { %]
+			[% for (tS in monitor.targetSwitch) {%]
+			[% if (s.id == tS.id) { %]
 	 	if ev.enter and ev.dp.id == [%=s.id%]:
             print('mirroring flows from dpid', ev.dp.id)
 	        self.switch_to_monitor.append(ev.dp.id)
             self._define_flow_rule_to_mirror_and_monitor(ev.dp)
-			[% } %]
+			[% 	} %]
 			[% /*Install the metadata to match and flood the flows coming from the monitored switches.*/ %]
-			[% /*TODO: Traffic shape.*/ %]
-			[% else {%]
+			[% /*TODO: Traffic shape (Dijkstra).*/ %]
+			[% 	else {%]
         if ev.enter and ev.dp.id == [%=s.id%]:
 	        print('handle mirrored flow in dpid', ev.dp.id)
 	        self._handle_mirrored_flow(ev.dp)
-[%			} 
-		}
-	}	
-} %]
+[%				} 
+			}
+		}	
+	}
+}
+%]

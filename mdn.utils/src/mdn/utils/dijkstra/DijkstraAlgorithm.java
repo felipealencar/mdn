@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import mdn.utrils.dijkstra.model.Edge;
-import mdn.utrils.dijkstra.model.Graph;
-import mdn.utrils.dijkstra.model.Vertex;
+import mdn.utils.dijkstra.model.Edge;
+import mdn.utils.dijkstra.model.Graph;
+import mdn.utils.dijkstra.model.Vertex;
 
 
 

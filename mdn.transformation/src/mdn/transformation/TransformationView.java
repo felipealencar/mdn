@@ -6,24 +6,25 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.part.ViewPart;
 
 public class TransformationView extends ViewPart {
- public static final String ID = "mdn.transformation.TransformationView";
+	public static final String ID = "mdn.transformation.TransformationView";
 
- private Text text;
- 
- public TransformationView() {
-  super();
- }
+	private Text text;
 
- public void setFocus() {
-  text.setFocus();
- }
+	public TransformationView() {
+		super();
+	}
 
- public void createPartControl(Composite parent) {
-  text = new Text(parent, SWT.BORDER | SWT.V_SCROLL);
-  text.setText("código gerado aqui");
- }
+	public void setFocus() {
+		text.setFocus();
+	}
 
- public void setInput(String parameter){
-  text.setText(parameter);
- }
+	public void createPartControl(Composite parent) {
+		text = new Text(parent, SWT.BORDER | SWT.V_SCROLL);
+		// TODO: Generate multiple code with multiple templates
+		text.setText("Generated code appears here.");
+	}
+
+	public void setInput(String parameter){
+		text.setText(parameter);
+	}
 }

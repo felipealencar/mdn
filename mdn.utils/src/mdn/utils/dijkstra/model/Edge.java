@@ -1,4 +1,4 @@
-package mdn.utrils.dijkstra.model;
+package mdn.utils.dijkstra.model;
 
 public class Edge  {
     private final String id;

@@ -50,10 +50,24 @@ operation monthNameToNum(month : Any) : String {
 		return '11';
 	else if (month == 'Dec' or month == 'Dez')
 		return '12';
+	else
+		return 'jsjsjs';
 }
 
 //Recebe lista de switches
 //Identifica switch incapaz
 //Identifica switch capaz
 //Buscar caminho mais curto do switch incapaz para o capaz
+
+/*operation getPathByDijkstra(OpenFlowSwitches : Any) : List {
+	var edge := new Native('mdn.utils.dijskstra.model.Edge')('0',null,null, 0);
+	var vertex := new Native('mdn.utils.dijkstra.model.Vertex')('0','0');
+	var test := List;
+	for(switches in OpenFlowSwitches.all){
+		vertex.setId(switches.id);
+		vertex.setName(switches.name);
+		System.out.println(vertex.getName());
+	} 	
+	return test;
+}*/
 %]

@@ -801,15 +801,15 @@
    </extension>
    <extension point="org.eclipse.ui.views">
         <view id="mdn.transformation.TransformationView"
-             name="Export to script"
+             name="Transformation"
           class="mdn.transformation.TransformationView"
           icon="icons/obj16/transformation.png"/>
    </extension>
    <extension point="org.eclipse.ui.actionSets">
 	   <actionSet
-	            description="Export to script"
-	            id="mdn.transformation.M2TAction.actionSet"
-	            label="Exportar para script  "
+	            description="Export"
+	            id="mdn.transformation"
+	            label="Export"
 	            visible="true">
 	      <action
 	               class="mdn.transformation.M2TAction"
@@ -820,6 +820,16 @@
 	               style="push"
 	               toolbarPath="transformationGroup"
 	               tooltip="Export to script">
+	      </action>
+	      <action
+	               class="mdn.transformation.ModelToMininet"
+	               icon="icons/obj16/transformation.png"
+	               id="mdn.transformation.ModelToMininet"
+	               label="Export to mininet"
+	               mode="FORCE_TEXT"
+	               style="push"
+	               toolbarPath="transformationGroup"
+	               tooltip="Export to mininet">
 	      </action>
 	   </actionSet>
    </extension>

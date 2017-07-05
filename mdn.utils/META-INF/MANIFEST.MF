@@ -4,4 +4,4 @@ Bundle-Name: Utils
 Bundle-SymbolicName: mdn.utils
 Bundle-Version: 1.0.0.qualifier
 Export-Package: mdn.utils.dijkstra,
- mdn.utrils.dijkstra.model
+ mdn.utils.dijkstra.model

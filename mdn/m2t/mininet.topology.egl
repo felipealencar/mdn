@@ -1,0 +1,66 @@
+[% import 'utils.egl'; %]
+#!/usr/bin/python
+
+from mininet.net import Mininet
+from mininet.node import Controller, RemoteController, OVSController
+from mininet.node import CPULimitedHost, Host, Node
+from mininet.node import OVSKernelSwitch, UserSwitch
+from mininet.node import IVSSwitch
+from mininet.cli import CLI
+from mininet.log import setLogLevel, info
+from mininet.link import TCLink, Intf
+from subprocess import call
+
+def myNetwork():
+
+    net = Mininet( topo=None,
+                   build=False,
+                   ipBase='10.0.0.0/8')
+
+    info( '*** Adding controller\n' )
+    c0=net.addController(name='c0',
+                      controller=RemoteController,
+                      ip='127.0.0.1',
+                      protocol='tcp',
+                      port=6633)
+
+    info( '*** Add switches\n')
+	[% for (switches in OpenFlowSwitch.all) { %]
+    [% //switches.name+' = net.addSwitch(\''+switches.name+'\', cls=OVSKernelSwitch, protocols=\'OpenFlow13\', dpid=\''+switches.id+'\')'%]
+	[%=switches.name+' = net.addSwitch(\''+switches.name+'\', cls=OVSKernelSwitch, protocols=\'OpenFlow13\')'%]	
+	[% } %]
+    info( '*** Add links\n')
+	[% for (switches in OpenFlowSwitch.all) { %]
+		[% if (switches.switches.isDefined()) { %]
+			[% for (autoswitches in switches.switches) { %]
+    [%='net.addLink('+switches.name+', '+autoswitches.name+')'%]
+			[% } %]
+		[% } %]
+	[% } %]
+	
+	
+	[% for (host in Host.all) {	%]
+    [%=host.name+' = net.addHost(\''+host.name+'\', cls=Host, ip=\''+host.ip+'\', defaultRoute=None)'%]
+    [%='net.addLink('+host.name+', '+host.hostSwitch.name+')'%]
+	[% } %]
+	
+    info( '*** Starting network\n')
+    net.build()
+    info( '*** Starting controllers\n')
+    for controller in net.controllers:
+        controller.start()
+        
+    info( '*** Starting switches\n')
+    [% for (switches in OpenFlowSwitch.all) { %]
+    net.get('[%=switches.name%]').start([c0])
+    [% } %]
+    
+    call('ovs-vsctl -- --id=@MiniEditNF create NetFlow target="0.0.0.0\:3000" active-timeout=600 add_id_to_interface=true -- set Bridge s10 netflow=@MiniEditNF', shell=True)
+    CLI(net)
+    net.stop()
+    
+if __name__ == '__main__':
+    setLogLevel( 'info' )
+    myNetwork()
+
+topos = { 'mytopo': ( lambda: myNetwork() ) }

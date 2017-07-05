@@ -36,72 +36,67 @@ public class M2TAction implements IWorkbenchWindowActionDelegate {
    }
 
    public void run(IAction action) {
+	   // Acessa o editor ativo
+	   IEditorPart editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
+	   // Caso seja um diagrama
+	   if (editor instanceof MdnDiagramEditor) {
+		   MdnDiagramEditor mDiagramEditor = (MdnDiagramEditor) editor;
 
-      // Acessa o editor ativo
-      IEditorPart editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-
-      // Caso seja um diagrama
-      if (editor instanceof MdnDiagramEditor) {
-
-         MdnDiagramEditor mDiagramEditor = (MdnDiagramEditor) editor;
-
-  // Obtém o modelo EMF do editor
-  Resource resource = getFirstSemanticModelResource( mDiagramEditor.getEditingDomain().getResourceSet());
-
-         if (resource == null) return;
-
-     // Envolve o modelo EMF neste InMemoryEmfModel
-     InMemoryEmfModel m = new InMemoryEmfModel("M", resource, MdnPackage.eINSTANCE);
-
-            // Constrói o módulo EGL
-     EglTemplateFactoryModuleAdapter module = new EglTemplateFactoryModuleAdapter(new EglFileGeneratingTemplateFactory());
-
-     Bundle bundle = Platform.getBundle("mdn");
-     URL fileURL = bundle.getEntry("m2t/ryu.switch.learning.delegation.egl");
-     URI uri = null;
-     if (bundle != null) {
-       URL url=FileLocator.find(bundle,new Path("m2t/ryu.switch.learning.delegation.egl"),Collections.emptyMap());
-       if (url != null) {
-          fileURL = url;
-        
-			//URL fileUrl=FileLocator.toFileURL(url);
-		  String fURL = fileURL.toString();
-		  fURL = fURL.replace(" ", "%20");
+		   // Obtém o modelo EMF do editor
+		   Resource resource = getFirstSemanticModelResource( mDiagramEditor.getEditingDomain().getResourceSet());
 		   
-		  try {
-			uri = new URI(fURL);
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-       }
-     }
-     try {
-    	
-    	 //System.out.println(FileLocator.resolve(fileURL).toURI());
-         module.parse(uri);
-    	 //module.parse(FileLocator.resolve(fileURL).toString().replace.(" ", "%20").toURI());
-     } catch (Exception e) {
-        e.printStackTrace();
-            }
+		   if (resource == null) return;
+		   
+		   // Envolve o modelo EMF neste InMemoryEmfModel
+		   InMemoryEmfModel m = new InMemoryEmfModel("M", resource, MdnPackage.eINSTANCE);
 
-     module.getContext().getModelRepository().addModel(m);
+		   // Constrói o módulo EGL
+		   EglTemplateFactoryModuleAdapter module = new EglTemplateFactoryModuleAdapter(new EglFileGeneratingTemplateFactory());
 
-     TransformationView view = null;
-     try {
-        view = (TransformationView) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView(TransformationView.ID);
-     } catch (PartInitException e1) {
-        e1.printStackTrace();
-     }
+		   Bundle bundle = Platform.getBundle("mdn");
+		   URL fileURL = bundle.getEntry("m2t/ryu.switch.learning.delegation.egl");
+		   URI uri = null;
+		   if (bundle != null) {
+			   URL url=FileLocator.find(bundle,new Path("m2t/ryu.switch.learning.delegation.egl"),Collections.emptyMap());
+			   
+			   if (url != null) {
+				   fileURL = url;
+        
+				   //URL fileUrl=FileLocator.toFileURL(url);
+				   String fURL = fileURL.toString();
+				   fURL = fURL.replace(" ", "%20");
+		   
+				   try {
+					   uri = new URI(fURL);
+				   } catch (URISyntaxException e) {
+					   // TODO Auto-generated catch block
+					   e.printStackTrace();
+				   }
+			   }
+		   }
+		   try {
+			   //System.out.println(FileLocator.resolve(fileURL).toURI());
+			   module.parse(uri);
+			   //module.parse(FileLocator.resolve(fileURL).toString().replace.(" ", "%20").toURI());
+		   } catch (Exception e) {
+			   e.printStackTrace();
+		   }
+
+		   module.getContext().getModelRepository().addModel(m);
+
+		   TransformationView view = null;
+		   try {
+			   view = (TransformationView) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView(TransformationView.ID);
+		   } catch (PartInitException e1) {
+			   e1.printStackTrace();
+		   }
    
-     try {
-        view.setInput((String) module.execute());
-     } catch (EolRuntimeException e) {
-        e.printStackTrace();
-     }
-
- }
-
+		   try {
+			   view.setInput((String) module.execute());
+		   } catch (EolRuntimeException e) {
+			   e.printStackTrace();
+		   }
+	   }
    }
 
    public Resource getFirstSemanticModelResource(ResourceSet resourceSet) {

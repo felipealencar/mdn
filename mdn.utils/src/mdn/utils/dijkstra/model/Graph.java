@@ -1,4 +1,4 @@
-package mdn.utrils.dijkstra.model;
+package mdn.utils.dijkstra.model;
 
 import java.util.List;
 
